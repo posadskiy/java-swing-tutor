@@ -4,6 +4,9 @@ import com.posadskiy.swingteacherdesktop.domain.dto.*;
 import com.posadskiy.swingteacherdesktop.tables.*;
 import com.posadskiy.swingteacherdesktop.tables.Error;
 
+import java.util.ArrayList;
+import java.util.List;
+
 final class RestDtoMapper {
     private RestDtoMapper() {
     }
@@ -28,6 +31,16 @@ final class RestDtoMapper {
         lesson.setLessonNumber(dto.lessonNumber());
         lesson.setLessonName(dto.lessonName());
         lesson.setIdTaskCategory(toInt(dto.taskCategoryId()));
+        
+        if (dto.tasks() != null) {
+            List<Task> tasks = dto.tasks().stream()
+                .map(RestDtoMapper::toTask)
+                .toList();
+            lesson.setTasks(tasks);
+        } else {
+            lesson.setTasks(new ArrayList<>());
+        }
+        
         return lesson;
     }
 

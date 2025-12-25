@@ -92,11 +92,11 @@ public class FileUtils {
         BufferedWriter fos = new BufferedWriter(new FileWriter(fileName));
         fos.write("package com.posadskiy.swingteacherdesktop.utils;\n"
             + "import javax.swing.*;\n"
-            + "import java.awt.Dimension;\n"
+            + "import java.awt.*;\n"
             + ((imports == null) ? "" : imports) + "\n"
             + "public class Answer extends CreateFrame {\n "
             + "public Answer() {\n"
-            + "setTitle(\"Твой фрейм\");\n"
+            + "setTitle(\"Your frame\");\n"
             + operators + "\n"
             + "setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);\n"
             + "setPreferredSize(new Dimension(700, 400));\n"

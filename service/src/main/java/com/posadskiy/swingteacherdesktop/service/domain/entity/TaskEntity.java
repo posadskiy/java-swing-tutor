@@ -18,6 +18,10 @@ public class TaskEntity {
     @Column(name = "id_lesson")
     private Long lessonId;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_lesson", insertable = false, updatable = false)
+    private LessonEntity lesson;
+
     @Column(name = "task_number")
     private Integer taskNumber;
 

@@ -3,6 +3,8 @@ package com.posadskiy.swingteacherdesktop.service.domain.mapper;
 import com.posadskiy.swingteacherdesktop.domain.dto.*;
 import com.posadskiy.swingteacherdesktop.service.domain.entity.*;
 
+import java.util.List;
+
 public final class DtoMapper {
     private DtoMapper() {
     }
@@ -19,11 +21,18 @@ public final class DtoMapper {
     }
 
     public static LessonDto toDto(LessonEntity entity) {
+        List<TaskDto> tasks = entity.getTasks() != null
+            ? entity.getTasks().stream()
+                .map(DtoMapper::toDto)
+                .toList()
+            : List.of();
+        
         return new LessonDto(
             entity.getId(),
             entity.getLessonNumber(),
             entity.getLessonName(),
-            entity.getTaskCategoryId()
+            entity.getTaskCategoryId(),
+            tasks
         );
     }
 

@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -23,5 +26,10 @@ public class LessonEntity {
 
     @Column(name = "id_task_category")
     private Long taskCategoryId;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_lesson")
+    @OrderBy("taskNumber ASC")
+    private List<TaskEntity> tasks = new ArrayList<>();
 }
 

@@ -148,13 +148,4 @@ public class Checker {
         Matcher m = pattern.matcher(eMail);
         return m.matches();
     }
-
-    public boolean isNumeric(String s) {
-        try {
-            Integer.parseInt(s);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
 }

@@ -81,8 +81,12 @@ public class MainFrameView extends JFrame {
                 lessons = mainFrameController.getLessonByCategory(taskCategory);
                 if (lessons != null && !lessons.isEmpty() && lessons.get(0) != null && lessons.get(0).getId() != null) {
                     lesson = lessons.get(0).getId();
+                    // Get tasks from the first lesson
+                    Lesson firstLesson = lessons.get(0);
+                    tasks = firstLesson.getTasks() != null ? firstLesson.getTasks() : new ArrayList<>();
+                } else {
+                    tasks = new ArrayList<>();
                 }
-                tasks = mainFrameController.getTasksByLesson(lesson);
 
                 Integer currentUserId = currentUser.getId();
                 completedTasks = mainFrameController.getCompletedTaskByUserId(currentUserId);
@@ -298,7 +302,14 @@ public class MainFrameView extends JFrame {
     }
 
     public void changeSelectedElementInLessonComboBox(ActionEvent ae) {
-        tasks = mainFrameController.getTasksByLesson(lessons.get(lessonComboBox.getSelectedIndex()).getId());
+        int selectedIndex = lessonComboBox.getSelectedIndex();
+        if (selectedIndex >= 0 && selectedIndex < lessons.size()) {
+            Lesson selectedLesson = lessons.get(selectedIndex);
+            tasks = selectedLesson.getTasks() != null ? selectedLesson.getTasks() : new ArrayList<>();
+        } else {
+            tasks = new ArrayList<>();
+        }
+        
         taskComboBox.removeAllItems();
         JEditorPane pane = ((JEditorPane) documentationScrollPane.getViewport().getView());
         Task cTask = null;

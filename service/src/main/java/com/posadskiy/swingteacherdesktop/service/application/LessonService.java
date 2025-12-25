@@ -16,7 +16,7 @@ public class LessonService {
     }
 
     public List<LessonDto> getAll() {
-        return lessonRepository.findAll()
+        return lessonRepository.findAllWithTasks()
             .stream()
             .map(DtoMapper::toDto)
             .toList();
@@ -26,14 +26,14 @@ public class LessonService {
         if (categoryId == null) {
             return getAll();
         }
-        return lessonRepository.findByTaskCategoryId(categoryId)
+        return lessonRepository.findByTaskCategoryIdWithTasks(categoryId)
             .stream()
             .map(DtoMapper::toDto)
             .toList();
     }
 
     public java.util.Optional<LessonDto> getById(Long id) {
-        return lessonRepository.findById(id)
+        return lessonRepository.findByIdWithTasks(id)
             .map(DtoMapper::toDto);
     }
 }

@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -22,6 +24,8 @@ public class Lesson implements Serializable {
     private String lessonName;
 
     private Integer idTaskCategory;
+
+    private List<Task> tasks = new ArrayList<>();
 
     @Override
     public String toString() {
