@@ -26,7 +26,10 @@ public class UserApiClient implements UserRepository {
     
     @Override
     public void addUser(User user) throws SQLException {
-        throw new UnsupportedOperationException("addUser is not supported over REST");
+        boolean success = authService.register(user.login(), user.password(), user.email());
+        if (!success) {
+            throw new SQLException("Failed to register user: " + user.login());
+        }
     }
     
     @Override
