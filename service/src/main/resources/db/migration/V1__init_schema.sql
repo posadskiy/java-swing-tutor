@@ -191,26 +191,6 @@ VALUES (0, '<h1>SwingTeacher Desktop Application</h1>
 
 <p><em>Happy coding!</em></p>');
 
-INSERT INTO documentation (id, text)
-VALUES (1, '<h2>Привет!</h2>
-
-<p>Обратил(а) на меня внимание? <strong>Отлично!</strong> Предлагаю тебе пройти курс по изучению
-библиотеки <strong>Java Swing</strong> и научиться создавать визуальный интерфейс любой сложности
-для приложения или web-сайта. Окошки, кнопки, ползунки и многое другое — это совсем
-не сложно! <em>Приступим?</em></p>
-
-<p>Для начала нужно пройти небольшое обучение, которое поможет разобраться в моей
-функциональности и поможет нам с тобой перейти на «ты». Не против? <strong>Тогда начнём!</strong></p>
-
-<p>В этом окошке будет появляться справочная информация, необходимая для прохождения
-задания. <strong>Важно читать до конца и обязательно стараться разобраться!</strong> Я со своей
-стороны сделаю всё, чтобы информация воспринималась как можно легче и приятней.
-Мы ведь теперь в команде, правда?</p>
-
-<p>Слева располагается окошко с заданием. Сейчас там просьба нажать на кнопочку
-<strong>«Проверить»</strong>. Если это сделать, первое задание сразу засчитается. Это небольшая
-благодарность за прочтение данного текста. <em>Итак, приступай, я жду!</em></p>');
-
 -- Error
 INSERT INTO error (id, error_text)
 VALUES
@@ -235,13 +215,15 @@ VALUES (1, 'test@test.com', 'login', 'password', 0, 0, false);
 -- ============================================================================
 
 -- Ensure sequences are moved forward after explicit IDs
-SELECT setval(pg_get_serial_sequence('task_category', 'id'), (SELECT COALESCE(MAX(id), 1) FROM task_category));
-SELECT setval(pg_get_serial_sequence('documentation', 'id'), (SELECT COALESCE(MAX(id), 1) FROM documentation));
-SELECT setval(pg_get_serial_sequence('error', 'id'), (SELECT COALESCE(MAX(id), 1) FROM error));
-SELECT setval(pg_get_serial_sequence('keyword', 'id'), (SELECT COALESCE(MAX(id), 1) FROM keyword));
-SELECT setval(pg_get_serial_sequence('shorthand', 'id'), (SELECT COALESCE(MAX(id), 1) FROM shorthand));
-SELECT setval(pg_get_serial_sequence('lesson', 'id'), (SELECT COALESCE(MAX(id), 1) FROM lesson));
-SELECT setval(pg_get_serial_sequence('task', 'id'), (SELECT COALESCE(MAX(id), 1) FROM task));
+SELECT setval(pg_get_serial_sequence('task_category', 'id'),
+              GREATEST((SELECT COALESCE(MAX(id), 0) FROM task_category), 1));
+SELECT setval(pg_get_serial_sequence('documentation', 'id'),
+              GREATEST((SELECT COALESCE(MAX(id), 0) FROM documentation), 1));
+SELECT setval(pg_get_serial_sequence('error', 'id'), GREATEST((SELECT COALESCE(MAX(id), 0) FROM error), 1));
+SELECT setval(pg_get_serial_sequence('keyword', 'id'), GREATEST((SELECT COALESCE(MAX(id), 0) FROM keyword), 1));
+SELECT setval(pg_get_serial_sequence('shorthand', 'id'), GREATEST((SELECT COALESCE(MAX(id), 0) FROM shorthand), 1));
+SELECT setval(pg_get_serial_sequence('lesson', 'id'), GREATEST((SELECT COALESCE(MAX(id), 0) FROM lesson), 1));
+SELECT setval(pg_get_serial_sequence('task', 'id'), GREATEST((SELECT COALESCE(MAX(id), 0) FROM task), 1));
 SELECT setval(pg_get_serial_sequence('users', 'id'), (SELECT COALESCE(MAX(id), 1) FROM users));
 SELECT setval(pg_get_serial_sequence('refresh_tokens', 'id'), (SELECT COALESCE(MAX(id), 1) FROM refresh_tokens));
 SELECT setval(pg_get_serial_sequence('completed_task', 'id'), (SELECT COALESCE(MAX(id), 1) FROM completed_task));

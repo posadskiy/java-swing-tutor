@@ -47,3 +47,4 @@ public class DifficultyBadge extends JLabel {
     }
 }
 
+

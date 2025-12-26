@@ -7,3 +7,4 @@ public interface ShorthandRepository extends JpaRepository<ShorthandEntity, Long
 }
 
 
+

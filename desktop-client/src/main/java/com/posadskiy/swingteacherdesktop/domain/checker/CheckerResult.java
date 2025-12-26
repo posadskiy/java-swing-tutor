@@ -50,3 +50,4 @@ public record CheckerResult(String className, int errorCode) {
 }
 
 
+
