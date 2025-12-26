@@ -13,7 +13,7 @@ VALUES (25, 25, 'Меню (JMenu)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (56, '<h2>🎮 Урок 25.1 — Меню-новичок: Создай выпадающее меню!</h2>
+VALUES (203, '<h2>🎮 Меню-новичок: Создай выпадающее меню!</h2>
 
 <p><strong>Привет, мастер пунктов!</strong> 📂 Сегодня ты создашь <code>JMenu</code> — это как выпадающее меню в игре! Меню содержит пункты меню, которые выполняют действия!</p>
 
@@ -64,17 +64,17 @@ VALUES (56, '<h2>🎮 Урок 25.1 — Меню-новичок: Создай в
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (56, 25, 1, 'Меню-новичок: создай выпадающее меню',
+VALUES (203, 25, 1, 'Меню-новичок: создай выпадающее меню',
         '<p><strong>Задание:</strong><br>Создай меню "Файл", добавь пункт "Открыть" и добавь меню в строку меню</p>',
         'JMenu-JMenuItem-add',
-        '', 56, 18.0, 0.0, 'JMenu fileMenu = new JMenu("Файл");
+        '', 203, 18.0, 0.0, 'JMenu fileMenu = new JMenu("Файл");
 JMenuItem openItem = new JMenuItem("Открыть");
 fileMenu.add(openItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (150, '<h2>🎮 Урок 25.1 — Окно-новичок: Создай окно без рамки!</h2>
+VALUES (204, '<h2>🎮 Окно-новичок: Создай окно без рамки!</h2>
 
 <p><strong>Привет, мастер окон!</strong> 🪟 Сегодня ты создашь <code>JWindow</code> — это как окно без рамки в игре! Можно создать всплывающее окно!</p>
 
@@ -121,16 +121,16 @@ VALUES (150, '<h2>🎮 Урок 25.1 — Окно-новичок: Создай �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (150, 25, 1, 'Окно-новичок: создай окно без рамки',
+VALUES (204, 25, 1, 'Окно-новичок: создай окно без рамки',
         '<p><strong>Задание:</strong><br>Создай JWindow с родителем frame, добавь JLabel, покажи окно</p>',
         'JWindow-add-setVisible',
-        '', 150, 22.0, 0.0, 'JFrame parent = new JFrame();
+        '', 204, 22.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
 window.add(new JLabel("Всплывающее окно"));
 window.pack();
 window.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (175, '<h2>🎮 Урок 25.2 — Окно-мастер: Сделай всегда поверх!</h2>
+VALUES (205, '<h2>🎮 Окно-мастер: Сделай всегда поверх!</h2>
 
 <p><strong>Привет, мастер поверх!</strong> 🪟 Сегодня ты сделаешь <code>JWindow</code> всегда поверх других окон — это как всплывающее окно в игре! Окно будет всегда видно!</p>
 
@@ -170,15 +170,15 @@ VALUES (175, '<h2>🎮 Урок 25.2 — Окно-мастер: Сделай в�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (175, 25, 2, 'Окно-мастер: сделай всегда поверх',
+VALUES (205, 25, 2, 'Окно-мастер: сделай всегда поверх',
         '<p><strong>Задание:</strong><br>Установи всегда поверх через setAlwaysOnTop(true)</p>',
         'JWindow-setAlwaysOnTop',
-        '', 175, 23.0, 0.0, 'JFrame parent = new JFrame();
+        '', 205, 23.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
 window.setAlwaysOnTop(true);
 window.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (226, '<h2>🎮 Урок 25.3 — Окно-мастер: Установи фон!</h2>
+VALUES (206, '<h2>🎮 Окно-мастер: Установи фон!</h2>
 
 <p><strong>Привет, мастер фона!</strong> 🪟 Сегодня ты установишь фон для <code>JWindow</code> — это как фон в игре! Можно сделать окно цветным!</p>
 
@@ -217,15 +217,15 @@ VALUES (226, '<h2>🎮 Урок 25.3 — Окно-мастер: Установи
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (226, 25, 3, 'Окно-мастер: установи фон',
+VALUES (206, 25, 3, 'Окно-мастер: установи фон',
         '<p><strong>Задание:</strong><br>Установи фон LIGHT_GRAY через setBackground()</p>',
         'JWindow-setBackground',
-        '', 226, 21.0, 0.0, 'JFrame parent = new JFrame();
+        '', 206, 21.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
 window.setBackground(Color.LIGHT_GRAY);
 window.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (273, '<h2>🎮 Урок 25.4 — Окно-мастер: Всегда поверх!</h2>
+VALUES (207, '<h2>🎮 Окно-мастер: Всегда поверх!</h2>
 
 <p><strong>Привет, мастер поверх!</strong> 🪟 Сегодня ты сделаешь <code>JWindow</code> всегда поверх — это как плавающее окно в игре!</p>
 
@@ -265,15 +265,15 @@ VALUES (273, '<h2>🎮 Урок 25.4 — Окно-мастер: Всегда п�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (273, 25, 4, 'Окно-мастер: всегда поверх',
+VALUES (207, 25, 4, 'Окно-мастер: всегда поверх',
         '<p><strong>Задание:</strong><br>Установи всегда поверх через setAlwaysOnTop(true)</p>',
         'JWindow-setAlwaysOnTop',
-        '', 273, 22.0, 0.0, 'JFrame parent = new JFrame();
+        '', 207, 22.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
 window.setAlwaysOnTop(true);
 window.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (323, '<h2>🎮 Урок 25.5 — Окно-мастер: Установи фон!</h2>
+VALUES (208, '<h2>🎮 Окно-мастер: Установи фон!</h2>
 
 <p><strong>Привет, мастер фона!</strong> 🪟 Сегодня ты установишь фон <code>JWindow</code> — это как цвет в игре!</p>
 
@@ -314,15 +314,15 @@ VALUES (323, '<h2>🎮 Урок 25.5 — Окно-мастер: Установи
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (323, 25, 5, 'Окно-мастер: установи фон',
+VALUES (208, 25, 5, 'Окно-мастер: установи фон',
         '<p><strong>Задание:</strong><br>Установи фон LIGHT_GRAY через setBackground()</p>',
         'JWindow-setBackground',
-        '', 323, 21.0, 0.0, 'JFrame parent = new JFrame();
+        '', 208, 21.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
 window.setBackground(Color.LIGHT_GRAY);
 window.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (375, '<h2>🎮 Урок 25.8 — Разделитель-мастер: Включи одно касание!</h2>
+VALUES (209, '<h2>🎮 Разделитель-мастер: Включи одно касание!</h2>
 
 <p><strong>Привет, мастер удобства!</strong> ➗ Сегодня ты включишь одно касание в <code>JSplitPane</code> — это как быстрое переключение в игре!</p>
 
@@ -363,16 +363,16 @@ VALUES (375, '<h2>🎮 Урок 25.8 — Разделитель-мастер: В
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (375, 25, 8, 'Разделитель-мастер: включи одно касание',
+VALUES (209, 25, 8, 'Разделитель-мастер: включи одно касание',
         '<p><strong>Задание:</strong><br>Включи одно касание через setOneTouchExpandable(true)</p>',
         'JSplitPane-setOneTouchExpandable',
-        '', 375, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
+        '', 209, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 splitPane.setOneTouchExpandable(true);
 add(splitPane);');
 INSERT INTO documentation (id, text)
-VALUES (423, '<h2>🎮 Урок 25.9 — Разделитель-мастер: Включи непрерывную компоновку!</h2>
+VALUES (210, '<h2>🎮 Разделитель-мастер: Включи непрерывную компоновку!</h2>
 
 <p><strong>Привет, мастер плавности!</strong> ➗ Сегодня ты включишь непрерывную компоновку в <code>JSplitPane</code> — это как плавность в игре!</p>
 
@@ -413,16 +413,16 @@ VALUES (423, '<h2>🎮 Урок 25.9 — Разделитель-мастер: В
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (423, 25, 9, 'Разделитель-мастер: включи непрерывную компоновку',
+VALUES (210, 25, 9, 'Разделитель-мастер: включи непрерывную компоновку',
         '<p><strong>Задание:</strong><br>Включи непрерывную компоновку через setContinuousLayout(true)</p>',
         'JSplitPane-setContinuousLayout',
-        '', 423, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
+        '', 210, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 splitPane.setContinuousLayout(true);
 add(splitPane);');
 INSERT INTO documentation (id, text)
-VALUES (475, '<h2>🎮 Урок 25.10 — Разделитель-мастер: Установи вес изменения размера!</h2>
+VALUES (211, '<h2>🎮 Разделитель-мастер: Установи вес изменения размера!</h2>
 
 <p><strong>Привет, мастер весов!</strong> ➗ Сегодня ты установишь вес изменения размера в <code>JSplitPane</code> — это как пропорция в игре!</p>
 
@@ -463,10 +463,10 @@ VALUES (475, '<h2>🎮 Урок 25.10 — Разделитель-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (475, 25, 10, 'Разделитель-мастер: установи вес изменения размера',
+VALUES (211, 25, 10, 'Разделитель-мастер: установи вес изменения размера',
         '<p><strong>Задание:</strong><br>Установи вес 0.5 через setResizeWeight()</p>',
         'JSplitPane-setResizeWeight',
-        '', 475, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
+        '', 211, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 splitPane.setResizeWeight(0.5);

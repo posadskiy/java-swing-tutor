@@ -13,7 +13,7 @@ VALUES (52, 52, 'Look and Feel - Внешний вид', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (586, '<h2>🎮 Урок 52.1 — Look and Feel-новичок: Установи системный L&F!</h2>
+VALUES (453, '<h2>🎮 Look and Feel-новичок: Установи системный L&F!</h2>
 
 <p><strong>Привет, мастер стилей!</strong> 🎨 Сегодня ты установишь системный Look and Feel — это как стиль интерфейса в игре!</p>
 
@@ -57,10 +57,10 @@ VALUES (586, '<h2>🎮 Урок 52.1 — Look and Feel-новичок: Уста�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (586, 52, 1, 'Look and Feel-новичок: установи системный L&F',
+VALUES (453, 52, 1, 'Look and Feel-новичок: установи системный L&F',
         '<p><strong>Задание:</strong><br>Установи системный L&F через UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()), обнови компоненты через SwingUtilities.updateComponentTreeUI()</p>',
         'UIManager-SwingUtilities',
-        '', 586, 20.0, 0.0, 'try {
+        '', 453, 20.0, 0.0, 'try {
     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
     SwingUtilities.updateComponentTreeUI(frame);
 } catch (Exception e) {
@@ -68,7 +68,7 @@ VALUES (586, 52, 1, 'Look and Feel-новичок: установи систем
 }');
 
 INSERT INTO documentation (id, text)
-VALUES (587, '<h2>🎮 Урок 52.2 — Look and Feel-мастер: Установи Metal L&F!</h2>
+VALUES (454, '<h2>🎮 Look and Feel-мастер: Установи Metal L&F!</h2>
 
 <p><strong>Привет, мастер Metal!</strong> 🎨 Сегодня ты установишь Metal Look and Feel — это как классический стиль в игре!</p>
 
@@ -109,10 +109,10 @@ VALUES (587, '<h2>🎮 Урок 52.2 — Look and Feel-мастер: Устан�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (587, 52, 2, 'Look and Feel-мастер: установи Metal L&F',
+VALUES (454, 52, 2, 'Look and Feel-мастер: установи Metal L&F',
         '<p><strong>Задание:</strong><br>Установи Metal L&F через UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"), обнови компоненты</p>',
         'UIManager-SwingUtilities',
-        '', 587, 20.0, 0.0, 'try {
+        '', 454, 20.0, 0.0, 'try {
     UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
     SwingUtilities.updateComponentTreeUI(frame);
 } catch (Exception e) {
@@ -120,7 +120,7 @@ VALUES (587, 52, 2, 'Look and Feel-мастер: установи Metal L&F',
 }');
 
 INSERT INTO documentation (id, text)
-VALUES (588, '<h2>🎮 Урок 52.3 — Look and Feel-мастер: Установи Nimbus L&F!</h2>
+VALUES (455, '<h2>🎮 Look and Feel-мастер: Установи Nimbus L&F!</h2>
 
 <p><strong>Привет, мастер Nimbus!</strong> 🎨 Сегодня ты установишь Nimbus Look and Feel — это как современный стиль в игре!</p>
 
@@ -161,10 +161,10 @@ VALUES (588, '<h2>🎮 Урок 52.3 — Look and Feel-мастер: Устан�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (588, 52, 3, 'Look and Feel-мастер: установи Nimbus L&F',
+VALUES (455, 52, 3, 'Look and Feel-мастер: установи Nimbus L&F',
         '<p><strong>Задание:</strong><br>Установи Nimbus L&F через UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"), обнови компоненты</p>',
         'UIManager-SwingUtilities',
-        '', 588, 21.0, 0.0, 'try {
+        '', 455, 21.0, 0.0, 'try {
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
     SwingUtilities.updateComponentTreeUI(frame);
 } catch (Exception e) {
@@ -172,7 +172,7 @@ VALUES (588, 52, 3, 'Look and Feel-мастер: установи Nimbus L&F',
 }');
 
 INSERT INTO documentation (id, text)
-VALUES (589, '<h2>🎮 Урок 52.4 — Look and Feel-мастер: Получи список доступных L&F!</h2>
+VALUES (456, '<h2>🎮 Look and Feel-мастер: Получи список доступных L&F!</h2>
 
 <p><strong>Привет, мастер списков!</strong> 🎨 Сегодня ты получишь список доступных Look and Feel — это как каталог стилей в игре!</p>
 
@@ -218,16 +218,16 @@ VALUES (589, '<h2>🎮 Урок 52.4 — Look and Feel-мастер: Получ�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (589, 52, 4, 'Look and Feel-мастер: получи список доступных L&F',
+VALUES (456, 52, 4, 'Look and Feel-мастер: получи список доступных L&F',
         '<p><strong>Задание:</strong><br>Получи список L&F через UIManager.getInstalledLookAndFeels(), выведи имя и класс каждого стиля</p>',
         'UIManager-getInstalledLookAndFeels',
-        '', 589, 20.0, 0.0, 'UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();
+        '', 456, 20.0, 0.0, 'UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();
 for (UIManager.LookAndFeelInfo laf : lafs) {
     System.out.println(laf.getName() + ": " + laf.getClassName());
 }');
 
 INSERT INTO documentation (id, text)
-VALUES (590, '<h2>🎮 Урок 52.5 — Look and Feel-мастер: Установи кастомный L&F!</h2>
+VALUES (457, '<h2>🎮 Look and Feel-мастер: Установи кастомный L&F!</h2>
 
 <p><strong>Привет, мастер кастомизации!</strong> 🎨 Сегодня ты установишь кастомный Look and Feel — это как свой стиль в игре!</p>
 
@@ -268,10 +268,10 @@ VALUES (590, '<h2>🎮 Урок 52.5 — Look and Feel-мастер: Устан�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (590, 52, 5, 'Look and Feel-мастер: установи кастомный L&F',
+VALUES (457, 52, 5, 'Look and Feel-мастер: установи кастомный L&F',
         '<p><strong>Задание:</strong><br>Установи кастомный L&F через UIManager.setLookAndFeel("com.example.CustomLookAndFeel"), обнови компоненты</p>',
         'UIManager-SwingUtilities',
-        '', 590, 22.0, 0.0, 'try {
+        '', 457, 22.0, 0.0, 'try {
     UIManager.setLookAndFeel("com.example.CustomLookAndFeel");
     SwingUtilities.updateComponentTreeUI(frame);
 } catch (Exception e) {

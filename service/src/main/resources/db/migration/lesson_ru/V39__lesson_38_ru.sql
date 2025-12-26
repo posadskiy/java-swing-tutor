@@ -13,7 +13,7 @@ VALUES (38, 38, 'FlowLayout - Компоновка в ряд', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (67, '<h2>🎮 Урок 38.1 — FlowLayout-новичок: Размести компоненты в ряд!</h2>
+VALUES (317, '<h2>🎮 FlowLayout-новичок: Размести компоненты в ряд!</h2>
 
 <p><strong>Привет, мастер рядов!</strong> ➡️ Сегодня ты используешь <code>FlowLayout</code> — это как выстраивание предметов в ряд в игре! Компоненты располагаются друг за другом и переносятся на новую строку!</p>
 
@@ -58,10 +58,10 @@ VALUES (67, '<h2>🎮 Урок 38.1 — FlowLayout-новичок: Размес�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (67, 38, 1, 'FlowLayout-новичок: размести компоненты в ряд',
+VALUES (317, 38, 1, 'FlowLayout-новичок: размести компоненты в ряд',
         '<p><strong>Задание:</strong><br>Установи FlowLayout и добавь три кнопки</p>',
         'FlowLayout-add',
-        '', 67, 16.0, 0.0, 'setLayout(new FlowLayout());
+        '', 317, 16.0, 0.0, 'setLayout(new FlowLayout());
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 JButton button3 = new JButton("Кнопка 3");
@@ -69,7 +69,7 @@ add(button1);
 add(button2);
 add(button3);');
 INSERT INTO documentation (id, text)
-VALUES (146, '<h2>🎮 Урок 38.2 — Пункт меню-мастер: Добавь акселератор!</h2>
+VALUES (318, '<h2>🎮 Пункт меню-мастер: Добавь акселератор!</h2>
 
 <p><strong>Привет, мастер акселераторов!</strong> 📋 Сегодня ты добавишь акселератор к <code>JMenuItem</code> — это как горячая клавиша в игре! Можно выполнить действие через Ctrl+клавиша!</p>
 
@@ -112,10 +112,10 @@ VALUES (146, '<h2>🎮 Урок 38.2 — Пункт меню-мастер: До�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (146, 38, 2, 'Пункт меню-мастер: добавь акселератор',
+VALUES (318, 38, 2, 'Пункт меню-мастер: добавь акселератор',
         '<p><strong>Задание:</strong><br>Создай KeyStroke для Ctrl+S через getKeyStroke(), установи акселератор через setAccelerator()</p>',
         'JMenuItem-KeyStroke-setAccelerator',
-        '', 146, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 318, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
 KeyStroke stroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
 menuItem.setAccelerator(stroke);
 JMenu fileMenu = new JMenu("Файл");
@@ -124,7 +124,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (178, '<h2>🎮 Урок 38.3 — Пункт меню-мастер: Включи и выключи пункт!</h2>
+VALUES (319, '<h2>🎮 Пункт меню-мастер: Включи и выключи пункт!</h2>
 
 <p><strong>Привет, мастер управления!</strong> 📋 Сегодня ты научишься включать и выключать <code>JMenuItem</code> — это как активация команд в игре! Можно сделать пункт недоступным!</p>
 
@@ -168,10 +168,10 @@ VALUES (178, '<h2>🎮 Урок 38.3 — Пункт меню-мастер: Вк�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (178, 38, 3, 'Пункт меню-мастер: включи и выключи пункт',
+VALUES (319, 38, 3, 'Пункт меню-мастер: включи и выключи пункт',
         '<p><strong>Задание:</strong><br>Выключи пункт через setEnabled(false), затем включи через setEnabled(true)</p>',
         'JMenuItem-setEnabled',
-        '', 178, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Пункт");
+        '', 319, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Пункт");
 menuItem.setEnabled(false);
 menuItem.setEnabled(true);
 JMenu menu = new JMenu("Файл");
@@ -180,7 +180,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (229, '<h2>🎮 Урок 38.4 — Пункт меню-мастер: Добавь подсказку!</h2>
+VALUES (320, '<h2>🎮 Пункт меню-мастер: Добавь подсказку!</h2>
 
 <p><strong>Привет, мастер подсказок!</strong> 📋 Сегодня ты добавишь подсказку к <code>JMenuItem</code> — это как всплывающая подсказка в игре! Можно показать дополнительную информацию!</p>
 
@@ -221,10 +221,10 @@ VALUES (229, '<h2>🎮 Урок 38.4 — Пункт меню-мастер: До�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (229, 38, 4, 'Пункт меню-мастер: добавь подсказку',
+VALUES (320, 38, 4, 'Пункт меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Установи подсказку "Сохранить документ" через setToolTipText()</p>',
         'JMenuItem-setToolTipText',
-        '', 229, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 320, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
 menuItem.setToolTipText("Сохранить документ");
 JMenu fileMenu = new JMenu("Файл");
 fileMenu.add(menuItem);
@@ -232,7 +232,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (482, '<h2>🎮 Урок 38.4 — Радиокнопка-пункт меню-мастер: Добавь подсказку!</h2>
+VALUES (324, '<h2>🎮 Радиокнопка-пункт меню-мастер: Добавь подсказку!</h2>
 
 <p><strong>Привет, мастер подсказок!</strong> 🔘 Сегодня ты добавишь подсказку в <code>JRadioButtonMenuItem</code> — это как помощь в игре!</p>
 
@@ -273,10 +273,10 @@ VALUES (482, '<h2>🎮 Урок 38.4 — Радиокнопка-пункт ме�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (482, 38, 4, 'Радиокнопка-пункт меню-мастер: добавь подсказку',
+VALUES (324, 38, 4, 'Радиокнопка-пункт меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Установи подсказку "Выбрать тему" через setToolTipText()</p>',
         'JRadioButtonMenuItem-setToolTipText',
-        '', 482, 21.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Тема");
+        '', 324, 21.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Тема");
 radioButtonMenuItem.setToolTipText("Выбрать тему");
 JMenu viewMenu = new JMenu("Вид");
 viewMenu.add(radioButtonMenuItem);
@@ -284,7 +284,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (280, '<h2>🎮 Урок 38.5 — Пункт меню-мастер: Добавь акселератор!</h2>
+VALUES (321, '<h2>🎮 Пункт меню-мастер: Добавь акселератор!</h2>
 
 <p><strong>Привет, мастер горячих клавиш!</strong> 📋 Сегодня ты добавишь акселератор к <code>JMenuItem</code> — это как быстрая клавиша в игре!</p>
 
@@ -328,10 +328,10 @@ VALUES (280, '<h2>🎮 Урок 38.5 — Пункт меню-мастер: До�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (280, 38, 5, 'Пункт меню-мастер: добавь акселератор',
+VALUES (321, 38, 5, 'Пункт меню-мастер: добавь акселератор',
         '<p><strong>Задание:</strong><br>Создай KeyStroke для Ctrl+S через getKeyStroke(), установи через setAccelerator()</p>',
         'JMenuItem-setAccelerator-KeyStroke',
-        '', 280, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 321, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
 KeyStroke keyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
 menuItem.setAccelerator(keyStroke);
 JMenu fileMenu = new JMenu("Файл");
@@ -340,7 +340,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (330, '<h2>🎮 Урок 38.6 — Пункт меню-мастер: Добавь иконку!</h2>
+VALUES (322, '<h2>🎮 Пункт меню-мастер: Добавь иконку!</h2>
 
 <p><strong>Привет, мастер иконок!</strong> 📋 Сегодня ты добавишь иконку к <code>JMenuItem</code> — это как визуальный элемент в игре!</p>
 
@@ -381,10 +381,10 @@ VALUES (330, '<h2>🎮 Урок 38.6 — Пункт меню-мастер: До�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (330, 38, 6, 'Пункт меню-мастер: добавь иконку',
+VALUES (322, 38, 6, 'Пункт меню-мастер: добавь иконку',
         '<p><strong>Задание:</strong><br>Установи иконку через setIcon() с ImageIcon</p>',
         'JMenuItem-setIcon-ImageIcon',
-        '', 330, 22.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 322, 22.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
 menuItem.setIcon(new ImageIcon("icon.png"));
 JMenu fileMenu = new JMenu("Файл");
 fileMenu.add(menuItem);
@@ -392,7 +392,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (382, '<h2>🎮 Урок 38.6 — Радио-меню-мастер: Установи команду действия!</h2>
+VALUES (323, '<h2>🎮 Радио-меню-мастер: Установи команду действия!</h2>
 
 <p><strong>Привет, мастер команд!</strong> 🔘 Сегодня ты установишь команду действия к <code>JRadioButtonMenuItem</code> — это как идентификация в игре!</p>
 
@@ -439,10 +439,10 @@ VALUES (382, '<h2>🎮 Урок 38.6 — Радио-меню-мастер: Ус�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (382, 38, 6, 'Радио-меню-мастер: установи команду действия',
+VALUES (323, 38, 6, 'Радио-меню-мастер: установи команду действия',
         '<p><strong>Задание:</strong><br>Установи команду "RADIO" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
         'JRadioButtonMenuItem-setActionCommand-getActionCommand',
-        '', 382, 24.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Тема");
+        '', 323, 24.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Тема");
 radioButtonMenuItem.setActionCommand("RADIO");
 radioButtonMenuItem.addActionListener(e -> {
     String cmd = e.getActionCommand();

@@ -13,7 +13,7 @@ VALUES (16, 16, 'Панели (JPanel)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (43, '<h2>🎮 Урок 16.1 — Панель-новичок: Создай контейнер для компонентов!</h2>
+VALUES (129, '<h2>🎮 Панель-новичок: Создай контейнер для компонентов!</h2>
 
 <p><strong>Привет, мастер компоновки!</strong> 📦 Сегодня ты создашь <code>JPanel</code> — это как контейнер в игре! В него можно складывать другие компоненты и организовывать интерфейс!</p>
 
@@ -58,15 +58,15 @@ VALUES (43, '<h2>🎮 Урок 16.1 — Панель-новичок: Созда�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (43, 16, 1, 'Панель-новичок: создай контейнер для компонентов',
+VALUES (129, 16, 1, 'Панель-новичок: создай контейнер для компонентов',
         '<p><strong>Задание:</strong><br>Создай панель, добавь на неё кнопку и добавь панель на форму</p>',
         'JPanel-add',
-        '', 43, 12.0, 0.0, 'JPanel panel = new JPanel();
+        '', 129, 12.0, 0.0, 'JPanel panel = new JPanel();
 JButton button = new JButton("Кнопка");
 panel.add(button);
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (134, '<h2>🎮 Урок 16.1 — Спиннер-новичок: Создай спиннер с моделью!</h2>
+VALUES (130, '<h2>🎮 Спиннер-новичок: Создай спиннер с моделью!</h2>
 
 <p><strong>Привет, мастер спиннеров!</strong> 🔢 Сегодня ты создашь <code>JSpinner</code> с моделью — это как счётчик в игре! Можно увеличивать и уменьшать значение!</p>
 
@@ -113,14 +113,14 @@ VALUES (134, '<h2>🎮 Урок 16.1 — Спиннер-новичок: Созд
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (134, 16, 1, 'Спиннер-новичок: создай спиннер с моделью',
+VALUES (130, 16, 1, 'Спиннер-новичок: создай спиннер с моделью',
         '<p><strong>Задание:</strong><br>Создай SpinnerNumberModel со значением 10, min 0, max 100, step 1, создай JSpinner из модели, добавь на форму</p>',
         'JSpinner-SpinnerNumberModel-add',
-        '', 134, 22.0, 0.0, 'SpinnerNumberModel model = new SpinnerNumberModel(10, 0, 100, 1);
+        '', 130, 22.0, 0.0, 'SpinnerNumberModel model = new SpinnerNumberModel(10, 0, 100, 1);
 JSpinner spinner = new JSpinner(model);
 add(spinner);');
 INSERT INTO documentation (id, text)
-VALUES (44, '<h2>🎮 Урок 16.2 — Менеджер компоновки: Управляй расположением!</h2>
+VALUES (131, '<h2>🎮 Менеджер компоновки: Управляй расположением!</h2>
 
 <p><strong>Мастер расположения, привет!</strong> 📐 Пора научиться управлять расположением компонентов! Layout-менеджер — это как система координат в игре. Он определяет, где будут компоненты!</p>
 
@@ -170,10 +170,10 @@ VALUES (44, '<h2>🎮 Урок 16.2 — Менеджер компоновки: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (44, 16, 2, 'Менеджер компоновки: управляй расположением',
+VALUES (131, 16, 2, 'Менеджер компоновки: управляй расположением',
         '<p><strong>Задание:</strong><br>Создай панель, установи FlowLayout, добавь две кнопки и добавь панель на форму</p>',
         'JPanel-setLayout-FlowLayout-add',
-        '', 44, 18.0, 0.0, 'JPanel panel = new JPanel();
+        '', 131, 18.0, 0.0, 'JPanel panel = new JPanel();
 panel.setLayout(new FlowLayout());
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
@@ -181,7 +181,7 @@ panel.add(button1);
 panel.add(button2);
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (165, '<h2>🎮 Урок 16.2 — Спиннер-мастер: Создай спиннер для дат!</h2>
+VALUES (132, '<h2>🎮 Спиннер-мастер: Создай спиннер для дат!</h2>
 
 <p><strong>Привет, мастер дат!</strong> 🔢 Сегодня ты создашь спиннер для дат через <code>SpinnerDateModel</code> — это как выбор даты в игре! Можно выбирать дату пошагово!</p>
 
@@ -229,16 +229,16 @@ spinner.setEditor(editor);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (165, 16, 2, 'Спиннер-мастер: создай спиннер для дат',
+VALUES (132, 16, 2, 'Спиннер-мастер: создай спиннер для дат',
         '<p><strong>Задание:</strong><br>Создай SpinnerDateModel, создай JSpinner, создай DateEditor с форматом "dd/MM/yyyy", установи редактор</p>',
         'JSpinner-SpinnerDateModel-DateEditor-setEditor',
-        '', 165, 26.0, 0.0, 'SpinnerDateModel model = new SpinnerDateModel();
+        '', 132, 26.0, 0.0, 'SpinnerDateModel model = new SpinnerDateModel();
 JSpinner spinner = new JSpinner(model);
 JSpinner.DateEditor editor = new JSpinner.DateEditor(spinner, "dd/MM/yyyy");
 spinner.setEditor(editor);
 add(spinner);');
 INSERT INTO documentation (id, text)
-VALUES (216, '<h2>🎮 Урок 16.3 — Спиннер-мастер: Создай спиннер со списком!</h2>
+VALUES (133, '<h2>🎮 Спиннер-мастер: Создай спиннер со списком!</h2>
 
 <p><strong>Привет, мастер списков!</strong> 🔢 Сегодня ты создашь спиннер со списком через <code>SpinnerListModel</code> — это как выбор из списка в игре! Можно выбрать значение из списка!</p>
 
@@ -285,15 +285,15 @@ VALUES (216, '<h2>🎮 Урок 16.3 — Спиннер-мастер: Созда
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (216, 16, 3, 'Спиннер-мастер: создай спиннер со списком',
+VALUES (133, 16, 3, 'Спиннер-мастер: создай спиннер со списком',
         '<p><strong>Задание:</strong><br>Создай массив строк, создай SpinnerListModel, создай JSpinner с моделью</p>',
         'JSpinner-SpinnerListModel',
-        '', 216, 25.0, 0.0, 'String[] values = {"Январь", "Февраль", "Март"};
+        '', 133, 25.0, 0.0, 'String[] values = {"Январь", "Февраль", "Март"};
 SpinnerListModel model = new SpinnerListModel(values);
 JSpinner spinner = new JSpinner(model);
 add(spinner);');
 INSERT INTO documentation (id, text)
-VALUES (255, '<h2>🎮 Урок 16.4 — Спиннер-мастер: Создай спиннер для чисел!</h2>
+VALUES (134, '<h2>🎮 Спиннер-мастер: Создай спиннер для чисел!</h2>
 
 <p><strong>Привет, мастер чисел!</strong> 🔢 Сегодня ты создашь спиннер для чисел через <code>SpinnerNumberModel</code> — это как выбор чисел в игре!</p>
 
@@ -337,14 +337,14 @@ VALUES (255, '<h2>🎮 Урок 16.4 — Спиннер-мастер: Созда
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (255, 16, 4, 'Спиннер-мастер: создай спиннер для чисел',
+VALUES (134, 16, 4, 'Спиннер-мастер: создай спиннер для чисел',
         '<p><strong>Задание:</strong><br>Создай SpinnerNumberModel с начальным 0, min 0, max 100, шаг 1, создай JSpinner с моделью</p>',
         'JSpinner-SpinnerNumberModel',
-        '', 255, 26.0, 0.0, 'SpinnerNumberModel model = new SpinnerNumberModel(0, 0, 100, 1);
+        '', 134, 26.0, 0.0, 'SpinnerNumberModel model = new SpinnerNumberModel(0, 0, 100, 1);
 JSpinner spinner = new JSpinner(model);
 add(spinner);');
 INSERT INTO documentation (id, text)
-VALUES (267, '<h2>🎮 Урок 16.5 — Спиннер-мастер: Обрабатывай изменения!</h2>
+VALUES (135, '<h2>🎮 Спиннер-мастер: Обрабатывай изменения!</h2>
 
 <p><strong>Привет, мастер обработки!</strong> 🔢 Сегодня ты обработаешь изменения в <code>JSpinner</code> — это как реакция на изменение в игре!</p>
 
@@ -388,10 +388,10 @@ VALUES (267, '<h2>🎮 Урок 16.5 — Спиннер-мастер: Обраб
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (267, 16, 5, 'Спиннер-мастер: обрабатывай изменения',
+VALUES (135, 16, 5, 'Спиннер-мастер: обрабатывай изменения',
         '<p><strong>Задание:</strong><br>Добавь ChangeListener, получи значение через getValue(), выведи его</p>',
         'JSpinner-addChangeListener-getValue',
-        '', 267, 24.0, 0.0, 'JSpinner spinner = new JSpinner();
+        '', 135, 24.0, 0.0, 'JSpinner spinner = new JSpinner();
 spinner.addChangeListener(e -> {
     Object value = spinner.getValue();
     System.out.println("Значение: " + value);
@@ -399,7 +399,7 @@ spinner.addChangeListener(e -> {
 add(spinner);');
 
 INSERT INTO documentation (id, text)
-VALUES (317, '<h2>🎮 Урок 16.6 — Спиннер-мастер: Создай спиннер для дат!</h2>
+VALUES (136, '<h2>🎮 Спиннер-мастер: Создай спиннер для дат!</h2>
 
 <p><strong>Привет, мастер дат!</strong> 🔢 Сегодня ты создашь спиннер для дат через <code>SpinnerDateModel</code> — это как выбор дат в игре!</p>
 
@@ -447,16 +447,16 @@ spinner.setEditor(editor);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (317, 16, 6, 'Спиннер-мастер: создай спиннер для дат',
+VALUES (136, 16, 6, 'Спиннер-мастер: создай спиннер для дат',
         '<p><strong>Задание:</strong><br>Создай SpinnerDateModel, создай JSpinner с моделью, создай DateEditor с форматом "dd.MM.yyyy", установи через setEditor()</p>',
         'JSpinner-SpinnerDateModel-DateEditor',
-        '', 317, 27.0, 0.0, 'SpinnerDateModel model = new SpinnerDateModel();
+        '', 136, 27.0, 0.0, 'SpinnerDateModel model = new SpinnerDateModel();
 JSpinner spinner = new JSpinner(model);
 JSpinner.DateEditor editor = new JSpinner.DateEditor(spinner, "dd.MM.yyyy");
 spinner.setEditor(editor);
 add(spinner);');
 INSERT INTO documentation (id, text)
-VALUES (367, '<h2>🎮 Урок 16.8 — Спиннер-мастер: Создай кастомный форматтер!</h2>
+VALUES (137, '<h2>🎮 Спиннер-мастер: Создай кастомный форматтер!</h2>
 
 <p><strong>Привет, мастер форматирования!</strong> 🔢 Сегодня ты создашь кастомный форматтер для <code>JSpinner</code> — это как кастомизация в игре!</p>
 
@@ -500,15 +500,15 @@ VALUES (367, '<h2>🎮 Урок 16.8 — Спиннер-мастер: Созда
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (367, 16, 8, 'Спиннер-мастер: создай кастомный форматтер',
+VALUES (137, 16, 8, 'Спиннер-мастер: создай кастомный форматтер',
         '<p><strong>Задание:</strong><br>Создай NumberEditor с форматом "#,##0.00", установи через setEditor()</p>',
         'JSpinner-setEditor-NumberEditor',
-        '', 367, 26.0, 0.0, 'JSpinner spinner = new JSpinner();
+        '', 137, 26.0, 0.0, 'JSpinner spinner = new JSpinner();
 JSpinner.NumberEditor editor = new JSpinner.NumberEditor(spinner, "#,##0.00");
 spinner.setEditor(editor);
 add(spinner);');
 INSERT INTO documentation (id, text)
-VALUES (415, '<h2>🎮 Урок 16.9 — Спиннер-мастер: Установи шаг!</h2>
+VALUES (138, '<h2>🎮 Спиннер-мастер: Установи шаг!</h2>
 
 <p><strong>Привет, мастер шагов!</strong> 🔢 Сегодня ты установишь шаг в <code>JSpinner</code> — это как приращение в игре!</p>
 
@@ -552,15 +552,15 @@ VALUES (415, '<h2>🎮 Урок 16.9 — Спиннер-мастер: Устан
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (415, 16, 9, 'Спиннер-мастер: установи шаг',
+VALUES (138, 16, 9, 'Спиннер-мастер: установи шаг',
         '<p><strong>Задание:</strong><br>Создай SpinnerNumberModel(0, 0, 100, 5), установи через setModel()</p>',
         'JSpinner-setModel-SpinnerNumberModel',
-        '', 415, 24.0, 0.0, 'JSpinner spinner = new JSpinner();
+        '', 138, 24.0, 0.0, 'JSpinner spinner = new JSpinner();
 SpinnerNumberModel model = new SpinnerNumberModel(0, 0, 100, 5);
 spinner.setModel(model);
 add(spinner);');
 INSERT INTO documentation (id, text)
-VALUES (467, '<h2>🎮 Урок 16.10 — Спиннер-мастер: Установи значение!</h2>
+VALUES (139, '<h2>🎮 Спиннер-мастер: Установи значение!</h2>
 
 <p><strong>Привет, мастер значений!</strong> 🔢 Сегодня ты установишь значение в <code>JSpinner</code> — это как установка в игре!</p>
 
@@ -601,14 +601,14 @@ VALUES (467, '<h2>🎮 Урок 16.10 — Спиннер-мастер: Уста�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (467, 16, 10, 'Спиннер-мастер: установи значение',
+VALUES (139, 16, 10, 'Спиннер-мастер: установи значение',
         '<p><strong>Задание:</strong><br>Установи значение 50 через setValue()</p>',
         'JSpinner-setValue',
-        '', 467, 21.0, 0.0, 'JSpinner spinner = new JSpinner();
+        '', 139, 21.0, 0.0, 'JSpinner spinner = new JSpinner();
 spinner.setValue(50);
 add(spinner);');
 INSERT INTO documentation (id, text)
-VALUES (517, '<h2>🎮 Урок 16.11 — Спиннер-мастер: Получи редактор!</h2>
+VALUES (140, '<h2>🎮 Спиннер-мастер: Получи редактор!</h2>
 
 <p><strong>Привет, мастер редакторов!</strong> 🔢 Сегодня ты получишь редактор в <code>JSpinner</code> — это как доступ в игре!</p>
 
@@ -652,10 +652,10 @@ VALUES (517, '<h2>🎮 Урок 16.11 — Спиннер-мастер: Полу�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (517, 16, 11, 'Спиннер-мастер: получи редактор',
+VALUES (140, 16, 11, 'Спиннер-мастер: получи редактор',
         '<p><strong>Задание:</strong><br>Получи редактор через getEditor(), приведи к DefaultEditor, получи текстовое поле через getTextField()</p>',
         'JSpinner-getEditor-DefaultEditor',
-        '', 517, 25.0, 0.0, 'JSpinner spinner = new JSpinner();
+        '', 140, 25.0, 0.0, 'JSpinner spinner = new JSpinner();
 JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) spinner.getEditor();
 JTextField field = editor.getTextField();
 add(spinner);');

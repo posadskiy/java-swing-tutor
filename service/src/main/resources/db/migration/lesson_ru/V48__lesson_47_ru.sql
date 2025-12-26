@@ -13,7 +13,7 @@ VALUES (47, 47, 'KeyListener - Обработка клавиатуры', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (76, '<h2>🎮 Урок 47.1 — KeyListener-новичок: Реагируй на нажатия клавиш!</h2>
+VALUES (421, '<h2>🎮 KeyListener-новичок: Реагируй на нажатия клавиш!</h2>
 
 <p><strong>Привет, мастер клавиатуры!</strong> ⌨️ Сегодня ты создашь <code>KeyListener</code> — это как реакция на нажатия клавиш в игре! Можно обрабатывать любые нажатия!</p>
 
@@ -67,10 +67,10 @@ VALUES (76, '<h2>🎮 Урок 47.1 — KeyListener-новичок: Реагир
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (76, 47, 1, 'KeyListener-новичок: реагируй на нажатия клавиш',
+VALUES (421, 47, 1, 'KeyListener-новичок: реагируй на нажатия клавиш',
         '<p><strong>Задание:</strong><br>Создай KeyListener, обработай нажатие Enter и добавь слушатель к компоненту</p>',
         'KeyListener-addKeyListener',
-        '', 76, 25.0, 0.0, 'KeyListener listener = new KeyListener() {
+        '', 421, 25.0, 0.0, 'KeyListener listener = new KeyListener() {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -86,7 +86,7 @@ addKeyListener(listener);
 setFocusable(true);
 requestFocus();');
 INSERT INTO documentation (id, text)
-VALUES (96, '<h2>🎮 Урок 47.2 — KeyListener-мастер: Обрабатывай комбинации клавиш!</h2>
+VALUES (422, '<h2>🎮 KeyListener-мастер: Обрабатывай комбинации клавиш!</h2>
 
 <p><strong>Привет, мастер комбинаций!</strong> ⌨️ Сегодня ты научишься обрабатывать комбинации клавиш через <code>KeyListener</code> — это как горячие клавиши в игре! Можно обрабатывать Ctrl+C, Shift+Enter и другие комбинации!</p>
 
@@ -134,10 +134,10 @@ VALUES (96, '<h2>🎮 Урок 47.2 — KeyListener-мастер: Обрабат
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (96, 47, 2, 'KeyListener-мастер: обрабатывай комбинации клавиш',
+VALUES (422, 47, 2, 'KeyListener-мастер: обрабатывай комбинации клавиш',
         '<p><strong>Задание:</strong><br>В keyPressed проверь isControlDown() и VK_C, выведи сообщение при нажатии Ctrl+C</p>',
         'KeyListener-isControlDown-getKeyCode',
-        '', 96, 26.0, 0.0, 'JPanel panel = new JPanel();
+        '', 422, 26.0, 0.0, 'JPanel panel = new JPanel();
 panel.addKeyListener(new KeyListener() {
     @Override
     public void keyPressed(KeyEvent e) {
@@ -154,7 +154,7 @@ panel.setFocusable(true);
 panel.requestFocus();
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (193, '<h2>🎮 Урок 47.2 — BoxLayout-мастер: Добавь клей!</h2>
+VALUES (424, '<h2>🎮 BoxLayout-мастер: Добавь клей!</h2>
 
 <p><strong>Привет, мастер клея!</strong> 📦 Сегодня ты добавишь клей в <code>BoxLayout</code> — это как растягивающийся элемент в игре! Можно создать пространство между компонентами!</p>
 
@@ -200,10 +200,10 @@ add(button2);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (193, 47, 2, 'BoxLayout-мастер: добавь клей',
+VALUES (424, 47, 2, 'BoxLayout-мастер: добавь клей',
         '<p><strong>Задание:</strong><br>Создай горизонтальный клей через createHorizontalGlue(), добавь компоненты и клей</p>',
         'BoxLayout-Box-createHorizontalGlue',
-        '', 193, 24.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        '', 424, 24.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 Component glue = Box.createHorizontalGlue();
@@ -211,7 +211,7 @@ add(button1);
 add(glue);
 add(button2);');
 INSERT INTO documentation (id, text)
-VALUES (112, '<h2>🎮 Урок 47.3 — KeyListener-мастер: Обрабатывай отпускание клавиш!</h2>
+VALUES (423, '<h2>🎮 KeyListener-мастер: Обрабатывай отпускание клавиш!</h2>
 
 <p><strong>Привет, мастер отпускания!</strong> ⌨️ Сегодня ты научишься обрабатывать отпускание клавиш через <code>KeyListener</code> — это как реакция на отпускание в игре! Можно реагировать, когда клавиша отпущена!</p>
 
@@ -256,10 +256,10 @@ public void keyReleased(KeyEvent e) {<br>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (112, 47, 3, 'KeyListener-мастер: обрабатывай отпускание клавиш',
+VALUES (423, 47, 3, 'KeyListener-мастер: обрабатывай отпускание клавиш',
         '<p><strong>Задание:</strong><br>Переопредели keyReleased(), обработай отпускание VK_SPACE, выведи сообщение</p>',
         'KeyListener-keyReleased-getKeyCode',
-        '', 112, 24.0, 0.0, 'JPanel panel = new JPanel();
+        '', 423, 24.0, 0.0, 'JPanel panel = new JPanel();
 panel.addKeyListener(new KeyListener() {
     @Override
     public void keyPressed(KeyEvent e) {}
@@ -276,7 +276,7 @@ panel.setFocusable(true);
 panel.requestFocus();
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (241, '<h2>🎮 Урок 47.3 — BoxLayout-мастер: Добавь жёсткую область!</h2>
+VALUES (425, '<h2>🎮 BoxLayout-мастер: Добавь жёсткую область!</h2>
 
 <p><strong>Привет, мастер областей!</strong> 📦 Сегодня ты добавишь жёсткую область в <code>BoxLayout</code> — это как фиксированное пространство в игре!</p>
 
@@ -322,10 +322,10 @@ add(button2);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (241, 47, 3, 'BoxLayout-мастер: добавь жёсткую область',
+VALUES (425, 47, 3, 'BoxLayout-мастер: добавь жёсткую область',
         '<p><strong>Задание:</strong><br>Создай жёсткую область через createRigidArea() с размером 10x10, добавь между компонентами</p>',
         'BoxLayout-Box-createRigidArea',
-        '', 241, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        '', 425, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 Component area = Box.createRigidArea(new Dimension(10, 10));
@@ -333,7 +333,7 @@ add(button1);
 add(area);
 add(button2);');
 INSERT INTO documentation (id, text)
-VALUES (292, '<h2>🎮 Урок 47.4 — BoxLayout-мастер: Добавь распорку!</h2>
+VALUES (426, '<h2>🎮 BoxLayout-мастер: Добавь распорку!</h2>
 
 <p><strong>Привет, мастер распорок!</strong> 📦 Сегодня ты добавишь распорку в <code>BoxLayout</code> — это как фиксированное пространство в игре!</p>
 
@@ -379,10 +379,10 @@ add(button2);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (292, 47, 4, 'BoxLayout-мастер: добавь распорку',
+VALUES (426, 47, 4, 'BoxLayout-мастер: добавь распорку',
         '<p><strong>Задание:</strong><br>Создай горизонтальную распорку через createHorizontalStrut(20), добавь между компонентами</p>',
         'BoxLayout-Box-createHorizontalStrut',
-        '', 292, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        '', 426, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 Component strut = Box.createHorizontalStrut(20);
@@ -390,7 +390,7 @@ add(button1);
 add(strut);
 add(button2);');
 INSERT INTO documentation (id, text)
-VALUES (342, '<h2>🎮 Урок 47.5 — BoxLayout-мастер: Настрой максимальный размер!</h2>
+VALUES (427, '<h2>🎮 BoxLayout-мастер: Настрой максимальный размер!</h2>
 
 <p><strong>Привет, мастер размеров!</strong> 📦 Сегодня ты настроишь максимальный размер в <code>BoxLayout</code> — это как ограничение в игре!</p>
 
@@ -431,15 +431,15 @@ VALUES (342, '<h2>🎮 Урок 47.5 — BoxLayout-мастер: Настрой 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (342, 47, 5, 'BoxLayout-мастер: настрой максимальный размер',
+VALUES (427, 47, 5, 'BoxLayout-мастер: настрой максимальный размер',
         '<p><strong>Задание:</strong><br>Установи максимальный размер 200x100 через setMaximumSize()</p>',
         'BoxLayout-setMaximumSize-Dimension',
-        '', 342, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        '', 427, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 JButton component = new JButton("Кнопка");
 component.setMaximumSize(new Dimension(200, 100));
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (391, '<h2>🎮 Урок 47.6 — BorderLayout-мастер: Установи отступы!</h2>
+VALUES (428, '<h2>🎮 BorderLayout-мастер: Установи отступы!</h2>
 
 <p><strong>Привет, мастер отступов!</strong> 📐 Сегодня ты установишь отступы в <code>BorderLayout</code> — это как расстояние в игре!</p>
 
@@ -480,10 +480,10 @@ VALUES (391, '<h2>🎮 Урок 47.6 — BorderLayout-мастер: Устано
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (391, 47, 6, 'BorderLayout-мастер: установи отступы',
+VALUES (428, 47, 6, 'BorderLayout-мастер: установи отступы',
         '<p><strong>Задание:</strong><br>Создай BorderLayout с отступами 10, 10 через конструктор BorderLayout(10, 10)</p>',
         'BorderLayout-constructor',
-        '', 391, 21.0, 0.0, 'BorderLayout layout = new BorderLayout(10, 10);
+        '', 428, 21.0, 0.0, 'BorderLayout layout = new BorderLayout(10, 10);
 setLayout(layout);
 JButton button = new JButton("Кнопка");
 add(button, BorderLayout.CENTER);');

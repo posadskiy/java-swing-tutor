@@ -13,7 +13,7 @@ VALUES (36, 36, 'Выбор цвета (JColorChooser)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (72, '<h2>🎮 Урок 36.1 — Выбор цвета-новичок: Открой палитру цветов!</h2>
+VALUES (301, '<h2>🎮 Выбор цвета-новичок: Открой палитру цветов!</h2>
 
 <p><strong>Привет, мастер палитры!</strong> 🎨 Сегодня ты создашь <code>JColorChooser</code> — это как палитра красок в игре! Можно выбрать любой цвет из полного спектра!</p>
 
@@ -58,16 +58,16 @@ VALUES (72, '<h2>🎮 Урок 36.1 — Выбор цвета-новичок: О
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (72, 36, 1, 'Выбор цвета-новичок: открой палитру цветов',
+VALUES (301, 36, 1, 'Выбор цвета-новичок: открой палитру цветов',
         '<p><strong>Задание:</strong><br>Покажи диалог выбора цвета с начальным цветом WHITE и используй выбранный цвет</p>',
         'JColorChooser-showDialog',
-        '', 72, 20.0, 0.0, 'JFrame frame = new JFrame();
+        '', 301, 20.0, 0.0, 'JFrame frame = new JFrame();
 Color color = JColorChooser.showDialog(frame, "Выбери цвет", Color.WHITE);
 if (color != null) {
     System.out.println("Выбран цвет: " + color);
 }');
 INSERT INTO documentation (id, text)
-VALUES (89, '<h2>🎮 Урок 36.2 — Выбор цвета-мастер: Создай кастомный диалог!</h2>
+VALUES (302, '<h2>🎮 Выбор цвета-мастер: Создай кастомный диалог!</h2>
 
 <p><strong>Привет, мастер кастомизации!</strong> 🎨 Сегодня ты создашь кастомный диалог выбора цвета через <code>JColorChooser</code> — это как собственная палитра в игре! Можно создать диалог с нужными настройками!</p>
 
@@ -120,10 +120,10 @@ VALUES (89, '<h2>🎮 Урок 36.2 — Выбор цвета-мастер: Со
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (89, 36, 2, 'Выбор цвета-мастер: создай кастомный диалог',
+VALUES (302, 36, 2, 'Выбор цвета-мастер: создай кастомный диалог',
         '<p><strong>Задание:</strong><br>Создай JColorChooser с начальным цветом WHITE, создай диалог через createDialog, покажи диалог</p>',
         'JColorChooser-createDialog-setVisible',
-        '', 89, 27.0, 0.0, 'JFrame frame = new JFrame();
+        '', 302, 27.0, 0.0, 'JFrame frame = new JFrame();
 JColorChooser colorChooser = new JColorChooser(Color.WHITE);
 JDialog dialog = JColorChooser.createDialog(
     frame,
@@ -135,7 +135,7 @@ JDialog dialog = JColorChooser.createDialog(
 );
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (151, '<h2>🎮 Урок 36.2 — BorderLayout-мастер: Используй все регионы!</h2>
+VALUES (304, '<h2>🎮 BorderLayout-мастер: Используй все регионы!</h2>
 
 <p><strong>Привет, мастер регионов!</strong> 📐 Сегодня ты используешь все регионы <code>BorderLayout</code> — это как размещение элементов в игре! Можно использовать все пять регионов!</p>
 
@@ -183,10 +183,10 @@ add(panelCenter, BorderLayout.CENTER);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (151, 36, 2, 'BorderLayout-мастер: используй все регионы',
+VALUES (304, 36, 2, 'BorderLayout-мастер: используй все регионы',
         '<p><strong>Задание:</strong><br>Установи BorderLayout, добавь компоненты во все пять регионов (NORTH, SOUTH, EAST, WEST, CENTER)</p>',
         'BorderLayout-add',
-        '', 151, 26.0, 0.0, 'setLayout(new BorderLayout());
+        '', 304, 26.0, 0.0, 'setLayout(new BorderLayout());
 JButton buttonNorth = new JButton("Север");
 JButton buttonSouth = new JButton("Юг");
 JButton buttonEast = new JButton("Восток");
@@ -198,7 +198,7 @@ add(buttonEast, BorderLayout.EAST);
 add(buttonWest, BorderLayout.WEST);
 add(panelCenter, BorderLayout.CENTER);');
 INSERT INTO documentation (id, text)
-VALUES (108, '<h2>🎮 Урок 36.3 — Выбор цвета-мастер: Настрой режимы выбора!</h2>
+VALUES (303, '<h2>🎮 Выбор цвета-мастер: Настрой режимы выбора!</h2>
 
 <p><strong>Привет, мастер режимов!</strong> 🎨 Сегодня ты настроишь режимы выбора цвета в <code>JColorChooser</code> — это как разные способы выбора в игре! Можно выбрать цвет из палитры, по HSB или RGB!</p>
 
@@ -241,17 +241,17 @@ VALUES (108, '<h2>🎮 Урок 36.3 — Выбор цвета-мастер: Н�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (108, 36, 3, 'Выбор цвета-мастер: настрой режимы выбора',
+VALUES (303, 36, 3, 'Выбор цвета-мастер: настрой режимы выбора',
         '<p><strong>Задание:</strong><br>Получи стандартные панели через getDefaultChooserPanels(), установи их в colorChooser</p>',
         'JColorChooser-ColorChooserComponentFactory-setChooserPanels',
-        '', 108, 28.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
+        '', 303, 28.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 AbstractColorChooserPanel[] panels = ColorChooserComponentFactory.getDefaultChooserPanels();
 colorChooser.setChooserPanels(panels);
 JFrame frame = new JFrame();
 JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (189, '<h2>🎮 Урок 36.3 — BorderLayout-мастер: Добавь отступы!</h2>
+VALUES (306, '<h2>🎮 BorderLayout-мастер: Добавь отступы!</h2>
 
 <p><strong>Привет, мастер отступов!</strong> 📐 Сегодня ты добавишь отступы в <code>BorderLayout</code> — это как промежутки между элементами в игре! Можно создать красивые отступы!</p>
 
@@ -299,17 +299,17 @@ layout.setVgap(10);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (189, 36, 3, 'BorderLayout-мастер: добавь отступы',
+VALUES (306, 36, 3, 'BorderLayout-мастер: добавь отступы',
         '<p><strong>Задание:</strong><br>Создай BorderLayout, установи горизонтальный и вертикальный отступы по 10</p>',
         'BorderLayout-setHgap-setVgap',
-        '', 189, 24.0, 0.0, 'BorderLayout layout = new BorderLayout();
+        '', 306, 24.0, 0.0, 'BorderLayout layout = new BorderLayout();
 layout.setHgap(10);
 layout.setVgap(10);
 setLayout(layout);
 JButton button = new JButton("Кнопка");
 add(button, BorderLayout.CENTER);');
 INSERT INTO documentation (id, text)
-VALUES (188, '<h2>🎮 Урок 36.4 — Выбор цвета-мастер: Добавь панель предпросмотра!</h2>
+VALUES (305, '<h2>🎮 Выбор цвета-мастер: Добавь панель предпросмотра!</h2>
 
 <p><strong>Привет, мастер предпросмотра!</strong> 🎨 Сегодня ты добавишь панель предпросмотра в <code>JColorChooser</code> — это как предпросмотр в игре! Можно показать, как будет выглядеть выбранный цвет!</p>
 
@@ -359,10 +359,10 @@ previewPanel.setPreferredSize(new Dimension(100, 50));</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (188, 36, 4, 'Выбор цвета-мастер: добавь панель предпросмотра',
+VALUES (305, 36, 4, 'Выбор цвета-мастер: добавь панель предпросмотра',
         '<p><strong>Задание:</strong><br>Создай JPanel для предпросмотра, установи через setPreviewPanel(), добавь ChangeListener для обновления цвета</p>',
         'JColorChooser-setPreviewPanel-addChangeListener',
-        '', 188, 27.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
+        '', 305, 27.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 JPanel previewPanel = new JPanel();
 previewPanel.setPreferredSize(new Dimension(100, 50));
 colorChooser.setPreviewPanel(previewPanel);
@@ -373,7 +373,7 @@ JFrame frame = new JFrame();
 JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (239, '<h2>🎮 Урок 36.5 — Выбор цвета-мастер: Работай с моделью!</h2>
+VALUES (307, '<h2>🎮 Выбор цвета-мастер: Работай с моделью!</h2>
 
 <p><strong>Привет, мастер моделей!</strong> 🎨 Сегодня ты поработаешь с моделью выбора цвета в <code>JColorChooser</code> — это как управление выбором в игре!</p>
 
@@ -417,17 +417,17 @@ VALUES (239, '<h2>🎮 Урок 36.5 — Выбор цвета-мастер: Р�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (239, 36, 5, 'Выбор цвета-мастер: работай с моделью',
+VALUES (307, 36, 5, 'Выбор цвета-мастер: работай с моделью',
         '<p><strong>Задание:</strong><br>Получи модель через getSelectionModel(), установи цвет RED через setSelectedColor()</p>',
         'JColorChooser-getSelectionModel-setSelectedColor',
-        '', 239, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
+        '', 307, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 ColorSelectionModel model = colorChooser.getSelectionModel();
 model.setSelectedColor(Color.RED);
 JFrame frame = new JFrame();
 JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (290, '<h2>🎮 Урок 36.6 — Выбор цвета-мастер: Получи выбранный цвет!</h2>
+VALUES (308, '<h2>🎮 Выбор цвета-мастер: Получи выбранный цвет!</h2>
 
 <p><strong>Привет, мастер цветов!</strong> 🎨 Сегодня ты получишь выбранный цвет из <code>JColorChooser</code> — это как получение цвета в игре!</p>
 
@@ -473,16 +473,16 @@ VALUES (290, '<h2>🎮 Урок 36.6 — Выбор цвета-мастер: П�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (290, 36, 6, 'Выбор цвета-мастер: получи выбранный цвет',
+VALUES (308, 36, 6, 'Выбор цвета-мастер: получи выбранный цвет',
         '<p><strong>Задание:</strong><br>Покажи диалог через showDialog() с начальным цветом WHITE, проверь результат на null</p>',
         'JColorChooser-showDialog',
-        '', 290, 24.0, 0.0, 'JFrame frame = new JFrame();
+        '', 308, 24.0, 0.0, 'JFrame frame = new JFrame();
 Color color = JColorChooser.showDialog(frame, "Выбери цвет", Color.WHITE);
 if (color != null) {
     System.out.println("Выбран цвет: " + color);
 }');
 INSERT INTO documentation (id, text)
-VALUES (340, '<h2>🎮 Урок 36.7 — Выбор цвета-мастер: Настрой модель цвета!</h2>
+VALUES (309, '<h2>🎮 Выбор цвета-мастер: Настрой модель цвета!</h2>
 
 <p><strong>Привет, мастер моделей!</strong> 🎨 Сегодня ты настроишь модель цвета в <code>JColorChooser</code> — это как настройка в игре!</p>
 
@@ -527,10 +527,10 @@ model.setSelectedColor(Color.RED);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (340, 36, 7, 'Выбор цвета-мастер: настрой модель цвета',
+VALUES (309, 36, 7, 'Выбор цвета-мастер: настрой модель цвета',
         '<p><strong>Задание:</strong><br>Создай DefaultColorSelectionModel, установи цвет RED, установи модель через setColorSelectionModel()</p>',
         'JColorChooser-DefaultColorSelectionModel-setColorSelectionModel',
-        '', 340, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
+        '', 309, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 DefaultColorSelectionModel model = new DefaultColorSelectionModel();
 model.setSelectedColor(Color.RED);
 colorChooser.setColorSelectionModel(model);
@@ -538,7 +538,7 @@ JFrame frame = new JFrame();
 JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (387, '<h2>🎮 Урок 36.9 — Текст-панель-мастер: Вставь иконку!</h2>
+VALUES (310, '<h2>🎮 Текст-панель-мастер: Вставь иконку!</h2>
 
 <p><strong>Привет, мастер форматирования!</strong> 📝 Сегодня ты вставишь иконку в <code>JTextPane</code> — это как вставка изображения в игре!</p>
 
@@ -582,16 +582,16 @@ VALUES (387, '<h2>🎮 Урок 36.9 — Текст-панель-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (387, 36, 9, 'Текст-панель-мастер: вставь иконку',
+VALUES (310, 36, 9, 'Текст-панель-мастер: вставь иконку',
         '<p><strong>Задание:</strong><br>Создай ImageIcon "icon.png", вставь через insertIcon()</p>',
         'JTextPane-insertIcon-ImageIcon',
-        '', 387, 24.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 310, 24.0, 0.0, 'JTextPane textPane = new JTextPane();
 ImageIcon icon = new ImageIcon("icon.png");
 textPane.insertIcon(icon);
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (431, '<h2>🎮 Урок 36.10 — Текст-панель-мастер: Получи стилизованный документ!</h2>
+VALUES (311, '<h2>🎮 Текст-панель-мастер: Получи стилизованный документ!</h2>
 
 <p><strong>Привет, мастер документов!</strong> 📝 Сегодня ты получишь стилизованный документ из <code>JTextPane</code> — это как доступ к документу в игре!</p>
 
@@ -632,15 +632,15 @@ VALUES (431, '<h2>🎮 Урок 36.10 — Текст-панель-мастер: 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (431, 36, 10, 'Текст-панель-мастер: получи стилизованный документ',
+VALUES (311, 36, 10, 'Текст-панель-мастер: получи стилизованный документ',
         '<p><strong>Задание:</strong><br>Получи стилизованный документ через getStyledDocument()</p>',
         'JTextPane-getStyledDocument',
-        '', 431, 24.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 311, 24.0, 0.0, 'JTextPane textPane = new JTextPane();
 StyledDocument doc = textPane.getStyledDocument();
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (487, '<h2>🎮 Урок 36.11 — Текст-панель-мастер: Сделай только для чтения!</h2>
+VALUES (312, '<h2>🎮 Текст-панель-мастер: Сделай только для чтения!</h2>
 
 <p><strong>Привет, мастер защиты!</strong> 📝 Сегодня ты сделаешь текст-панель только для чтения в <code>JTextPane</code> — это как защита в игре!</p>
 
@@ -681,10 +681,10 @@ VALUES (487, '<h2>🎮 Урок 36.11 — Текст-панель-мастер: 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (487, 36, 11, 'Текст-панель-мастер: сделай только для чтения',
+VALUES (312, 36, 11, 'Текст-панель-мастер: сделай только для чтения',
         '<p><strong>Задание:</strong><br>Отключи редактирование через setEditable(false)</p>',
         'JTextPane-setEditable',
-        '', 487, 21.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 312, 21.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setText("Текст для чтения");
 textPane.setEditable(false);
 JScrollPane scrollPane = new JScrollPane(textPane);

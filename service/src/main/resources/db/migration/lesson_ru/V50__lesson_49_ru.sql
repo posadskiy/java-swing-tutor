@@ -13,7 +13,7 @@ VALUES (49, 49, 'ItemListener и ChangeListener - Обработка выбор�
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (570, '<h2>🎮 Урок 49.1 — ItemListener-новичок: Обрабатывай выбор элементов!</h2>
+VALUES (437, '<h2>🎮 ItemListener-новичок: Обрабатывай выбор элементов!</h2>
 
 <p><strong>Привет, мастер выбора!</strong> 🎯 Сегодня ты обработаешь выбор элементов через <code>ItemListener</code> — это как реакция на выбор в игре!</p>
 
@@ -60,10 +60,10 @@ VALUES (570, '<h2>🎮 Урок 49.1 — ItemListener-новичок: Обраб
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (570, 49, 1, 'ItemListener-новичок: обрабатывай выбор элементов',
+VALUES (437, 49, 1, 'ItemListener-новичок: обрабатывай выбор элементов',
         '<p><strong>Задание:</strong><br>Создай чекбокс, добавь ItemListener, проверь getStateChange() == ItemEvent.SELECTED, выведи сообщение</p>',
         'JCheckBox-addItemListener-ItemEvent',
-        '', 570, 18.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Выбрать");
+        '', 437, 18.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Выбрать");
 checkBox.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
         System.out.println("Выбрано!");
@@ -74,7 +74,7 @@ checkBox.addItemListener(e -> {
 add(checkBox);');
 
 INSERT INTO documentation (id, text)
-VALUES (571, '<h2>🎮 Урок 49.2 — ChangeListener-новичок: Обрабатывай изменения!</h2>
+VALUES (438, '<h2>🎮 ChangeListener-новичок: Обрабатывай изменения!</h2>
 
 <p><strong>Привет, мастер изменений!</strong> 🔄 Сегодня ты обработаешь изменения через <code>ChangeListener</code> — это как реакция на изменение в игре!</p>
 
@@ -118,10 +118,10 @@ VALUES (571, '<h2>🎮 Урок 49.2 — ChangeListener-новичок: Обра
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (571, 49, 2, 'ChangeListener-новичок: обрабатывай изменения',
+VALUES (438, 49, 2, 'ChangeListener-новичок: обрабатывай изменения',
         '<p><strong>Задание:</strong><br>Создай слайдер, добавь ChangeListener, получи значение через getValue(), выведи его</p>',
         'JSlider-addChangeListener-getValue',
-        '', 571, 18.0, 0.0, 'JSlider slider = new JSlider(0, 100, 50);
+        '', 438, 18.0, 0.0, 'JSlider slider = new JSlider(0, 100, 50);
 slider.addChangeListener(e -> {
     int value = slider.getValue();
     System.out.println("Значение: " + value);
@@ -129,7 +129,7 @@ slider.addChangeListener(e -> {
 add(slider);');
 
 INSERT INTO documentation (id, text)
-VALUES (572, '<h2>🎮 Урок 49.3 — ItemListener-мастер: Обрабатывай выбор в комбобоксе!</h2>
+VALUES (439, '<h2>🎮 ItemListener-мастер: Обрабатывай выбор в комбобоксе!</h2>
 
 <p><strong>Привет, мастер комбобоксов!</strong> 🎯 Сегодня ты обработаешь выбор в <code>JComboBox</code> через <code>ItemListener</code> — это как реакция на выбор в игре!</p>
 
@@ -175,10 +175,10 @@ VALUES (572, '<h2>🎮 Урок 49.3 — ItemListener-мастер: Обраба
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (572, 49, 3, 'ItemListener-мастер: обрабатывай выбор в комбобоксе',
+VALUES (439, 49, 3, 'ItemListener-мастер: обрабатывай выбор в комбобоксе',
         '<p><strong>Задание:</strong><br>Создай комбобокс с элементами, добавь ItemListener, получи элемент через getItem(), выведи его</p>',
         'JComboBox-addItemListener-ItemEvent',
-        '', 572, 19.0, 0.0, 'JComboBox<String> comboBox = new JComboBox<>(new String[]{"Элемент 1", "Элемент 2"});
+        '', 439, 19.0, 0.0, 'JComboBox<String> comboBox = new JComboBox<>(new String[]{"Элемент 1", "Элемент 2"});
 comboBox.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
         Object item = e.getItem();
@@ -188,7 +188,7 @@ comboBox.addItemListener(e -> {
 add(comboBox);');
 
 INSERT INTO documentation (id, text)
-VALUES (573, '<h2>🎮 Урок 49.4 — ChangeListener-мастер: Обрабатывай изменения в спиннере!</h2>
+VALUES (440, '<h2>🎮 ChangeListener-мастер: Обрабатывай изменения в спиннере!</h2>
 
 <p><strong>Привет, мастер спиннеров!</strong> 🔄 Сегодня ты обработаешь изменения в <code>JSpinner</code> через <code>ChangeListener</code> — это как реакция на изменение в игре!</p>
 
@@ -232,10 +232,10 @@ VALUES (573, '<h2>🎮 Урок 49.4 — ChangeListener-мастер: Обраб
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (573, 49, 4, 'ChangeListener-мастер: обрабатывай изменения в спиннере',
+VALUES (440, 49, 4, 'ChangeListener-мастер: обрабатывай изменения в спиннере',
         '<p><strong>Задание:</strong><br>Создай спиннер, добавь ChangeListener, получи значение через getValue(), выведи его</p>',
         'JSpinner-addChangeListener-getValue',
-        '', 573, 19.0, 0.0, 'JSpinner spinner = new JSpinner(new SpinnerNumberModel(10, 0, 100, 1));
+        '', 440, 19.0, 0.0, 'JSpinner spinner = new JSpinner(new SpinnerNumberModel(10, 0, 100, 1));
 spinner.addChangeListener(e -> {
     Object value = spinner.getValue();
     System.out.println("Значение: " + value);

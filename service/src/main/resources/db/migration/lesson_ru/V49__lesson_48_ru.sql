@@ -13,7 +13,7 @@ VALUES (48, 48, 'FocusListener - Обработка фокуса', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (77, '<h2>🎮 Урок 48.1 — FocusListener-новичок: Отслеживай фокус компонента!</h2>
+VALUES (429, '<h2>🎮 FocusListener-новичок: Отслеживай фокус компонента!</h2>
 
 <p><strong>Привет, мастер фокуса!</strong> 🎯 Сегодня ты создашь <code>FocusListener</code> — это как отслеживание, какой компонент активен! Можно реагировать на получение и потерю фокуса!</p>
 
@@ -65,10 +65,10 @@ VALUES (77, '<h2>🎮 Урок 48.1 — FocusListener-новичок: Отсле
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (77, 48, 1, 'FocusListener-новичок: отслеживай фокус компонента',
+VALUES (429, 48, 1, 'FocusListener-новичок: отслеживай фокус компонента',
         '<p><strong>Задание:</strong><br>Создай FocusListener, обработай получение и потерю фокуса, добавь к текстовому полю</p>',
         'FocusListener-addFocusListener',
-        '', 77, 23.0, 0.0, 'FocusListener listener = new FocusListener() {
+        '', 429, 23.0, 0.0, 'FocusListener listener = new FocusListener() {
     @Override
     public void focusGained(FocusEvent e) {
         System.out.println("Получен фокус!");
@@ -82,7 +82,7 @@ JTextField field = new JTextField();
 field.addFocusListener(listener);
 add(field);');
 INSERT INTO documentation (id, text)
-VALUES (97, '<h2>🎮 Урок 48.2 — FocusListener-мастер: Валидируй при потере фокуса!</h2>
+VALUES (430, '<h2>🎮 FocusListener-мастер: Валидируй при потере фокуса!</h2>
 
 <p><strong>Привет, мастер валидации!</strong> 🎯 Сегодня ты научишься валидировать данные при потере фокуса через <code>FocusListener</code> — это как проверка в игре! Можно проверять корректность ввода!</p>
 
@@ -131,10 +131,10 @@ VALUES (97, '<h2>🎮 Урок 48.2 — FocusListener-мастер: Валиди
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (97, 48, 2, 'FocusListener-мастер: валидируй при потере фокуса',
+VALUES (430, 48, 2, 'FocusListener-мастер: валидируй при потере фокуса',
         '<p><strong>Задание:</strong><br>В focusLost получи текст поля, проверь на пустоту, установи красный фон при ошибке</p>',
         'FocusListener-focusLost-getText-setBackground',
-        '', 97, 26.0, 0.0, 'JTextField textField = new JTextField();
+        '', 430, 26.0, 0.0, 'JTextField textField = new JTextField();
 textField.addFocusListener(new FocusListener() {
     @Override
     public void focusGained(FocusEvent e) {}
@@ -151,7 +151,7 @@ textField.addFocusListener(new FocusListener() {
 });
 add(textField);');
 INSERT INTO documentation (id, text)
-VALUES (194, '<h2>🎮 Урок 48.2 — CardLayout-мастер: Навигируй по картам!</h2>
+VALUES (432, '<h2>🎮 CardLayout-мастер: Навигируй по картам!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🃏 Сегодня ты научишься навигировать по картам в <code>CardLayout</code> — это как переключение экранов в игре! Можно переключаться между картами!</p>
 
@@ -198,10 +198,10 @@ VALUES (194, '<h2>🎮 Урок 48.2 — CardLayout-мастер: Навигир
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (194, 48, 2, 'CardLayout-мастер: навигируй по картам',
+VALUES (432, 48, 2, 'CardLayout-мастер: навигируй по картам',
         '<p><strong>Задание:</strong><br>Получи CardLayout, покажи карту "card1" через show(), затем переключись на следующую через next()</p>',
         'CardLayout-show-next',
-        '', 194, 25.0, 0.0, 'JPanel panel = new JPanel();
+        '', 432, 25.0, 0.0, 'JPanel panel = new JPanel();
 CardLayout layout = new CardLayout();
 panel.setLayout(layout);
 JPanel card1 = new JPanel();
@@ -214,7 +214,7 @@ layout.show(panel, "card1");
 layout.next(panel);
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (113, '<h2>🎮 Урок 48.3 — FocusListener-мастер: Управляй навигацией фокуса!</h2>
+VALUES (431, '<h2>🎮 FocusListener-мастер: Управляй навигацией фокуса!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🎯 Сегодня ты научишься управлять навигацией фокуса через <code>FocusListener</code> — это как переход между полями в игре! Можно контролировать порядок перехода фокуса!</p>
 
@@ -261,16 +261,16 @@ VALUES (113, '<h2>🎮 Урок 48.3 — FocusListener-мастер: Управ�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (113, 48, 3, 'FocusListener-мастер: управляй навигацией фокуса',
+VALUES (431, 48, 3, 'FocusListener-мастер: управляй навигацией фокуса',
         '<p><strong>Задание:</strong><br>Установи setFocusable(true), установи setFocusTraversalKeysEnabled(true), запроси фокус через requestFocus()</p>',
         'Component-setFocusable-setFocusTraversalKeysEnabled-requestFocus',
-        '', 113, 26.0, 0.0, 'JTextField component = new JTextField();
+        '', 431, 26.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.setFocusTraversalKeysEnabled(true);
 component.requestFocus();
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (242, '<h2>🎮 Урок 48.3 — CardLayout-мастер: Переключись на первую и последнюю!</h2>
+VALUES (433, '<h2>🎮 CardLayout-мастер: Переключись на первую и последнюю!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🃏 Сегодня ты переключишься на первую и последнюю карту в <code>CardLayout</code> — это как крайние экраны в игре!</p>
 
@@ -317,10 +317,10 @@ VALUES (242, '<h2>🎮 Урок 48.3 — CardLayout-мастер: Переклю
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (242, 48, 3, 'CardLayout-мастер: переключись на первую и последнюю',
+VALUES (433, 48, 3, 'CardLayout-мастер: переключись на первую и последнюю',
         '<p><strong>Задание:</strong><br>Получи CardLayout, переключись на первую через first(), затем на последнюю через last()</p>',
         'CardLayout-first-last',
-        '', 242, 24.0, 0.0, 'JPanel panel = new JPanel();
+        '', 433, 24.0, 0.0, 'JPanel panel = new JPanel();
 CardLayout layout = new CardLayout();
 panel.setLayout(layout);
 JPanel card1 = new JPanel();
@@ -333,7 +333,7 @@ layout.first(panel);
 layout.last(panel);
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (293, '<h2>🎮 Урок 48.4 — CardLayout-мастер: Получи количество карт!</h2>
+VALUES (434, '<h2>🎮 CardLayout-мастер: Получи количество карт!</h2>
 
 <p><strong>Привет, мастер подсчёта!</strong> 🃏 Сегодня ты получишь количество карт в <code>CardLayout</code> — это как подсчёт в игре!</p>
 
@@ -377,10 +377,10 @@ VALUES (293, '<h2>🎮 Урок 48.4 — CardLayout-мастер: Получи �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (293, 48, 4, 'CardLayout-мастер: получи количество карт',
+VALUES (434, 48, 4, 'CardLayout-мастер: получи количество карт',
         '<p><strong>Задание:</strong><br>Получи количество компонентов через getComponentCount(), выведи его</p>',
         'CardLayout-getComponentCount',
-        '', 293, 22.0, 0.0, 'JPanel panel = new JPanel();
+        '', 434, 22.0, 0.0, 'JPanel panel = new JPanel();
 CardLayout layout = new CardLayout();
 panel.setLayout(layout);
 JPanel card1 = new JPanel();
@@ -391,7 +391,7 @@ int count = panel.getComponentCount();
 System.out.println("Карт: " + count);
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (343, '<h2>🎮 Урок 48.5 — CardLayout-мастер: Покажи карту по имени!</h2>
+VALUES (435, '<h2>🎮 CardLayout-мастер: Покажи карту по имени!</h2>
 
 <p><strong>Привет, мастер имён!</strong> 🃏 Сегодня ты покажешь карту по имени в <code>CardLayout</code> — это как поиск в игре!</p>
 
@@ -435,10 +435,10 @@ VALUES (343, '<h2>🎮 Урок 48.5 — CardLayout-мастер: Покажи �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (343, 48, 5, 'CardLayout-мастер: покажи карту по имени',
+VALUES (435, 48, 5, 'CardLayout-мастер: покажи карту по имени',
         '<p><strong>Задание:</strong><br>Получи CardLayout, покажи карту "cardName" через show()</p>',
         'CardLayout-show',
-        '', 343, 23.0, 0.0, 'JPanel panel = new JPanel();
+        '', 435, 23.0, 0.0, 'JPanel panel = new JPanel();
 CardLayout layout = new CardLayout();
 panel.setLayout(layout);
 JPanel card1 = new JPanel();
@@ -447,7 +447,7 @@ panel.add(card1, "cardName");
 layout.show(panel, "cardName");
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (392, '<h2>🎮 Урок 48.6 — FlowLayout-мастер: Установи ориентацию компонента!</h2>
+VALUES (436, '<h2>🎮 FlowLayout-мастер: Установи ориентацию компонента!</h2>
 
 <p><strong>Привет, мастер интернационализации!</strong> 🌐 Сегодня ты установишь ориентацию компонента в <code>FlowLayout</code> — это как поддержка RTL в игре!</p>
 
@@ -488,10 +488,10 @@ VALUES (392, '<h2>🎮 Урок 48.6 — FlowLayout-мастер: Установ
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (392, 48, 6, 'FlowLayout-мастер: установи ориентацию компонента',
+VALUES (436, 48, 6, 'FlowLayout-мастер: установи ориентацию компонента',
         '<p><strong>Задание:</strong><br>Установи ориентацию RIGHT_TO_LEFT через setComponentOrientation()</p>',
         'FlowLayout-setComponentOrientation',
-        '', 392, 24.0, 0.0, 'FlowLayout flowLayout = new FlowLayout();
+        '', 436, 24.0, 0.0, 'FlowLayout flowLayout = new FlowLayout();
 setLayout(flowLayout);
 flowLayout.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
 JButton button = new JButton("Кнопка");

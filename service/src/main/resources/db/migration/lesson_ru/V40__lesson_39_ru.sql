@@ -13,7 +13,7 @@ VALUES (39, 39, 'GridLayout - Компоновка в сетке', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (68, '<h2>🎮 Урок 39.1 — GridLayout-новичок: Размести компоненты в сетке!</h2>
+VALUES (325, '<h2>🎮 GridLayout-новичок: Размести компоненты в сетке!</h2>
 
 <p><strong>Привет, мастер сеток!</strong> 📐 Сегодня ты используешь <code>GridLayout</code> — это как шахматная доска! Компоненты располагаются в сетке с одинаковыми размерами ячеек!</p>
 
@@ -59,15 +59,15 @@ VALUES (68, '<h2>🎮 Урок 39.1 — GridLayout-новичок: Размес�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (68, 39, 1, 'GridLayout-новичок: размести компоненты в сетке',
+VALUES (325, 39, 1, 'GridLayout-новичок: размести компоненты в сетке',
         '<p><strong>Задание:</strong><br>Установи GridLayout 2x3 (2 строки, 3 столбца) и добавь 6 кнопок</p>',
         'GridLayout-add',
-        '', 68, 18.0, 0.0, 'setLayout(new GridLayout(2, 3));
+        '', 325, 18.0, 0.0, 'setLayout(new GridLayout(2, 3));
 for (int i = 1; i <= 6; i++) {
     add(new JButton("Кнопка " + i));
 }');
 INSERT INTO documentation (id, text)
-VALUES (147, '<h2>🎮 Урок 39.1 — Чекбокс-пункт меню-новичок: Создай чекбокс в меню!</h2>
+VALUES (328, '<h2>🎮 Чекбокс-пункт меню-новичок: Создай чекбокс в меню!</h2>
 
 <p><strong>Привет, мастер меню!</strong> ☑️ Сегодня ты создашь <code>JCheckBoxMenuItem</code> — это как чекбокс в меню игры! Можно включить/выключить опцию прямо в меню!</p>
 
@@ -110,17 +110,17 @@ VALUES (147, '<h2>🎮 Урок 39.1 — Чекбокс-пункт меню-но
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (147, 39, 1, 'Чекбокс-пункт меню-новичок: создай чекбокс в меню',
+VALUES (328, 39, 1, 'Чекбокс-пункт меню-новичок: создай чекбокс в меню',
         '<p><strong>Задание:</strong><br>Создай JCheckBoxMenuItem с текстом "Показывать панель", добавь в меню</p>',
         'JCheckBoxMenuItem-add',
-        '', 147, 21.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 328, 21.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
 JMenu viewMenu = new JMenu("Вид");
 viewMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (90, '<h2>🎮 Урок 39.2 — Мышь-мастер: Определи клик мыши!</h2>
+VALUES (326, '<h2>🎮 Мышь-мастер: Определи клик мыши!</h2>
 
 <p><strong>Привет, мастер кликов!</strong> 🖱️ Сегодня ты научишься определять клики мыши через <code>MouseListener</code> — это как реакция на клик в игре! Можно обрабатывать одиночные и двойные клики!</p>
 
@@ -167,10 +167,10 @@ public void mouseClicked(MouseEvent e) {<br>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (90, 39, 2, 'Мышь-мастер: определи клик мыши',
+VALUES (326, 39, 2, 'Мышь-мастер: определи клик мыши',
         '<p><strong>Задание:</strong><br>Переопредели mouseClicked, проверь количество кликов, обработай одиночный и двойной клик</p>',
         'MouseListener-mouseClicked-getClickCount',
-        '', 90, 24.0, 0.0, 'JPanel panel = new JPanel();
+        '', 326, 24.0, 0.0, 'JPanel panel = new JPanel();
 panel.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -183,7 +183,7 @@ panel.addMouseListener(new MouseAdapter() {
 });
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (179, '<h2>🎮 Урок 39.2 — Чекбокс-пункт меню-мастер: Обрабатывай изменение!</h2>
+VALUES (329, '<h2>🎮 Чекбокс-пункт меню-мастер: Обрабатывай изменение!</h2>
 
 <p><strong>Привет, мастер обработки!</strong> ☑️ Сегодня ты обработаешь изменение состояния <code>JCheckBoxMenuItem</code> — это как реакция на выбор в игре! Можно реагировать на включение и выключение!</p>
 
@@ -229,10 +229,10 @@ VALUES (179, '<h2>🎮 Урок 39.2 — Чекбокс-пункт меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (179, 39, 2, 'Чекбокс-пункт меню-мастер: обрабатывай изменение',
+VALUES (329, 39, 2, 'Чекбокс-пункт меню-мастер: обрабатывай изменение',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JCheckBoxMenuItem-addActionListener-isSelected',
-        '', 179, 23.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 329, 23.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
 item.addActionListener(e -> {
     if (item.isSelected()) {
         System.out.println("Включено!");
@@ -246,7 +246,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (111, '<h2>🎮 Урок 39.3 — Мышь-мастер: Обрабатывай перетаскивание!</h2>
+VALUES (327, '<h2>🎮 Мышь-мастер: Обрабатывай перетаскивание!</h2>
 
 <p><strong>Привет, мастер перетаскивания!</strong> 🖱️ Сегодня ты научишься обрабатывать перетаскивание мыши через <code>MouseListener</code> и <code>MouseMotionListener</code> — это как перетаскивание предметов в игре! Можно отслеживать движение мыши с нажатой кнопкой!</p>
 
@@ -296,10 +296,10 @@ VALUES (111, '<h2>🎮 Урок 39.3 — Мышь-мастер: Обрабаты
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (111, 39, 3, 'Мышь-мастер: обрабатывай перетаскивание',
+VALUES (327, 39, 3, 'Мышь-мастер: обрабатывай перетаскивание',
         '<p><strong>Задание:</strong><br>Добавь MouseMotionListener, переопредели mouseDragged(), получи координаты и выведи их</p>',
         'MouseMotionListener-mouseDragged-getX-getY',
-        '', 111, 26.0, 0.0, 'JPanel component = new JPanel();
+        '', 327, 26.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseMotionListener(new MouseMotionListener() {
     @Override
     public void mouseDragged(MouseEvent e) {
@@ -312,7 +312,7 @@ component.addMouseMotionListener(new MouseMotionListener() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (230, '<h2>🎮 Урок 39.3 — Чекбокс-пункт меню-мастер: Работай с моделью!</h2>
+VALUES (330, '<h2>🎮 Чекбокс-пункт меню-мастер: Работай с моделью!</h2>
 
 <p><strong>Привет, мастер моделей!</strong> ☑️ Сегодня ты поработаешь с моделью состояния <code>JCheckBoxMenuItem</code> — это как управление состоянием в игре!</p>
 
@@ -354,10 +354,10 @@ VALUES (230, '<h2>🎮 Урок 39.3 — Чекбокс-пункт меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (230, 39, 3, 'Чекбокс-пункт меню-мастер: работай с моделью',
+VALUES (330, 39, 3, 'Чекбокс-пункт меню-мастер: работай с моделью',
         '<p><strong>Задание:</strong><br>Получи модель через getModel(), установи состояние true через setSelected()</p>',
         'JCheckBoxMenuItem-getModel-setSelected',
-        '', 230, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 330, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
 ButtonModel model = item.getModel();
 model.setSelected(true);
 JMenu viewMenu = new JMenu("Вид");
@@ -366,7 +366,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (483, '<h2>🎮 Урок 39.3 — Всплывающее меню-мастер: Покажи меню!</h2>
+VALUES (334, '<h2>🎮 Всплывающее меню-мастер: Покажи меню!</h2>
 
 <p><strong>Привет, мастер показа!</strong> 🎯 Сегодня ты покажешь всплывающее меню в <code>JPopupMenu</code> — это как отображение в игре!</p>
 
@@ -407,16 +407,16 @@ VALUES (483, '<h2>🎮 Урок 39.3 — Всплывающее меню-мас�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (483, 39, 3, 'Всплывающее меню-мастер: покажи меню',
+VALUES (334, 39, 3, 'Всплывающее меню-мастер: покажи меню',
         '<p><strong>Задание:</strong><br>Покажи меню через show(component, 100, 100)</p>',
         'JPopupMenu-show',
-        '', 483, 22.0, 0.0, 'JPopupMenu popupMenu = new JPopupMenu();
+        '', 334, 22.0, 0.0, 'JPopupMenu popupMenu = new JPopupMenu();
 popupMenu.add(new JMenuItem("Копировать"));
 JPanel component = new JPanel();
 popupMenu.show(component, 100, 100);
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (281, '<h2>🎮 Урок 39.4 — Чекбокс-пункт меню-мастер: Обрабатывай изменение состояния!</h2>
+VALUES (332, '<h2>🎮 Чекбокс-пункт меню-мастер: Обрабатывай изменение состояния!</h2>
 
 <p><strong>Привет, мастер состояний!</strong> ☑️ Сегодня ты обработаешь изменение состояния <code>JCheckBoxMenuItem</code> — это как реакция на выбор в игре!</p>
 
@@ -460,10 +460,10 @@ VALUES (281, '<h2>🎮 Урок 39.4 — Чекбокс-пункт меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (281, 39, 4, 'Чекбокс-пункт меню-мастер: обрабатывай изменение состояния',
+VALUES (332, 39, 4, 'Чекбокс-пункт меню-мастер: обрабатывай изменение состояния',
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
         'JCheckBoxMenuItem-addItemListener-isSelected',
-        '', 281, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 332, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
 item.addItemListener(e -> {
     boolean selected = item.isSelected();
     System.out.println("Выбрано: " + selected);
@@ -474,7 +474,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (331, '<h2>🎮 Урок 39.5 — Чекбокс-пункт меню-мастер: Добавь иконку!</h2>
+VALUES (332, '<h2>🎮 Чекбокс-пункт меню-мастер: Добавь иконку!</h2>
 
 <p><strong>Привет, мастер иконок!</strong> ☑️ Сегодня ты добавишь иконку к <code>JCheckBoxMenuItem</code> — это как визуальный элемент в игре!</p>
 
@@ -515,10 +515,10 @@ VALUES (331, '<h2>🎮 Урок 39.5 — Чекбокс-пункт меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (331, 39, 5, 'Чекбокс-пункт меню-мастер: добавь иконку',
+VALUES (332, 39, 5, 'Чекбокс-пункт меню-мастер: добавь иконку',
         '<p><strong>Задание:</strong><br>Установи иконку через setIcon() с ImageIcon</p>',
         'JCheckBoxMenuItem-setIcon-ImageIcon',
-        '', 331, 22.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 332, 22.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
 item.setIcon(new ImageIcon("icon.png"));
 JMenu viewMenu = new JMenu("Вид");
 viewMenu.add(item);
@@ -526,7 +526,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (383, '<h2>🎮 Урок 39.6 — Всплывающее меню-мастер: Установи границу!</h2>
+VALUES (333, '<h2>🎮 Всплывающее меню-мастер: Установи границу!</h2>
 
 <p><strong>Привет, мастер границ!</strong> 📋 Сегодня ты установишь границу в <code>JPopupMenu</code> — это как рамка в игре!</p>
 
@@ -570,10 +570,10 @@ VALUES (383, '<h2>🎮 Урок 39.6 — Всплывающее меню-мас�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (383, 39, 6, 'Всплывающее меню-мастер: установи границу',
+VALUES (333, 39, 6, 'Всплывающее меню-мастер: установи границу',
         '<p><strong>Задание:</strong><br>Создай границу через BorderFactory.createLineBorder(Color.BLACK, 2), установи через setBorder()</p>',
         'JPopupMenu-setBorder-BorderFactory',
-        '', 383, 23.0, 0.0, 'JPopupMenu popupMenu = new JPopupMenu();
+        '', 333, 23.0, 0.0, 'JPopupMenu popupMenu = new JPopupMenu();
 Border border = BorderFactory.createLineBorder(Color.BLACK, 2);
 popupMenu.setBorder(border);
 popupMenu.add(new JMenuItem("Копировать"));

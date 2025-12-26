@@ -13,7 +13,7 @@ VALUES (7, 7, 'Флажки (JCheckBox)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (26, '<h2>🎮 Урок 7.1 — Флажок-новичок: Создай переключатель!</h2>
+VALUES (62, '<h2>🎮 Флажок-новичок: Создай переключатель!</h2>
 
 <p><strong>Привет, мастер выборов!</strong> ☑️ Сегодня ты создашь <code>JCheckBox</code> — это как чекбокс в настройках игры! Можно включить или выключить опцию одним кликом!</p>
 
@@ -55,13 +55,13 @@ VALUES (26, '<h2>🎮 Урок 7.1 — Флажок-новичок: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (26, 7, 1, 'Флажок-новичок: создай переключатель',
+VALUES (62, 7, 1, 'Флажок-новичок: создай переключатель',
         '<p><strong>Задание:</strong><br>Создай флажок с текстом "Включить" и добавь на форму</p>',
         'JCheckBox-add',
-        '', 26, 12.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Включить");
+        '', 62, 12.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Включить");
 add(checkBox);');
 INSERT INTO documentation (id, text)
-VALUES (27, '<h2>🎮 Урок 7.2 — Состояние флажка: Отметь или сними отметку!</h2>
+VALUES (63, '<h2>🎮 Состояние флажка: Отметь или сними отметку!</h2>
 
 <p><strong>Мастер состояний, привет!</strong> ✅ Пора научиться управлять состоянием флажка! Можно программно отметить флажок или снять отметку. Это как включить опцию по умолчанию!</p>
 
@@ -106,15 +106,15 @@ VALUES (27, '<h2>🎮 Урок 7.2 — Состояние флажка: Отме
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (27, 7, 2, 'Состояние флажка: отметь или сними отметку',
+VALUES (63, 7, 2, 'Состояние флажка: отметь или сними отметку',
         '<p><strong>Задание:</strong><br>Создай флажок, отметь его и добавь на форму</p>',
         'JCheckBox-setSelected,add',
-        '', 27, 14.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Включить");
+        '', 63, 14.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Включить");
 checkBox.setSelected(true);
 add(checkBox);');
 
 INSERT INTO documentation (id, text)
-VALUES (157, '<h2>🎮 Урок 7.3 — Поле пароля-мастер: Измени символ отображения!</h2>
+VALUES (64, '<h2>🎮 Поле пароля-мастер: Измени символ отображения!</h2>
 
 <p><strong>Привет, мастер безопасности!</strong> 🔒 Сегодня ты изменишь символ отображения в <code>JPasswordField</code> — это как кастомизация маски в игре! Можно использовать свой символ вместо звёздочки!</p>
 
@@ -153,15 +153,15 @@ VALUES (157, '<h2>🎮 Урок 7.3 — Поле пароля-мастер: Из
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (157, 7, 3, 'Поле пароля-мастер: измени символ отображения',
+VALUES (64, 7, 3, 'Поле пароля-мастер: измени символ отображения',
         '<p><strong>Задание:</strong><br>Установи символ отображения ''●'' через setEchoChar()</p>',
         'JPasswordField-setEchoChar',
-        '', 157, 22.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
+        '', 64, 22.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 passwordField.setEchoChar(''●'');
 add(passwordField);');
 
 INSERT INTO documentation (id, text)
-VALUES (210, '<h2>🎮 Урок 7.4 — Поле пароля-мастер: Проверь надёжность пароля!</h2>
+VALUES (65, '<h2>🎮 Поле пароля-мастер: Проверь надёжность пароля!</h2>
 
 <p><strong>Привет, мастер безопасности!</strong> 🔒 Сегодня ты проверишь надёжность пароля в <code>JPasswordField</code> — это как проверка силы в игре! Можно оценить надёжность пароля!</p>
 
@@ -208,17 +208,17 @@ VALUES (210, '<h2>🎮 Урок 7.4 — Поле пароля-мастер: Пр
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (210, 7, 4, 'Поле пароля-мастер: проверь надёжность пароля',
+VALUES (65, 7, 4, 'Поле пароля-мастер: проверь надёжность пароля',
         '<p><strong>Задание:</strong><br>Получи пароль через getPassword(), проверь длину меньше 8, выведи сообщение</p>',
         'JPasswordField-getPassword',
-        '', 210, 25.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
+        '', 65, 25.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char[] password = passwordField.getPassword();
 if (password.length < 8) {
     System.out.println("Слабый пароль!");
 }
 add(passwordField);');
 INSERT INTO documentation (id, text)
-VALUES (260, '<h2>🎮 Урок 7.5 — Поле пароля-мастер: Запрети копирование!</h2>
+VALUES (66, '<h2>🎮 Поле пароля-мастер: Запрети копирование!</h2>
 
 <p><strong>Привет, мастер безопасности!</strong> 🔒 Сегодня ты запретишь копирование в <code>JPasswordField</code> — это как защита в игре!</p>
 
@@ -267,10 +267,10 @@ VALUES (260, '<h2>🎮 Урок 7.5 — Поле пароля-мастер: За
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (260, 7, 5, 'Поле пароля-мастер: запрети копирование',
+VALUES (66, 7, 5, 'Поле пароля-мастер: запрети копирование',
         '<p><strong>Задание:</strong><br>Получи документ, создай DocumentFilter, переопредели remove() для запрета удаления</p>',
         'JPasswordField-AbstractDocument-DocumentFilter',
-        '', 260, 26.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
+        '', 66, 26.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 AbstractDocument doc = (AbstractDocument) passwordField.getDocument();
 doc.setDocumentFilter(new DocumentFilter() {
     @Override
@@ -280,7 +280,7 @@ doc.setDocumentFilter(new DocumentFilter() {
 });
 add(passwordField);');
 INSERT INTO documentation (id, text)
-VALUES (310, '<h2>🎮 Урок 7.6 — Поле пароля-мастер: Измени символ отображения!</h2>
+VALUES (67, '<h2>🎮 Поле пароля-мастер: Измени символ отображения!</h2>
 
 <p><strong>Привет, мастер символов!</strong> 🔒 Сегодня ты изменишь символ отображения в <code>JPasswordField</code> — это как кастомизация в игре!</p>
 
@@ -319,15 +319,15 @@ VALUES (310, '<h2>🎮 Урок 7.6 — Поле пароля-мастер: Из
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (310, 7, 6, 'Поле пароля-мастер: измени символ отображения',
+VALUES (67, 7, 6, 'Поле пароля-мастер: измени символ отображения',
         '<p><strong>Задание:</strong><br>Измени символ отображения на ● через setEchoChar()</p>',
         'JPasswordField-setEchoChar',
-        '', 310, 23.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
+        '', 67, 23.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 passwordField.setEchoChar(''●'');
 add(passwordField);');
 
 INSERT INTO documentation (id, text)
-VALUES (360, '<h2>🎮 Урок 7.7 — Поле пароля-мастер: Покажи пароль!</h2>
+VALUES (68, '<h2>🎮 Поле пароля-мастер: Покажи пароль!</h2>
 
 <p><strong>Привет, мастер видимости!</strong> 🔒 Сегодня ты покажешь пароль в <code>JPasswordField</code> — это как переключение видимости в игре!</p>
 
@@ -374,17 +374,17 @@ VALUES (360, '<h2>🎮 Урок 7.7 — Поле пароля-мастер: По
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (360, 7, 7, 'Поле пароля-мастер: покажи пароль',
+VALUES (68, 7, 7, 'Поле пароля-мастер: покажи пароль',
         '<p><strong>Задание:</strong><br>Получи символ через getEchoChar(), установи 0 через setEchoChar() для показа, затем восстанови символ</p>',
         'JPasswordField-getEchoChar-setEchoChar',
-        '', 360, 24.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
+        '', 68, 24.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char echoChar = passwordField.getEchoChar();
 passwordField.setEchoChar((char) 0);
 // Показать пароль, затем восстановить:
 // passwordField.setEchoChar(echoChar);
 add(passwordField);');
 INSERT INTO documentation (id, text)
-VALUES (410, '<h2>🎮 Урок 7.8 — Поле пароля-мастер: Проверь силу пароля!</h2>
+VALUES (69, '<h2>🎮 Поле пароля-мастер: Проверь силу пароля!</h2>
 
 <p><strong>Привет, мастер безопасности!</strong> 🔒 Сегодня ты проверишь силу пароля в <code>JPasswordField</code> — это как валидация в игре!</p>
 
@@ -428,15 +428,15 @@ VALUES (410, '<h2>🎮 Урок 7.8 — Поле пароля-мастер: Пр
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (410, 7, 8, 'Поле пароля-мастер: проверь силу пароля',
+VALUES (69, 7, 8, 'Поле пароля-мастер: проверь силу пароля',
         '<p><strong>Задание:</strong><br>Получи пароль через getPassword(), проверь длину >= 8 и наличие заглавных букв</p>',
         'JPasswordField-getPassword',
-        '', 410, 26.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
+        '', 69, 26.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char[] password = passwordField.getPassword();
 boolean isStrong = password.length >= 8 && new String(password).matches(".*[A-Z].*");
 add(passwordField);');
 INSERT INTO documentation (id, text)
-VALUES (460, '<h2>🎮 Урок 7.9 — Поле пароля-мастер: Скопируй пароль!</h2>
+VALUES (70, '<h2>🎮 Поле пароля-мастер: Скопируй пароль!</h2>
 
 <p><strong>Привет, мастер копирования!</strong> 🔒 Сегодня ты скопируешь пароль из <code>JPasswordField</code> — это как копирование в игре!</p>
 
@@ -481,16 +481,16 @@ Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);</
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (460, 7, 9, 'Поле пароля-мастер: скопируй пароль',
+VALUES (70, 7, 9, 'Поле пароля-мастер: скопируй пароль',
         '<p><strong>Задание:</strong><br>Получи пароль через getPassword(), создай StringSelection, установи в Clipboard через setContents()</p>',
         'JPasswordField-getPassword-StringSelection-Clipboard',
-        '', 460, 27.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
+        '', 70, 27.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char[] password = passwordField.getPassword();
 StringSelection selection = new StringSelection(new String(password));
 Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
 add(passwordField);');
 INSERT INTO documentation (id, text)
-VALUES (510, '<h2>🎮 Урок 7.10 — Поле пароля-мастер: Установи символ отображения!</h2>
+VALUES (71, '<h2>🎮 Поле пароля-мастер: Установи символ отображения!</h2>
 
 <p><strong>Привет, мастер символов!</strong> 🔒 Сегодня ты установишь символ отображения в <code>JPasswordField</code> — это как кастомизация в игре!</p>
 
@@ -529,10 +529,10 @@ VALUES (510, '<h2>🎮 Урок 7.10 — Поле пароля-мастер: У�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (510, 7, 10, 'Поле пароля-мастер: установи символ отображения',
+VALUES (71, 7, 10, 'Поле пароля-мастер: установи символ отображения',
         '<p><strong>Задание:</strong><br>Установи символ ''*'' через setEchoChar()</p>',
         'JPasswordField-setEchoChar',
-        '', 510, 22.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
+        '', 71, 22.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 passwordField.setEchoChar(''*'');
 add(passwordField);');
 

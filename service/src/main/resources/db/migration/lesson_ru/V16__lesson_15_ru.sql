@@ -13,7 +13,7 @@ VALUES (15, 15, 'Полосы прокрутки (JScrollBar)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (532, '<h2>🎮 Урок 15.1 — Скроллбар-новичок: Создай полосу прокрутки!</h2>
+VALUES (119, '<h2>🎮 Скроллбар-новичок: Создай полосу прокрутки!</h2>
 
 <p><strong>Привет, мастер прокрутки!</strong> 📜 Сегодня ты создашь <code>JScrollBar</code> — это как полоса прокрутки в игре! Можно прокручивать контент!</p>
 
@@ -58,14 +58,14 @@ VALUES (532, '<h2>🎮 Урок 15.1 — Скроллбар-новичок: Со
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (532, 15, 1, 'Скроллбар-новичок: создай полосу прокрутки',
+VALUES (119, 15, 1, 'Скроллбар-новичок: создай полосу прокрутки',
         '<p><strong>Задание:</strong><br>Создай вертикальный скроллбар с диапазоном 0-100 и добавь на форму</p>',
         'JScrollBar-add',
-        '', 532, 15.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+        '', 119, 15.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (533, '<h2>🎮 Урок 15.2 — Скроллбар-мастер: Установи ориентацию!</h2>
+VALUES (120, '<h2>🎮 Скроллбар-мастер: Установи ориентацию!</h2>
 
 <p><strong>Привет, мастер ориентации!</strong> 📜 Сегодня ты установишь ориентацию в <code>JScrollBar</code> — это как направление в игре!</p>
 
@@ -109,15 +109,15 @@ VALUES (533, '<h2>🎮 Урок 15.2 — Скроллбар-мастер: Уст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (533, 15, 2, 'Скроллбар-мастер: установи ориентацию',
+VALUES (120, 15, 2, 'Скроллбар-мастер: установи ориентацию',
         '<p><strong>Задание:</strong><br>Создай скроллбар, установи горизонтальную ориентацию через setOrientation(JScrollBar.HORIZONTAL)</p>',
         'JScrollBar-setOrientation',
-        '', 533, 16.0, 0.0, 'JScrollBar scrollBar = new JScrollBar();
+        '', 120, 16.0, 0.0, 'JScrollBar scrollBar = new JScrollBar();
 scrollBar.setOrientation(JScrollBar.HORIZONTAL);
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (534, '<h2>🎮 Урок 15.3 — Скроллбар-мастер: Установи минимальное и максимальное значение!</h2>
+VALUES (121, '<h2>🎮 Скроллбар-мастер: Установи минимальное и максимальное значение!</h2>
 
 <p><strong>Привет, мастер диапазонов!</strong> 📜 Сегодня ты установишь минимальное и максимальное значение в <code>JScrollBar</code> — это как границы в игре!</p>
 
@@ -161,16 +161,16 @@ VALUES (534, '<h2>🎮 Урок 15.3 — Скроллбар-мастер: Уст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (534, 15, 3, 'Скроллбар-мастер: установи минимальное и максимальное значение',
+VALUES (121, 15, 3, 'Скроллбар-мастер: установи минимальное и максимальное значение',
         '<p><strong>Задание:</strong><br>Создай скроллбар, установи минимум 0 и максимум 1000 через setMinimum() и setMaximum()</p>',
         'JScrollBar-setMinimum-setMaximum',
-        '', 534, 16.0, 0.0, 'JScrollBar scrollBar = new JScrollBar();
+        '', 121, 16.0, 0.0, 'JScrollBar scrollBar = new JScrollBar();
 scrollBar.setMinimum(0);
 scrollBar.setMaximum(1000);
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (535, '<h2>🎮 Урок 15.4 — Скроллбар-мастер: Установи текущее значение!</h2>
+VALUES (122, '<h2>🎮 Скроллбар-мастер: Установи текущее значение!</h2>
 
 <p><strong>Привет, мастер значений!</strong> 📜 Сегодня ты установишь текущее значение в <code>JScrollBar</code> — это как позиция в игре!</p>
 
@@ -214,15 +214,15 @@ VALUES (535, '<h2>🎮 Урок 15.4 — Скроллбар-мастер: Уст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (535, 15, 4, 'Скроллбар-мастер: установи текущее значение',
+VALUES (122, 15, 4, 'Скроллбар-мастер: установи текущее значение',
         '<p><strong>Задание:</strong><br>Создай скроллбар, установи значение 500 через setValue()</p>',
         'JScrollBar-setValue',
-        '', 535, 17.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 1000);
+        '', 122, 17.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 1000);
 scrollBar.setValue(500);
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (536, '<h2>🎮 Урок 15.5 — Скроллбар-мастер: Установи единичный шаг!</h2>
+VALUES (123, '<h2>🎮 Скроллбар-мастер: Установи единичный шаг!</h2>
 
 <p><strong>Привет, мастер шагов!</strong> 📜 Сегодня ты установишь единичный шаг в <code>JScrollBar</code> — это как шаг в игре!</p>
 
@@ -263,15 +263,15 @@ VALUES (536, '<h2>🎮 Урок 15.5 — Скроллбар-мастер: Уст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (536, 15, 5, 'Скроллбар-мастер: установи единичный шаг',
+VALUES (123, 15, 5, 'Скроллбар-мастер: установи единичный шаг',
         '<p><strong>Задание:</strong><br>Создай скроллбар, установи единичный шаг 10 через setUnitIncrement()</p>',
         'JScrollBar-setUnitIncrement',
-        '', 536, 17.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+        '', 123, 17.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setUnitIncrement(10);
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (537, '<h2>🎮 Урок 15.6 — Скроллбар-мастер: Установи блочный шаг!</h2>
+VALUES (124, '<h2>🎮 Скроллбар-мастер: Установи блочный шаг!</h2>
 
 <p><strong>Привет, мастер блоков!</strong> 📜 Сегодня ты установишь блочный шаг в <code>JScrollBar</code> — это как большой шаг в игре!</p>
 
@@ -312,15 +312,15 @@ VALUES (537, '<h2>🎮 Урок 15.6 — Скроллбар-мастер: Уст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (537, 15, 6, 'Скроллбар-мастер: установи блочный шаг',
+VALUES (124, 15, 6, 'Скроллбар-мастер: установи блочный шаг',
         '<p><strong>Задание:</strong><br>Создай скроллбар, установи блочный шаг 50 через setBlockIncrement()</p>',
         'JScrollBar-setBlockIncrement',
-        '', 537, 17.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+        '', 124, 17.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setBlockIncrement(50);
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (538, '<h2>🎮 Урок 15.7 — Скроллбар-мастер: Установи цвета!</h2>
+VALUES (125, '<h2>🎮 Скроллбар-мастер: Установи цвета!</h2>
 
 <p><strong>Привет, мастер цветов!</strong> 📜 Сегодня ты установишь цвета в <code>JScrollBar</code> — это как стиль в игре!</p>
 
@@ -364,15 +364,15 @@ VALUES (538, '<h2>🎮 Урок 15.7 — Скроллбар-мастер: Уст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (538, 15, 7, 'Скроллбар-мастер: установи цвета',
+VALUES (125, 15, 7, 'Скроллбар-мастер: установи цвета',
         '<p><strong>Задание:</strong><br>Создай скроллбар, установи цвет ползунка Color.BLUE через setForeground()</p>',
         'JScrollBar-setForeground-Color',
-        '', 538, 18.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+        '', 125, 18.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setForeground(Color.BLUE);
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (539, '<h2>🎮 Урок 15.8 — Скроллбар-мастер: Установи размер!</h2>
+VALUES (126, '<h2>🎮 Скроллбар-мастер: Установи размер!</h2>
 
 <p><strong>Привет, мастер размеров!</strong> 📜 Сегодня ты установишь размер в <code>JScrollBar</code> — это как размер в игре!</p>
 
@@ -413,15 +413,15 @@ VALUES (539, '<h2>🎮 Урок 15.8 — Скроллбар-мастер: Уст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (539, 15, 8, 'Скроллбар-мастер: установи размер',
+VALUES (126, 15, 8, 'Скроллбар-мастер: установи размер',
         '<p><strong>Задание:</strong><br>Создай скроллбар, установи размер 20x200 через setPreferredSize(new Dimension(20, 200))</p>',
         'JScrollBar-setPreferredSize-Dimension',
-        '', 539, 18.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+        '', 126, 18.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setPreferredSize(new Dimension(20, 200));
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (540, '<h2>🎮 Урок 15.9 — Скроллбар-мастер: Добавь подсказку!</h2>
+VALUES (127, '<h2>🎮 Скроллбар-мастер: Добавь подсказку!</h2>
 
 <p><strong>Привет, мастер подсказок!</strong> 📜 Сегодня ты добавишь подсказку к <code>JScrollBar</code> — это как помощь в игре!</p>
 
@@ -462,15 +462,15 @@ VALUES (540, '<h2>🎮 Урок 15.9 — Скроллбар-мастер: Доб
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (540, 15, 9, 'Скроллбар-мастер: добавь подсказку',
+VALUES (127, 15, 9, 'Скроллбар-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Создай скроллбар, установи подсказку "Прокрутка контента" через setToolTipText()</p>',
         'JScrollBar-setToolTipText',
-        '', 540, 16.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+        '', 127, 16.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setToolTipText("Прокрутка контента");
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (541, '<h2>🎮 Урок 15.10 — Скроллбар-мастер: Обрабатывай изменения!</h2>
+VALUES (128, '<h2>🎮 Скроллбар-мастер: Обрабатывай изменения!</h2>
 
 <p><strong>Привет, мастер событий!</strong> 📜 Сегодня ты обработаешь изменения в <code>JScrollBar</code> — это как реакция в игре!</p>
 
@@ -514,10 +514,10 @@ VALUES (541, '<h2>🎮 Урок 15.10 — Скроллбар-мастер: Об�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (541, 15, 10, 'Скроллбар-мастер: обрабатывай изменения',
+VALUES (128, 15, 10, 'Скроллбар-мастер: обрабатывай изменения',
         '<p><strong>Задание:</strong><br>Создай скроллбар, добавь AdjustmentListener, получи значение через getValue(), выведи его</p>',
         'JScrollBar-addAdjustmentListener-getValue',
-        '', 541, 19.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+        '', 128, 19.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.addAdjustmentListener(e -> {
     int value = scrollBar.getValue();
     System.out.println("Позиция: " + value);

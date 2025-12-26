@@ -13,7 +13,7 @@ VALUES (32, 32, 'Редактор HTML/RTF (JEditorPane)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (65, '<h2>🎮 Урок 31.1 — Диалог сообщения: Покажи информацию пользователю!</h2>
+VALUES (269, '<h2>🎮 Диалог сообщения: Покажи информацию пользователю!</h2>
 
 <p><strong>Привет, мастер уведомлений!</strong> 💬 Сегодня ты создашь диалог сообщения через <code>JOptionPane</code> — это как всплывающее уведомление в игре! Можно показать информацию, предупреждение или ошибку!</p>
 
@@ -53,13 +53,13 @@ VALUES (65, '<h2>🎮 Урок 31.1 — Диалог сообщения: Пок�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (65, 30, 1, 'Диалог сообщения: покажи информацию пользователю',
+VALUES (269, 30, 1, 'Диалог сообщения: покажи информацию пользователю',
         '<p><strong>Задание:</strong><br>Покажи информационное диалоговое окно с сообщением "Операция выполнена успешно!"</p>',
         'JOptionPane-showMessageDialog',
-        '', 65, 18.0, 0.0, 'JFrame frame = new JFrame();
+        '', 269, 18.0, 0.0, 'JFrame frame = new JFrame();
 JOptionPane.showMessageDialog(frame, "Операция выполнена успешно!", "Информация", JOptionPane.INFORMATION_MESSAGE);');
 INSERT INTO documentation (id, text)
-VALUES (66, '<h2>🎮 Урок 31.2 — Диалог подтверждения: Спроси разрешение!</h2>
+VALUES (270, '<h2>🎮 Диалог подтверждения: Спроси разрешение!</h2>
 
 <p><strong>Мастер безопасности, привет!</strong> ❓ Пора научиться запрашивать подтверждение! Диалог подтверждения — это как вопрос перед важным действием. "Ты уверен, что хочешь удалить?"</p>
 
@@ -104,16 +104,16 @@ VALUES (66, '<h2>🎮 Урок 31.2 — Диалог подтверждения:
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (66, 30, 2, 'Диалог подтверждения: спроси разрешение',
+VALUES (270, 30, 2, 'Диалог подтверждения: спроси разрешение',
         '<p><strong>Задание:</strong><br>Покажи диалог подтверждения с вопросом "Вы уверены?" и обработай результат</p>',
         'JOptionPane-showConfirmDialog',
-        '', 66, 22.0, 0.0, 'JFrame frame = new JFrame();
+        '', 270, 22.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(frame, "Вы уверены?", "Подтверждение", JOptionPane.YES_NO_OPTION);
 if (result == JOptionPane.YES_OPTION) {
     System.out.println("Пользователь согласился");
 }');
 INSERT INTO documentation (id, text)
-VALUES (145, '<h2>🎮 Урок 31.2 — Меню-мастер: Добавь горячую клавишу!</h2>
+VALUES (271, '<h2>🎮 Меню-мастер: Добавь горячую клавишу!</h2>
 
 <p><strong>Привет, мастер горячих клавиш!</strong> 📋 Сегодня ты добавишь горячую клавишу к <code>JMenu</code> — это как быстрый доступ в игре! Можно открыть меню через Alt+буква!</p>
 
@@ -153,16 +153,16 @@ VALUES (145, '<h2>🎮 Урок 31.2 — Меню-мастер: Добавь г�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (145, 30, 2, 'Меню-мастер: добавь горячую клавишу',
+VALUES (271, 30, 2, 'Меню-мастер: добавь горячую клавишу',
         '<p><strong>Задание:</strong><br>Установи мнемонику VK_F через setMnemonic()</p>',
         'JMenu-setMnemonic',
-        '', 145, 23.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 271, 23.0, 0.0, 'JMenu menu = new JMenu("Файл");
 menu.setMnemonic(KeyEvent.VK_F);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (177, '<h2>🎮 Урок 31.3 — Меню-мастер: Добавь разделитель!</h2>
+VALUES (272, '<h2>🎮 Меню-мастер: Добавь разделитель!</h2>
 
 <p><strong>Привет, мастер разделения!</strong> 📋 Сегодня ты добавишь разделитель в <code>JMenu</code> — это как разделение групп в игре! Можно визуально разделить пункты меню!</p>
 
@@ -209,10 +209,10 @@ menu.add(new JMenuItem("Сохранить"));</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (177, 30, 3, 'Меню-мастер: добавь разделитель',
+VALUES (272, 30, 3, 'Меню-мастер: добавь разделитель',
         '<p><strong>Задание:</strong><br>Добавь два пункта меню, добавь разделитель через addSeparator(), добавь ещё пункт</p>',
         'JMenu-add-addSeparator',
-        '', 177, 21.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 272, 21.0, 0.0, 'JMenu menu = new JMenu("Файл");
 menu.add(new JMenuItem("Открыть"));
 menu.add(new JMenuItem("Сохранить"));
 menu.addSeparator();
@@ -221,7 +221,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (228, '<h2>🎮 Урок 31.4 — Меню-мастер: Добавь мнемонику!</h2>
+VALUES (273, '<h2>🎮 Меню-мастер: Добавь мнемонику!</h2>
 
 <p><strong>Привет, мастер горячих клавиш!</strong> 📋 Сегодня ты добавишь мнемонику к <code>JMenu</code> — это как горячая клавиша в игре! Можно активировать меню через Alt+буква!</p>
 
@@ -265,16 +265,16 @@ VALUES (228, '<h2>🎮 Урок 31.4 — Меню-мастер: Добавь м�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (228, 30, 4, 'Меню-мастер: добавь мнемонику',
+VALUES (273, 30, 4, 'Меню-мастер: добавь мнемонику',
         '<p><strong>Задание:</strong><br>Установи мнемонику VK_F через setMnemonic(), добавь &F в текст меню</p>',
         'JMenu-setMnemonic-KeyEvent',
-        '', 228, 23.0, 0.0, 'JMenu menu = new JMenu("Файл (&F)");
+        '', 273, 23.0, 0.0, 'JMenu menu = new JMenu("Файл (&F)");
 menu.setMnemonic(KeyEvent.VK_F);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (481, '<h2>🎮 Урок 31.4 — Чекбокс-пункт меню-мастер: Добавь подсказку!</h2>
+VALUES (277, '<h2>🎮 Чекбокс-пункт меню-мастер: Добавь подсказку!</h2>
 
 <p><strong>Привет, мастер подсказок!</strong> ☑️ Сегодня ты добавишь подсказку в <code>JCheckBoxMenuItem</code> — это как помощь в игре!</p>
 
@@ -315,10 +315,10 @@ VALUES (481, '<h2>🎮 Урок 31.4 — Чекбокс-пункт меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (481, 30, 4, 'Чекбокс-пункт меню-мастер: добавь подсказку',
+VALUES (277, 30, 4, 'Чекбокс-пункт меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Установи подсказку "Показать сетку" через setToolTipText()</p>',
         'JCheckBoxMenuItem-setToolTipText',
-        '', 481, 21.0, 0.0, 'JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Сетка");
+        '', 277, 21.0, 0.0, 'JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Сетка");
 checkBoxMenuItem.setToolTipText("Показать сетку");
 JMenu viewMenu = new JMenu("Вид");
 viewMenu.add(checkBoxMenuItem);
@@ -326,7 +326,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (279, '<h2>🎮 Урок 31.5 — Меню-мастер: Добавь разделитель!</h2>
+VALUES (274, '<h2>🎮 Меню-мастер: Добавь разделитель!</h2>
 
 <p><strong>Привет, мастер разделения!</strong> 📋 Сегодня ты добавишь разделитель в <code>JMenu</code> — это как визуальное разделение в игре!</p>
 
@@ -374,10 +374,10 @@ menu.add(menuItem2);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (279, 30, 5, 'Меню-мастер: добавь разделитель',
+VALUES (274, 30, 5, 'Меню-мастер: добавь разделитель',
         '<p><strong>Задание:</strong><br>Добавь два пункта меню, добавь разделитель через addSeparator(), добавь ещё пункт</p>',
         'JMenu-addSeparator',
-        '', 279, 22.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 274, 22.0, 0.0, 'JMenu menu = new JMenu("Файл");
 JMenuItem menuItem1 = new JMenuItem("Открыть");
 JMenuItem menuItem2 = new JMenuItem("Сохранить");
 JMenuItem menuItem3 = new JMenuItem("Выход");
@@ -389,7 +389,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (329, '<h2>🎮 Урок 31.6 — Меню-мастер: Настрой задержку!</h2>
+VALUES (275, '<h2>🎮 Меню-мастер: Настрой задержку!</h2>
 
 <p><strong>Привет, мастер задержек!</strong> 📋 Сегодня ты настроишь задержку открытия меню в <code>JMenu</code> — это как скорость в игре!</p>
 
@@ -430,16 +430,16 @@ VALUES (329, '<h2>🎮 Урок 31.6 — Меню-мастер: Настрой �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (329, 30, 6, 'Меню-мастер: настрой задержку',
+VALUES (275, 30, 6, 'Меню-мастер: настрой задержку',
         '<p><strong>Задание:</strong><br>Установи задержку 200 через setDelay(200)</p>',
         'JMenu-setDelay',
-        '', 329, 22.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 275, 22.0, 0.0, 'JMenu menu = new JMenu("Файл");
 menu.setDelay(200);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (381, '<h2>🎮 Урок 31.6 — Чекбокс-меню-мастер: Установи команду действия!</h2>
+VALUES (276, '<h2>🎮 Чекбокс-меню-мастер: Установи команду действия!</h2>
 
 <p><strong>Привет, мастер команд!</strong> ☑️ Сегодня ты установишь команду действия к <code>JCheckBoxMenuItem</code> — это как идентификация в игре!</p>
 
@@ -486,10 +486,10 @@ VALUES (381, '<h2>🎮 Урок 31.6 — Чекбокс-меню-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (381, 30, 6, 'Чекбокс-меню-мастер: установи команду действия',
+VALUES (276, 30, 6, 'Чекбокс-меню-мастер: установи команду действия',
         '<p><strong>Задание:</strong><br>Установи команду "CHECK" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
         'JCheckBoxMenuItem-setActionCommand-getActionCommand',
-        '', 381, 24.0, 0.0, 'JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Сетка");
+        '', 276, 24.0, 0.0, 'JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Сетка");
 checkBoxMenuItem.setActionCommand("CHECK");
 checkBoxMenuItem.addActionListener(e -> {
     String cmd = e.getActionCommand();

@@ -13,7 +13,7 @@ VALUES (41, 41, 'BoxLayout - Вертикальная/горизонтальна
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (74, '<h2>🎮 Урок 41.1 — BoxLayout-новичок: Выстрой компоненты в ряд!</h2>
+VALUES (345, '<h2>🎮 BoxLayout-новичок: Выстрой компоненты в ряд!</h2>
 
 <p><strong>Привет, мастер выравнивания!</strong> 📦 Сегодня ты создашь <code>BoxLayout</code> — это как выстраивание предметов в ряд! Компоненты располагаются вертикально или горизонтально!</p>
 
@@ -58,10 +58,10 @@ add(button3);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (74, 41, 1, 'BoxLayout-новичок: выстрой компоненты в ряд',
+VALUES (345, 41, 1, 'BoxLayout-новичок: выстрой компоненты в ряд',
         '<p><strong>Задание:</strong><br>Установи BoxLayout с Y_AXIS и добавь три кнопки</p>',
         'BoxLayout-add',
-        '', 74, 24.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        '', 345, 24.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 JButton button3 = new JButton("Кнопка 3");
@@ -69,7 +69,7 @@ add(button1);
 add(button2);
 add(button3);');
 INSERT INTO documentation (id, text)
-VALUES (92, '<h2>🎮 Урок 41.2 — BoxLayout-мастер: Добавь растягивающийся элемент!</h2>
+VALUES (346, '<h2>🎮 BoxLayout-мастер: Добавь растягивающийся элемент!</h2>
 
 <p><strong>Привет, мастер растягивания!</strong> 📦 Сегодня ты добавишь растягивающийся элемент в <code>BoxLayout</code> — это как пружина между компонентами! Можно создать отступы, которые растягиваются!</p>
 
@@ -117,17 +117,17 @@ VALUES (92, '<h2>🎮 Урок 41.2 — BoxLayout-мастер: Добавь р�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (92, 41, 2, 'BoxLayout-мастер: добавь растягивающийся элемент',
+VALUES (346, 41, 2, 'BoxLayout-мастер: добавь растягивающийся элемент',
         '<p><strong>Задание:</strong><br>Добавь кнопку, добавь createGlue(), добавь ещё кнопку</p>',
         'Box-createGlue-add',
-        '', 92, 25.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        '', 346, 25.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 add(button1);
 add(Box.createGlue());
 add(button2);');
 INSERT INTO documentation (id, text)
-VALUES (153, '<h2>🎮 Урок 41.2 — GridLayout-мастер: Добавь отступы!</h2>
+VALUES (348, '<h2>🎮 GridLayout-мастер: Добавь отступы!</h2>
 
 <p><strong>Привет, мастер отступов!</strong> 📊 Сегодня ты добавишь отступы в <code>GridLayout</code> — это как промежутки между элементами в игре! Можно создать красивые отступы!</p>
 
@@ -175,10 +175,10 @@ layout.setVgap(10);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (153, 41, 2, 'GridLayout-мастер: добавь отступы',
+VALUES (348, 41, 2, 'GridLayout-мастер: добавь отступы',
         '<p><strong>Задание:</strong><br>Создай GridLayout (2,3), установи горизонтальный и вертикальный отступы по 10</p>',
         'GridLayout-setHgap-setVgap',
-        '', 153, 24.0, 0.0, 'GridLayout layout = new GridLayout(2, 3);
+        '', 348, 24.0, 0.0, 'GridLayout layout = new GridLayout(2, 3);
 layout.setHgap(10);
 layout.setVgap(10);
 setLayout(layout);
@@ -186,7 +186,7 @@ for (int i = 1; i <= 6; i++) {
     add(new JButton("Кнопка " + i));
 }');
 INSERT INTO documentation (id, text)
-VALUES (117, '<h2>🎮 Урок 41.3 — BoxLayout-мастер: Выровняй компоненты!</h2>
+VALUES (347, '<h2>🎮 BoxLayout-мастер: Выровняй компоненты!</h2>
 
 <p><strong>Привет, мастер выравнивания!</strong> 📦 Сегодня ты научишься выравнивать компоненты в <code>BoxLayout</code> — это как выравнивание элементов в игре! Можно выровнять компоненты по центру, слева, справа!</p>
 
@@ -230,16 +230,16 @@ VALUES (117, '<h2>🎮 Урок 41.3 — BoxLayout-мастер: Выровня�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (117, 41, 3, 'BoxLayout-мастер: выровняй компоненты',
+VALUES (347, 41, 3, 'BoxLayout-мастер: выровняй компоненты',
         '<p><strong>Задание:</strong><br>Установи setAlignmentX(CENTER_ALIGNMENT) и setAlignmentY(CENTER_ALIGNMENT) для кнопки</p>',
         'Component-setAlignmentX-setAlignmentY-CENTER_ALIGNMENT',
-        '', 117, 26.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        '', 347, 26.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 JButton button = new JButton("Кнопка");
 button.setAlignmentX(Component.CENTER_ALIGNMENT);
 button.setAlignmentY(Component.CENTER_ALIGNMENT);
 add(button);');
 INSERT INTO documentation (id, text)
-VALUES (191, '<h2>🎮 Урок 41.3 — GridLayout-мастер: Настрой динамические строки и колонки!</h2>
+VALUES (349, '<h2>🎮 GridLayout-мастер: Настрой динамические строки и колонки!</h2>
 
 <p><strong>Привет, мастер динамики!</strong> 📊 Сегодня ты настроишь динамические строки и колонки в <code>GridLayout</code> — это как адаптивная сетка в игре! Можно указать 0 для автоматического расчёта!</p>
 
@@ -283,16 +283,16 @@ VALUES (191, '<h2>🎮 Урок 41.3 — GridLayout-мастер: Настрой
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (191, 41, 3, 'GridLayout-мастер: настрой динамические строки и колонки',
+VALUES (349, 41, 3, 'GridLayout-мастер: настрой динамические строки и колонки',
         '<p><strong>Задание:</strong><br>Создай GridLayout с 3 строками и 0 колонками (автоматический расчёт)</p>',
         'GridLayout',
-        '', 191, 24.0, 0.0, 'GridLayout layout = new GridLayout(3, 0);
+        '', 349, 24.0, 0.0, 'GridLayout layout = new GridLayout(3, 0);
 setLayout(layout);
 for (int i = 1; i <= 9; i++) {
     add(new JButton("Кнопка " + i));
 }');
 INSERT INTO documentation (id, text)
-VALUES (436, '<h2>🎮 Урок 41.7 — BoxLayout-мастер: Добавь клей!</h2>
+VALUES (352, '<h2>🎮 BoxLayout-мастер: Добавь клей!</h2>
 
 <p><strong>Привет, мастер растяжения!</strong> 📦 Сегодня ты добавишь клей в <code>BoxLayout</code> — это как растяжение в игре!</p>
 
@@ -336,10 +336,10 @@ VALUES (436, '<h2>🎮 Урок 41.7 — BoxLayout-мастер: Добавь к
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (436, 41, 7, 'BoxLayout-мастер: добавь клей',
+VALUES (352, 41, 7, 'BoxLayout-мастер: добавь клей',
         '<p><strong>Задание:</strong><br>Создай горизонтальный клей через Box.createHorizontalGlue(), добавь в контейнер</p>',
         'BoxLayout-Box-createHorizontalGlue',
-        '', 436, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        '', 352, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 Component glue = Box.createHorizontalGlue();
@@ -347,7 +347,7 @@ add(button1);
 add(glue);
 add(button2);');
 INSERT INTO documentation (id, text)
-VALUES (389, '<h2>🎮 Урок 41.8 — Выбор файлов-мастер: Включи множественный выбор!</h2>
+VALUES (350, '<h2>🎮 Выбор файлов-мастер: Включи множественный выбор!</h2>
 
 <p><strong>Привет, мастер файлов!</strong> 📁 Сегодня ты включишь множественный выбор в <code>JFileChooser</code> — это как выбор нескольких файлов в игре!</p>
 
@@ -391,10 +391,10 @@ VALUES (389, '<h2>🎮 Урок 41.8 — Выбор файлов-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (389, 41, 8, 'Выбор файлов-мастер: включи множественный выбор',
+VALUES (350, 41, 8, 'Выбор файлов-мастер: включи множественный выбор',
         '<p><strong>Задание:</strong><br>Включи множественный выбор через setMultiSelectionEnabled(true), получи файлы через getSelectedFiles()</p>',
         'JFileChooser-setMultiSelectionEnabled-getSelectedFiles',
-        '', 389, 24.0, 0.0, 'JFrame frame = new JFrame();
+        '', 350, 24.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
 fileChooser.setMultiSelectionEnabled(true);
 int result = fileChooser.showOpenDialog(frame);
@@ -405,7 +405,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
     }
 }');
 INSERT INTO documentation (id, text)
-VALUES (450, '<h2>🎮 Урок 41.8 — BoxLayout-мастер: Добавь распорку!</h2>
+VALUES (353, '<h2>🎮 BoxLayout-мастер: Добавь распорку!</h2>
 
 <p><strong>Привет, мастер расстояний!</strong> 📦 Сегодня ты добавишь распорку в <code>BoxLayout</code> — это как фиксированное расстояние в игре!</p>
 
@@ -449,10 +449,10 @@ VALUES (450, '<h2>🎮 Урок 41.8 — BoxLayout-мастер: Добавь р
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (450, 41, 8, 'BoxLayout-мастер: добавь распорку',
+VALUES (353, 41, 8, 'BoxLayout-мастер: добавь распорку',
         '<p><strong>Задание:</strong><br>Создай горизонтальную распорку 20 через Box.createHorizontalStrut(20), добавь в контейнер</p>',
         'BoxLayout-Box-createHorizontalStrut',
-        '', 450, 22.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        '', 353, 22.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 Component strut = Box.createHorizontalStrut(20);
@@ -460,7 +460,7 @@ add(button1);
 add(strut);
 add(button2);');
 INSERT INTO documentation (id, text)
-VALUES (433, '<h2>🎮 Урок 41.9 — Выбор файлов-мастер: Добавь фильтр файлов!</h2>
+VALUES (351, '<h2>🎮 Выбор файлов-мастер: Добавь фильтр файлов!</h2>
 
 <p><strong>Привет, мастер фильтров!</strong> 📁 Сегодня ты добавишь фильтр файлов в <code>JFileChooser</code> — это как фильтрация в игре!</p>
 
@@ -504,10 +504,10 @@ VALUES (433, '<h2>🎮 Урок 41.9 — Выбор файлов-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (433, 41, 9, 'Выбор файлов-мастер: добавь фильтр файлов',
+VALUES (351, 41, 9, 'Выбор файлов-мастер: добавь фильтр файлов',
         '<p><strong>Задание:</strong><br>Создай FileNameExtensionFilter для "jpg", "png", добавь через addChoosableFileFilter()</p>',
         'JFileChooser-addChoosableFileFilter-FileNameExtensionFilter',
-        '', 433, 25.0, 0.0, 'JFrame frame = new JFrame();
+        '', 351, 25.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
 FileNameExtensionFilter filter = new FileNameExtensionFilter("Изображения", "jpg", "png", "gif");
 fileChooser.addChoosableFileFilter(filter);
@@ -517,7 +517,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
     System.out.println("Выбран файл: " + file.getName());
 }');
 INSERT INTO documentation (id, text)
-VALUES (492, '<h2>🎮 Урок 41.9 — BoxLayout-мастер: Добавь жёсткую область!</h2>
+VALUES (355, '<h2>🎮 BoxLayout-мастер: Добавь жёсткую область!</h2>
 
 <p><strong>Привет, мастер областей!</strong> 📦 Сегодня ты добавишь жёсткую область в <code>BoxLayout</code> — это как фиксированная область в игре!</p>
 
@@ -561,10 +561,10 @@ VALUES (492, '<h2>🎮 Урок 41.9 — BoxLayout-мастер: Добавь ж
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (492, 41, 9, 'BoxLayout-мастер: добавь жёсткую область',
+VALUES (355, 41, 9, 'BoxLayout-мастер: добавь жёсткую область',
         '<p><strong>Задание:</strong><br>Создай жёсткую область 20x20 через Box.createRigidArea(new Dimension(20, 20)), добавь в контейнер</p>',
         'BoxLayout-Box-createRigidArea-Dimension',
-        '', 492, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        '', 355, 23.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 Component area = Box.createRigidArea(new Dimension(20, 20));
@@ -572,7 +572,7 @@ add(button1);
 add(area);
 add(button2);');
 INSERT INTO documentation (id, text)
-VALUES (489, '<h2>🎮 Урок 41.10 — Выбор файлов-мастер: Установи текущую директорию!</h2>
+VALUES (354, '<h2>🎮 Выбор файлов-мастер: Установи текущую директорию!</h2>
 
 <p><strong>Привет, мастер директорий!</strong> 📁 Сегодня ты установишь текущую директорию в <code>JFileChooser</code> — это как навигация в игре!</p>
 
@@ -616,10 +616,10 @@ VALUES (489, '<h2>🎮 Урок 41.10 — Выбор файлов-мастер: 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (489, 41, 10, 'Выбор файлов-мастер: установи текущую директорию',
+VALUES (354, 41, 10, 'Выбор файлов-мастер: установи текущую директорию',
         '<p><strong>Задание:</strong><br>Создай File для директории, установи через setCurrentDirectory()</p>',
         'JFileChooser-setCurrentDirectory-File',
-        '', 489, 23.0, 0.0, 'JFrame frame = new JFrame();
+        '', 354, 23.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
 File dir = new File("/path/to/directory");
 fileChooser.setCurrentDirectory(dir);

@@ -13,7 +13,7 @@ VALUES (12, 12, 'Слайдеры (JSlider)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (161, '<h2>🎮 Урок 12.2 — Переключатель-мастер: Обрабатывай состояние!</h2>
+VALUES (101, '<h2>🎮 Переключатель-мастер: Обрабатывай состояние!</h2>
 
 <p><strong>Привет, мастер состояний!</strong> 🔘 Сегодня ты обработаешь состояние <code>JToggleButton</code> — это как реакция на переключение в игре! Можно реагировать на включение и выключение!</p>
 
@@ -59,10 +59,10 @@ VALUES (161, '<h2>🎮 Урок 12.2 — Переключатель-мастер
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (161, 12, 2, 'Переключатель-мастер: обрабатывай состояние',
+VALUES (101, 12, 2, 'Переключатель-мастер: обрабатывай состояние',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JToggleButton-addActionListener-isSelected',
-        '', 161, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 101, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
 toggleButton.addActionListener(e -> {
     if (toggleButton.isSelected()) {
         System.out.println("Включено!");
@@ -72,7 +72,7 @@ toggleButton.addActionListener(e -> {
 });
 add(toggleButton);');
 INSERT INTO documentation (id, text)
-VALUES (263, '<h2>🎮 Урок 12.3 — Переключатель-мастер: Добавь мнемонику!</h2>
+VALUES (102, '<h2>🎮 Переключатель-мастер: Добавь мнемонику!</h2>
 
 <p><strong>Привет, мастер горячих клавиш!</strong> 🔘 Сегодня ты добавишь мнемонику к <code>JToggleButton</code> — это как горячая клавиша в игре!</p>
 
@@ -116,14 +116,14 @@ VALUES (263, '<h2>🎮 Урок 12.3 — Переключатель-мастер
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (263, 12, 3, 'Переключатель-мастер: добавь мнемонику',
+VALUES (102, 12, 3, 'Переключатель-мастер: добавь мнемонику',
         '<p><strong>Задание:</strong><br>Установи мнемонику VK_T через setMnemonic(), добавь &T в текст переключателя</p>',
         'JToggleButton-setMnemonic-KeyEvent',
-        '', 263, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить (&T)");
+        '', 102, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить (&T)");
 toggleButton.setMnemonic(KeyEvent.VK_T);
 add(toggleButton);');
 INSERT INTO documentation (id, text)
-VALUES (313, '<h2>🎮 Урок 12.4 — Переключатель-мастер: Обрабатывай изменение состояния!</h2>
+VALUES (103, '<h2>🎮 Переключатель-мастер: Обрабатывай изменение состояния!</h2>
 
 <p><strong>Привет, мастер состояний!</strong> 🔘 Сегодня ты обработаешь изменение состояния <code>JToggleButton</code> — это как реакция на переключение в игре!</p>
 
@@ -167,10 +167,10 @@ VALUES (313, '<h2>🎮 Урок 12.4 — Переключатель-мастер
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (313, 12, 4, 'Переключатель-мастер: обрабатывай изменение состояния',
+VALUES (103, 12, 4, 'Переключатель-мастер: обрабатывай изменение состояния',
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
         'JToggleButton-addItemListener-isSelected',
-        '', 313, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 103, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
 toggleButton.addItemListener(e -> {
     boolean selected = toggleButton.isSelected();
     System.out.println("Включено: " + selected);
@@ -178,7 +178,7 @@ toggleButton.addItemListener(e -> {
 add(toggleButton);');
 
 INSERT INTO documentation (id, text)
-VALUES (363, '<h2>🎮 Урок 12.5 — Переключатель-мастер: Установи команду действия!</h2>
+VALUES (104, '<h2>🎮 Переключатель-мастер: Установи команду действия!</h2>
 
 <p><strong>Привет, мастер команд!</strong> 🔘 Сегодня ты установишь команду действия к <code>JToggleButton</code> — это как идентификация в игре!</p>
 
@@ -225,10 +225,10 @@ VALUES (363, '<h2>🎮 Урок 12.5 — Переключатель-мастер
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (363, 12, 5, 'Переключатель-мастер: установи команду действия',
+VALUES (104, 12, 5, 'Переключатель-мастер: установи команду действия',
         '<p><strong>Задание:</strong><br>Установи команду "TOGGLE" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
         'JToggleButton-setActionCommand-getActionCommand',
-        '', 363, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 104, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
 toggleButton.setActionCommand("TOGGLE");
 toggleButton.addActionListener(e -> {
     String cmd = e.getActionCommand();
@@ -236,7 +236,7 @@ toggleButton.addActionListener(e -> {
 });
 add(toggleButton);');
 INSERT INTO documentation (id, text)
-VALUES (463, '<h2>🎮 Урок 12.6 — Переключатель-мастер: Установи шрифт!</h2>
+VALUES (105, '<h2>🎮 Переключатель-мастер: Установи шрифт!</h2>
 
 <p><strong>Привет, мастер шрифтов!</strong> 🔘 Сегодня ты установишь шрифт в <code>JToggleButton</code> — это как стиль в игре!</p>
 
@@ -280,15 +280,15 @@ VALUES (463, '<h2>🎮 Урок 12.6 — Переключатель-мастер
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (463, 12, 6, 'Переключатель-мастер: установи шрифт',
+VALUES (105, 12, 6, 'Переключатель-мастер: установи шрифт',
         '<p><strong>Задание:</strong><br>Создай шрифт new Font("Serif", Font.PLAIN, 16), установи через setFont()</p>',
         'JToggleButton-setFont-Font',
-        '', 463, 22.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 105, 22.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
 Font font = new Font("Serif", Font.PLAIN, 16);
 toggleButton.setFont(font);
 add(toggleButton);');
 INSERT INTO documentation (id, text)
-VALUES (513, '<h2>🎮 Урок 12.7 — Переключатель-мастер: Установи отрисовку границы!</h2>
+VALUES (106, '<h2>🎮 Переключатель-мастер: Установи отрисовку границы!</h2>
 
 <p><strong>Привет, мастер границ!</strong> 🔘 Сегодня ты установишь отрисовку границы в <code>JToggleButton</code> — это как рамка в игре!</p>
 
@@ -329,9 +329,9 @@ VALUES (513, '<h2>🎮 Урок 12.7 — Переключатель-мастер
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (513, 12, 7, 'Переключатель-мастер: установи отрисовку границы',
+VALUES (106, 12, 7, 'Переключатель-мастер: установи отрисовку границы',
         '<p><strong>Задание:</strong><br>Установи отрисовку true через setBorderPainted()</p>',
         'JToggleButton-setBorderPainted',
-        '', 513, 21.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 106, 21.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
 toggleButton.setBorderPainted(true);
 add(toggleButton);');

@@ -8,3 +8,4 @@ public interface ErrorEntryRepository extends JpaRepository<ErrorEntryEntity, Lo
 
 
 
+

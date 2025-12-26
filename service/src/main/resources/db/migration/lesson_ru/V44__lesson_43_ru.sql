@@ -13,7 +13,7 @@ VALUES (43, 43, 'GroupLayout - Групповая компоновка', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (82, '<h2>🎮 Урок 43.1 — GroupLayout-новичок: Создай групповую компоновку!</h2>
+VALUES (370, '<h2>🎮 GroupLayout-новичок: Создай групповую компоновку!</h2>
 
 <p><strong>Привет, мастер групп!</strong> 👥 Сегодня ты создашь <code>GroupLayout</code> — это как группировка компонентов! Можно создавать сложные компоновки с группами!</p>
 
@@ -69,10 +69,10 @@ panel.setLayout(layout);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (82, 43, 1, 'GroupLayout-новичок: создай групповую компоновку',
+VALUES (370, 43, 1, 'GroupLayout-новичок: создай групповую компоновку',
         '<p><strong>Задание:</strong><br>Создай GroupLayout, создай горизонтальную последовательную группу с двумя кнопками, создай вертикальную параллельную группу</p>',
         'GroupLayout-setLayout-setHorizontalGroup-setVerticalGroup',
-        '', 82, 30.0, 0.0, 'JPanel panel = new JPanel();
+        '', 370, 30.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
 JButton button1 = new JButton("Кнопка 1");
@@ -87,7 +87,7 @@ vGroup.addComponent(button2);
 layout.setVerticalGroup(vGroup);
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (102, '<h2>🎮 Урок 43.2 — GroupLayout-мастер: Добавь отступы между компонентами!</h2>
+VALUES (371, '<h2>🎮 GroupLayout-мастер: Добавь отступы между компонентами!</h2>
 
 <p><strong>Привет, мастер отступов!</strong> 👥 Сегодня ты научишься добавлять отступы в <code>GroupLayout</code> — это как промежутки между элементами в игре! Можно создать красивые отступы между компонентами!</p>
 
@@ -134,10 +134,10 @@ VALUES (102, '<h2>🎮 Урок 43.2 — GroupLayout-мастер: Добавь 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (102, 43, 2, 'GroupLayout-мастер: добавь отступы между компонентами',
+VALUES (371, 43, 2, 'GroupLayout-мастер: добавь отступы между компонентами',
         '<p><strong>Задание:</strong><br>В последовательной группе добавь компонент, добавь отступ 10, добавь ещё компонент</p>',
         'GroupLayout-createSequentialGroup-addComponent-addGap',
-        '', 102, 28.0, 0.0, 'JPanel panel = new JPanel();
+        '', 371, 28.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
 JButton button1 = new JButton("Кнопка 1");
@@ -150,7 +150,7 @@ layout.setHorizontalGroup(
 );
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (197, '<h2>🎮 Урок 43.2 — ActionListener-мастер: Обрабатывай несколько кнопок!</h2>
+VALUES (373, '<h2>🎮 ActionListener-мастер: Обрабатывай несколько кнопок!</h2>
 
 <p><strong>Привет, мастер множества!</strong> 🎯 Сегодня ты обработаешь несколько кнопок одним <code>ActionListener</code> — это как универсальный обработчик в игре! Можно использовать один слушатель для нескольких кнопок!</p>
 
@@ -201,10 +201,10 @@ button2.addActionListener(listener);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (197, 43, 2, 'ActionListener-мастер: обрабатывай несколько кнопок',
+VALUES (373, 43, 2, 'ActionListener-мастер: обрабатывай несколько кнопок',
         '<p><strong>Задание:</strong><br>Создай ActionListener, проверь getSource() для двух кнопок, добавь обработчик к обеим кнопкам</p>',
         'ActionListener-getSource-addActionListener',
-        '', 197, 24.0, 0.0, 'JButton button1 = new JButton("Кнопка 1");
+        '', 373, 24.0, 0.0, 'JButton button1 = new JButton("Кнопка 1");
 JButton button2 = new JButton("Кнопка 2");
 ActionListener listener = e -> {
     if (e.getSource() == button1) {
@@ -218,7 +218,7 @@ button2.addActionListener(listener);
 add(button1);
 add(button2);');
 INSERT INTO documentation (id, text)
-VALUES (119, '<h2>🎮 Урок 43.3 — GroupLayout-мастер: Создай параллельные группы!</h2>
+VALUES (372, '<h2>🎮 GroupLayout-мастер: Создай параллельные группы!</h2>
 
 <p><strong>Привет, мастер параллелизма!</strong> 👥 Сегодня ты научишься создавать параллельные группы в <code>GroupLayout</code> — это как выравнивание элементов в игре! Компоненты будут выровнены параллельно!</p>
 
@@ -262,10 +262,10 @@ VALUES (119, '<h2>🎮 Урок 43.3 — GroupLayout-мастер: Создай 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (119, 43, 3, 'GroupLayout-мастер: создай параллельные группы',
+VALUES (372, 43, 3, 'GroupLayout-мастер: создай параллельные группы',
         '<p><strong>Задание:</strong><br>Создай горизонтальную параллельную группу с двумя кнопками</p>',
         'GroupLayout-createParallelGroup-setHorizontalGroup',
-        '', 119, 29.0, 0.0, 'JPanel panel = new JPanel();
+        '', 372, 29.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
 JButton button1 = new JButton("Кнопка 1");
@@ -277,7 +277,7 @@ layout.setHorizontalGroup(
 );
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (245, '<h2>🎮 Урок 43.3 — ActionListener-мастер: Используй команду действия!</h2>
+VALUES (374, '<h2>🎮 ActionListener-мастер: Используй команду действия!</h2>
 
 <p><strong>Привет, мастер команд!</strong> 🎯 Сегодня ты используешь команду действия в <code>ActionListener</code> — это как идентификация в игре!</p>
 
@@ -326,10 +326,10 @@ VALUES (245, '<h2>🎮 Урок 43.3 — ActionListener-мастер: Испол
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (245, 43, 3, 'ActionListener-мастер: используй команду действия',
+VALUES (374, 43, 3, 'ActionListener-мастер: используй команду действия',
         '<p><strong>Задание:</strong><br>Установи команду "SAVE" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
         'ActionListener-setActionCommand-getActionCommand',
-        '', 245, 24.0, 0.0, 'JButton button = new JButton("Сохранить");
+        '', 374, 24.0, 0.0, 'JButton button = new JButton("Сохранить");
 button.setActionCommand("SAVE");
 button.addActionListener(e -> {
     String cmd = e.getActionCommand();
@@ -339,7 +339,7 @@ button.addActionListener(e -> {
 });
 add(button);');
 INSERT INTO documentation (id, text)
-VALUES (296, '<h2>🎮 Урок 43.4 — ActionListener-мастер: Определи когда!</h2>
+VALUES (375, '<h2>🎮 ActionListener-мастер: Определи когда!</h2>
 
 <p><strong>Привет, мастер времени!</strong> 🎯 Сегодня ты определишь время события в <code>ActionListener</code> — это как метка времени в игре!</p>
 
@@ -383,17 +383,17 @@ VALUES (296, '<h2>🎮 Урок 43.4 — ActionListener-мастер: Опред
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (296, 43, 4, 'ActionListener-мастер: определи когда',
+VALUES (375, 43, 4, 'ActionListener-мастер: определи когда',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, получи время через getWhen(), выведи его</p>',
         'ActionListener-getWhen',
-        '', 296, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 375, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
 button.addActionListener(e -> {
     long when = e.getWhen();
     System.out.println("Время: " + new Date(when));
 });
 add(button);');
 INSERT INTO documentation (id, text)
-VALUES (396, '<h2>🎮 Урок 43.4 — KeyListener-мастер: Получи символ клавиши!</h2>
+VALUES (377, '<h2>🎮 KeyListener-мастер: Получи символ клавиши!</h2>
 
 <p><strong>Привет, мастер клавиатуры!</strong> ⌨️ Сегодня ты получишь символ клавиши в <code>KeyListener</code> — это как символ в игре!</p>
 
@@ -440,10 +440,10 @@ VALUES (396, '<h2>🎮 Урок 43.4 — KeyListener-мастер: Получи 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (396, 43, 4, 'KeyListener-мастер: получи символ клавиши',
+VALUES (377, 43, 4, 'KeyListener-мастер: получи символ клавиши',
         '<p><strong>Задание:</strong><br>Добавь KeyListener, переопредели keyTyped(), получи символ через getKeyChar(), выведи</p>',
         'KeyListener-getKeyChar-KeyEvent',
-        '', 396, 23.0, 0.0, 'JTextField component = new JTextField();
+        '', 377, 23.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.addKeyListener(new KeyAdapter() {
     @Override
@@ -454,7 +454,7 @@ component.addKeyListener(new KeyAdapter() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (346, '<h2>🎮 Урок 43.5 — ActionListener-мастер: Определи модификаторы!</h2>
+VALUES (376, '<h2>🎮 ActionListener-мастер: Определи модификаторы!</h2>
 
 <p><strong>Привет, мастер модификаторов!</strong> 🎯 Сегодня ты определишь модификаторы в <code>ActionListener</code> — это как комбинации в игре!</p>
 
@@ -500,10 +500,10 @@ VALUES (346, '<h2>🎮 Урок 43.5 — ActionListener-мастер: Опред
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (346, 43, 5, 'ActionListener-мастер: определи модификаторы',
+VALUES (376, 43, 5, 'ActionListener-мастер: определи модификаторы',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь getModifiers() & CTRL_MASK, выведи сообщение</p>',
         'ActionListener-getModifiers-CTRL_MASK',
-        '', 346, 24.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 376, 24.0, 0.0, 'JButton button = new JButton("Кнопка");
 button.addActionListener(e -> {
     int modifiers = e.getModifiers();
     if ((modifiers & ActionEvent.CTRL_MASK) != 0) {
@@ -512,7 +512,7 @@ button.addActionListener(e -> {
 });
 add(button);');
 INSERT INTO documentation (id, text)
-VALUES (442, '<h2>🎮 Урок 43.5 — KeyListener-мастер: Получи код клавиши!</h2>
+VALUES (379, '<h2>🎮 KeyListener-мастер: Получи код клавиши!</h2>
 
 <p><strong>Привет, мастер клавиатуры!</strong> ⌨️ Сегодня ты получишь код клавиши в <code>KeyListener</code> — это как идентификация в игре!</p>
 
@@ -561,10 +561,10 @@ VALUES (442, '<h2>🎮 Урок 43.5 — KeyListener-мастер: Получи 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (442, 43, 5, 'KeyListener-мастер: получи код клавиши',
+VALUES (379, 43, 5, 'KeyListener-мастер: получи код клавиши',
         '<p><strong>Задание:</strong><br>Добавь KeyListener, переопредели keyPressed(), получи код через getKeyCode(), проверь VK_ENTER</p>',
         'KeyListener-getKeyCode-KeyEvent',
-        '', 442, 24.0, 0.0, 'JTextField component = new JTextField();
+        '', 379, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.addKeyListener(new KeyAdapter() {
     @Override
@@ -577,7 +577,7 @@ component.addKeyListener(new KeyAdapter() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (498, '<h2>🎮 Урок 43.6 — KeyListener-мастер: Получи символ клавиши!</h2>
+VALUES (382, '<h2>🎮 KeyListener-мастер: Получи символ клавиши!</h2>
 
 <p><strong>Привет, мастер символов!</strong> ⌨️ Сегодня ты получишь символ клавиши в <code>KeyListener</code> — это как символ в игре!</p>
 
@@ -624,10 +624,10 @@ VALUES (498, '<h2>🎮 Урок 43.6 — KeyListener-мастер: Получи 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (498, 43, 6, 'KeyListener-мастер: получи символ клавиши',
+VALUES (382, 43, 6, 'KeyListener-мастер: получи символ клавиши',
         '<p><strong>Задание:</strong><br>Добавь KeyListener, переопредели keyTyped(), получи символ через getKeyChar(), выведи</p>',
         'KeyListener-getKeyChar-KeyEvent',
-        '', 498, 23.0, 0.0, 'JTextField component = new JTextField();
+        '', 382, 23.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.addKeyListener(new KeyAdapter() {
     @Override
@@ -638,7 +638,7 @@ component.addKeyListener(new KeyAdapter() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (438, '<h2>🎮 Урок 43.7 — GroupLayout-мастер: Создай последовательную группу!</h2>
+VALUES (378, '<h2>🎮 GroupLayout-мастер: Создай последовательную группу!</h2>
 
 <p><strong>Привет, мастер групп!</strong> 📐 Сегодня ты создашь последовательную группу в <code>GroupLayout</code> — это как последовательность в игре!</p>
 
@@ -682,10 +682,10 @@ VALUES (438, '<h2>🎮 Урок 43.7 — GroupLayout-мастер: Создай 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (438, 43, 7, 'GroupLayout-мастер: создай последовательную группу',
+VALUES (378, 43, 7, 'GroupLayout-мастер: создай последовательную группу',
         '<p><strong>Задание:</strong><br>Создай последовательную группу через createSequentialGroup(), добавь компоненты через addComponent()</p>',
         'GroupLayout-createSequentialGroup-addComponent',
-        '', 438, 26.0, 0.0, 'JPanel panel = new JPanel();
+        '', 378, 26.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
 JButton component1 = new JButton("Кнопка 1");
@@ -695,7 +695,7 @@ hGroup.addComponent(component1).addComponent(component2);
 layout.setHorizontalGroup(hGroup);
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (452, '<h2>🎮 Урок 43.8 — GroupLayout-мастер: Создай параллельную группу!</h2>
+VALUES (380, '<h2>🎮 GroupLayout-мастер: Создай параллельную группу!</h2>
 
 <p><strong>Привет, мастер групп!</strong> 📐 Сегодня ты создашь параллельную группу в <code>GroupLayout</code> — это как параллельность в игре!</p>
 
@@ -739,10 +739,10 @@ VALUES (452, '<h2>🎮 Урок 43.8 — GroupLayout-мастер: Создай 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (452, 43, 8, 'GroupLayout-мастер: создай параллельную группу',
+VALUES (380, 43, 8, 'GroupLayout-мастер: создай параллельную группу',
         '<p><strong>Задание:</strong><br>Создай параллельную группу через createParallelGroup(), добавь компоненты через addComponent()</p>',
         'GroupLayout-createParallelGroup-addComponent',
-        '', 452, 26.0, 0.0, 'JPanel panel = new JPanel();
+        '', 380, 26.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
 JButton component1 = new JButton("Кнопка 1");
@@ -752,7 +752,7 @@ vGroup.addComponent(component1).addComponent(component2);
 layout.setVerticalGroup(vGroup);
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (494, '<h2>🎮 Урок 43.9 — GroupLayout-мастер: Добавь зазор!</h2>
+VALUES (381, '<h2>🎮 GroupLayout-мастер: Добавь зазор!</h2>
 
 <p><strong>Привет, мастер зазоров!</strong> 📐 Сегодня ты добавишь зазор в <code>GroupLayout</code> — это как расстояние в игре!</p>
 
@@ -793,10 +793,10 @@ VALUES (494, '<h2>🎮 Урок 43.9 — GroupLayout-мастер: Добавь 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (494, 43, 9, 'GroupLayout-мастер: добавь зазор',
+VALUES (381, 43, 9, 'GroupLayout-мастер: добавь зазор',
         '<p><strong>Задание:</strong><br>Добавь зазор 10 через addGap() в группу</p>',
         'GroupLayout-addGap',
-        '', 494, 22.0, 0.0, 'JPanel panel = new JPanel();
+        '', 381, 22.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
 JButton button1 = new JButton("Кнопка 1");

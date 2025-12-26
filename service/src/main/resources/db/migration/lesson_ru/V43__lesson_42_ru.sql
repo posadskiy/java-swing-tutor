@@ -13,7 +13,7 @@ VALUES (42, 42, 'CardLayout - Переключение панелей', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (75, '<h2>🎮 Урок 42.1 — CardLayout-новичок: Создай переключаемые панели!</h2>
+VALUES (356, '<h2>🎮 CardLayout-новичок: Создай переключаемые панели!</h2>
 
 <p><strong>Привет, мастер переключений!</strong> 🃏 Сегодня ты создашь <code>CardLayout</code> — это как колода карт! Можно переключаться между разными панелями!</p>
 
@@ -61,10 +61,10 @@ add(panel2, "card2");</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (75, 42, 1, 'CardLayout-новичок: создай переключаемые панели',
+VALUES (356, 42, 1, 'CardLayout-новичок: создай переключаемые панели',
         '<p><strong>Задание:</strong><br>Создай CardLayout, добавь две панели с именами "card1" и "card2", покажи "card1"</p>',
         'CardLayout-add-show',
-        '', 75, 26.0, 0.0, 'CardLayout cardLayout = new CardLayout();
+        '', 356, 26.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
 JPanel panel1 = new JPanel();
 panel1.add(new JLabel("Панель 1"));
@@ -74,7 +74,7 @@ add(panel1, "card1");
 add(panel2, "card2");
 cardLayout.show(this, "card1");');
 INSERT INTO documentation (id, text)
-VALUES (93, '<h2>🎮 Урок 42.2 — CardLayout-мастер: Навигация между картами!</h2>
+VALUES (357, '<h2>🎮 CardLayout-мастер: Навигация между картами!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🃏 Сегодня ты научишься переключаться между картами в <code>CardLayout</code> — это как перелистывание страниц в игре! Можно переходить к следующей или предыдущей карте!</p>
 
@@ -122,10 +122,10 @@ VALUES (93, '<h2>🎮 Урок 42.2 — CardLayout-мастер: Навигац�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (93, 42, 2, 'CardLayout-мастер: навигация между картами',
+VALUES (357, 42, 2, 'CardLayout-мастер: навигация между картами',
         '<p><strong>Задание:</strong><br>Переключись на следующую карту через next(), затем на предыдущую через previous()</p>',
         'CardLayout-next-previous',
-        '', 93, 27.0, 0.0, 'CardLayout cardLayout = new CardLayout();
+        '', 357, 27.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
 JPanel panel1 = new JPanel();
 panel1.add(new JLabel("Панель 1"));
@@ -136,7 +136,7 @@ add(panel2, "card2");
 cardLayout.next(this);
 cardLayout.previous(this);');
 INSERT INTO documentation (id, text)
-VALUES (192, '<h2>🎮 Урок 42.2 — GridBagLayout-мастер: Настрой вес!</h2>
+VALUES (359, '<h2>🎮 GridBagLayout-мастер: Настрой вес!</h2>
 
 <p><strong>Привет, мастер весов!</strong> 📐 Сегодня ты настроишь вес в <code>GridBagLayout</code> — это как распределение пространства в игре! Можно указать, как компоненты будут растягиваться!</p>
 
@@ -184,10 +184,10 @@ gbc.weighty = 1.0;</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (192, 42, 2, 'GridBagLayout-мастер: настрой вес',
+VALUES (359, 42, 2, 'GridBagLayout-мастер: настрой вес',
         '<p><strong>Задание:</strong><br>Создай GridBagConstraints, установи weightx и weighty по 1.0, добавь компонент с ограничениями</p>',
         'GridBagLayout-GridBagConstraints-weightx-weighty',
-        '', 192, 26.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 359, 26.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
 gbc.gridy = 0;
@@ -197,7 +197,7 @@ gbc.fill = GridBagConstraints.BOTH;
 JButton button = new JButton("Кнопка");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
-VALUES (118, '<h2>🎮 Урок 42.3 — CardLayout-мастер: Узнай текущую карту!</h2>
+VALUES (358, '<h2>🎮 CardLayout-мастер: Узнай текущую карту!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🃏 Сегодня ты научишься определять текущую карту в <code>CardLayout</code> — это как проверка текущего экрана в игре! Можно узнать, какая карта сейчас видна!</p>
 
@@ -250,10 +250,10 @@ for (Component comp : components) {<br>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (118, 42, 3, 'CardLayout-мастер: узнай текущую карту',
+VALUES (358, 42, 3, 'CardLayout-мастер: узнай текущую карту',
         '<p><strong>Задание:</strong><br>Получи все компоненты, проверь isVisible() для каждого, выведи имя видимого компонента</p>',
         'Container-getComponents-isVisible-getName',
-        '', 118, 27.0, 0.0, 'CardLayout cardLayout = new CardLayout();
+        '', 358, 27.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
 JPanel panel1 = new JPanel();
 panel1.setName("card1");
@@ -270,7 +270,7 @@ for (Component comp : components) {
     }
 }');
 INSERT INTO documentation (id, text)
-VALUES (240, '<h2>🎮 Урок 42.3 — GridBagLayout-мастер: Настрой заполнение!</h2>
+VALUES (360, '<h2>🎮 GridBagLayout-мастер: Настрой заполнение!</h2>
 
 <p><strong>Привет, мастер заполнения!</strong> 📐 Сегодня ты настроишь заполнение в <code>GridBagLayout</code> — это как растягивание в игре!</p>
 
@@ -317,10 +317,10 @@ VALUES (240, '<h2>🎮 Урок 42.3 — GridBagLayout-мастер: Настр�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (240, 42, 3, 'GridBagLayout-мастер: настрой заполнение',
+VALUES (360, 42, 3, 'GridBagLayout-мастер: настрой заполнение',
         '<p><strong>Задание:</strong><br>Создай GridBagConstraints, установи fill = BOTH, добавь компонент</p>',
         'GridBagLayout-GridBagConstraints-fill-BOTH',
-        '', 240, 25.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 360, 25.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
 gbc.gridy = 0;
@@ -328,7 +328,7 @@ gbc.fill = GridBagConstraints.BOTH;
 JButton button = new JButton("Кнопка");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
-VALUES (291, '<h2>🎮 Урок 42.4 — GridBagLayout-мастер: Настрой якорь!</h2>
+VALUES (361, '<h2>🎮 GridBagLayout-мастер: Настрой якорь!</h2>
 
 <p><strong>Привет, мастер якорей!</strong> 📐 Сегодня ты настроишь якорь в <code>GridBagLayout</code> — это как позиционирование в игре!</p>
 
@@ -375,10 +375,10 @@ VALUES (291, '<h2>🎮 Урок 42.4 — GridBagLayout-мастер: Настр�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (291, 42, 4, 'GridBagLayout-мастер: настрой якорь',
+VALUES (361, 42, 4, 'GridBagLayout-мастер: настрой якорь',
         '<p><strong>Задание:</strong><br>Создай GridBagConstraints, установи anchor = NORTH, добавь компонент</p>',
         'GridBagLayout-GridBagConstraints-anchor-NORTH',
-        '', 291, 25.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 361, 25.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
 gbc.gridy = 0;
@@ -386,7 +386,7 @@ gbc.anchor = GridBagConstraints.NORTH;
 JButton button = new JButton("Кнопка");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
-VALUES (341, '<h2>🎮 Урок 42.5 — GridBagLayout-мастер: Настрой отступы!</h2>
+VALUES (362, '<h2>🎮 GridBagLayout-мастер: Настрой отступы!</h2>
 
 <p><strong>Привет, мастер отступов!</strong> 📐 Сегодня ты настроишь отступы в <code>GridBagLayout</code> — это как поля в игре!</p>
 
@@ -433,10 +433,10 @@ VALUES (341, '<h2>🎮 Урок 42.5 — GridBagLayout-мастер: Настр�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (341, 42, 5, 'GridBagLayout-мастер: настрой отступы',
+VALUES (362, 42, 5, 'GridBagLayout-мастер: настрой отступы',
         '<p><strong>Задание:</strong><br>Создай GridBagConstraints, установи insets = new Insets(5,5,5,5), добавь компонент</p>',
         'GridBagLayout-GridBagConstraints-Insets',
-        '', 341, 24.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 362, 24.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
 gbc.gridy = 0;
@@ -444,7 +444,7 @@ gbc.insets = new Insets(5, 5, 5, 5);
 JButton button = new JButton("Кнопка");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
-VALUES (390, '<h2>🎮 Урок 42.6 — Выбор цвета-мастер: Установи панель предпросмотра!</h2>
+VALUES (363, '<h2>🎮 Выбор цвета-мастер: Установи панель предпросмотра!</h2>
 
 <p><strong>Привет, мастер предпросмотра!</strong> 🎨 Сегодня ты установишь панель предпросмотра в <code>JColorChooser</code> — это как предпросмотр в игре!</p>
 
@@ -488,10 +488,10 @@ VALUES (390, '<h2>🎮 Урок 42.6 — Выбор цвета-мастер: У�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (390, 42, 6, 'Выбор цвета-мастер: установи панель предпросмотра',
+VALUES (363, 42, 6, 'Выбор цвета-мастер: установи панель предпросмотра',
         '<p><strong>Задание:</strong><br>Создай JPanel, установи через setPreviewPanel()</p>',
         'JColorChooser-setPreviewPanel',
-        '', 390, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
+        '', 363, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 JPanel previewPanel = new JPanel();
 previewPanel.setPreferredSize(new Dimension(100, 50));
 colorChooser.setPreviewPanel(previewPanel);
@@ -499,7 +499,7 @@ JFrame frame = new JFrame();
 JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (404, '<h2>🎮 Урок 42.6 — CardLayout-мастер: Покажи первую карту!</h2>
+VALUES (364, '<h2>🎮 CardLayout-мастер: Покажи первую карту!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🃏 Сегодня ты покажешь первую карту в <code>CardLayout</code> — это как начало в игре!</p>
 
@@ -543,10 +543,10 @@ VALUES (404, '<h2>🎮 Урок 42.6 — CardLayout-мастер: Покажи �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (404, 42, 6, 'CardLayout-мастер: покажи первую карту',
+VALUES (364, 42, 6, 'CardLayout-мастер: покажи первую карту',
         '<p><strong>Задание:</strong><br>Получи CardLayout через getLayout(), приведи к CardLayout, вызови first(container)</p>',
         'CardLayout-first',
-        '', 404, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
+        '', 364, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
 JPanel panel1 = new JPanel();
 panel1.add(new JLabel("Панель 1"));
@@ -557,7 +557,7 @@ add(panel2, "card2");
 CardLayout layout = (CardLayout) getLayout();
 layout.first(this);');
 INSERT INTO documentation (id, text)
-VALUES (434, '<h2>🎮 Урок 42.7 — Выбор цвета-мастер: Получи модель выбора!</h2>
+VALUES (365, '<h2>🎮 Выбор цвета-мастер: Получи модель выбора!</h2>
 
 <p><strong>Привет, мастер моделей!</strong> 🎨 Сегодня ты получишь модель выбора цвета в <code>JColorChooser</code> — это как доступ к модели в игре!</p>
 
@@ -598,16 +598,16 @@ VALUES (434, '<h2>🎮 Урок 42.7 — Выбор цвета-мастер: П�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (434, 42, 7, 'Выбор цвета-мастер: получи модель выбора',
+VALUES (365, 42, 7, 'Выбор цвета-мастер: получи модель выбора',
         '<p><strong>Задание:</strong><br>Получи модель выбора через getSelectionModel()</p>',
         'JColorChooser-getSelectionModel',
-        '', 434, 24.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
+        '', 365, 24.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 ColorSelectionModel model = colorChooser.getSelectionModel();
 JFrame frame = new JFrame();
 JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (437, '<h2>🎮 Урок 42.7 — CardLayout-мастер: Покажи последнюю карту!</h2>
+VALUES (366, '<h2>🎮 CardLayout-мастер: Покажи последнюю карту!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🃏 Сегодня ты покажешь последнюю карту в <code>CardLayout</code> — это как конец в игре!</p>
 
@@ -651,10 +651,10 @@ VALUES (437, '<h2>🎮 Урок 42.7 — CardLayout-мастер: Покажи �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (437, 42, 7, 'CardLayout-мастер: покажи последнюю карту',
+VALUES (366, 42, 7, 'CardLayout-мастер: покажи последнюю карту',
         '<p><strong>Задание:</strong><br>Получи CardLayout через getLayout(), приведи к CardLayout, вызови last(container)</p>',
         'CardLayout-last',
-        '', 437, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
+        '', 366, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
 JPanel panel1 = new JPanel();
 panel1.add(new JLabel("Панель 1"));
@@ -665,7 +665,7 @@ add(panel2, "card2");
 CardLayout layout = (CardLayout) getLayout();
 layout.last(this);');
 INSERT INTO documentation (id, text)
-VALUES (451, '<h2>🎮 Урок 42.8 — CardLayout-мастер: Покажи следующую карту!</h2>
+VALUES (367, '<h2>🎮 CardLayout-мастер: Покажи следующую карту!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🃏 Сегодня ты покажешь следующую карту в <code>CardLayout</code> — это как переход в игре!</p>
 
@@ -709,10 +709,10 @@ VALUES (451, '<h2>🎮 Урок 42.8 — CardLayout-мастер: Покажи �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (451, 42, 8, 'CardLayout-мастер: покажи следующую карту',
+VALUES (367, 42, 8, 'CardLayout-мастер: покажи следующую карту',
         '<p><strong>Задание:</strong><br>Получи CardLayout через getLayout(), приведи к CardLayout, вызови next(container)</p>',
         'CardLayout-next',
-        '', 451, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
+        '', 367, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
 JPanel panel1 = new JPanel();
 panel1.add(new JLabel("Панель 1"));
@@ -723,7 +723,7 @@ add(panel2, "card2");
 CardLayout layout = (CardLayout) getLayout();
 layout.next(this);');
 INSERT INTO documentation (id, text)
-VALUES (490, '<h2>🎮 Урок 42.8 — Выбор цвета-мастер: Установи цвет!</h2>
+VALUES (368, '<h2>🎮 Выбор цвета-мастер: Установи цвет!</h2>
 
 <p><strong>Привет, мастер цветов!</strong> 🎨 Сегодня ты установишь цвет в <code>JColorChooser</code> — это как установка в игре!</p>
 
@@ -764,16 +764,16 @@ VALUES (490, '<h2>🎮 Урок 42.8 — Выбор цвета-мастер: У�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (490, 42, 8, 'Выбор цвета-мастер: установи цвет',
+VALUES (368, 42, 8, 'Выбор цвета-мастер: установи цвет',
         '<p><strong>Задание:</strong><br>Установи цвет RED через setColor(Color.RED)</p>',
         'JColorChooser-setColor-Color',
-        '', 490, 22.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
+        '', 368, 22.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 colorChooser.setColor(Color.RED);
 JFrame frame = new JFrame();
 JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
-VALUES (493, '<h2>🎮 Урок 42.9 — CardLayout-мастер: Покажи предыдущую карту!</h2>
+VALUES (369, '<h2>🎮 CardLayout-мастер: Покажи предыдущую карту!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🃏 Сегодня ты покажешь предыдущую карту в <code>CardLayout</code> — это как возврат в игре!</p>
 
@@ -817,10 +817,10 @@ VALUES (493, '<h2>🎮 Урок 42.9 — CardLayout-мастер: Покажи �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (493, 42, 9, 'CardLayout-мастер: покажи предыдущую карту',
+VALUES (369, 42, 9, 'CardLayout-мастер: покажи предыдущую карту',
         '<p><strong>Задание:</strong><br>Получи CardLayout через getLayout(), приведи к CardLayout, вызови previous(container)</p>',
         'CardLayout-previous',
-        '', 493, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
+        '', 369, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
 JPanel panel1 = new JPanel();
 panel1.add(new JLabel("Панель 1"));

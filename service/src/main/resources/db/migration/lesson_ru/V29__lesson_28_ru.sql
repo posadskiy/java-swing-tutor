@@ -14,7 +14,7 @@ VALUES (28, 28, 'Swing: Радиокнопки в меню (JRadioButtonMenuItem
 
 -- Task 1: Creating JRadioButtonMenuItem
 INSERT INTO documentation (id, text)
-VALUES (600, '<h2>🎮 Урок 28.1 — Радиокнопка в меню-новичок: Создай выбор варианта в меню!</h2>
+VALUES (230, '<h2>🎮 Радиокнопка в меню-новичок: Создай выбор варианта в меню!</h2>
 
 <p><strong>Привет, мастер выбора!</strong> 🔘 Сегодня ты создашь <code>JRadioButtonMenuItem</code> — это как выбор варианта в меню игры! Можно выбрать один вариант из группы!</p>
 
@@ -67,10 +67,10 @@ VALUES (600, '<h2>🎮 Урок 28.1 — Радиокнопка в меню-но
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (600, 28, 1, 'Радиокнопка в меню-новичок: создай выбор варианта в меню',
+VALUES (230, 28, 1, 'Радиокнопка в меню-новичок: создай выбор варианта в меню',
         '<p><strong>Задание:</strong><br>Создай ButtonGroup, создай два JRadioButtonMenuItem, добавь в группу и меню</p>',
         'JRadioButtonMenuItem-ButtonGroup-add',
-        '', 600, 18.0, 0.0, 'ButtonGroup group = new ButtonGroup();
+        '', 230, 18.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
 JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
 group.add(item1);
@@ -84,7 +84,7 @@ setJMenuBar(menuBar);');
 
 -- Task 2: Selected State
 INSERT INTO documentation (id, text)
-VALUES (601, '<h2>🎮 Урок 28.2 — Радиокнопка в меню-мастер: Установи выбранное состояние!</h2>
+VALUES (231, '<h2>🎮 Радиокнопка в меню-мастер: Установи выбранное состояние!</h2>
 
 <p><strong>Привет, мастер состояний!</strong> 🔘 Сегодня ты установишь выбранное состояние для <code>JRadioButtonMenuItem</code> — это как выбор по умолчанию в игре!</p>
 
@@ -127,10 +127,10 @@ VALUES (601, '<h2>🎮 Урок 28.2 — Радиокнопка в меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (601, 28, 2, 'Радиокнопка в меню-мастер: установи выбранное состояние',
+VALUES (231, 28, 2, 'Радиокнопка в меню-мастер: установи выбранное состояние',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи выбранное состояние через setSelected(true)</p>',
         'JRadioButtonMenuItem-setSelected',
-        '', 601, 19.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Средний");
+        '', 231, 19.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Средний");
 item.setSelected(true);
 JMenu menu = new JMenu("Размер");
 menu.add(item);
@@ -140,7 +140,7 @@ setJMenuBar(menuBar);');
 
 -- Task 3: ButtonGroup
 INSERT INTO documentation (id, text)
-VALUES (602, '<h2>🎮 Урок 28.3 — Радиокнопка в меню-мастер: Создай группу выбора!</h2>
+VALUES (232, '<h2>🎮 Радиокнопка в меню-мастер: Создай группу выбора!</h2>
 
 <p><strong>Привет, мастер групп!</strong> 🔘 Сегодня ты создашь группу для <code>JRadioButtonMenuItem</code> — это как взаимное исключение в игре! Только один вариант может быть выбран!</p>
 
@@ -188,10 +188,10 @@ VALUES (602, '<h2>🎮 Урок 28.3 — Радиокнопка в меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (602, 28, 3, 'Радиокнопка в меню-мастер: создай группу выбора',
+VALUES (232, 28, 3, 'Радиокнопка в меню-мастер: создай группу выбора',
         '<p><strong>Задание:</strong><br>Создай ButtonGroup, создай три JRadioButtonMenuItem, добавь все в группу и меню</p>',
         'JRadioButtonMenuItem-ButtonGroup-add',
-        '', 602, 20.0, 0.0, 'ButtonGroup group = new ButtonGroup();
+        '', 232, 20.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
 JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
 JRadioButtonMenuItem item3 = new JRadioButtonMenuItem("Большой");
@@ -208,7 +208,7 @@ setJMenuBar(menuBar);');
 
 -- Task 4: Icon
 INSERT INTO documentation (id, text)
-VALUES (603, '<h2>🎮 Урок 28.4 — Радиокнопка в меню-мастер: Добавь иконку!</h2>
+VALUES (233, '<h2>🎮 Радиокнопка в меню-мастер: Добавь иконку!</h2>
 
 <p><strong>Привет, мастер иконок!</strong> 🔘 Сегодня ты добавишь иконку к <code>JRadioButtonMenuItem</code> — это как визуальный элемент в игре!</p>
 
@@ -252,10 +252,10 @@ VALUES (603, '<h2>🎮 Урок 28.4 — Радиокнопка в меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (603, 28, 4, 'Радиокнопка в меню-мастер: добавь иконку',
+VALUES (233, 28, 4, 'Радиокнопка в меню-мастер: добавь иконку',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, создай ImageIcon и установи через setIcon()</p>',
         'JRadioButtonMenuItem-ImageIcon-setIcon',
-        '', 603, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 233, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
 ImageIcon icon = new ImageIcon("icon.png");
 item.setIcon(icon);
 JMenu menu = new JMenu("Размер");
@@ -266,7 +266,7 @@ setJMenuBar(menuBar);');
 
 -- Task 5: Mnemonic
 INSERT INTO documentation (id, text)
-VALUES (604, '<h2>🎮 Урок 28.5 — Радиокнопка в меню-мастер: Добавь мнемонику!</h2>
+VALUES (234, '<h2>🎮 Радиокнопка в меню-мастер: Добавь мнемонику!</h2>
 
 <p><strong>Привет, мастер быстрого доступа!</strong> ⌨️ Сегодня ты добавишь мнемонику к <code>JRadioButtonMenuItem</code> — это как горячая клавиша в игре! Можно выбрать вариант с клавиатуры!</p>
 
@@ -306,10 +306,10 @@ VALUES (604, '<h2>🎮 Урок 28.5 — Радиокнопка в меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (604, 28, 5, 'Радиокнопка в меню-мастер: добавь мнемонику',
+VALUES (234, 28, 5, 'Радиокнопка в меню-мастер: добавь мнемонику',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи мнемонику KeyEvent.VK_M через setMnemonic()</p>',
         'JRadioButtonMenuItem-setMnemonic-KeyEvent',
-        '', 604, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 234, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
 item.setMnemonic(KeyEvent.VK_M);
 JMenu menu = new JMenu("Размер");
 menu.add(item);
@@ -319,7 +319,7 @@ setJMenuBar(menuBar);');
 
 -- Task 6: Enabled/Disabled
 INSERT INTO documentation (id, text)
-VALUES (605, '<h2>🎮 Урок 28.6 — Радиокнопка в меню-мастер: Включи/выключи вариант!</h2>
+VALUES (235, '<h2>🎮 Радиокнопка в меню-мастер: Включи/выключи вариант!</h2>
 
 <p><strong>Привет, мастер управления!</strong> 🔘 Сегодня ты научишься включать и выключать <code>JRadioButtonMenuItem</code> — это как блокировка в игре! Можно сделать вариант недоступным!</p>
 
@@ -363,10 +363,10 @@ VALUES (605, '<h2>🎮 Урок 28.6 — Радиокнопка в меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (605, 28, 6, 'Радиокнопка в меню-мастер: включи/выключи вариант',
+VALUES (235, 28, 6, 'Радиокнопка в меню-мастер: включи/выключи вариант',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, выключи его через setEnabled(false)</p>',
         'JRadioButtonMenuItem-setEnabled',
-        '', 605, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 235, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
 item.setEnabled(false);
 JMenu menu = new JMenu("Размер");
 menu.add(item);
@@ -376,7 +376,7 @@ setJMenuBar(menuBar);');
 
 -- Task 7: Tooltip
 INSERT INTO documentation (id, text)
-VALUES (606, '<h2>🎮 Урок 28.7 — Радиокнопка в меню-мастер: Добавь подсказку!</h2>
+VALUES (236, '<h2>🎮 Радиокнопка в меню-мастер: Добавь подсказку!</h2>
 
 <p><strong>Привет, мастер подсказок!</strong> 💡 Сегодня ты добавишь подсказку к <code>JRadioButtonMenuItem</code> — это как помощь в игре!</p>
 
@@ -416,10 +416,10 @@ VALUES (606, '<h2>🎮 Урок 28.7 — Радиокнопка в меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (606, 28, 7, 'Радиокнопка в меню-мастер: добавь подсказку',
+VALUES (236, 28, 7, 'Радиокнопка в меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи подсказку через setToolTipText()</p>',
         'JRadioButtonMenuItem-setToolTipText',
-        '', 606, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 236, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
 item.setToolTipText("Выбрать маленький размер шрифта");
 JMenu menu = new JMenu("Размер");
 menu.add(item);
@@ -429,7 +429,7 @@ setJMenuBar(menuBar);');
 
 -- Task 8: ActionListener
 INSERT INTO documentation (id, text)
-VALUES (607, '<h2>🎮 Урок 28.8 — Радиокнопка в меню-мастер: Обработай выбор!</h2>
+VALUES (237, '<h2>🎮 Радиокнопка в меню-мастер: Обработай выбор!</h2>
 
 <p><strong>Привет, мастер реакций!</strong> 🔘 Сегодня ты обработаешь выбор <code>JRadioButtonMenuItem</code> — это как реакция на выбор в игре! Можно реагировать на выбор варианта!</p>
 
@@ -472,10 +472,10 @@ VALUES (607, '<h2>🎮 Урок 28.8 — Радиокнопка в меню-ма
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (607, 28, 8, 'Радиокнопка в меню-мастер: обработай выбор',
+VALUES (237, 28, 8, 'Радиокнопка в меню-мастер: обработай выбор',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, добавь ActionListener, который выводит текст варианта в консоль</p>',
         'JRadioButtonMenuItem-addActionListener',
-        '', 607, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 237, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
 item.addActionListener(e -> {
     System.out.println("Выбран вариант: " + item.getText());
 });

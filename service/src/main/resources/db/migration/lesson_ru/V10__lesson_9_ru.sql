@@ -13,7 +13,7 @@ VALUES (9, 9, 'Переключатели (JToggleButton)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (30, '<h2>🎮 Урок 9.1 — Переключатель-новичок: Создай кнопку-переключатель!</h2>
+VALUES (74, '<h2>🎮 Переключатель-новичок: Создай кнопку-переключатель!</h2>
 
 <p><strong>Привет, мастер переключений!</strong> 🔄 Сегодня ты создашь <code>JToggleButton</code> — это как кнопка включения/выключения! Нажал — включилось, нажал ещё раз — выключилось!</p>
 
@@ -55,13 +55,13 @@ VALUES (30, '<h2>🎮 Урок 9.1 — Переключатель-новичок
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (30, 9, 1, 'Переключатель-новичок: создай кнопку-переключатель',
+VALUES (74, 9, 1, 'Переключатель-новичок: создай кнопку-переключатель',
         '<p><strong>Задание:</strong><br>Создай переключатель с текстом "Включить" и добавь на форму</p>',
         'JToggleButton-add',
-        '', 30, 12.0, 0.0, 'JToggleButton toggle = new JToggleButton("Включить");
+        '', 74, 12.0, 0.0, 'JToggleButton toggle = new JToggleButton("Включить");
 add(toggle);');
 INSERT INTO documentation (id, text)
-VALUES (127, '<h2>🎮 Урок 9.3 — Чекбокс-мастер: Обрабатывай клики!</h2>
+VALUES (75, '<h2>🎮 Чекбокс-мастер: Обрабатывай клики!</h2>
 
 <p><strong>Привет, мастер обработки!</strong> ☑️ Сегодня ты научишься обрабатывать клики по <code>JCheckBox</code> через <code>ActionListener</code> — это как реакция на выбор в игре! Можно реагировать на установку и снятие галочки!</p>
 
@@ -107,10 +107,10 @@ VALUES (127, '<h2>🎮 Урок 9.3 — Чекбокс-мастер: Обраб�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (127, 9, 3, 'Чекбокс-мастер: обрабатывай клики',
+VALUES (75, 9, 3, 'Чекбокс-мастер: обрабатывай клики',
         '<p><strong>Задание:</strong><br>Добавь ActionListener к чекбоксу, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JCheckBox-addActionListener-isSelected',
-        '', 127, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 75, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
 checkBox.addActionListener(e -> {
     if (checkBox.isSelected()) {
         System.out.println("Чекбокс выбран!");
@@ -121,7 +121,7 @@ checkBox.addActionListener(e -> {
 add(checkBox);');
 
 INSERT INTO documentation (id, text)
-VALUES (159, '<h2>🎮 Урок 9.4 — Чекбокс-мастер: Настрой позицию текста!</h2>
+VALUES (76, '<h2>🎮 Чекбокс-мастер: Настрой позицию текста!</h2>
 
 <p><strong>Привет, мастер позиционирования!</strong> ☑️ Сегодня ты настроишь позицию текста в <code>JCheckBox</code> — это как размещение элементов в игре! Можно разместить текст слева или справа от чекбокса!</p>
 
@@ -162,14 +162,14 @@ VALUES (159, '<h2>🎮 Урок 9.4 — Чекбокс-мастер: Настр�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (159, 9, 4, 'Чекбокс-мастер: настрой позицию текста',
+VALUES (76, 9, 4, 'Чекбокс-мастер: настрой позицию текста',
         '<p><strong>Задание:</strong><br>Установи позицию текста LEFT через setHorizontalTextPosition()</p>',
         'JCheckBox-setHorizontalTextPosition',
-        '', 159, 22.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 76, 22.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
 checkBox.setHorizontalTextPosition(SwingConstants.LEFT);
 add(checkBox);');
 INSERT INTO documentation (id, text)
-VALUES (211, '<h2>🎮 Урок 9.5 — Чекбокс-мастер: Работай с моделью состояния!</h2>
+VALUES (77, '<h2>🎮 Чекбокс-мастер: Работай с моделью состояния!</h2>
 
 <p><strong>Привет, мастер моделей!</strong> ☑️ Сегодня ты поработаешь с моделью состояния <code>JCheckBox</code> — это как управление состоянием в игре! Можно получить и установить модель!</p>
 
@@ -213,15 +213,15 @@ VALUES (211, '<h2>🎮 Урок 9.5 — Чекбокс-мастер: Работ�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (211, 9, 5, 'Чекбокс-мастер: работай с моделью состояния',
+VALUES (77, 9, 5, 'Чекбокс-мастер: работай с моделью состояния',
         '<p><strong>Задание:</strong><br>Получи модель через getModel(), установи состояние true через setSelected()</p>',
         'JCheckBox-getModel-setSelected',
-        '', 211, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 77, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
 ButtonModel model = checkBox.getModel();
 model.setSelected(true);
 add(checkBox);');
 INSERT INTO documentation (id, text)
-VALUES (261, '<h2>🎮 Урок 9.6 — Чекбокс-мастер: Добавь мнемонику!</h2>
+VALUES (78, '<h2>🎮 Чекбокс-мастер: Добавь мнемонику!</h2>
 
 <p><strong>Привет, мастер горячих клавиш!</strong> ☑️ Сегодня ты добавишь мнемонику к <code>JCheckBox</code> — это как горячая клавиша в игре!</p>
 
@@ -265,14 +265,14 @@ VALUES (261, '<h2>🎮 Урок 9.6 — Чекбокс-мастер: Добав�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (261, 9, 6, 'Чекбокс-мастер: добавь мнемонику',
+VALUES (78, 9, 6, 'Чекбокс-мастер: добавь мнемонику',
         '<p><strong>Задание:</strong><br>Установи мнемонику VK_C через setMnemonic(), добавь &C в текст чекбокса</p>',
         'JCheckBox-setMnemonic-KeyEvent',
-        '', 261, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Согласен (&C)");
+        '', 78, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Согласен (&C)");
 checkBox.setMnemonic(KeyEvent.VK_C);
 add(checkBox);');
 INSERT INTO documentation (id, text)
-VALUES (311, '<h2>🎮 Урок 9.7 — Чекбокс-мастер: Обрабатывай изменение состояния!</h2>
+VALUES (79, '<h2>🎮 Чекбокс-мастер: Обрабатывай изменение состояния!</h2>
 
 <p><strong>Привет, мастер состояний!</strong> ☑️ Сегодня ты обработаешь изменение состояния <code>JCheckBox</code> — это как реакция на выбор в игре!</p>
 
@@ -316,10 +316,10 @@ VALUES (311, '<h2>🎮 Урок 9.7 — Чекбокс-мастер: Обраб�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (311, 9, 7, 'Чекбокс-мастер: обрабатывай изменение состояния',
+VALUES (79, 9, 7, 'Чекбокс-мастер: обрабатывай изменение состояния',
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
         'JCheckBox-addItemListener-isSelected',
-        '', 311, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 79, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
 checkBox.addItemListener(e -> {
     boolean selected = checkBox.isSelected();
     System.out.println("Выбрано: " + selected);
@@ -327,7 +327,7 @@ checkBox.addItemListener(e -> {
 add(checkBox);');
 
 INSERT INTO documentation (id, text)
-VALUES (361, '<h2>🎮 Урок 9.8 — Чекбокс-мастер: Сделай трёхсостояний!</h2>
+VALUES (80, '<h2>🎮 Чекбокс-мастер: Сделай трёхсостояний!</h2>
 
 <p><strong>Привет, мастер состояний!</strong> ☑️ Сегодня ты сделаешь <code>JCheckBox</code> трёхсостояний — это как неопределённое состояние в игре!</p>
 
@@ -376,10 +376,10 @@ checkBox.getModel().setSelected(false);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (361, 9, 8, 'Чекбокс-мастер: сделай трёхсостояний',
+VALUES (80, 9, 8, 'Чекбокс-мастер: сделай трёхсостояний',
         '<p><strong>Задание:</strong><br>Создай ToggleButtonModel, установи через setModel(), настрой состояния для неопределённого</p>',
         'JCheckBox-setModel-ToggleButtonModel',
-        '', 361, 26.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 80, 26.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
 ButtonModel model = new JToggleButton.ToggleButtonModel();
 checkBox.setModel(model);
 checkBox.getModel().setPressed(true);
@@ -387,7 +387,7 @@ checkBox.getModel().setArmed(true);
 checkBox.getModel().setSelected(false);
 add(checkBox);');
 INSERT INTO documentation (id, text)
-VALUES (411, '<h2>🎮 Урок 9.9 — Чекбокс-мастер: Группируй чекбоксы!</h2>
+VALUES (81, '<h2>🎮 Чекбокс-мастер: Группируй чекбоксы!</h2>
 
 <p><strong>Привет, мастер организации!</strong> ☑️ Сегодня ты сгруппируешь чекбоксы в <code>JCheckBox</code> — это как организация в игре!</p>
 
@@ -431,10 +431,10 @@ VALUES (411, '<h2>🎮 Урок 9.9 — Чекбокс-мастер: Групп�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (411, 9, 9, 'Чекбокс-мастер: группируй чекбоксы',
+VALUES (81, 9, 9, 'Чекбокс-мастер: группируй чекбоксы',
         '<p><strong>Задание:</strong><br>Создай список из чекбоксов, добавь ItemListener ко всем через forEach()</p>',
         'JCheckBox-ItemListener',
-        '', 411, 23.0, 0.0, 'JCheckBox checkBox1 = new JCheckBox("Опция 1");
+        '', 81, 23.0, 0.0, 'JCheckBox checkBox1 = new JCheckBox("Опция 1");
 JCheckBox checkBox2 = new JCheckBox("Опция 2");
 JCheckBox checkBox3 = new JCheckBox("Опция 3");
 List<JCheckBox> group = Arrays.asList(checkBox1, checkBox2, checkBox3);
@@ -443,7 +443,7 @@ add(checkBox1);
 add(checkBox2);
 add(checkBox3);');
 INSERT INTO documentation (id, text)
-VALUES (461, '<h2>🎮 Урок 9.10 — Чекбокс-мастер: Установи шрифт!</h2>
+VALUES (82, '<h2>🎮 Чекбокс-мастер: Установи шрифт!</h2>
 
 <p><strong>Привет, мастер шрифтов!</strong> ☑️ Сегодня ты установишь шрифт в <code>JCheckBox</code> — это как стиль в игре!</p>
 
@@ -487,15 +487,15 @@ VALUES (461, '<h2>🎮 Урок 9.10 — Чекбокс-мастер: Устан
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (461, 9, 10, 'Чекбокс-мастер: установи шрифт',
+VALUES (82, 9, 10, 'Чекбокс-мастер: установи шрифт',
         '<p><strong>Задание:</strong><br>Создай шрифт new Font("Arial", Font.BOLD, 14), установи через setFont()</p>',
         'JCheckBox-setFont-Font',
-        '', 461, 22.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 82, 22.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
 Font font = new Font("Arial", Font.BOLD, 14);
 checkBox.setFont(font);
 add(checkBox);');
 INSERT INTO documentation (id, text)
-VALUES (511, '<h2>🎮 Урок 9.11 — Чекбокс-мастер: Установи отрисовку границы!</h2>
+VALUES (511, '<h2>🎮 Чекбокс-мастер: Установи отрисовку границы!</h2>
 
 <p><strong>Привет, мастер границ!</strong> ☑️ Сегодня ты установишь отрисовку границы в <code>JCheckBox</code> — это как рамка в игре!</p>
 

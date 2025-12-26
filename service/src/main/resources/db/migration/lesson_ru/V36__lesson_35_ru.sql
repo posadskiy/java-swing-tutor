@@ -13,7 +13,7 @@ VALUES (35, 35, 'Выбор файлов (JFileChooser)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (71, '<h2>🎮 Урок 35.1 — Выбор файла-новичок: Открой диалог выбора файла!</h2>
+VALUES (291, '<h2>🎮 Выбор файла-новичок: Открой диалог выбора файла!</h2>
 
 <p><strong>Привет, мастер файлов!</strong> 📁 Сегодня ты создашь <code>JFileChooser</code> — это как проводник файлов в игре! Можно выбрать файл для открытия или сохранения!</p>
 
@@ -62,17 +62,17 @@ VALUES (71, '<h2>🎮 Урок 35.1 — Выбор файла-новичок: О
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (71, 35, 1, 'Выбор файла-новичок: открой диалог выбора файла',
+VALUES (291, 35, 1, 'Выбор файла-новичок: открой диалог выбора файла',
         '<p><strong>Задание:</strong><br>Создай JFileChooser, покажи диалог открытия и обработай результат</p>',
         'JFileChooser-showOpenDialog',
-        '', 71, 22.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
+        '', 291, 22.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 int result = fileChooser.showOpenDialog(this);
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
     System.out.println("Выбран файл: " + file.getName());
 }');
 INSERT INTO documentation (id, text)
-VALUES (88, '<h2>🎮 Урок 35.2 — Выбор файла-мастер: Создай диалог сохранения!</h2>
+VALUES (292, '<h2>🎮 Выбор файла-мастер: Создай диалог сохранения!</h2>
 
 <p><strong>Привет, мастер сохранения!</strong> 💾 Сегодня ты создашь диалог сохранения файла через <code>JFileChooser</code> — это как "Сохранить как" в игре! Можно выбрать место для сохранения файла!</p>
 
@@ -119,10 +119,10 @@ VALUES (88, '<h2>🎮 Урок 35.2 — Выбор файла-мастер: Со
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (88, 35, 2, 'Выбор файла-мастер: создай диалог сохранения',
+VALUES (292, 35, 2, 'Выбор файла-мастер: создай диалог сохранения',
         '<p><strong>Задание:</strong><br>Покажи диалог сохранения, обработай результат и получи выбранный файл</p>',
         'JFileChooser-showSaveDialog',
-        '', 88, 24.0, 0.0, 'JFrame frame = new JFrame();
+        '', 292, 24.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
 int result = fileChooser.showSaveDialog(frame);
 if (result == JFileChooser.APPROVE_OPTION) {
@@ -130,7 +130,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
     System.out.println("Сохранить в: " + file.getPath());
 }');
 INSERT INTO documentation (id, text)
-VALUES (107, '<h2>🎮 Урок 35.3 — Выбор файла-мастер: Добавь фильтр файлов!</h2>
+VALUES (293, '<h2>🎮 Выбор файла-мастер: Добавь фильтр файлов!</h2>
 
 <p><strong>Привет, мастер фильтров!</strong> 💾 Сегодня ты добавишь фильтр файлов в <code>JFileChooser</code> — это как фильтр предметов в игре! Можно показывать только нужные типы файлов!</p>
 
@@ -177,10 +177,10 @@ VALUES (107, '<h2>🎮 Урок 35.3 — Выбор файла-мастер: Д�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (107, 35, 3, 'Выбор файла-мастер: добавь фильтр файлов',
+VALUES (293, 35, 3, 'Выбор файла-мастер: добавь фильтр файлов',
         '<p><strong>Задание:</strong><br>Создай FileNameExtensionFilter для "txt" и "text", установи фильтр в fileChooser</p>',
         'JFileChooser-FileNameExtensionFilter-setFileFilter',
-        '', 107, 25.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
+        '', 293, 25.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 FileNameExtensionFilter filter = new FileNameExtensionFilter(
     "Текстовые файлы",
     "txt", "text"
@@ -192,7 +192,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
     System.out.println("Выбран файл: " + file.getName());
 }');
 INSERT INTO documentation (id, text)
-VALUES (187, '<h2>🎮 Урок 35.4 — Выбор файла-мастер: Разреши множественный выбор!</h2>
+VALUES (294, '<h2>🎮 Выбор файла-мастер: Разреши множественный выбор!</h2>
 
 <p><strong>Привет, мастер множества!</strong> 💾 Сегодня ты разрешишь множественный выбор файлов в <code>JFileChooser</code> — это как выбор нескольких файлов в игре! Можно выбрать несколько файлов одновременно!</p>
 
@@ -240,10 +240,10 @@ VALUES (187, '<h2>🎮 Урок 35.4 — Выбор файла-мастер: Р�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (187, 35, 4, 'Выбор файла-мастер: разреши множественный выбор',
+VALUES (294, 35, 4, 'Выбор файла-мастер: разреши множественный выбор',
         '<p><strong>Задание:</strong><br>Разреши множественный выбор через setMultiSelectionEnabled(true), получи файлы через getSelectedFiles()</p>',
         'JFileChooser-setMultiSelectionEnabled-getSelectedFiles',
-        '', 187, 25.0, 0.0, 'JFrame frame = new JFrame();
+        '', 294, 25.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
 fileChooser.setMultiSelectionEnabled(true);
 int result = fileChooser.showOpenDialog(frame);
@@ -254,7 +254,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
     }
 }');
 INSERT INTO documentation (id, text)
-VALUES (238, '<h2>🎮 Урок 35.5 — Выбор файла-мастер: Добавь фильтр!</h2>
+VALUES (295, '<h2>🎮 Выбор файла-мастер: Добавь фильтр!</h2>
 
 <p><strong>Привет, мастер фильтров!</strong> 💾 Сегодня ты добавишь фильтр файлов в <code>JFileChooser</code> — это как ограничение выбора в игре!</p>
 
@@ -298,10 +298,10 @@ VALUES (238, '<h2>🎮 Урок 35.5 — Выбор файла-мастер: Д�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (238, 35, 5, 'Выбор файла-мастер: добавь фильтр',
+VALUES (295, 35, 5, 'Выбор файла-мастер: добавь фильтр',
         '<p><strong>Задание:</strong><br>Создай FileNameExtensionFilter для "txt", добавь через addChoosableFileFilter()</p>',
         'JFileChooser-FileNameExtensionFilter-addChoosableFileFilter',
-        '', 238, 26.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
+        '', 295, 26.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 FileFilter filter = new FileNameExtensionFilter("Текстовые файлы", "txt");
 fileChooser.addChoosableFileFilter(filter);
 int result = fileChooser.showOpenDialog(this);
@@ -310,7 +310,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
     System.out.println("Выбран файл: " + file.getName());
 }');
 INSERT INTO documentation (id, text)
-VALUES (289, '<h2>🎮 Урок 35.6 — Выбор файла-мастер: Установи текущую директорию!</h2>
+VALUES (296, '<h2>🎮 Выбор файла-мастер: Установи текущую директорию!</h2>
 
 <p><strong>Привет, мастер директорий!</strong> 💾 Сегодня ты установишь текущую директорию в <code>JFileChooser</code> — это как начальная папка в игре!</p>
 
@@ -354,10 +354,10 @@ VALUES (289, '<h2>🎮 Урок 35.6 — Выбор файла-мастер: У�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (289, 35, 6, 'Выбор файла-мастер: установи текущую директорию',
+VALUES (296, 35, 6, 'Выбор файла-мастер: установи текущую директорию',
         '<p><strong>Задание:</strong><br>Создай File для директории, установи через setCurrentDirectory()</p>',
         'JFileChooser-setCurrentDirectory-File',
-        '', 289, 23.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
+        '', 296, 23.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 File dir = new File("/path/to/directory");
 fileChooser.setCurrentDirectory(dir);
 int result = fileChooser.showOpenDialog(this);
@@ -366,7 +366,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
     System.out.println("Выбран файл: " + file.getName());
 }');
 INSERT INTO documentation (id, text)
-VALUES (339, '<h2>🎮 Урок 35.7 — Выбор файла-мастер: Установи заголовок диалога!</h2>
+VALUES (297, '<h2>🎮 Выбор файла-мастер: Установи заголовок диалога!</h2>
 
 <p><strong>Привет, мастер заголовков!</strong> 💾 Сегодня ты установишь заголовок диалога в <code>JFileChooser</code> — это как название в игре!</p>
 
@@ -407,10 +407,10 @@ VALUES (339, '<h2>🎮 Урок 35.7 — Выбор файла-мастер: У�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (339, 35, 7, 'Выбор файла-мастер: установи заголовок диалога',
+VALUES (297, 35, 7, 'Выбор файла-мастер: установи заголовок диалога',
         '<p><strong>Задание:</strong><br>Установи заголовок "Выбери файл" через setDialogTitle()</p>',
         'JFileChooser-setDialogTitle',
-        '', 339, 21.0, 0.0, 'JFrame frame = new JFrame();
+        '', 297, 21.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
 fileChooser.setDialogTitle("Выбери файл");
 int result = fileChooser.showOpenDialog(frame);
@@ -419,7 +419,7 @@ if (result == JFileChooser.APPROVE_OPTION) {
     System.out.println("Выбран файл: " + file.getName());
 }');
 INSERT INTO documentation (id, text)
-VALUES (386, '<h2>🎮 Урок 35.8 — Редактор-мастер: Добавь слушатель ссылок!</h2>
+VALUES (298, '<h2>🎮 Редактор-мастер: Добавь слушатель ссылок!</h2>
 
 <p><strong>Привет, мастер ссылок!</strong> 🔗 Сегодня ты добавишь слушатель ссылок в <code>JEditorPane</code> — это как обработка ссылок в игре!</p>
 
@@ -464,10 +464,10 @@ VALUES (386, '<h2>🎮 Урок 35.8 — Редактор-мастер: Доба
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (386, 35, 8, 'Редактор-мастер: добавь слушатель ссылок',
+VALUES (298, 35, 8, 'Редактор-мастер: добавь слушатель ссылок',
         '<p><strong>Задание:</strong><br>Добавь HyperlinkListener, проверь EventType.ACTIVATED, выведи URL через getURL()</p>',
         'JEditorPane-addHyperlinkListener-HyperlinkEvent',
-        '', 386, 26.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
+        '', 298, 26.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setContentType("text/html");
 editorPane.setText("<html><body><a href=\"http://example.com\">Ссылка</a></body></html>");
 editorPane.addHyperlinkListener(e -> {
@@ -478,7 +478,7 @@ editorPane.addHyperlinkListener(e -> {
 JScrollPane scrollPane = new JScrollPane(editorPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (430, '<h2>🎮 Урок 35.9 — Редактор-мастер: Установи тип контента!</h2>
+VALUES (299, '<h2>🎮 Редактор-мастер: Установи тип контента!</h2>
 
 <p><strong>Привет, мастер типов!</strong> 🔗 Сегодня ты установишь тип контента в <code>JEditorPane</code> — это как формат в игре!</p>
 
@@ -519,16 +519,16 @@ VALUES (430, '<h2>🎮 Урок 35.9 — Редактор-мастер: Уста
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (430, 35, 9, 'Редактор-мастер: установи тип контента',
+VALUES (299, 35, 9, 'Редактор-мастер: установи тип контента',
         '<p><strong>Задание:</strong><br>Установи тип контента "text/html" через setContentType()</p>',
         'JEditorPane-setContentType',
-        '', 430, 23.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
+        '', 299, 23.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setContentType("text/html");
 editorPane.setText("<html><body><h1>Привет!</h1></body></html>");
 JScrollPane scrollPane = new JScrollPane(editorPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (486, '<h2>🎮 Урок 35.10 — Редактор-мастер: Сделай только для чтения!</h2>
+VALUES (300, '<h2>🎮 Редактор-мастер: Сделай только для чтения!</h2>
 
 <p><strong>Привет, мастер защиты!</strong> 🔗 Сегодня ты сделаешь редактор только для чтения в <code>JEditorPane</code> — это как защита в игре!</p>
 
@@ -569,10 +569,10 @@ VALUES (486, '<h2>🎮 Урок 35.10 — Редактор-мастер: Сде�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (486, 35, 10, 'Редактор-мастер: сделай только для чтения',
+VALUES (300, 35, 10, 'Редактор-мастер: сделай только для чтения',
         '<p><strong>Задание:</strong><br>Отключи редактирование через setEditable(false)</p>',
         'JEditorPane-setEditable',
-        '', 486, 21.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
+        '', 300, 21.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setText("Текст для чтения");
 editorPane.setEditable(false);
 JScrollPane scrollPane = new JScrollPane(editorPane);

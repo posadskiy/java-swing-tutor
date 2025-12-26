@@ -14,7 +14,7 @@ VALUES (29, 29, 'Swing: Всплывающие меню (JPopupMenu)', 1);
 
 -- Task 1: Creating JPopupMenu
 INSERT INTO documentation (id, text)
-VALUES (608, '<h2>🎮 Урок 29.1 — Всплывающее меню-новичок: Создай контекстное меню!</h2>
+VALUES (238, '<h2>🎮 Всплывающее меню-новичок: Создай контекстное меню!</h2>
 
 <p><strong>Привет, мастер контекста!</strong> 📋 Сегодня ты создашь <code>JPopupMenu</code> — это как контекстное меню в игре! Можно показать меню при клике правой кнопкой мыши!</p>
 
@@ -62,10 +62,10 @@ VALUES (608, '<h2>🎮 Урок 29.1 — Всплывающее меню-нов�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (608, 29, 1, 'Всплывающее меню-новичок: создай контекстное меню',
+VALUES (238, 29, 1, 'Всплывающее меню-новичок: создай контекстное меню',
         '<p><strong>Задание:</strong><br>Создай JPopupMenu, добавь два пункта меню ("Копировать", "Вставить"), покажи меню через show()</p>',
         'JPopupMenu-JMenuItem-show',
-        '', 608, 18.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
+        '', 238, 18.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
 popup.add(new JMenuItem("Вставить"));
 JPanel panel = new JPanel();
@@ -81,7 +81,7 @@ add(panel);');
 
 -- Task 2: Menu Items
 INSERT INTO documentation (id, text)
-VALUES (609, '<h2>🎮 Урок 29.2 — Всплывающее меню-мастер: Добавь пункты меню!</h2>
+VALUES (239, '<h2>🎮 Всплывающее меню-мастер: Добавь пункты меню!</h2>
 
 <p><strong>Привет, мастер пунктов!</strong> 📋 Сегодня ты добавишь различные пункты в <code>JPopupMenu</code> — это как расширение меню в игре!</p>
 
@@ -128,10 +128,10 @@ VALUES (609, '<h2>🎮 Урок 29.2 — Всплывающее меню-мас�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (609, 29, 2, 'Всплывающее меню-мастер: добавь пункты меню',
+VALUES (239, 29, 2, 'Всплывающее меню-мастер: добавь пункты меню',
         '<p><strong>Задание:</strong><br>Создай JPopupMenu, добавь JMenuItem, разделитель и JCheckBoxMenuItem</p>',
         'JPopupMenu-JMenuItem-addSeparator-JCheckBoxMenuItem',
-        '', 609, 20.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
+        '', 239, 20.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
 popup.addSeparator();
 popup.add(new JCheckBoxMenuItem("Показать панель"));
@@ -148,7 +148,7 @@ add(panel);');
 
 -- Task 3: Show Location
 INSERT INTO documentation (id, text)
-VALUES (610, '<h2>🎮 Урок 29.3 — Всплывающее меню-мастер: Покажи меню в нужной позиции!</h2>
+VALUES (240, '<h2>🎮 Всплывающее меню-мастер: Покажи меню в нужной позиции!</h2>
 
 <p><strong>Привет, мастер позиционирования!</strong> 📍 Сегодня ты научишься показывать <code>JPopupMenu</code> в нужной позиции — это как размещение в игре!</p>
 
@@ -193,10 +193,10 @@ VALUES (610, '<h2>🎮 Урок 29.3 — Всплывающее меню-мас�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (610, 29, 3, 'Всплывающее меню-мастер: покажи меню в нужной позиции',
+VALUES (240, 29, 3, 'Всплывающее меню-мастер: покажи меню в нужной позиции',
         '<p><strong>Задание:</strong><br>Создай JPopupMenu, добавь MouseListener, при правом клике покажи меню в позиции курсора через show()</p>',
         'JPopupMenu-MouseAdapter-MouseEvent-show',
-        '', 610, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
+        '', 240, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
 JPanel panel = new JPanel();
 panel.addMouseListener(new MouseAdapter() {
@@ -211,7 +211,7 @@ add(panel);');
 
 -- Task 4: Invoker
 INSERT INTO documentation (id, text)
-VALUES (611, '<h2>🎮 Урок 29.4 — Всплывающее меню-мастер: Узнай источник меню!</h2>
+VALUES (241, '<h2>🎮 Всплывающее меню-мастер: Узнай источник меню!</h2>
 
 <p><strong>Привет, мастер источников!</strong> 🔍 Сегодня ты узнаешь, как получить источник <code>JPopupMenu</code> — это как идентификация в игре!</p>
 
@@ -257,10 +257,10 @@ VALUES (611, '<h2>🎮 Урок 29.4 — Всплывающее меню-мас�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (611, 29, 4, 'Всплывающее меню-мастер: узнай источник меню',
+VALUES (241, 29, 4, 'Всплывающее меню-мастер: узнай источник меню',
         '<p><strong>Задание:</strong><br>Создай JPopupMenu, покажи его, получи источник через getInvoker() и выведи тип в консоль</p>',
         'JPopupMenu-getInvoker-show',
-        '', 611, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
+        '', 241, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
 JPanel panel = new JPanel();
 panel.addMouseListener(new MouseAdapter() {
@@ -277,7 +277,7 @@ add(panel);');
 
 -- Task 5: Border
 INSERT INTO documentation (id, text)
-VALUES (612, '<h2>🎮 Урок 29.5 — Всплывающее меню-мастер: Добавь границу!</h2>
+VALUES (242, '<h2>🎮 Всплывающее меню-мастер: Добавь границу!</h2>
 
 <p><strong>Привет, мастер границ!</strong> 📋 Сегодня ты добавишь границу к <code>JPopupMenu</code> — это как рамка в игре!</p>
 
@@ -321,10 +321,10 @@ VALUES (612, '<h2>🎮 Урок 29.5 — Всплывающее меню-мас�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (612, 29, 5, 'Всплывающее меню-мастер: добавь границу',
+VALUES (242, 29, 5, 'Всплывающее меню-мастер: добавь границу',
         '<p><strong>Задание:</strong><br>Создай JPopupMenu, создай границу через BorderFactory.createLineBorder(), установи через setBorder()</p>',
         'JPopupMenu-BorderFactory-setBorder',
-        '', 612, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
+        '', 242, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
 Border border = BorderFactory.createLineBorder(Color.GRAY);
 popup.setBorder(border);
@@ -341,7 +341,7 @@ add(panel);');
 
 -- Task 6: Listeners
 INSERT INTO documentation (id, text)
-VALUES (613, '<h2>🎮 Урок 29.6 — Всплывающее меню-мастер: Отслеживай события меню!</h2>
+VALUES (243, '<h2>🎮 Всплывающее меню-мастер: Отслеживай события меню!</h2>
 
 <p><strong>Привет, мастер событий!</strong> 👂 Сегодня ты добавишь слушатели к <code>JPopupMenu</code> — это как реакция на события в игре!</p>
 
@@ -395,10 +395,10 @@ VALUES (613, '<h2>🎮 Урок 29.6 — Всплывающее меню-мас�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (613, 29, 6, 'Всплывающее меню-мастер: отслеживай события меню',
+VALUES (243, 29, 6, 'Всплывающее меню-мастер: отслеживай события меню',
         '<p><strong>Задание:</strong><br>Создай JPopupMenu, добавь PopupMenuListener, выведи сообщение в консоль при показе меню</p>',
         'JPopupMenu-PopupMenuListener',
-        '', 613, 22.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
+        '', 243, 22.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
 popup.addPopupMenuListener(new PopupMenuListener() {
     @Override

@@ -13,7 +13,7 @@ VALUES (30, 30, 'Таблицы (JTable)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (60, '<h2>🎮 Урок 30.1 — Таблица-новичок: Создай таблицу данных!</h2>
+VALUES (244, '<h2>🎮 Таблица-новичок: Создай таблицу данных!</h2>
 
 <p><strong>Привет, мастер данных!</strong> 📊 Сегодня ты создашь <code>JTable</code> — это как таблица в базе данных! Можно отображать данные в строках и столбцах!</p>
 
@@ -63,16 +63,16 @@ VALUES (60, '<h2>🎮 Урок 30.1 — Таблица-новичок: Созд�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (60, 30, 1, 'Таблица-новичок: создай таблицу данных',
+VALUES (244, 30, 1, 'Таблица-новичок: создай таблицу данных',
         '<p><strong>Задание:</strong><br>Создай таблицу с столбцами "Имя", "Возраст" и двумя строками данных, оберни в JScrollPane и добавь на форму</p>',
         'JTable-JScrollPane-add',
-        '', 60, 20.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 244, 20.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (144, '<h2>🎮 Урок 29.2 — Меню-бар-мастер: Добавь меню в окно!</h2>
+VALUES (245, '<h2>🎮 Меню-бар-мастер: Добавь меню в окно!</h2>
 
 <p><strong>Привет, мастер меню!</strong> 📋 Сегодня ты добавишь <code>JMenuBar</code> в <code>JFrame</code> — это как главное меню в игре! Меню появится в верхней части окна!</p>
 
@@ -118,15 +118,15 @@ VALUES (144, '<h2>🎮 Урок 29.2 — Меню-бар-мастер: Доба�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (144, 28, 2, 'Меню-бар-мастер: добавь меню в окно',
+VALUES (245, 28, 2, 'Меню-бар-мастер: добавь меню в окно',
         '<p><strong>Задание:</strong><br>Создай JMenuBar, добавь меню через add(), установи в окно через setJMenuBar()</p>',
         'JMenuBar-setJMenuBar-add',
-        '', 144, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
+        '', 245, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
 JMenu fileMenu = new JMenu("Файл");
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (176, '<h2>🎮 Урок 29.3 — Меню-бар-мастер: Добавь меню помощи!</h2>
+VALUES (246, '<h2>🎮 Меню-бар-мастер: Добавь меню помощи!</h2>
 
 <p><strong>Привет, мастер помощи!</strong> 📋 Сегодня ты добавишь меню помощи в <code>JMenuBar</code> — это как справочная система в игре! Можно создать меню с помощью и информацией!</p>
 
@@ -174,17 +174,17 @@ helpMenu.add(new JMenuItem("О программе"));</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (176, 28, 3, 'Меню-бар-мастер: добавь меню помощи',
+VALUES (246, 28, 3, 'Меню-бар-мастер: добавь меню помощи',
         '<p><strong>Задание:</strong><br>Создай JMenu "Справка", добавь два пункта меню, добавь в menuBar</p>',
         'JMenuBar-JMenu-add',
-        '', 176, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
+        '', 246, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
 JMenu helpMenu = new JMenu("Справка");
 helpMenu.add(new JMenuItem("Содержание"));
 helpMenu.add(new JMenuItem("О программе"));
 menuBar.add(helpMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (227, '<h2>🎮 Урок 29.4 — Меню-бар-мастер: Размести меню помощи справа!</h2>
+VALUES (247, '<h2>🎮 Меню-бар-мастер: Размести меню помощи справа!</h2>
 
 <p><strong>Привет, мастер размещения!</strong> 📋 Сегодня ты разместишь меню помощи справа в <code>JMenuBar</code> — это как стандартное размещение в игре! Меню помощи обычно справа!</p>
 
@@ -226,15 +226,15 @@ VALUES (227, '<h2>🎮 Урок 29.4 — Меню-бар-мастер: Разм�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (227, 28, 4, 'Меню-бар-мастер: размести меню помощи справа',
+VALUES (247, 28, 4, 'Меню-бар-мастер: размести меню помощи справа',
         '<p><strong>Задание:</strong><br>Создай JMenu "Справка", установи через setHelpMenu()</p>',
         'JMenuBar-setHelpMenu',
-        '', 227, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
+        '', 247, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
 JMenu helpMenu = new JMenu("Справка");
 menuBar.setHelpMenu(helpMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (278, '<h2>🎮 Урок 29.5 — Меню-бар-мастер: Добавь границу!</h2>
+VALUES (248, '<h2>🎮 Меню-бар-мастер: Добавь границу!</h2>
 
 <p><strong>Привет, мастер границ!</strong> 📋 Сегодня ты добавишь границу к <code>JMenuBar</code> — это как рамка в игре!</p>
 
@@ -278,15 +278,15 @@ VALUES (278, '<h2>🎮 Урок 29.5 — Меню-бар-мастер: Доба�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (278, 28, 5, 'Меню-бар-мастер: добавь границу',
+VALUES (248, 28, 5, 'Меню-бар-мастер: добавь границу',
         '<p><strong>Задание:</strong><br>Создай матовую границу через BorderFactory.createMatteBorder(), установи через setBorder()</p>',
         'JMenuBar-BorderFactory-setBorder',
-        '', 278, 23.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
+        '', 248, 23.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
 Border border = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY);
 menuBar.setBorder(border);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (328, '<h2>🎮 Урок 29.6 — Меню-бар-мастер: Добавь меню помощи!</h2>
+VALUES (249, '<h2>🎮 Меню-бар-мастер: Добавь меню помощи!</h2>
 
 <p><strong>Привет, мастер помощи!</strong> 📋 Сегодня ты добавишь меню помощи в <code>JMenuBar</code> — это как справка в игре!</p>
 
@@ -334,17 +334,17 @@ helpMenu.add(new JMenuItem("Справка"));</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (328, 28, 6, 'Меню-бар-мастер: добавь меню помощи',
+VALUES (249, 28, 6, 'Меню-бар-мастер: добавь меню помощи',
         '<p><strong>Задание:</strong><br>Создай JMenu "Справка", добавь два пункта меню, добавь в меню-бар</p>',
         'JMenuBar-JMenu-JMenuItem',
-        '', 328, 23.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
+        '', 249, 23.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
 JMenu helpMenu = new JMenu("Справка");
 helpMenu.add(new JMenuItem("О программе"));
 helpMenu.add(new JMenuItem("Справка"));
 menuBar.add(helpMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (379, '<h2>🎮 Урок 29.9 — Меню-мастер: Получи всплывающее меню!</h2>
+VALUES (250, '<h2>🎮 Меню-мастер: Получи всплывающее меню!</h2>
 
 <p><strong>Привет, мастер меню!</strong> 📋 Сегодня ты получишь всплывающее меню из <code>JMenu</code> — это как доступ к меню в игре!</p>
 
@@ -385,16 +385,16 @@ VALUES (379, '<h2>🎮 Урок 29.9 — Меню-мастер: Получи в�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (379, 28, 9, 'Меню-мастер: получи всплывающее меню',
+VALUES (250, 28, 9, 'Меню-мастер: получи всплывающее меню',
         '<p><strong>Задание:</strong><br>Получи всплывающее меню через getPopupMenu()</p>',
         'JMenu-getPopupMenu',
-        '', 379, 23.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 250, 23.0, 0.0, 'JMenu menu = new JMenu("Файл");
 JPopupMenu popup = menu.getPopupMenu();
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (426, '<h2>🎮 Урок 29.10 — Меню-мастер: Добавь разделитель!</h2>
+VALUES (251, '<h2>🎮 Меню-мастер: Добавь разделитель!</h2>
 
 <p><strong>Привет, мастер организации!</strong> 📋 Сегодня ты добавишь разделитель в <code>JMenu</code> — это как группировка в игре!</p>
 
@@ -435,10 +435,10 @@ VALUES (426, '<h2>🎮 Урок 29.10 — Меню-мастер: Добавь р
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (426, 28, 10, 'Меню-мастер: добавь разделитель',
+VALUES (251, 28, 10, 'Меню-мастер: добавь разделитель',
         '<p><strong>Задание:</strong><br>Добавь разделитель через addSeparator()</p>',
         'JMenu-addSeparator',
-        '', 426, 20.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 251, 20.0, 0.0, 'JMenu menu = new JMenu("Файл");
 menu.add(new JMenuItem("Открыть"));
 menu.addSeparator();
 menu.add(new JMenuItem("Выход"));
@@ -446,7 +446,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (479, '<h2>🎮 Урок 29.11 — Меню-мастер: Установи задержку!</h2>
+VALUES (252, '<h2>🎮 Меню-мастер: Установи задержку!</h2>
 
 <p><strong>Привет, мастер задержек!</strong> 📋 Сегодня ты установишь задержку в <code>JMenu</code> — это как время в игре!</p>
 
@@ -487,10 +487,10 @@ VALUES (479, '<h2>🎮 Урок 29.11 — Меню-мастер: Установ�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (479, 28, 11, 'Меню-мастер: установи задержку',
+VALUES (252, 28, 11, 'Меню-мастер: установи задержку',
         '<p><strong>Задание:</strong><br>Установи задержку 200 мс через setDelay()</p>',
         'JMenu-setDelay',
-        '', 479, 22.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 252, 22.0, 0.0, 'JMenu menu = new JMenu("Файл");
 menu.setDelay(200);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);

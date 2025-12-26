@@ -13,7 +13,7 @@ VALUES (53, 53, 'Timer - Таймеры', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (84, '<h2>🎮 Урок 53.1 — Timer-новичок: Создай таймер!</h2>
+VALUES (458, '<h2>🎮 Timer-новичок: Создай таймер!</h2>
 
 <p><strong>Привет, мастер времени!</strong> ⏰ Сегодня ты создашь <code>Timer</code> — это как таймер в игре! Можно выполнять действия через определённые интервалы!</p>
 
@@ -65,10 +65,10 @@ VALUES (84, '<h2>🎮 Урок 53.1 — Timer-новичок: Создай та�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (84, 53, 1, 'Timer-новичок: создай таймер',
+VALUES (458, 53, 1, 'Timer-новичок: создай таймер',
         '<p><strong>Задание:</strong><br>Создай ActionListener, создай Timer с задержкой 1000 мс, запусти таймер</p>',
         'Timer-ActionListener-start',
-        '', 84, 24.0, 0.0, 'ActionListener task = new ActionListener() {
+        '', 458, 24.0, 0.0, 'ActionListener task = new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println("Таймер сработал!");
@@ -77,7 +77,7 @@ VALUES (84, 53, 1, 'Timer-новичок: создай таймер',
 Timer timer = new Timer(1000, task);
 timer.start();');
 INSERT INTO documentation (id, text)
-VALUES (95, '<h2>🎮 Урок 53.2 — Timer-мастер: Останавливай и перезапускай таймер!</h2>
+VALUES (459, '<h2>🎮 Timer-мастер: Останавливай и перезапускай таймер!</h2>
 
 <p><strong>Привет, мастер управления!</strong> ⏰ Сегодня ты научишься управлять таймером — останавливать и перезапускать! Это как пауза и продолжение в игре!</p>
 
@@ -120,16 +120,16 @@ VALUES (95, '<h2>🎮 Урок 53.2 — Timer-мастер: Останавлив
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (95, 53, 2, 'Timer-мастер: останавливай и перезапускай таймер',
+VALUES (459, 53, 2, 'Timer-мастер: останавливай и перезапускай таймер',
         '<p><strong>Задание:</strong><br>Останови таймер через stop(), затем перезапусти через restart()</p>',
         'Timer-stop-restart',
-        '', 95, 25.0, 0.0, 'ActionListener task = e -> System.out.println("Тик!");
+        '', 459, 25.0, 0.0, 'ActionListener task = e -> System.out.println("Тик!");
 Timer timer = new Timer(1000, task);
 timer.start();
 timer.stop();
 timer.restart();');
 INSERT INTO documentation (id, text)
-VALUES (199, '<h2>🎮 Урок 53.2 — KeyListener-мастер: Определи код клавиши!</h2>
+VALUES (462, '<h2>🎮 KeyListener-мастер: Определи код клавиши!</h2>
 
 <p><strong>Привет, мастер клавиш!</strong> ⌨️ Сегодня ты определишь код клавиши в <code>KeyListener</code> — это как реакция на клавиши в игре! Можно обрабатывать конкретные клавиши!</p>
 
@@ -177,10 +177,10 @@ VALUES (199, '<h2>🎮 Урок 53.2 — KeyListener-мастер: Опреде�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (199, 53, 2, 'KeyListener-мастер: определи код клавиши',
+VALUES (462, 53, 2, 'KeyListener-мастер: определи код клавиши',
         '<p><strong>Задание:</strong><br>Добавь KeyListener, проверь getKeyCode() == VK_ENTER, выведи сообщение</p>',
         'KeyListener-getKeyCode-VK_ENTER',
-        '', 199, 24.0, 0.0, 'JTextField component = new JTextField();
+        '', 462, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.addKeyListener(new KeyAdapter() {
     @Override
@@ -192,7 +192,7 @@ component.addKeyListener(new KeyAdapter() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (110, '<h2>🎮 Урок 53.3 — Timer-мастер: Создай одноразовый таймер!</h2>
+VALUES (460, '<h2>🎮 Timer-мастер: Создай одноразовый таймер!</h2>
 
 <p><strong>Привет, мастер задержек!</strong> ⏰ Сегодня ты создашь одноразовый таймер через <code>Timer</code> — это как задержка перед действием в игре! Таймер выполнится один раз и остановится!</p>
 
@@ -240,16 +240,16 @@ VALUES (110, '<h2>🎮 Урок 53.3 — Timer-мастер: Создай одн
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (110, 53, 3, 'Timer-мастер: создай одноразовый таймер',
+VALUES (460, 53, 3, 'Timer-мастер: создай одноразовый таймер',
         '<p><strong>Задание:</strong><br>Создай Timer с задержкой 3000 мс, установи setRepeats(false), запусти таймер</p>',
         'Timer-setRepeats-start',
-        '', 110, 25.0, 0.0, 'Timer timer = new Timer(3000, e -> {
+        '', 460, 25.0, 0.0, 'Timer timer = new Timer(3000, e -> {
     System.out.println("Прошло 3 секунды!");
 });
 timer.setRepeats(false);
 timer.start();');
 INSERT INTO documentation (id, text)
-VALUES (247, '<h2>🎮 Урок 53.3 — KeyListener-мастер: Определи символ клавиши!</h2>
+VALUES (463, '<h2>🎮 KeyListener-мастер: Определи символ клавиши!</h2>
 
 <p><strong>Привет, мастер символов!</strong> ⌨️ Сегодня ты определишь символ клавиши в <code>KeyListener</code> — это как определение символа в игре!</p>
 
@@ -296,10 +296,10 @@ VALUES (247, '<h2>🎮 Урок 53.3 — KeyListener-мастер: Опреде�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (247, 53, 3, 'KeyListener-мастер: определи символ клавиши',
+VALUES (463, 53, 3, 'KeyListener-мастер: определи символ клавиши',
         '<p><strong>Задание:</strong><br>Добавь KeyListener, получи символ через getKeyChar() в keyTyped(), выведи его</p>',
         'KeyListener-getKeyChar-keyTyped',
-        '', 247, 24.0, 0.0, 'JTextField component = new JTextField();
+        '', 463, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.addKeyListener(new KeyAdapter() {
     @Override
@@ -310,7 +310,7 @@ component.addKeyListener(new KeyAdapter() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (122, '<h2>🎮 Урок 53.4 — Timer-мастер: Установи начальную задержку!</h2>
+VALUES (461, '<h2>🎮 Timer-мастер: Установи начальную задержку!</h2>
 
 <p><strong>Привет, мастер задержек!</strong> ⏰ Сегодня ты научишься устанавливать начальную задержку в <code>Timer</code> — это как задержка перед стартом в игре! Таймер начнёт работу не сразу, а через некоторое время!</p>
 
@@ -358,16 +358,16 @@ VALUES (122, '<h2>🎮 Урок 53.4 — Timer-мастер: Установи н
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (122, 53, 4, 'Timer-мастер: установи начальную задержку',
+VALUES (461, 53, 4, 'Timer-мастер: установи начальную задержку',
         '<p><strong>Задание:</strong><br>Создай Timer с интервалом 1000 мс, установи setInitialDelay(5000), запусти таймер</p>',
         'Timer-setInitialDelay-start',
-        '', 122, 26.0, 0.0, 'Timer timer = new Timer(1000, e -> {
+        '', 461, 26.0, 0.0, 'Timer timer = new Timer(1000, e -> {
     System.out.println("Тик!");
 });
 timer.setInitialDelay(5000);
 timer.start();');
 INSERT INTO documentation (id, text)
-VALUES (298, '<h2>🎮 Урок 53.4 — KeyListener-мастер: Определи модификаторы!</h2>
+VALUES (464, '<h2>🎮 KeyListener-мастер: Определи модификаторы!</h2>
 
 <p><strong>Привет, мастер модификаторов!</strong> ⌨️ Сегодня ты определишь модификаторы в <code>KeyListener</code> — это как комбинации клавиш в игре!</p>
 
@@ -415,10 +415,10 @@ VALUES (298, '<h2>🎮 Урок 53.4 — KeyListener-мастер: Опреде�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (298, 53, 4, 'KeyListener-мастер: определи модификаторы',
+VALUES (464, 53, 4, 'KeyListener-мастер: определи модификаторы',
         '<p><strong>Задание:</strong><br>Добавь KeyListener, проверь getModifiersEx() & CTRL_DOWN_MASK, выведи сообщение</p>',
         'KeyListener-getModifiersEx-CTRL_DOWN_MASK',
-        '', 298, 24.0, 0.0, 'JTextField component = new JTextField();
+        '', 464, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.addKeyListener(new KeyAdapter() {
     @Override
@@ -430,7 +430,7 @@ component.addKeyListener(new KeyAdapter() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (348, '<h2>🎮 Урок 53.5 — KeyListener-мастер: Определи расположение клавиши!</h2>
+VALUES (465, '<h2>🎮 KeyListener-мастер: Определи расположение клавиши!</h2>
 
 <p><strong>Привет, мастер расположений!</strong> ⌨️ Сегодня ты определишь расположение клавиши в <code>KeyListener</code> — это как позиция в игре!</p>
 
@@ -478,10 +478,10 @@ VALUES (348, '<h2>🎮 Урок 53.5 — KeyListener-мастер: Опреде�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (348, 53, 5, 'KeyListener-мастер: определи расположение клавиши',
+VALUES (465, 53, 5, 'KeyListener-мастер: определи расположение клавиши',
         '<p><strong>Задание:</strong><br>Добавь KeyListener, проверь getKeyLocation() == KEY_LOCATION_LEFT, выведи сообщение</p>',
         'KeyListener-getKeyLocation-KEY_LOCATION_LEFT',
-        '', 348, 24.0, 0.0, 'JTextField component = new JTextField();
+        '', 465, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.addKeyListener(new KeyAdapter() {
     @Override

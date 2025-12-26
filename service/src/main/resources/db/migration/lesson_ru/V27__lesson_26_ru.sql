@@ -13,7 +13,7 @@ VALUES (26, 26, 'Пункты меню (JMenuItem)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (57, '<h2>🎮 Урок 26.1 — Пункт меню-новичок: Создай действие в меню!</h2>
+VALUES (212, '<h2>🎮 Пункт меню-новичок: Создай действие в меню!</h2>
 
 <p><strong>Привет, мастер действий!</strong> ⚡ Сегодня ты создашь <code>JMenuItem</code> — это как кнопка в меню! Пункт меню выполняет действие при клике!</p>
 
@@ -59,10 +59,10 @@ VALUES (57, '<h2>🎮 Урок 26.1 — Пункт меню-новичок: Со
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (57, 26, 1, 'Пункт меню-новичок: создай действие в меню',
+VALUES (212, 26, 1, 'Пункт меню-новичок: создай действие в меню',
         '<p><strong>Задание:</strong><br>Создай пункт меню "Открыть", добавь обработчик и добавь в меню</p>',
         'JMenuItem-addActionListener,add',
-        '', 57, 20.0, 0.0, 'JMenuItem openItem = new JMenuItem("Открыть");
+        '', 212, 20.0, 0.0, 'JMenuItem openItem = new JMenuItem("Открыть");
 openItem.addActionListener(e -> System.out.println("Открыть"));
 JMenu fileMenu = new JMenu("Файл");
 fileMenu.add(openItem);
@@ -70,7 +70,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (141, '<h2>🎮 Урок 26.2 — Разделённая панель-мастер: Настрой позицию разделителя!</h2>
+VALUES (213, '<h2>🎮 Разделённая панель-мастер: Настрой позицию разделителя!</h2>
 
 <p><strong>Привет, мастер разделения!</strong> ✂️ Сегодня ты настроишь позицию разделителя в <code>JSplitPane</code> — это как настройка границы в игре! Можно установить, где будет разделитель!</p>
 
@@ -114,16 +114,16 @@ VALUES (141, '<h2>🎮 Урок 26.2 — Разделённая панель-м�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (141, 26, 2, 'Разделённая панель-мастер: настрой позицию разделителя',
+VALUES (213, 26, 2, 'Разделённая панель-мастер: настрой позицию разделителя',
         '<p><strong>Задание:</strong><br>Установи позицию разделителя 200 пикселей через setDividerLocation(200)</p>',
         'JSplitPane-setDividerLocation',
-        '', 141, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
+        '', 213, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 splitPane.setDividerLocation(200);
 add(splitPane);');
 INSERT INTO documentation (id, text)
-VALUES (172, '<h2>🎮 Урок 26.3 — Разделённая панель-мастер: Включи одно касание!</h2>
+VALUES (214, '<h2>🎮 Разделённая панель-мастер: Включи одно касание!</h2>
 
 <p><strong>Привет, мастер удобства!</strong> ✂️ Сегодня ты включишь одно касание в <code>JSplitPane</code> — это как быстрая кнопка в игре! Можно быстро развернуть/свернуть панель одним кликом!</p>
 
@@ -163,16 +163,16 @@ VALUES (172, '<h2>🎮 Урок 26.3 — Разделённая панель-м�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (172, 26, 3, 'Разделённая панель-мастер: включи одно касание',
+VALUES (214, 26, 3, 'Разделённая панель-мастер: включи одно касание',
         '<p><strong>Задание:</strong><br>Включи одно касание через setOneTouchExpandable(true)</p>',
         'JSplitPane-setOneTouchExpandable',
-        '', 172, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
+        '', 214, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 splitPane.setOneTouchExpandable(true);
 add(splitPane);');
 INSERT INTO documentation (id, text)
-VALUES (223, '<h2>🎮 Урок 26.4 — Разделённая панель-мастер: Установи позицию разделителя!</h2>
+VALUES (215, '<h2>🎮 Разделённая панель-мастер: Установи позицию разделителя!</h2>
 
 <p><strong>Привет, мастер разделителя!</strong> ✂️ Сегодня ты установишь позицию разделителя в <code>JSplitPane</code> — это как позиционирование в игре! Можно установить, где будет разделитель!</p>
 
@@ -216,16 +216,16 @@ VALUES (223, '<h2>🎮 Урок 26.4 — Разделённая панель-м�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (223, 26, 4, 'Разделённая панель-мастер: установи позицию разделителя',
+VALUES (215, 26, 4, 'Разделённая панель-мастер: установи позицию разделителя',
         '<p><strong>Задание:</strong><br>Установи позицию разделителя 200 пикселей через setDividerLocation(200)</p>',
         'JSplitPane-setDividerLocation',
-        '', 223, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
+        '', 215, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 splitPane.setDividerLocation(200);
 add(splitPane);');
 INSERT INTO documentation (id, text)
-VALUES (275, '<h2>🎮 Урок 26.5 — Разделённая панель-мастер: Включи непрерывную компоновку!</h2>
+VALUES (216, '<h2>🎮 Разделённая панель-мастер: Включи непрерывную компоновку!</h2>
 
 <p><strong>Привет, мастер компоновки!</strong> ✂️ Сегодня ты включишь непрерывную компоновку в <code>JSplitPane</code> — это как плавное изменение в игре!</p>
 
@@ -265,16 +265,16 @@ VALUES (275, '<h2>🎮 Урок 26.5 — Разделённая панель-м�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (275, 26, 5, 'Разделённая панель-мастер: включи непрерывную компоновку',
+VALUES (216, 26, 5, 'Разделённая панель-мастер: включи непрерывную компоновку',
         '<p><strong>Задание:</strong><br>Включи непрерывную компоновку через setContinuousLayout(true)</p>',
         'JSplitPane-setContinuousLayout',
-        '', 275, 23.0, 0.0, 'JPanel leftPanel = new JPanel();
+        '', 216, 23.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 splitPane.setContinuousLayout(true);
 add(splitPane);');
 INSERT INTO documentation (id, text)
-VALUES (325, '<h2>🎮 Урок 26.6 — Разделённая панель-мастер: Настрой вес изменения размера!</h2>
+VALUES (217, '<h2>🎮 Разделённая панель-мастер: Настрой вес изменения размера!</h2>
 
 <p><strong>Привет, мастер весов!</strong> ✂️ Сегодня ты настроишь вес изменения размера в <code>JSplitPane</code> — это как пропорции в игре!</p>
 
@@ -315,16 +315,16 @@ VALUES (325, '<h2>🎮 Урок 26.6 — Разделённая панель-м�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (325, 26, 6, 'Разделённая панель-мастер: настрой вес изменения размера',
+VALUES (217, 26, 6, 'Разделённая панель-мастер: настрой вес изменения размера',
         '<p><strong>Задание:</strong><br>Установи вес 0.5 через setResizeWeight(0.5)</p>',
         'JSplitPane-setResizeWeight',
-        '', 325, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
+        '', 217, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, leftPanel, rightPanel);
 splitPane.setResizeWeight(0.5);
 add(splitPane);');
 INSERT INTO documentation (id, text)
-VALUES (376, '<h2>🎮 Урок 26.11 — Вкладка-мастер: Включи/выключи вкладку!</h2>
+VALUES (218, '<h2>🎮 Вкладка-мастер: Включи/выключи вкладку!</h2>
 
 <p><strong>Привет, мастер управления!</strong> 📑 Сегодня ты включишь/выключишь вкладку в <code>JTabbedPane</code> — это как активация в игре!</p>
 
@@ -368,16 +368,16 @@ VALUES (376, '<h2>🎮 Урок 26.11 — Вкладка-мастер: Вклю�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (376, 26, 11, 'Вкладка-мастер: включи/выключи вкладку',
+VALUES (218, 26, 11, 'Вкладка-мастер: включи/выключи вкладку',
         '<p><strong>Задание:</strong><br>Выключи вкладку 0 через setEnabledAt(0, false), затем включи обратно через setEnabledAt(0, true)</p>',
         'JTabbedPane-setEnabledAt',
-        '', 376, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
+        '', 218, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
 tabbedPane.setEnabledAt(0, false);
 tabbedPane.setEnabledAt(0, true);
 add(tabbedPane);');
 INSERT INTO documentation (id, text)
-VALUES (424, '<h2>🎮 Урок 26.12 — Вкладка-мастер: Установи мнемоник!</h2>
+VALUES (219, '<h2>🎮 Вкладка-мастер: Установи мнемоник!</h2>
 
 <p><strong>Привет, мастер клавиатуры!</strong> 📑 Сегодня ты установишь мнемоник вкладки в <code>JTabbedPane</code> — это как горячая клавиша в игре!</p>
 
@@ -418,15 +418,15 @@ VALUES (424, '<h2>🎮 Урок 26.12 — Вкладка-мастер: Уста�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (424, 26, 12, 'Вкладка-мастер: установи мнемоник',
+VALUES (219, 26, 12, 'Вкладка-мастер: установи мнемоник',
         '<p><strong>Задание:</strong><br>Установи мнемоник VK_T для вкладки 0 через setMnemonicAt()</p>',
         'JTabbedPane-setMnemonicAt-KeyEvent',
-        '', 424, 24.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
+        '', 219, 24.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Tab", new JPanel());
 tabbedPane.setMnemonicAt(0, KeyEvent.VK_T);
 add(tabbedPane);');
 INSERT INTO documentation (id, text)
-VALUES (476, '<h2>🎮 Урок 26.13 — Вкладка-мастер: Установи расположение вкладок!</h2>
+VALUES (220, '<h2>🎮 Вкладка-мастер: Установи расположение вкладок!</h2>
 
 <p><strong>Привет, мастер расположений!</strong> 📑 Сегодня ты установишь расположение вкладок в <code>JTabbedPane</code> — это как позиция в игре!</p>
 
@@ -467,10 +467,10 @@ VALUES (476, '<h2>🎮 Урок 26.13 — Вкладка-мастер: Уста�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (476, 26, 13, 'Вкладка-мастер: установи расположение вкладок',
+VALUES (220, 26, 13, 'Вкладка-мастер: установи расположение вкладок',
         '<p><strong>Задание:</strong><br>Установи расположение BOTTOM через setTabPlacement()</p>',
         'JTabbedPane-setTabPlacement',
-        '', 476, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
+        '', 220, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
 tabbedPane.setTabPlacement(JTabbedPane.BOTTOM);
 add(tabbedPane);');

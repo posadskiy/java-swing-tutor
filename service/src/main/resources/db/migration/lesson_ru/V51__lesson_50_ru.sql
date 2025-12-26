@@ -13,7 +13,7 @@ VALUES (50, 50, 'Кастомная отрисовка (paintComponent)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (574, '<h2>🎮 Урок 50.1 — Кастомная отрисовка-новичок: Переопредели paintComponent!</h2>
+VALUES (441, '<h2>🎮 Кастомная отрисовка-новичок: Переопредели paintComponent!</h2>
 
 <p><strong>Привет, мастер отрисовки!</strong> 🎨 Сегодня ты переопределишь <code>paintComponent()</code> — это как кастомная графика в игре!</p>
 
@@ -60,10 +60,10 @@ VALUES (574, '<h2>🎮 Урок 50.1 — Кастомная отрисовка-�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (574, 50, 1, 'Кастомная отрисовка-новичок: переопредели paintComponent',
+VALUES (441, 50, 1, 'Кастомная отрисовка-новичок: переопредели paintComponent',
         '<p><strong>Задание:</strong><br>Создай класс, расширяющий JComponent, переопредели paintComponent(), вызови super.paintComponent(g), нарисуй строку через drawString()</p>',
         'JComponent-paintComponent-Graphics',
-        '', 574, 20.0, 0.0, 'class MyComponent extends JComponent {
+        '', 441, 20.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -74,7 +74,7 @@ MyComponent comp = new MyComponent();
 add(comp);');
 
 INSERT INTO documentation (id, text)
-VALUES (575, '<h2>🎮 Урок 50.2 — Кастомная отрисовка-мастер: Используй Graphics2D!</h2>
+VALUES (442, '<h2>🎮 Кастомная отрисовка-мастер: Используй Graphics2D!</h2>
 
 <p><strong>Привет, мастер графики!</strong> 🎨 Сегодня ты используешь <code>Graphics2D</code> — это как улучшенная графика в игре!</p>
 
@@ -118,10 +118,10 @@ VALUES (575, '<h2>🎮 Урок 50.2 — Кастомная отрисовка-�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (575, 50, 2, 'Кастомная отрисовка-мастер: используй Graphics2D',
+VALUES (442, 50, 2, 'Кастомная отрисовка-мастер: используй Graphics2D',
         '<p><strong>Задание:</strong><br>Переопредели paintComponent(), приведи Graphics к Graphics2D, включи антиалиасинг через setRenderingHint()</p>',
         'Graphics2D-RenderingHints',
-        '', 575, 21.0, 0.0, 'class MyComponent extends JComponent {
+        '', 442, 21.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -133,7 +133,7 @@ MyComponent comp = new MyComponent();
 add(comp);');
 
 INSERT INTO documentation (id, text)
-VALUES (576, '<h2>🎮 Урок 50.3 — Кастомная отрисовка-мастер: Рисуй фигуры!</h2>
+VALUES (443, '<h2>🎮 Кастомная отрисовка-мастер: Рисуй фигуры!</h2>
 
 <p><strong>Привет, мастер фигур!</strong> 🎨 Сегодня ты нарисуешь фигуры через <code>Graphics2D</code> — это как рисование в игре!</p>
 
@@ -177,10 +177,10 @@ VALUES (576, '<h2>🎮 Урок 50.3 — Кастомная отрисовка-�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (576, 50, 3, 'Кастомная отрисовка-мастер: рисуй фигуры',
+VALUES (443, 50, 3, 'Кастомная отрисовка-мастер: рисуй фигуры',
         '<p><strong>Задание:</strong><br>Переопредели paintComponent(), нарисуй закрашенный прямоугольник через fillRect(10, 10, 100, 50)</p>',
         'Graphics2D-fillRect',
-        '', 576, 21.0, 0.0, 'class MyComponent extends JComponent {
+        '', 443, 21.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -192,7 +192,7 @@ MyComponent comp = new MyComponent();
 add(comp);');
 
 INSERT INTO documentation (id, text)
-VALUES (577, '<h2>🎮 Урок 50.4 — Кастомная отрисовка-мастер: Используй цвета!</h2>
+VALUES (444, '<h2>🎮 Кастомная отрисовка-мастер: Используй цвета!</h2>
 
 <p><strong>Привет, мастер цветов!</strong> 🎨 Сегодня ты используешь цвета в <code>Graphics2D</code> — это как палитра в игре!</p>
 
@@ -236,10 +236,10 @@ VALUES (577, '<h2>🎮 Урок 50.4 — Кастомная отрисовка-�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (577, 50, 4, 'Кастомная отрисовка-мастер: используй цвета',
+VALUES (444, 50, 4, 'Кастомная отрисовка-мастер: используй цвета',
         '<p><strong>Задание:</strong><br>Переопредели paintComponent(), установи цвет Color.RED через setColor(), нарисуй прямоугольник</p>',
         'Graphics2D-setColor-Color',
-        '', 577, 21.0, 0.0, 'class MyComponent extends JComponent {
+        '', 444, 21.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -252,7 +252,7 @@ MyComponent comp = new MyComponent();
 add(comp);');
 
 INSERT INTO documentation (id, text)
-VALUES (578, '<h2>🎮 Урок 50.5 — Кастомная отрисовка-мастер: Используй градиенты!</h2>
+VALUES (445, '<h2>🎮 Кастомная отрисовка-мастер: Используй градиенты!</h2>
 
 <p><strong>Привет, мастер градиентов!</strong> 🎨 Сегодня ты используешь градиенты в <code>Graphics2D</code> — это как плавный переход в игре!</p>
 
@@ -296,10 +296,10 @@ VALUES (578, '<h2>🎮 Урок 50.5 — Кастомная отрисовка-�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (578, 50, 5, 'Кастомная отрисовка-мастер: используй градиенты',
+VALUES (445, 50, 5, 'Кастомная отрисовка-мастер: используй градиенты',
         '<p><strong>Задание:</strong><br>Переопредели paintComponent(), создай градиент new GradientPaint(0, 0, Color.RED, 100, 0, Color.BLUE), установи через setPaint(), нарисуй прямоугольник</p>',
         'Graphics2D-GradientPaint-setPaint',
-        '', 578, 22.0, 0.0, 'class MyComponent extends JComponent {
+        '', 445, 22.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -313,7 +313,7 @@ MyComponent comp = new MyComponent();
 add(comp);');
 
 INSERT INTO documentation (id, text)
-VALUES (579, '<h2>🎮 Урок 50.6 — Кастомная отрисовка-мастер: Рисуй изображения!</h2>
+VALUES (446, '<h2>🎮 Кастомная отрисовка-мастер: Рисуй изображения!</h2>
 
 <p><strong>Привет, мастер изображений!</strong> 🎨 Сегодня ты нарисуешь изображения через <code>Graphics2D</code> — это как картинки в игре!</p>
 
@@ -357,10 +357,10 @@ VALUES (579, '<h2>🎮 Урок 50.6 — Кастомная отрисовка-�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (579, 50, 6, 'Кастомная отрисовка-мастер: рисуй изображения',
+VALUES (446, 50, 6, 'Кастомная отрисовка-мастер: рисуй изображения',
         '<p><strong>Задание:</strong><br>Переопредели paintComponent(), загрузи изображение через ImageIO.read(), нарисуй через drawImage()</p>',
         'Graphics2D-drawImage-ImageIO',
-        '', 579, 22.0, 0.0, 'class MyComponent extends JComponent {
+        '', 446, 22.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -377,7 +377,7 @@ MyComponent comp = new MyComponent();
 add(comp);');
 
 INSERT INTO documentation (id, text)
-VALUES (580, '<h2>🎮 Урок 50.7 — Кастомная отрисовка-мастер: Обновляй отрисовку!</h2>
+VALUES (447, '<h2>🎮 Кастомная отрисовка-мастер: Обновляй отрисовку!</h2>
 
 <p><strong>Привет, мастер обновлений!</strong> 🎨 Сегодня ты обновишь отрисовку через <code>repaint()</code> — это как обновление в игре!</p>
 
@@ -421,10 +421,10 @@ VALUES (580, '<h2>🎮 Урок 50.7 — Кастомная отрисовка-�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (580, 50, 7, 'Кастомная отрисовка-мастер: обновляй отрисовку',
+VALUES (447, 50, 7, 'Кастомная отрисовка-мастер: обновляй отрисовку',
         '<p><strong>Задание:</strong><br>Создай компонент с paintComponent(), вызови repaint() для обновления</p>',
         'JComponent-repaint',
-        '', 580, 20.0, 0.0, 'class MyComponent extends JComponent {
+        '', 447, 20.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

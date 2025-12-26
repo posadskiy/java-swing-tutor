@@ -13,7 +13,7 @@ VALUES (46, 46, 'MouseListener - Обработка событий мыши', 1)
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (69, '<h2>🎮 Урок 46.1 — Слушатель мыши-новичок: Реагируй на клики мыши!</h2>
+VALUES (406, '<h2>🎮 Слушатель мыши-новичок: Реагируй на клики мыши!</h2>
 
 <p><strong>Привет, мастер мыши!</strong> 🖱️ Сегодня ты добавишь <code>MouseListener</code> — это как детектор кликов в игре! Компонент будет реагировать на все действия мыши: клики, нажатия, отпускания!</p>
 
@@ -64,10 +64,10 @@ VALUES (69, '<h2>🎮 Урок 46.1 — Слушатель мыши-новичо
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (69, 46, 1, 'Слушатель мыши-новичок: реагируй на клики мыши',
+VALUES (406, 46, 1, 'Слушатель мыши-новичок: реагируй на клики мыши',
         '<p><strong>Задание:</strong><br>Создай панель, добавь MouseListener, который выводит "Клик!" при клике, и добавь на форму</p>',
         'JPanel-addMouseListener-MouseAdapter,add',
-        '', 69, 20.0, 0.0, 'JPanel panel = new JPanel();
+        '', 406, 20.0, 0.0, 'JPanel panel = new JPanel();
 panel.addMouseListener(new MouseAdapter() {
     public void mouseClicked(MouseEvent e) {
         System.out.println("Клик!");
@@ -75,7 +75,7 @@ panel.addMouseListener(new MouseAdapter() {
 });
 add(panel);');
 INSERT INTO documentation (id, text)
-VALUES (148, '<h2>🎮 Урок 46.1 — Радио-пункт меню-новичок: Создай радио-кнопки в меню!</h2>
+VALUES (407, '<h2>🎮 Радио-пункт меню-новичок: Создай радио-кнопки в меню!</h2>
 
 <p><strong>Привет, мастер выбора!</strong> 🔘 Сегодня ты создашь <code>JRadioButtonMenuItem</code> — это как выбор варианта в меню игры! Можно выбрать один вариант из группы!</p>
 
@@ -125,10 +125,10 @@ menu.add(item2);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (148, 46, 1, 'Радио-пункт меню-новичок: создай радио-кнопки в меню',
+VALUES (407, 46, 1, 'Радио-пункт меню-новичок: создай радио-кнопки в меню',
         '<p><strong>Задание:</strong><br>Создай ButtonGroup, создай два JRadioButtonMenuItem, добавь в группу и меню</p>',
         'JRadioButtonMenuItem-ButtonGroup-add',
-        '', 148, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
+        '', 407, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
 JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
 group.add(item1);
@@ -140,7 +140,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(sizeMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (180, '<h2>🎮 Урок 46.2 — Радио-пункт меню-мастер: Обрабатывай выбор!</h2>
+VALUES (408, '<h2>🎮 Радио-пункт меню-мастер: Обрабатывай выбор!</h2>
 
 <p><strong>Привет, мастер выбора!</strong> 🔘 Сегодня ты обработаешь выбор <code>JRadioButtonMenuItem</code> — это как реакция на выбор в игре! Можно реагировать на выбор варианта!</p>
 
@@ -185,10 +185,10 @@ VALUES (180, '<h2>🎮 Урок 46.2 — Радио-пункт меню-маст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (180, 46, 2, 'Радио-пункт меню-мастер: обрабатывай выбор',
+VALUES (408, 46, 2, 'Радио-пункт меню-мастер: обрабатывай выбор',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи текст пункта через getText()</p>',
         'JRadioButtonMenuItem-addActionListener-isSelected-getText',
-        '', 180, 23.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 408, 23.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
 item.addActionListener(e -> {
     if (item.isSelected()) {
         System.out.println("Выбрано: " + item.getText());
@@ -200,7 +200,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(sizeMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (87, '<h2>🎮 Урок 46.3 — Диалог-мастер: Создай диалог подтверждения!</h2>
+VALUES (409, '<h2>🎮 Диалог-мастер: Создай диалог подтверждения!</h2>
 
 <p><strong>Привет, мастер подтверждений!</strong> ✅ Сегодня ты создашь диалог подтверждения через <code>JOptionPane</code> — это как вопрос "Ты уверен?" в игре! Можно спросить у пользователя перед важным действием!</p>
 
@@ -250,10 +250,10 @@ VALUES (87, '<h2>🎮 Урок 46.3 — Диалог-мастер: Создай 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (87, 46, 3, 'Диалог-мастер: создай диалог подтверждения',
+VALUES (409, 46, 3, 'Диалог-мастер: создай диалог подтверждения',
         '<p><strong>Задание:</strong><br>Покажи диалог подтверждения с YES_NO_OPTION, обработай результат YES_OPTION</p>',
         'JOptionPane-showConfirmDialog',
-        '', 87, 23.0, 0.0, 'JFrame frame = new JFrame();
+        '', 409, 23.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(
     frame,
     "Ты уверен?",
@@ -264,7 +264,7 @@ if (result == JOptionPane.YES_OPTION) {
     System.out.println("Пользователь согласился!");
 }');
 INSERT INTO documentation (id, text)
-VALUES (231, '<h2>🎮 Урок 46.3 — Радио-пункт меню-мастер: Добавь в группу!</h2>
+VALUES (412, '<h2>🎮 Радио-пункт меню-мастер: Добавь в группу!</h2>
 
 <p><strong>Привет, мастер групп!</strong> 🔘 Сегодня ты добавишь <code>JRadioButtonMenuItem</code> в группу — это как группировка в игре!</p>
 
@@ -307,10 +307,10 @@ group.add(item2);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (231, 46, 3, 'Радио-пункт меню-мастер: добавь в группу',
+VALUES (412, 46, 3, 'Радио-пункт меню-мастер: добавь в группу',
         '<p><strong>Задание:</strong><br>Создай ButtonGroup, добавь два радио-пункта через add()</p>',
         'JRadioButtonMenuItem-ButtonGroup-add',
-        '', 231, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
+        '', 412, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
 JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
 group.add(item1);
@@ -322,7 +322,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(sizeMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (106, '<h2>🎮 Урок 46.4 — Диалог-мастер: Создай диалог ввода!</h2>
+VALUES (410, '<h2>🎮 Диалог-мастер: Создай диалог ввода!</h2>
 
 <p><strong>Привет, мастер ввода!</strong> ✅ Сегодня ты создашь диалог ввода через <code>JOptionPane</code> — это как ввод имени в игре! Можно запросить у пользователя ввод текста!</p>
 
@@ -372,10 +372,10 @@ VALUES (106, '<h2>🎮 Урок 46.4 — Диалог-мастер: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (106, 46, 4, 'Диалог-мастер: создай диалог ввода',
+VALUES (410, 46, 4, 'Диалог-мастер: создай диалог ввода',
         '<p><strong>Задание:</strong><br>Покажи диалог ввода с вопросом "Введи своё имя:", обработай результат, проверь на null и пустоту</p>',
         'JOptionPane-showInputDialog',
-        '', 106, 24.0, 0.0, 'JFrame frame = new JFrame();
+        '', 410, 24.0, 0.0, 'JFrame frame = new JFrame();
 String input = JOptionPane.showInputDialog(
     frame,
     "Введи своё имя:",
@@ -386,7 +386,7 @@ if (input != null && !input.isEmpty()) {
     System.out.println("Введено: " + input);
 }');
 INSERT INTO documentation (id, text)
-VALUES (282, '<h2>🎮 Урок 46.4 — Радио-пункт меню-мастер: Обрабатывай изменение состояния!</h2>
+VALUES (414, '<h2>🎮 Радио-пункт меню-мастер: Обрабатывай изменение состояния!</h2>
 
 <p><strong>Привет, мастер состояний!</strong> 🔘 Сегодня ты обработаешь изменение состояния <code>JRadioButtonMenuItem</code> — это как реакция на выбор в игре!</p>
 
@@ -431,10 +431,10 @@ VALUES (282, '<h2>🎮 Урок 46.4 — Радио-пункт меню-маст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (282, 46, 4, 'Радио-пункт меню-мастер: обрабатывай изменение состояния',
+VALUES (414, 46, 4, 'Радио-пункт меню-мастер: обрабатывай изменение состояния',
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь getStateChange() == SELECTED, выведи сообщение</p>',
         'JRadioButtonMenuItem-addItemListener-getStateChange',
-        '', 282, 24.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 414, 24.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
 item.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
         System.out.println("Выбрано!");
@@ -446,7 +446,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(sizeMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (186, '<h2>🎮 Урок 46.5 — Диалог-мастер: Создай кастомные кнопки!</h2>
+VALUES (411, '<h2>🎮 Диалог-мастер: Создай кастомные кнопки!</h2>
 
 <p><strong>Привет, мастер кастомизации!</strong> ✅ Сегодня ты создашь кастомные кнопки в <code>JOptionPane</code> — это как свои кнопки в игре! Можно создать диалог с нужными кнопками!</p>
 
@@ -499,10 +499,10 @@ VALUES (186, '<h2>🎮 Урок 46.5 — Диалог-мастер: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (186, 46, 5, 'Диалог-мастер: создай кастомные кнопки',
+VALUES (411, 46, 5, 'Диалог-мастер: создай кастомные кнопки',
         '<p><strong>Задание:</strong><br>Создай массив строк с тремя кнопками, покажи диалог через showOptionDialog() с этими кнопками</p>',
         'JOptionPane-showOptionDialog',
-        '', 186, 26.0, 0.0, 'JFrame frame = new JFrame();
+        '', 411, 26.0, 0.0, 'JFrame frame = new JFrame();
 String[] options = {"Да", "Нет", "Отмена"};
 int result = JOptionPane.showOptionDialog(
     frame,
@@ -518,7 +518,7 @@ if (result >= 0) {
     System.out.println("Выбрано: " + options[result]);
 }');
 INSERT INTO documentation (id, text)
-VALUES (332, '<h2>🎮 Урок 46.5 — Радио-пункт меню-мастер: Добавь иконку!</h2>
+VALUES (416, '<h2>🎮 Радио-пункт меню-мастер: Добавь иконку!</h2>
 
 <p><strong>Привет, мастер иконок!</strong> 🔘 Сегодня ты добавишь иконку к <code>JRadioButtonMenuItem</code> — это как визуальный элемент в игре!</p>
 
@@ -559,10 +559,10 @@ VALUES (332, '<h2>🎮 Урок 46.5 — Радио-пункт меню-маст
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (332, 46, 5, 'Радио-пункт меню-мастер: добавь иконку',
+VALUES (416, 46, 5, 'Радио-пункт меню-мастер: добавь иконку',
         '<p><strong>Задание:</strong><br>Установи иконку через setIcon() с ImageIcon</p>',
         'JRadioButtonMenuItem-setIcon-ImageIcon',
-        '', 332, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 416, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
 item.setIcon(new ImageIcon("icon.png"));
 JMenu sizeMenu = new JMenu("Размер");
 sizeMenu.add(item);
@@ -570,7 +570,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(sizeMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (237, '<h2>🎮 Урок 46.6 — Диалог-мастер: Создай диалог ввода!</h2>
+VALUES (413, '<h2>🎮 Диалог-мастер: Создай диалог ввода!</h2>
 
 <p><strong>Привет, мастер ввода!</strong> ✅ Сегодня ты создашь диалог ввода через <code>JOptionPane</code> — это как ввод данных в игре!</p>
 
@@ -616,16 +616,16 @@ VALUES (237, '<h2>🎮 Урок 46.6 — Диалог-мастер: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (237, 46, 6, 'Диалог-мастер: создай диалог ввода',
+VALUES (413, 46, 6, 'Диалог-мастер: создай диалог ввода',
         '<p><strong>Задание:</strong><br>Покажи диалог ввода через showInputDialog() с сообщением "Введите имя:", проверь результат на null</p>',
         'JOptionPane-showInputDialog',
-        '', 237, 23.0, 0.0, 'JFrame frame = new JFrame();
+        '', 413, 23.0, 0.0, 'JFrame frame = new JFrame();
 String input = JOptionPane.showInputDialog(frame, "Введите имя:");
 if (input != null) {
     System.out.println("Имя: " + input);
 }');
 INSERT INTO documentation (id, text)
-VALUES (288, '<h2>🎮 Урок 46.7 — Диалог-мастер: Создай диалог подтверждения!</h2>
+VALUES (415, '<h2>🎮 Диалог-мастер: Создай диалог подтверждения!</h2>
 
 <p><strong>Привет, мастер подтверждений!</strong> ✅ Сегодня ты создашь диалог подтверждения через <code>JOptionPane</code> — это как подтверждение в игре!</p>
 
@@ -671,16 +671,16 @@ VALUES (288, '<h2>🎮 Урок 46.7 — Диалог-мастер: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (288, 46, 7, 'Диалог-мастер: создай диалог подтверждения',
+VALUES (415, 46, 7, 'Диалог-мастер: создай диалог подтверждения',
         '<p><strong>Задание:</strong><br>Покажи диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, проверь результат == YES_OPTION</p>',
         'JOptionPane-showConfirmDialog-YES_NO_OPTION',
-        '', 288, 24.0, 0.0, 'JFrame frame = new JFrame();
+        '', 415, 24.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(frame, "Удалить?", "Подтверждение", JOptionPane.YES_NO_OPTION);
 if (result == JOptionPane.YES_OPTION) {
     System.out.println("Да!");
 }');
 INSERT INTO documentation (id, text)
-VALUES (338, '<h2>🎮 Урок 46.8 — Диалог-мастер: Создай диалог сообщения!</h2>
+VALUES (417, '<h2>🎮 Диалог-мастер: Создай диалог сообщения!</h2>
 
 <p><strong>Привет, мастер сообщений!</strong> ✅ Сегодня ты создашь диалог сообщения через <code>JOptionPane</code> — это как уведомление в игре!</p>
 
@@ -721,13 +721,13 @@ VALUES (338, '<h2>🎮 Урок 46.8 — Диалог-мастер: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (338, 46, 8, 'Диалог-мастер: создай диалог сообщения',
+VALUES (417, 46, 8, 'Диалог-мастер: создай диалог сообщения',
         '<p><strong>Задание:</strong><br>Покажи диалог сообщения через showMessageDialog() с INFORMATION_MESSAGE</p>',
         'JOptionPane-showMessageDialog-INFORMATION_MESSAGE',
-        '', 338, 23.0, 0.0, 'JFrame frame = new JFrame();
+        '', 417, 23.0, 0.0, 'JFrame frame = new JFrame();
 JOptionPane.showMessageDialog(frame, "Сообщение", "Заголовок", JOptionPane.INFORMATION_MESSAGE);');
 INSERT INTO documentation (id, text)
-VALUES (384, '<h2>🎮 Урок 46.12 — Таблица-мастер: Установи ширину колонки!</h2>
+VALUES (418, '<h2>🎮 Таблица-мастер: Установи ширину колонки!</h2>
 
 <p><strong>Привет, мастер таблиц!</strong> 📊 Сегодня ты установишь ширину колонки в <code>JTable</code> — это как размер в игре!</p>
 
@@ -774,10 +774,10 @@ VALUES (384, '<h2>🎮 Урок 46.12 — Таблица-мастер: Уста�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (384, 46, 12, 'Таблица-мастер: установи ширину колонки',
+VALUES (418, 46, 12, 'Таблица-мастер: установи ширину колонки',
         '<p><strong>Задание:</strong><br>Получи модель колонок через getColumnModel(), получи колонку 0, установи ширину 200 через setPreferredWidth()</p>',
         'JTable-getColumnModel-TableColumn-setPreferredWidth',
-        '', 384, 25.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 418, 25.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 TableColumnModel columnModel = table.getColumnModel();
@@ -786,7 +786,7 @@ column.setPreferredWidth(200);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (428, '<h2>🎮 Урок 46.13 — Таблица-мастер: Установи высоту строки!</h2>
+VALUES (419, '<h2>🎮 Таблица-мастер: Установи высоту строки!</h2>
 
 <p><strong>Привет, мастер таблиц!</strong> 📊 Сегодня ты установишь высоту строки в <code>JTable</code> — это как размер в игре!</p>
 
@@ -827,17 +827,17 @@ VALUES (428, '<h2>🎮 Урок 46.13 — Таблица-мастер: Уста�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (428, 46, 13, 'Таблица-мастер: установи высоту строки',
+VALUES (419, 46, 13, 'Таблица-мастер: установи высоту строки',
         '<p><strong>Задание:</strong><br>Установи высоту строки 30 через setRowHeight()</p>',
         'JTable-setRowHeight',
-        '', 428, 22.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 419, 22.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 table.setRowHeight(30);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (484, '<h2>🎮 Урок 46.14 — Таблица-мастер: Установи режим автоизменения размера!</h2>
+VALUES (420, '<h2>🎮 Таблица-мастер: Установи режим автоизменения размера!</h2>
 
 <p><strong>Привет, мастер размеров!</strong> 📊 Сегодня ты установишь режим автоизменения размера в <code>JTable</code> — это как автоматизация в игре!</p>
 
@@ -878,10 +878,10 @@ VALUES (484, '<h2>🎮 Урок 46.14 — Таблица-мастер: Уста�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (484, 46, 14, 'Таблица-мастер: установи режим автоизменения размера',
+VALUES (420, 46, 14, 'Таблица-мастер: установи режим автоизменения размера',
         '<p><strong>Задание:</strong><br>Установи режим AUTO_RESIZE_ALL_COLUMNS через setAutoResizeMode()</p>',
         'JTable-setAutoResizeMode',
-        '', 484, 24.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 420, 24.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);

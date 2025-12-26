@@ -13,7 +13,7 @@ VALUES (33, 33, 'Расширенный редактор (JTextPane)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (81, '<h2>🎮 Урок 33.1 — JTextPane-новичок: Создай расширенный редактор!</h2>
+VALUES (278, '<h2>🎮 JTextPane-новичок: Создай расширенный редактор!</h2>
 
 <p><strong>Привет, мастер стилей!</strong> ✨ Сегодня ты создашь <code>JTextPane</code> — это как продвинутый редактор с поддержкой стилей! Можно применять разные стили к разным частям текста!</p>
 
@@ -65,10 +65,10 @@ doc.insertString(0, "Жирный текст", style);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (81, 33, 1, 'JTextPane-новичок: создай расширенный редактор',
+VALUES (278, 33, 1, 'JTextPane-новичок: создай расширенный редактор',
         '<p><strong>Задание:</strong><br>Создай JTextPane, создай стиль "bold", установи жирный шрифт, вставь текст со стилем и добавь на форму</p>',
         'JTextPane-StyledDocument-Style-StyleConstants-add',
-        '', 81, 28.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 278, 28.0, 0.0, 'JTextPane textPane = new JTextPane();
 StyledDocument doc = textPane.getStyledDocument();
 Style style = textPane.addStyle("bold", null);
 StyleConstants.setBold(style, true);
@@ -79,7 +79,7 @@ try {
 }
 add(textPane);');
 INSERT INTO documentation (id, text)
-VALUES (101, '<h2>🎮 Урок 33.2 — JTextPane-мастер: Выделяй и стилизуй текст!</h2>
+VALUES (279, '<h2>🎮 JTextPane-мастер: Выделяй и стилизуй текст!</h2>
 
 <p><strong>Привет, мастер стилизации!</strong> ✨ Сегодня ты научишься применять стили к выделенному тексту в <code>JTextPane</code> — это как форматирование в текстовом редакторе! Можно выделить текст и применить к нему стиль!</p>
 
@@ -128,10 +128,10 @@ doc.setCharacterAttributes(start, end - start, style, false);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (101, 33, 2, 'JTextPane-мастер: выделяй и стилизуй текст',
+VALUES (279, 33, 2, 'JTextPane-мастер: выделяй и стилизуй текст',
         '<p><strong>Задание:</strong><br>Получи начало и конец выделения, создай стиль "bold", примени стиль к выделенному тексту</p>',
         'JTextPane-getSelectionStart-getSelectionEnd-setCharacterAttributes',
-        '', 101, 29.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 279, 29.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setText("Выдели этот текст");
 int start = textPane.getSelectionStart();
 int end = textPane.getSelectionEnd();
@@ -142,7 +142,7 @@ doc.setCharacterAttributes(start, end - start, style, false);
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (185, '<h2>🎮 Урок 33.3 — JTextPane-мастер: Настрой шрифт!</h2>
+VALUES (280, '<h2>🎮 JTextPane-мастер: Настрой шрифт!</h2>
 
 <p><strong>Привет, мастер шрифтов!</strong> ✨ Сегодня ты настроишь шрифт в <code>JTextPane</code> — это как настройка текста в игре! Можно установить шрифт для всего текста или его части!</p>
 
@@ -188,15 +188,15 @@ StyleConstants.setFontSize(style, 14);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (185, 33, 3, 'JTextPane-мастер: настрой шрифт',
+VALUES (280, 33, 3, 'JTextPane-мастер: настрой шрифт',
         '<p><strong>Задание:</strong><br>Установи шрифт через setFont() с Arial, BOLD, размер 14</p>',
         'JTextPane-setFont-Font',
-        '', 185, 24.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 280, 24.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setFont(new Font("Arial", Font.BOLD, 14));
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (236, '<h2>🎮 Урок 33.4 — JTextPane-мастер: Вставь строку!</h2>
+VALUES (281, '<h2>🎮 JTextPane-мастер: Вставь строку!</h2>
 
 <p><strong>Привет, мастер вставки!</strong> ✨ Сегодня ты вставишь строку в <code>JTextPane</code> — это как добавление текста в игре!</p>
 
@@ -240,10 +240,10 @@ VALUES (236, '<h2>🎮 Урок 33.4 — JTextPane-мастер: Вставь с
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (236, 33, 4, 'JTextPane-мастер: вставь строку',
+VALUES (281, 33, 4, 'JTextPane-мастер: вставь строку',
         '<p><strong>Задание:</strong><br>Получи документ через getStyledDocument(), вставь строку в позицию 0 через insertString()</p>',
         'JTextPane-getStyledDocument-insertString',
-        '', 236, 25.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 281, 25.0, 0.0, 'JTextPane textPane = new JTextPane();
 StyledDocument doc = textPane.getStyledDocument();
 try {
     doc.insertString(0, "Текст", null);
@@ -253,7 +253,7 @@ try {
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (287, '<h2>🎮 Урок 33.5 — JTextPane-мастер: Примени стиль!</h2>
+VALUES (282, '<h2>🎮 JTextPane-мастер: Примени стиль!</h2>
 
 <p><strong>Привет, мастер стилей!</strong> ✨ Сегодня ты применишь стиль в <code>JTextPane</code> — это как форматирование в игре!</p>
 
@@ -301,10 +301,10 @@ StyleConstants.setBold(style, true);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (287, 33, 5, 'JTextPane-мастер: примени стиль',
+VALUES (282, 33, 5, 'JTextPane-мастер: примени стиль',
         '<p><strong>Задание:</strong><br>Получи документ, создай стиль через addStyle(), установи жирный через StyleConstants.setBold(), примени через setCharacterAttributes()</p>',
         'JTextPane-Style-StyleConstants-setCharacterAttributes',
-        '', 287, 27.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 282, 27.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setText("Текст для стилизации");
 StyledDocument doc = textPane.getStyledDocument();
 Style style = doc.addStyle("bold", null);
@@ -313,7 +313,7 @@ doc.setCharacterAttributes(0, 5, style, false);
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (337, '<h2>🎮 Урок 33.6 — JTextPane-мастер: Получи текст!</h2>
+VALUES (283, '<h2>🎮 JTextPane-мастер: Получи текст!</h2>
 
 <p><strong>Привет, мастер получения!</strong> ✨ Сегодня ты получишь текст из <code>JTextPane</code> — это как извлечение в игре!</p>
 
@@ -354,17 +354,17 @@ VALUES (337, '<h2>🎮 Урок 33.6 — JTextPane-мастер: Получи т
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (337, 33, 6, 'JTextPane-мастер: получи текст',
+VALUES (283, 33, 6, 'JTextPane-мастер: получи текст',
         '<p><strong>Задание:</strong><br>Получи текст через getText(), выведи его</p>',
         'JTextPane-getText',
-        '', 337, 21.0, 0.0, 'JTextPane textPane = new JTextPane();
+        '', 283, 21.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setText("Текст");
 String text = textPane.getText();
 System.out.println("Текст: " + text);
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (395, '<h2>🎮 Урок 33.6 — MouseListener-мастер: Определи кнопку мыши!</h2>
+VALUES (284, '<h2>🎮 MouseListener-мастер: Определи кнопку мыши!</h2>
 
 <p><strong>Привет, мастер мыши!</strong> 🖱️ Сегодня ты определишь кнопку мыши в <code>MouseListener</code> — это как определение кнопки в игре!</p>
 
@@ -412,10 +412,10 @@ VALUES (395, '<h2>🎮 Урок 33.6 — MouseListener-мастер: Опред�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (395, 33, 6, 'MouseListener-мастер: определи кнопку мыши',
+VALUES (284, 33, 6, 'MouseListener-мастер: определи кнопку мыши',
         '<p><strong>Задание:</strong><br>Добавь MouseListener, проверь getButton() == BUTTON1, выведи "Левая кнопка"</p>',
         'MouseListener-getButton-MouseEvent',
-        '', 395, 24.0, 0.0, 'JPanel component = new JPanel();
+        '', 284, 24.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -426,7 +426,7 @@ component.addMouseListener(new MouseAdapter() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (441, '<h2>🎮 Урок 33.7 — MouseListener-мастер: Получи координаты мыши!</h2>
+VALUES (285, '<h2>🎮 MouseListener-мастер: Получи координаты мыши!</h2>
 
 <p><strong>Привет, мастер координат!</strong> 🖱️ Сегодня ты получишь координаты мыши в <code>MouseListener</code> — это как позиция в игре!</p>
 
@@ -474,10 +474,10 @@ VALUES (441, '<h2>🎮 Урок 33.7 — MouseListener-мастер: Получ�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (441, 33, 7, 'MouseListener-мастер: получи координаты мыши',
+VALUES (285, 33, 7, 'MouseListener-мастер: получи координаты мыши',
         '<p><strong>Задание:</strong><br>Добавь MouseListener, переопредели mouseClicked(), получи X и Y через getX(), getY(), выведи</p>',
         'MouseListener-getX-getY-MouseEvent',
-        '', 441, 23.0, 0.0, 'JPanel component = new JPanel();
+        '', 285, 23.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -488,7 +488,7 @@ component.addMouseListener(new MouseAdapter() {
 });
 add(component);');
 INSERT INTO documentation (id, text)
-VALUES (497, '<h2>🎮 Урок 33.8 — MouseListener-мастер: Получи количество кликов!</h2>
+VALUES (286, '<h2>🎮 MouseListener-мастер: Получи количество кликов!</h2>
 
 <p><strong>Привет, мастер кликов!</strong> 🖱️ Сегодня ты получишь количество кликов в <code>MouseListener</code> — это как счётчик в игре!</p>
 
@@ -537,10 +537,10 @@ VALUES (497, '<h2>🎮 Урок 33.8 — MouseListener-мастер: Получ�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (497, 33, 8, 'MouseListener-мастер: получи количество кликов',
+VALUES (286, 33, 8, 'MouseListener-мастер: получи количество кликов',
         '<p><strong>Задание:</strong><br>Добавь MouseListener, переопредели mouseClicked(), получи количество через getClickCount(), проверь на 2</p>',
         'MouseListener-getClickCount-MouseEvent',
-        '', 497, 23.0, 0.0, 'JPanel component = new JPanel();
+        '', 286, 23.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {

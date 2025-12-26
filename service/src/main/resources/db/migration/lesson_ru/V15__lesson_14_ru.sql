@@ -13,7 +13,7 @@ VALUES (14, 14, 'Индикаторы прогресса (JProgressBar)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (521, '<h2>🎮 Урок 14.1 — Прогресс-бар-новичок: Создай индикатор прогресса!</h2>
+VALUES (108, '<h2>🎮 Прогресс-бар-новичок: Создай индикатор прогресса!</h2>
 
 <p><strong>Привет, мастер прогресса!</strong> 📊 Сегодня ты создашь <code>JProgressBar</code> — это как индикатор загрузки в игре! Можно показывать прогресс выполнения задачи!</p>
 
@@ -59,15 +59,15 @@ VALUES (521, '<h2>🎮 Урок 14.1 — Прогресс-бар-новичок:
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (521, 14, 1, 'Прогресс-бар-новичок: создай индикатор прогресса',
+VALUES (108, 14, 1, 'Прогресс-бар-новичок: создай индикатор прогресса',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар с диапазоном 0-100, установи значение 50 и добавь на форму</p>',
         'JProgressBar-setValue,add',
-        '', 521, 14.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 108, 14.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(50);
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (522, '<h2>🎮 Урок 14.2 — Прогресс-бар-мастер: Установи минимальное и максимальное значение!</h2>
+VALUES (109, '<h2>🎮 Прогресс-бар-мастер: Установи минимальное и максимальное значение!</h2>
 
 <p><strong>Привет, мастер диапазонов!</strong> 📊 Сегодня ты установишь минимальное и максимальное значение в <code>JProgressBar</code> — это как границы в игре!</p>
 
@@ -111,16 +111,16 @@ VALUES (522, '<h2>🎮 Урок 14.2 — Прогресс-бар-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (522, 14, 2, 'Прогресс-бар-мастер: установи минимальное и максимальное значение',
+VALUES (109, 14, 2, 'Прогресс-бар-мастер: установи минимальное и максимальное значение',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи минимум 0 и максимум 100 через setMinimum() и setMaximum()</p>',
         'JProgressBar-setMinimum-setMaximum',
-        '', 522, 15.0, 0.0, 'JProgressBar progressBar = new JProgressBar();
+        '', 109, 15.0, 0.0, 'JProgressBar progressBar = new JProgressBar();
 progressBar.setMinimum(0);
 progressBar.setMaximum(100);
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (523, '<h2>🎮 Урок 14.3 — Прогресс-бар-мастер: Установи текущее значение!</h2>
+VALUES (110, '<h2>🎮 Прогресс-бар-мастер: Установи текущее значение!</h2>
 
 <p><strong>Привет, мастер значений!</strong> 📊 Сегодня ты установишь текущее значение в <code>JProgressBar</code> — это как прогресс в игре!</p>
 
@@ -164,15 +164,15 @@ VALUES (523, '<h2>🎮 Урок 14.3 — Прогресс-бар-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (523, 14, 3, 'Прогресс-бар-мастер: установи текущее значение',
+VALUES (110, 14, 3, 'Прогресс-бар-мастер: установи текущее значение',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи значение 75 через setValue()</p>',
         'JProgressBar-setValue',
-        '', 523, 15.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 110, 15.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(75);
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (524, '<h2>🎮 Урок 14.4 — Прогресс-бар-мастер: Установи ориентацию!</h2>
+VALUES (111, '<h2>🎮 Прогресс-бар-мастер: Установи ориентацию!</h2>
 
 <p><strong>Привет, мастер ориентации!</strong> 📊 Сегодня ты установишь ориентацию в <code>JProgressBar</code> — это как направление в игре!</p>
 
@@ -216,15 +216,15 @@ VALUES (524, '<h2>🎮 Урок 14.4 — Прогресс-бар-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (524, 14, 4, 'Прогресс-бар-мастер: установи ориентацию',
+VALUES (111, 14, 4, 'Прогресс-бар-мастер: установи ориентацию',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи вертикальную ориентацию через setOrientation(JProgressBar.VERTICAL)</p>',
         'JProgressBar-setOrientation',
-        '', 524, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 111, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setOrientation(JProgressBar.VERTICAL);
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (525, '<h2>🎮 Урок 14.5 — Прогресс-бар-мастер: Покажи строку с процентами!</h2>
+VALUES (112, '<h2>🎮 Прогресс-бар-мастер: Покажи строку с процентами!</h2>
 
 <p><strong>Привет, мастер текста!</strong> 📊 Сегодня ты покажешь строку с процентами в <code>JProgressBar</code> — это как текст в игре!</p>
 
@@ -268,16 +268,16 @@ VALUES (525, '<h2>🎮 Урок 14.5 — Прогресс-бар-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (525, 14, 5, 'Прогресс-бар-мастер: покажи строку с процентами',
+VALUES (112, 14, 5, 'Прогресс-бар-мастер: покажи строку с процентами',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, включи показ строки через setStringPainted(true)</p>',
         'JProgressBar-setStringPainted',
-        '', 525, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 112, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(50);
 progressBar.setStringPainted(true);
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (526, '<h2>🎮 Урок 14.6 — Прогресс-бар-мастер: Установи цвета!</h2>
+VALUES (113, '<h2>🎮 Прогресс-бар-мастер: Установи цвета!</h2>
 
 <p><strong>Привет, мастер цветов!</strong> 📊 Сегодня ты установишь цвета в <code>JProgressBar</code> — это как стиль в игре!</p>
 
@@ -321,16 +321,16 @@ VALUES (526, '<h2>🎮 Урок 14.6 — Прогресс-бар-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (526, 14, 6, 'Прогресс-бар-мастер: установи цвета',
+VALUES (113, 14, 6, 'Прогресс-бар-мастер: установи цвета',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи цвет заполнения Color.GREEN через setForeground()</p>',
         'JProgressBar-setForeground-Color',
-        '', 526, 17.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 113, 17.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(50);
 progressBar.setForeground(Color.GREEN);
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (527, '<h2>🎮 Урок 14.7 — Прогресс-бар-мастер: Установи шрифт!</h2>
+VALUES (114, '<h2>🎮 Прогресс-бар-мастер: Установи шрифт!</h2>
 
 <p><strong>Привет, мастер шрифтов!</strong> 📊 Сегодня ты установишь шрифт в <code>JProgressBar</code> — это как стиль текста в игре!</p>
 
@@ -374,17 +374,17 @@ VALUES (527, '<h2>🎮 Урок 14.7 — Прогресс-бар-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (527, 14, 7, 'Прогресс-бар-мастер: установи шрифт',
+VALUES (114, 14, 7, 'Прогресс-бар-мастер: установи шрифт',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, создай шрифт new Font("Arial", Font.BOLD, 14), установи через setFont()</p>',
         'JProgressBar-setFont-Font',
-        '', 527, 17.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 114, 17.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setStringPainted(true);
 Font font = new Font("Arial", Font.BOLD, 14);
 progressBar.setFont(font);
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (528, '<h2>🎮 Урок 14.8 — Прогресс-бар-мастер: Установи размер!</h2>
+VALUES (115, '<h2>🎮 Прогресс-бар-мастер: Установи размер!</h2>
 
 <p><strong>Привет, мастер размеров!</strong> 📊 Сегодня ты установишь размер в <code>JProgressBar</code> — это как размер в игре!</p>
 
@@ -425,15 +425,15 @@ VALUES (528, '<h2>🎮 Урок 14.8 — Прогресс-бар-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (528, 14, 8, 'Прогресс-бар-мастер: установи размер',
+VALUES (115, 14, 8, 'Прогресс-бар-мастер: установи размер',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи размер 300x25 через setPreferredSize(new Dimension(300, 25))</p>',
         'JProgressBar-setPreferredSize-Dimension',
-        '', 528, 18.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 115, 18.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setPreferredSize(new Dimension(300, 25));
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (529, '<h2>🎮 Урок 14.9 — Прогресс-бар-мастер: Добавь подсказку!</h2>
+VALUES (116, '<h2>🎮 Прогресс-бар-мастер: Добавь подсказку!</h2>
 
 <p><strong>Привет, мастер подсказок!</strong> 📊 Сегодня ты добавишь подсказку к <code>JProgressBar</code> — это как помощь в игре!</p>
 
@@ -474,15 +474,15 @@ VALUES (529, '<h2>🎮 Урок 14.9 — Прогресс-бар-мастер: �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (529, 14, 9, 'Прогресс-бар-мастер: добавь подсказку',
+VALUES (116, 14, 9, 'Прогресс-бар-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи подсказку "Прогресс загрузки" через setToolTipText()</p>',
         'JProgressBar-setToolTipText',
-        '', 529, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 116, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setToolTipText("Прогресс загрузки");
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (530, '<h2>🎮 Урок 14.10 — Прогресс-бар-мастер: Включи неопределённый режим!</h2>
+VALUES (117, '<h2>🎮 Прогресс-бар-мастер: Включи неопределённый режим!</h2>
 
 <p><strong>Привет, мастер анимаций!</strong> 📊 Сегодня ты включишь неопределённый режим в <code>JProgressBar</code> — это как анимация загрузки в игре!</p>
 
@@ -522,15 +522,15 @@ VALUES (530, '<h2>🎮 Урок 14.10 — Прогресс-бар-мастер: 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (530, 14, 10, 'Прогресс-бар-мастер: включи неопределённый режим',
+VALUES (117, 14, 10, 'Прогресс-бар-мастер: включи неопределённый режим',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, включи неопределённый режим через setIndeterminate(true)</p>',
         'JProgressBar-setIndeterminate',
-        '', 530, 18.0, 0.0, 'JProgressBar progressBar = new JProgressBar();
+        '', 117, 18.0, 0.0, 'JProgressBar progressBar = new JProgressBar();
 progressBar.setIndeterminate(true);
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
-VALUES (531, '<h2>🎮 Урок 14.11 — Прогресс-бар-мастер: Обрабатывай изменения!</h2>
+VALUES (118, '<h2>🎮 Прогресс-бар-мастер: Обрабатывай изменения!</h2>
 
 <p><strong>Привет, мастер событий!</strong> 📊 Сегодня ты обработаешь изменения в <code>JProgressBar</code> — это как реакция в игре!</p>
 
@@ -574,10 +574,10 @@ VALUES (531, '<h2>🎮 Урок 14.11 — Прогресс-бар-мастер: 
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (531, 14, 11, 'Прогресс-бар-мастер: обрабатывай изменения',
+VALUES (118, 14, 11, 'Прогресс-бар-мастер: обрабатывай изменения',
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, добавь ChangeListener, получи значение через getValue(), выведи его</p>',
         'JProgressBar-addChangeListener-getValue',
-        '', 531, 19.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+        '', 118, 19.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.addChangeListener(e -> {
     int value = progressBar.getValue();
     System.out.println("Прогресс: " + value + "%");

@@ -13,7 +13,7 @@ VALUES (19, 19, 'Окна (JWindow)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (542, '<h2>🎮 Урок 19.1 — Окно-новичок: Создай окно без рамки!</h2>
+VALUES (163, '<h2>🎮 Окно-новичок: Создай окно без рамки!</h2>
 
 <p><strong>Привет, мастер окон!</strong> 🪟 Сегодня ты создашь <code>JWindow</code> — это как окно без рамки в игре! Можно создать всплывающее окно без заголовка!</p>
 
@@ -59,16 +59,16 @@ VALUES (542, '<h2>🎮 Урок 19.1 — Окно-новичок: Создай �
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (542, 19, 1, 'Окно-новичок: создай окно без рамки',
+VALUES (163, 19, 1, 'Окно-новичок: создай окно без рамки',
         '<p><strong>Задание:</strong><br>Создай окно с родительским фреймом, размером 400x300 и сделай его видимым</p>',
         'JWindow-setSize,setVisible',
-        '', 542, 15.0, 0.0, 'JFrame frame = new JFrame();
+        '', 163, 15.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
 window.setSize(400, 300);
 window.setVisible(true);');
 
 INSERT INTO documentation (id, text)
-VALUES (543, '<h2>🎮 Урок 19.2 — Окно-мастер: Установи размер!</h2>
+VALUES (164, '<h2>🎮 Окно-мастер: Установи размер!</h2>
 
 <p><strong>Привет, мастер размеров!</strong> 🪟 Сегодня ты установишь размер в <code>JWindow</code> — это как размер в игре!</p>
 
@@ -112,16 +112,16 @@ VALUES (543, '<h2>🎮 Урок 19.2 — Окно-мастер: Установи
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (543, 19, 2, 'Окно-мастер: установи размер',
+VALUES (164, 19, 2, 'Окно-мастер: установи размер',
         '<p><strong>Задание:</strong><br>Создай окно, установи размер 500x400 через setSize(500, 400)</p>',
         'JWindow-setSize',
-        '', 543, 16.0, 0.0, 'JFrame frame = new JFrame();
+        '', 164, 16.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
 window.setSize(500, 400);
 window.setVisible(true);');
 
 INSERT INTO documentation (id, text)
-VALUES (544, '<h2>🎮 Урок 19.3 — Окно-мастер: Установи расположение!</h2>
+VALUES (165, '<h2>🎮 Окно-мастер: Установи расположение!</h2>
 
 <p><strong>Привет, мастер позиций!</strong> 🪟 Сегодня ты установишь расположение в <code>JWindow</code> — это как позиция в игре!</p>
 
@@ -165,17 +165,17 @@ VALUES (544, '<h2>🎮 Урок 19.3 — Окно-мастер: Установи
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (544, 19, 3, 'Окно-мастер: установи расположение',
+VALUES (165, 19, 3, 'Окно-мастер: установи расположение',
         '<p><strong>Задание:</strong><br>Создай окно, установи расположение 100, 100 через setLocation(100, 100)</p>',
         'JWindow-setLocation',
-        '', 544, 16.0, 0.0, 'JFrame frame = new JFrame();
+        '', 165, 16.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
 window.setSize(400, 300);
 window.setLocation(100, 100);
 window.setVisible(true);');
 
 INSERT INTO documentation (id, text)
-VALUES (545, '<h2>🎮 Урок 19.4 — Окно-мастер: Сделай всегда поверх!</h2>
+VALUES (166, '<h2>🎮 Окно-мастер: Сделай всегда поверх!</h2>
 
 <p><strong>Привет, мастер приоритетов!</strong> 🪟 Сегодня ты сделаешь окно всегда поверх в <code>JWindow</code> — это как приоритет в игре!</p>
 
@@ -216,17 +216,17 @@ VALUES (545, '<h2>🎮 Урок 19.4 — Окно-мастер: Сделай в�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (545, 19, 4, 'Окно-мастер: сделай всегда поверх',
+VALUES (166, 19, 4, 'Окно-мастер: сделай всегда поверх',
         '<p><strong>Задание:</strong><br>Создай окно, включи всегда поверх через setAlwaysOnTop(true)</p>',
         'JWindow-setAlwaysOnTop',
-        '', 545, 17.0, 0.0, 'JFrame frame = new JFrame();
+        '', 166, 17.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
 window.setSize(400, 300);
 window.setAlwaysOnTop(true);
 window.setVisible(true);');
 
 INSERT INTO documentation (id, text)
-VALUES (546, '<h2>🎮 Урок 19.5 — Окно-мастер: Установи цвет фона!</h2>
+VALUES (167, '<h2>🎮 Окно-мастер: Установи цвет фона!</h2>
 
 <p><strong>Привет, мастер цветов!</strong> 🪟 Сегодня ты установишь цвет фона в <code>JWindow</code> — это как стиль в игре!</p>
 
@@ -267,17 +267,17 @@ VALUES (546, '<h2>🎮 Урок 19.5 — Окно-мастер: Установи
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (546, 19, 5, 'Окно-мастер: установи цвет фона',
+VALUES (167, 19, 5, 'Окно-мастер: установи цвет фона',
         '<p><strong>Задание:</strong><br>Создай окно, установи цвет фона Color.WHITE через setBackground()</p>',
         'JWindow-setBackground-Color',
-        '', 546, 17.0, 0.0, 'JFrame frame = new JFrame();
+        '', 167, 17.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
 window.setSize(400, 300);
 window.setBackground(Color.WHITE);
 window.setVisible(true);');
 
 INSERT INTO documentation (id, text)
-VALUES (547, '<h2>🎮 Урок 19.6 — Окно-мастер: Установи прозрачность!</h2>
+VALUES (168, '<h2>🎮 Окно-мастер: Установи прозрачность!</h2>
 
 <p><strong>Привет, мастер прозрачности!</strong> 🪟 Сегодня ты установишь прозрачность в <code>JWindow</code> — это как эффект в игре!</p>
 
@@ -318,17 +318,17 @@ VALUES (547, '<h2>🎮 Урок 19.6 — Окно-мастер: Установи
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (547, 19, 6, 'Окно-мастер: установи прозрачность',
+VALUES (168, 19, 6, 'Окно-мастер: установи прозрачность',
         '<p><strong>Задание:</strong><br>Создай окно, установи прозрачность 0.8 через setOpacity(0.8f)</p>',
         'JWindow-setOpacity',
-        '', 547, 18.0, 0.0, 'JFrame frame = new JFrame();
+        '', 168, 18.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
 window.setSize(400, 300);
 window.setOpacity(0.8f);
 window.setVisible(true);');
 
 INSERT INTO documentation (id, text)
-VALUES (548, '<h2>🎮 Урок 19.7 — Окно-мастер: Закрой окно!</h2>
+VALUES (169, '<h2>🎮 Окно-мастер: Закрой окно!</h2>
 
 <p><strong>Привет, мастер управления!</strong> 🪟 Сегодня ты закроешь окно в <code>JWindow</code> — это как завершение в игре!</p>
 
@@ -369,10 +369,10 @@ VALUES (548, '<h2>🎮 Урок 19.7 — Окно-мастер: Закрой о�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (548, 19, 7, 'Окно-мастер: закрой окно',
+VALUES (169, 19, 7, 'Окно-мастер: закрой окно',
         '<p><strong>Задание:</strong><br>Создай окно, закрой его через dispose()</p>',
         'JWindow-dispose',
-        '', 548, 16.0, 0.0, 'JFrame frame = new JFrame();
+        '', 169, 16.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
 window.setSize(400, 300);
 window.setVisible(true);

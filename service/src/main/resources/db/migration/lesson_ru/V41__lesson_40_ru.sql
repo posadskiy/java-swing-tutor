@@ -13,7 +13,7 @@ VALUES (40, 40, 'GridBagLayout - Гибкая сетка', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (73, '<h2>🎮 Урок 40.1 — GridBagLayout-новичок: Создай гибкую сетку!</h2>
+VALUES (335, '<h2>🎮 GridBagLayout-новичок: Создай гибкую сетку!</h2>
 
 <p><strong>Привет, мастер компоновки!</strong> 📐 Сегодня ты создашь <code>GridBagLayout</code> — это самый гибкий менеджер компоновки! Компоненты могут занимать несколько ячеек и выравниваться как угодно!</p>
 
@@ -62,10 +62,10 @@ add(button, gbc);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (73, 40, 1, 'GridBagLayout-новичок: создай гибкую сетку',
+VALUES (335, 40, 1, 'GridBagLayout-новичок: создай гибкую сетку',
         '<p><strong>Задание:</strong><br>Установи GridBagLayout, создай ограничения, добавь кнопку в позицию (0,0) с fill=HORIZONTAL</p>',
         'GridBagLayout-GridBagConstraints-add',
-        '', 73, 28.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 335, 28.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
 gbc.gridy = 0;
@@ -73,7 +73,7 @@ gbc.fill = GridBagConstraints.HORIZONTAL;
 JButton button = new JButton("Кнопка");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
-VALUES (91, '<h2>🎮 Урок 40.2 — GridBagLayout-мастер: Настрой растягивание!</h2>
+VALUES (336, '<h2>🎮 GridBagLayout-мастер: Настрой растягивание!</h2>
 
 <p><strong>Привет, мастер растягивания!</strong> 📏 Сегодня ты настроишь растягивание компонентов в <code>GridBagLayout</code> — это как настройка эластичности в игре! Компоненты будут растягиваться при изменении размера окна!</p>
 
@@ -119,10 +119,10 @@ VALUES (91, '<h2>🎮 Урок 40.2 — GridBagLayout-мастер: Настро
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (91, 40, 2, 'GridBagLayout-мастер: настрой растягивание',
+VALUES (336, 40, 2, 'GridBagLayout-мастер: настрой растягивание',
         '<p><strong>Задание:</strong><br>Настрой weightx = 1.0 и weighty = 1.0 для ограничений, добавь компонент</p>',
         'GridBagConstraints-weightx-weighty-add',
-        '', 91, 29.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 336, 29.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
 gbc.gridy = 0;
@@ -132,7 +132,7 @@ gbc.fill = GridBagConstraints.BOTH;
 JButton button = new JButton("Кнопка");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
-VALUES (152, '<h2>🎮 Урок 40.2 — FlowLayout-мастер: Настрой выравнивание!</h2>
+VALUES (338, '<h2>🎮 FlowLayout-мастер: Настрой выравнивание!</h2>
 
 <p><strong>Привет, мастер выравнивания!</strong> 📦 Сегодня ты настроишь выравнивание в <code>FlowLayout</code> — это как выравнивание элементов в игре! Можно выровнять по центру, слева, справа!</p>
 
@@ -176,15 +176,15 @@ VALUES (152, '<h2>🎮 Урок 40.2 — FlowLayout-мастер: Настрой
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (152, 40, 2, 'FlowLayout-мастер: настрой выравнивание',
+VALUES (338, 40, 2, 'FlowLayout-мастер: настрой выравнивание',
         '<p><strong>Задание:</strong><br>Создай FlowLayout с выравниванием CENTER, установи менеджер</p>',
         'FlowLayout-setLayout',
-        '', 152, 23.0, 0.0, 'FlowLayout layout = new FlowLayout(FlowLayout.CENTER);
+        '', 338, 23.0, 0.0, 'FlowLayout layout = new FlowLayout(FlowLayout.CENTER);
 setLayout(layout);
 JButton button = new JButton("Кнопка");
 add(button);');
 INSERT INTO documentation (id, text)
-VALUES (116, '<h2>🎮 Урок 40.3 — GridBagLayout-мастер: Растяни компонент на несколько ячеек!</h2>
+VALUES (337, '<h2>🎮 GridBagLayout-мастер: Растяни компонент на несколько ячеек!</h2>
 
 <p><strong>Привет, мастер растягивания!</strong> 📏 Сегодня ты научишься растягивать компоненты на несколько ячеек в <code>GridBagLayout</code> — это как большой элемент в сетке игры! Компонент может занимать несколько ячеек!</p>
 
@@ -231,10 +231,10 @@ VALUES (116, '<h2>🎮 Урок 40.3 — GridBagLayout-мастер: Растя�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (116, 40, 3, 'GridBagLayout-мастер: растяни компонент на несколько ячеек',
+VALUES (337, 40, 3, 'GridBagLayout-мастер: растяни компонент на несколько ячеек',
         '<p><strong>Задание:</strong><br>Установи gridwidth = 2 и gridheight = 2 для ограничений, добавь компонент</p>',
         'GridBagConstraints-gridwidth-gridheight-add',
-        '', 116, 30.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 337, 30.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
 gbc.gridy = 0;
@@ -244,7 +244,7 @@ gbc.fill = GridBagConstraints.BOTH;
 JButton button = new JButton("Кнопка");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
-VALUES (190, '<h2>🎮 Урок 40.3 — FlowLayout-мастер: Настрой отступы!</h2>
+VALUES (339, '<h2>🎮 FlowLayout-мастер: Настрой отступы!</h2>
 
 <p><strong>Привет, мастер отступов!</strong> 📦 Сегодня ты настроишь отступы в <code>FlowLayout</code> — это как промежутки между элементами в игре! Можно создать красивые отступы!</p>
 
@@ -292,17 +292,17 @@ layout.setVgap(10);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (190, 40, 3, 'FlowLayout-мастер: настрой отступы',
+VALUES (339, 40, 3, 'FlowLayout-мастер: настрой отступы',
         '<p><strong>Задание:</strong><br>Создай FlowLayout, установи горизонтальный и вертикальный отступы по 10</p>',
         'FlowLayout-setHgap-setVgap',
-        '', 190, 23.0, 0.0, 'FlowLayout layout = new FlowLayout();
+        '', 339, 23.0, 0.0, 'FlowLayout layout = new FlowLayout();
 layout.setHgap(10);
 layout.setVgap(10);
 setLayout(layout);
 JButton button = new JButton("Кнопка");
 add(button);');
 INSERT INTO documentation (id, text)
-VALUES (435, '<h2>🎮 Урок 40.7 — GridBagLayout-мастер: Установи якорь!</h2>
+VALUES (342, '<h2>🎮 GridBagLayout-мастер: Установи якорь!</h2>
 
 <p><strong>Привет, мастер позиций!</strong> 📐 Сегодня ты установишь якорь в <code>GridBagLayout</code> — это как привязка в игре!</p>
 
@@ -343,10 +343,10 @@ VALUES (435, '<h2>🎮 Урок 40.7 — GridBagLayout-мастер: Устан�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (435, 40, 7, 'GridBagLayout-мастер: установи якорь',
+VALUES (342, 40, 7, 'GridBagLayout-мастер: установи якорь',
         '<p><strong>Задание:</strong><br>Установи якорь CENTER через constraints.anchor = GridBagConstraints.CENTER</p>',
         'GridBagLayout-GridBagConstraints-anchor',
-        '', 435, 25.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 342, 25.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints constraints = new GridBagConstraints();
 constraints.gridx = 0;
 constraints.gridy = 0;
@@ -354,7 +354,7 @@ constraints.anchor = GridBagConstraints.CENTER;
 JButton button = new JButton("Кнопка");
 add(button, constraints);');
 INSERT INTO documentation (id, text)
-VALUES (388, '<h2>🎮 Урок 40.8 — Диалог-мастер: Создай диалог ввода!</h2>
+VALUES (340, '<h2>🎮 Диалог-мастер: Создай диалог ввода!</h2>
 
 <p><strong>Привет, мастер диалогов!</strong> 💬 Сегодня ты создашь диалог ввода через <code>JOptionPane</code> — это как ввод в игре!</p>
 
@@ -395,15 +395,15 @@ VALUES (388, '<h2>🎮 Урок 40.8 — Диалог-мастер: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (388, 40, 8, 'Диалог-мастер: создай диалог ввода',
+VALUES (340, 40, 8, 'Диалог-мастер: создай диалог ввода',
         '<p><strong>Задание:</strong><br>Создай диалог ввода через showInputDialog("Введите имя:"), сохрани результат</p>',
         'JOptionPane-showInputDialog',
-        '', 388, 23.0, 0.0, 'String input = JOptionPane.showInputDialog("Введите имя:");
+        '', 340, 23.0, 0.0, 'String input = JOptionPane.showInputDialog("Введите имя:");
 if (input != null) {
     System.out.println("Введено: " + input);
 }');
 INSERT INTO documentation (id, text)
-VALUES (491, '<h2>🎮 Урок 40.8 — GridBagLayout-мастер: Установи заполнение!</h2>
+VALUES (344, '<h2>🎮 GridBagLayout-мастер: Установи заполнение!</h2>
 
 <p><strong>Привет, мастер заполнения!</strong> 📐 Сегодня ты установишь заполнение в <code>GridBagLayout</code> — это как растяжение в игре!</p>
 
@@ -444,10 +444,10 @@ VALUES (491, '<h2>🎮 Урок 40.8 — GridBagLayout-мастер: Устан�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (491, 40, 8, 'GridBagLayout-мастер: установи заполнение',
+VALUES (344, 40, 8, 'GridBagLayout-мастер: установи заполнение',
         '<p><strong>Задание:</strong><br>Установи заполнение BOTH через constraints.fill = GridBagConstraints.BOTH</p>',
         'GridBagLayout-GridBagConstraints-fill',
-        '', 491, 24.0, 0.0, 'setLayout(new GridBagLayout());
+        '', 344, 24.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints constraints = new GridBagConstraints();
 constraints.gridx = 0;
 constraints.gridy = 0;
@@ -455,7 +455,7 @@ constraints.fill = GridBagConstraints.BOTH;
 JButton button = new JButton("Кнопка");
 add(button, constraints);');
 INSERT INTO documentation (id, text)
-VALUES (432, '<h2>🎮 Урок 40.9 — Диалог-мастер: Создай диалог подтверждения!</h2>
+VALUES (341, '<h2>🎮 Диалог-мастер: Создай диалог подтверждения!</h2>
 
 <p><strong>Привет, мастер диалогов!</strong> 💬 Сегодня ты создашь диалог подтверждения через <code>JOptionPane</code> — это как подтверждение в игре!</p>
 
@@ -496,15 +496,15 @@ VALUES (432, '<h2>🎮 Урок 40.9 — Диалог-мастер: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (432, 40, 9, 'Диалог-мастер: создай диалог подтверждения',
+VALUES (341, 40, 9, 'Диалог-мастер: создай диалог подтверждения',
         '<p><strong>Задание:</strong><br>Создай диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, сохрани результат</p>',
         'JOptionPane-showConfirmDialog',
-        '', 432, 24.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Подтвердить действие?", "Подтверждение", JOptionPane.YES_NO_OPTION);
+        '', 341, 24.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Подтвердить действие?", "Подтверждение", JOptionPane.YES_NO_OPTION);
 if (result == JOptionPane.YES_OPTION) {
     System.out.println("Подтверждено!");
 }');
 INSERT INTO documentation (id, text)
-VALUES (488, '<h2>🎮 Урок 40.10 — Диалог-мастер: Создай диалог сообщения!</h2>
+VALUES (343, '<h2>🎮 Диалог-мастер: Создай диалог сообщения!</h2>
 
 <p><strong>Привет, мастер сообщений!</strong> 💬 Сегодня ты создашь диалог сообщения через <code>JOptionPane</code> — это как уведомление в игре!</p>
 
@@ -545,8 +545,8 @@ VALUES (488, '<h2>🎮 Урок 40.10 — Диалог-мастер: Созда�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (488, 40, 10, 'Диалог-мастер: создай диалог сообщения',
+VALUES (343, 40, 10, 'Диалог-мастер: создай диалог сообщения',
         '<p><strong>Задание:</strong><br>Создай диалог сообщения через showMessageDialog() с INFORMATION_MESSAGE</p>',
         'JOptionPane-showMessageDialog',
-        '', 488, 23.0, 0.0,
+        '', 343, 23.0, 0.0,
         'JOptionPane.showMessageDialog(null, "Операция завершена", "Информация", JOptionPane.INFORMATION_MESSAGE);');

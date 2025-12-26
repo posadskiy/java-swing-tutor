@@ -13,7 +13,7 @@ VALUES (31, 31, 'Деревья (JTree)', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (64, '<h2>🎮 Урок 31.1 — Дерево-новичок: Создай иерархическую структуру!</h2>
+VALUES (253, '<h2>🎮 Дерево-новичок: Создай иерархическую структуру!</h2>
 
 <p><strong>Привет, мастер иерархий!</strong> 🌳 Сегодня ты создашь <code>JTree</code> — это как дерево папок в файловом менеджере! Можно отображать данные в иерархической структуре!</p>
 
@@ -64,10 +64,10 @@ VALUES (64, '<h2>🎮 Урок 31.1 — Дерево-новичок: Созда�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (64, 31, 1, 'Дерево-новичок: создай иерархическую структуру',
+VALUES (253, 31, 1, 'Дерево-новичок: создай иерархическую структуру',
         '<p><strong>Задание:</strong><br>Создай дерево с корневым узлом "Корень" и двумя дочерними узлами, оберни в JScrollPane и добавь на форму</p>',
         'JTree-DefaultMutableTreeNode-JScrollPane-add',
-        '', 64, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 253, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
 DefaultMutableTreeNode child1 = new DefaultMutableTreeNode("Дочерний 1");
 DefaultMutableTreeNode child2 = new DefaultMutableTreeNode("Дочерний 2");
 root.add(child1);
@@ -76,7 +76,7 @@ JTree tree = new JTree(root);
 JScrollPane scrollPane = new JScrollPane(tree);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (85, '<h2>🎮 Урок 31.2 — Таблица-мастер: Настрой ширину колонок!</h2>
+VALUES (254, '<h2>🎮 Таблица-мастер: Настрой ширину колонок!</h2>
 
 <p><strong>Привет, мастер таблиц!</strong> 📊 Сегодня ты настроишь ширину колонок в <code>JTable</code> — это как настройка размеров в игре! Можно сделать колонки нужной ширины!</p>
 
@@ -122,10 +122,10 @@ VALUES (85, '<h2>🎮 Урок 31.2 — Таблица-мастер: Настр�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (85, 31, 2, 'Таблица-мастер: настрой ширину колонок',
+VALUES (254, 31, 2, 'Таблица-мастер: настрой ширину колонок',
         '<p><strong>Задание:</strong><br>Получи модель колонок, получи первую колонку, установи предпочтительную ширину 150</p>',
         'JTable-TableColumnModel-TableColumn-setPreferredWidth',
-        '', 85, 27.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 254, 27.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 TableColumnModel columnModel = table.getColumnModel();
@@ -134,7 +134,7 @@ column.setPreferredWidth(150);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (86, '<h2>🎮 Урок 31.3 — Дерево-мастер: Разворачивай и сворачивай узлы!</h2>
+VALUES (255, '<h2>🎮 Дерево-мастер: Разворачивай и сворачивай узлы!</h2>
 
 <p><strong>Привет, мастер навигации!</strong> 🌳 Сегодня ты научишься разворачивать и сворачивать узлы в <code>JTree</code> — это как открывать и закрывать папки в проводнике! Можно управлять видимостью узлов!</p>
 
@@ -180,10 +180,10 @@ VALUES (86, '<h2>🎮 Урок 31.3 — Дерево-мастер: Развор�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (86, 31, 3, 'Дерево-мастер: разворачивай и сворачивай узлы',
+VALUES (255, 31, 3, 'Дерево-мастер: разворачивай и сворачивай узлы',
         '<p><strong>Задание:</strong><br>Получи путь к узлу, разверни путь в дереве</p>',
         'JTree-TreePath-expandPath',
-        '', 86, 26.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 255, 26.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
 DefaultMutableTreeNode node = new DefaultMutableTreeNode("Узел");
 root.add(node);
 JTree tree = new JTree(root);
@@ -192,7 +192,7 @@ tree.expandPath(path);
 JScrollPane scrollPane = new JScrollPane(tree);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (104, '<h2>🎮 Урок 31.4 — Таблица-мастер: Включи редактирование ячеек!</h2>
+VALUES (256, '<h2>🎮 Таблица-мастер: Включи редактирование ячеек!</h2>
 
 <p><strong>Привет, мастер редактирования!</strong> 📊 Сегодня ты включишь редактирование ячеек в <code>JTable</code> — это как редактирование данных в игре! Можно изменять значения прямо в таблице!</p>
 
@@ -240,10 +240,10 @@ VALUES (104, '<h2>🎮 Урок 31.4 — Таблица-мастер: Включ
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (104, 31, 4, 'Таблица-мастер: включи редактирование ячеек',
+VALUES (256, 31, 4, 'Таблица-мастер: включи редактирование ячеек',
         '<p><strong>Задание:</strong><br>Создай DefaultTableModel, переопредели isCellEditable() чтобы вернуть true, установи модель таблице</p>',
         'DefaultTableModel-isCellEditable-setModel',
-        '', 104, 28.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 256, 28.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 DefaultTableModel model = new DefaultTableModel(data, columns) {
     @Override
@@ -255,7 +255,7 @@ JTable table = new JTable(model);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (105, '<h2>🎮 Урок 31.5 — Дерево-мастер: Обрабатывай выбор узлов!</h2>
+VALUES (257, '<h2>🎮 Дерево-мастер: Обрабатывай выбор узлов!</h2>
 
 <p><strong>Привет, мастер выбора!</strong> 🌳 Сегодня ты научишься обрабатывать выбор узлов в <code>JTree</code> — это как выбор предмета в игре! Можно реагировать на выбор узла!</p>
 
@@ -301,10 +301,10 @@ VALUES (105, '<h2>🎮 Урок 31.5 — Дерево-мастер: Обраба
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (105, 31, 5, 'Дерево-мастер: обрабатывай выбор узлов',
+VALUES (257, 31, 5, 'Дерево-мастер: обрабатывай выбор узлов',
         '<p><strong>Задание:</strong><br>Добавь TreeSelectionListener, получи путь выбранного узла, получи узел и выведи его объект</p>',
         'JTree-addTreeSelectionListener-getNewLeadSelectionPath',
-        '', 105, 27.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 257, 27.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
 JTree tree = new JTree(root);
 tree.addTreeSelectionListener(e -> {
     TreePath path = e.getNewLeadSelectionPath();
@@ -316,7 +316,7 @@ tree.addTreeSelectionListener(e -> {
 JScrollPane scrollPane = new JScrollPane(tree);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (182, '<h2>🎮 Урок 31.6 — Таблица-мастер: Настрой выбор строк!</h2>
+VALUES (258, '<h2>🎮 Таблица-мастер: Настрой выбор строк!</h2>
 
 <p><strong>Привет, мастер выбора!</strong> 📊 Сегодня ты настроишь выбор строк в <code>JTable</code> — это как выбор элементов в игре! Можно выбрать одну или несколько строк!</p>
 
@@ -359,10 +359,10 @@ VALUES (182, '<h2>🎮 Урок 31.6 — Таблица-мастер: Настр
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (182, 31, 6, 'Таблица-мастер: настрой выбор строк',
+VALUES (258, 31, 6, 'Таблица-мастер: настрой выбор строк',
         '<p><strong>Задание:</strong><br>Получи модель выбора через getSelectionModel(), установи MULTIPLE_INTERVAL_SELECTION</p>',
         'JTable-getSelectionModel-setSelectionMode',
-        '', 182, 25.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 258, 25.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 ListSelectionModel selectionModel = table.getSelectionModel();
@@ -370,7 +370,7 @@ selectionModel.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (183, '<h2>🎮 Урок 31.7 — Дерево-мастер: Настрой отображение узлов!</h2>
+VALUES (259, '<h2>🎮 Дерево-мастер: Настрой отображение узлов!</h2>
 
 <p><strong>Привет, мастер отображения!</strong> 🌳 Сегодня ты настроишь отображение узлов в <code>JTree</code> через кастомный рендерер — это как кастомизация внешнего вида в игре!</p>
 
@@ -417,10 +417,10 @@ VALUES (183, '<h2>🎮 Урок 31.7 — Дерево-мастер: Настро
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (183, 31, 8, 'Дерево-мастер: настрой отображение узлов',
+VALUES (259, 31, 8, 'Дерево-мастер: настрой отображение узлов',
         '<p><strong>Задание:</strong><br>Создай DefaultTreeCellRenderer, переопредели getTreeCellRendererComponent(), установи синий цвет текста, установи рендерер</p>',
         'JTree-DefaultTreeCellRenderer-setCellRenderer',
-        '', 183, 28.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 259, 28.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
 JTree tree = new JTree(root);
 tree.setCellRenderer(new DefaultTreeCellRenderer() {
     @Override
@@ -433,7 +433,7 @@ tree.setCellRenderer(new DefaultTreeCellRenderer() {
 JScrollPane scrollPane = new JScrollPane(tree);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (380, '<h2>🎮 Урок 31.8 — Пункт меню-мастер: Добавь акселератор!</h2>
+VALUES (266, '<h2>🎮 Пункт меню-мастер: Добавь акселератор!</h2>
 
 <p><strong>Привет, мастер горячих клавиш!</strong> ⌨️ Сегодня ты добавишь акселератор к <code>JMenuItem</code> — это как горячая клавиша в игре!</p>
 
@@ -477,10 +477,10 @@ VALUES (380, '<h2>🎮 Урок 31.8 — Пункт меню-мастер: До�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (380, 31, 8, 'Пункт меню-мастер: добавь акселератор',
+VALUES (266, 31, 8, 'Пункт меню-мастер: добавь акселератор',
         '<p><strong>Задание:</strong><br>Создай KeyStroke для Ctrl+S, установи через setAccelerator()</p>',
         'JMenuItem-setAccelerator-KeyStroke',
-        '', 380, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 266, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
 KeyStroke keyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
 menuItem.setAccelerator(keyStroke);
 JMenu fileMenu = new JMenu("Файл");
@@ -489,7 +489,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (233, '<h2>🎮 Урок 31.7 — Таблица-мастер: Настрой ширину колонок!</h2>
+VALUES (260, '<h2>🎮 Таблица-мастер: Настрой ширину колонок!</h2>
 
 <p><strong>Привет, мастер размеров!</strong> 📊 Сегодня ты настроишь ширину колонок в <code>JTable</code> — это как стандартизация в игре!</p>
 
@@ -534,10 +534,10 @@ column.setPreferredWidth(150);</code></p>
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (233, 31, 9, 'Таблица-мастер: настрой ширину колонок',
+VALUES (260, 31, 9, 'Таблица-мастер: настрой ширину колонок',
         '<p><strong>Задание:</strong><br>Получи модель колонок, получи колонку 0, установи ширину 150 через setPreferredWidth()</p>',
         'JTable-getColumnModel-setPreferredWidth',
-        '', 233, 26.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 260, 26.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 TableColumnModel columnModel = table.getColumnModel();
@@ -546,7 +546,7 @@ column.setPreferredWidth(150);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (427, '<h2>🎮 Урок 31.9 — Пункт меню-мастер: Установи мнемоник!</h2>
+VALUES (267, '<h2>🎮 Пункт меню-мастер: Установи мнемоник!</h2>
 
 <p><strong>Привет, мастер клавиатуры!</strong> ⌨️ Сегодня ты установишь мнемоник в <code>JMenuItem</code> — это как горячая клавиша в игре!</p>
 
@@ -587,10 +587,10 @@ VALUES (427, '<h2>🎮 Урок 31.9 — Пункт меню-мастер: Ус�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (427, 31, 9, 'Пункт меню-мастер: установи мнемоник',
+VALUES (267, 31, 9, 'Пункт меню-мастер: установи мнемоник',
         '<p><strong>Задание:</strong><br>Установи мнемоник VK_S через setMnemonic()</p>',
         'JMenuItem-setMnemonic-KeyEvent',
-        '', 427, 23.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 267, 23.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
 menuItem.setMnemonic(KeyEvent.VK_S);
 JMenu fileMenu = new JMenu("Файл");
 fileMenu.add(menuItem);
@@ -598,7 +598,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (284, '<h2>🎮 Урок 31.8 — Таблица-мастер: Настрой высоту строк!</h2>
+VALUES (262, '<h2>🎮 Таблица-мастер: Настрой высоту строк!</h2>
 
 <p><strong>Привет, мастер размеров!</strong> 📊 Сегодня ты настроишь высоту строк в <code>JTable</code> — это как стандартизация в игре!</p>
 
@@ -639,17 +639,17 @@ VALUES (284, '<h2>🎮 Урок 31.8 — Таблица-мастер: Настр
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (284, 31, 10, 'Таблица-мастер: настрой высоту строк',
+VALUES (262, 31, 10, 'Таблица-мастер: настрой высоту строк',
         '<p><strong>Задание:</strong><br>Установи высоту строк 30 через setRowHeight(30)</p>',
         'JTable-setRowHeight',
-        '', 284, 22.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 262, 22.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 table.setRowHeight(30);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (480, '<h2>🎮 Урок 31.10 — Пункт меню-мастер: Добавь подсказку!</h2>
+VALUES (268, '<h2>🎮 Пункт меню-мастер: Добавь подсказку!</h2>
 
 <p><strong>Привет, мастер подсказок!</strong> ⌨️ Сегодня ты добавишь подсказку в <code>JMenuItem</code> — это как помощь в игре!</p>
 
@@ -690,10 +690,10 @@ VALUES (480, '<h2>🎮 Урок 31.10 — Пункт меню-мастер: До
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (480, 31, 10, 'Пункт меню-мастер: добавь подсказку',
+VALUES (268, 31, 10, 'Пункт меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Установи подсказку "Сохранить документ" через setToolTipText()</p>',
         'JMenuItem-setToolTipText',
-        '', 480, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 268, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
 menuItem.setToolTipText("Сохранить документ");
 JMenu fileMenu = new JMenu("Файл");
 fileMenu.add(menuItem);
@@ -701,7 +701,7 @@ JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
-VALUES (234, '<h2>🎮 Урок 31.10 — Дерево-мастер: Разверни путь!</h2>
+VALUES (261, '<h2>🎮 Дерево-мастер: Разверни путь!</h2>
 
 <p><strong>Привет, мастер путей!</strong> 🌳 Сегодня ты развернёшь путь в <code>JTree</code> — это как раскрытие узлов в игре!</p>
 
@@ -745,17 +745,17 @@ VALUES (234, '<h2>🎮 Урок 31.10 — Дерево-мастер: Разве�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (234, 31, 11, 'Дерево-мастер: разверни путь',
+VALUES (261, 31, 11, 'Дерево-мастер: разверни путь',
         '<p><strong>Задание:</strong><br>Получи путь через getPathForRow(0), разверни через expandPath()</p>',
         'JTree-getPathForRow-expandPath',
-        '', 234, 25.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 261, 25.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
 JTree tree = new JTree(root);
 TreePath path = tree.getPathForRow(0);
 tree.expandPath(path);
 JScrollPane scrollPane = new JScrollPane(tree);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (334, '<h2>🎮 Урок 31.11 — Таблица-мастер: Настрой автоматическое изменение размера!</h2>
+VALUES (264, '<h2>🎮 Таблица-мастер: Настрой автоматическое изменение размера!</h2>
 
 <p><strong>Привет, мастер размеров!</strong> 📊 Сегодня ты настроишь автоматическое изменение размера в <code>JTable</code> — это как адаптация в игре!</p>
 
@@ -796,17 +796,17 @@ VALUES (334, '<h2>🎮 Урок 31.11 — Таблица-мастер: Наст�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (334, 31, 11, 'Таблица-мастер: настрой автоматическое изменение размера',
+VALUES (264, 31, 11, 'Таблица-мастер: настрой автоматическое изменение размера',
         '<p><strong>Задание:</strong><br>Установи режим AUTO_RESIZE_ALL_COLUMNS через setAutoResizeMode()</p>',
         'JTable-setAutoResizeMode-AUTO_RESIZE_ALL_COLUMNS',
-        '', 334, 24.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 264, 24.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (285, '<h2>🎮 Урок 31.12 — Дерево-мастер: Сверни путь!</h2>
+VALUES (263, '<h2>🎮 Дерево-мастер: Сверни путь!</h2>
 
 <p><strong>Привет, мастер сворачивания!</strong> 🌳 Сегодня ты свернёшь путь в <code>JTree</code> — это как скрытие узлов в игре!</p>
 
@@ -850,17 +850,17 @@ VALUES (285, '<h2>🎮 Урок 31.12 — Дерево-мастер: Сверн�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (285, 31, 13, 'Дерево-мастер: сверни путь',
+VALUES (263, 31, 13, 'Дерево-мастер: сверни путь',
         '<p><strong>Задание:</strong><br>Получи путь через getPathForRow(0), сверни через collapsePath()</p>',
         'JTree-getPathForRow-collapsePath',
-        '', 285, 24.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 263, 24.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
 JTree tree = new JTree(root);
 TreePath path = tree.getPathForRow(0);
 tree.collapsePath(path);
 JScrollPane scrollPane = new JScrollPane(tree);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (335, '<h2>🎮 Урок 31.14 — Дерево-мастер: Покажи корень!</h2>
+VALUES (265, '<h2>🎮 Дерево-мастер: Покажи корень!</h2>
 
 <p><strong>Привет, мастер корней!</strong> 🌳 Сегодня ты покажешь корень в <code>JTree</code> — это как видимость в игре!</p>
 
@@ -901,10 +901,10 @@ VALUES (335, '<h2>🎮 Урок 31.14 — Дерево-мастер: Покаж�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (335, 31, 14, 'Дерево-мастер: покажи корень',
+VALUES (265, 31, 14, 'Дерево-мастер: покажи корень',
         '<p><strong>Задание:</strong><br>Покажи корень через setRootVisible(true)</p>',
         'JTree-setRootVisible',
-        '', 335, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 265, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
 JTree tree = new JTree(root);
 tree.setRootVisible(true);
 JScrollPane scrollPane = new JScrollPane(tree);

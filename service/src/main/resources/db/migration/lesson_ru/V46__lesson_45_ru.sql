@@ -13,7 +13,7 @@ VALUES (45, 45, 'ActionListener - Обработка действий', 1);
 -- ============================================================================
 
 INSERT INTO documentation (id, text)
-VALUES (80, '<h2>🎮 Урок 45.1 — JEditorPane-новичок: Создай редактор HTML!</h2>
+VALUES (397, '<h2>🎮 JEditorPane-новичок: Создай редактор HTML!</h2>
 
 <p><strong>Привет, мастер форматирования!</strong> 📝 Сегодня ты создашь <code>JEditorPane</code> — это как редактор с поддержкой HTML и RTF! Можно отображать и редактировать форматированный текст!</p>
 
@@ -64,15 +64,15 @@ VALUES (80, '<h2>🎮 Урок 45.1 — JEditorPane-новичок: Создай
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (80, 45, 1, 'JEditorPane-новичок: создай редактор HTML',
+VALUES (397, 45, 1, 'JEditorPane-новичок: создай редактор HTML',
         '<p><strong>Задание:</strong><br>Создай JEditorPane, установи тип "text/html", установи HTML текст и добавь на форму</p>',
         'JEditorPane-setContentType-setText,add',
-        '', 80, 26.0, 0.0, 'JEditorPane editor = new JEditorPane();
+        '', 397, 26.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
 editor.setText("<html><b>Жирный текст</b></html>");
 add(editor);');
 INSERT INTO documentation (id, text)
-VALUES (100, '<h2>🎮 Урок 45.2 — JEditorPane-мастер: Загрузи HTML из URL!</h2>
+VALUES (398, '<h2>🎮 JEditorPane-мастер: Загрузи HTML из URL!</h2>
 
 <p><strong>Привет, мастер загрузки!</strong> 📝 Сегодня ты научишься загружать HTML из URL в <code>JEditorPane</code> — это как открытие веб-страницы в игре! Можно отображать контент из интернета!</p>
 
@@ -119,10 +119,10 @@ VALUES (100, '<h2>🎮 Урок 45.2 — JEditorPane-мастер: Загруз�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (100, 45, 2, 'JEditorPane-мастер: загрузи HTML из URL',
+VALUES (398, 45, 2, 'JEditorPane-мастер: загрузи HTML из URL',
         '<p><strong>Задание:</strong><br>Установи тип "text/html", загрузи страницу из URL через setPage(), обработай IOException</p>',
         'JEditorPane-setContentType-setPage-URL',
-        '', 100, 28.0, 0.0, 'JEditorPane editor = new JEditorPane();
+        '', 398, 28.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
 try {
     editor.setPage(new URL("https://example.com"));
@@ -132,7 +132,7 @@ try {
 JScrollPane scrollPane = new JScrollPane(editor);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (184, '<h2>🎮 Урок 45.3 — JEditorPane-мастер: Обрабатывай гиперссылки!</h2>
+VALUES (399, '<h2>🎮 JEditorPane-мастер: Обрабатывай гиперссылки!</h2>
 
 <p><strong>Привет, мастер ссылок!</strong> 📝 Сегодня ты обработаешь гиперссылки в <code>JEditorPane</code> — это как кликабельные ссылки в игре! Можно реагировать на клики по ссылкам!</p>
 
@@ -181,10 +181,10 @@ VALUES (184, '<h2>🎮 Урок 45.3 — JEditorPane-мастер: Обраба�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (184, 45, 3, 'JEditorPane-мастер: обрабатывай гиперссылки',
+VALUES (399, 45, 3, 'JEditorPane-мастер: обрабатывай гиперссылки',
         '<p><strong>Задание:</strong><br>Добавь HyperlinkListener, проверь ACTIVATED, получи URL через getURL(), загрузи страницу через setPage()</p>',
         'JEditorPane-addHyperlinkListener-setPage',
-        '', 184, 27.0, 0.0, 'JEditorPane editor = new JEditorPane();
+        '', 399, 27.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
 editor.setText("<html><a href=\"https://example.com\">Ссылка</a></html>");
 editor.addHyperlinkListener(e -> {
@@ -199,7 +199,7 @@ editor.addHyperlinkListener(e -> {
 JScrollPane scrollPane = new JScrollPane(editor);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (235, '<h2>🎮 Урок 45.4 — JEditorPane-мастер: Установи тип контента!</h2>
+VALUES (400, '<h2>🎮 JEditorPane-мастер: Установи тип контента!</h2>
 
 <p><strong>Привет, мастер типов!</strong> 📝 Сегодня ты установишь тип контента для <code>JEditorPane</code> — это как формат в игре!</p>
 
@@ -243,16 +243,16 @@ VALUES (235, '<h2>🎮 Урок 45.4 — JEditorPane-мастер: Устано�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (235, 45, 4, 'JEditorPane-мастер: установи тип контента',
+VALUES (400, 45, 4, 'JEditorPane-мастер: установи тип контента',
         '<p><strong>Задание:</strong><br>Установи тип "text/html" через setContentType(), установи HTML-текст</p>',
         'JEditorPane-setContentType',
-        '', 235, 24.0, 0.0, 'JEditorPane editor = new JEditorPane();
+        '', 400, 24.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
 editor.setText("<html><b>Текст</b></html>");
 JScrollPane scrollPane = new JScrollPane(editor);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (286, '<h2>🎮 Урок 45.5 — JEditorPane-мастер: Обрабатывай гиперссылки!</h2>
+VALUES (401, '<h2>🎮 JEditorPane-мастер: Обрабатывай гиперссылки!</h2>
 
 <p><strong>Привет, мастер ссылок!</strong> 📝 Сегодня ты обработаешь гиперссылки в <code>JEditorPane</code> — это как клики по ссылкам в игре!</p>
 
@@ -297,10 +297,10 @@ VALUES (286, '<h2>🎮 Урок 45.5 — JEditorPane-мастер: Обраба�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (286, 45, 5, 'JEditorPane-мастер: обрабатывай гиперссылки',
+VALUES (401, 45, 5, 'JEditorPane-мастер: обрабатывай гиперссылки',
         '<p><strong>Задание:</strong><br>Добавь HyperlinkListener, проверь EventType.ACTIVATED, получи URL через getURL()</p>',
         'JEditorPane-addHyperlinkListener-HyperlinkEvent',
-        '', 286, 25.0, 0.0, 'JEditorPane editor = new JEditorPane();
+        '', 401, 25.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
 editor.setText("<html><a href=\"https://example.com\">Ссылка</a></html>");
 editor.addHyperlinkListener(e -> {
@@ -311,7 +311,7 @@ editor.addHyperlinkListener(e -> {
 JScrollPane scrollPane = new JScrollPane(editor);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (394, '<h2>🎮 Урок 45.5 — ActionListener-мастер: Удали слушатель!</h2>
+VALUES (403, '<h2>🎮 ActionListener-мастер: Удали слушатель!</h2>
 
 <p><strong>Привет, мастер управления!</strong> 🎯 Сегодня ты удалишь слушатель из <code>ActionListener</code> — это как отключение в игре!</p>
 
@@ -358,16 +358,16 @@ VALUES (394, '<h2>🎮 Урок 45.5 — ActionListener-мастер: Удали
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (394, 45, 5, 'ActionListener-мастер: удали слушатель',
+VALUES (403, 45, 5, 'ActionListener-мастер: удали слушатель',
         '<p><strong>Задание:</strong><br>Создай ActionListener, добавь через addActionListener(), удали через removeActionListener()</p>',
         'JButton-addActionListener-removeActionListener',
-        '', 394, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 403, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
 ActionListener listener = e -> System.out.println("Действие");
 button.addActionListener(listener);
 button.removeActionListener(listener);
 add(button);');
 INSERT INTO documentation (id, text)
-VALUES (336, '<h2>🎮 Урок 45.6 — JEditorPane-мастер: Установи текст!</h2>
+VALUES (402, '<h2>🎮 JEditorPane-мастер: Установи текст!</h2>
 
 <p><strong>Привет, мастер текста!</strong> 📝 Сегодня ты установишь текст в <code>JEditorPane</code> — это как контент в игре!</p>
 
@@ -408,16 +408,16 @@ VALUES (336, '<h2>🎮 Урок 45.6 — JEditorPane-мастер: Устано�
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (336, 45, 6, 'JEditorPane-мастер: установи текст',
+VALUES (402, 45, 6, 'JEditorPane-мастер: установи текст',
         '<p><strong>Задание:</strong><br>Установи HTML-текст через setText()</p>',
         'JEditorPane-setText',
-        '', 336, 22.0, 0.0, 'JEditorPane editor = new JEditorPane();
+        '', 402, 22.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
 editor.setText("<html><h1>Заголовок</h1></html>");
 JScrollPane scrollPane = new JScrollPane(editor);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
-VALUES (440, '<h2>🎮 Урок 45.6 — ActionListener-мастер: Добавь несколько слушателей!</h2>
+VALUES (404, '<h2>🎮 ActionListener-мастер: Добавь несколько слушателей!</h2>
 
 <p><strong>Привет, мастер слушателей!</strong> 🎯 Сегодня ты добавишь несколько слушателей к <code>ActionListener</code> — это как множественная обработка в игре!</p>
 
@@ -461,15 +461,15 @@ VALUES (440, '<h2>🎮 Урок 45.6 — ActionListener-мастер: Добав
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (440, 45, 6, 'ActionListener-мастер: добавь несколько слушателей',
+VALUES (404, 45, 6, 'ActionListener-мастер: добавь несколько слушателей',
         '<p><strong>Задание:</strong><br>Добавь два ActionListener через addActionListener(), каждый выводит свой текст</p>',
         'JButton-addActionListener',
-        '', 440, 22.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 404, 22.0, 0.0, 'JButton button = new JButton("Кнопка");
 button.addActionListener(e -> System.out.println("Первый"));
 button.addActionListener(e -> System.out.println("Второй"));
 add(button);');
 INSERT INTO documentation (id, text)
-VALUES (496, '<h2>🎮 Урок 45.7 — ActionListener-мастер: Получи команду действия!</h2>
+VALUES (405, '<h2>🎮 ActionListener-мастер: Получи команду действия!</h2>
 
 <p><strong>Привет, мастер команд!</strong> 🎯 Сегодня ты получишь команду действия в <code>ActionListener</code> — это как идентификация в игре!</p>
 
@@ -513,10 +513,10 @@ VALUES (496, '<h2>🎮 Урок 45.7 — ActionListener-мастер: Получ
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
-VALUES (496, 45, 7, 'ActionListener-мастер: получи команду действия',
+VALUES (405, 45, 7, 'ActionListener-мастер: получи команду действия',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, получи команду через getActionCommand() в actionPerformed()</p>',
         'ActionListener-getActionCommand-ActionEvent',
-        '', 496, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 405, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
 button.addActionListener(e -> {
     String cmd = e.getActionCommand();
     System.out.println("Команда: " + cmd);
