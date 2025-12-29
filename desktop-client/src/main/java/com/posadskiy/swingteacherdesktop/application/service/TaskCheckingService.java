@@ -1,7 +1,7 @@
 package com.posadskiy.swingteacherdesktop.application.service;
 
-import com.posadskiy.swingteacherdesktop.domain.checker.CheckerResult;
-import com.posadskiy.swingteacherdesktop.domain.checker.CodeChecker;
+import com.posadskiy.swingteacherdesktop.api.client.CodeCheckingApiClient;
+import com.posadskiy.swingteacherdesktop.domain.dto.CheckerResultDto;
 import com.posadskiy.swingteacherdesktop.domain.model.Error;
 import com.posadskiy.swingteacherdesktop.domain.repository.ErrorRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -18,12 +18,12 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class TaskCheckingService {
-    
-    private final CodeChecker codeChecker;
+
+    private final CodeCheckingApiClient codeCheckingApiClient;
     private final ErrorRepository errorRepository;
-    
-    public TaskCheckingService(CodeChecker codeChecker, ErrorRepository errorRepository) {
-        this.codeChecker = codeChecker;
+
+    public TaskCheckingService(CodeCheckingApiClient codeCheckingApiClient, ErrorRepository errorRepository) {
+        this.codeCheckingApiClient = codeCheckingApiClient;
         this.errorRepository = errorRepository;
     }
     
@@ -35,10 +35,10 @@ public class TaskCheckingService {
      * @return Error message string (empty if valid)
      */
     public String validateCode(String expectedAnswer, String userAnswer) {
-        List<CheckerResult> checkerResults = codeChecker.check(expectedAnswer, userAnswer);
+        List<CheckerResultDto> checkerResults = codeCheckingApiClient.checkCode(expectedAnswer, userAnswer);
         
         return checkerResults.stream()
-            .filter(CheckerResult::isError)
+            .filter(result -> result.errorCode() != 0)
             .map(this::formatErrorMessage)
             .collect(Collectors.joining("\n"));
     }
@@ -46,32 +46,32 @@ public class TaskCheckingService {
     /**
      * Gets the raw checker results for detailed analysis.
      */
-    public List<CheckerResult> checkCode(String expectedAnswer, String userAnswer) {
-        return codeChecker.check(expectedAnswer, userAnswer);
+    public List<CheckerResultDto> checkCode(String expectedAnswer, String userAnswer) {
+        return codeCheckingApiClient.checkCode(expectedAnswer, userAnswer);
     }
     
     /**
      * Validates login format.
      */
     public boolean isValidLogin(String login) {
-        return codeChecker.checkLogin(login);
+        return codeCheckingApiClient.isValidLogin(login);
     }
     
     /**
      * Validates password and confirmation.
      */
     public boolean isValidPassword(String password, String passwordRepeat) {
-        return codeChecker.checkPassword(password, passwordRepeat);
+        return codeCheckingApiClient.isValidPassword(password, passwordRepeat);
     }
     
     /**
      * Validates email format.
      */
     public boolean isValidEmail(String email) {
-        return codeChecker.checkEMail(email);
+        return codeCheckingApiClient.isValidEmail(email);
     }
-    
-    private String formatErrorMessage(CheckerResult result) {
+
+    private String formatErrorMessage(CheckerResultDto result) {
         var errorText = getErrorText(result.errorCode());
         return "Error in component %s. %s".formatted(result.className(), errorText);
     }

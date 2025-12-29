@@ -1,4 +1,4 @@
-package com.posadskiy.swingteacherdesktop.domain.checker;
+package com.posadskiy.swingteacherdesktop.service.domain.checker;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -296,21 +296,21 @@ class CodeCheckerTest {
 
     @Test
     void testCheckPassword_ValidPassword_ShouldReturnTrue() {
-        assertTrue(checker.checkPassword("password123", "password123"), 
+        assertTrue(checker.checkPassword("password123", "password123"),
             "Valid matching passwords should return true");
-        assertTrue(checker.checkPassword("p".repeat(6), "p".repeat(6)), 
+        assertTrue(checker.checkPassword("p".repeat(6), "p".repeat(6)),
             "Minimum length password should return true");
     }
 
     @Test
     void testCheckPassword_Mismatched_ShouldReturnFalse() {
-        assertFalse(checker.checkPassword("password123", "password456"), 
+        assertFalse(checker.checkPassword("password123", "password456"),
             "Mismatched passwords should return false");
     }
 
     @Test
     void testCheckPassword_TooShort_ShouldReturnFalse() {
-        assertFalse(checker.checkPassword("short", "short"), 
+        assertFalse(checker.checkPassword("short", "short"),
             "Too short password should return false");
     }
 

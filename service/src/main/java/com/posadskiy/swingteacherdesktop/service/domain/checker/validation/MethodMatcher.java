@@ -1,4 +1,4 @@
-package com.posadskiy.swingteacherdesktop.domain.checker.validation;
+package com.posadskiy.swingteacherdesktop.service.domain.checker.validation;
 
 import java.util.regex.Pattern;
 

@@ -1,6 +1,6 @@
-package com.posadskiy.swingteacherdesktop.domain.checker;
+package com.posadskiy.swingteacherdesktop.service.domain.checker;
 
-import com.posadskiy.swingteacherdesktop.domain.checker.validation.*;
+import com.posadskiy.swingteacherdesktop.service.domain.checker.validation.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.posadskiy.swingteacherdesktop.domain.checker.validation;
+package com.posadskiy.swingteacherdesktop.service.domain.checker.validation;
 
 /**
  * Validates user components against expected solution components.

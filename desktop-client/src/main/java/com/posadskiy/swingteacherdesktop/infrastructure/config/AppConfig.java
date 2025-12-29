@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.posadskiy.swingteacherdesktop.api.client.*;
 import com.posadskiy.swingteacherdesktop.application.service.AuthenticationService;
-import com.posadskiy.swingteacherdesktop.domain.checker.CodeChecker;
 import com.posadskiy.swingteacherdesktop.domain.repository.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -25,11 +24,6 @@ public class AppConfig {
     @Bean
     public Environment environment() {
         return new StandardEnvironment();
-    }
-
-    @Bean
-    public CodeChecker codeChecker() {
-        return new CodeChecker();
     }
 
     @Bean
@@ -100,6 +94,11 @@ public class AppConfig {
     @Bean
     public CompletedTaskRepository completedTaskRepository(RestClient restClient) {
         return new CompletedTaskApiClient(restClient);
+    }
+
+    @Bean
+    public CodeCheckingApiClient codeCheckingApiClient(RestClient restClient) {
+        return new CodeCheckingApiClient(restClient);
     }
 }
 

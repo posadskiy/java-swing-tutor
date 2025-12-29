@@ -1,4 +1,4 @@
-package com.posadskiy.swingteacherdesktop.domain.checker;
+package com.posadskiy.swingteacherdesktop.service.domain.checker;
 
 /**
  * Immutable result of code validation check.

@@ -10,9 +10,10 @@ public class Answer extends CreateFrame {
     @Override
     public void createFrame() {
         setTitle("Your frame");
-        JProgressBar progressBar = new JProgressBar(0, 100);
-progressBar.setIndeterminate(true);
-add(progressBar);
+        JTextField field = new JTextField();
+field.setBackground(Color.YELLOW);
+field.setForeground(Color.BLACK);
+add(field);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         setPreferredSize(new Dimension(700, 400));
         pack();
