@@ -31,9 +31,9 @@ VALUES (437, '<h2>🎮 ItemListener-новичок: Обрабатывай вы�
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>checkBox.addItemListener(e -> {<br>
 &nbsp;&nbsp;if (e.getStateChange() == ItemEvent.SELECTED) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выбрано!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выбрано!");<br>
 &nbsp;&nbsp;} else {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Снято!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Снято!");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -64,14 +64,16 @@ VALUES (437, 49, 1, 'ItemListener-новичок: обрабатывай выб�
         '<p><strong>Задание:</strong><br>Создай чекбокс, добавь ItemListener, проверь getStateChange() == ItemEvent.SELECTED, выведи сообщение</p>',
         'JCheckBox-addItemListener,add',
         '', 437, 18.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Select");
+JLabel label = new JLabel();
 checkBox.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
-        System.out.println("Выбрано!");
+        label.setText("Выбрано!");
     } else {
-        System.out.println("Снято!");
+        label.setText("Снято!");
     }
 });
-add(checkBox);');
+add(checkBox);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (438, '<h2>🎮 ChangeListener-новичок: Обрабатывай изменения!</h2>
@@ -92,7 +94,7 @@ VALUES (438, '<h2>🎮 ChangeListener-новичок: Обрабатывай и�
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>slider.addChangeListener(e -> {<br>
 &nbsp;&nbsp;int value = slider.getValue();<br>
-&nbsp;&nbsp;System.out.println("Значение: " + value);<br>
+&nbsp;&nbsp;label.setText("Значение: " + value);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -122,11 +124,13 @@ VALUES (438, 49, 2, 'ChangeListener-новичок: обрабатывай из�
         '<p><strong>Задание:</strong><br>Создай слайдер, добавь ChangeListener, получи значение через getValue(), выведи его</p>',
         'JSlider-addChangeListener,getValue,add',
         '', 438, 18.0, 0.0, 'JSlider slider = new JSlider(0, 100, 50);
+JLabel label = new JLabel();
 slider.addChangeListener(e -> {
     int value = slider.getValue();
-    System.out.println("Значение: " + value);
+    label.setText("Значение: " + value);
 });
-add(slider);');
+add(slider);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (439, '<h2>🎮 ItemListener-мастер: Обрабатывай выбор в комбобоксе!</h2>
@@ -148,7 +152,7 @@ VALUES (439, '<h2>🎮 ItemListener-мастер: Обрабатывай выб�
 <code>comboBox.addItemListener(e -> {<br>
 &nbsp;&nbsp;if (e.getStateChange() == ItemEvent.SELECTED) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Object item = e.getItem();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выбрано: " + item);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выбрано: " + item);<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -179,13 +183,15 @@ VALUES (439, 49, 3, 'ItemListener-мастер: обрабатывай выбо�
         '<p><strong>Задание:</strong><br>Создай комбобокс с элементами, добавь ItemListener, получи элемент через getItem(), выведи его</p>',
         'JComboBox-addItemListener,add',
         '', 439, 19.0, 0.0, 'JComboBox<String> comboBox = new JComboBox<>(new String[]{"Item 1", "Item 2"});
+JLabel label = new JLabel();
 comboBox.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
         Object item = e.getItem();
-        System.out.println("Выбрано: " + item);
+        label.setText("Выбрано: " + item);
     }
 });
-add(comboBox);');
+add(comboBox);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (440, '<h2>🎮 ChangeListener-мастер: Обрабатывай изменения в спиннере!</h2>
@@ -206,7 +212,7 @@ VALUES (440, '<h2>🎮 ChangeListener-мастер: Обрабатывай из�
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>spinner.addChangeListener(e -> {<br>
 &nbsp;&nbsp;Object value = spinner.getValue();<br>
-&nbsp;&nbsp;System.out.println("Значение: " + value);<br>
+&nbsp;&nbsp;label.setText("Значение: " + value);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -238,7 +244,7 @@ VALUES (440, 49, 4, 'ChangeListener-мастер: обрабатывай изм�
         '', 440, 19.0, 0.0, 'JSpinner spinner = new JSpinner(new SpinnerNumberModel(10, 0, 100, 1));
 spinner.addChangeListener(e -> {
     Object value = spinner.getValue();
-    System.out.println("Значение: " + value);
+    label.setText("Значение: " + value);
 });
 add(spinner);');
 

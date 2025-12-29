@@ -362,7 +362,7 @@ VALUES (135, '<h2>🎮 Спиннер-мастер: Обрабатывай из�
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>spinner.addChangeListener(e -> {<br>
 &nbsp;&nbsp;Object value = spinner.getValue();<br>
-&nbsp;&nbsp;System.out.println("Значение: " + value);<br>
+&nbsp;&nbsp;label.setText("Значение: " + value);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -392,11 +392,13 @@ VALUES (135, 16, 5, 'Спиннер-мастер: обрабатывай изм�
         '<p><strong>Задание:</strong><br>Добавь ChangeListener, получи значение через getValue(), выведи его</p>',
         'JSpinner-addChangeListener,getValue,add',
         '', 135, 24.0, 0.0, 'JSpinner spinner = new JSpinner();
+JLabel label = new JLabel();
 spinner.addChangeListener(e -> {
     Object value = spinner.getValue();
-    System.out.println("Значение: " + value);
+    label.setText("Значение: " + value);
 });
-add(spinner);');
+add(spinner);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (136, '<h2>🎮 Спиннер-мастер: Создай спиннер для дат!</h2>

@@ -347,7 +347,7 @@ VALUES (189, '<h2>🎮 Вкладки-мастер: Обрабатывай из�
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>tabbedPane.addChangeListener(e -> {<br>
 &nbsp;&nbsp;int index = tabbedPane.getSelectedIndex();<br>
-&nbsp;&nbsp;System.out.println("Выбрана вкладка: " + index);<br>
+&nbsp;&nbsp;label.setText("Выбрана вкладка: " + index);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -379,9 +379,11 @@ VALUES (189, 22, 7, 'Вкладки-мастер: обрабатывай изм�
         '', 189, 19.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
 tabbedPane.addTab("Вкладка 2", new JPanel());
+JLabel label = new JLabel();
 tabbedPane.addChangeListener(e -> {
     int index = tabbedPane.getSelectedIndex();
-    System.out.println("Выбрана вкладка: " + index);
+    label.setText("Выбрана вкладка: " + index);
 });
-add(tabbedPane);');
+add(tabbedPane);
+add(label);');
 

@@ -79,7 +79,7 @@ VALUES (270, '<h2>🎮 Диалог подтверждения: Спроси р�
 
 <p><strong>Шаг 2:</strong> Обработай результат:<br>
 <code>if (result == JOptionPane.YES_OPTION) {<br>
-&nbsp;&nbsp;System.out.println("Пользователь согласился");<br>
+&nbsp;&nbsp;label.setText("Пользователь согласился");<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -109,9 +109,11 @@ VALUES (270, 30, 2, 'Диалог подтверждения: спроси ра�
         'JOptionPane-showConfirmDialog',
         '', 270, 22.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(frame, "Вы уверены?", "Подтверждение", JOptionPane.YES_NO_OPTION);
+JLabel label = new JLabel();
 if (result == JOptionPane.YES_OPTION) {
-    System.out.println("Пользователь согласился");
-}');
+    label.setText("Пользователь согласился");
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (271, '<h2>🎮 Меню-мастер: Добавь горячую клавишу!</h2>
 
@@ -460,7 +462,7 @@ VALUES (276, '<h2>🎮 Чекбокс-меню-мастер: Установи к
 <p><strong>Шаг 2:</strong> Получи команду в обработчике:<br>
 <code>checkBoxMenuItem.addActionListener(e -> {<br>
 &nbsp;&nbsp;String cmd = e.getActionCommand();<br>
-&nbsp;&nbsp;System.out.println("Команда: " + cmd);<br>
+&nbsp;&nbsp;label.setText("Команда: " + cmd);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -491,9 +493,10 @@ VALUES (276, 30, 6, 'Чекбокс-меню-мастер: установи ко
         'JCheckBoxMenuItem-setActionCommand,getActionCommand,add',
         '', 276, 24.0, 0.0, 'JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Grid");
 checkBoxMenuItem.setActionCommand("CHECK");
+JLabel label = new JLabel();
 checkBoxMenuItem.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    System.out.println("Команда: " + cmd);
+    label.setText("Команда: " + cmd);
 });
 JMenu viewMenu = new JMenu("View");
 viewMenu.add(checkBoxMenuItem);

@@ -360,9 +360,10 @@ VALUES (283, 33, 6, 'JTextPane-мастер: получи текст',
         '', 283, 21.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setText("Text");
 String text = textPane.getText();
-System.out.println("Text: " + text);
+JLabel label = new JLabel("Text: " + text);
 JScrollPane scrollPane = new JScrollPane(textPane);
-add(scrollPane);');
+add(scrollPane);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (284, '<h2>🎮 MouseListener-мастер: Определи кнопку мыши!</h2>
 
@@ -384,7 +385,7 @@ VALUES (284, '<h2>🎮 MouseListener-мастер: Определи кнопку
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (e.getButton() == MouseEvent.BUTTON1) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Левая кнопка");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Левая кнопка");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -420,7 +421,7 @@ component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
-            System.out.println("Left button");
+            label.setText("Left button");
         }
     }
 });
@@ -447,7 +448,7 @@ VALUES (285, '<h2>🎮 MouseListener-мастер: Получи координа
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;int x = e.getX();<br>
 &nbsp;&nbsp;&nbsp;&nbsp;int y = e.getY();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Координаты: " + x + ", " + y);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Координаты: " + x + ", " + y);<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -483,7 +484,7 @@ component.addMouseListener(new MouseAdapter() {
     public void mouseClicked(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        System.out.println("Coordinates: " + x + ", " + y);
+        label.setText("Coordinates: " + x + ", " + y);
     }
 });
 add(component);');
@@ -509,7 +510,7 @@ VALUES (286, '<h2>🎮 MouseListener-мастер: Получи количест
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;int count = e.getClickCount();<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (count == 2) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Двойной клик");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Двойной клик");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -546,7 +547,7 @@ component.addMouseListener(new MouseAdapter() {
     public void mouseClicked(MouseEvent e) {
         int count = e.getClickCount();
         if (count == 2) {
-            System.out.println("Double click");
+            label.setText("Double click");
         }
     }
 });

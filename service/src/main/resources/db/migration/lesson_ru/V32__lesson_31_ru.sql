@@ -275,7 +275,7 @@ VALUES (257, '<h2>🎮 Дерево-мастер: Обрабатывай выб�
 &nbsp;&nbsp;TreePath path = e.getNewLeadSelectionPath();<br>
 &nbsp;&nbsp;if (path != null) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выбран: " + node.getUserObject());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выбран: " + node.getUserObject());<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -306,15 +306,17 @@ VALUES (257, 31, 5, 'Дерево-мастер: обрабатывай выбо�
         'JTree-addTreeSelectionListener,add',
         '', 257, 27.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 JTree tree = new JTree(root);
+JLabel label = new JLabel();
 tree.addTreeSelectionListener(e -> {
     TreePath path = e.getNewLeadSelectionPath();
     if (path != null) {
         DefaultMutableTreeNode node = (DefaultMutableTreeNode) path.getLastPathComponent();
-        System.out.println("Выбран: " + node.getUserObject());
+        label.setText("Выбран: " + node.getUserObject());
     }
 });
 JScrollPane scrollPane = new JScrollPane(tree);
-add(scrollPane);');
+add(scrollPane);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (258, '<h2>🎮 Таблица-мастер: Настрой выбор строк!</h2>
 

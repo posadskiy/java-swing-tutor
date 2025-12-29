@@ -408,7 +408,7 @@ VALUES (90, '<h2>🎮 Радиокнопка-мастер: Обрабатыва�
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>radioButton.addItemListener(e -> {<br>
 &nbsp;&nbsp;if (e.getStateChange() == ItemEvent.SELECTED) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выбрано!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выбрано!");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -439,12 +439,14 @@ VALUES (90, 10, 7, 'Радиокнопка-мастер: обрабатывай 
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь getStateChange() == SELECTED, выведи сообщение</p>',
         'JRadioButton-addItemListener,add',
         '', 90, 24.0, 0.0, 'JRadioButton radioButton = new JRadioButton("Option");
+JLabel label = new JLabel();
 radioButton.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
-        System.out.println("Выбрано!");
+        label.setText("Выбрано!");
     }
 });
-add(radioButton);');
+add(radioButton);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (91, '<h2>🎮 Радиокнопка-мастер: Установи команду действия!</h2>
@@ -468,7 +470,7 @@ VALUES (91, '<h2>🎮 Радиокнопка-мастер: Установи ко
 <p><strong>Шаг 2:</strong> Получи команду в обработчике:<br>
 <code>radioButton.addActionListener(e -> {<br>
 &nbsp;&nbsp;String cmd = e.getActionCommand();<br>
-&nbsp;&nbsp;System.out.println("Команда: " + cmd);<br>
+&nbsp;&nbsp;label.setText("Команда: " + cmd);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -501,7 +503,7 @@ VALUES (91, 10, 8, 'Радиокнопка-мастер: установи ком
 radioButton.setActionCommand("OPTION1");
 radioButton.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    System.out.println("Команда: " + cmd);
+    label.setText("Команда: " + cmd);
 });
 add(radioButton);');
 INSERT INTO documentation (id, text)

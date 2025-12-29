@@ -77,13 +77,15 @@ VALUES (75, '<h2>🎮 Чекбокс-мастер: Обрабатывай кли
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
-<code>checkBox.addActionListener(e -> {<br>
+<code>JLabel label = new JLabel();<br>
+checkBox.addActionListener(e -> {<br>
 &nbsp;&nbsp;if (checkBox.isSelected()) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Чекбокс выбран!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Чекбокс выбран!");<br>
 &nbsp;&nbsp;} else {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Чекбокс снят!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Чекбокс снят!");<br>
 &nbsp;&nbsp;}<br>
-});</code></p>
+});<br>
+add(label);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -111,14 +113,16 @@ VALUES (75, 9, 3, 'Чекбокс-мастер: обрабатывай клик�
         '<p><strong>Задание:</strong><br>Добавь ActionListener к чекбоксу, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JCheckBox-addActionListener,isSelected,add',
         '', 75, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
+JLabel label = new JLabel();
 checkBox.addActionListener(e -> {
     if (checkBox.isSelected()) {
-        System.out.println("Чекбокс выбран!");
+        label.setText("Чекбокс выбран!");
     } else {
-        System.out.println("Чекбокс снят!");
+        label.setText("Чекбокс снят!");
     }
 });
-add(checkBox);');
+add(checkBox);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (76, '<h2>🎮 Чекбокс-мастер: Настрой позицию текста!</h2>
@@ -290,7 +294,7 @@ VALUES (79, '<h2>🎮 Чекбокс-мастер: Обрабатывай изм
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>checkBox.addItemListener(e -> {<br>
 &nbsp;&nbsp;boolean selected = checkBox.isSelected();<br>
-&nbsp;&nbsp;System.out.println("Выбрано: " + selected);<br>
+&nbsp;&nbsp;label.setText("Выбрано: " + selected);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -320,11 +324,13 @@ VALUES (79, 9, 7, 'Чекбокс-мастер: обрабатывай изме�
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
         'JCheckBox-addItemListener,isSelected,add',
         '', 79, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
+JLabel label = new JLabel();
 checkBox.addItemListener(e -> {
     boolean selected = checkBox.isSelected();
-    System.out.println("Выбрано: " + selected);
+    label.setText("Выбрано: " + selected);
 });
-add(checkBox);');
+add(checkBox);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (80, '<h2>🎮 Чекбокс-мастер: Сделай трёхсостояний!</h2>
@@ -438,10 +444,12 @@ VALUES (81, 9, 9, 'Чекбокс-мастер: группируй чекбок�
 JCheckBox checkBox2 = new JCheckBox("Опция 2");
 JCheckBox checkBox3 = new JCheckBox("Опция 3");
 List<JCheckBox> group = Arrays.asList(checkBox1, checkBox2, checkBox3);
-group.forEach(cb -> cb.addItemListener(e -> System.out.println("Изменено")));
+JLabel label = new JLabel();
+group.forEach(cb -> cb.addItemListener(e -> label.setText("Изменено")));
 add(checkBox1);
 add(checkBox2);
-add(checkBox3);');
+add(checkBox3);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (82, '<h2>🎮 Чекбокс-мастер: Установи шрифт!</h2>
 

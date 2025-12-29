@@ -29,13 +29,15 @@ VALUES (101, '<h2>🎮 Переключатель-мастер: Обрабаты
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
-<code>toggleButton.addActionListener(e -> {<br>
+<code>JLabel label = new JLabel();<br>
+toggleButton.addActionListener(e -> {<br>
 &nbsp;&nbsp;if (toggleButton.isSelected()) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Включено!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Включено!");<br>
 &nbsp;&nbsp;} else {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выключено!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выключено!");<br>
 &nbsp;&nbsp;}<br>
-});</code></p>
+});<br>
+add(label);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -63,14 +65,16 @@ VALUES (101, 12, 2, 'Переключатель-мастер: обрабатыв
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JToggleButton-addActionListener,isSelected,add',
         '', 101, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
+JLabel label = new JLabel();
 toggleButton.addActionListener(e -> {
     if (toggleButton.isSelected()) {
-        System.out.println("Enabled!");
+        label.setText("Enabled!");
     } else {
-        System.out.println("Выключено!");
+        label.setText("Выключено!");
     }
 });
-add(toggleButton);');
+add(toggleButton);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (102, '<h2>🎮 Переключатель-мастер: Добавь мнемонику!</h2>
 
@@ -141,7 +145,7 @@ VALUES (103, '<h2>🎮 Переключатель-мастер: Обрабаты
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>toggleButton.addItemListener(e -> {<br>
 &nbsp;&nbsp;boolean selected = toggleButton.isSelected();<br>
-&nbsp;&nbsp;System.out.println("Включено: " + selected);<br>
+&nbsp;&nbsp;label.setText("Включено: " + selected);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -173,7 +177,7 @@ VALUES (103, 12, 4, 'Переключатель-мастер: обрабатыв
         '', 103, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 toggleButton.addItemListener(e -> {
     boolean selected = toggleButton.isSelected();
-    System.out.println("Enabled: " + selected);
+    label.setText("Enabled: " + selected);
 });
 add(toggleButton);');
 
@@ -199,7 +203,7 @@ VALUES (104, '<h2>🎮 Переключатель-мастер: Установи
 <p><strong>Шаг 2:</strong> Получи команду в обработчике:<br>
 <code>toggleButton.addActionListener(e -> {<br>
 &nbsp;&nbsp;String cmd = e.getActionCommand();<br>
-&nbsp;&nbsp;System.out.println("Команда: " + cmd);<br>
+&nbsp;&nbsp;label.setText("Команда: " + cmd);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -232,7 +236,7 @@ VALUES (104, 12, 5, 'Переключатель-мастер: установи �
 toggleButton.setActionCommand("TOGGLE");
 toggleButton.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    System.out.println("Команда: " + cmd);
+    label.setText("Команда: " + cmd);
 });
 add(toggleButton);');
 INSERT INTO documentation (id, text)

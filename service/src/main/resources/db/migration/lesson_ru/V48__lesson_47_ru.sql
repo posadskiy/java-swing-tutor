@@ -33,7 +33,7 @@ VALUES (421, '<h2>🎮 KeyListener-новичок: Реагируй на наж�
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void keyPressed(KeyEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (e.getKeyCode() == KeyEvent.VK_ENTER) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Нажат Enter!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Нажат Enter!");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 &nbsp;&nbsp;@Override<br>
@@ -70,11 +70,12 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (421, 47, 1, 'KeyListener-новичок: реагируй на нажатия клавиш',
         '<p><strong>Задание:</strong><br>Создай KeyListener, обработай нажатие Enter и добавь слушатель к компоненту</p>',
         'KeyListener-addKeyListener,requestFocus',
-        '', 421, 25.0, 0.0, 'KeyListener listener = new KeyListener() {
+        '', 421, 25.0, 0.0, 'JLabel label = new JLabel();
+KeyListener listener = new KeyListener() {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            System.out.println("Нажат Enter!");
+            label.setText("Нажат Enter!");
         }
     }
     @Override
@@ -103,12 +104,12 @@ VALUES (422, '<h2>🎮 KeyListener-мастер: Обрабатывай комб
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Проверь модификаторы:<br>
 <code>if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_C) {<br>
-&nbsp;&nbsp;System.out.println("Ctrl+C нажато!");<br>
+&nbsp;&nbsp;label.setText("Ctrl+C нажато!");<br>
 }</code></p>
 
 <p><strong>Шаг 2:</strong> Или проверь Shift:<br>
 <code>if (e.isShiftDown() && e.getKeyCode() == KeyEvent.VK_ENTER) {<br>
-&nbsp;&nbsp;System.out.println("Shift+Enter нажато!");<br>
+&nbsp;&nbsp;label.setText("Shift+Enter нажато!");<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -138,11 +139,12 @@ VALUES (422, 47, 2, 'KeyListener-мастер: обрабатывай комби
         '<p><strong>Задание:</strong><br>В keyPressed проверь isControlDown() и VK_C, выведи сообщение при нажатии Ctrl+C</p>',
         'KeyListener-isControlDown,getKeyCode,add',
         '', 422, 26.0, 0.0, 'JPanel panel = new JPanel();
+JLabel label = new JLabel();
 panel.addKeyListener(new KeyListener() {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_C) {
-            System.out.println("Ctrl+C нажато!");
+            label.setText("Ctrl+C нажато!");
         }
     }
     @Override
@@ -230,7 +232,7 @@ VALUES (423, '<h2>🎮 KeyListener-мастер: Обрабатывай отпу
 <code>@Override<br>
 public void keyReleased(KeyEvent e) {<br>
 &nbsp;&nbsp;if (e.getKeyCode() == KeyEvent.VK_SPACE) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Пробел отпущен!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Пробел отпущен!");<br>
 &nbsp;&nbsp;}<br>
 }</code></p>
 
@@ -260,13 +262,14 @@ VALUES (423, 47, 3, 'KeyListener-мастер: обрабатывай отпус
         '<p><strong>Задание:</strong><br>Переопредели keyReleased(), обработай отпускание VK_SPACE, выведи сообщение</p>',
         'KeyListener-keyReleased,getKeyCode,add',
         '', 423, 24.0, 0.0, 'JPanel panel = new JPanel();
+JLabel label = new JLabel();
 panel.addKeyListener(new KeyListener() {
     @Override
     public void keyPressed(KeyEvent e) {}
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {
-            System.out.println("Пробел отпущен!");
+            label.setText("Пробел отпущен!");
         }
     }
     @Override
@@ -274,7 +277,8 @@ panel.addKeyListener(new KeyListener() {
 });
 panel.setFocusable(true);
 panel.requestFocus();
-add(panel);');
+add(panel);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (425, '<h2>🎮 BoxLayout-мастер: Добавь жёсткую область!</h2>
 

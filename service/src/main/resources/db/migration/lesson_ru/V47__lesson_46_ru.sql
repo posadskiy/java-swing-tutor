@@ -35,7 +35,7 @@ VALUES (406, '<h2>🎮 Слушатель мыши-новичок: Реагир�
 <code>panel.addMouseListener(new MouseAdapter() {<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Клик на позиции: " + e.getX() + ", " + e.getY());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Клик на позиции: " + e.getX() + ", " + e.getY());<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -60,7 +60,7 @@ VALUES (406, '<h2>🎮 Слушатель мыши-новичок: Реагир�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>При клике на компонент выполнится действие! 🖱️ Если использовал <code>System.out.println()</code>, в консоли появится сообщение с координатами клика. Компонент теперь реагирует на мышь! 🎯</p>');
+<p>При клике на компонент выполнится действие! 🖱️ Если использовал <code>JLabel</code>, на экране появится сообщение с координатами клика. Компонент теперь реагирует на мышь! 🎯</p>');
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
@@ -68,12 +68,14 @@ VALUES (406, 46, 1, 'Слушатель мыши-новичок: реагиру�
         '<p><strong>Задание:</strong><br>Создай панель, добавь MouseListener, который выводит "Клик!" при клике, и добавь на форму</p>',
         'JPanel-addMouseListener,add',
         '', 406, 20.0, 0.0, 'JPanel panel = new JPanel();
+JLabel label = new JLabel();
 panel.addMouseListener(new MouseAdapter() {
     public void mouseClicked(MouseEvent e) {
-        System.out.println("Клик!");
+        label.setText("Клик!");
     }
 });
-add(panel);');
+add(panel);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (407, '<h2>🎮 Радио-пункт меню-новичок: Создай радио-кнопки в меню!</h2>
 
@@ -158,7 +160,7 @@ VALUES (408, '<h2>🎮 Радио-пункт меню-мастер: Обраба
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>item.addActionListener(e -> {<br>
 &nbsp;&nbsp;if (item.isSelected()) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выбрано: " + item.getText());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выбрано: " + item.getText());<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -189,9 +191,10 @@ VALUES (408, 46, 2, 'Радио-пункт меню-мастер: обрабат
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи текст пункта через getText()</p>',
         'JRadioButtonMenuItem-addActionListener-isSelected-getText',
         '', 408, 23.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
+JLabel label = new JLabel();
 item.addActionListener(e -> {
     if (item.isSelected()) {
-        System.out.println("Выбрано: " + item.getText());
+        label.setText("Выбрано: " + item.getText());
     }
 });
 JMenu sizeMenu = new JMenu("Размер");
@@ -225,7 +228,7 @@ VALUES (409, '<h2>🎮 Диалог-мастер: Создай диалог по
 
 <p><strong>Шаг 2:</strong> Обработай результат:<br>
 <code>if (result == JOptionPane.YES_OPTION) {<br>
-&nbsp;&nbsp;System.out.println("Пользователь согласился!");<br>
+&nbsp;&nbsp;label.setText("Пользователь согласился!");<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -260,9 +263,11 @@ int result = JOptionPane.showConfirmDialog(
     "Подтверждение",
     JOptionPane.YES_NO_OPTION
 );
+JLabel label = new JLabel();
 if (result == JOptionPane.YES_OPTION) {
-    System.out.println("Пользователь согласился!");
-}');
+    label.setText("Пользователь согласился!");
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (412, '<h2>🎮 Радио-пункт меню-мастер: Добавь в группу!</h2>
 
@@ -347,7 +352,7 @@ VALUES (410, '<h2>🎮 Диалог-мастер: Создай диалог вв
 
 <p><strong>Шаг 2:</strong> Обработай результат:<br>
 <code>if (input != null && !input.isEmpty()) {<br>
-&nbsp;&nbsp;System.out.println("Введено: " + input);<br>
+&nbsp;&nbsp;label.setText("Введено: " + input);<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -382,9 +387,11 @@ String input = JOptionPane.showInputDialog(
     "Ввод",
     JOptionPane.QUESTION_MESSAGE
 );
+JLabel label = new JLabel();
 if (input != null && !input.isEmpty()) {
-    System.out.println("Введено: " + input);
-}');
+    label.setText("Введено: " + input);
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (414, '<h2>🎮 Радио-пункт меню-мастер: Обрабатывай изменение состояния!</h2>
 
@@ -404,7 +411,7 @@ VALUES (414, '<h2>🎮 Радио-пункт меню-мастер: Обраба
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>item.addItemListener(e -> {<br>
 &nbsp;&nbsp;if (e.getStateChange() == ItemEvent.SELECTED) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выбрано!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выбрано!");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -435,9 +442,10 @@ VALUES (414, 46, 4, 'Радио-пункт меню-мастер: обрабат
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь getStateChange() == SELECTED, выведи сообщение</p>',
         'JRadioButtonMenuItem-addItemListener,getStateChange,add',
         '', 414, 24.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
+JLabel label = new JLabel();
 item.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
-        System.out.println("Выбрано!");
+        label.setText("Выбрано!");
     }
 });
 JMenu sizeMenu = new JMenu("Размер");
@@ -514,9 +522,11 @@ int result = JOptionPane.showOptionDialog(
     options,
     options[0]
 );
+JLabel label = new JLabel();
 if (result >= 0) {
-    System.out.println("Выбрано: " + options[result]);
-}');
+    label.setText("Выбрано: " + options[result]);
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (416, '<h2>🎮 Радио-пункт меню-мастер: Добавь иконку!</h2>
 
@@ -590,7 +600,7 @@ VALUES (413, '<h2>🎮 Диалог-мастер: Создай диалог вв
 
 <p><strong>Шаг 2:</strong> Обработай результат:<br>
 <code>if (input != null) {<br>
-&nbsp;&nbsp;System.out.println("Имя: " + input);<br>
+&nbsp;&nbsp;label.setText("Имя: " + input);<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -621,9 +631,11 @@ VALUES (413, 46, 6, 'Диалог-мастер: создай диалог вво
         'JOptionPane-showInputDialog',
         '', 413, 23.0, 0.0, 'JFrame frame = new JFrame();
 String input = JOptionPane.showInputDialog(frame, "Введите имя:");
+JLabel label = new JLabel();
 if (input != null) {
-    System.out.println("Имя: " + input);
-}');
+    label.setText("Имя: " + input);
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (415, '<h2>🎮 Диалог-мастер: Создай диалог подтверждения!</h2>
 
@@ -645,7 +657,7 @@ VALUES (415, '<h2>🎮 Диалог-мастер: Создай диалог по
 
 <p><strong>Шаг 2:</strong> Обработай результат:<br>
 <code>if (result == JOptionPane.YES_OPTION) {<br>
-&nbsp;&nbsp;System.out.println("Да!");<br>
+&nbsp;&nbsp;label.setText("Да!");<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -676,9 +688,11 @@ VALUES (415, 46, 7, 'Диалог-мастер: создай диалог под
         'JOptionPane-showConfirmDialog-YES_NO_OPTION',
         '', 415, 24.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(frame, "Удалить?", "Подтверждение", JOptionPane.YES_NO_OPTION);
+JLabel label = new JLabel();
 if (result == JOptionPane.YES_OPTION) {
-    System.out.println("Да!");
-}');
+    label.setText("Да!");
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (417, '<h2>🎮 Диалог-мастер: Создай диалог сообщения!</h2>
 

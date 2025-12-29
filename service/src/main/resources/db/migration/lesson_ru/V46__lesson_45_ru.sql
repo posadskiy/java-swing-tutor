@@ -94,7 +94,7 @@ VALUES (398, '<h2>🎮 JEditorPane-мастер: Загрузи HTML из URL!</
 <code>try {<br>
 &nbsp;&nbsp;editor.setPage(new URL("https://example.com"));<br>
 } catch (IOException e) {<br>
-&nbsp;&nbsp;System.out.println("Ошибка загрузки: " + e.getMessage());<br>
+&nbsp;&nbsp;label.setText("Ошибка загрузки: " + e.getMessage());<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -124,13 +124,15 @@ VALUES (398, 45, 2, 'JEditorPane-мастер: загрузи HTML из URL',
         'JEditorPane-setContentType-setPage-URL',
         '', 398, 28.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
+JLabel label = new JLabel();
 try {
     editor.setPage(new URL("https://example.com"));
 } catch (IOException e) {
-    System.out.println("Ошибка загрузки: " + e.getMessage());
+    label.setText("Ошибка загрузки: " + e.getMessage());
 }
 JScrollPane scrollPane = new JScrollPane(editor);
-add(scrollPane);');
+add(scrollPane);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (399, '<h2>🎮 JEditorPane-мастер: Обрабатывай гиперссылки!</h2>
 
@@ -270,7 +272,7 @@ VALUES (401, '<h2>🎮 JEditorPane-мастер: Обрабатывай гипе
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>editor.addHyperlinkListener(e -> {<br>
 &nbsp;&nbsp;if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Ссылка: " + e.getURL());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Ссылка: " + e.getURL());<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -303,13 +305,15 @@ VALUES (401, 45, 5, 'JEditorPane-мастер: обрабатывай гипер
         '', 401, 25.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
 editor.setText("<html><a href=\"https://example.com\">Ссылка</a></html>");
+JLabel label = new JLabel();
 editor.addHyperlinkListener(e -> {
     if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-        System.out.println("Ссылка: " + e.getURL());
+        label.setText("Ссылка: " + e.getURL());
     }
 });
 JScrollPane scrollPane = new JScrollPane(editor);
-add(scrollPane);');
+add(scrollPane);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (403, '<h2>🎮 ActionListener-мастер: Удали слушатель!</h2>
 
@@ -327,7 +331,9 @@ VALUES (403, '<h2>🎮 ActionListener-мастер: Удали слушател�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Сохрани слушатель:<br>
-<code>ActionListener listener = e -> System.out.println("Действие");</code></p>
+<code>JLabel label = new JLabel();<br>
+ActionListener listener = e -> label.setText("Действие");<br>
+add(label);</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь слушатель:<br>
 <code>button.addActionListener(listener);</code></p>
@@ -362,10 +368,12 @@ VALUES (403, 45, 5, 'ActionListener-мастер: удали слушатель'
         '<p><strong>Задание:</strong><br>Создай ActionListener, добавь через addActionListener(), удали через removeActionListener()</p>',
         'JButton-addActionListener,removeActionListener,add',
         '', 403, 23.0, 0.0, 'JButton button = new JButton("Button");
-ActionListener listener = e -> System.out.println("Action");
+JLabel label = new JLabel();
+ActionListener listener = e -> label.setText("Action");
 button.addActionListener(listener);
 button.removeActionListener(listener);
-add(button);');
+add(button);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (402, '<h2>🎮 JEditorPane-мастер: Установи текст!</h2>
 
@@ -433,10 +441,12 @@ VALUES (404, '<h2>🎮 ActionListener-мастер: Добавь несколь�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Добавь первый слушатель:<br>
-<code>button.addActionListener(e -> System.out.println("Первый"));</code></p>
+<code>JLabel label = new JLabel();<br>
+button.addActionListener(e -> label.setText("Первый"));<br>
+add(label);</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь второй слушатель:<br>
-<code>button.addActionListener(e -> System.out.println("Второй"));</code></p>
+<code>button.addActionListener(e -> label.setText("Второй"));</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -465,9 +475,11 @@ VALUES (404, 45, 6, 'ActionListener-мастер: добавь нескольк�
         '<p><strong>Задание:</strong><br>Добавь два ActionListener через addActionListener(), каждый выводит свой текст</p>',
         'JButton-addActionListener',
         '', 404, 22.0, 0.0, 'JButton button = new JButton("Button");
-button.addActionListener(e -> System.out.println("First"));
-button.addActionListener(e -> System.out.println("Second"));
-add(button);');
+JLabel label = new JLabel();
+button.addActionListener(e -> label.setText("First"));
+button.addActionListener(e -> label.setText("Second"));
+add(button);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (405, '<h2>🎮 ActionListener-мастер: Получи команду действия!</h2>
 
@@ -487,7 +499,7 @@ VALUES (405, '<h2>🎮 ActionListener-мастер: Получи команду 
 <p><strong>Шаг 1:</strong> Получи команду:<br>
 <code>button.addActionListener(e -> {<br>
 &nbsp;&nbsp;String cmd = e.getActionCommand();<br>
-&nbsp;&nbsp;System.out.println("Команда: " + cmd);<br>
+&nbsp;&nbsp;label.setText("Команда: " + cmd);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -517,8 +529,10 @@ VALUES (405, 45, 7, 'ActionListener-мастер: получи команду д
         '<p><strong>Задание:</strong><br>Добавь ActionListener, получи команду через getActionCommand() в actionPerformed()</p>',
         'ActionListener-getActionCommand,add',
         '', 405, 23.0, 0.0, 'JButton button = new JButton("Button");
+JLabel label = new JLabel();
 button.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    System.out.println("Command: " + cmd);
+    label.setText("Command: " + cmd);
 });
-add(button);');
+add(button);
+add(label);');

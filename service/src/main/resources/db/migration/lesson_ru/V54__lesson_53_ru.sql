@@ -32,7 +32,7 @@ VALUES (458, '<h2>🎮 Timer-новичок: Создай таймер!</h2>
 <code>ActionListener task = new ActionListener() {<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void actionPerformed(ActionEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Tick!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Tick!");<br>
 &nbsp;&nbsp;}<br>
 };</code></p>
 
@@ -68,14 +68,16 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (458, 53, 1, 'Timer-новичок: создай таймер',
         '<p><strong>Задание:</strong><br>Создай ActionListener, создай Timer с задержкой 1000 мс, запусти таймер</p>',
         'Timer-start',
-        '', 458, 24.0, 0.0, 'ActionListener task = new ActionListener() {
+        '', 458, 24.0, 0.0, 'JLabel label = new JLabel();
+ActionListener task = new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Таймер сработал!");
+        label.setText("Таймер сработал!");
     }
 };
 Timer timer = new Timer(1000, task);
-timer.start();');
+timer.start();
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (459, '<h2>🎮 Timer-мастер: Останавливай и перезапускай таймер!</h2>
 
@@ -123,11 +125,13 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (459, 53, 2, 'Timer-мастер: останавливай и перезапускай таймер',
         '<p><strong>Задание:</strong><br>Останови таймер через stop(), затем перезапусти через restart()</p>',
         'Timer-stop,restart',
-        '', 459, 25.0, 0.0, 'ActionListener task = e -> System.out.println("Tick!");
+        '', 459, 25.0, 0.0, 'JLabel label = new JLabel();
+ActionListener task = e -> label.setText("Tick!");
 Timer timer = new Timer(1000, task);
 timer.start();
 timer.stop();
-timer.restart();');
+timer.restart();
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (462, '<h2>🎮 KeyListener-мастер: Определи код клавиши!</h2>
 
@@ -149,7 +153,7 @@ VALUES (462, '<h2>🎮 KeyListener-мастер: Определи код кла�
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void keyPressed(KeyEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (e.getKeyCode() == KeyEvent.VK_ENTER) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Enter нажат!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Enter нажат!");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -182,15 +186,17 @@ VALUES (462, 53, 2, 'KeyListener-мастер: определи код клав�
         'KeyListener-getKeyCode,add',
         '', 462, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
+JLabel label = new JLabel();
 component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            System.out.println("Enter нажат!");
+            label.setText("Enter нажат!");
         }
     }
 });
-add(component);');
+add(component);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (460, '<h2>🎮 Timer-мастер: Создай одноразовый таймер!</h2>
 
@@ -209,7 +215,7 @@ VALUES (460, '<h2>🎮 Timer-мастер: Создай одноразовый �
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай таймер:<br>
 <code>Timer timer = new Timer(3000, e -> {<br>
-&nbsp;&nbsp;System.out.println("Прошло 3 секунды!");<br>
+&nbsp;&nbsp;label.setText("Прошло 3 секунды!");<br>
 });</code></p>
 
 <p><strong>Шаг 2:</strong> Отключи повторение:<br>
@@ -243,11 +249,13 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (460, 53, 3, 'Timer-мастер: создай одноразовый таймер',
         '<p><strong>Задание:</strong><br>Создай Timer с задержкой 3000 мс, установи setRepeats(false), запусти таймер</p>',
         'Timer-setRepeats,start',
-        '', 460, 25.0, 0.0, 'Timer timer = new Timer(3000, e -> {
-    System.out.println("Прошло 3 секунды!");
+        '', 460, 25.0, 0.0, 'JLabel label = new JLabel();
+Timer timer = new Timer(3000, e -> {
+    label.setText("Прошло 3 секунды!");
 });
 timer.setRepeats(false);
-timer.start();');
+timer.start();
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (463, '<h2>🎮 KeyListener-мастер: Определи символ клавиши!</h2>
 
@@ -269,7 +277,7 @@ VALUES (463, '<h2>🎮 KeyListener-мастер: Определи символ �
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void keyTyped(KeyEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;char ch = e.getKeyChar();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Символ: " + ch);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Символ: " + ch);<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -301,14 +309,16 @@ VALUES (463, 53, 3, 'KeyListener-мастер: определи символ к�
         'KeyListener-getKeyChar,keyTyped,add',
         '', 463, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
+JLabel label = new JLabel();
 component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyTyped(KeyEvent e) {
         char ch = e.getKeyChar();
-        System.out.println("Символ: " + ch);
+        label.setText("Символ: " + ch);
     }
 });
-add(component);');
+add(component);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (461, '<h2>🎮 Timer-мастер: Установи начальную задержку!</h2>
 
@@ -327,7 +337,7 @@ VALUES (461, '<h2>🎮 Timer-мастер: Установи начальную �
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай таймер:<br>
 <code>Timer timer = new Timer(1000, e -> {<br>
-&nbsp;&nbsp;System.out.println("Tick!");<br>
+&nbsp;&nbsp;label.setText("Tick!");<br>
 });</code></p>
 
 <p><strong>Шаг 2:</strong> Установи начальную задержку:<br>
@@ -361,11 +371,13 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (461, 53, 4, 'Timer-мастер: установи начальную задержку',
         '<p><strong>Задание:</strong><br>Создай Timer с интервалом 1000 мс, установи setInitialDelay(5000), запусти таймер</p>',
         'Timer-setInitialDelay,start',
-        '', 461, 26.0, 0.0, 'Timer timer = new Timer(1000, e -> {
-    System.out.println("Tick!");
+        '', 461, 26.0, 0.0, 'JLabel label = new JLabel();
+Timer timer = new Timer(1000, e -> {
+    label.setText("Tick!");
 });
 timer.setInitialDelay(5000);
-timer.start();');
+timer.start();
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (464, '<h2>🎮 KeyListener-мастер: Определи модификаторы!</h2>
 
@@ -387,7 +399,7 @@ VALUES (464, '<h2>🎮 KeyListener-мастер: Определи модифик
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void keyPressed(KeyEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if ((e.getModifiersEx() & InputEvent.CTRL_DOWN_MASK) != 0) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Ctrl нажат!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Ctrl нажат!");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -420,14 +432,17 @@ VALUES (464, 53, 4, 'KeyListener-мастер: определи модифика
         'KeyListener-getModifiersEx-CTRL_DOWN_MASK',
         '', 464, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
+JLabel label = new JLabel();
 component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyPressed(KeyEvent e) {
         if ((e.getModifiersEx() & InputEvent.CTRL_DOWN_MASK) != 0) {
-            System.out.println("Ctrl нажат!");
+            label.setText("Ctrl нажат!");
         }
     }
 });
+add(component);
+add(label);');
 add(component);');
 INSERT INTO documentation (id, text)
 VALUES (465, '<h2>🎮 KeyListener-мастер: Определи расположение клавиши!</h2>
@@ -450,7 +465,7 @@ VALUES (465, '<h2>🎮 KeyListener-мастер: Определи располо
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void keyPressed(KeyEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (e.getKeyLocation() == KeyEvent.KEY_LOCATION_LEFT) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Левая клавиша!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Левая клавиша!");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -483,12 +498,18 @@ VALUES (465, 53, 5, 'KeyListener-мастер: определи располож
         'KeyListener-getKeyLocation-KEY_LOCATION_LEFT',
         '', 465, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
+JLabel label = new JLabel();
 component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyLocation() == KeyEvent.KEY_LOCATION_LEFT) {
-            System.out.println("Левая клавиша!");
+            label.setText("Левая клавиша!");
         }
     }
 });
+add
+    (component);
+add
+    (label);
+');
 add(component);');

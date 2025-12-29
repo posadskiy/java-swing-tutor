@@ -32,11 +32,11 @@ VALUES (429, '<h2>🎮 FocusListener-новичок: Отслеживай фок
 <code>FocusListener listener = new FocusListener() {<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void focusGained(FocusEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Компонент получил фокус!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Компонент получил фокус!");<br>
 &nbsp;&nbsp;}<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void focusLost(FocusEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Компонент потерял фокус!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Компонент потерял фокус!");<br>
 &nbsp;&nbsp;}<br>
 };</code></p>
 
@@ -68,14 +68,15 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (429, 48, 1, 'FocusListener-новичок: отслеживай фокус компонента',
         '<p><strong>Задание:</strong><br>Создай FocusListener, обработай получение и потерю фокуса, добавь к текстовому полю</p>',
         'FocusListener-addFocusListener,add',
-        '', 429, 23.0, 0.0, 'FocusListener listener = new FocusListener() {
+        '', 429, 23.0, 0.0, 'JLabel label = new JLabel();
+FocusListener listener = new FocusListener() {
     @Override
     public void focusGained(FocusEvent e) {
-        System.out.println("Получен фокус!");
+        label.setText("Получен фокус!");
     }
     @Override
     public void focusLost(FocusEvent e) {
-        System.out.println("Потерян фокус!");
+        label.setText("Потерян фокус!");
     }
 };
 JTextField field = new JTextField();
@@ -103,7 +104,7 @@ VALUES (430, '<h2>🎮 FocusListener-мастер: Валидируй при п�
 <p><strong>Шаг 2:</strong> Проверь корректность:<br>
 <code>if (text.isEmpty()) {<br>
 &nbsp;&nbsp;textField.setBackground(Color.RED);<br>
-&nbsp;&nbsp;System.out.println("Поле не может быть пустым!");<br>
+&nbsp;&nbsp;label.setText("Поле не может быть пустым!");<br>
 } else {<br>
 &nbsp;&nbsp;textField.setBackground(Color.WHITE);<br>
 }</code></p>
@@ -135,6 +136,7 @@ VALUES (430, 48, 2, 'FocusListener-мастер: валидируй при по�
         '<p><strong>Задание:</strong><br>В focusLost получи текст поля, проверь на пустоту, установи красный фон при ошибке</p>',
         'FocusListener-focusLost-getText-setBackground',
         '', 430, 26.0, 0.0, 'JTextField textField = new JTextField();
+JLabel label = new JLabel();
 textField.addFocusListener(new FocusListener() {
     @Override
     public void focusGained(FocusEvent e) {}
@@ -143,13 +145,14 @@ textField.addFocusListener(new FocusListener() {
         String text = textField.getText();
         if (text.isEmpty()) {
             textField.setBackground(Color.RED);
-            System.out.println("Поле не может быть пустым!");
+            label.setText("Поле не может быть пустым!");
         } else {
             textField.setBackground(Color.WHITE);
         }
     }
 });
-add(textField);');
+add(textField);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (432, '<h2>🎮 CardLayout-мастер: Навигируй по картам!</h2>
 
@@ -352,7 +355,8 @@ VALUES (434, '<h2>🎮 CardLayout-мастер: Получи количеств�
 <code>int count = panel.getComponentCount();</code></p>
 
 <p><strong>Шаг 2:</strong> Используй количество:<br>
-<code>System.out.println("Карт: " + count);</code></p>
+<code>JLabel label = new JLabel("Карт: " + count);<br>
+add(label);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -388,8 +392,9 @@ JPanel card2 = new JPanel();
 panel.add(card1, "card1");
 panel.add(card2, "card2");
 int count = panel.getComponentCount();
-System.out.println("Карт: " + count);
-add(panel);');
+JLabel label = new JLabel("Карт: " + count);
+add(panel);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (435, '<h2>🎮 CardLayout-мастер: Покажи карту по имени!</h2>
 

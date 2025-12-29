@@ -83,7 +83,7 @@ VALUES (288, '<h2>🎮 Диалог-мастер: Спроси подтверж�
 
 <p><strong>Шаг 2:</strong> Проверь результат:<br>
 <code>if (result == JOptionPane.YES_OPTION) {<br>
-&nbsp;&nbsp;System.out.println("Пользователь выбрал Да");<br>
+&nbsp;&nbsp;label.setText("Пользователь выбрал Да");<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -112,9 +112,11 @@ VALUES (288, 34, 2, 'Диалог-мастер: спроси подтвержд�
         '<p><strong>Задание:</strong><br>Покажи диалог подтверждения с вопросом "Вы уверены?" и проверь, выбрал ли пользователь "Да"</p>',
         'JOptionPane',
         '', 288, 20.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Are you sure?", "Confirmation", JOptionPane.YES_NO_OPTION);
+JLabel label = new JLabel();
 if (result == JOptionPane.YES_OPTION) {
-    System.out.println("Пользователь выбрал Да");
-}');
+    label.setText("Пользователь выбрал Да");
+}
+add(label);');
 
 -- Task 3: Input Dialog
 INSERT INTO documentation (id, text)
@@ -138,7 +140,7 @@ VALUES (289, '<h2>🎮 Диалог-мастер: Получи ввод от п�
 
 <p><strong>Шаг 2:</strong> Проверь результат:<br>
 <code>if (name != null && !name.isEmpty()) {<br>
-&nbsp;&nbsp;System.out.println("Привет, " + name + "!");<br>
+&nbsp;&nbsp;label.setText("Привет, " + name + "!");<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -167,9 +169,11 @@ VALUES (289, 34, 3, 'Диалог-мастер: получи ввод от по�
         '<p><strong>Задание:</strong><br>Покажи диалог ввода с вопросом "Введите ваше имя:" и выведи результат в консоль</p>',
         'JOptionPane',
         '', 289, 20.0, 0.0, 'String name = JOptionPane.showInputDialog(null, "Enter your name:", "Input", JOptionPane.QUESTION_MESSAGE);
+JLabel label = new JLabel();
 if (name != null && !name.isEmpty()) {
-    System.out.println("Привет, " + name + "!");
-}');
+    label.setText("Привет, " + name + "!");
+}
+add(label);');
 
 -- Task 4: Option Dialog
 INSERT INTO documentation (id, text)
@@ -219,7 +223,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (290, 34, 4, 'Диалог-мастер: создай кастомные кнопки',
         '<p><strong>Задание:</strong><br>Создай диалог с тремя опциями: "Сохранить", "Отменить", "Не сохранять" и выведи индекс выбранной опции</p>',
         'JOptionPane',
-        '', 290, 22.0, 0.0, 'String[] options = {"Save", "Cancel", "Don't save"};
+        '', 290, 22.0, 0.0,         'String[] options = {"Save", "Cancel", "Don't save"};
 int choice = JOptionPane.showOptionDialog(null, "Что делать?", "Выбор", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
-System.out.println("Выбрано: " + choice);');
+JLabel label = new JLabel("Выбрано: " + choice);
+add(label);');
 

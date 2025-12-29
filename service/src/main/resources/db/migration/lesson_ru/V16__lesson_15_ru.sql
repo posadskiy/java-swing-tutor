@@ -488,7 +488,7 @@ VALUES (128, '<h2>🎮 Скроллбар-мастер: Обрабатывай �
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>scrollBar.addAdjustmentListener(e -> {<br>
 &nbsp;&nbsp;int value = scrollBar.getValue();<br>
-&nbsp;&nbsp;System.out.println("Позиция: " + value);<br>
+&nbsp;&nbsp;label.setText("Позиция: " + value);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -518,9 +518,11 @@ VALUES (128, 15, 10, 'Скроллбар-мастер: обрабатывай и
         '<p><strong>Задание:</strong><br>Создай скроллбар, добавь AdjustmentListener, получи значение через getValue(), выведи его</p>',
         'JScrollBar-addAdjustmentListener,getValue,add',
         '', 128, 19.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+JLabel label = new JLabel();
 scrollBar.addAdjustmentListener(e -> {
     int value = scrollBar.getValue();
-    System.out.println("Позиция: " + value);
+    label.setText("Позиция: " + value);
 });
-add(scrollBar);');
+add(scrollBar);
+add(label);');
 

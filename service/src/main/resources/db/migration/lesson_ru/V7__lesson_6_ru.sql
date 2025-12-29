@@ -453,7 +453,8 @@ VALUES (59, 6, 9, 'Текстовая область-мастер: получи 
         'JTextArea-getLineCount,add',
         '', 59, 21.0, 0.0, 'JTextArea textArea = new JTextArea("Line 1\nLine 2");
 int lines = textArea.getLineCount();
-System.out.println("Количество строк: " + lines);
+JLabel label = new JLabel("Количество строк: " + lines);
+add(label);
 add(textArea);');
 INSERT INTO documentation (id, text)
 VALUES (60, '<h2>🎮 Текстовая область-мастер: Получи текст строки!</h2>

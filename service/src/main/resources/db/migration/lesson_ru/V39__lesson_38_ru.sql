@@ -413,7 +413,7 @@ VALUES (323, '<h2>🎮 Радио-меню-мастер: Установи ком
 <p><strong>Шаг 2:</strong> Получи команду в обработчике:<br>
 <code>radioButtonMenuItem.addActionListener(e -> {<br>
 &nbsp;&nbsp;String cmd = e.getActionCommand();<br>
-&nbsp;&nbsp;System.out.println("Команда: " + cmd);<br>
+&nbsp;&nbsp;label.setText("Команда: " + cmd);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -444,9 +444,10 @@ VALUES (323, 38, 6, 'Радио-меню-мастер: установи кома
         'JRadioButtonMenuItem-setActionCommand,getActionCommand,add',
         '', 323, 24.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Theme");
 radioButtonMenuItem.setActionCommand("RADIO");
+JLabel label = new JLabel();
 radioButtonMenuItem.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    System.out.println("Команда: " + cmd);
+    label.setText("Команда: " + cmd);
 });
 JMenu viewMenu = new JMenu("View");
 viewMenu.add(radioButtonMenuItem);

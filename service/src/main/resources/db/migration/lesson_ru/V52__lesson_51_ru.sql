@@ -154,7 +154,7 @@ VALUES (450, '<h2>🎮 Кастомный компонент-мастер: Об�
 <code>addMouseListener(new MouseAdapter() {<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Клик!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Клик!");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -186,12 +186,14 @@ VALUES (450, 51, 3, 'Кастомный компонент-мастер: обр�
         'JComponent-addMouseListener,add',
         '', 450, 21.0, 0.0, 'class MyComponent extends JComponent {
     public MyComponent() {
+        JLabel label = new JLabel();
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("Клик!");
+                label.setText("Клик!");
             }
         });
+        add(label);
     }
 }
 MyComponent comp = new MyComponent();

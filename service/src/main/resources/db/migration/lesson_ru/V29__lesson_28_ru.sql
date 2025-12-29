@@ -446,7 +446,7 @@ VALUES (237, '<h2>🎮 Радиокнопка в меню-мастер: Обра
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>item.addActionListener(e -> {<br>
-&nbsp;&nbsp;System.out.println("Выбран вариант: " + item.getText());<br>
+&nbsp;&nbsp;label.setText("Выбран вариант: " + item.getText());<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -468,7 +468,7 @@ VALUES (237, '<h2>🎮 Радиокнопка в меню-мастер: Обра
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>При выборе варианта выполнится действие! 🔘 Если использовал System.out.println(), в консоли появится сообщение. Это обработка выбора! 🎯</p>');
+<p>При выборе варианта выполнится действие! 🔘 Если использовал JLabel, на экране появится сообщение. Это обработка выбора! 🎯</p>');
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
@@ -476,8 +476,9 @@ VALUES (237, 28, 8, 'Радиокнопка в меню-мастер: обраб
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, добавь ActionListener, который выводит текст варианта в консоль</p>',
         'JRadioButtonMenuItem-addActionListener',
         '', 237, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
+JLabel label = new JLabel();
 item.addActionListener(e -> {
-    System.out.println("Selected option: " + item.getText());
+    label.setText("Selected option: " + item.getText());
 });
 JMenu menu = new JMenu("Размер");
 menu.add(item);

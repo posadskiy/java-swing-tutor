@@ -223,7 +223,7 @@ currentCard = "card2";</code></p>
 <code>Component[] components = getComponents();<br>
 for (Component comp : components) {<br>
 &nbsp;&nbsp;if (comp.isVisible()) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Видимая карта: " + comp.getName());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Видимая карта: " + comp.getName());<br>
 &nbsp;&nbsp;}<br>
 }</code></p>
 
@@ -264,11 +264,13 @@ panel2.add(new JLabel("Панель 2"));
 add(panel1, "card1");
 add(panel2, "card2");
 Component[] components = getComponents();
+JLabel label = new JLabel();
 for (Component comp : components) {
     if (comp.isVisible()) {
-        System.out.println("Видимая карта: " + comp.getName());
+        label.setText("Видимая карта: " + comp.getName());
     }
-}');
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (360, '<h2>🎮 GridBagLayout-мастер: Настрой заполнение!</h2>
 

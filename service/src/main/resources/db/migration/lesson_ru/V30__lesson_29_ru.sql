@@ -263,17 +263,19 @@ VALUES (241, 29, 4, 'Всплывающее меню-мастер: узнай и
         '', 241, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
 JPanel panel = new JPanel();
+JLabel label = new JLabel();
 panel.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON3) {
             popup.show(panel, e.getX(), e.getY());
             Component invoker = popup.getInvoker();
-            System.out.println("Источник: " + invoker.getClass().getSimpleName());
+            label.setText("Источник: " + invoker.getClass().getSimpleName());
         }
     }
 });
-add(panel);');
+add(panel);
+add(label);');
 
 -- Task 5: Border
 INSERT INTO documentation (id, text)
@@ -360,15 +362,15 @@ VALUES (243, '<h2>🎮 Всплывающее меню-мастер: Отсле�
 <code>popup.addPopupMenuListener(new PopupMenuListener() {<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void popupMenuWillBecomeVisible(PopupMenuEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Меню будет показано");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Меню будет показано");<br>
 &nbsp;&nbsp;}<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Меню будет скрыто");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Меню будет скрыто");<br>
 &nbsp;&nbsp;}<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void popupMenuCanceled(PopupMenuEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Меню отменено");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Меню отменено");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -391,7 +393,7 @@ VALUES (243, '<h2>🎮 Всплывающее меню-мастер: Отсле�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>При показе или закрытии меню выполнится действие! 👂 Если использовал System.out.println(), в консоли появятся сообщения. Это отслеживание событий! 🎯</p>');
+<p>При показе или закрытии меню выполнится действие! 👂 Если использовал JLabel, на экране появятся сообщения. Это отслеживание событий! 🎯</p>');
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
@@ -400,18 +402,19 @@ VALUES (243, 29, 6, 'Всплывающее меню-мастер: отслеж�
         'JPopupMenu-PopupMenuListener',
         '', 243, 22.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
+JLabel label = new JLabel();
 popup.addPopupMenuListener(new PopupMenuListener() {
     @Override
     public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-        System.out.println("Меню будет показано");
+        label.setText("Меню будет показано");
     }
     @Override
     public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-        System.out.println("Меню будет скрыто");
+        label.setText("Меню будет скрыто");
     }
     @Override
     public void popupMenuCanceled(PopupMenuEvent e) {
-        System.out.println("Меню отменено");
+        label.setText("Меню отменено");
     }
 });
 JPanel panel = new JPanel();

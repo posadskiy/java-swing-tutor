@@ -32,7 +32,9 @@ VALUES (212, '<h2>🎮 Пункт меню-новичок: Создай дейс
 <code>JMenuItem openItem = new JMenuItem("Open");</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь обработчик:<br>
-<code>openItem.addActionListener(e -> System.out.println("Открыть файл"));</code></p>
+<code>JLabel label = new JLabel();<br>
+openItem.addActionListener(e -> label.setText("Открыть файл"));<br>
+add(label);</code></p>
 
 <p><strong>Шаг 3:</strong> Добавь в меню:<br>
 <code>fileMenu.add(openItem);</code></p>
@@ -63,7 +65,8 @@ VALUES (212, 26, 1, 'Пункт меню-новичок: создай дейст
         '<p><strong>Задание:</strong><br>Создай пункт меню "Открыть", добавь обработчик и добавь в меню</p>',
         'JMenuItem-addActionListener,add',
         '', 212, 20.0, 0.0, 'JMenuItem openItem = new JMenuItem("Open");
-openItem.addActionListener(e -> System.out.println("Open"));
+JLabel label = new JLabel();
+openItem.addActionListener(e -> label.setText("Open"));
 JMenu fileMenu = new JMenu("File");
 fileMenu.add(openItem);
 JMenuBar menuBar = new JMenuBar();

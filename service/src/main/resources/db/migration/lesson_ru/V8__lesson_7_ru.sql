@@ -180,9 +180,11 @@ VALUES (65, '<h2>🎮 Поле пароля-мастер: Проверь над�
 <code>char[] password = passwordField.getPassword();</code></p>
 
 <p><strong>Шаг 2:</strong> Проверь длину:<br>
-<code>if (password.length &lt; 8) {<br>
-&nbsp;&nbsp;System.out.println("Слабый пароль!");<br>
-}</code></p>
+<code>JLabel label = new JLabel();<br>
+if (password.length &lt; 8) {<br>
+&nbsp;&nbsp;label.setText("Слабый пароль!");<br>
+}<br>
+add(label);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -213,10 +215,12 @@ VALUES (65, 7, 4, 'Поле пароля-мастер: проверь надёж
         'JPasswordField-getPassword,add',
         '', 65, 25.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char[] password = passwordField.getPassword();
+JLabel label = new JLabel();
 if (password.length < 8) {
-    System.out.println("Слабый пароль!");
+    label.setText("Слабый пароль!");
 }
-add(passwordField);');
+add(passwordField);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (66, '<h2>🎮 Поле пароля-мастер: Запрети копирование!</h2>
 

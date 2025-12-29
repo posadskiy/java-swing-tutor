@@ -139,9 +139,9 @@ VALUES (326, '<h2>🎮 Мышь-мастер: Определи клик мыши
 <code>@Override<br>
 public void mouseClicked(MouseEvent e) {<br>
 &nbsp;&nbsp;if (e.getClickCount() == 1) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Одиночный клик!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Одиночный клик!");<br>
 &nbsp;&nbsp;} else if (e.getClickCount() == 2) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Двойной клик!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Двойной клик!");<br>
 &nbsp;&nbsp;}<br>
 }</code></p>
 
@@ -171,17 +171,19 @@ VALUES (326, 39, 2, 'Мышь-мастер: определи клик мыши',
         '<p><strong>Задание:</strong><br>Переопредели mouseClicked, проверь количество кликов, обработай одиночный и двойной клик</p>',
         'MouseListener-mouseClicked,getClickCount,add',
         '', 326, 24.0, 0.0, 'JPanel panel = new JPanel();
+JLabel label = new JLabel();
 panel.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 1) {
-            System.out.println("Одиночный клик!");
+            label.setText("Одиночный клик!");
         } else if (e.getClickCount() == 2) {
-            System.out.println("Двойной клик!");
+            label.setText("Двойной клик!");
         }
     }
 });
-add(panel);');
+add(panel);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (329, '<h2>🎮 Чекбокс-пункт меню-мастер: Обрабатывай изменение!</h2>
 
@@ -201,9 +203,9 @@ VALUES (329, '<h2>🎮 Чекбокс-пункт меню-мастер: Обра
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>item.addActionListener(e -> {<br>
 &nbsp;&nbsp;if (item.isSelected()) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Включено!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Включено!");<br>
 &nbsp;&nbsp;} else {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выключено!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выключено!");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -233,11 +235,12 @@ VALUES (329, 39, 2, 'Чекбокс-пункт меню-мастер: обраб
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JCheckBoxMenuItem-addActionListener,isSelected,add',
         '', 329, 23.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Show panel");
+JLabel label = new JLabel();
 item.addActionListener(e -> {
     if (item.isSelected()) {
-        System.out.println("Включено!");
+        label.setText("Включено!");
     } else {
-        System.out.println("Выключено!");
+        label.setText("Выключено!");
     }
 });
 JMenu viewMenu = new JMenu("View");
@@ -267,7 +270,7 @@ VALUES (327, '<h2>🎮 Мышь-мастер: Обрабатывай перет�
 &nbsp;&nbsp;public void mouseDragged(MouseEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;int x = e.getX();<br>
 &nbsp;&nbsp;&nbsp;&nbsp;int y = e.getY();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Перетаскивание: " + x + ", " + y);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Перетаскивание: " + x + ", " + y);<br>
 &nbsp;&nbsp;}<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void mouseMoved(MouseEvent e) {}<br>
@@ -300,12 +303,13 @@ VALUES (327, 39, 3, 'Мышь-мастер: обрабатывай перета�
         '<p><strong>Задание:</strong><br>Добавь MouseMotionListener, переопредели mouseDragged(), получи координаты и выведи их</p>',
         'MouseMotionListener-mouseDragged,getX,getY,add',
         '', 327, 26.0, 0.0, 'JPanel component = new JPanel();
+JLabel label = new JLabel();
 component.addMouseMotionListener(new MouseMotionListener() {
     @Override
     public void mouseDragged(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        System.out.println("Перетаскивание: " + x + ", " + y);
+        label.setText("Перетаскивание: " + x + ", " + y);
     }
     @Override
     public void mouseMoved(MouseEvent e) {}
@@ -434,7 +438,7 @@ VALUES (332, '<h2>🎮 Чекбокс-пункт меню-мастер: Обра
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>item.addItemListener(e -> {<br>
 &nbsp;&nbsp;boolean selected = item.isSelected();<br>
-&nbsp;&nbsp;System.out.println("Выбрано: " + selected);<br>
+&nbsp;&nbsp;label.setText("Выбрано: " + selected);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -464,9 +468,10 @@ VALUES (332, 39, 4, 'Чекбокс-пункт меню-мастер: обраб
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
         'JCheckBoxMenuItem-addItemListener,isSelected,add',
         '', 332, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Show panel");
+JLabel label = new JLabel();
 item.addItemListener(e -> {
     boolean selected = item.isSelected();
-    System.out.println("Выбрано: " + selected);
+    label.setText("Выбрано: " + selected);
 });
 JMenu viewMenu = new JMenu("View");
 viewMenu.add(item);

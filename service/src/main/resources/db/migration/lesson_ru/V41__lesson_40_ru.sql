@@ -399,9 +399,11 @@ VALUES (340, 40, 8, 'Диалог-мастер: создай диалог вво
         '<p><strong>Задание:</strong><br>Создай диалог ввода через showInputDialog("Enter name:"), сохрани результат</p>',
         'JOptionPane-showInputDialog',
         '', 340, 23.0, 0.0, 'String input = JOptionPane.showInputDialog("Enter name:");
+JLabel label = new JLabel();
 if (input != null) {
-    System.out.println("Entered: " + input);
-}');
+    label.setText("Entered: " + input);
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (344, '<h2>🎮 GridBagLayout-мастер: Установи заполнение!</h2>
 
@@ -500,9 +502,11 @@ VALUES (341, 40, 9, 'Диалог-мастер: создай диалог под
         '<p><strong>Задание:</strong><br>Создай диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, сохрани результат</p>',
         'JOptionPane-showConfirmDialog',
         '', 341, 24.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Confirm action?", "Confirmation", JOptionPane.YES_NO_OPTION);
+JLabel label = new JLabel();
 if (result == JOptionPane.YES_OPTION) {
-    System.out.println("Confirmed!");
-}');
+    label.setText("Confirmed!");
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (343, '<h2>🎮 Диалог-мастер: Создай диалог сообщения!</h2>
 

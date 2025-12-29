@@ -37,7 +37,7 @@ VALUES (291, '<h2>🎮 Выбор файла-новичок: Открой диа
 <p><strong>Шаг 3:</strong> Обработай результат:<br>
 <code>if (result == JFileChooser.APPROVE_OPTION) {<br>
 &nbsp;&nbsp;File selectedFile = fileChooser.getSelectedFile();<br>
-&nbsp;&nbsp;System.out.println("Выбран: " + selectedFile.getName());<br>
+&nbsp;&nbsp;label.setText("Выбран: " + selectedFile.getName());<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -67,10 +67,12 @@ VALUES (291, 35, 1, 'Выбор файла-новичок: открой диал
         'JFileChooser-showOpenDialog',
         '', 291, 22.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 int result = fileChooser.showOpenDialog(this);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    System.out.println("Выбран файл: " + file.getName());
-}');
+    label.setText("Выбран файл: " + file.getName());
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (292, '<h2>🎮 Выбор файла-мастер: Создай диалог сохранения!</h2>
 
@@ -93,7 +95,7 @@ VALUES (292, '<h2>🎮 Выбор файла-мастер: Создай диал
 <p><strong>Шаг 2:</strong> Обработай результат:<br>
 <code>if (result == JFileChooser.APPROVE_OPTION) {<br>
 &nbsp;&nbsp;File file = fileChooser.getSelectedFile();<br>
-&nbsp;&nbsp;System.out.println("Сохранить в: " + file.getPath());<br>
+&nbsp;&nbsp;label.setText("Сохранить в: " + file.getPath());<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -127,7 +129,7 @@ JFileChooser fileChooser = new JFileChooser();
 int result = fileChooser.showSaveDialog(frame);
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    System.out.println("Сохранить в: " + file.getPath());
+    label.setText("Сохранить в: " + file.getPath());
 }');
 INSERT INTO documentation (id, text)
 VALUES (293, '<h2>🎮 Выбор файла-мастер: Добавь фильтр файлов!</h2>
@@ -187,10 +189,12 @@ FileNameExtensionFilter filter = new FileNameExtensionFilter(
 );
 fileChooser.setFileFilter(filter);
 int result = fileChooser.showOpenDialog(this);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    System.out.println("Выбран файл: " + file.getName());
-}');
+    label.setText("Выбран файл: " + file.getName());
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (294, '<h2>🎮 Выбор файла-мастер: Разреши множественный выбор!</h2>
 
@@ -214,7 +218,7 @@ VALUES (294, '<h2>🎮 Выбор файла-мастер: Разреши мно
 <code>if (result == JFileChooser.APPROVE_OPTION) {<br>
 &nbsp;&nbsp;File[] files = fileChooser.getSelectedFiles();<br>
 &nbsp;&nbsp;for (File file : files) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выбран: " + file.getName());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выбран: " + file.getName());<br>
 &nbsp;&nbsp;}<br>
 }</code></p>
 
@@ -247,12 +251,14 @@ VALUES (294, 35, 4, 'Выбор файла-мастер: разреши множ
 JFileChooser fileChooser = new JFileChooser();
 fileChooser.setMultiSelectionEnabled(true);
 int result = fileChooser.showOpenDialog(frame);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File[] files = fileChooser.getSelectedFiles();
     for (File file : files) {
-        System.out.println("Выбран: " + file.getName());
+        label.setText("Выбран: " + file.getName());
     }
-}');
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (295, '<h2>🎮 Выбор файла-мастер: Добавь фильтр!</h2>
 
@@ -305,10 +311,12 @@ VALUES (295, 35, 5, 'Выбор файла-мастер: добавь фильт
 FileFilter filter = new FileNameExtensionFilter("Текстовые файлы", "txt");
 fileChooser.addChoosableFileFilter(filter);
 int result = fileChooser.showOpenDialog(this);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    System.out.println("Выбран файл: " + file.getName());
-}');
+    label.setText("Выбран файл: " + file.getName());
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (296, '<h2>🎮 Выбор файла-мастер: Установи текущую директорию!</h2>
 
@@ -361,10 +369,12 @@ VALUES (296, 35, 6, 'Выбор файла-мастер: установи тек
 File dir = new File("/path/to/directory");
 fileChooser.setCurrentDirectory(dir);
 int result = fileChooser.showOpenDialog(this);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    System.out.println("Выбран файл: " + file.getName());
-}');
+    label.setText("Выбран файл: " + file.getName());
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (297, '<h2>🎮 Выбор файла-мастер: Установи заголовок диалога!</h2>
 
@@ -414,10 +424,12 @@ VALUES (297, 35, 7, 'Выбор файла-мастер: установи заг
 JFileChooser fileChooser = new JFileChooser();
 fileChooser.setDialogTitle("Выбери файл");
 int result = fileChooser.showOpenDialog(frame);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    System.out.println("Выбран файл: " + file.getName());
-}');
+    label.setText("Выбран файл: " + file.getName());
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (298, '<h2>🎮 Редактор-мастер: Добавь слушатель ссылок!</h2>
 
@@ -437,7 +449,7 @@ VALUES (298, '<h2>🎮 Редактор-мастер: Добавь слушат�
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>editorPane.addHyperlinkListener(e -> {<br>
 &nbsp;&nbsp;if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Ссылка: " + e.getURL());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Ссылка: " + e.getURL());<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -470,11 +482,14 @@ VALUES (298, 35, 8, 'Редактор-мастер: добавь слушате�
         '', 298, 26.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setContentType("text/html");
 editorPane.setText("<html><body><a href=\"http://example.com\">Ссылка</a></body></html>");
+JLabel label = new JLabel();
 editorPane.addHyperlinkListener(e -> {
     if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-        System.out.println("Ссылка: " + e.getURL());
+        label.setText("Ссылка: " + e.getURL());
     }
 });
+add(editorPane);
+add(label);');
 JScrollPane scrollPane = new JScrollPane(editorPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)

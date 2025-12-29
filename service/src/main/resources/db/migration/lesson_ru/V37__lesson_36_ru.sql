@@ -63,9 +63,11 @@ VALUES (301, 36, 1, 'Выбор цвета-новичок: открой пали
         'JColorChooser-showDialog',
         '', 301, 20.0, 0.0, 'JFrame frame = new JFrame();
 Color color = JColorChooser.showDialog(frame, "Выбери цвет", Color.WHITE);
+JLabel label = new JLabel();
 if (color != null) {
-    System.out.println("Выбран цвет: " + color);
-}');
+    label.setText("Выбран цвет: " + color);
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (302, '<h2>🎮 Выбор цвета-мастер: Создай кастомный диалог!</h2>
 
@@ -478,9 +480,11 @@ VALUES (308, 36, 6, 'Выбор цвета-мастер: получи выбра
         'JColorChooser-showDialog',
         '', 308, 24.0, 0.0, 'JFrame frame = new JFrame();
 Color color = JColorChooser.showDialog(frame, "Выбери цвет", Color.WHITE);
+JLabel label = new JLabel();
 if (color != null) {
-    System.out.println("Выбран цвет: " + color);
-}');
+    label.setText("Выбран цвет: " + color);
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (309, '<h2>🎮 Выбор цвета-мастер: Настрой модель цвета!</h2>
 

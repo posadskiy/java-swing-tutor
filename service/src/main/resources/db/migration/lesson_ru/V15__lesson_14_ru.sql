@@ -548,7 +548,7 @@ VALUES (118, '<h2>🎮 Прогресс-бар-мастер: Обрабатыв�
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>progressBar.addChangeListener(e -> {<br>
 &nbsp;&nbsp;int value = progressBar.getValue();<br>
-&nbsp;&nbsp;System.out.println("Прогресс: " + value + "%");<br>
+&nbsp;&nbsp;label.setText("Прогресс: " + value + "%");<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -578,9 +578,11 @@ VALUES (118, 14, 11, 'Прогресс-бар-мастер: обрабатыва
         '<p><strong>Задание:</strong><br>Создай прогресс-бар, добавь ChangeListener, получи значение через getValue(), выведи его</p>',
         'JProgressBar-addChangeListener,getValue,add',
         '', 118, 19.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
+JLabel label = new JLabel();
 progressBar.addChangeListener(e -> {
     int value = progressBar.getValue();
-    System.out.println("Прогресс: " + value + "%");
+    label.setText("Прогресс: " + value + "%");
 });
-add(progressBar);');
+add(progressBar);
+add(label);');
 

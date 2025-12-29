@@ -134,7 +134,7 @@ VALUES (155, '<h2>🎮 Скроллбар-мастер: Обрабатывай �
 <p><strong>Шаг 1:</strong> Добавь слушатель:<br>
 <code>scrollBar.addAdjustmentListener(e -> {<br>
 &nbsp;&nbsp;int value = e.getValue();<br>
-&nbsp;&nbsp;System.out.println("Значение: " + value);<br>
+&nbsp;&nbsp;label.setText("Значение: " + value);<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -164,11 +164,13 @@ VALUES (155, 18, 2, 'Скроллбар-мастер: обрабатывай и�
         '<p><strong>Задание:</strong><br>Добавь AdjustmentListener, получи значение через getValue(), выведи его</p>',
         'JScrollBar-addAdjustmentListener,getValue,add',
         '', 155, 23.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
+JLabel label = new JLabel();
 scrollBar.addAdjustmentListener(e -> {
     int value = e.getValue();
-    System.out.println("Значение: " + value);
+    label.setText("Значение: " + value);
 });
-add(scrollBar);');
+add(scrollBar);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (156, '<h2>🎮 Скроллбар-мастер: Настрой шаг прокрутки!</h2>

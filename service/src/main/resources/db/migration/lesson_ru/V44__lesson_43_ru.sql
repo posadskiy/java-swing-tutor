@@ -168,9 +168,9 @@ VALUES (373, '<h2>🎮 ActionListener-мастер: Обрабатывай не�
 <p><strong>Шаг 1:</strong> Создай обработчик:<br>
 <code>ActionListener listener = e -> {<br>
 &nbsp;&nbsp;if (e.getSource() == button1) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Кнопка 1");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Кнопка 1");<br>
 &nbsp;&nbsp;} else if (e.getSource() == button2) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Кнопка 2");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Кнопка 2");<br>
 &nbsp;&nbsp;}<br>
 };</code></p>
 
@@ -206,17 +206,19 @@ VALUES (373, 43, 2, 'ActionListener-мастер: обрабатывай нес�
         'ActionListener-getSource,addActionListener,add',
         '', 373, 24.0, 0.0, 'JButton button1 = new JButton("Button 1");
 JButton button2 = new JButton("Button 2");
+JLabel label = new JLabel();
 ActionListener listener = e -> {
     if (e.getSource() == button1) {
-        System.out.println("Кнопка 1");
+        label.setText("Кнопка 1");
     } else if (e.getSource() == button2) {
-        System.out.println("Кнопка 2");
+        label.setText("Кнопка 2");
     }
 };
 button1.addActionListener(listener);
 button2.addActionListener(listener);
 add(button1);
-add(button2);');
+add(button2);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (372, '<h2>🎮 GroupLayout-мастер: Создай параллельные группы!</h2>
 
@@ -299,7 +301,7 @@ VALUES (374, '<h2>🎮 ActionListener-мастер: Используй кома�
 <code>button.addActionListener(e -> {<br>
 &nbsp;&nbsp;String cmd = e.getActionCommand();<br>
 &nbsp;&nbsp;if ("SAVE".equals(cmd)) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Сохранение!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Сохранение!");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -331,13 +333,15 @@ VALUES (374, 43, 3, 'ActionListener-мастер: используй коман�
         'ActionListener-setActionCommand,getActionCommand,add',
         '', 374, 24.0, 0.0, 'JButton button = new JButton("Save");
 button.setActionCommand("SAVE");
+JLabel label = new JLabel();
 button.addActionListener(e -> {
     String cmd = e.getActionCommand();
     if ("SAVE".equals(cmd)) {
-        System.out.println("Сохранение!");
+        label.setText("Сохранение!");
     }
 });
-add(button);');
+add(button);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (375, '<h2>🎮 ActionListener-мастер: Определи когда!</h2>
 
@@ -357,7 +361,7 @@ VALUES (375, '<h2>🎮 ActionListener-мастер: Определи когда!
 <p><strong>Шаг 1:</strong> Получи время:<br>
 <code>button.addActionListener(e -> {<br>
 &nbsp;&nbsp;long when = e.getWhen();<br>
-&nbsp;&nbsp;System.out.println("Время: " + new Date(when));<br>
+&nbsp;&nbsp;label.setText("Время: " + new Date(when));<br>
 });</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -387,11 +391,13 @@ VALUES (375, 43, 4, 'ActionListener-мастер: определи когда',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, получи время через getWhen(), выведи его</p>',
         'ActionListener-getWhen',
         '', 375, 23.0, 0.0, 'JButton button = new JButton("Button");
+JLabel label = new JLabel();
 button.addActionListener(e -> {
     long when = e.getWhen();
-    System.out.println("Время: " + new Date(when));
+    label.setText("Время: " + new Date(when));
 });
-add(button);');
+add(button);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (377, '<h2>🎮 KeyListener-мастер: Получи символ клавиши!</h2>
 
@@ -413,7 +419,7 @@ VALUES (377, '<h2>🎮 KeyListener-мастер: Получи символ кл�
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void keyTyped(KeyEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;char ch = e.getKeyChar();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Символ: " + ch);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Символ: " + ch);<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -449,7 +455,7 @@ component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyTyped(KeyEvent e) {
         char ch = e.getKeyChar();
-        System.out.println("Символ: " + ch);
+        label.setText("Символ: " + ch);
     }
 });
 add(component);');
@@ -473,7 +479,7 @@ VALUES (376, '<h2>🎮 ActionListener-мастер: Определи модиф�
 <code>button.addActionListener(e -> {<br>
 &nbsp;&nbsp;int modifiers = e.getModifiers();<br>
 &nbsp;&nbsp;if ((modifiers & ActionEvent.CTRL_MASK) != 0) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Ctrl нажат!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Ctrl нажат!");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -504,13 +510,15 @@ VALUES (376, 43, 5, 'ActionListener-мастер: определи модифи�
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь getModifiers() & CTRL_MASK, выведи сообщение</p>',
         'ActionListener-getModifiers-CTRL_MASK',
         '', 376, 24.0, 0.0, 'JButton button = new JButton("Button");
+JLabel label = new JLabel();
 button.addActionListener(e -> {
     int modifiers = e.getModifiers();
     if ((modifiers & ActionEvent.CTRL_MASK) != 0) {
-        System.out.println("Ctrl нажат!");
+        label.setText("Ctrl нажат!");
     }
 });
-add(button);');
+add(button);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (379, '<h2>🎮 KeyListener-мастер: Получи код клавиши!</h2>
 
@@ -533,7 +541,7 @@ VALUES (379, '<h2>🎮 KeyListener-мастер: Получи код клави�
 &nbsp;&nbsp;public void keyPressed(KeyEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;int code = e.getKeyCode();<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (code == KeyEvent.VK_ENTER) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Enter нажат");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Enter нажат");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -566,16 +574,18 @@ VALUES (379, 43, 5, 'KeyListener-мастер: получи код клавиш�
         'KeyListener-getKeyCode,add',
         '', 379, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
+JLabel label = new JLabel();
 component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
         if (code == KeyEvent.VK_ENTER) {
-            System.out.println("Enter нажат");
+            label.setText("Enter нажат");
         }
     }
 });
-add(component);');
+add(component);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (382, '<h2>🎮 KeyListener-мастер: Получи символ клавиши!</h2>
 
@@ -597,7 +607,7 @@ VALUES (382, '<h2>🎮 KeyListener-мастер: Получи символ кл�
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void keyTyped(KeyEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;char ch = e.getKeyChar();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Символ: " + ch);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Символ: " + ch);<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -633,7 +643,7 @@ component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyTyped(KeyEvent e) {
         char ch = e.getKeyChar();
-        System.out.println("Символ: " + ch);
+        label.setText("Символ: " + ch);
     }
 });
 add(component);');

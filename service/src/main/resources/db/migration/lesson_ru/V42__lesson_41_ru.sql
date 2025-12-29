@@ -398,12 +398,14 @@ VALUES (350, 41, 8, 'Выбор файлов-мастер: включи множ
 JFileChooser fileChooser = new JFileChooser();
 fileChooser.setMultiSelectionEnabled(true);
 int result = fileChooser.showOpenDialog(frame);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File[] files = fileChooser.getSelectedFiles();
     for (File file : files) {
-        System.out.println("Выбран: " + file.getName());
+        label.setText("Выбран: " + file.getName());
     }
-}');
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (353, '<h2>🎮 BoxLayout-мастер: Добавь распорку!</h2>
 
@@ -512,10 +514,12 @@ JFileChooser fileChooser = new JFileChooser();
 FileNameExtensionFilter filter = new FileNameExtensionFilter("Изображения", "jpg", "png", "gif");
 fileChooser.addChoosableFileFilter(filter);
 int result = fileChooser.showOpenDialog(frame);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    System.out.println("Выбран файл: " + file.getName());
-}');
+    label.setText("Выбран файл: " + file.getName());
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (355, '<h2>🎮 BoxLayout-мастер: Добавь жёсткую область!</h2>
 
@@ -624,7 +628,9 @@ JFileChooser fileChooser = new JFileChooser();
 File dir = new File("/path/to/directory");
 fileChooser.setCurrentDirectory(dir);
 int result = fileChooser.showOpenDialog(frame);
+JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    System.out.println("Выбран файл: " + file.getName());
-}');
+    label.setText("Выбран файл: " + file.getName());
+}
+add(label);');

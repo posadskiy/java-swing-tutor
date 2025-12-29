@@ -192,7 +192,7 @@ VALUES (456, '<h2>🎮 Look and Feel-мастер: Получи список д�
 
 <p><strong>Шаг 2:</strong> Просмотри список:<br>
 <code>for (UIManager.LookAndFeelInfo laf : lafs) {<br>
-&nbsp;&nbsp;System.out.println(laf.getName() + ": " + laf.getClassName());<br>
+&nbsp;&nbsp;label.setText(laf.getName() + ": " + laf.getClassName());<br>
 }</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -222,9 +222,11 @@ VALUES (456, 52, 4, 'Look and Feel-мастер: получи список до�
         '<p><strong>Задание:</strong><br>Получи список L&F через UIManager.getInstalledLookAndFeels(), выведи имя и класс каждого стиля</p>',
         'UIManager-getInstalledLookAndFeels',
         '', 456, 20.0, 0.0, 'UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();
+JLabel label = new JLabel();
 for (UIManager.LookAndFeelInfo laf : lafs) {
-    System.out.println(laf.getName() + ": " + laf.getClassName());
-}');
+    label.setText(laf.getName() + ": " + laf.getClassName());
+}
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (457, '<h2>🎮 Look and Feel-мастер: Установи кастомный L&F!</h2>

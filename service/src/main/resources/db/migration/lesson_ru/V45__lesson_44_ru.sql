@@ -151,7 +151,7 @@ VALUES (386, '<h2>🎮 MouseListener-мастер: Определи количе
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (e.getClickCount() == 2) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Двойной клик!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Двойной клик!");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -187,7 +187,7 @@ component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-            System.out.println("Двойной клик!");
+            label.setText("Двойной клик!");
         }
     }
 });
@@ -273,7 +273,7 @@ VALUES (387, '<h2>🎮 MouseListener-мастер: Определи кнопку
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (e.getButton() == MouseEvent.BUTTON1) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Левая кнопка!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Левая кнопка!");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -305,15 +305,17 @@ VALUES (387, 44, 3, 'MouseListener-мастер: определи кнопку �
         '<p><strong>Задание:</strong><br>Добавь MouseListener, проверь getButton() == BUTTON1, выведи сообщение</p>',
         'MouseListener-getButton-BUTTON1',
         '', 387, 23.0, 0.0, 'JPanel component = new JPanel();
+JLabel label = new JLabel();
 component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
-            System.out.println("Левая кнопка!");
+            label.setText("Левая кнопка!");
         }
     }
 });
-add(component);');
+add(component);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (390, '<h2>🎮 FocusListener-мастер: Запроси фокус!</h2>
 
@@ -385,7 +387,7 @@ VALUES (388, '<h2>🎮 MouseListener-мастер: Определи позици
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;int x = e.getX();<br>
 &nbsp;&nbsp;&nbsp;&nbsp;int y = e.getY();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Позиция: (" + x + ", " + y + ")");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Позиция: (" + x + ", " + y + ")");<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -416,15 +418,17 @@ VALUES (388, 44, 4, 'MouseListener-мастер: определи позицию
         '<p><strong>Задание:</strong><br>Добавь MouseListener, получи X через getX(), Y через getY(), выведи позицию</p>',
         'MouseListener-getX,getY,add',
         '', 388, 23.0, 0.0, 'JPanel component = new JPanel();
+JLabel label = new JLabel();
 component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        System.out.println("Позиция: (" + x + ", " + y + ")");
+        label.setText("Позиция: (" + x + ", " + y + ")");
     }
 });
-add(component);');
+add(component);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (393, '<h2>🎮 FocusListener-мастер: Управляй фокусируемостью!</h2>
 
@@ -494,7 +498,7 @@ VALUES (389, '<h2>🎮 MouseListener-мастер: Определи количе
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void mouseClicked(MouseEvent e) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;if (e.getClickCount() == 2) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Двойной клик!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Двойной клик!");<br>
 &nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
@@ -530,7 +534,7 @@ component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-            System.out.println("Двойной клик!");
+            label.setText("Двойной клик!");
         }
     }
 });
@@ -581,9 +585,11 @@ VALUES (396, 44, 5, 'FocusListener-мастер: получи владельца
         '<p><strong>Задание:</strong><br>Получи владельца фокуса через KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner()</p>',
         'FocusListener-getFocusOwner',
         '', 396, 25.0, 0.0, 'Component owner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
+JLabel label = new JLabel();
 if (owner != null) {
-    System.out.println("Владелец фокуса: " + owner);
-}');
+    label.setText("Владелец фокуса: " + owner);
+}
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (391, '<h2>🎮 SpringLayout-мастер: Получи ограничение!</h2>
 

@@ -144,7 +144,8 @@ VALUES (96, '<h2>🎮 Выбранный элемент: Получи выбра
 <code>String selected = list.getSelectedValue();</code></p>
 
 <p><strong>Шаг 3:</strong> Используй выбранный элемент:<br>
-<code>System.out.println("Выбрано: " + selected);</code></p>
+<code>JLabel label = new JLabel("Выбрано: " + selected);
+add(label);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -175,10 +176,12 @@ VALUES (96, 11, 3, 'Выбранный элемент: получи выбран
         '', 96, 19.0, 0.0, 'String[] items = {"Item 1", "Item 2", "Item 3"};
 JList<String> list = new JList<>(items);
 String selected = list.getSelectedValue();
+JLabel label = new JLabel();
 if (selected != null) {
-    System.out.println("Выбрано: " + selected);
+    label.setText("Выбрано: " + selected);
 }
-add(list);');
+add(list);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (97, '<h2>🎮 Слушатель выбора: Обрабатывай выбор элементов!</h2>
@@ -203,7 +206,7 @@ VALUES (97, '<h2>🎮 Слушатель выбора: Обрабатывай в
 <code>list.addListSelectionListener(e -> {<br>
 &nbsp;&nbsp;if (!e.getValueIsAdjusting()) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;String selected = list.getSelectedValue();<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Выбрано: " + selected);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;label.setText("Выбрано: " + selected);<br>
 &nbsp;&nbsp;}<br>
 });</code></p>
 
@@ -238,13 +241,15 @@ VALUES (97, 11, 4, 'Слушатель выбора: обрабатывай вы
         'JList-addListSelectionListener,getSelectedValue,add',
         '', 97, 22.0, 0.0, 'String[] items = {"Item 1", "Item 2", "Item 3"};
 JList<String> list = new JList<>(items);
+JLabel label = new JLabel();
 list.addListSelectionListener(e -> {
     if (!e.getValueIsAdjusting()) {
         String selected = list.getSelectedValue();
-        System.out.println("Выбрано: " + selected);
+        label.setText("Выбрано: " + selected);
     }
 });
-add(list);');
+add(list);
+add(label);');
 
 INSERT INTO documentation (id, text)
 VALUES (98, '<h2>🎮 Модель списка: Работай с DefaultListModel!</h2>
@@ -385,9 +390,11 @@ list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);</code></p
 <code>List&lt;String&gt; selected = list.getSelectedValuesList();</code></p>
 
 <p><strong>Шаг 3:</strong> Используй выбранные элементы:<br>
-<code>for (String item : selected) {<br>
-&nbsp;&nbsp;System.out.println("Выбрано: " + item);<br>
-}</code></p>
+<code>JLabel label = new JLabel();<br>
+for (String item : selected) {<br>
+&nbsp;&nbsp;label.setText("Выбрано: " + item);<br>
+}<br>
+add(label);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -420,7 +427,7 @@ JList<String> list = new JList<>(items);
 list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 List<String> selected = list.getSelectedValuesList();
 for (String item : selected) {
-    System.out.println("Выбрано: " + item);
+    label.setText("Выбрано: " + item);
 }
 add(list);');
 
