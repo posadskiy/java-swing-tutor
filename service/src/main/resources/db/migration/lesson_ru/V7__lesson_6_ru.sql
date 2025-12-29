@@ -355,7 +355,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (57, 6, 7, 'Текстовая область-мастер: вставь текст',
         '<p><strong>Задание:</strong><br>Вставь текст "Вставленный текст" в позицию 0 через insert()</p>',
         'JTextArea-insert,add',
-        '', 57, 22.0, 0.0, 'JTextArea textArea = new JTextArea("Текст");
+        '', 57, 22.0, 0.0, 'JTextArea textArea = new JTextArea("Text");
 textArea.insert("Вставленный текст", 0);
 add(textArea);');
 INSERT INTO documentation (id, text)
@@ -403,7 +403,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (58, 6, 8, 'Текстовая область-мастер: замени текст',
         '<p><strong>Задание:</strong><br>Замени диапазон 0-5 через replaceRange("Новый текст", 0, 5)</p>',
         'JTextArea-replaceRange,add',
-        '', 58, 23.0, 0.0, 'JTextArea textArea = new JTextArea("Старый текст");
+        '', 58, 23.0, 0.0, 'JTextArea textArea = new JTextArea("Old text");
 textArea.replaceRange("Новый текст", 0, 5);
 add(textArea);');
 INSERT INTO documentation (id, text)
@@ -451,7 +451,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (59, 6, 9, 'Текстовая область-мастер: получи количество строк',
         '<p><strong>Задание:</strong><br>Получи количество строк через getLineCount()</p>',
         'JTextArea-getLineCount,add',
-        '', 59, 21.0, 0.0, 'JTextArea textArea = new JTextArea("Строка 1\nСтрока 2");
+        '', 59, 21.0, 0.0, 'JTextArea textArea = new JTextArea("Line 1\nLine 2");
 int lines = textArea.getLineCount();
 System.out.println("Количество строк: " + lines);
 add(textArea);');
@@ -506,7 +506,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (60, 6, 10, 'Текстовая область-мастер: получи текст строки',
         '<p><strong>Задание:</strong><br>Получи начало строки 0 через getLineStartOffset(), конец через getLineEndOffset(), получи текст через getText()</p>',
         'JTextArea-getLineStartOffset,getLineEndOffset,getText,add',
-        '', 60, 25.0, 0.0, 'JTextArea textArea = new JTextArea("Первая строка\nВторая строка");
+        '', 60, 25.0, 0.0, 'JTextArea textArea = new JTextArea("First line\nSecond line");
 int start = textArea.getLineStartOffset(0);
 int end = textArea.getLineEndOffset(0);
 String line = textArea.getText(start, end - start);

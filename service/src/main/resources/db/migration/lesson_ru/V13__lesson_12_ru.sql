@@ -62,10 +62,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (101, 12, 2, 'Переключатель-мастер: обрабатывай состояние',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JToggleButton-addActionListener,isSelected,add',
-        '', 101, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 101, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 toggleButton.addActionListener(e -> {
     if (toggleButton.isSelected()) {
-        System.out.println("Включено!");
+        System.out.println("Enabled!");
     } else {
         System.out.println("Выключено!");
     }
@@ -119,7 +119,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (102, 12, 3, 'Переключатель-мастер: добавь мнемонику',
         '<p><strong>Задание:</strong><br>Установи мнемонику VK_T через setMnemonic(), добавь &T в текст переключателя</p>',
         'JToggleButton-setMnemonic,add',
-        '', 102, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить (&T)");
+        '', 102, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable (&T)");
 toggleButton.setMnemonic(KeyEvent.VK_T);
 add(toggleButton);');
 INSERT INTO documentation (id, text)
@@ -170,10 +170,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (103, 12, 4, 'Переключатель-мастер: обрабатывай изменение состояния',
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
         'JToggleButton-addItemListener,isSelected,add',
-        '', 103, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 103, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 toggleButton.addItemListener(e -> {
     boolean selected = toggleButton.isSelected();
-    System.out.println("Включено: " + selected);
+    System.out.println("Enabled: " + selected);
 });
 add(toggleButton);');
 
@@ -228,7 +228,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (104, 12, 5, 'Переключатель-мастер: установи команду действия',
         '<p><strong>Задание:</strong><br>Установи команду "TOGGLE" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
         'JToggleButton-setActionCommand,addActionListener,add',
-        '', 104, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 104, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 toggleButton.setActionCommand("TOGGLE");
 toggleButton.addActionListener(e -> {
     String cmd = e.getActionCommand();
@@ -283,7 +283,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (105, 12, 6, 'Переключатель-мастер: установи шрифт',
         '<p><strong>Задание:</strong><br>Создай шрифт new Font("Serif", Font.PLAIN, 16), установи через setFont()</p>',
         'JToggleButton-setFont,add',
-        '', 105, 22.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 105, 22.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 Font font = new Font("Serif", Font.PLAIN, 16);
 toggleButton.setFont(font);
 add(toggleButton);');
@@ -332,6 +332,6 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (106, 12, 7, 'Переключатель-мастер: установи отрисовку границы',
         '<p><strong>Задание:</strong><br>Установи отрисовку true через setBorderPainted()</p>',
         'JToggleButton-setBorderPainted,add',
-        '', 106, 21.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Включить");
+        '', 106, 21.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 toggleButton.setBorderPainted(true);
 add(toggleButton);');

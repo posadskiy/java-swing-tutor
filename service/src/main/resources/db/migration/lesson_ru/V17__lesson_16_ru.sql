@@ -288,7 +288,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (133, 16, 3, 'Спиннер-мастер: создай спиннер со списком',
         '<p><strong>Задание:</strong><br>Создай массив строк, создай SpinnerListModel, создай JSpinner с моделью</p>',
         'JSpinner-add',
-        '', 133, 25.0, 0.0, 'String[] values = {"Январь", "Февраль", "Март"};
+        '', 133, 25.0, 0.0, 'String[] values = {"January", "February", "March"};
 SpinnerListModel model = new SpinnerListModel(values);
 JSpinner spinner = new JSpinner(model);
 add(spinner);');

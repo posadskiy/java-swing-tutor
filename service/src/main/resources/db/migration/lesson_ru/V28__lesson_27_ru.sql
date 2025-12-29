@@ -62,9 +62,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (221, 27, 1, 'Флажок в меню-новичок: создай переключатель в меню',
         '<p><strong>Задание:</strong><br>Создай флажок в меню "Показать панель", отметь его и добавь в меню</p>',
         'JCheckBoxMenuItem-setSelected,add',
-        '', 221, 18.0, 0.0, 'JCheckBoxMenuItem showToolbar = new JCheckBoxMenuItem("Показать панель");
+        '', 221, 18.0, 0.0, 'JCheckBoxMenuItem showToolbar = new JCheckBoxMenuItem("Show panel");
 showToolbar.setSelected(true);
-JMenu viewMenu = new JMenu("Вид");
+JMenu viewMenu = new JMenu("View");
 viewMenu.add(showToolbar);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);

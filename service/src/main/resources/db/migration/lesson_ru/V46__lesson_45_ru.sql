@@ -361,8 +361,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (403, 45, 5, 'ActionListener-мастер: удали слушатель',
         '<p><strong>Задание:</strong><br>Создай ActionListener, добавь через addActionListener(), удали через removeActionListener()</p>',
         'JButton-addActionListener,removeActionListener,add',
-        '', 403, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
-ActionListener listener = e -> System.out.println("Действие");
+        '', 403, 23.0, 0.0, 'JButton button = new JButton("Button");
+ActionListener listener = e -> System.out.println("Action");
 button.addActionListener(listener);
 button.removeActionListener(listener);
 add(button);');
@@ -464,9 +464,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (404, 45, 6, 'ActionListener-мастер: добавь несколько слушателей',
         '<p><strong>Задание:</strong><br>Добавь два ActionListener через addActionListener(), каждый выводит свой текст</p>',
         'JButton-addActionListener',
-        '', 404, 22.0, 0.0, 'JButton button = new JButton("Кнопка");
-button.addActionListener(e -> System.out.println("Первый"));
-button.addActionListener(e -> System.out.println("Второй"));
+        '', 404, 22.0, 0.0, 'JButton button = new JButton("Button");
+button.addActionListener(e -> System.out.println("First"));
+button.addActionListener(e -> System.out.println("Second"));
 add(button);');
 INSERT INTO documentation (id, text)
 VALUES (405, '<h2>🎮 ActionListener-мастер: Получи команду действия!</h2>
@@ -516,9 +516,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (405, 45, 7, 'ActionListener-мастер: получи команду действия',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, получи команду через getActionCommand() в actionPerformed()</p>',
         'ActionListener-getActionCommand,add',
-        '', 405, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 405, 23.0, 0.0, 'JButton button = new JButton("Button");
 button.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    System.out.println("Команда: " + cmd);
+    System.out.println("Command: " + cmd);
 });
 add(button);');

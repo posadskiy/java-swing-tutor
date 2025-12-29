@@ -29,7 +29,7 @@ VALUES (212, '<h2>🎮 Пункт меню-новичок: Создай дейс
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай пункт меню:<br>
-<code>JMenuItem openItem = new JMenuItem("Открыть");</code></p>
+<code>JMenuItem openItem = new JMenuItem("Open");</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь обработчик:<br>
 <code>openItem.addActionListener(e -> System.out.println("Открыть файл"));</code></p>
@@ -62,9 +62,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (212, 26, 1, 'Пункт меню-новичок: создай действие в меню',
         '<p><strong>Задание:</strong><br>Создай пункт меню "Открыть", добавь обработчик и добавь в меню</p>',
         'JMenuItem-addActionListener,add',
-        '', 212, 20.0, 0.0, 'JMenuItem openItem = new JMenuItem("Открыть");
-openItem.addActionListener(e -> System.out.println("Открыть"));
-JMenu fileMenu = new JMenu("Файл");
+        '', 212, 20.0, 0.0, 'JMenuItem openItem = new JMenuItem("Open");
+openItem.addActionListener(e -> System.out.println("Open"));
+JMenu fileMenu = new JMenu("File");
 fileMenu.add(openItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);

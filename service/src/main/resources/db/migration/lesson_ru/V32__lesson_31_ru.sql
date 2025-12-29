@@ -29,7 +29,7 @@ VALUES (253, '<h2>🎮 Дерево-новичок: Создай иерархи�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай корневой узел:<br>
-<code>DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");</code></p>
+<code>DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь дочерние узлы:<br>
 <code>root.add(new DefaultMutableTreeNode("Узел 1"));</code><br>
@@ -67,9 +67,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (253, 31, 1, 'Дерево-новичок: создай иерархическую структуру',
         '<p><strong>Задание:</strong><br>Создай дерево с корневым узлом "Корень" и двумя дочерними узлами, оберни в JScrollPane и добавь на форму</p>',
         'JTree-DefaultMutableTreeNode-JScrollPane-add',
-        '', 253, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
-DefaultMutableTreeNode child1 = new DefaultMutableTreeNode("Дочерний 1");
-DefaultMutableTreeNode child2 = new DefaultMutableTreeNode("Дочерний 2");
+        '', 253, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
+DefaultMutableTreeNode child1 = new DefaultMutableTreeNode("Child 1");
+DefaultMutableTreeNode child2 = new DefaultMutableTreeNode("Child 2");
 root.add(child1);
 root.add(child2);
 JTree tree = new JTree(root);
@@ -125,8 +125,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (254, 31, 2, 'Таблица-мастер: настрой ширину колонок',
         '<p><strong>Задание:</strong><br>Получи модель колонок, получи первую колонку, установи предпочтительную ширину 150</p>',
         'JTable-getColumnModel,add',
-        '', 254, 27.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 254, 27.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 TableColumnModel columnModel = table.getColumnModel();
 TableColumn column = columnModel.getColumn(0);
@@ -183,8 +183,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (255, 31, 3, 'Дерево-мастер: разворачивай и сворачивай узлы',
         '<p><strong>Задание:</strong><br>Получи путь к узлу, разверни путь в дереве</p>',
         'JTree-expandPath,add',
-        '', 255, 26.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
-DefaultMutableTreeNode node = new DefaultMutableTreeNode("Узел");
+        '', 255, 26.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
+DefaultMutableTreeNode node = new DefaultMutableTreeNode("Node");
 root.add(node);
 JTree tree = new JTree(root);
 TreePath path = new TreePath(node.getPath());
@@ -243,8 +243,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (256, 31, 4, 'Таблица-мастер: включи редактирование ячеек',
         '<p><strong>Задание:</strong><br>Создай DefaultTableModel, переопредели isCellEditable() чтобы вернуть true, установи модель таблице</p>',
         'JTable-setModel,add',
-        '', 256, 28.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 256, 28.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 DefaultTableModel model = new DefaultTableModel(data, columns) {
     @Override
     public boolean isCellEditable(int row, int column) {
@@ -304,7 +304,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (257, 31, 5, 'Дерево-мастер: обрабатывай выбор узлов',
         '<p><strong>Задание:</strong><br>Добавь TreeSelectionListener, получи путь выбранного узла, получи узел и выведи его объект</p>',
         'JTree-addTreeSelectionListener,add',
-        '', 257, 27.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 257, 27.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 JTree tree = new JTree(root);
 tree.addTreeSelectionListener(e -> {
     TreePath path = e.getNewLeadSelectionPath();
@@ -362,8 +362,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (258, 31, 6, 'Таблица-мастер: настрой выбор строк',
         '<p><strong>Задание:</strong><br>Получи модель выбора через getSelectionModel(), установи MULTIPLE_INTERVAL_SELECTION</p>',
         'JTable-getSelectionModel,setSelectionMode,add',
-        '', 258, 25.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 258, 25.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 ListSelectionModel selectionModel = table.getSelectionModel();
 selectionModel.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
@@ -420,7 +420,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (259, 31, 8, 'Дерево-мастер: настрой отображение узлов',
         '<p><strong>Задание:</strong><br>Создай DefaultTreeCellRenderer, переопредели getTreeCellRendererComponent(), установи синий цвет текста, установи рендерер</p>',
         'JTree-setCellRenderer,add',
-        '', 259, 28.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 259, 28.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 JTree tree = new JTree(root);
 tree.setCellRenderer(new DefaultTreeCellRenderer() {
     @Override
@@ -480,7 +480,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (266, 31, 8, 'Пункт меню-мастер: добавь акселератор',
         '<p><strong>Задание:</strong><br>Создай KeyStroke для Ctrl+S, установи через setAccelerator()</p>',
         'JMenuItem-setAccelerator,add',
-        '', 266, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 266, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 KeyStroke keyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
 menuItem.setAccelerator(keyStroke);
 JMenu fileMenu = new JMenu("Файл");
@@ -537,8 +537,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (260, 31, 9, 'Таблица-мастер: настрой ширину колонок',
         '<p><strong>Задание:</strong><br>Получи модель колонок, получи колонку 0, установи ширину 150 через setPreferredWidth()</p>',
         'JTable-getColumnModel,setPreferredWidth,add',
-        '', 260, 26.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 260, 26.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 TableColumnModel columnModel = table.getColumnModel();
 TableColumn column = columnModel.getColumn(0);
@@ -590,7 +590,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (267, 31, 9, 'Пункт меню-мастер: установи мнемоник',
         '<p><strong>Задание:</strong><br>Установи мнемоник VK_S через setMnemonic()</p>',
         'JMenuItem-setMnemonic,add',
-        '', 267, 23.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 267, 23.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 menuItem.setMnemonic(KeyEvent.VK_S);
 JMenu fileMenu = new JMenu("Файл");
 fileMenu.add(menuItem);
@@ -642,8 +642,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (262, 31, 10, 'Таблица-мастер: настрой высоту строк',
         '<p><strong>Задание:</strong><br>Установи высоту строк 30 через setRowHeight(30)</p>',
         'JTable-setRowHeight',
-        '', 262, 22.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 262, 22.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 table.setRowHeight(30);
 JScrollPane scrollPane = new JScrollPane(table);
@@ -665,7 +665,7 @@ VALUES (268, '<h2>🎮 Пункт меню-мастер: Добавь подск
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Установи подсказку:<br>
-<code>menuItem.setToolTipText("Сохранить документ");</code></p>
+<code>menuItem.setToolTipText("Save document");</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -693,8 +693,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (268, 31, 10, 'Пункт меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Установи подсказку "Сохранить документ" через setToolTipText()</p>',
         'JMenuItem-setToolTipText',
-        '', 268, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
-menuItem.setToolTipText("Сохранить документ");
+        '', 268, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
+menuItem.setToolTipText("Save document");
 JMenu fileMenu = new JMenu("Файл");
 fileMenu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
@@ -748,7 +748,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (261, 31, 11, 'Дерево-мастер: разверни путь',
         '<p><strong>Задание:</strong><br>Получи путь через getPathForRow(0), разверни через expandPath()</p>',
         'JTree-getPathForRow,expandPath,add',
-        '', 261, 25.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 261, 25.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 JTree tree = new JTree(root);
 TreePath path = tree.getPathForRow(0);
 tree.expandPath(path);
@@ -799,8 +799,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (264, 31, 11, 'Таблица-мастер: настрой автоматическое изменение размера',
         '<p><strong>Задание:</strong><br>Установи режим AUTO_RESIZE_ALL_COLUMNS через setAutoResizeMode()</p>',
         'JTable-setAutoResizeMode-AUTO_RESIZE_ALL_COLUMNS',
-        '', 264, 24.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 264, 24.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 JScrollPane scrollPane = new JScrollPane(table);
@@ -853,7 +853,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (263, 31, 13, 'Дерево-мастер: сверни путь',
         '<p><strong>Задание:</strong><br>Получи путь через getPathForRow(0), сверни через collapsePath()</p>',
         'JTree-getPathForRow,collapsePath,add',
-        '', 263, 24.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 263, 24.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 JTree tree = new JTree(root);
 TreePath path = tree.getPathForRow(0);
 tree.collapsePath(path);
@@ -904,7 +904,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (265, 31, 14, 'Дерево-мастер: покажи корень',
         '<p><strong>Задание:</strong><br>Покажи корень через setRootVisible(true)</p>',
         'JTree-setRootVisible',
-        '', 265, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Корень");
+        '', 265, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 JTree tree = new JTree(root);
 tree.setRootVisible(true);
 JScrollPane scrollPane = new JScrollPane(tree);

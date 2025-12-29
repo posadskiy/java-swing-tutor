@@ -73,7 +73,7 @@ StyledDocument doc = textPane.getStyledDocument();
 Style style = textPane.addStyle("bold", null);
 StyleConstants.setBold(style, true);
 try {
-    doc.insertString(0, "Жирный текст", style);
+    doc.insertString(0, "Bold text", style);
 } catch (BadLocationException e) {
     e.printStackTrace();
 }
@@ -132,7 +132,7 @@ VALUES (279, 33, 2, 'JTextPane-мастер: выделяй и стилизуй 
         '<p><strong>Задание:</strong><br>Получи начало и конец выделения, создай стиль "bold", примени стиль к выделенному тексту</p>',
         'JTextPane-getSelectionStart,getSelectionEnd,add',
         '', 279, 29.0, 0.0, 'JTextPane textPane = new JTextPane();
-textPane.setText("Выдели этот текст");
+textPane.setText("Select this text");
 int start = textPane.getSelectionStart();
 int end = textPane.getSelectionEnd();
 Style style = textPane.addStyle("bold", null);
@@ -246,7 +246,7 @@ VALUES (281, 33, 4, 'JTextPane-мастер: вставь строку',
         '', 281, 25.0, 0.0, 'JTextPane textPane = new JTextPane();
 StyledDocument doc = textPane.getStyledDocument();
 try {
-    doc.insertString(0, "Текст", null);
+    doc.insertString(0, "Text", null);
 } catch (BadLocationException e) {
     e.printStackTrace();
 }
@@ -305,7 +305,7 @@ VALUES (282, 33, 5, 'JTextPane-мастер: примени стиль',
         '<p><strong>Задание:</strong><br>Получи документ, создай стиль через addStyle(), установи жирный через StyleConstants.setBold(), примени через setCharacterAttributes()</p>',
         'JTextPane-setCharacterAttributes,add',
         '', 282, 27.0, 0.0, 'JTextPane textPane = new JTextPane();
-textPane.setText("Текст для стилизации");
+textPane.setText("Text for styling");
 StyledDocument doc = textPane.getStyledDocument();
 Style style = doc.addStyle("bold", null);
 StyleConstants.setBold(style, true);
@@ -358,9 +358,9 @@ VALUES (283, 33, 6, 'JTextPane-мастер: получи текст',
         '<p><strong>Задание:</strong><br>Получи текст через getText(), выведи его</p>',
         'JTextPane-getText,add',
         '', 283, 21.0, 0.0, 'JTextPane textPane = new JTextPane();
-textPane.setText("Текст");
+textPane.setText("Text");
 String text = textPane.getText();
-System.out.println("Текст: " + text);
+System.out.println("Text: " + text);
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
@@ -420,7 +420,7 @@ component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
-            System.out.println("Левая кнопка");
+            System.out.println("Left button");
         }
     }
 });
@@ -483,7 +483,7 @@ component.addMouseListener(new MouseAdapter() {
     public void mouseClicked(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        System.out.println("Координаты: " + x + ", " + y);
+        System.out.println("Coordinates: " + x + ", " + y);
     }
 });
 add(component);');
@@ -546,7 +546,7 @@ component.addMouseListener(new MouseAdapter() {
     public void mouseClicked(MouseEvent e) {
         int count = e.getClickCount();
         if (count == 2) {
-            System.out.println("Двойной клик");
+            System.out.println("Double click");
         }
     }
 });

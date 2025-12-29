@@ -58,7 +58,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (62, 7, 1, 'Флажок-новичок: создай переключатель',
         '<p><strong>Задание:</strong><br>Создай флажок с текстом "Включить" и добавь на форму</p>',
         'JCheckBox-add',
-        '', 62, 12.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Включить");
+        '', 62, 12.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Enable");
 add(checkBox);');
 INSERT INTO documentation (id, text)
 VALUES (63, '<h2>🎮 Состояние флажка: Отметь или сними отметку!</h2>
@@ -77,7 +77,7 @@ VALUES (63, '<h2>🎮 Состояние флажка: Отметь или сн�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай флажок<br>
-<code>JCheckBox checkBox = new JCheckBox("Включить");</code></p>
+<code>JCheckBox checkBox = new JCheckBox("Enable");</code></p>
 
 <p><strong>Шаг 2:</strong> Отметь флажок:<br>
 <code>checkBox.setSelected(true);</code></p>
@@ -109,7 +109,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (63, 7, 2, 'Состояние флажка: отметь или сними отметку',
         '<p><strong>Задание:</strong><br>Создай флажок, отметь его и добавь на форму</p>',
         'JCheckBox-setSelected,add',
-        '', 63, 14.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Включить");
+        '', 63, 14.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Enable");
 checkBox.setSelected(true);
 add(checkBox);');
 

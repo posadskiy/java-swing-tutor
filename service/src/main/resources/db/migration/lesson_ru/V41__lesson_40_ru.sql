@@ -370,7 +370,7 @@ VALUES (340, '<h2>🎮 Диалог-мастер: Создай диалог вв
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай диалог:<br>
-<code>String input = JOptionPane.showInputDialog("Введите имя:");</code></p>
+<code>String input = JOptionPane.showInputDialog("Enter name:");</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -396,11 +396,11 @@ VALUES (340, '<h2>🎮 Диалог-мастер: Создай диалог вв
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (340, 40, 8, 'Диалог-мастер: создай диалог ввода',
-        '<p><strong>Задание:</strong><br>Создай диалог ввода через showInputDialog("Введите имя:"), сохрани результат</p>',
+        '<p><strong>Задание:</strong><br>Создай диалог ввода через showInputDialog("Enter name:"), сохрани результат</p>',
         'JOptionPane-showInputDialog',
-        '', 340, 23.0, 0.0, 'String input = JOptionPane.showInputDialog("Введите имя:");
+        '', 340, 23.0, 0.0, 'String input = JOptionPane.showInputDialog("Enter name:");
 if (input != null) {
-    System.out.println("Введено: " + input);
+    System.out.println("Entered: " + input);
 }');
 INSERT INTO documentation (id, text)
 VALUES (344, '<h2>🎮 GridBagLayout-мастер: Установи заполнение!</h2>
@@ -471,7 +471,7 @@ VALUES (341, '<h2>🎮 Диалог-мастер: Создай диалог по
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай диалог:<br>
-<code>int result = JOptionPane.showConfirmDialog(null, "Подтвердить действие?", "Подтверждение", JOptionPane.YES_NO_OPTION);</code></p>
+<code>int result = JOptionPane.showConfirmDialog(null, "Confirm action?", "Confirmation", JOptionPane.YES_NO_OPTION);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -499,9 +499,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (341, 40, 9, 'Диалог-мастер: создай диалог подтверждения',
         '<p><strong>Задание:</strong><br>Создай диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, сохрани результат</p>',
         'JOptionPane-showConfirmDialog',
-        '', 341, 24.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Подтвердить действие?", "Подтверждение", JOptionPane.YES_NO_OPTION);
+        '', 341, 24.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Confirm action?", "Confirmation", JOptionPane.YES_NO_OPTION);
 if (result == JOptionPane.YES_OPTION) {
-    System.out.println("Подтверждено!");
+    System.out.println("Confirmed!");
 }');
 INSERT INTO documentation (id, text)
 VALUES (343, '<h2>🎮 Диалог-мастер: Создай диалог сообщения!</h2>

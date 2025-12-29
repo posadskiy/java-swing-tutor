@@ -29,7 +29,7 @@ VALUES (74, '<h2>🎮 Переключатель-новичок: Создай к
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай переключатель:<br>
-<code>JToggleButton toggle = new JToggleButton("Включить");</code></p>
+<code>JToggleButton toggle = new JToggleButton("Enable");</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь на форму:<br>
 <code>add(toggle);</code></p>
@@ -58,7 +58,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (74, 9, 1, 'Переключатель-новичок: создай кнопку-переключатель',
         '<p><strong>Задание:</strong><br>Создай переключатель с текстом "Включить" и добавь на форму</p>',
         'JToggleButton-add',
-        '', 74, 12.0, 0.0, 'JToggleButton toggle = new JToggleButton("Включить");
+        '', 74, 12.0, 0.0, 'JToggleButton toggle = new JToggleButton("Enable");
 add(toggle);');
 INSERT INTO documentation (id, text)
 VALUES (75, '<h2>🎮 Чекбокс-мастер: Обрабатывай клики!</h2>
@@ -110,7 +110,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (75, 9, 3, 'Чекбокс-мастер: обрабатывай клики',
         '<p><strong>Задание:</strong><br>Добавь ActionListener к чекбоксу, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JCheckBox-addActionListener,isSelected,add',
-        '', 75, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 75, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
 checkBox.addActionListener(e -> {
     if (checkBox.isSelected()) {
         System.out.println("Чекбокс выбран!");
@@ -165,7 +165,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (76, 9, 4, 'Чекбокс-мастер: настрой позицию текста',
         '<p><strong>Задание:</strong><br>Установи позицию текста LEFT через setHorizontalTextPosition()</p>',
         'JCheckBox-setHorizontalTextPosition,add',
-        '', 76, 22.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 76, 22.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
 checkBox.setHorizontalTextPosition(SwingConstants.LEFT);
 add(checkBox);');
 INSERT INTO documentation (id, text)
@@ -216,7 +216,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (77, 9, 5, 'Чекбокс-мастер: работай с моделью состояния',
         '<p><strong>Задание:</strong><br>Получи модель через getModel(), установи состояние true через setSelected()</p>',
         'JCheckBox-getModel,add',
-        '', 77, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 77, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
 ButtonModel model = checkBox.getModel();
 model.setSelected(true);
 add(checkBox);');
@@ -268,7 +268,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (78, 9, 6, 'Чекбокс-мастер: добавь мнемонику',
         '<p><strong>Задание:</strong><br>Установи мнемонику VK_C через setMnemonic(), добавь &C в текст чекбокса</p>',
         'JCheckBox-setMnemonic,add',
-        '', 78, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Согласен (&C)");
+        '', 78, 23.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Agree (&C)");
 checkBox.setMnemonic(KeyEvent.VK_C);
 add(checkBox);');
 INSERT INTO documentation (id, text)
@@ -319,7 +319,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (79, 9, 7, 'Чекбокс-мастер: обрабатывай изменение состояния',
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
         'JCheckBox-addItemListener,isSelected,add',
-        '', 79, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 79, 24.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
 checkBox.addItemListener(e -> {
     boolean selected = checkBox.isSelected();
     System.out.println("Выбрано: " + selected);
@@ -379,7 +379,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (80, 9, 8, 'Чекбокс-мастер: сделай трёхсостояний',
         '<p><strong>Задание:</strong><br>Создай ToggleButtonModel, установи через setModel(), настрой состояния для неопределённого</p>',
         'JCheckBox-setModel,getModel,add',
-        '', 80, 26.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 80, 26.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
 ButtonModel model = new JToggleButton.ToggleButtonModel();
 checkBox.setModel(model);
 checkBox.getModel().setPressed(true);
@@ -434,7 +434,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (81, 9, 9, 'Чекбокс-мастер: группируй чекбоксы',
         '<p><strong>Задание:</strong><br>Создай список из чекбоксов, добавь ItemListener ко всем через forEach()</p>',
         'JCheckBox-addItemListener,add;JCheckBox-add;JCheckBox-add',
-        '', 81, 23.0, 0.0, 'JCheckBox checkBox1 = new JCheckBox("Опция 1");
+        '', 81, 23.0, 0.0, 'JCheckBox checkBox1 = new JCheckBox("Option 1");
 JCheckBox checkBox2 = new JCheckBox("Опция 2");
 JCheckBox checkBox3 = new JCheckBox("Опция 3");
 List<JCheckBox> group = Arrays.asList(checkBox1, checkBox2, checkBox3);
@@ -490,7 +490,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (82, 9, 10, 'Чекбокс-мастер: установи шрифт',
         '<p><strong>Задание:</strong><br>Создай шрифт new Font("Arial", Font.BOLD, 14), установи через setFont()</p>',
         'JCheckBox-setFont,add',
-        '', 82, 22.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 82, 22.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
 Font font = new Font("Arial", Font.BOLD, 14);
 checkBox.setFont(font);
 add(checkBox);');
@@ -539,6 +539,6 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (511, 9, 11, 'Чекбокс-мастер: установи отрисовку границы',
         '<p><strong>Задание:</strong><br>Установи отрисовку true через setBorderPainted()</p>',
         'JCheckBox-setBorderPainted,add',
-        '', 511, 21.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Опция");
+        '', 511, 21.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Option");
 checkBox.setBorderPainted(true);
 add(checkBox);');

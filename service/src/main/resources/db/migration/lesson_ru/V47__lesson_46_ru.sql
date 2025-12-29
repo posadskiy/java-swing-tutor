@@ -94,7 +94,7 @@ VALUES (407, '<h2>🎮 Радио-пункт меню-новичок: Созда
 <code>ButtonGroup group = new ButtonGroup();</code></p>
 
 <p><strong>Шаг 2:</strong> Создай радио-пункты:<br>
-<code>JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");<br>
+<code>JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");<br>
 JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");</code></p>
 
 <p><strong>Шаг 3:</strong> Добавь в группу и меню:<br>
@@ -129,7 +129,7 @@ VALUES (407, 46, 1, 'Радио-пункт меню-новичок: создай
         '<p><strong>Задание:</strong><br>Создай ButtonGroup, создай два JRadioButtonMenuItem, добавь в группу и меню</p>',
         'JRadioButtonMenuItem-add',
         '', 407, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
-JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
+JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");
 JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
 group.add(item1);
 group.add(item2);
@@ -188,7 +188,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (408, 46, 2, 'Радио-пункт меню-мастер: обрабатывай выбор',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи текст пункта через getText()</p>',
         'JRadioButtonMenuItem-addActionListener-isSelected-getText',
-        '', 408, 23.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 408, 23.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.addActionListener(e -> {
     if (item.isSelected()) {
         System.out.println("Выбрано: " + item.getText());
@@ -311,7 +311,7 @@ VALUES (412, 46, 3, 'Радио-пункт меню-мастер: добавь �
         '<p><strong>Задание:</strong><br>Создай ButtonGroup, добавь два радио-пункта через add()</p>',
         'JRadioButtonMenuItem-add',
         '', 412, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
-JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
+JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");
 JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
 group.add(item1);
 group.add(item2);
@@ -434,7 +434,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (414, 46, 4, 'Радио-пункт меню-мастер: обрабатывай изменение состояния',
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь getStateChange() == SELECTED, выведи сообщение</p>',
         'JRadioButtonMenuItem-addItemListener,getStateChange,add',
-        '', 414, 24.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 414, 24.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
         System.out.println("Выбрано!");
@@ -562,7 +562,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (416, 46, 5, 'Радио-пункт меню-мастер: добавь иконку',
         '<p><strong>Задание:</strong><br>Установи иконку через setIcon() с ImageIcon</p>',
         'JRadioButtonMenuItem-setIcon,add',
-        '', 416, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 416, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.setIcon(new ImageIcon("icon.png"));
 JMenu sizeMenu = new JMenu("Размер");
 sizeMenu.add(item);
@@ -777,8 +777,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (418, 46, 12, 'Таблица-мастер: установи ширину колонки',
         '<p><strong>Задание:</strong><br>Получи модель колонок через getColumnModel(), получи колонку 0, установи ширину 200 через setPreferredWidth()</p>',
         'JTable-getColumnModel-TableColumn-setPreferredWidth',
-        '', 418, 25.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 418, 25.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 TableColumnModel columnModel = table.getColumnModel();
 TableColumn column = columnModel.getColumn(0);
@@ -830,8 +830,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (419, 46, 13, 'Таблица-мастер: установи высоту строки',
         '<p><strong>Задание:</strong><br>Установи высоту строки 30 через setRowHeight()</p>',
         'JTable-setRowHeight',
-        '', 419, 22.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 419, 22.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 table.setRowHeight(30);
 JScrollPane scrollPane = new JScrollPane(table);
@@ -881,8 +881,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (420, 46, 14, 'Таблица-мастер: установи режим автоизменения размера',
         '<p><strong>Задание:</strong><br>Установи режим AUTO_RESIZE_ALL_COLUMNS через setAutoResizeMode()</p>',
         'JTable-setAutoResizeMode',
-        '', 420, 24.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+        '', 420, 24.0, 0.0, 'String[] columns = {"Name", "Age"};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
 JScrollPane scrollPane = new JScrollPane(table);

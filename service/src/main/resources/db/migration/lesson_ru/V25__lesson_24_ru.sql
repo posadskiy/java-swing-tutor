@@ -116,7 +116,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (197, 24, 2, 'Прокручиваемая панель-мастер: настрой политику прокрутки',
         '<p><strong>Задание:</strong><br>Установи горизонтальную политику ALWAYS, вертикальную AS_NEEDED</p>',
         'JScrollPane-setHorizontalScrollBarPolicy,setVerticalScrollBarPolicy,add',
-        '', 197, 24.0, 0.0, 'JTextArea area = new JTextArea("Длинный текст...");
+        '', 197, 24.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
 scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
@@ -169,7 +169,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (198, 24, 3, 'Прокручиваемая панель-мастер: работай с viewport',
         '<p><strong>Задание:</strong><br>Получи viewport через getViewport(), установи позицию (0, 100) через setViewPosition()</p>',
         'JScrollPane-getViewport,add',
-        '', 198, 25.0, 0.0, 'JTextArea area = new JTextArea("Длинный текст...");
+        '', 198, 25.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
 JViewport viewport = scrollPane.getViewport();
 viewport.setViewPosition(new Point(0, 100));
@@ -219,7 +219,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (199, 24, 4, 'Прокручиваемая панель-мастер: настрой горизонтальную прокрутку',
         '<p><strong>Задание:</strong><br>Установи политику AS_NEEDED через setHorizontalScrollBarPolicy()</p>',
         'JScrollPane-setHorizontalScrollBarPolicy,add',
-        '', 199, 23.0, 0.0, 'JTextArea area = new JTextArea("Длинный текст...");
+        '', 199, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
 scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 add(scrollPane);');
@@ -271,7 +271,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (200, 24, 5, 'Прокручиваемая панель-мастер: добавь границу viewport',
         '<p><strong>Задание:</strong><br>Создай границу через BorderFactory.createLineBorder(), установи через setViewportBorder()</p>',
         'JScrollPane-setViewportBorder,add',
-        '', 200, 23.0, 0.0, 'JTextArea area = new JTextArea("Длинный текст...");
+        '', 200, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
 Border border = BorderFactory.createLineBorder(Color.GRAY);
 scrollPane.setViewportBorder(border);
@@ -293,7 +293,7 @@ VALUES (201, '<h2>🎮 Прокручиваемая панель-мастер: �
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай заголовок:<br>
-<code>JLabel header = new JLabel("Заголовок");</code></p>
+<code>JLabel header = new JLabel("Header");</code></p>
 
 <p><strong>Шаг 2:</strong> Установи заголовок:<br>
 <code>scrollPane.setColumnHeaderView(header);</code></p>
@@ -324,9 +324,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (201, 24, 9, 'Прокручиваемая панель-мастер: добавь заголовок колонки',
         '<p><strong>Задание:</strong><br>Создай JLabel "Заголовок", установи через setColumnHeaderView()</p>',
         'JScrollPane-setColumnHeaderView',
-        '', 201, 23.0, 0.0, 'JTextArea area = new JTextArea("Длинный текст...");
+        '', 201, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
-JLabel header = new JLabel("Заголовок");
+JLabel header = new JLabel("Header");
 scrollPane.setColumnHeaderView(header);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
@@ -346,7 +346,7 @@ VALUES (202, '<h2>🎮 Прокручиваемая панель-мастер: �
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай заголовок:<br>
-<code>JLabel header = new JLabel("Заголовок");</code></p>
+<code>JLabel header = new JLabel("Header");</code></p>
 
 <p><strong>Шаг 2:</strong> Установи заголовок:<br>
 <code>scrollPane.setRowHeaderView(header);</code></p>
@@ -377,9 +377,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (202, 24, 10, 'Прокручиваемая панель-мастер: добавь заголовок строки',
         '<p><strong>Задание:</strong><br>Создай JLabel "Заголовок", установи через setRowHeaderView()</p>',
         'JScrollPane-setRowHeaderView',
-        '', 202, 23.0, 0.0, 'JTextArea area = new JTextArea("Длинный текст...");
+        '', 202, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
-JLabel header = new JLabel("Заголовок");
+JLabel header = new JLabel("Header");
 scrollPane.setRowHeaderView(header);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
@@ -430,7 +430,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (474, 24, 11, 'Прокручиваемая панель-мастер: установи границу viewport',
         '<p><strong>Задание:</strong><br>Создай границу через BorderFactory.createLineBorder(Color.GRAY, 1), установи через setViewportBorder()</p>',
         'JScrollPane-setViewportBorder,add',
-        '', 474, 23.0, 0.0, 'JTextArea area = new JTextArea("Длинный текст...");
+        '', 474, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
 Border border = BorderFactory.createLineBorder(Color.GRAY, 1);
 scrollPane.setViewportBorder(border);

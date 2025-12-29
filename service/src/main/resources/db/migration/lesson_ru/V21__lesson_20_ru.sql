@@ -29,7 +29,7 @@ VALUES (170, '<h2>🎮 Прокручиваемая панель-новичок:
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай компонент (например, JTextArea):<br>
-<code>JTextArea area = new JTextArea("Длинный текст...");</code></p>
+<code>JTextArea area = new JTextArea("Long text...");</code></p>
 
 <p><strong>Шаг 2:</strong> Создай прокручиваемую панель:<br>
 <code>JScrollPane scrollPane = new JScrollPane(area);</code></p>
@@ -61,7 +61,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (170, 20, 1, 'Прокручиваемая панель-новичок: добавь прокрутку',
         '<p><strong>Задание:</strong><br>Создай текстовую область, оберни её в JScrollPane и добавь на форму</p>',
         'JScrollPane-add',
-        '', 170, 16.0, 0.0, 'JTextArea area = new JTextArea("Длинный текст...");
+        '', 170, 16.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
 add(scrollPane);');
 INSERT INTO documentation (id, text)

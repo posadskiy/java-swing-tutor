@@ -470,7 +470,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (393, 44, 4, 'FocusListener-мастер: управляй фокусируемостью',
         '<p><strong>Задание:</strong><br>Отключи фокус через setFocusable(false)</p>',
         'Component-setFocusable',
-        '', 393, 21.0, 0.0, 'JLabel component = new JLabel("Метка");
+        '', 393, 21.0, 0.0, 'JLabel component = new JLabel("Label");
 component.setFocusable(false);
 add(component);');
 INSERT INTO documentation (id, text)

@@ -200,7 +200,7 @@ VALUES (316, '<h2>🎮 Компоновка-мастер: Учитывай пр�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай компонент с предпочтительным размером:<br>
-<code>JButton button = new JButton("Кнопка");</code><br>
+<code>JButton button = new JButton("Button");</code><br>
 <code>button.setPreferredSize(new Dimension(100, 30));</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь в регион:<br>
@@ -232,7 +232,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (316, 37, 4, 'Компоновка-мастер: учитывай предпочтительные размеры',
         '<p><strong>Задание:</strong><br>Создай кнопку, установи предпочтительный размер 100x30, добавь в регион NORTH</p>',
         'BorderLayout-JButton-setPreferredSize,add',
-        '', 316, 22.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 316, 22.0, 0.0, 'JButton button = new JButton("Button");
 button.setPreferredSize(new Dimension(100, 30));
 setLayout(new BorderLayout());
 add(button, BorderLayout.NORTH);');

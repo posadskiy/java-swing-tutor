@@ -29,7 +29,7 @@ VALUES (94, '<h2>🎮 Список-новичок: Создай список э�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай массив элементов:<br>
-<code>String[] items = {"Элемент 1", "Элемент 2", "Элемент 3"};</code></p>
+<code>String[] items = {"Item 1", "Item 2", "Item 3"};</code></p>
 
 <p><strong>Шаг 2:</strong> Создай список:<br>
 <code>JList&lt;String&gt; list = new JList&lt;&gt;(items);</code></p>
@@ -62,7 +62,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (94, 11, 1, 'Список-новичок: создай список элементов',
         '<p><strong>Задание:</strong><br>Создай список с элементами "Элемент 1", "Элемент 2", "Элемент 3" и добавь на форму</p>',
         'JList-add',
-        '', 94, 15.0, 0.0, 'String[] items = {"Элемент 1", "Элемент 2", "Элемент 3"};
+        '', 94, 15.0, 0.0, 'String[] items = {"Item 1", "Item 2", "Item 3"};
 JList<String> list = new JList<>(items);
 add(list);');
 
@@ -116,7 +116,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (95, 11, 2, 'Режим выбора: один или несколько элементов',
         '<p><strong>Задание:</strong><br>Создай список, установи режим MULTIPLE_INTERVAL_SELECTION через setSelectionMode() и добавь на форму</p>',
         'JList-setSelectionMode,add',
-        '', 95, 18.0, 0.0, 'String[] items = {"Элемент 1", "Элемент 2", "Элемент 3"};
+        '', 95, 18.0, 0.0, 'String[] items = {"Item 1", "Item 2", "Item 3"};
 JList<String> list = new JList<>(items);
 list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 add(list);');
@@ -172,7 +172,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (96, 11, 3, 'Выбранный элемент: получи выбранный элемент',
         '<p><strong>Задание:</strong><br>Создай список, получи выбранный элемент через getSelectedValue(), выведи его</p>',
         'JList-getSelectedValue,add',
-        '', 96, 19.0, 0.0, 'String[] items = {"Элемент 1", "Элемент 2", "Элемент 3"};
+        '', 96, 19.0, 0.0, 'String[] items = {"Item 1", "Item 2", "Item 3"};
 JList<String> list = new JList<>(items);
 String selected = list.getSelectedValue();
 if (selected != null) {
@@ -236,7 +236,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (97, 11, 4, 'Слушатель выбора: обрабатывай выбор элементов',
         '<p><strong>Задание:</strong><br>Создай список, добавь ListSelectionListener, проверь getValueIsAdjusting(), получи выбранный элемент и выведи его</p>',
         'JList-addListSelectionListener,getSelectedValue,add',
-        '', 97, 22.0, 0.0, 'String[] items = {"Элемент 1", "Элемент 2", "Элемент 3"};
+        '', 97, 22.0, 0.0, 'String[] items = {"Item 1", "Item 2", "Item 3"};
 JList<String> list = new JList<>(items);
 list.addListSelectionListener(e -> {
     if (!e.getValueIsAdjusting()) {
@@ -356,7 +356,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (99, 11, 6, 'Прокручиваемый список: добавь прокрутку',
         '<p><strong>Задание:</strong><br>Создай список, оберни его в JScrollPane и добавь на форму</p>',
         'JScrollPane-add',
-        '', 99, 20.0, 0.0, 'String[] items = {"Элемент 1", "Элемент 2", "Элемент 3", "Элемент 4", "Элемент 5"};
+        '', 99, 20.0, 0.0, 'String[] items = {"Item 1", "Item 2", "Item 3", "Item 4", "Item 5"};
 JList<String> list = new JList<>(items);
 JScrollPane scrollPane = new JScrollPane(list);
 add(scrollPane);');
@@ -415,7 +415,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (100, 11, 7, 'Множественный выбор: получи все выбранные элементы',
         '<p><strong>Задание:</strong><br>Создай список с MULTIPLE_INTERVAL_SELECTION, получи все выбранные элементы через getSelectedValuesList() и выведи их</p>',
         'JList-setSelectionMode,getSelectedValuesList,add',
-        '', 100, 23.0, 0.0, 'String[] items = {"Элемент 1", "Элемент 2", "Элемент 3"};
+        '', 100, 23.0, 0.0, 'String[] items = {"Item 1", "Item 2", "Item 3"};
 JList<String> list = new JList<>(items);
 list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 List<String> selected = list.getSelectedValuesList();

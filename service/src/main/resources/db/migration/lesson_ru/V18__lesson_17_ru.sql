@@ -62,7 +62,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (141, 17, 1, 'Окно-новичок: создай главное окно приложения',
         '<p><strong>Задание:</strong><br>Создай окно с заголовком "Моё приложение", размером 800x600 и сделай его видимым</p>',
         'JFrame-setSize,setVisible',
-        '', 141, 14.0, 0.0, 'JFrame frame = new JFrame("Моё приложение");
+        '', 141, 14.0, 0.0, 'JFrame frame = new JFrame("My application");
 frame.setSize(800, 600);
 frame.setVisible(true);');
 INSERT INTO documentation (id, text)
@@ -169,7 +169,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (143, 17, 2, 'Операция закрытия: настрой поведение при закрытии',
         '<p><strong>Задание:</strong><br>Создай окно, установи операцию закрытия EXIT_ON_CLOSE и сделай видимым</p>',
         'JFrame-setDefaultCloseOperation,setVisible',
-        '', 143, 16.0, 0.0, 'JFrame frame = new JFrame("Приложение");
+        '', 143, 16.0, 0.0, 'JFrame frame = new JFrame("Application");
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 frame.setVisible(true);');
 INSERT INTO documentation (id, text)

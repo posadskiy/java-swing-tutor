@@ -32,7 +32,7 @@ VALUES (458, '<h2>🎮 Timer-новичок: Создай таймер!</h2>
 <code>ActionListener task = new ActionListener() {<br>
 &nbsp;&nbsp;@Override<br>
 &nbsp;&nbsp;public void actionPerformed(ActionEvent e) {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Тик!");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Tick!");<br>
 &nbsp;&nbsp;}<br>
 };</code></p>
 
@@ -123,7 +123,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (459, 53, 2, 'Timer-мастер: останавливай и перезапускай таймер',
         '<p><strong>Задание:</strong><br>Останови таймер через stop(), затем перезапусти через restart()</p>',
         'Timer-stop,restart',
-        '', 459, 25.0, 0.0, 'ActionListener task = e -> System.out.println("Тик!");
+        '', 459, 25.0, 0.0, 'ActionListener task = e -> System.out.println("Tick!");
 Timer timer = new Timer(1000, task);
 timer.start();
 timer.stop();
@@ -327,7 +327,7 @@ VALUES (461, '<h2>🎮 Timer-мастер: Установи начальную �
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай таймер:<br>
 <code>Timer timer = new Timer(1000, e -> {<br>
-&nbsp;&nbsp;System.out.println("Тик!");<br>
+&nbsp;&nbsp;System.out.println("Tick!");<br>
 });</code></p>
 
 <p><strong>Шаг 2:</strong> Установи начальную задержку:<br>
@@ -362,7 +362,7 @@ VALUES (461, 53, 4, 'Timer-мастер: установи начальную з�
         '<p><strong>Задание:</strong><br>Создай Timer с интервалом 1000 мс, установи setInitialDelay(5000), запусти таймер</p>',
         'Timer-setInitialDelay,start',
         '', 461, 26.0, 0.0, 'Timer timer = new Timer(1000, e -> {
-    System.out.println("Тик!");
+    System.out.println("Tick!");
 });
 timer.setInitialDelay(5000);
 timer.start();');

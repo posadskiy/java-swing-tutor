@@ -29,7 +29,7 @@ VALUES (203, '<h2>🎮 Меню-новичок: Создай выпадающе�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай меню:<br>
-<code>JMenu fileMenu = new JMenu("Файл");</code></p>
+<code>JMenu fileMenu = new JMenu("File");</code></p>
 
 <p><strong>Шаг 2:</strong> Создай пункты меню:<br>
 <code>JMenuItem openItem = new JMenuItem("Открыть");</code><br>
@@ -67,7 +67,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (203, 25, 1, 'Меню-новичок: создай выпадающее меню',
         '<p><strong>Задание:</strong><br>Создай меню "Файл", добавь пункт "Открыть" и добавь меню в строку меню</p>',
         'JMenu-add',
-        '', 203, 18.0, 0.0, 'JMenu fileMenu = new JMenu("Файл");
+        '', 203, 18.0, 0.0, 'JMenu fileMenu = new JMenu("File");
 JMenuItem openItem = new JMenuItem("Открыть");
 fileMenu.add(openItem);
 JMenuBar menuBar = new JMenuBar();

@@ -66,7 +66,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (244, 30, 1, 'Таблица-новичок: создай таблицу данных',
         '<p><strong>Задание:</strong><br>Создай таблицу с столбцами "Имя", "Возраст" и двумя строками данных, оберни в JScrollPane и добавь на форму</p>',
         'JScrollPane-add',
-        '', 244, 20.0, 0.0, 'String[] columns = {"Имя", "Возраст"};
+        '', 244, 20.0, 0.0, 'String[] columns = {"Name", "Age"};
 String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
 JTable table = new JTable(data, columns);
 JScrollPane scrollPane = new JScrollPane(table);
@@ -122,7 +122,7 @@ VALUES (245, 28, 2, 'Меню-бар-мастер: добавь меню в ок
         '<p><strong>Задание:</strong><br>Создай JMenuBar, добавь меню через add(), установи в окно через setJMenuBar()</p>',
         'JMenuBar-add,setJMenuBar',
         '', 245, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
-JMenu fileMenu = new JMenu("Файл");
+JMenu fileMenu = new JMenu("File");
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
@@ -388,7 +388,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (250, 28, 9, 'Меню-мастер: получи всплывающее меню',
         '<p><strong>Задание:</strong><br>Получи всплывающее меню через getPopupMenu()</p>',
         'JMenu-getPopupMenu',
-        '', 250, 23.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 250, 23.0, 0.0, 'JMenu menu = new JMenu("File");
 JPopupMenu popup = menu.getPopupMenu();
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
@@ -438,7 +438,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (251, 28, 10, 'Меню-мастер: добавь разделитель',
         '<p><strong>Задание:</strong><br>Добавь разделитель через addSeparator()</p>',
         'JMenu-add,addSeparator,add',
-        '', 251, 20.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 251, 20.0, 0.0, 'JMenu menu = new JMenu("File");
 menu.add(new JMenuItem("Открыть"));
 menu.addSeparator();
 menu.add(new JMenuItem("Выход"));
@@ -490,7 +490,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (252, 28, 11, 'Меню-мастер: установи задержку',
         '<p><strong>Задание:</strong><br>Установи задержку 200 мс через setDelay()</p>',
         'JMenu-setDelay',
-        '', 252, 22.0, 0.0, 'JMenu menu = new JMenu("Файл");
+        '', 252, 22.0, 0.0, 'JMenu menu = new JMenu("File");
 menu.setDelay(200);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);

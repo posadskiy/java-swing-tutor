@@ -63,7 +63,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (437, 49, 1, 'ItemListener-новичок: обрабатывай выбор элементов',
         '<p><strong>Задание:</strong><br>Создай чекбокс, добавь ItemListener, проверь getStateChange() == ItemEvent.SELECTED, выведи сообщение</p>',
         'JCheckBox-addItemListener,add',
-        '', 437, 18.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Выбрать");
+        '', 437, 18.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Select");
 checkBox.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
         System.out.println("Выбрано!");
@@ -178,7 +178,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (439, 49, 3, 'ItemListener-мастер: обрабатывай выбор в комбобоксе',
         '<p><strong>Задание:</strong><br>Создай комбобокс с элементами, добавь ItemListener, получи элемент через getItem(), выведи его</p>',
         'JComboBox-addItemListener,add',
-        '', 439, 19.0, 0.0, 'JComboBox<String> comboBox = new JComboBox<>(new String[]{"Элемент 1", "Элемент 2"});
+        '', 439, 19.0, 0.0, 'JComboBox<String> comboBox = new JComboBox<>(new String[]{"Item 1", "Item 2"});
 comboBox.addItemListener(e -> {
     if (e.getStateChange() == ItemEvent.SELECTED) {
         Object item = e.getItem();

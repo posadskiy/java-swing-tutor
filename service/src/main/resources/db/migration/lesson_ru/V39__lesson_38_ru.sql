@@ -115,10 +115,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (318, 38, 2, 'Пункт меню-мастер: добавь акселератор',
         '<p><strong>Задание:</strong><br>Создай KeyStroke для Ctrl+S через getKeyStroke(), установи акселератор через setAccelerator()</p>',
         'JMenuItem-setAccelerator',
-        '', 318, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 318, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 KeyStroke stroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
 menuItem.setAccelerator(stroke);
-JMenu fileMenu = new JMenu("Файл");
+JMenu fileMenu = new JMenu("File");
 fileMenu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
@@ -171,10 +171,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (319, 38, 3, 'Пункт меню-мастер: включи и выключи пункт',
         '<p><strong>Задание:</strong><br>Выключи пункт через setEnabled(false), затем включи через setEnabled(true)</p>',
         'JMenuItem-setEnabled',
-        '', 319, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Пункт");
+        '', 319, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Item");
 menuItem.setEnabled(false);
 menuItem.setEnabled(true);
-JMenu menu = new JMenu("Файл");
+JMenu menu = new JMenu("File");
 menu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
@@ -196,7 +196,7 @@ VALUES (320, '<h2>🎮 Пункт меню-мастер: Добавь подск
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Установи подсказку:<br>
-<code>menuItem.setToolTipText("Сохранить документ");</code></p>
+<code>menuItem.setToolTipText("Save document");</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -224,9 +224,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (320, 38, 4, 'Пункт меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Установи подсказку "Сохранить документ" через setToolTipText()</p>',
         'JMenuItem-setToolTipText',
-        '', 320, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
-menuItem.setToolTipText("Сохранить документ");
-JMenu fileMenu = new JMenu("Файл");
+        '', 320, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
+menuItem.setToolTipText("Save document");
+JMenu fileMenu = new JMenu("File");
 fileMenu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
@@ -248,7 +248,7 @@ VALUES (324, '<h2>🎮 Радиокнопка-пункт меню-мастер: 
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Установи подсказку:<br>
-<code>radioButtonMenuItem.setToolTipText("Выбрать тему");</code></p>
+<code>radioButtonMenuItem.setToolTipText("Select theme");</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -276,9 +276,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (324, 38, 4, 'Радиокнопка-пункт меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Установи подсказку "Выбрать тему" через setToolTipText()</p>',
         'JRadioButtonMenuItem-setToolTipText',
-        '', 324, 21.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Тема");
-radioButtonMenuItem.setToolTipText("Выбрать тему");
-JMenu viewMenu = new JMenu("Вид");
+        '', 324, 21.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Theme");
+radioButtonMenuItem.setToolTipText("Select theme");
+JMenu viewMenu = new JMenu("View");
 viewMenu.add(radioButtonMenuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
@@ -331,10 +331,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (321, 38, 5, 'Пункт меню-мастер: добавь акселератор',
         '<p><strong>Задание:</strong><br>Создай KeyStroke для Ctrl+S через getKeyStroke(), установи через setAccelerator()</p>',
         'JMenuItem-setAccelerator',
-        '', 321, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 321, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 KeyStroke keyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
 menuItem.setAccelerator(keyStroke);
-JMenu fileMenu = new JMenu("Файл");
+JMenu fileMenu = new JMenu("File");
 fileMenu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
@@ -384,9 +384,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (322, 38, 6, 'Пункт меню-мастер: добавь иконку',
         '<p><strong>Задание:</strong><br>Установи иконку через setIcon() с ImageIcon</p>',
         'JMenuItem-setIcon',
-        '', 322, 22.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Сохранить");
+        '', 322, 22.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 menuItem.setIcon(new ImageIcon("icon.png"));
-JMenu fileMenu = new JMenu("Файл");
+JMenu fileMenu = new JMenu("File");
 fileMenu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
@@ -442,13 +442,13 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (323, 38, 6, 'Радио-меню-мастер: установи команду действия',
         '<p><strong>Задание:</strong><br>Установи команду "RADIO" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
         'JRadioButtonMenuItem-setActionCommand,getActionCommand,add',
-        '', 323, 24.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Тема");
+        '', 323, 24.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Theme");
 radioButtonMenuItem.setActionCommand("RADIO");
 radioButtonMenuItem.addActionListener(e -> {
     String cmd = e.getActionCommand();
     System.out.println("Команда: " + cmd);
 });
-JMenu viewMenu = new JMenu("Вид");
+JMenu viewMenu = new JMenu("View");
 viewMenu.add(radioButtonMenuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);

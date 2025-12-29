@@ -110,7 +110,7 @@ VALUES (3, 2, 2, 'Текстовое заклинание: дай кнопке �
         '<p><strong>Задание:</strong><br>Создай кнопку, задай ей текст и добавь на форму</p>',
         'JButton-setText,add',
         '', 3, 20.0, 0.0, 'JButton button = new JButton();
-button.setText("Текст");
+button.setText("Text");
 add(button);');
 
 INSERT INTO documentation (id, text)
@@ -437,7 +437,7 @@ VALUES (8, 2, 7, 'Кнопка-мастер: добавь иконку с тек
         'JButton-setIcon,setText,setIconTextGap,add',
         '', 8, 24.0, 0.0, 'JButton button = new JButton();
 button.setIcon(new ImageIcon("icon.png"));
-button.setText("Текст");
+button.setText("Text");
 button.setIconTextGap(5);
 add(button);');
 

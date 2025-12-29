@@ -79,7 +79,7 @@ VALUES (288, '<h2>🎮 Диалог-мастер: Спроси подтверж�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Покажи диалог подтверждения:<br>
-<code>int result = JOptionPane.showConfirmDialog(null, "Вы уверены?", "Подтверждение", JOptionPane.YES_NO_OPTION);</code></p>
+<code>int result = JOptionPane.showConfirmDialog(null, "Are you sure?", "Confirmation", JOptionPane.YES_NO_OPTION);</code></p>
 
 <p><strong>Шаг 2:</strong> Проверь результат:<br>
 <code>if (result == JOptionPane.YES_OPTION) {<br>
@@ -111,7 +111,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (288, 34, 2, 'Диалог-мастер: спроси подтверждение',
         '<p><strong>Задание:</strong><br>Покажи диалог подтверждения с вопросом "Вы уверены?" и проверь, выбрал ли пользователь "Да"</p>',
         'JOptionPane',
-        '', 288, 20.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Вы уверены?", "Подтверждение", JOptionPane.YES_NO_OPTION);
+        '', 288, 20.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Are you sure?", "Confirmation", JOptionPane.YES_NO_OPTION);
 if (result == JOptionPane.YES_OPTION) {
     System.out.println("Пользователь выбрал Да");
 }');
@@ -134,7 +134,7 @@ VALUES (289, '<h2>🎮 Диалог-мастер: Получи ввод от п�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Покажи диалог ввода:<br>
-<code>String name = JOptionPane.showInputDialog(null, "Введите ваше имя:", "Ввод", JOptionPane.QUESTION_MESSAGE);</code></p>
+<code>String name = JOptionPane.showInputDialog(null, "Enter your name:", "Input", JOptionPane.QUESTION_MESSAGE);</code></p>
 
 <p><strong>Шаг 2:</strong> Проверь результат:<br>
 <code>if (name != null && !name.isEmpty()) {<br>
@@ -166,7 +166,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (289, 34, 3, 'Диалог-мастер: получи ввод от пользователя',
         '<p><strong>Задание:</strong><br>Покажи диалог ввода с вопросом "Введите ваше имя:" и выведи результат в консоль</p>',
         'JOptionPane',
-        '', 289, 20.0, 0.0, 'String name = JOptionPane.showInputDialog(null, "Введите ваше имя:", "Ввод", JOptionPane.QUESTION_MESSAGE);
+        '', 289, 20.0, 0.0, 'String name = JOptionPane.showInputDialog(null, "Enter your name:", "Input", JOptionPane.QUESTION_MESSAGE);
 if (name != null && !name.isEmpty()) {
     System.out.println("Привет, " + name + "!");
 }');
@@ -189,7 +189,7 @@ VALUES (290, '<h2>🎮 Диалог-мастер: Создай кастомны�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай массив опций:<br>
-<code>String[] options = {"Сохранить", "Отменить", "Не сохранять"};</code></p>
+<code>String[] options = {"Save", "Cancel", "Don't save"};</code></p>
 
 <p><strong>Шаг 2:</strong> Покажи диалог:<br>
 <code>int choice = JOptionPane.showOptionDialog(null, "Что делать?", "Выбор", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);</code></p>
@@ -219,7 +219,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (290, 34, 4, 'Диалог-мастер: создай кастомные кнопки',
         '<p><strong>Задание:</strong><br>Создай диалог с тремя опциями: "Сохранить", "Отменить", "Не сохранять" и выведи индекс выбранной опции</p>',
         'JOptionPane',
-        '', 290, 22.0, 0.0, 'String[] options = {"Сохранить", "Отменить", "Не сохранять"};
+        '', 290, 22.0, 0.0, 'String[] options = {"Save", "Cancel", "Don't save"};
 int choice = JOptionPane.showOptionDialog(null, "Что делать?", "Выбор", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 System.out.println("Выбрано: " + choice);');
 

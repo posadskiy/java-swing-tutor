@@ -112,7 +112,7 @@ VALUES (36, 4, 2, 'Текст в поле: установи начальное �
         '<p><strong>Задание:</strong><br>Создай текстовое поле, установи текст "Введите имя" и добавь на форму</p>',
         'JTextField-setText,add',
         '', 36, 14.0, 0.0, 'JTextField field = new JTextField();
-field.setText("Введите имя");
+field.setText("Enter name");
 add(field);');
 
 INSERT INTO documentation (id, text)
@@ -275,7 +275,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (39, 4, 5, 'Редактируемость: заблокируй или разблокируй поле',
         '<p><strong>Задание:</strong><br>Создай текстовое поле, заблокируй его и добавь на форму</p>',
         'JTextField-setEditable,add',
-        '', 39, 16.0, 0.0, 'JTextField field = new JTextField("Текст");
+        '', 39, 16.0, 0.0, 'JTextField field = new JTextField("Text");
 field.setEditable(false);
 add(field);');
 
@@ -325,7 +325,7 @@ VALUES (40, 4, 6, 'Текстовое поле-мастер: добавь под
         '<p><strong>Задание:</strong><br>Установи подсказку "Введи своё имя" через setToolTipText()</p>',
         'JTextField-setToolTipText,add',
         '', 40, 20.0, 0.0, 'JTextField textField = new JTextField();
-textField.setToolTipText("Введи своё имя");
+textField.setToolTipText("Enter your name");
 add(textField);');
 INSERT INTO documentation (id, text)
 VALUES (41, '<h2>🎮 Текстовое поле-мастер: Валидируй ввод!</h2>
@@ -438,7 +438,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (42, 4, 8, 'Текстовое поле-мастер: установи позицию курсора',
         '<p><strong>Задание:</strong><br>Установи позицию курсора 0 через setCaretPosition(0)</p>',
         'JTextField-setCaretPosition,add',
-        '', 42, 22.0, 0.0, 'JTextField textField = new JTextField("Текст");
+        '', 42, 22.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.setCaretPosition(0);
 add(textField);');
 INSERT INTO documentation (id, text)
@@ -486,7 +486,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (43, 4, 9, 'Текстовое поле-мастер: выдели весь текст',
         '<p><strong>Задание:</strong><br>Выдели весь текст через selectAll()</p>',
         'JTextField-selectAll,add',
-        '', 43, 21.0, 0.0, 'JTextField textField = new JTextField("Текст");
+        '', 43, 21.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.selectAll();
 add(textField);');
 INSERT INTO documentation (id, text)
@@ -537,9 +537,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (44, 4, 10, 'Текстовое поле-мастер: замени выделение',
         '<p><strong>Задание:</strong><br>Выдели текст через select(0, 5), замени через replaceSelection("Новый текст")</p>',
         'JTextField-select,replaceSelection,add',
-        '', 44, 23.0, 0.0, 'JTextField textField = new JTextField("Старый текст");
+        '', 44, 23.0, 0.0, 'JTextField textField = new JTextField("Old text");
 textField.select(0, 5);
-textField.replaceSelection("Новый текст");
+textField.replaceSelection("New text");
 add(textField);');
 INSERT INTO documentation (id, text)
 VALUES (45, '<h2>🎮 Текстовое поле-мастер: Добавь фильтр документа!</h2>
@@ -652,7 +652,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (46, 4, 12, 'Текстовое поле-мастер: установи позицию курсора',
         '<p><strong>Задание:</strong><br>Установи позицию курсора 5 через setCaretPosition()</p>',
         'JTextField-setCaretPosition,add',
-        '', 46, 22.0, 0.0, 'JTextField textField = new JTextField("Текст");
+        '', 46, 22.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.setCaretPosition(5);
 add(textField);');
 INSERT INTO documentation (id, text)
@@ -700,7 +700,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (47, 4, 13, 'Текстовое поле-мастер: выдели весь текст',
         '<p><strong>Задание:</strong><br>Выдели весь текст через selectAll()</p>',
         'JTextField-selectAll,add',
-        '', 47, 21.0, 0.0, 'JTextField textField = new JTextField("Текст");
+        '', 47, 21.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.selectAll();
 add(textField);');
 INSERT INTO documentation (id, text)
@@ -748,6 +748,6 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (48, 4, 14, 'Текстовое поле-мастер: установи горизонтальное выравнивание',
         '<p><strong>Задание:</strong><br>Установи выравнивание CENTER через setHorizontalAlignment()</p>',
         'JTextField-setHorizontalAlignment,add',
-        '', 48, 22.0, 0.0, 'JTextField textField = new JTextField("Текст");
+        '', 48, 22.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.setHorizontalAlignment(JTextField.CENTER);
 add(textField);');

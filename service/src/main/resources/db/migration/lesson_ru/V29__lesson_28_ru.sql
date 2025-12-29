@@ -130,9 +130,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (231, 28, 2, 'Радиокнопка в меню-мастер: установи выбранное состояние',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи выбранное состояние через setSelected(true)</p>',
         'JRadioButtonMenuItem-setSelected',
-        '', 231, 19.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Средний");
+        '', 231, 19.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Medium");
 item.setSelected(true);
-JMenu menu = new JMenu("Размер");
+JMenu menu = new JMenu("Size");
 menu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
@@ -255,10 +255,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (233, 28, 4, 'Радиокнопка в меню-мастер: добавь иконку',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, создай ImageIcon и установи через setIcon()</p>',
         'JRadioButtonMenuItem-setIcon,add',
-        '', 233, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 233, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 ImageIcon icon = new ImageIcon("icon.png");
 item.setIcon(icon);
-JMenu menu = new JMenu("Размер");
+JMenu menu = new JMenu("Size");
 menu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
@@ -309,9 +309,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (234, 28, 5, 'Радиокнопка в меню-мастер: добавь мнемонику',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи мнемонику KeyEvent.VK_M через setMnemonic()</p>',
         'JRadioButtonMenuItem-setMnemonic,add',
-        '', 234, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 234, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.setMnemonic(KeyEvent.VK_M);
-JMenu menu = new JMenu("Размер");
+JMenu menu = new JMenu("Size");
 menu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
@@ -366,9 +366,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (235, 28, 6, 'Радиокнопка в меню-мастер: включи/выключи вариант',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, выключи его через setEnabled(false)</p>',
         'JRadioButtonMenuItem-setEnabled',
-        '', 235, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 235, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.setEnabled(false);
-JMenu menu = new JMenu("Размер");
+JMenu menu = new JMenu("Size");
 menu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
@@ -419,9 +419,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (236, 28, 7, 'Радиокнопка в меню-мастер: добавь подсказку',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи подсказку через setToolTipText()</p>',
         'JRadioButtonMenuItem-setToolTipText',
-        '', 236, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
-item.setToolTipText("Выбрать маленький размер шрифта");
-JMenu menu = new JMenu("Размер");
+        '', 236, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
+item.setToolTipText("Select small font size");
+JMenu menu = new JMenu("Size");
 menu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
@@ -475,9 +475,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (237, 28, 8, 'Радиокнопка в меню-мастер: обработай выбор',
         '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, добавь ActionListener, который выводит текст варианта в консоль</p>',
         'JRadioButtonMenuItem-addActionListener',
-        '', 237, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Маленький");
+        '', 237, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.addActionListener(e -> {
-    System.out.println("Выбран вариант: " + item.getText());
+    System.out.println("Selected option: " + item.getText());
 });
 JMenu menu = new JMenu("Размер");
 menu.add(item);

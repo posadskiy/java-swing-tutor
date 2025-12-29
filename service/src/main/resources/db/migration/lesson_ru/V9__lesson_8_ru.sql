@@ -29,7 +29,7 @@ VALUES (72, '<h2>🎮 Радиокнопка-новичок: Создай пер
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай радиокнопку:<br>
-<code>JRadioButton radio = new JRadioButton("Вариант 1");</code></p>
+<code>JRadioButton radio = new JRadioButton("Option 1");</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь на форму:<br>
 <code>add(radio);</code></p>
@@ -58,7 +58,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (72, 8, 1, 'Радиокнопка-новичок: создай переключатель выбора',
         '<p><strong>Задание:</strong><br>Создай радиокнопку с текстом "Вариант 1" и добавь на форму</p>',
         'JRadioButton-add',
-        '', 72, 12.0, 0.0, 'JRadioButton radio = new JRadioButton("Вариант 1");
+        '', 72, 12.0, 0.0, 'JRadioButton radio = new JRadioButton("Option 1");
 add(radio);');
 INSERT INTO documentation (id, text)
 VALUES (73, '<h2>🎮 Группа кнопок: Объедини радиокнопки в группу!</h2>
@@ -80,7 +80,7 @@ VALUES (73, '<h2>🎮 Группа кнопок: Объедини радиокн
 <code>ButtonGroup group = new ButtonGroup();</code></p>
 
 <p><strong>Шаг 2:</strong> Создай радиокнопки:<br>
-<code>JRadioButton radio1 = new JRadioButton("Вариант 1");</code><br>
+<code>JRadioButton radio1 = new JRadioButton("Option 1");</code><br>
 <code>JRadioButton radio2 = new JRadioButton("Вариант 2");</code></p>
 
 <p><strong>Шаг 3:</strong> Добавь в группу:<br>
@@ -117,7 +117,7 @@ VALUES (73, 8, 2, 'Группа кнопок: объедини радиокно�
         '<p><strong>Задание:</strong><br>Создай группу, две радиокнопки, добавь их в группу и на форму</p>',
         'JRadioButton-add;JRadioButton-add',
         '', 73, 18.0, 0.0, 'ButtonGroup group = new ButtonGroup();
-JRadioButton radio1 = new JRadioButton("Вариант 1");
+JRadioButton radio1 = new JRadioButton("Option 1");
 JRadioButton radio2 = new JRadioButton("Вариант 2");
 group.add(radio1);
 group.add(radio2);

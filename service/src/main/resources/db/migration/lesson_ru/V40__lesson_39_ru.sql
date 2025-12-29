@@ -83,7 +83,7 @@ VALUES (328, '<h2>🎮 Чекбокс-пункт меню-новичок: Соз
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай чекбокс-пункт:<br>
-<code>JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");</code></p>
+<code>JCheckBoxMenuItem item = new JCheckBoxMenuItem("Show panel");</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь в меню:<br>
 <code>menu.add(item);</code></p>
@@ -113,8 +113,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (328, 39, 1, 'Чекбокс-пункт меню-новичок: создай чекбокс в меню',
         '<p><strong>Задание:</strong><br>Создай JCheckBoxMenuItem с текстом "Показывать панель", добавь в меню</p>',
         'JCheckBoxMenuItem-add',
-        '', 328, 21.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
-JMenu viewMenu = new JMenu("Вид");
+        '', 328, 21.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Show panel");
+JMenu viewMenu = new JMenu("View");
 viewMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
@@ -232,7 +232,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (329, 39, 2, 'Чекбокс-пункт меню-мастер: обрабатывай изменение',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
         'JCheckBoxMenuItem-addActionListener,isSelected,add',
-        '', 329, 23.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 329, 23.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Show panel");
 item.addActionListener(e -> {
     if (item.isSelected()) {
         System.out.println("Включено!");
@@ -240,7 +240,7 @@ item.addActionListener(e -> {
         System.out.println("Выключено!");
     }
 });
-JMenu viewMenu = new JMenu("Вид");
+JMenu viewMenu = new JMenu("View");
 viewMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
@@ -357,10 +357,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (330, 39, 3, 'Чекбокс-пункт меню-мастер: работай с моделью',
         '<p><strong>Задание:</strong><br>Получи модель через getModel(), установи состояние true через setSelected()</p>',
         'JCheckBoxMenuItem-getModel,setSelected,add',
-        '', 330, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 330, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Show panel");
 ButtonModel model = item.getModel();
 model.setSelected(true);
-JMenu viewMenu = new JMenu("Вид");
+JMenu viewMenu = new JMenu("View");
 viewMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
@@ -463,12 +463,12 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (332, 39, 4, 'Чекбокс-пункт меню-мастер: обрабатывай изменение состояния',
         '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
         'JCheckBoxMenuItem-addItemListener,isSelected,add',
-        '', 332, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 332, 24.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Show panel");
 item.addItemListener(e -> {
     boolean selected = item.isSelected();
     System.out.println("Выбрано: " + selected);
 });
-JMenu viewMenu = new JMenu("Вид");
+JMenu viewMenu = new JMenu("View");
 viewMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
@@ -518,9 +518,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (331, 39, 5, 'Чекбокс-пункт меню-мастер: добавь иконку',
         '<p><strong>Задание:</strong><br>Установи иконку через setIcon() с ImageIcon</p>',
         'JCheckBoxMenuItem-setIcon',
-        '', 331, 22.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Показывать панель");
+        '', 331, 22.0, 0.0, 'JCheckBoxMenuItem item = new JCheckBoxMenuItem("Show panel");
 item.setIcon(new ImageIcon("icon.png"));
-JMenu viewMenu = new JMenu("Вид");
+JMenu viewMenu = new JMenu("View");
 viewMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);

@@ -75,8 +75,8 @@ VALUES (370, 43, 1, 'GroupLayout-новичок: создай групповую
         '', 370, 30.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
-JButton button1 = new JButton("Кнопка 1");
-JButton button2 = new JButton("Кнопка 2");
+JButton button1 = new JButton("Button 1");
+JButton button2 = new JButton("Button 2");
 GroupLayout.SequentialGroup hGroup = layout.createSequentialGroup();
 hGroup.addComponent(button1);
 hGroup.addComponent(button2);
@@ -140,8 +140,8 @@ VALUES (371, 43, 2, 'GroupLayout-мастер: добавь отступы ме�
         '', 371, 28.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
-JButton button1 = new JButton("Кнопка 1");
-JButton button2 = new JButton("Кнопка 2");
+JButton button1 = new JButton("Button 1");
+JButton button2 = new JButton("Button 2");
 layout.setHorizontalGroup(
     layout.createSequentialGroup()
         .addComponent(button1)
@@ -204,8 +204,8 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (373, 43, 2, 'ActionListener-мастер: обрабатывай несколько кнопок',
         '<p><strong>Задание:</strong><br>Создай ActionListener, проверь getSource() для двух кнопок, добавь обработчик к обеим кнопкам</p>',
         'ActionListener-getSource,addActionListener,add',
-        '', 373, 24.0, 0.0, 'JButton button1 = new JButton("Кнопка 1");
-JButton button2 = new JButton("Кнопка 2");
+        '', 373, 24.0, 0.0, 'JButton button1 = new JButton("Button 1");
+JButton button2 = new JButton("Button 2");
 ActionListener listener = e -> {
     if (e.getSource() == button1) {
         System.out.println("Кнопка 1");
@@ -268,8 +268,8 @@ VALUES (372, 43, 3, 'GroupLayout-мастер: создай параллельн
         '', 372, 29.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
-JButton button1 = new JButton("Кнопка 1");
-JButton button2 = new JButton("Кнопка 2");
+JButton button1 = new JButton("Button 1");
+JButton button2 = new JButton("Button 2");
 layout.setHorizontalGroup(
     layout.createParallelGroup()
         .addComponent(button1)
@@ -329,7 +329,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (374, 43, 3, 'ActionListener-мастер: используй команду действия',
         '<p><strong>Задание:</strong><br>Установи команду "SAVE" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
         'ActionListener-setActionCommand,getActionCommand,add',
-        '', 374, 24.0, 0.0, 'JButton button = new JButton("Сохранить");
+        '', 374, 24.0, 0.0, 'JButton button = new JButton("Save");
 button.setActionCommand("SAVE");
 button.addActionListener(e -> {
     String cmd = e.getActionCommand();
@@ -386,7 +386,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (375, 43, 4, 'ActionListener-мастер: определи когда',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, получи время через getWhen(), выведи его</p>',
         'ActionListener-getWhen',
-        '', 375, 23.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 375, 23.0, 0.0, 'JButton button = new JButton("Button");
 button.addActionListener(e -> {
     long when = e.getWhen();
     System.out.println("Время: " + new Date(when));
@@ -503,7 +503,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
 VALUES (376, 43, 5, 'ActionListener-мастер: определи модификаторы',
         '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь getModifiers() & CTRL_MASK, выведи сообщение</p>',
         'ActionListener-getModifiers-CTRL_MASK',
-        '', 376, 24.0, 0.0, 'JButton button = new JButton("Кнопка");
+        '', 376, 24.0, 0.0, 'JButton button = new JButton("Button");
 button.addActionListener(e -> {
     int modifiers = e.getModifiers();
     if ((modifiers & ActionEvent.CTRL_MASK) != 0) {
@@ -688,8 +688,8 @@ VALUES (378, 43, 7, 'GroupLayout-мастер: создай последоват
         '', 378, 26.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
-JButton component1 = new JButton("Кнопка 1");
-JButton component2 = new JButton("Кнопка 2");
+JButton component1 = new JButton("Button 1");
+JButton component2 = new JButton("Button 2");
 GroupLayout.SequentialGroup hGroup = layout.createSequentialGroup();
 hGroup.addComponent(component1).addComponent(component2);
 layout.setHorizontalGroup(hGroup);
@@ -745,8 +745,8 @@ VALUES (380, 43, 8, 'GroupLayout-мастер: создай параллельн
         '', 380, 26.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
-JButton component1 = new JButton("Кнопка 1");
-JButton component2 = new JButton("Кнопка 2");
+JButton component1 = new JButton("Button 1");
+JButton component2 = new JButton("Button 2");
 GroupLayout.ParallelGroup vGroup = layout.createParallelGroup();
 vGroup.addComponent(component1).addComponent(component2);
 layout.setVerticalGroup(vGroup);
@@ -799,8 +799,8 @@ VALUES (381, 43, 9, 'GroupLayout-мастер: добавь зазор',
         '', 381, 22.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
 panel.setLayout(layout);
-JButton button1 = new JButton("Кнопка 1");
-JButton button2 = new JButton("Кнопка 2");
+JButton button1 = new JButton("Button 1");
+JButton button2 = new JButton("Button 2");
 GroupLayout.SequentialGroup hGroup = layout.createSequentialGroup();
 hGroup.addComponent(button1).addGap(10).addComponent(button2);
 layout.setHorizontalGroup(hGroup);
