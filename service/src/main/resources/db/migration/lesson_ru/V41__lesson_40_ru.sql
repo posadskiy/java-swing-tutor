@@ -63,7 +63,7 @@ add(button, gbc);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (335, 40, 1, 'GridBagLayout-новичок: создай гибкую сетку',
-        '<p><strong>Задание:</strong><br>Установи GridBagLayout, создай ограничения, добавь кнопку в позицию (0,0) с fill=HORIZONTAL</p>',
+        'Установи GridBagLayout, создай ограничения, добавь кнопку в позицию (0,0) с fill=HORIZONTAL',
         'GridBagLayout-add',
         '', 335, 28.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
@@ -120,7 +120,7 @@ VALUES (336, '<h2>🎮 GridBagLayout-мастер: Настрой растяги
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (336, 40, 2, 'GridBagLayout-мастер: настрой растягивание',
-        '<p><strong>Задание:</strong><br>Настрой weightx = 1.0 и weighty = 1.0 для ограничений, добавь компонент</p>',
+        'Настрой weightx = 1.0 и weighty = 1.0 для ограничений, добавь компонент',
         'GridBagLayout-add',
         '', 336, 29.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
@@ -177,7 +177,7 @@ VALUES (338, '<h2>🎮 FlowLayout-мастер: Настрой выравнив�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (338, 40, 2, 'FlowLayout-мастер: настрой выравнивание',
-        '<p><strong>Задание:</strong><br>Создай FlowLayout с выравниванием CENTER, установи менеджер</p>',
+        'Создай FlowLayout с выравниванием CENTER, установи менеджер',
         'FlowLayout-setLayout',
         '', 338, 23.0, 0.0, 'FlowLayout layout = new FlowLayout(FlowLayout.CENTER);
 setLayout(layout);
@@ -232,7 +232,7 @@ VALUES (337, '<h2>🎮 GridBagLayout-мастер: Растяни компоне
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (337, 40, 3, 'GridBagLayout-мастер: растяни компонент на несколько ячеек',
-        '<p><strong>Задание:</strong><br>Установи gridwidth = 2 и gridheight = 2 для ограничений, добавь компонент</p>',
+        'Установи gridwidth = 2 и gridheight = 2 для ограничений, добавь компонент',
         'GridBagConstraints-gridwidth-gridheight-add',
         '', 337, 30.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
@@ -293,7 +293,7 @@ layout.setVgap(10);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (339, 40, 3, 'FlowLayout-мастер: настрой отступы',
-        '<p><strong>Задание:</strong><br>Создай FlowLayout, установи горизонтальный и вертикальный отступы по 10</p>',
+        'Создай FlowLayout, установи горизонтальный и вертикальный отступы по 10',
         'FlowLayout-setHgap,setVgap,add',
         '', 339, 23.0, 0.0, 'FlowLayout layout = new FlowLayout();
 layout.setHgap(10);
@@ -344,7 +344,7 @@ VALUES (342, '<h2>🎮 GridBagLayout-мастер: Установи якорь!<
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (342, 40, 7, 'GridBagLayout-мастер: установи якорь',
-        '<p><strong>Задание:</strong><br>Установи якорь CENTER через constraints.anchor = GridBagConstraints.CENTER</p>',
+        'Установи якорь CENTER через constraints.anchor = GridBagConstraints.CENTER',
         'GridBagLayout-add',
         '', 342, 25.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints constraints = new GridBagConstraints();
@@ -396,7 +396,7 @@ VALUES (340, '<h2>🎮 Диалог-мастер: Создай диалог вв
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (340, 40, 8, 'Диалог-мастер: создай диалог ввода',
-        '<p><strong>Задание:</strong><br>Создай диалог ввода через showInputDialog("Enter name:"), сохрани результат</p>',
+        'Создай диалог ввода через showInputDialog("Enter name:"), сохрани результат',
         'JOptionPane-showInputDialog',
         '', 340, 23.0, 0.0, 'String input = JOptionPane.showInputDialog("Enter name:");
 JLabel label = new JLabel();
@@ -447,7 +447,7 @@ VALUES (344, '<h2>🎮 GridBagLayout-мастер: Установи заполн
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (344, 40, 8, 'GridBagLayout-мастер: установи заполнение',
-        '<p><strong>Задание:</strong><br>Установи заполнение BOTH через constraints.fill = GridBagConstraints.BOTH</p>',
+        'Установи заполнение BOTH через constraints.fill = GridBagConstraints.BOTH',
         'GridBagLayout-add',
         '', 344, 24.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints constraints = new GridBagConstraints();
@@ -499,7 +499,7 @@ VALUES (341, '<h2>🎮 Диалог-мастер: Создай диалог по
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (341, 40, 9, 'Диалог-мастер: создай диалог подтверждения',
-        '<p><strong>Задание:</strong><br>Создай диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, сохрани результат</p>',
+        'Создай диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, сохрани результат',
         'JOptionPane-showConfirmDialog',
         '', 341, 24.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Confirm action?", "Confirmation", JOptionPane.YES_NO_OPTION);
 JLabel label = new JLabel();
@@ -550,7 +550,7 @@ VALUES (343, '<h2>🎮 Диалог-мастер: Создай диалог со
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (343, 40, 10, 'Диалог-мастер: создай диалог сообщения',
-        '<p><strong>Задание:</strong><br>Создай диалог сообщения через showMessageDialog() с INFORMATION_MESSAGE</p>',
+        'Создай диалог сообщения через showMessageDialog() с INFORMATION_MESSAGE',
         'JOptionPane-showMessageDialog',
         '', 343, 23.0, 0.0,
         'JOptionPane.showMessageDialog(null, "Operation completed", "Information", JOptionPane.INFORMATION_MESSAGE);');

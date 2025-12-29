@@ -58,7 +58,7 @@ VALUES (453, '<h2>🎮 Look and Feel-новичок: Установи систе
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (453, 52, 1, 'Look and Feel-новичок: установи системный L&F',
-        '<p><strong>Задание:</strong><br>Установи системный L&F через UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()), обнови компоненты через SwingUtilities.updateComponentTreeUI()</p>',
+        'Установи системный L&F через UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName()), обнови компоненты через SwingUtilities.updateComponentTreeUI()',
         'UIManager-SwingUtilities',
         '', 453, 20.0, 0.0, 'try {
     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -110,7 +110,7 @@ VALUES (454, '<h2>🎮 Look and Feel-мастер: Установи Metal L&F!</
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (454, 52, 2, 'Look and Feel-мастер: установи Metal L&F',
-        '<p><strong>Задание:</strong><br>Установи Metal L&F через UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"), обнови компоненты</p>',
+        'Установи Metal L&F через UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel"), обнови компоненты',
         'UIManager-SwingUtilities',
         '', 454, 20.0, 0.0, 'try {
     UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
@@ -162,7 +162,7 @@ VALUES (455, '<h2>🎮 Look and Feel-мастер: Установи Nimbus L&F!<
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (455, 52, 3, 'Look and Feel-мастер: установи Nimbus L&F',
-        '<p><strong>Задание:</strong><br>Установи Nimbus L&F через UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"), обнови компоненты</p>',
+        'Установи Nimbus L&F через UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel"), обнови компоненты',
         'UIManager-SwingUtilities',
         '', 455, 21.0, 0.0, 'try {
     UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
@@ -219,7 +219,7 @@ VALUES (456, '<h2>🎮 Look and Feel-мастер: Получи список д�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (456, 52, 4, 'Look and Feel-мастер: получи список доступных L&F',
-        '<p><strong>Задание:</strong><br>Получи список L&F через UIManager.getInstalledLookAndFeels(), выведи имя и класс каждого стиля</p>',
+        'Получи список L&F через UIManager.getInstalledLookAndFeels(), выведи имя и класс каждого стиля',
         'UIManager-getInstalledLookAndFeels',
         '', 456, 20.0, 0.0, 'UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();
 JLabel label = new JLabel();
@@ -271,7 +271,7 @@ VALUES (457, '<h2>🎮 Look and Feel-мастер: Установи кастом
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (457, 52, 5, 'Look and Feel-мастер: установи кастомный L&F',
-        '<p><strong>Задание:</strong><br>Установи кастомный L&F через UIManager.setLookAndFeel("com.example.CustomLookAndFeel"), обнови компоненты</p>',
+        'Установи кастомный L&F через UIManager.setLookAndFeel("com.example.CustomLookAndFeel"), обнови компоненты',
         'UIManager-SwingUtilities',
         '', 457, 22.0, 0.0, 'try {
     UIManager.setLookAndFeel("com.example.CustomLookAndFeel");

@@ -59,7 +59,7 @@ VALUES (317, '<h2>🎮 FlowLayout-новичок: Размести компон�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (317, 38, 1, 'FlowLayout-новичок: размести компоненты в ряд',
-        '<p><strong>Задание:</strong><br>Установи FlowLayout и добавь три кнопки</p>',
+        'Установи FlowLayout и добавь три кнопки',
         'FlowLayout-add',
         '', 317, 16.0, 0.0, 'setLayout(new FlowLayout());
 JButton button1 = new JButton("Кнопка 1");
@@ -113,7 +113,7 @@ VALUES (318, '<h2>🎮 Пункт меню-мастер: Добавь аксел
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (318, 38, 2, 'Пункт меню-мастер: добавь акселератор',
-        '<p><strong>Задание:</strong><br>Создай KeyStroke для Ctrl+S через getKeyStroke(), установи акселератор через setAccelerator()</p>',
+        'Создай KeyStroke для Ctrl+S через getKeyStroke(), установи акселератор через setAccelerator()',
         'JMenuItem-setAccelerator',
         '', 318, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 KeyStroke stroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
@@ -169,7 +169,7 @@ VALUES (319, '<h2>🎮 Пункт меню-мастер: Включи и вык�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (319, 38, 3, 'Пункт меню-мастер: включи и выключи пункт',
-        '<p><strong>Задание:</strong><br>Выключи пункт через setEnabled(false), затем включи через setEnabled(true)</p>',
+        'Выключи пункт через setEnabled(false), затем включи через setEnabled(true)',
         'JMenuItem-setEnabled',
         '', 319, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Item");
 menuItem.setEnabled(false);
@@ -222,7 +222,7 @@ VALUES (320, '<h2>🎮 Пункт меню-мастер: Добавь подск
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (320, 38, 4, 'Пункт меню-мастер: добавь подсказку',
-        '<p><strong>Задание:</strong><br>Установи подсказку "Сохранить документ" через setToolTipText()</p>',
+        'Установи подсказку "Сохранить документ" через setToolTipText()',
         'JMenuItem-setToolTipText',
         '', 320, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 menuItem.setToolTipText("Save document");
@@ -274,7 +274,7 @@ VALUES (324, '<h2>🎮 Радиокнопка-пункт меню-мастер: 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (324, 38, 4, 'Радиокнопка-пункт меню-мастер: добавь подсказку',
-        '<p><strong>Задание:</strong><br>Установи подсказку "Выбрать тему" через setToolTipText()</p>',
+        'Установи подсказку "Выбрать тему" через setToolTipText()',
         'JRadioButtonMenuItem-setToolTipText',
         '', 324, 21.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Theme");
 radioButtonMenuItem.setToolTipText("Select theme");
@@ -329,7 +329,7 @@ VALUES (321, '<h2>🎮 Пункт меню-мастер: Добавь аксел
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (321, 38, 5, 'Пункт меню-мастер: добавь акселератор',
-        '<p><strong>Задание:</strong><br>Создай KeyStroke для Ctrl+S через getKeyStroke(), установи через setAccelerator()</p>',
+        'Создай KeyStroke для Ctrl+S через getKeyStroke(), установи через setAccelerator()',
         'JMenuItem-setAccelerator',
         '', 321, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 KeyStroke keyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
@@ -382,7 +382,7 @@ VALUES (322, '<h2>🎮 Пункт меню-мастер: Добавь иконк
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (322, 38, 6, 'Пункт меню-мастер: добавь иконку',
-        '<p><strong>Задание:</strong><br>Установи иконку через setIcon() с ImageIcon</p>',
+        'Установи иконку через setIcon() с ImageIcon',
         'JMenuItem-setIcon',
         '', 322, 22.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 menuItem.setIcon(new ImageIcon("icon.png"));
@@ -440,7 +440,7 @@ VALUES (323, '<h2>🎮 Радио-меню-мастер: Установи ком
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (323, 38, 6, 'Радио-меню-мастер: установи команду действия',
-        '<p><strong>Задание:</strong><br>Установи команду "RADIO" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
+        'Установи команду "RADIO" через setActionCommand(), получи команду в ActionListener через getActionCommand()',
         'JRadioButtonMenuItem-setActionCommand,getActionCommand,add',
         '', 323, 24.0, 0.0, 'JRadioButtonMenuItem radioButtonMenuItem = new JRadioButtonMenuItem("Theme");
 radioButtonMenuItem.setActionCommand("RADIO");

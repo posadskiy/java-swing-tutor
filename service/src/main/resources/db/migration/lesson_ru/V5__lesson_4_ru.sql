@@ -57,7 +57,7 @@ VALUES (35, '<h2>🎮 Текстовое поле-новичок: Создай �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (35, 4, 1, 'Текстовое поле-новичок: создай поле для ввода',
-        '<p><strong>Задание:</strong><br>Создай текстовое поле и добавь его на форму</p>',
+        'Создай текстовое поле и добавь его на форму',
         'JTextField-add',
         '', 35, 12.0, 0.0, 'JTextField field = new JTextField();
 add(field);');
@@ -109,7 +109,7 @@ VALUES (36, '<h2>🎮 Текст в поле: Установи начально�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (36, 4, 2, 'Текст в поле: установи начальное значение',
-        '<p><strong>Задание:</strong><br>Создай текстовое поле, установи текст "Введите имя" и добавь на форму</p>',
+        'Создай текстовое поле, установи текст "Введите имя" и добавь на форму',
         'JTextField-setText,add',
         '', 36, 14.0, 0.0, 'JTextField field = new JTextField();
 field.setText("Enter name");
@@ -163,7 +163,7 @@ VALUES (37, '<h2>🎮 Размер поля: Сделай его нужной ш
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (37, 4, 3, 'Размер поля: сделай его нужной ширины',
-        '<p><strong>Задание:</strong><br>Создай текстовое поле, установи ширину 20 символов и добавь на форму</p>',
+        'Создай текстовое поле, установи ширину 20 символов и добавь на форму',
         'JTextField-setColumns,add',
         '', 37, 16.0, 0.0, 'JTextField field = new JTextField();
 field.setColumns(20);
@@ -218,7 +218,7 @@ VALUES (38, '<h2>🎮 Цвета поля: Раскрась поле ввода!
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (38, 4, 4, 'Цвета поля: раскрась поле ввода',
-        '<p><strong>Задание:</strong><br>Создай текстовое поле, установи жёлтый фон и чёрный текст, добавь на форму</p>',
+        'Создай текстовое поле, установи жёлтый фон и чёрный текст, добавь на форму',
         'JTextField-setBackground,setForeground,add',
         '', 38, 18.0, 0.0, 'JTextField field = new JTextField();
 field.setBackground(Color.YELLOW);
@@ -273,7 +273,7 @@ VALUES (39, '<h2>🎮 Редактируемость: Заблокируй ил�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (39, 4, 5, 'Редактируемость: заблокируй или разблокируй поле',
-        '<p><strong>Задание:</strong><br>Создай текстовое поле, заблокируй его и добавь на форму</p>',
+        'Создай текстовое поле, заблокируй его и добавь на форму',
         'JTextField-setEditable,add',
         '', 39, 16.0, 0.0, 'JTextField field = new JTextField("Text");
 field.setEditable(false);
@@ -322,7 +322,7 @@ VALUES (40, '<h2>🎮 Текстовое поле-мастер: Добавь п�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (40, 4, 6, 'Текстовое поле-мастер: добавь подсказку',
-        '<p><strong>Задание:</strong><br>Установи подсказку "Введи своё имя" через setToolTipText()</p>',
+        'Установи подсказку "Введи своё имя" через setToolTipText()',
         'JTextField-setToolTipText,add',
         '', 40, 20.0, 0.0, 'JTextField textField = new JTextField();
 textField.setToolTipText("Enter your name");
@@ -380,7 +380,7 @@ VALUES (41, '<h2>🎮 Текстовое поле-мастер: Валидиру
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (41, 4, 7, 'Текстовое поле-мастер: валидируй ввод',
-        '<p><strong>Задание:</strong><br>Получи документ, создай DocumentFilter для проверки цифр через регулярное выражение, установи фильтр</p>',
+        'Получи документ, создай DocumentFilter для проверки цифр через регулярное выражение, установи фильтр',
         'JTextField-add',
         '', 41, 27.0, 0.0, 'JTextField textField = new JTextField();
 AbstractDocument doc = (AbstractDocument) textField.getDocument();
@@ -436,7 +436,7 @@ VALUES (42, '<h2>🎮 Текстовое поле-мастер: Установи
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (42, 4, 8, 'Текстовое поле-мастер: установи позицию курсора',
-        '<p><strong>Задание:</strong><br>Установи позицию курсора 0 через setCaretPosition(0)</p>',
+        'Установи позицию курсора 0 через setCaretPosition(0)',
         'JTextField-setCaretPosition,add',
         '', 42, 22.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.setCaretPosition(0);
@@ -484,7 +484,7 @@ VALUES (43, '<h2>🎮 Текстовое поле-мастер: Выдели в�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (43, 4, 9, 'Текстовое поле-мастер: выдели весь текст',
-        '<p><strong>Задание:</strong><br>Выдели весь текст через selectAll()</p>',
+        'Выдели весь текст через selectAll()',
         'JTextField-selectAll,add',
         '', 43, 21.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.selectAll();
@@ -535,7 +535,7 @@ VALUES (44, '<h2>🎮 Текстовое поле-мастер: Замени в�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (44, 4, 10, 'Текстовое поле-мастер: замени выделение',
-        '<p><strong>Задание:</strong><br>Выдели текст через select(0, 5), замени через replaceSelection("Новый текст")</p>',
+        'Выдели текст через select(0, 5), замени через replaceSelection("Новый текст")',
         'JTextField-select,replaceSelection,add',
         '', 44, 23.0, 0.0, 'JTextField textField = new JTextField("Old text");
 textField.select(0, 5);
@@ -594,7 +594,7 @@ VALUES (45, '<h2>🎮 Текстовое поле-мастер: Добавь ф�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (45, 4, 11, 'Текстовое поле-мастер: добавь фильтр документа',
-        '<p><strong>Задание:</strong><br>Получи документ, создай DocumentFilter, переопредели insertString() для проверки цифр</p>',
+        'Получи документ, создай DocumentFilter, переопредели insertString() для проверки цифр',
         'JTextField-add',
         '', 45, 27.0, 0.0, 'JTextField textField = new JTextField();
 AbstractDocument doc = (AbstractDocument) textField.getDocument();
@@ -650,7 +650,7 @@ VALUES (46, '<h2>🎮 Текстовое поле-мастер: Установи
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (46, 4, 12, 'Текстовое поле-мастер: установи позицию курсора',
-        '<p><strong>Задание:</strong><br>Установи позицию курсора 5 через setCaretPosition()</p>',
+        'Установи позицию курсора 5 через setCaretPosition()',
         'JTextField-setCaretPosition,add',
         '', 46, 22.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.setCaretPosition(5);
@@ -698,7 +698,7 @@ VALUES (47, '<h2>🎮 Текстовое поле-мастер: Выдели в�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (47, 4, 13, 'Текстовое поле-мастер: выдели весь текст',
-        '<p><strong>Задание:</strong><br>Выдели весь текст через selectAll()</p>',
+        'Выдели весь текст через selectAll()',
         'JTextField-selectAll,add',
         '', 47, 21.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.selectAll();
@@ -746,7 +746,7 @@ VALUES (48, '<h2>🎮 Текстовое поле-мастер: Установи
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (48, 4, 14, 'Текстовое поле-мастер: установи горизонтальное выравнивание',
-        '<p><strong>Задание:</strong><br>Установи выравнивание CENTER через setHorizontalAlignment()</p>',
+        'Установи выравнивание CENTER через setHorizontalAlignment()',
         'JTextField-setHorizontalAlignment,add',
         '', 48, 22.0, 0.0, 'JTextField textField = new JTextField("Text");
 textField.setHorizontalAlignment(JTextField.CENTER);

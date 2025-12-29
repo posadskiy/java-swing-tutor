@@ -62,7 +62,7 @@ add(panel2, "card2");</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (356, 42, 1, 'CardLayout-новичок: создай переключаемые панели',
-        '<p><strong>Задание:</strong><br>Создай CardLayout, добавь две панели с именами "card1" и "card2", покажи "card1"</p>',
+        'Создай CardLayout, добавь две панели с именами "card1" и "card2", покажи "card1"',
         'CardLayout-add,add,show',
         '', 356, 26.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
@@ -123,7 +123,7 @@ VALUES (357, '<h2>🎮 CardLayout-мастер: Навигация между к
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (357, 42, 2, 'CardLayout-мастер: навигация между картами',
-        '<p><strong>Задание:</strong><br>Переключись на следующую карту через next(), затем на предыдущую через previous()</p>',
+        'Переключись на следующую карту через next(), затем на предыдущую через previous()',
         'CardLayout-next,previous',
         '', 357, 27.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
@@ -185,7 +185,7 @@ gbc.weighty = 1.0;</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (359, 42, 2, 'GridBagLayout-мастер: настрой вес',
-        '<p><strong>Задание:</strong><br>Создай GridBagConstraints, установи weightx и weighty по 1.0, добавь компонент с ограничениями</p>',
+        'Создай GridBagConstraints, установи weightx и weighty по 1.0, добавь компонент с ограничениями',
         'GridBagLayout-GridBagConstraints-weightx-weighty',
         '', 359, 26.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
@@ -251,7 +251,7 @@ for (Component comp : components) {<br>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (358, 42, 3, 'CardLayout-мастер: узнай текущую карту',
-        '<p><strong>Задание:</strong><br>Получи все компоненты, проверь isVisible() для каждого, выведи имя видимого компонента</p>',
+        'Получи все компоненты, проверь isVisible() для каждого, выведи имя видимого компонента',
         'Container-getComponents-isVisible-getName',
         '', 358, 27.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
@@ -320,7 +320,7 @@ VALUES (360, '<h2>🎮 GridBagLayout-мастер: Настрой заполне
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (360, 42, 3, 'GridBagLayout-мастер: настрой заполнение',
-        '<p><strong>Задание:</strong><br>Создай GridBagConstraints, установи fill = BOTH, добавь компонент</p>',
+        'Создай GridBagConstraints, установи fill = BOTH, добавь компонент',
         'GridBagLayout-GridBagConstraints-fill-BOTH',
         '', 360, 25.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
@@ -378,7 +378,7 @@ VALUES (361, '<h2>🎮 GridBagLayout-мастер: Настрой якорь!</h
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (361, 42, 4, 'GridBagLayout-мастер: настрой якорь',
-        '<p><strong>Задание:</strong><br>Создай GridBagConstraints, установи anchor = NORTH, добавь компонент</p>',
+        'Создай GridBagConstraints, установи anchor = NORTH, добавь компонент',
         'GridBagLayout-GridBagConstraints-anchor-NORTH',
         '', 361, 25.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
@@ -436,7 +436,7 @@ VALUES (362, '<h2>🎮 GridBagLayout-мастер: Настрой отступы
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (362, 42, 5, 'GridBagLayout-мастер: настрой отступы',
-        '<p><strong>Задание:</strong><br>Создай GridBagConstraints, установи insets = new Insets(5,5,5,5), добавь компонент</p>',
+        'Создай GridBagConstraints, установи insets = new Insets(5,5,5,5), добавь компонент',
         'GridBagLayout-add',
         '', 362, 24.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
@@ -491,7 +491,7 @@ VALUES (363, '<h2>🎮 Выбор цвета-мастер: Установи па
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (363, 42, 6, 'Выбор цвета-мастер: установи панель предпросмотра',
-        '<p><strong>Задание:</strong><br>Создай JPanel, установи через setPreviewPanel()</p>',
+        'Создай JPanel, установи через setPreviewPanel()',
         'JColorChooser-setPreviewPanel',
         '', 363, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 JPanel previewPanel = new JPanel();
@@ -546,7 +546,7 @@ VALUES (364, '<h2>🎮 CardLayout-мастер: Покажи первую кар
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (364, 42, 6, 'CardLayout-мастер: покажи первую карту',
-        '<p><strong>Задание:</strong><br>Получи CardLayout через getLayout(), приведи к CardLayout, вызови first(container)</p>',
+        'Получи CardLayout через getLayout(), приведи к CardLayout, вызови first(container)',
         'CardLayout-first',
         '', 364, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
@@ -601,7 +601,7 @@ VALUES (365, '<h2>🎮 Выбор цвета-мастер: Получи моде
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (365, 42, 7, 'Выбор цвета-мастер: получи модель выбора',
-        '<p><strong>Задание:</strong><br>Получи модель выбора через getSelectionModel()</p>',
+        'Получи модель выбора через getSelectionModel()',
         'JColorChooser-getSelectionModel',
         '', 365, 24.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 ColorSelectionModel model = colorChooser.getSelectionModel();
@@ -654,7 +654,7 @@ VALUES (366, '<h2>🎮 CardLayout-мастер: Покажи последнюю 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (366, 42, 7, 'CardLayout-мастер: покажи последнюю карту',
-        '<p><strong>Задание:</strong><br>Получи CardLayout через getLayout(), приведи к CardLayout, вызови last(container)</p>',
+        'Получи CardLayout через getLayout(), приведи к CardLayout, вызови last(container)',
         'CardLayout-last',
         '', 366, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
@@ -712,7 +712,7 @@ VALUES (367, '<h2>🎮 CardLayout-мастер: Покажи следующую 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (367, 42, 8, 'CardLayout-мастер: покажи следующую карту',
-        '<p><strong>Задание:</strong><br>Получи CardLayout через getLayout(), приведи к CardLayout, вызови next(container)</p>',
+        'Получи CardLayout через getLayout(), приведи к CardLayout, вызови next(container)',
         'CardLayout-next',
         '', 367, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
@@ -767,7 +767,7 @@ VALUES (368, '<h2>🎮 Выбор цвета-мастер: Установи цв
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (368, 42, 8, 'Выбор цвета-мастер: установи цвет',
-        '<p><strong>Задание:</strong><br>Установи цвет RED через setColor(Color.RED)</p>',
+        'Установи цвет RED через setColor(Color.RED)',
         'JColorChooser-setColor,add',
         '', 368, 22.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 colorChooser.setColor(Color.RED);
@@ -820,7 +820,7 @@ VALUES (369, '<h2>🎮 CardLayout-мастер: Покажи предыдущу�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (369, 42, 9, 'CardLayout-мастер: покажи предыдущую карту',
-        '<p><strong>Задание:</strong><br>Получи CardLayout через getLayout(), приведи к CardLayout, вызови previous(container)</p>',
+        'Получи CardLayout через getLayout(), приведи к CardLayout, вызови previous(container)',
         'CardLayout-previous',
         '', 369, 23.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);

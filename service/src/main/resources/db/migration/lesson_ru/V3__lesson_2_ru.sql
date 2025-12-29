@@ -54,7 +54,7 @@ VALUES (2, '<h2>🎮 Урок 1 — Кнопка-новичок: Призови 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (2, 2, 1, 'Кнопка-новичок: призови героя',
-        '<p><strong>Задание:</strong><br>Создай кнопку и добавь её на форму</p>',
+        'Создай кнопку и добавь её на форму',
         'JButton-add',
         '', 2, 12.0, 0.0, 'JButton button = new JButton();
 add(button);');
@@ -107,7 +107,7 @@ VALUES (3, '<h2>🎮 Урок 2 — Текстовое заклинание: Д�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (3, 2, 2, 'Текстовое заклинание: дай кнопке имя',
-        '<p><strong>Задание:</strong><br>Создай кнопку, задай ей текст и добавь на форму</p>',
+        'Создай кнопку, задай ей текст и добавь на форму',
         'JButton-setText,add',
         '', 3, 20.0, 0.0, 'JButton button = new JButton();
 button.setText("Text");
@@ -170,7 +170,7 @@ VALUES (4, '<h2>🎮 Урок 3 — Скин: Раскрась кнопку ка
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (4, 2, 3, 'Скин кнопки: золото!',
-        '<p><strong>Задание:</strong><br>Создай кнопку, покрась фон в жёлтый и добавь на форму</p>',
+        'Создай кнопку, покрась фон в жёлтый и добавь на форму',
         'JButton-setBackground,add',
         '', 4, 28.0, 0.0, 'JButton button = new JButton();
 button.setBackground(Color.YELLOW);
@@ -242,7 +242,7 @@ VALUES (5, '<h2>🎮 Урок 4 — Цвет текста: Сделай надп
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (5, 2, 4, 'Цвет текста: читабельно и красиво',
-        '<p><strong>Задание:</strong><br>Создай кнопку, сделай текст белым и добавь на форму!</p>',
+        'Создай кнопку, сделай текст белым и добавь на форму!',
         'JButton-setForeground,add',
         '', 5, 30.0, 0.0, 'JButton button = new JButton();
 button.setForeground(Color.WHITE);
@@ -326,7 +326,7 @@ VALUES (6, '<h2>🎮 Урок 5 — Хитбокс: Сделай кнопку о
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (6, 2, 5, 'Хитбокс: сделай кнопку огромной',
-        '<p><strong>Задание:</strong><br>Создай кнопку, задай ей размер 320x200 и добавь на форму.</p>',
+        'Создай кнопку, задай ей размер 320x200 и добавь на форму.',
         'JButton-setSize,add',
         '', 6, 35.0, 0.0, 'JButton button = new JButton();
 button.setSize(320, 200);
@@ -377,7 +377,7 @@ VALUES (7, '<h2>🎮 Кнопка-мастер: Добавь горячую кл
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (7, 2, 6, 'Кнопка-мастер: добавь горячую клавишу',
-        '<p><strong>Задание:</strong><br>Установи мнемонику VK_O через setMnemonic(), подчеркни букву в тексте через HTML</p>',
+        'Установи мнемонику VK_O через setMnemonic(), подчеркни букву в тексте через HTML',
         'JButton-setMnemonic,setText,add',
         '', 7, 25.0, 0.0, 'JButton button = new JButton();
 button.setMnemonic(KeyEvent.VK_O);
@@ -433,7 +433,7 @@ VALUES (8, '<h2>🎮 Кнопка-мастер: Добавь иконку с т�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (8, 2, 7, 'Кнопка-мастер: добавь иконку с текстом',
-        '<p><strong>Задание:</strong><br>Установи иконку через setIcon(), установи текст через setText(), установи отступ 5 через setIconTextGap()</p>',
+        'Установи иконку через setIcon(), установи текст через setText(), установи отступ 5 через setIconTextGap()',
         'JButton-setIcon,setText,setIconTextGap,add',
         '', 8, 24.0, 0.0, 'JButton button = new JButton();
 button.setIcon(new ImageIcon("icon.png"));
@@ -487,7 +487,7 @@ VALUES (9, '<h2>🎮 Кнопка-мастер: Добавь мнемонику!
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (9, 2, 8, 'Кнопка-мастер: добавь мнемонику',
-        '<p><strong>Задание:</strong><br>Установи мнемонику VK_S через setMnemonic(), добавь &S в текст кнопки</p>',
+        'Установи мнемонику VK_S через setMnemonic(), добавь &S в текст кнопки',
         'JButton-setMnemonic,setText,add',
         '', 9, 23.0, 0.0, 'JButton button = new JButton();
 button.setMnemonic(KeyEvent.VK_S);
@@ -540,7 +540,7 @@ VALUES (10, '<h2>🎮 Кнопка-мастер: Добавь иконку пр�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (10, 2, 9, 'Кнопка-мастер: добавь иконку при наведении',
-        '<p><strong>Задание:</strong><br>Установи обычную иконку через setIcon(), установи иконку наведения через setRolloverIcon()</p>',
+        'Установи обычную иконку через setIcon(), установи иконку наведения через setRolloverIcon()',
         'JButton-setIcon,setRolloverIcon,add',
         '', 10, 24.0, 0.0, 'JButton button = new JButton();
 button.setIcon(new ImageIcon("normal.png"));
@@ -596,7 +596,7 @@ VALUES (11, '<h2>🎮 Кнопка-мастер: Добавь иконку дл�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (11, 2, 10, 'Кнопка-мастер: добавь иконку для отключённой кнопки',
-        '<p><strong>Задание:</strong><br>Установи обычную иконку через setIcon(), установи иконку для отключённой через setDisabledIcon(), отключи кнопку</p>',
+        'Установи обычную иконку через setIcon(), установи иконку для отключённой через setDisabledIcon(), отключи кнопку',
         'JButton-setIcon,setDisabledIcon,setEnabled,add',
         '', 11, 24.0, 0.0, 'JButton button = new JButton();
 button.setIcon(new ImageIcon("normal.png"));
@@ -650,7 +650,7 @@ VALUES (12, '<h2>🎮 Кнопка-мастер: Добавь иконку пр�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (12, 2, 11, 'Кнопка-мастер: добавь иконку при нажатии',
-        '<p><strong>Задание:</strong><br>Установи обычную иконку через setIcon(), установи иконку нажатия через setPressedIcon()</p>',
+        'Установи обычную иконку через setIcon(), установи иконку нажатия через setPressedIcon()',
         'JButton-setIcon,setPressedIcon,add',
         '', 12, 24.0, 0.0, 'JButton button = new JButton();
 button.setIcon(new ImageIcon("normal.png"));
@@ -703,7 +703,7 @@ VALUES (13, '<h2>🎮 Кнопка-мастер: Добавь иконку пр�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (13, 2, 12, 'Кнопка-мастер: добавь иконку при наведении',
-        '<p><strong>Задание:</strong><br>Установи обычную иконку через setIcon(), установи иконку наведения через setRolloverIcon()</p>',
+        'Установи обычную иконку через setIcon(), установи иконку наведения через setRolloverIcon()',
         'JButton-setIcon,setRolloverIcon,add',
         '', 13, 24.0, 0.0, 'JButton button = new JButton();
 button.setIcon(new ImageIcon("normal.png"));
@@ -756,7 +756,7 @@ VALUES (14, '<h2>🎮 Кнопка-мастер: Добавь иконку пр�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (14, 2, 13, 'Кнопка-мастер: добавь иконку при выборе',
-        '<p><strong>Задание:</strong><br>Установи обычную иконку через setIcon(), установи иконку выбора через setSelectedIcon()</p>',
+        'Установи обычную иконку через setIcon(), установи иконку выбора через setSelectedIcon()',
         'JButton-setIcon,setSelectedIcon,add',
         '', 14, 24.0, 0.0, 'JButton button = new JButton();
 button.setIcon(new ImageIcon("normal.png"));
@@ -809,7 +809,7 @@ VALUES (15, '<h2>🎮 Кнопка-мастер: Добавь иконку пр�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (15, 2, 14, 'Кнопка-мастер: добавь иконку при отключении',
-        '<p><strong>Задание:</strong><br>Установи обычную иконку через setIcon(), установи иконку отключения через setDisabledIcon()</p>',
+        'Установи обычную иконку через setIcon(), установи иконку отключения через setDisabledIcon()',
         'JButton-setIcon,setDisabledIcon,add',
         '', 15, 24.0, 0.0, 'JButton button = new JButton();
 button.setIcon(new ImageIcon("normal.png"));

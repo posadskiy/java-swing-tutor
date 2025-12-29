@@ -65,7 +65,7 @@ VALUES (397, '<h2>🎮 JEditorPane-новичок: Создай редактор
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (397, 45, 1, 'JEditorPane-новичок: создай редактор HTML',
-        '<p><strong>Задание:</strong><br>Создай JEditorPane, установи тип "text/html", установи HTML текст и добавь на форму</p>',
+        'Создай JEditorPane, установи тип "text/html", установи HTML текст и добавь на форму',
         'JEditorPane-setContentType-setText,add',
         '', 397, 26.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
@@ -120,7 +120,7 @@ VALUES (398, '<h2>🎮 JEditorPane-мастер: Загрузи HTML из URL!</
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (398, 45, 2, 'JEditorPane-мастер: загрузи HTML из URL',
-        '<p><strong>Задание:</strong><br>Установи тип "text/html", загрузи страницу из URL через setPage(), обработай IOException</p>',
+        'Установи тип "text/html", загрузи страницу из URL через setPage(), обработай IOException',
         'JEditorPane-setContentType-setPage-URL',
         '', 398, 28.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
@@ -184,7 +184,7 @@ VALUES (399, '<h2>🎮 JEditorPane-мастер: Обрабатывай гипе
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (399, 45, 3, 'JEditorPane-мастер: обрабатывай гиперссылки',
-        '<p><strong>Задание:</strong><br>Добавь HyperlinkListener, проверь ACTIVATED, получи URL через getURL(), загрузи страницу через setPage()</p>',
+        'Добавь HyperlinkListener, проверь ACTIVATED, получи URL через getURL(), загрузи страницу через setPage()',
         'JEditorPane-addHyperlinkListener,setPage,add',
         '', 399, 27.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
@@ -246,7 +246,7 @@ VALUES (400, '<h2>🎮 JEditorPane-мастер: Установи тип кон�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (400, 45, 4, 'JEditorPane-мастер: установи тип контента',
-        '<p><strong>Задание:</strong><br>Установи тип "text/html" через setContentType(), установи HTML-текст</p>',
+        'Установи тип "text/html" через setContentType(), установи HTML-текст',
         'JEditorPane-setContentType',
         '', 400, 24.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
@@ -300,7 +300,7 @@ VALUES (401, '<h2>🎮 JEditorPane-мастер: Обрабатывай гипе
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (401, 45, 5, 'JEditorPane-мастер: обрабатывай гиперссылки',
-        '<p><strong>Задание:</strong><br>Добавь HyperlinkListener, проверь EventType.ACTIVATED, получи URL через getURL()</p>',
+        'Добавь HyperlinkListener, проверь EventType.ACTIVATED, получи URL через getURL()',
         'JEditorPane-addHyperlinkListener,add',
         '', 401, 25.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
@@ -365,7 +365,7 @@ add(label);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (403, 45, 5, 'ActionListener-мастер: удали слушатель',
-        '<p><strong>Задание:</strong><br>Создай ActionListener, добавь через addActionListener(), удали через removeActionListener()</p>',
+        'Создай ActionListener, добавь через addActionListener(), удали через removeActionListener()',
         'JButton-addActionListener,removeActionListener,add',
         '', 403, 23.0, 0.0, 'JButton button = new JButton("Button");
 JLabel label = new JLabel();
@@ -417,7 +417,7 @@ VALUES (402, '<h2>🎮 JEditorPane-мастер: Установи текст!</h
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (402, 45, 6, 'JEditorPane-мастер: установи текст',
-        '<p><strong>Задание:</strong><br>Установи HTML-текст через setText()</p>',
+        'Установи HTML-текст через setText()',
         'JEditorPane-setText',
         '', 402, 22.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
@@ -472,7 +472,7 @@ add(label);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (404, 45, 6, 'ActionListener-мастер: добавь несколько слушателей',
-        '<p><strong>Задание:</strong><br>Добавь два ActionListener через addActionListener(), каждый выводит свой текст</p>',
+        'Добавь два ActionListener через addActionListener(), каждый выводит свой текст',
         'JButton-addActionListener',
         '', 404, 22.0, 0.0, 'JButton button = new JButton("Button");
 JLabel label = new JLabel();
@@ -526,7 +526,7 @@ VALUES (405, '<h2>🎮 ActionListener-мастер: Получи команду 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (405, 45, 7, 'ActionListener-мастер: получи команду действия',
-        '<p><strong>Задание:</strong><br>Добавь ActionListener, получи команду через getActionCommand() в actionPerformed()</p>',
+        'Добавь ActionListener, получи команду через getActionCommand() в actionPerformed()',
         'ActionListener-getActionCommand,add',
         '', 405, 23.0, 0.0, 'JButton button = new JButton("Button");
 JLabel label = new JLabel();

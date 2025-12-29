@@ -65,7 +65,7 @@ VALUES (406, '<h2>🎮 Слушатель мыши-новичок: Реагир�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (406, 46, 1, 'Слушатель мыши-новичок: реагируй на клики мыши',
-        '<p><strong>Задание:</strong><br>Создай панель, добавь MouseListener, который выводит "Клик!" при клике, и добавь на форму</p>',
+        'Создай панель, добавь MouseListener, который выводит "Клик!" при клике, и добавь на форму',
         'JPanel-addMouseListener,add',
         '', 406, 20.0, 0.0, 'JPanel panel = new JPanel();
 JLabel label = new JLabel();
@@ -128,7 +128,7 @@ menu.add(item2);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (407, 46, 1, 'Радио-пункт меню-новичок: создай радио-кнопки в меню',
-        '<p><strong>Задание:</strong><br>Создай ButtonGroup, создай два JRadioButtonMenuItem, добавь в группу и меню</p>',
+        'Создай ButtonGroup, создай два JRadioButtonMenuItem, добавь в группу и меню',
         'JRadioButtonMenuItem-add',
         '', 407, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");
@@ -188,7 +188,7 @@ VALUES (408, '<h2>🎮 Радио-пункт меню-мастер: Обраба
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (408, 46, 2, 'Радио-пункт меню-мастер: обрабатывай выбор',
-        '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи текст пункта через getText()</p>',
+        'Добавь ActionListener, проверь isSelected(), выведи текст пункта через getText()',
         'JRadioButtonMenuItem-addActionListener-isSelected-getText',
         '', 408, 23.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 JLabel label = new JLabel();
@@ -254,7 +254,7 @@ VALUES (409, '<h2>🎮 Диалог-мастер: Создай диалог по
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (409, 46, 3, 'Диалог-мастер: создай диалог подтверждения',
-        '<p><strong>Задание:</strong><br>Покажи диалог подтверждения с YES_NO_OPTION, обработай результат YES_OPTION</p>',
+        'Покажи диалог подтверждения с YES_NO_OPTION, обработай результат YES_OPTION',
         'JOptionPane-showConfirmDialog',
         '', 409, 23.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(
@@ -313,7 +313,7 @@ group.add(item2);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (412, 46, 3, 'Радио-пункт меню-мастер: добавь в группу',
-        '<p><strong>Задание:</strong><br>Создай ButtonGroup, добавь два радио-пункта через add()</p>',
+        'Создай ButtonGroup, добавь два радио-пункта через add()',
         'JRadioButtonMenuItem-add',
         '', 412, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");
@@ -378,7 +378,7 @@ VALUES (410, '<h2>🎮 Диалог-мастер: Создай диалог вв
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (410, 46, 4, 'Диалог-мастер: создай диалог ввода',
-        '<p><strong>Задание:</strong><br>Покажи диалог ввода с вопросом "Введи своё имя:", обработай результат, проверь на null и пустоту</p>',
+        'Покажи диалог ввода с вопросом "Введи своё имя:", обработай результат, проверь на null и пустоту',
         'JOptionPane-showInputDialog',
         '', 410, 24.0, 0.0, 'JFrame frame = new JFrame();
 String input = JOptionPane.showInputDialog(
@@ -439,7 +439,7 @@ VALUES (414, '<h2>🎮 Радио-пункт меню-мастер: Обраба
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (414, 46, 4, 'Радио-пункт меню-мастер: обрабатывай изменение состояния',
-        '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь getStateChange() == SELECTED, выведи сообщение</p>',
+        'Добавь ItemListener, проверь getStateChange() == SELECTED, выведи сообщение',
         'JRadioButtonMenuItem-addItemListener,getStateChange,add',
         '', 414, 24.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 JLabel label = new JLabel();
@@ -508,7 +508,7 @@ VALUES (411, '<h2>🎮 Диалог-мастер: Создай кастомны�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (411, 46, 5, 'Диалог-мастер: создай кастомные кнопки',
-        '<p><strong>Задание:</strong><br>Создай массив строк с тремя кнопками, покажи диалог через showOptionDialog() с этими кнопками</p>',
+        'Создай массив строк с тремя кнопками, покажи диалог через showOptionDialog() с этими кнопками',
         'JOptionPane-showOptionDialog',
         '', 411, 26.0, 0.0, 'JFrame frame = new JFrame();
 String[] options = {"Да", "Нет", "Отмена"};
@@ -570,7 +570,7 @@ VALUES (416, '<h2>🎮 Радио-пункт меню-мастер: Добавь
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (416, 46, 5, 'Радио-пункт меню-мастер: добавь иконку',
-        '<p><strong>Задание:</strong><br>Установи иконку через setIcon() с ImageIcon</p>',
+        'Установи иконку через setIcon() с ImageIcon',
         'JRadioButtonMenuItem-setIcon,add',
         '', 416, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.setIcon(new ImageIcon("icon.png"));
@@ -627,7 +627,7 @@ VALUES (413, '<h2>🎮 Диалог-мастер: Создай диалог вв
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (413, 46, 6, 'Диалог-мастер: создай диалог ввода',
-        '<p><strong>Задание:</strong><br>Покажи диалог ввода через showInputDialog() с сообщением "Введите имя:", проверь результат на null</p>',
+        'Покажи диалог ввода через showInputDialog() с сообщением "Введите имя:", проверь результат на null',
         'JOptionPane-showInputDialog',
         '', 413, 23.0, 0.0, 'JFrame frame = new JFrame();
 String input = JOptionPane.showInputDialog(frame, "Введите имя:");
@@ -684,7 +684,7 @@ VALUES (415, '<h2>🎮 Диалог-мастер: Создай диалог по
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (415, 46, 7, 'Диалог-мастер: создай диалог подтверждения',
-        '<p><strong>Задание:</strong><br>Покажи диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, проверь результат == YES_OPTION</p>',
+        'Покажи диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, проверь результат == YES_OPTION',
         'JOptionPane-showConfirmDialog-YES_NO_OPTION',
         '', 415, 24.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(frame, "Удалить?", "Подтверждение", JOptionPane.YES_NO_OPTION);
@@ -736,7 +736,7 @@ VALUES (417, '<h2>🎮 Диалог-мастер: Создай диалог со
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (417, 46, 8, 'Диалог-мастер: создай диалог сообщения',
-        '<p><strong>Задание:</strong><br>Покажи диалог сообщения через showMessageDialog() с INFORMATION_MESSAGE</p>',
+        'Покажи диалог сообщения через showMessageDialog() с INFORMATION_MESSAGE',
         'JOptionPane-showMessageDialog-INFORMATION_MESSAGE',
         '', 417, 23.0, 0.0, 'JFrame frame = new JFrame();
 JOptionPane.showMessageDialog(frame, "Сообщение", "Заголовок", JOptionPane.INFORMATION_MESSAGE);');
@@ -789,7 +789,7 @@ VALUES (418, '<h2>🎮 Таблица-мастер: Установи ширин�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (418, 46, 12, 'Таблица-мастер: установи ширину колонки',
-        '<p><strong>Задание:</strong><br>Получи модель колонок через getColumnModel(), получи колонку 0, установи ширину 200 через setPreferredWidth()</p>',
+        'Получи модель колонок через getColumnModel(), получи колонку 0, установи ширину 200 через setPreferredWidth()',
         'JTable-getColumnModel-TableColumn-setPreferredWidth',
         '', 418, 25.0, 0.0, 'String[] columns = {"Name", "Age"};
 String[][] data = {{"John", "25"}, {"Mary", "30"}};
@@ -842,7 +842,7 @@ VALUES (419, '<h2>🎮 Таблица-мастер: Установи высот�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (419, 46, 13, 'Таблица-мастер: установи высоту строки',
-        '<p><strong>Задание:</strong><br>Установи высоту строки 30 через setRowHeight()</p>',
+        'Установи высоту строки 30 через setRowHeight()',
         'JTable-setRowHeight',
         '', 419, 22.0, 0.0, 'String[] columns = {"Name", "Age"};
 String[][] data = {{"John", "25"}, {"Mary", "30"}};
@@ -893,7 +893,7 @@ VALUES (420, '<h2>🎮 Таблица-мастер: Установи режим 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (420, 46, 14, 'Таблица-мастер: установи режим автоизменения размера',
-        '<p><strong>Задание:</strong><br>Установи режим AUTO_RESIZE_ALL_COLUMNS через setAutoResizeMode()</p>',
+        'Установи режим AUTO_RESIZE_ALL_COLUMNS через setAutoResizeMode()',
         'JTable-setAutoResizeMode',
         '', 420, 24.0, 0.0, 'String[] columns = {"Name", "Age"};
 String[][] data = {{"John", "25"}, {"Mary", "30"}};

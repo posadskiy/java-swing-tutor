@@ -60,7 +60,7 @@ VALUES (108, '<h2>🎮 Прогресс-бар-новичок: Создай ин
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (108, 14, 1, 'Прогресс-бар-новичок: создай индикатор прогресса',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар с диапазоном 0-100, установи значение 50 и добавь на форму</p>',
+        'Создай прогресс-бар с диапазоном 0-100, установи значение 50 и добавь на форму',
         'JProgressBar-setValue,add',
         '', 108, 14.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(50);
@@ -112,7 +112,7 @@ VALUES (109, '<h2>🎮 Прогресс-бар-мастер: Установи м
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (109, 14, 2, 'Прогресс-бар-мастер: установи минимальное и максимальное значение',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи минимум 0 и максимум 100 через setMinimum() и setMaximum()</p>',
+        'Создай прогресс-бар, установи минимум 0 и максимум 100 через setMinimum() и setMaximum()',
         'JProgressBar-setMinimum,setMaximum,add',
         '', 109, 15.0, 0.0, 'JProgressBar progressBar = new JProgressBar();
 progressBar.setMinimum(0);
@@ -165,7 +165,7 @@ VALUES (110, '<h2>🎮 Прогресс-бар-мастер: Установи т
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (110, 14, 3, 'Прогресс-бар-мастер: установи текущее значение',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи значение 75 через setValue()</p>',
+        'Создай прогресс-бар, установи значение 75 через setValue()',
         'JProgressBar-setValue,add',
         '', 110, 15.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(75);
@@ -217,7 +217,7 @@ VALUES (111, '<h2>🎮 Прогресс-бар-мастер: Установи о
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (111, 14, 4, 'Прогресс-бар-мастер: установи ориентацию',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи вертикальную ориентацию через setOrientation(JProgressBar.VERTICAL)</p>',
+        'Создай прогресс-бар, установи вертикальную ориентацию через setOrientation(JProgressBar.VERTICAL)',
         'JProgressBar-setOrientation,add',
         '', 111, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setOrientation(JProgressBar.VERTICAL);
@@ -269,7 +269,7 @@ VALUES (112, '<h2>🎮 Прогресс-бар-мастер: Покажи стр
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (112, 14, 5, 'Прогресс-бар-мастер: покажи строку с процентами',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, включи показ строки через setStringPainted(true)</p>',
+        'Создай прогресс-бар, включи показ строки через setStringPainted(true)',
         'JProgressBar-setValue,setStringPainted,add',
         '', 112, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(50);
@@ -322,7 +322,7 @@ VALUES (113, '<h2>🎮 Прогресс-бар-мастер: Установи ц
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (113, 14, 6, 'Прогресс-бар-мастер: установи цвета',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи цвет заполнения Color.GREEN через setForeground()</p>',
+        'Создай прогресс-бар, установи цвет заполнения Color.GREEN через setForeground()',
         'JProgressBar-setValue,setForeground,add',
         '', 113, 17.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(50);
@@ -375,7 +375,7 @@ VALUES (114, '<h2>🎮 Прогресс-бар-мастер: Установи ш
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (114, 14, 7, 'Прогресс-бар-мастер: установи шрифт',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, создай шрифт new Font("Arial", Font.BOLD, 14), установи через setFont()</p>',
+        'Создай прогресс-бар, создай шрифт new Font("Arial", Font.BOLD, 14), установи через setFont()',
         'JProgressBar-setStringPainted,setFont,add',
         '', 114, 17.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setStringPainted(true);
@@ -426,7 +426,7 @@ VALUES (115, '<h2>🎮 Прогресс-бар-мастер: Установи р
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (115, 14, 8, 'Прогресс-бар-мастер: установи размер',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи размер 300x25 через setPreferredSize(new Dimension(300, 25))</p>',
+        'Создай прогресс-бар, установи размер 300x25 через setPreferredSize(new Dimension(300, 25))',
         'JProgressBar-setPreferredSize,add',
         '', 115, 18.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setPreferredSize(new Dimension(300, 25));
@@ -475,7 +475,7 @@ VALUES (116, '<h2>🎮 Прогресс-бар-мастер: Добавь под
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (116, 14, 9, 'Прогресс-бар-мастер: добавь подсказку',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, установи подсказку "Прогресс загрузки" через setToolTipText()</p>',
+        'Создай прогресс-бар, установи подсказку "Прогресс загрузки" через setToolTipText()',
         'JProgressBar-setToolTipText',
         '', 116, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setToolTipText("Прогресс загрузки");
@@ -523,7 +523,7 @@ VALUES (117, '<h2>🎮 Прогресс-бар-мастер: Включи нео
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (117, 14, 10, 'Прогресс-бар-мастер: включи неопределённый режим',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, включи неопределённый режим через setIndeterminate(true)</p>',
+        'Создай прогресс-бар, включи неопределённый режим через setIndeterminate(true)',
         'JProgressBar-setIndeterminate',
         '', 117, 18.0, 0.0, 'JProgressBar progressBar = new JProgressBar();
 progressBar.setIndeterminate(true);
@@ -575,7 +575,7 @@ VALUES (118, '<h2>🎮 Прогресс-бар-мастер: Обрабатыв�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (118, 14, 11, 'Прогресс-бар-мастер: обрабатывай изменения',
-        '<p><strong>Задание:</strong><br>Создай прогресс-бар, добавь ChangeListener, получи значение через getValue(), выведи его</p>',
+        'Создай прогресс-бар, добавь ChangeListener, получи значение через getValue(), выведи его',
         'JProgressBar-addChangeListener,getValue,add',
         '', 118, 19.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 JLabel label = new JLabel();

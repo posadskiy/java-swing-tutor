@@ -61,7 +61,7 @@ VALUES (107, '<h2>🎮 Деления слайдера: Добавь метки 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (107, 13, 2, 'Деления слайдера: добавь метки на шкалу',
-        '<p><strong>Задание:</strong><br>Создай слайдер, добавь крупные деления каждые 10 единиц с метками и добавь на форму</p>',
+        'Создай слайдер, добавь крупные деления каждые 10 единиц с метками и добавь на форму',
         'JSlider-setMajorTickSpacing,setPaintTicks,setPaintLabels,add',
         '', 107, 20.0, 0.0, 'JSlider slider = new JSlider(0, 100, 50);
 slider.setMajorTickSpacing(10);

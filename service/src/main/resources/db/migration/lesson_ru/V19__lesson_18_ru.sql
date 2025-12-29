@@ -59,7 +59,7 @@ VALUES (153, '<h2>🎮 Диалог-новичок: Создай всплыва�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (153, 18, 1, 'Диалог-новичок: создай всплывающее окно',
-        '<p><strong>Задание:</strong><br>Создай модальный диалог с заголовком "Диалог", размером 400x300 и сделай видимым</p>',
+        'Создай модальный диалог с заголовком "Диалог", размером 400x300 и сделай видимым',
         'JDialog-setSize,setVisible',
         '', 153, 16.0, 0.0, 'JFrame parent = new JFrame();
 JDialog dialog = new JDialog(parent, "Dialog", true);
@@ -111,7 +111,7 @@ VALUES (154, '<h2>🎮 Скроллбар-новичок: Создай скро�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (154, 18, 1, 'Скроллбар-новичок: создай скроллбар',
-        '<p><strong>Задание:</strong><br>Создай вертикальный JScrollBar со значением 0, extent 10, min 0, max 100, добавь на форму</p>',
+        'Создай вертикальный JScrollBar со значением 0, extent 10, min 0, max 100, добавь на форму',
         'JScrollBar-add',
         '', 154, 23.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 add(scrollBar);');
@@ -161,7 +161,7 @@ VALUES (155, '<h2>🎮 Скроллбар-мастер: Обрабатывай �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (155, 18, 2, 'Скроллбар-мастер: обрабатывай изменение значения',
-        '<p><strong>Задание:</strong><br>Добавь AdjustmentListener, получи значение через getValue(), выведи его</p>',
+        'Добавь AdjustmentListener, получи значение через getValue(), выведи его',
         'JScrollBar-addAdjustmentListener,getValue,add',
         '', 155, 23.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 JLabel label = new JLabel();
@@ -218,7 +218,7 @@ VALUES (156, '<h2>🎮 Скроллбар-мастер: Настрой шаг п
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (156, 18, 3, 'Скроллбар-мастер: настрой шаг прокрутки',
-        '<p><strong>Задание:</strong><br>Установи шаг единицы 10 через setUnitIncrement(), шаг блока 50 через setBlockIncrement()</p>',
+        'Установи шаг единицы 10 через setUnitIncrement(), шаг блока 50 через setBlockIncrement()',
         'JScrollBar-setUnitIncrement,setBlockIncrement,add',
         '', 156, 23.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setUnitIncrement(10);
@@ -270,7 +270,7 @@ VALUES (157, '<h2>🎮 Скроллбар-мастер: Измени шаг пр
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (157, 18, 4, 'Скроллбар-мастер: измени шаг прокрутки',
-        '<p><strong>Задание:</strong><br>Измени шаг единицы на 20 через setUnitIncrement(), шаг блока на 100 через setBlockIncrement()</p>',
+        'Измени шаг единицы на 20 через setUnitIncrement(), шаг блока на 100 через setBlockIncrement()',
         'JScrollBar-setUnitIncrement,setBlockIncrement,add',
         '', 157, 23.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setUnitIncrement(20);
@@ -319,7 +319,7 @@ VALUES (158, '<h2>🎮 Скроллбар-мастер: Настрой орие�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (158, 18, 5, 'Скроллбар-мастер: настрой ориентацию',
-        '<p><strong>Задание:</strong><br>Установи ориентацию HORIZONTAL через setOrientation()</p>',
+        'Установи ориентацию HORIZONTAL через setOrientation()',
         'JScrollBar-setOrientation,add',
         '', 158, 22.0, 0.0, 'JScrollBar scrollBar = new JScrollBar();
 scrollBar.setOrientation(JScrollBar.HORIZONTAL);
@@ -367,7 +367,7 @@ VALUES (159, '<h2>🎮 Скроллбар-мастер: Установи бло�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (159, 18, 8, 'Скроллбар-мастер: установи блок-инкремент',
-        '<p><strong>Задание:</strong><br>Установи блок-инкремент 100 через setBlockIncrement()</p>',
+        'Установи блок-инкремент 100 через setBlockIncrement()',
         'JScrollBar-setBlockIncrement,add',
         '', 159, 21.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setBlockIncrement(100);
@@ -415,7 +415,7 @@ VALUES (160, '<h2>🎮 Скроллбар-мастер: Установи еди�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (160, 18, 9, 'Скроллбар-мастер: установи единичный инкремент',
-        '<p><strong>Задание:</strong><br>Установи единичный инкремент 10 через setUnitIncrement()</p>',
+        'Установи единичный инкремент 10 через setUnitIncrement()',
         'JScrollBar-setUnitIncrement',
         '', 160, 21.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setUnitIncrement(10);
@@ -463,7 +463,7 @@ VALUES (161, '<h2>🎮 Скроллбар-мастер: Установи зна�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (161, 18, 10, 'Скроллбар-мастер: установи значение',
-        '<p><strong>Задание:</strong><br>Установи значение 100 через setValue()</p>',
+        'Установи значение 100 через setValue()',
         'JScrollBar-setValue',
         '', 161, 21.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 200);
 scrollBar.setValue(100);
@@ -511,7 +511,7 @@ VALUES (162, '<h2>🎮 Скроллбар-мастер: Установи бло�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (162, 18, 11, 'Скроллбар-мастер: установи блок-инкремент',
-        '<p><strong>Задание:</strong><br>Установи блок-инкремент 50 через setBlockIncrement()</p>',
+        'Установи блок-инкремент 50 через setBlockIncrement()',
         'JScrollBar-setBlockIncrement',
         '', 162, 22.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
 scrollBar.setBlockIncrement(50);

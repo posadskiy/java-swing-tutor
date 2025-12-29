@@ -65,7 +65,7 @@ VALUES (203, '<h2>🎮 Меню-новичок: Создай выпадающе�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (203, 25, 1, 'Меню-новичок: создай выпадающее меню',
-        '<p><strong>Задание:</strong><br>Создай меню "Файл", добавь пункт "Открыть" и добавь меню в строку меню</p>',
+        'Создай меню "Файл", добавь пункт "Открыть" и добавь меню в строку меню',
         'JMenu-add',
         '', 203, 18.0, 0.0, 'JMenu fileMenu = new JMenu("File");
 JMenuItem openItem = new JMenuItem("Открыть");
@@ -122,7 +122,7 @@ VALUES (204, '<h2>🎮 Окно-новичок: Создай окно без р�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (204, 25, 1, 'Окно-новичок: создай окно без рамки',
-        '<p><strong>Задание:</strong><br>Создай JWindow с родителем frame, добавь JLabel, покажи окно</p>',
+        'Создай JWindow с родителем frame, добавь JLabel, покажи окно',
         'JWindow-add,pack,setVisible',
         '', 204, 22.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
@@ -171,7 +171,7 @@ VALUES (205, '<h2>🎮 Окно-мастер: Сделай всегда пове
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (205, 25, 2, 'Окно-мастер: сделай всегда поверх',
-        '<p><strong>Задание:</strong><br>Установи всегда поверх через setAlwaysOnTop(true)</p>',
+        'Установи всегда поверх через setAlwaysOnTop(true)',
         'JWindow-setAlwaysOnTop,setVisible',
         '', 205, 23.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
@@ -218,7 +218,7 @@ VALUES (206, '<h2>🎮 Окно-мастер: Установи фон!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (206, 25, 3, 'Окно-мастер: установи фон',
-        '<p><strong>Задание:</strong><br>Установи фон LIGHT_GRAY через setBackground()</p>',
+        'Установи фон LIGHT_GRAY через setBackground()',
         'JWindow-setBackground,setVisible',
         '', 206, 21.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
@@ -266,7 +266,7 @@ VALUES (207, '<h2>🎮 Окно-мастер: Всегда поверх!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (207, 25, 4, 'Окно-мастер: всегда поверх',
-        '<p><strong>Задание:</strong><br>Установи всегда поверх через setAlwaysOnTop(true)</p>',
+        'Установи всегда поверх через setAlwaysOnTop(true)',
         'JWindow-setAlwaysOnTop,setVisible',
         '', 207, 22.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
@@ -315,7 +315,7 @@ VALUES (208, '<h2>🎮 Окно-мастер: Установи фон!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (208, 25, 5, 'Окно-мастер: установи фон',
-        '<p><strong>Задание:</strong><br>Установи фон LIGHT_GRAY через setBackground()</p>',
+        'Установи фон LIGHT_GRAY через setBackground()',
         'JWindow-setBackground',
         '', 208, 21.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
@@ -364,7 +364,7 @@ VALUES (209, '<h2>🎮 Разделитель-мастер: Включи одн�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (209, 25, 8, 'Разделитель-мастер: включи одно касание',
-        '<p><strong>Задание:</strong><br>Включи одно касание через setOneTouchExpandable(true)</p>',
+        'Включи одно касание через setOneTouchExpandable(true)',
         'JSplitPane-setOneTouchExpandable',
         '', 209, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -414,7 +414,7 @@ VALUES (210, '<h2>🎮 Разделитель-мастер: Включи неп�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (210, 25, 9, 'Разделитель-мастер: включи непрерывную компоновку',
-        '<p><strong>Задание:</strong><br>Включи непрерывную компоновку через setContinuousLayout(true)</p>',
+        'Включи непрерывную компоновку через setContinuousLayout(true)',
         'JSplitPane-setContinuousLayout',
         '', 210, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -464,7 +464,7 @@ VALUES (211, '<h2>🎮 Разделитель-мастер: Установи в�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (211, 25, 10, 'Разделитель-мастер: установи вес изменения размера',
-        '<p><strong>Задание:</strong><br>Установи вес 0.5 через setResizeWeight()</p>',
+        'Установи вес 0.5 через setResizeWeight()',
         'JSplitPane-setResizeWeight',
         '', 211, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();

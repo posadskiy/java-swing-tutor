@@ -61,7 +61,7 @@ VALUES (183, '<h2>🎮 Вкладки-новичок: Создай интерф�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (183, 22, 1, 'Вкладки-новичок: создай интерфейс с вкладками',
-        '<p><strong>Задание:</strong><br>Создай панель с вкладками, добавь две вкладки "Вкладка 1" и "Вкладка 2" и добавь на форму</p>',
+        'Создай панель с вкладками, добавь две вкладки "Вкладка 1" и "Вкладка 2" и добавь на форму',
         'JTabbedPane-addTab,add',
         '', 183, 16.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -111,7 +111,7 @@ VALUES (184, '<h2>🎮 Вкладки-мастер: Установи распо�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (184, 22, 2, 'Вкладки-мастер: установи расположение вкладок',
-        '<p><strong>Задание:</strong><br>Создай панель с вкладками, установи расположение внизу через setTabPlacement(JTabbedPane.BOTTOM)</p>',
+        'Создай панель с вкладками, установи расположение внизу через setTabPlacement(JTabbedPane.BOTTOM)',
         'JTabbedPane-addTab,setTabPlacement,add',
         '', 184, 17.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -164,7 +164,7 @@ VALUES (185, '<h2>🎮 Вкладки-мастер: Выбери вкладку!
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (185, 22, 3, 'Вкладки-мастер: выбери вкладку',
-        '<p><strong>Задание:</strong><br>Создай панель с вкладками, добавь две вкладки, выбери вторую через setSelectedIndex(1)</p>',
+        'Создай панель с вкладками, добавь две вкладки, выбери вторую через setSelectedIndex(1)',
         'JTabbedPane-addTab,addTab,setSelectedIndex,add',
         '', 185, 17.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -218,7 +218,7 @@ VALUES (186, '<h2>🎮 Вкладки-мастер: Добавь иконку н
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (186, 22, 4, 'Вкладки-мастер: добавь иконку на вкладку',
-        '<p><strong>Задание:</strong><br>Создай панель с вкладками, добавь вкладку с иконкой через addTab("Вкладка", icon, component)</p>',
+        'Создай панель с вкладками, добавь вкладку с иконкой через addTab("Вкладка", icon, component)',
         'JTabbedPane-addTab,add',
         '', 186, 18.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 ImageIcon icon = new ImageIcon("icon.png");
@@ -268,7 +268,7 @@ VALUES (187, '<h2>🎮 Вкладки-мастер: Добавь подсказ�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (187, 22, 5, 'Вкладки-мастер: добавь подсказку на вкладку',
-        '<p><strong>Задание:</strong><br>Создай панель с вкладками, добавь вкладку, установи подсказку "Первая вкладка" через setToolTipTextAt(0, "Первая вкладка")</p>',
+        'Создай панель с вкладками, добавь вкладку, установи подсказку "Первая вкладка" через setToolTipTextAt(0, "Первая вкладка")',
         'JTabbedPane-addTab,setToolTipTextAt,add',
         '', 187, 17.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -321,7 +321,7 @@ VALUES (188, '<h2>🎮 Вкладки-мастер: Включи/выключи 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (188, 22, 6, 'Вкладки-мастер: включи/выключи вкладку',
-        '<p><strong>Задание:</strong><br>Создай панель с вкладками, добавь вкладку, выключи её через setEnabledAt(0, false)</p>',
+        'Создай панель с вкладками, добавь вкладку, выключи её через setEnabledAt(0, false)',
         'JTabbedPane-setEnabledAt',
         '', 188, 18.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -374,7 +374,7 @@ VALUES (189, '<h2>🎮 Вкладки-мастер: Обрабатывай из�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (189, 22, 7, 'Вкладки-мастер: обрабатывай изменение вкладки',
-        '<p><strong>Задание:</strong><br>Создай панель с вкладками, добавь ChangeListener, получи индекс выбранной вкладки через getSelectedIndex(), выведи его</p>',
+        'Создай панель с вкладками, добавь ChangeListener, получи индекс выбранной вкладки через getSelectedIndex(), выведи его',
         'JTabbedPane-addChangeListener,getSelectedIndex,add',
         '', 189, 19.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());

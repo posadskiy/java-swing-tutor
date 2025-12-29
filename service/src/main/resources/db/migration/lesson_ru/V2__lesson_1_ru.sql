@@ -33,6 +33,6 @@ VALUES (1, '<h2>Привет!</h2>
 благодарность за прочтение данного текста. <em>Итак, приступай, я жду!</em></p>');
 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating)
-VALUES (1, 1, 0, 'Вступление', '<p>Нажми на кнопку <strong>"Проверить"</strong></p>',
+VALUES (1, 1, 0, 'Вступление', '<p>Нажми на кнопку <strong>"Проверить"</strong>',
         '', '', 1, 0.0, 0.0);
 

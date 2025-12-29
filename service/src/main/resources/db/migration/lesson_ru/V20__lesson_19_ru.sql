@@ -60,7 +60,7 @@ VALUES (163, '<h2>🎮 Окно-новичок: Создай окно без р�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (163, 19, 1, 'Окно-новичок: создай окно без рамки',
-        '<p><strong>Задание:</strong><br>Создай окно с родительским фреймом, размером 400x300 и сделай его видимым</p>',
+        'Создай окно с родительским фреймом, размером 400x300 и сделай его видимым',
         'JWindow-setSize,setVisible',
         '', 163, 15.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
@@ -113,7 +113,7 @@ VALUES (164, '<h2>🎮 Окно-мастер: Установи размер!</h2
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (164, 19, 2, 'Окно-мастер: установи размер',
-        '<p><strong>Задание:</strong><br>Создай окно, установи размер 500x400 через setSize(500, 400)</p>',
+        'Создай окно, установи размер 500x400 через setSize(500, 400)',
         'JWindow-setSize,setVisible',
         '', 164, 16.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
@@ -166,7 +166,7 @@ VALUES (165, '<h2>🎮 Окно-мастер: Установи располож�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (165, 19, 3, 'Окно-мастер: установи расположение',
-        '<p><strong>Задание:</strong><br>Создай окно, установи расположение 100, 100 через setLocation(100, 100)</p>',
+        'Создай окно, установи расположение 100, 100 через setLocation(100, 100)',
         'JWindow-setSize,setLocation,setVisible',
         '', 165, 16.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
@@ -217,7 +217,7 @@ VALUES (166, '<h2>🎮 Окно-мастер: Сделай всегда пове
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (166, 19, 4, 'Окно-мастер: сделай всегда поверх',
-        '<p><strong>Задание:</strong><br>Создай окно, включи всегда поверх через setAlwaysOnTop(true)</p>',
+        'Создай окно, включи всегда поверх через setAlwaysOnTop(true)',
         'JWindow-setSize,setAlwaysOnTop,setVisible',
         '', 166, 17.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
@@ -268,7 +268,7 @@ VALUES (167, '<h2>🎮 Окно-мастер: Установи цвет фона
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (167, 19, 5, 'Окно-мастер: установи цвет фона',
-        '<p><strong>Задание:</strong><br>Создай окно, установи цвет фона Color.WHITE через setBackground()</p>',
+        'Создай окно, установи цвет фона Color.WHITE через setBackground()',
         'JWindow-setSize,setBackground,setVisible',
         '', 167, 17.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
@@ -319,7 +319,7 @@ VALUES (168, '<h2>🎮 Окно-мастер: Установи прозрачн�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (168, 19, 6, 'Окно-мастер: установи прозрачность',
-        '<p><strong>Задание:</strong><br>Создай окно, установи прозрачность 0.8 через setOpacity(0.8f)</p>',
+        'Создай окно, установи прозрачность 0.8 через setOpacity(0.8f)',
         'JWindow-setSize,setOpacity,setVisible',
         '', 168, 18.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);
@@ -370,7 +370,7 @@ VALUES (169, '<h2>🎮 Окно-мастер: Закрой окно!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (169, 19, 7, 'Окно-мастер: закрой окно',
-        '<p><strong>Задание:</strong><br>Создай окно, закрой его через dispose()</p>',
+        'Создай окно, закрой его через dispose()',
         'JWindow-setSize,setVisible,dispose',
         '', 169, 16.0, 0.0, 'JFrame frame = new JFrame();
 JWindow window = new JWindow(frame);

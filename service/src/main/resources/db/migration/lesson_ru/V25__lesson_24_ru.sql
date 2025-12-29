@@ -62,7 +62,7 @@ VALUES (196, '<h2>🎮 Строка меню-новичок: Создай мен
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (196, 24, 1, 'Строка меню-новичок: создай меню приложения',
-        '<p><strong>Задание:</strong><br>Создай строку меню, добавь меню "Файл" и установи в окно</p>',
+        'Создай строку меню, добавь меню "Файл" и установи в окно',
         'JMenuBar-add,setJMenuBar',
         '', 196, 16.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
 JMenu fileMenu = new JMenu("Файл");
@@ -114,7 +114,7 @@ VALUES (197, '<h2>🎮 Прокручиваемая панель-мастер: �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (197, 24, 2, 'Прокручиваемая панель-мастер: настрой политику прокрутки',
-        '<p><strong>Задание:</strong><br>Установи горизонтальную политику ALWAYS, вертикальную AS_NEEDED</p>',
+        'Установи горизонтальную политику ALWAYS, вертикальную AS_NEEDED',
         'JScrollPane-setHorizontalScrollBarPolicy,setVerticalScrollBarPolicy,add',
         '', 197, 24.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
@@ -167,7 +167,7 @@ VALUES (198, '<h2>🎮 Прокручиваемая панель-мастер: �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (198, 24, 3, 'Прокручиваемая панель-мастер: работай с viewport',
-        '<p><strong>Задание:</strong><br>Получи viewport через getViewport(), установи позицию (0, 100) через setViewPosition()</p>',
+        'Получи viewport через getViewport(), установи позицию (0, 100) через setViewPosition()',
         'JScrollPane-getViewport,add',
         '', 198, 25.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
@@ -217,7 +217,7 @@ VALUES (199, '<h2>🎮 Прокручиваемая панель-мастер: �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (199, 24, 4, 'Прокручиваемая панель-мастер: настрой горизонтальную прокрутку',
-        '<p><strong>Задание:</strong><br>Установи политику AS_NEEDED через setHorizontalScrollBarPolicy()</p>',
+        'Установи политику AS_NEEDED через setHorizontalScrollBarPolicy()',
         'JScrollPane-setHorizontalScrollBarPolicy,add',
         '', 199, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
@@ -269,7 +269,7 @@ VALUES (200, '<h2>🎮 Прокручиваемая панель-мастер: �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (200, 24, 5, 'Прокручиваемая панель-мастер: добавь границу viewport',
-        '<p><strong>Задание:</strong><br>Создай границу через BorderFactory.createLineBorder(), установи через setViewportBorder()</p>',
+        'Создай границу через BorderFactory.createLineBorder(), установи через setViewportBorder()',
         'JScrollPane-setViewportBorder,add',
         '', 200, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
@@ -322,7 +322,7 @@ VALUES (201, '<h2>🎮 Прокручиваемая панель-мастер: �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (201, 24, 9, 'Прокручиваемая панель-мастер: добавь заголовок колонки',
-        '<p><strong>Задание:</strong><br>Создай JLabel "Заголовок", установи через setColumnHeaderView()</p>',
+        'Создай JLabel "Заголовок", установи через setColumnHeaderView()',
         'JScrollPane-setColumnHeaderView',
         '', 201, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
@@ -375,7 +375,7 @@ VALUES (202, '<h2>🎮 Прокручиваемая панель-мастер: �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (202, 24, 10, 'Прокручиваемая панель-мастер: добавь заголовок строки',
-        '<p><strong>Задание:</strong><br>Создай JLabel "Заголовок", установи через setRowHeaderView()</p>',
+        'Создай JLabel "Заголовок", установи через setRowHeaderView()',
         'JScrollPane-setRowHeaderView',
         '', 202, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
@@ -428,7 +428,7 @@ VALUES (474, '<h2>🎮 Прокручиваемая панель-мастер: �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (474, 24, 11, 'Прокручиваемая панель-мастер: установи границу viewport',
-        '<p><strong>Задание:</strong><br>Создай границу через BorderFactory.createLineBorder(Color.GRAY, 1), установи через setViewportBorder()</p>',
+        'Создай границу через BorderFactory.createLineBorder(Color.GRAY, 1), установи через setViewportBorder()',
         'JScrollPane-setViewportBorder,add',
         '', 474, 23.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);

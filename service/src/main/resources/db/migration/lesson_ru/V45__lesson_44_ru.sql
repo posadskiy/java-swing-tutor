@@ -62,7 +62,7 @@ layout.putConstraint(SpringLayout.NORTH, button, 10, SpringLayout.NORTH, this);<
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (383, 44, 1, 'SpringLayout-новичок: создай пружинную компоновку',
-        '<p><strong>Задание:</strong><br>Установи SpringLayout, добавь кнопку, установи связи WEST и NORTH с отступом 10 от края контейнера</p>',
+        'Установи SpringLayout, добавь кнопку, установи связи WEST и NORTH с отступом 10 от края контейнера',
         'SpringLayout-putConstraint,add',
         '', 383, 29.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
@@ -121,7 +121,7 @@ add(button2);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (384, 44, 2, 'SpringLayout-мастер: связывай компоненты друг с другом',
-        '<p><strong>Задание:</strong><br>Добавь две кнопки, свяжи EAST первой кнопки с WEST второй с отступом 10</p>',
+        'Добавь две кнопки, свяжи EAST первой кнопки с WEST второй с отступом 10',
         'SpringLayout-putConstraint,add,add',
         '', 384, 30.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
@@ -180,7 +180,7 @@ VALUES (386, '<h2>🎮 MouseListener-мастер: Определи количе
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (386, 44, 2, 'MouseListener-мастер: определи количество кликов',
-        '<p><strong>Задание:</strong><br>Добавь MouseListener, проверь getClickCount() == 2 для двойного клика, выведи сообщение</p>',
+        'Добавь MouseListener, проверь getClickCount() == 2 для двойного клика, выведи сообщение',
         'MouseListener-getClickCount',
         '', 386, 23.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
@@ -242,7 +242,7 @@ Spring spring2 = Spring.constant(20);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (385, 44, 3, 'SpringLayout-мастер: используй арифметику пружин',
-        '<p><strong>Задание:</strong><br>Создай две пружины через Spring.constant(10) и Spring.constant(20), сложи их через Spring.sum(), используй в putConstraint</p>',
+        'Создай две пружины через Spring.constant(10) и Spring.constant(20), сложи их через Spring.sum(), используй в putConstraint',
         'Spring-constant-sum-putConstraint',
         '', 385, 31.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
@@ -302,7 +302,7 @@ VALUES (387, '<h2>🎮 MouseListener-мастер: Определи кнопку
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (387, 44, 3, 'MouseListener-мастер: определи кнопку мыши',
-        '<p><strong>Задание:</strong><br>Добавь MouseListener, проверь getButton() == BUTTON1, выведи сообщение</p>',
+        'Добавь MouseListener, проверь getButton() == BUTTON1, выведи сообщение',
         'MouseListener-getButton-BUTTON1',
         '', 387, 23.0, 0.0, 'JPanel component = new JPanel();
 JLabel label = new JLabel();
@@ -359,7 +359,7 @@ VALUES (390, '<h2>🎮 FocusListener-мастер: Запроси фокус!</h
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (390, 44, 3, 'FocusListener-мастер: запроси фокус',
-        '<p><strong>Задание:</strong><br>Запроси фокус через requestFocusInWindow()</p>',
+        'Запроси фокус через requestFocusInWindow()',
         'Component-requestFocusInWindow',
         '', 390, 22.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
@@ -415,7 +415,7 @@ VALUES (388, '<h2>🎮 MouseListener-мастер: Определи позици
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (388, 44, 4, 'MouseListener-мастер: определи позицию мыши',
-        '<p><strong>Задание:</strong><br>Добавь MouseListener, получи X через getX(), Y через getY(), выведи позицию</p>',
+        'Добавь MouseListener, получи X через getX(), Y через getY(), выведи позицию',
         'MouseListener-getX,getY,add',
         '', 388, 23.0, 0.0, 'JPanel component = new JPanel();
 JLabel label = new JLabel();
@@ -472,7 +472,7 @@ VALUES (393, '<h2>🎮 FocusListener-мастер: Управляй фокуси
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (393, 44, 4, 'FocusListener-мастер: управляй фокусируемостью',
-        '<p><strong>Задание:</strong><br>Отключи фокус через setFocusable(false)</p>',
+        'Отключи фокус через setFocusable(false)',
         'Component-setFocusable',
         '', 393, 21.0, 0.0, 'JLabel component = new JLabel("Label");
 component.setFocusable(false);
@@ -527,7 +527,7 @@ VALUES (389, '<h2>🎮 MouseListener-мастер: Определи количе
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (389, 44, 5, 'MouseListener-мастер: определи количество кликов',
-        '<p><strong>Задание:</strong><br>Добавь MouseListener, проверь getClickCount() == 2, выведи сообщение</p>',
+        'Добавь MouseListener, проверь getClickCount() == 2, выведи сообщение',
         'MouseListener-getClickCount',
         '', 389, 23.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
@@ -582,7 +582,7 @@ VALUES (396, '<h2>🎮 FocusListener-мастер: Получи владельц
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (396, 44, 5, 'FocusListener-мастер: получи владельца фокуса',
-        '<p><strong>Задание:</strong><br>Получи владельца фокуса через KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner()</p>',
+        'Получи владельца фокуса через KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner()',
         'FocusListener-getFocusOwner',
         '', 396, 25.0, 0.0, 'Component owner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
 JLabel label = new JLabel();
@@ -633,7 +633,7 @@ VALUES (391, '<h2>🎮 SpringLayout-мастер: Получи ограниче�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (391, 44, 6, 'SpringLayout-мастер: получи ограничение',
-        '<p><strong>Задание:</strong><br>Получи ограничения компонента через getConstraints()</p>',
+        'Получи ограничения компонента через getConstraints()',
         'SpringLayout-getConstraints',
         '', 391, 24.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
@@ -683,7 +683,7 @@ VALUES (392, '<h2>🎮 SpringLayout-мастер: Установи ограни�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (392, 44, 7, 'SpringLayout-мастер: установи ограничение',
-        '<p><strong>Задание:</strong><br>Установи ограничение через putConstraint(WEST, component2, 10, EAST, component1)</p>',
+        'Установи ограничение через putConstraint(WEST, component2, 10, EAST, component1)',
         'SpringLayout-putConstraint',
         '', 392, 26.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
@@ -735,7 +735,7 @@ VALUES (394, '<h2>🎮 SpringLayout-мастер: Создай пружину!</
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (394, 44, 8, 'SpringLayout-мастер: создай пружину',
-        '<p><strong>Задание:</strong><br>Создай пружину 100 через Spring.constant(100)</p>',
+        'Создай пружину 100 через Spring.constant(100)',
         'SpringLayout-constant,add',
         '', 394, 25.0, 0.0, 'Spring spring = Spring.constant(100);
 SpringLayout layout = new SpringLayout();
@@ -786,7 +786,7 @@ VALUES (395, '<h2>🎮 SpringLayout-мастер: Получи ограниче�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (395, 44, 9, 'SpringLayout-мастер: получи ограничение',
-        '<p><strong>Задание:</strong><br>Получи ограничение через getConstraints(component)</p>',
+        'Получи ограничение через getConstraints(component)',
         'SpringLayout-getConstraints',
         '', 395, 24.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);

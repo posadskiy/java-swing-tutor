@@ -56,7 +56,7 @@ VALUES (16, '<h2>🎮 Метка-новичок: Создай информаци
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (16, 3, 1, 'Метка-новичок: создай информационную табличку',
-        '<p><strong>Задание:</strong><br>Создай метку и добавь её на форму</p>',
+        'Создай метку и добавь её на форму',
         'JLabel-add',
         '', 16, 10.0, 0.0, 'JLabel label = new JLabel();
 add(label);');
@@ -107,7 +107,7 @@ VALUES (17, '<h2>🎮 Текст метки: Дай ей голос!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (17, 3, 2, 'Текст метки: дай ей голос',
-        '<p><strong>Задание:</strong><br>Создай метку, задай ей текст "Привет, мир!" и добавь на форму</p>',
+        'Создай метку, задай ей текст "Привет, мир!" и добавь на форму',
         'JLabel-setText,add',
         '', 17, 12.0, 0.0, 'JLabel label = new JLabel();
 label.setText("Hello, world!");
@@ -161,7 +161,7 @@ VALUES (18, '<h2>🎮 Иконка метки: Добавь визуальный
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (18, 3, 3, 'Иконка метки: добавь визуальный эффект',
-        '<p><strong>Задание:</strong><br>Создай метку, установи иконку и добавь на форму</p>',
+        'Создай метку, установи иконку и добавь на форму',
         'JLabel-setIcon,add',
         '', 18, 18.0, 0.0, 'JLabel label = new JLabel();
 label.setIcon(new ImageIcon("icon.png"));
@@ -214,7 +214,7 @@ VALUES (19, '<h2>🎮 Горизонтальное выравнивание: Р�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (19, 3, 4, 'Горизонтальное выравнивание: размести текст правильно',
-        '<p><strong>Задание:</strong><br>Создай метку с текстом "Центр", выровняй по центру и добавь на форму</p>',
+        'Создай метку с текстом "Центр", выровняй по центру и добавь на форму',
         'JLabel-setHorizontalAlignment,add',
         '', 19, 15.0, 0.0, 'JLabel label = new JLabel("Center");
 label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -266,7 +266,7 @@ VALUES (20, '<h2>🎮 Вертикальное выравнивание: Под�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (20, 3, 5, 'Вертикальное выравнивание: подними или опусти текст',
-        '<p><strong>Задание:</strong><br>Создай метку, выровняй текст по вертикали по центру и добавь на форму</p>',
+        'Создай метку, выровняй текст по вертикали по центру и добавь на форму',
         'JLabel-setVerticalAlignment,add',
         '', 20, 16.0, 0.0, 'JLabel label = new JLabel("Text");
 label.setVerticalAlignment(SwingConstants.CENTER);
@@ -321,7 +321,7 @@ VALUES (21, '<h2>🎮 Цвета метки: Раскрась информаци
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (21, 3, 6, 'Цвета метки: раскрась информационную табличку',
-        '<p><strong>Задание:</strong><br>Создай метку, установи жёлтый фон, чёрный текст и добавь на форму</p>',
+        'Создай метку, установи жёлтый фон, чёрный текст и добавь на форму',
         'JLabel-setBackground,setForeground,setOpaque,add',
         '', 21, 20.0, 0.0, 'JLabel label = new JLabel("Text");
 label.setBackground(Color.YELLOW);
@@ -378,7 +378,7 @@ VALUES (22, '<h2>🎮 Шрифт метки: Выбери стиль текст�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (22, 3, 7, 'Шрифт метки: выбери стиль текста',
-        '<p><strong>Задание:</strong><br>Создай метку, установи жирный шрифт Arial размером 16 и добавь на форму</p>',
+        'Создай метку, установи жирный шрифт Arial размером 16 и добавь на форму',
         'JLabel-setFont,add',
         '', 22, 22.0, 0.0, 'JLabel label = new JLabel("Text");
 Font font = new Font("Arial", Font.BOLD, 16);
@@ -433,7 +433,7 @@ VALUES (23, '<h2>🎮 Размер метки: Сделай её нужного 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (23, 3, 8, 'Размер метки: сделай её нужного размера',
-        '<p><strong>Задание:</strong><br>Создай метку, установи размер 200x50 и добавь на форму</p>',
+        'Создай метку, установи размер 200x50 и добавь на форму',
         'JLabel-setSize,add',
         '', 23, 18.0, 0.0, 'JLabel label = new JLabel("Text");
 label.setSize(200, 50);
@@ -487,7 +487,7 @@ VALUES (24, '<h2>🎮 Подсказка метки: Добавь всплыва
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (24, 3, 9, 'Подсказка метки: добавь всплывающую помощь',
-        '<p><strong>Задание:</strong><br>Создай метку, добавь подсказку "Это подсказка!" и добавь на форму</p>',
+        'Создай метку, добавь подсказку "Это подсказка!" и добавь на форму',
         'JLabel-setToolTipText,add',
         '', 24, 14.0, 0.0, 'JLabel label = new JLabel("Hover cursor");
 label.setToolTipText("This is a tooltip!");
@@ -526,7 +526,7 @@ VALUES (25, '<h2>🎮 HTML в метке: Форматированный тек�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (25, 3, 10, 'HTML в метке: форматированный текст',
-        '<p><strong>Задание:</strong><br>Создай метку с HTML-текстом "&lt;b&gt;Жирный&lt;/b&gt;" и добавь на форму</p>',
+        'Создай метку с HTML-текстом "&lt;b&gt;Жирный&lt;/b&gt;" и добавь на форму',
         'JLabel-setText,add',
         '', 25, 16.0, 0.0, 'JLabel label = new JLabel();
 label.setText("<html><b>Жирный</b></html>");
@@ -578,7 +578,7 @@ VALUES (26, '<h2>🎮 Метка-мастер: Добавь иконку к ме
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (26, 3, 11, 'Метка-мастер: добавь иконку к метке',
-        '<p><strong>Задание:</strong><br>Создай ImageIcon из файла "icon.png", установи иконку в метку через setIcon()</p>',
+        'Создай ImageIcon из файла "icon.png", установи иконку в метку через setIcon()',
         'JLabel-setIcon,add',
         '', 26, 24.0, 0.0, 'ImageIcon icon = new ImageIcon("icon.png");
 JLabel label = new JLabel();
@@ -629,7 +629,7 @@ VALUES (27, '<h2>🎮 Метка-мастер: Выровняй текст!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (27, 3, 12, 'Метка-мастер: выровняй текст',
-        '<p><strong>Задание:</strong><br>Установи горизонтальное и вертикальное выравнивание CENTER через setHorizontalAlignment() и setVerticalAlignment()</p>',
+        'Установи горизонтальное и вертикальное выравнивание CENTER через setHorizontalAlignment() и setVerticalAlignment()',
         'JLabel-setHorizontalAlignment,setVerticalAlignment,add',
         '', 27, 23.0, 0.0, 'JLabel label = new JLabel("Text");
 label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -669,7 +669,7 @@ VALUES (28, '<h2>🎮 Метка-мастер: Добавь HTML-контент!
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (28, 3, 13, 'Метка-мастер: добавь HTML-контент',
-        '<p><strong>Задание:</strong><br>Установи текст с HTML-тегами: &lt;b&gt;Жирный&lt;/b&gt; и &lt;i&gt;Курсив&lt;/i&gt;</p>',
+        'Установи текст с HTML-тегами: &lt;b&gt;Жирный&lt;/b&gt; и &lt;i&gt;Курсив&lt;/i&gt;',
         'JLabel-setText,add',
         '', 28, 20.0, 0.0, 'JLabel label = new JLabel();
 label.setText("<html><b>Жирный</b> и <i>Курсив</i></html>");
@@ -720,7 +720,7 @@ VALUES (29, '<h2>🎮 Метка-мастер: Настрой выравнива
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (29, 3, 14, 'Метка-мастер: настрой выравнивание иконки',
-        '<p><strong>Задание:</strong><br>Установи иконку, установи горизонтальное выравнивание LEFT через setHorizontalAlignment()</p>',
+        'Установи иконку, установи горизонтальное выравнивание LEFT через setHorizontalAlignment()',
         'JLabel-setIcon,setHorizontalAlignment,add',
         '', 29, 23.0, 0.0, 'JLabel label = new JLabel();
 label.setIcon(new ImageIcon("icon.png"));
@@ -770,7 +770,7 @@ VALUES (30, '<h2>🎮 Метка-мастер: Настрой вертикаль
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (30, 3, 15, 'Метка-мастер: настрой вертикальное выравнивание',
-        '<p><strong>Задание:</strong><br>Установи вертикальное выравнивание TOP через setVerticalAlignment()</p>',
+        'Установи вертикальное выравнивание TOP через setVerticalAlignment()',
         'JLabel-setVerticalAlignment,add',
         '', 30, 22.0, 0.0, 'JLabel label = new JLabel("Text");
 label.setVerticalAlignment(SwingConstants.TOP);
@@ -821,7 +821,7 @@ VALUES (31, '<h2>🎮 Метка-мастер: Настрой позицию т�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (31, 3, 16, 'Метка-мастер: настрой позицию текста',
-        '<p><strong>Задание:</strong><br>Установи иконку, установи горизонтальную позицию текста RIGHT через setHorizontalTextPosition()</p>',
+        'Установи иконку, установи горизонтальную позицию текста RIGHT через setHorizontalTextPosition()',
         'JLabel-setIcon,setHorizontalTextPosition,add',
         '', 31, 23.0, 0.0, 'JLabel label = new JLabel("Text");
 label.setIcon(new ImageIcon("icon.png"));
@@ -873,7 +873,7 @@ VALUES (32, '<h2>🎮 Метка-мастер: Установи мнемоник
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (32, 3, 17, 'Метка-мастер: установи мнемоник',
-        '<p><strong>Задание:</strong><br>Установи мнемоник VK_N через setDisplayedMnemonic(), свяжи с компонентом через setLabelFor()</p>',
+        'Установи мнемоник VK_N через setDisplayedMnemonic(), свяжи с компонентом через setLabelFor()',
         'JLabel-setDisplayedMnemonic,setLabelFor,add;JTextField-add',
         '', 32, 25.0, 0.0, 'JTextField textField = new JTextField();
 JLabel label = new JLabel("Name");
@@ -927,7 +927,7 @@ VALUES (33, '<h2>🎮 Метка-мастер: Добавь границу!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (33, 3, 18, 'Метка-мастер: добавь границу',
-        '<p><strong>Задание:</strong><br>Создай границу через BorderFactory.createLineBorder(Color.BLACK, 1), установи через setBorder()</p>',
+        'Создай границу через BorderFactory.createLineBorder(Color.BLACK, 1), установи через setBorder()',
         'JLabel-setBorder,add',
         '', 33, 22.0, 0.0, 'JLabel label = new JLabel("Text");
 Border border = BorderFactory.createLineBorder(Color.BLACK, 1);
@@ -976,7 +976,7 @@ VALUES (34, '<h2>🎮 Метка-мастер: Установи расстоян
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (34, 3, 19, 'Метка-мастер: установи расстояние между иконкой и текстом',
-        '<p><strong>Задание:</strong><br>Установи расстояние 10 через setIconTextGap()</p>',
+        'Установи расстояние 10 через setIconTextGap()',
         'JLabel-setIcon,setIconTextGap,add',
         '', 34, 22.0, 0.0, 'JLabel label = new JLabel("Text");
 label.setIcon(new ImageIcon("icon.png"));

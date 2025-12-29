@@ -56,7 +56,7 @@ VALUES (51, '<h2>🎮 Поле пароля-новичок: Создай защ�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (51, 6, 1, 'Поле пароля-новичок: создай защищённое поле',
-        '<p><strong>Задание:</strong><br>Создай поле пароля и добавь его на форму</p>',
+        'Создай поле пароля и добавь его на форму',
         'JPasswordField-add',
         '', 51, 12.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 add(passwordField);');
@@ -106,7 +106,7 @@ VALUES (52, '<h2>🎮 Символ маскировки: Измени звёзд
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (52, 6, 2, 'Символ маскировки: измени звёздочку на другой символ',
-        '<p><strong>Задание:</strong><br>Создай поле пароля, установи символ маскировки ''●'' и добавь на форму</p>',
+        'Создай поле пароля, установи символ маскировки ''●'' и добавь на форму',
         'JPasswordField-setEchoChar,add',
         '', 52, 16.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 passwordField.setEchoChar(''●'');
@@ -157,7 +157,7 @@ VALUES (53, '<h2>🎮 Текстовая область-мастер: Включ
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (53, 6, 3, 'Текстовая область-мастер: включи перенос строк',
-        '<p><strong>Задание:</strong><br>Установи setLineWrap(true) и setWrapStyleWord(true) для текстовой области</p>',
+        'Установи setLineWrap(true) и setWrapStyleWord(true) для текстовой области',
         'JTextArea-setLineWrap,setWrapStyleWord,add',
         '', 53, 22.0, 0.0, 'JTextArea textArea = new JTextArea();
 textArea.setLineWrap(true);
@@ -206,7 +206,7 @@ VALUES (54, '<h2>🎮 Текстовая область-мастер: Настр
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (54, 6, 4, 'Текстовая область-мастер: настрой размер табуляции',
-        '<p><strong>Задание:</strong><br>Установи размер табуляции 4 через setTabSize(4)</p>',
+        'Установи размер табуляции 4 через setTabSize(4)',
         'JTextArea-setTabSize,add',
         '', 54, 21.0, 0.0, 'JTextArea textArea = new JTextArea();
 textArea.setTabSize(4);
@@ -256,7 +256,7 @@ VALUES (55, '<h2>🎮 Текстовая область-мастер: Включ
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (55, 6, 5, 'Текстовая область-мастер: включи перенос строк',
-        '<p><strong>Задание:</strong><br>Включи перенос через setLineWrap(true), включи перенос по словам через setWrapStyleWord(true)</p>',
+        'Включи перенос через setLineWrap(true), включи перенос по словам через setWrapStyleWord(true)',
         'JTextArea-setLineWrap,setWrapStyleWord,add',
         '', 55, 23.0, 0.0, 'JTextArea textArea = new JTextArea();
 textArea.setLineWrap(true);
@@ -305,7 +305,7 @@ VALUES (56, '<h2>🎮 Текстовая область-мастер: Добав
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (56, 6, 6, 'Текстовая область-мастер: добавь текст',
-        '<p><strong>Задание:</strong><br>Добавь текст "Новая строка\n" через append()</p>',
+        'Добавь текст "Новая строка\n" через append()',
         'JTextArea-append,add',
         '', 56, 22.0, 0.0, 'JTextArea textArea = new JTextArea();
 textArea.append("Новая строка\n");
@@ -353,7 +353,7 @@ VALUES (57, '<h2>🎮 Текстовая область-мастер: Встав
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (57, 6, 7, 'Текстовая область-мастер: вставь текст',
-        '<p><strong>Задание:</strong><br>Вставь текст "Вставленный текст" в позицию 0 через insert()</p>',
+        'Вставь текст "Вставленный текст" в позицию 0 через insert()',
         'JTextArea-insert,add',
         '', 57, 22.0, 0.0, 'JTextArea textArea = new JTextArea("Text");
 textArea.insert("Вставленный текст", 0);
@@ -401,7 +401,7 @@ VALUES (58, '<h2>🎮 Текстовая область-мастер: Замен
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (58, 6, 8, 'Текстовая область-мастер: замени текст',
-        '<p><strong>Задание:</strong><br>Замени диапазон 0-5 через replaceRange("Новый текст", 0, 5)</p>',
+        'Замени диапазон 0-5 через replaceRange("Новый текст", 0, 5)',
         'JTextArea-replaceRange,add',
         '', 58, 23.0, 0.0, 'JTextArea textArea = new JTextArea("Old text");
 textArea.replaceRange("Новый текст", 0, 5);
@@ -449,7 +449,7 @@ VALUES (59, '<h2>🎮 Текстовая область-мастер: Получ
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (59, 6, 9, 'Текстовая область-мастер: получи количество строк',
-        '<p><strong>Задание:</strong><br>Получи количество строк через getLineCount()</p>',
+        'Получи количество строк через getLineCount()',
         'JTextArea-getLineCount,add',
         '', 59, 21.0, 0.0, 'JTextArea textArea = new JTextArea("Line 1\nLine 2");
 int lines = textArea.getLineCount();
@@ -505,7 +505,7 @@ VALUES (60, '<h2>🎮 Текстовая область-мастер: Получ
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (60, 6, 10, 'Текстовая область-мастер: получи текст строки',
-        '<p><strong>Задание:</strong><br>Получи начало строки 0 через getLineStartOffset(), конец через getLineEndOffset(), получи текст через getText()</p>',
+        'Получи начало строки 0 через getLineStartOffset(), конец через getLineEndOffset(), получи текст через getText()',
         'JTextArea-getLineStartOffset,getLineEndOffset,getText,add',
         '', 60, 25.0, 0.0, 'JTextArea textArea = new JTextArea("First line\nSecond line");
 int start = textArea.getLineStartOffset(0);
@@ -555,7 +555,7 @@ VALUES (61, '<h2>🎮 Текстовая область-мастер: Включ
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (61, 6, 11, 'Текстовая область-мастер: включи перенос строк',
-        '<p><strong>Задание:</strong><br>Включи перенос через setLineWrap(true)</p>',
+        'Включи перенос через setLineWrap(true)',
         'JTextArea-setLineWrap,add',
         '', 61, 21.0, 0.0, 'JTextArea textArea = new JTextArea();
 textArea.setLineWrap(true);

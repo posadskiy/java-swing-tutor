@@ -59,7 +59,7 @@ VALUES (83, '<h2>🎮 Выпадающий список-новичок: Созд
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (83, 10, 1, 'Выпадающий список-новичок: создай список выбора',
-        '<p><strong>Задание:</strong><br>Создай выпадающий список с элементами "Вариант 1", "Вариант 2", "Вариант 3" и добавь на форму</p>',
+        'Создай выпадающий список с элементами "Вариант 1", "Вариант 2", "Вариант 3" и добавь на форму',
         'JComboBox-add',
         '', 83, 14.0, 0.0, 'String[] items = {"Option 1", "Option 2", "Option 3"};
 JComboBox combo = new JComboBox(items);
@@ -111,7 +111,7 @@ VALUES (84, '<h2>🎮 Редактируемый список: Разреши в
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (84, 10, 2, 'Редактируемый список: разреши ввод текста',
-        '<p><strong>Задание:</strong><br>Создай выпадающий список, сделай его редактируемым и добавь на форму</p>',
+        'Создай выпадающий список, сделай его редактируемым и добавь на форму',
         'JComboBox-setEditable,add',
         '', 84, 18.0, 0.0, 'String[] items = {"Option 1", "Option 2", "Option 3"};
 JComboBox<String> combo = new JComboBox<>(items);
@@ -165,7 +165,7 @@ VALUES (85, '<h2>🎮 Режим выбора: Один или нескольк�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (85, 10, 2, 'Режим выбора: один или несколько элементов',
-        '<p><strong>Задание:</strong><br>Создай список, установи режим единственного выбора и добавь на форму</p>',
+        'Создай список, установи режим единственного выбора и добавь на форму',
         'JList-setSelectionMode,add',
         '', 85, 18.0, 0.0, 'String[] items = {"Item 1", "Item 2"};
 JList<String> list = new JList<>(items);
@@ -219,7 +219,7 @@ group.add(radio3);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (86, 10, 3, 'Радиокнопка-мастер: создай группу кнопок',
-        '<p><strong>Задание:</strong><br>Создай ButtonGroup, добавь три радиокнопки в группу через add()</p>',
+        'Создай ButtonGroup, добавь три радиокнопки в группу через add()',
         'JRadioButton-add;JRadioButton-add;JRadioButton-add',
         '', 86, 24.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButton radio1 = new JRadioButton("Option 1");
@@ -277,7 +277,7 @@ VALUES (87, '<h2>🎮 Радиокнопка-мастер: Добавь икон
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (87, 10, 4, 'Радиокнопка-мастер: добавь иконку',
-        '<p><strong>Задание:</strong><br>Установи иконку через setIcon(), установи иконку выбора через setSelectedIcon()</p>',
+        'Установи иконку через setIcon(), установи иконку выбора через setSelectedIcon()',
         'JRadioButton-setIcon,setSelectedIcon,add',
         '', 87, 24.0, 0.0, 'JRadioButton radioButton = new JRadioButton("Option");
 radioButton.setIcon(new ImageIcon("unselected.png"));
@@ -329,7 +329,7 @@ group.add(radioButton2);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (88, 10, 5, 'Радиокнопка-мастер: добавь в группу',
-        '<p><strong>Задание:</strong><br>Создай ButtonGroup, добавь две радиокнопки через add()</p>',
+        'Создай ButtonGroup, добавь две радиокнопки через add()',
         'JRadioButton-add;JRadioButton-add',
         '', 88, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButton radioButton1 = new JRadioButton("Option 1");
@@ -384,7 +384,7 @@ VALUES (89, '<h2>🎮 Радиокнопка-мастер: Добавь мнем
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (89, 10, 6, 'Радиокнопка-мастер: добавь мнемонику',
-        '<p><strong>Задание:</strong><br>Установи мнемонику VK_R через setMnemonic(), добавь &R в текст радиокнопки</p>',
+        'Установи мнемонику VK_R через setMnemonic(), добавь &R в текст радиокнопки',
         'JRadioButton-setMnemonic,add',
         '', 89, 23.0, 0.0, 'JRadioButton radioButton = new JRadioButton("Red (&R)");
 radioButton.setMnemonic(KeyEvent.VK_R);
@@ -436,7 +436,7 @@ VALUES (90, '<h2>🎮 Радиокнопка-мастер: Обрабатыва�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (90, 10, 7, 'Радиокнопка-мастер: обрабатывай изменение состояния',
-        '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь getStateChange() == SELECTED, выведи сообщение</p>',
+        'Добавь ItemListener, проверь getStateChange() == SELECTED, выведи сообщение',
         'JRadioButton-addItemListener,add',
         '', 90, 24.0, 0.0, 'JRadioButton radioButton = new JRadioButton("Option");
 JLabel label = new JLabel();
@@ -497,7 +497,7 @@ VALUES (91, '<h2>🎮 Радиокнопка-мастер: Установи ко
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (91, 10, 8, 'Радиокнопка-мастер: установи команду действия',
-        '<p><strong>Задание:</strong><br>Установи команду "OPTION1" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
+        'Установи команду "OPTION1" через setActionCommand(), получи команду в ActionListener через getActionCommand()',
         'JRadioButton-setActionCommand,addActionListener,add',
         '', 91, 24.0, 0.0, 'JRadioButton radioButton = new JRadioButton("Option 1");
 radioButton.setActionCommand("OPTION1");
@@ -552,7 +552,7 @@ VALUES (92, '<h2>🎮 Радиокнопка-мастер: Установи шр
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (92, 10, 9, 'Радиокнопка-мастер: установи шрифт',
-        '<p><strong>Задание:</strong><br>Создай шрифт new Font("Arial", Font.ITALIC, 12), установи через setFont()</p>',
+        'Создай шрифт new Font("Arial", Font.ITALIC, 12), установи через setFont()',
         'JRadioButton-setFont,add',
         '', 92, 22.0, 0.0, 'JRadioButton radioButton = new JRadioButton("Option");
 Font font = new Font("Arial", Font.ITALIC, 12);
@@ -601,7 +601,7 @@ VALUES (93, '<h2>🎮 Радиокнопка-мастер: Установи от
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (93, 10, 10, 'Радиокнопка-мастер: установи отрисовку границы',
-        '<p><strong>Задание:</strong><br>Установи отрисовку true через setBorderPainted()</p>',
+        'Установи отрисовку true через setBorderPainted()',
         'JRadioButton-setBorderPainted,add',
         '', 93, 21.0, 0.0, 'JRadioButton radioButton = new JRadioButton("Option");
 radioButton.setBorderPainted(true);

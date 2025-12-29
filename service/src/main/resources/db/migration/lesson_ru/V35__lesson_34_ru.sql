@@ -56,7 +56,7 @@ VALUES (287, '<h2>🎮 Диалог-новичок: Покажи сообщен�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (287, 34, 1, 'Диалог-новичок: покажи сообщение',
-        '<p><strong>Задание:</strong><br>Покажи информационное диалоговое окно с текстом "Привет, мир!" и заголовком "Приветствие"</p>',
+        'Покажи информационное диалоговое окно с текстом "Привет, мир!" и заголовком "Приветствие"',
         'JOptionPane',
         '', 287, 18.0, 0.0,
         'JOptionPane.showMessageDialog(null, "Hello, world!", "Greeting", JOptionPane.INFORMATION_MESSAGE);');
@@ -109,7 +109,7 @@ VALUES (288, '<h2>🎮 Диалог-мастер: Спроси подтверж�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (288, 34, 2, 'Диалог-мастер: спроси подтверждение',
-        '<p><strong>Задание:</strong><br>Покажи диалог подтверждения с вопросом "Вы уверены?" и проверь, выбрал ли пользователь "Да"</p>',
+        'Покажи диалог подтверждения с вопросом "Вы уверены?" и проверь, выбрал ли пользователь "Да"',
         'JOptionPane',
         '', 288, 20.0, 0.0, 'int result = JOptionPane.showConfirmDialog(null, "Are you sure?", "Confirmation", JOptionPane.YES_NO_OPTION);
 JLabel label = new JLabel();
@@ -166,7 +166,7 @@ VALUES (289, '<h2>🎮 Диалог-мастер: Получи ввод от п�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (289, 34, 3, 'Диалог-мастер: получи ввод от пользователя',
-        '<p><strong>Задание:</strong><br>Покажи диалог ввода с вопросом "Введите ваше имя:" и выведи результат в консоль</p>',
+        'Покажи диалог ввода с вопросом "Введите ваше имя:" и выведи результат в консоль',
         'JOptionPane',
         '', 289, 20.0, 0.0, 'String name = JOptionPane.showInputDialog(null, "Enter your name:", "Input", JOptionPane.QUESTION_MESSAGE);
 JLabel label = new JLabel();
@@ -221,7 +221,7 @@ VALUES (290, '<h2>🎮 Диалог-мастер: Создай кастомны�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (290, 34, 4, 'Диалог-мастер: создай кастомные кнопки',
-        '<p><strong>Задание:</strong><br>Создай диалог с тремя опциями: "Сохранить", "Отменить", "Не сохранять" и выведи индекс выбранной опции</p>',
+        'Создай диалог с тремя опциями: "Сохранить", "Отменить", "Не сохранять" и выведи индекс выбранной опции',
         'JOptionPane',
         '', 290, 22.0, 0.0,         'String[] options = {"Save", "Cancel", "Don't save"};
 int choice = JOptionPane.showOptionDialog(null, "Что делать?", "Выбор", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);

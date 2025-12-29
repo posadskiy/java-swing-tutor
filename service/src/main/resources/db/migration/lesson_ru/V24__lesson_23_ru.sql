@@ -62,7 +62,7 @@ VALUES (190, '<h2>🎮 Панель инструментов-новичок: С�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (190, 23, 1, 'Панель инструментов-новичок: создай панель с кнопками',
-        '<p><strong>Задание:</strong><br>Создай панель инструментов, добавь две кнопки и добавь на форму в BorderLayout.NORTH</p>',
+        'Создай панель инструментов, добавь две кнопки и добавь на форму в BorderLayout.NORTH',
         'JToolBar-add',
         '', 190, 16.0, 0.0, 'JToolBar toolbar = new JToolBar();
 toolbar.add(new JButton("Button 1"));
@@ -113,7 +113,7 @@ VALUES (191, '<h2>🎮 Панель инструментов-мастер: Ус�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (191, 23, 2, 'Панель инструментов-мастер: установи ориентацию',
-        '<p><strong>Задание:</strong><br>Создай панель инструментов, установи вертикальную ориентацию через setOrientation(JToolBar.VERTICAL)</p>',
+        'Создай панель инструментов, установи вертикальную ориентацию через setOrientation(JToolBar.VERTICAL)',
         'JToolBar-setOrientation,add',
         '', 191, 17.0, 0.0, 'JToolBar toolbar = new JToolBar();
 toolbar.add(new JButton("Button"));
@@ -163,7 +163,7 @@ VALUES (192, '<h2>🎮 Панель инструментов-мастер: Вк�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (192, 23, 3, 'Панель инструментов-мастер: включи плавающую панель',
-        '<p><strong>Задание:</strong><br>Создай панель инструментов, включи плавающую панель через setFloatable(true)</p>',
+        'Создай панель инструментов, включи плавающую панель через setFloatable(true)',
         'JToolBar-setFloatable,add',
         '', 192, 17.0, 0.0, 'JToolBar toolbar = new JToolBar();
 toolbar.add(new JButton("Button"));
@@ -213,7 +213,7 @@ VALUES (193, '<h2>🎮 Панель инструментов-мастер: Вк�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (193, 23, 4, 'Панель инструментов-мастер: включи эффект наведения',
-        '<p><strong>Задание:</strong><br>Создай панель инструментов, включи эффект наведения через setRollover(true)</p>',
+        'Создай панель инструментов, включи эффект наведения через setRollover(true)',
         'JToolBar-setRollover,add',
         '', 193, 17.0, 0.0, 'JToolBar toolbar = new JToolBar();
 toolbar.add(new JButton("Button"));
@@ -263,7 +263,7 @@ VALUES (194, '<h2>🎮 Панель инструментов-мастер: До�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (194, 23, 5, 'Панель инструментов-мастер: добавь разделитель',
-        '<p><strong>Задание:</strong><br>Создай панель инструментов, добавь кнопку, добавь разделитель через addSeparator(), добавь ещё кнопку</p>',
+        'Создай панель инструментов, добавь кнопку, добавь разделитель через addSeparator(), добавь ещё кнопку',
         'JToolBar-addSeparator,add',
         '', 194, 17.0, 0.0, 'JToolBar toolbar = new JToolBar();
 toolbar.add(new JButton("Кнопка 1"));
@@ -314,7 +314,7 @@ VALUES (195, '<h2>🎮 Панель инструментов-мастер: Ус�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (195, 23, 6, 'Панель инструментов-мастер: установи границу',
-        '<p><strong>Задание:</strong><br>Создай панель инструментов, установи границу через setBorder(BorderFactory.createEtchedBorder())</p>',
+        'Создай панель инструментов, установи границу через setBorder(BorderFactory.createEtchedBorder())',
         'JToolBar-setBorder,add',
         '', 195, 18.0, 0.0, 'JToolBar toolbar = new JToolBar();
 toolbar.add(new JButton("Button"));

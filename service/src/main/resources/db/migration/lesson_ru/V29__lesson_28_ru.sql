@@ -68,7 +68,7 @@ VALUES (230, '<h2>🎮 Радиокнопка в меню-новичок: Соз
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (230, 28, 1, 'Радиокнопка в меню-новичок: создай выбор варианта в меню',
-        '<p><strong>Задание:</strong><br>Создай ButtonGroup, создай два JRadioButtonMenuItem, добавь в группу и меню</p>',
+        'Создай ButtonGroup, создай два JRadioButtonMenuItem, добавь в группу и меню',
         'JRadioButtonMenuItem-add',
         '', 230, 18.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
@@ -128,7 +128,7 @@ VALUES (231, '<h2>🎮 Радиокнопка в меню-мастер: Уста
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (231, 28, 2, 'Радиокнопка в меню-мастер: установи выбранное состояние',
-        '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи выбранное состояние через setSelected(true)</p>',
+        'Создай JRadioButtonMenuItem, установи выбранное состояние через setSelected(true)',
         'JRadioButtonMenuItem-setSelected',
         '', 231, 19.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Medium");
 item.setSelected(true);
@@ -189,7 +189,7 @@ VALUES (232, '<h2>🎮 Радиокнопка в меню-мастер: Созд
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (232, 28, 3, 'Радиокнопка в меню-мастер: создай группу выбора',
-        '<p><strong>Задание:</strong><br>Создай ButtonGroup, создай три JRadioButtonMenuItem, добавь все в группу и меню</p>',
+        'Создай ButtonGroup, создай три JRadioButtonMenuItem, добавь все в группу и меню',
         'JRadioButtonMenuItem-add',
         '', 232, 20.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
@@ -253,7 +253,7 @@ VALUES (233, '<h2>🎮 Радиокнопка в меню-мастер: Доба
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (233, 28, 4, 'Радиокнопка в меню-мастер: добавь иконку',
-        '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, создай ImageIcon и установи через setIcon()</p>',
+        'Создай JRadioButtonMenuItem, создай ImageIcon и установи через setIcon()',
         'JRadioButtonMenuItem-setIcon,add',
         '', 233, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 ImageIcon icon = new ImageIcon("icon.png");
@@ -307,7 +307,7 @@ VALUES (234, '<h2>🎮 Радиокнопка в меню-мастер: Доба
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (234, 28, 5, 'Радиокнопка в меню-мастер: добавь мнемонику',
-        '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи мнемонику KeyEvent.VK_M через setMnemonic()</p>',
+        'Создай JRadioButtonMenuItem, установи мнемонику KeyEvent.VK_M через setMnemonic()',
         'JRadioButtonMenuItem-setMnemonic,add',
         '', 234, 21.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.setMnemonic(KeyEvent.VK_M);
@@ -364,7 +364,7 @@ VALUES (235, '<h2>🎮 Радиокнопка в меню-мастер: Вклю
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (235, 28, 6, 'Радиокнопка в меню-мастер: включи/выключи вариант',
-        '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, выключи его через setEnabled(false)</p>',
+        'Создай JRadioButtonMenuItem, выключи его через setEnabled(false)',
         'JRadioButtonMenuItem-setEnabled',
         '', 235, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.setEnabled(false);
@@ -417,7 +417,7 @@ VALUES (236, '<h2>🎮 Радиокнопка в меню-мастер: Доба
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (236, 28, 7, 'Радиокнопка в меню-мастер: добавь подсказку',
-        '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, установи подсказку через setToolTipText()</p>',
+        'Создай JRadioButtonMenuItem, установи подсказку через setToolTipText()',
         'JRadioButtonMenuItem-setToolTipText',
         '', 236, 20.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.setToolTipText("Select small font size");
@@ -473,7 +473,7 @@ VALUES (237, '<h2>🎮 Радиокнопка в меню-мастер: Обра
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (237, 28, 8, 'Радиокнопка в меню-мастер: обработай выбор',
-        '<p><strong>Задание:</strong><br>Создай JRadioButtonMenuItem, добавь ActionListener, который выводит текст варианта в консоль</p>',
+        'Создай JRadioButtonMenuItem, добавь ActionListener, который выводит текст варианта в консоль',
         'JRadioButtonMenuItem-addActionListener',
         '', 237, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 JLabel label = new JLabel();

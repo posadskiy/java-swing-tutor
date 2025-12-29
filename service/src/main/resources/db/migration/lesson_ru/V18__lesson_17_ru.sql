@@ -60,7 +60,7 @@ VALUES (141, '<h2>🎮 Окно-новичок: Создай главное ок
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (141, 17, 1, 'Окно-новичок: создай главное окно приложения',
-        '<p><strong>Задание:</strong><br>Создай окно с заголовком "Моё приложение", размером 800x600 и сделай его видимым</p>',
+        'Создай окно с заголовком "Моё приложение", размером 800x600 и сделай его видимым',
         'JFrame-setSize,setVisible',
         '', 141, 14.0, 0.0, 'JFrame frame = new JFrame("My application");
 frame.setSize(800, 600);
@@ -114,7 +114,7 @@ VALUES (142, '<h2>🎮 Прогресс-бар-новичок: Создай пр
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (142, 17, 1, 'Прогресс-бар-новичок: создай прогресс-бар',
-        '<p><strong>Задание:</strong><br>Создай JProgressBar с диапазоном 0-100, установи значение 50, добавь на форму</p>',
+        'Создай JProgressBar с диапазоном 0-100, установи значение 50, добавь на форму',
         'JProgressBar-setValue,add',
         '', 142, 20.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(50);
@@ -167,7 +167,7 @@ VALUES (143, '<h2>🎮 Операция закрытия: Настрой пов�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (143, 17, 2, 'Операция закрытия: настрой поведение при закрытии',
-        '<p><strong>Задание:</strong><br>Создай окно, установи операцию закрытия EXIT_ON_CLOSE и сделай видимым</p>',
+        'Создай окно, установи операцию закрытия EXIT_ON_CLOSE и сделай видимым',
         'JFrame-setDefaultCloseOperation,setVisible',
         '', 143, 16.0, 0.0, 'JFrame frame = new JFrame("Application");
 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -218,7 +218,7 @@ VALUES (144, '<h2>🎮 Прогресс-бар-мастер: Покажи про
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (144, 17, 2, 'Прогресс-бар-мастер: покажи проценты',
-        '<p><strong>Задание:</strong><br>Включи показ текста через setStringPainted(true), установи текст "50%" через setString()</p>',
+        'Включи показ текста через setStringPainted(true), установи текст "50%" через setString()',
         'JProgressBar-setStringPainted,setString,add',
         '', 144, 22.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setStringPainted(true);
@@ -266,7 +266,7 @@ VALUES (145, '<h2>🎮 Прогресс-бар-мастер: Включи нео
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (145, 17, 3, 'Прогресс-бар-мастер: включи неопределённый режим',
-        '<p><strong>Задание:</strong><br>Включи неопределённый режим через setIndeterminate(true)</p>',
+        'Включи неопределённый режим через setIndeterminate(true)',
         'JProgressBar-setIndeterminate,add',
         '', 145, 21.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setIndeterminate(true);
@@ -317,7 +317,7 @@ VALUES (146, '<h2>🎮 Прогресс-бар-мастер: Покажи стр
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (146, 17, 4, 'Прогресс-бар-мастер: покажи строку',
-        '<p><strong>Задание:</strong><br>Включи показ строки через setStringPainted(true), установи строку "Загрузка..." через setString()</p>',
+        'Включи показ строки через setStringPainted(true), установи строку "Загрузка..." через setString()',
         'JProgressBar-setStringPainted,setString,add',
         '', 146, 22.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setStringPainted(true);
@@ -365,7 +365,7 @@ VALUES (147, '<h2>🎮 Прогресс-бар-мастер: Покажи гра
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (147, 17, 5, 'Прогресс-бар-мастер: покажи границу',
-        '<p><strong>Задание:</strong><br>Включи показ границы через setBorderPainted(true)</p>',
+        'Включи показ границы через setBorderPainted(true)',
         'JProgressBar-setBorderPainted,add',
         '', 147, 21.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setBorderPainted(true);
@@ -413,7 +413,7 @@ VALUES (148, '<h2>🎮 Прогресс-бар-мастер: Сделай нео
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (148, 17, 6, 'Прогресс-бар-мастер: сделай неопределённым',
-        '<p><strong>Задание:</strong><br>Сделай прогресс-бар неопределённым через setIndeterminate(true)</p>',
+        'Сделай прогресс-бар неопределённым через setIndeterminate(true)',
         'JProgressBar-setIndeterminate',
         '', 148, 23.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setIndeterminate(true);
@@ -464,7 +464,7 @@ VALUES (149, '<h2>🎮 Прогресс-бар-мастер: Установи к
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (149, 17, 8, 'Прогресс-бар-мастер: установи кастомную строку',
-        '<p><strong>Задание:</strong><br>Включи показ строки через setStringPainted(true), установи строку "Загрузка..." через setString()</p>',
+        'Включи показ строки через setStringPainted(true), установи строку "Загрузка..." через setString()',
         'JProgressBar-setStringPainted,setString,add',
         '', 149, 22.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setStringPainted(true);
@@ -516,7 +516,7 @@ VALUES (150, '<h2>🎮 Прогресс-бар-мастер: Установи ф
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (150, 17, 9, 'Прогресс-бар-мастер: установи формат строки',
-        '<p><strong>Задание:</strong><br>Включи показ строки через setStringPainted(true), установи формат через String.format("%d%%", getValue())</p>',
+        'Включи показ строки через setStringPainted(true), установи формат через String.format("%d%%", getValue())',
         'JProgressBar-setStringPainted-String-format',
         '', 150, 23.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setStringPainted(true);
@@ -565,7 +565,7 @@ VALUES (151, '<h2>🎮 Прогресс-бар-мастер: Установи з
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (151, 17, 10, 'Прогресс-бар-мастер: установи значение',
-        '<p><strong>Задание:</strong><br>Установи значение 50 через setValue()</p>',
+        'Установи значение 50 через setValue()',
         'JProgressBar-setValue',
         '', 151, 21.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setValue(50);
@@ -613,7 +613,7 @@ VALUES (152, '<h2>🎮 Прогресс-бар-мастер: Сделай нео
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (152, 17, 11, 'Прогресс-бар-мастер: сделай неопределённым',
-        '<p><strong>Задание:</strong><br>Включи неопределённость через setIndeterminate(true)</p>',
+        'Включи неопределённость через setIndeterminate(true)',
         'JProgressBar-setIndeterminate',
         '', 152, 23.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setIndeterminate(true);

@@ -54,7 +54,7 @@ VALUES (269, '<h2>🎮 Диалог сообщения: Покажи инфор�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (269, 30, 1, 'Диалог сообщения: покажи информацию пользователю',
-        '<p><strong>Задание:</strong><br>Покажи информационное диалоговое окно с сообщением "Операция выполнена успешно!"</p>',
+        'Покажи информационное диалоговое окно с сообщением "Операция выполнена успешно!"',
         'JOptionPane-showMessageDialog',
         '', 269, 18.0, 0.0, 'JFrame frame = new JFrame();
 JOptionPane.showMessageDialog(frame, "Операция выполнена успешно!", "Информация", JOptionPane.INFORMATION_MESSAGE);');
@@ -105,7 +105,7 @@ VALUES (270, '<h2>🎮 Диалог подтверждения: Спроси р�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (270, 30, 2, 'Диалог подтверждения: спроси разрешение',
-        '<p><strong>Задание:</strong><br>Покажи диалог подтверждения с вопросом "Вы уверены?" и обработай результат</p>',
+        'Покажи диалог подтверждения с вопросом "Вы уверены?" и обработай результат',
         'JOptionPane-showConfirmDialog',
         '', 270, 22.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(frame, "Вы уверены?", "Подтверждение", JOptionPane.YES_NO_OPTION);
@@ -156,7 +156,7 @@ VALUES (271, '<h2>🎮 Меню-мастер: Добавь горячую кла
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (271, 30, 2, 'Меню-мастер: добавь горячую клавишу',
-        '<p><strong>Задание:</strong><br>Установи мнемонику VK_F через setMnemonic()</p>',
+        'Установи мнемонику VK_F через setMnemonic()',
         'JMenu-setMnemonic',
         '', 271, 23.0, 0.0, 'JMenu menu = new JMenu("File");
 menu.setMnemonic(KeyEvent.VK_F);
@@ -212,7 +212,7 @@ menu.add(new JMenuItem("Save"));</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (272, 30, 3, 'Меню-мастер: добавь разделитель',
-        '<p><strong>Задание:</strong><br>Добавь два пункта меню, добавь разделитель через addSeparator(), добавь ещё пункт</p>',
+        'Добавь два пункта меню, добавь разделитель через addSeparator(), добавь ещё пункт',
         'JMenu-add,add,addSeparator,add',
         '', 272, 21.0, 0.0, 'JMenu menu = new JMenu("File");
 menu.add(new JMenuItem("Open"));
@@ -268,7 +268,7 @@ VALUES (273, '<h2>🎮 Меню-мастер: Добавь мнемонику!</
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (273, 30, 4, 'Меню-мастер: добавь мнемонику',
-        '<p><strong>Задание:</strong><br>Установи мнемонику VK_F через setMnemonic(), добавь &F в текст меню</p>',
+        'Установи мнемонику VK_F через setMnemonic(), добавь &F в текст меню',
         'JMenu-setMnemonic',
         '', 273, 23.0, 0.0, 'JMenu menu = new JMenu("File (&F)");
 menu.setMnemonic(KeyEvent.VK_F);
@@ -318,7 +318,7 @@ VALUES (277, '<h2>🎮 Чекбокс-пункт меню-мастер: Доба
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (277, 30, 4, 'Чекбокс-пункт меню-мастер: добавь подсказку',
-        '<p><strong>Задание:</strong><br>Установи подсказку "Показать сетку" через setToolTipText()</p>',
+        'Установи подсказку "Показать сетку" через setToolTipText()',
         'JCheckBoxMenuItem-setToolTipText',
         '', 277, 21.0, 0.0, 'JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Grid");
 checkBoxMenuItem.setToolTipText("Show grid");
@@ -377,7 +377,7 @@ menu.add(menuItem2);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (274, 30, 5, 'Меню-мастер: добавь разделитель',
-        '<p><strong>Задание:</strong><br>Добавь два пункта меню, добавь разделитель через addSeparator(), добавь ещё пункт</p>',
+        'Добавь два пункта меню, добавь разделитель через addSeparator(), добавь ещё пункт',
         'JMenu-add,add,addSeparator,add',
         '', 274, 22.0, 0.0, 'JMenu menu = new JMenu("File");
 JMenuItem menuItem1 = new JMenuItem("Open");
@@ -433,7 +433,7 @@ VALUES (275, '<h2>🎮 Меню-мастер: Настрой задержку!</
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (275, 30, 6, 'Меню-мастер: настрой задержку',
-        '<p><strong>Задание:</strong><br>Установи задержку 200 через setDelay(200)</p>',
+        'Установи задержку 200 через setDelay(200)',
         'JMenu-setDelay',
         '', 275, 22.0, 0.0, 'JMenu menu = new JMenu("File");
 menu.setDelay(200);
@@ -489,7 +489,7 @@ VALUES (276, '<h2>🎮 Чекбокс-меню-мастер: Установи к
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (276, 30, 6, 'Чекбокс-меню-мастер: установи команду действия',
-        '<p><strong>Задание:</strong><br>Установи команду "CHECK" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
+        'Установи команду "CHECK" через setActionCommand(), получи команду в ActionListener через getActionCommand()',
         'JCheckBoxMenuItem-setActionCommand,getActionCommand,add',
         '', 276, 24.0, 0.0, 'JCheckBoxMenuItem checkBoxMenuItem = new JCheckBoxMenuItem("Grid");
 checkBoxMenuItem.setActionCommand("CHECK");

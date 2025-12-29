@@ -70,7 +70,7 @@ panel.setLayout(layout);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (370, 43, 1, 'GroupLayout-новичок: создай групповую компоновку',
-        '<p><strong>Задание:</strong><br>Создай GroupLayout, создай горизонтальную последовательную группу с двумя кнопками, создай вертикальную параллельную группу</p>',
+        'Создай GroupLayout, создай горизонтальную последовательную группу с двумя кнопками, создай вертикальную параллельную группу',
         'GroupLayout-setHorizontalGroup,setVerticalGroup,add',
         '', 370, 30.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
@@ -135,7 +135,7 @@ VALUES (371, '<h2>🎮 GroupLayout-мастер: Добавь отступы м�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (371, 43, 2, 'GroupLayout-мастер: добавь отступы между компонентами',
-        '<p><strong>Задание:</strong><br>В последовательной группе добавь компонент, добавь отступ 10, добавь ещё компонент</p>',
+        'В последовательной группе добавь компонент, добавь отступ 10, добавь ещё компонент',
         'GroupLayout-addComponent,addGap,addComponent,add',
         '', 371, 28.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
@@ -202,7 +202,7 @@ button2.addActionListener(listener);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (373, 43, 2, 'ActionListener-мастер: обрабатывай несколько кнопок',
-        '<p><strong>Задание:</strong><br>Создай ActionListener, проверь getSource() для двух кнопок, добавь обработчик к обеим кнопкам</p>',
+        'Создай ActionListener, проверь getSource() для двух кнопок, добавь обработчик к обеим кнопкам',
         'ActionListener-getSource,addActionListener,add',
         '', 373, 24.0, 0.0, 'JButton button1 = new JButton("Button 1");
 JButton button2 = new JButton("Button 2");
@@ -265,7 +265,7 @@ VALUES (372, '<h2>🎮 GroupLayout-мастер: Создай параллель
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (372, 43, 3, 'GroupLayout-мастер: создай параллельные группы',
-        '<p><strong>Задание:</strong><br>Создай горизонтальную параллельную группу с двумя кнопками</p>',
+        'Создай горизонтальную параллельную группу с двумя кнопками',
         'GroupLayout-createParallelGroup,setHorizontalGroup,add',
         '', 372, 29.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
@@ -329,7 +329,7 @@ VALUES (374, '<h2>🎮 ActionListener-мастер: Используй кома�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (374, 43, 3, 'ActionListener-мастер: используй команду действия',
-        '<p><strong>Задание:</strong><br>Установи команду "SAVE" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
+        'Установи команду "SAVE" через setActionCommand(), получи команду в ActionListener через getActionCommand()',
         'ActionListener-setActionCommand,getActionCommand,add',
         '', 374, 24.0, 0.0, 'JButton button = new JButton("Save");
 button.setActionCommand("SAVE");
@@ -388,7 +388,7 @@ VALUES (375, '<h2>🎮 ActionListener-мастер: Определи когда!
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (375, 43, 4, 'ActionListener-мастер: определи когда',
-        '<p><strong>Задание:</strong><br>Добавь ActionListener, получи время через getWhen(), выведи его</p>',
+        'Добавь ActionListener, получи время через getWhen(), выведи его',
         'ActionListener-getWhen',
         '', 375, 23.0, 0.0, 'JButton button = new JButton("Button");
 JLabel label = new JLabel();
@@ -447,7 +447,7 @@ VALUES (377, '<h2>🎮 KeyListener-мастер: Получи символ кл�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (377, 43, 4, 'KeyListener-мастер: получи символ клавиши',
-        '<p><strong>Задание:</strong><br>Добавь KeyListener, переопредели keyTyped(), получи символ через getKeyChar(), выведи</p>',
+        'Добавь KeyListener, переопредели keyTyped(), получи символ через getKeyChar(), выведи',
         'KeyListener-getKeyChar,add',
         '', 377, 23.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
@@ -507,7 +507,7 @@ VALUES (376, '<h2>🎮 ActionListener-мастер: Определи модиф�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (376, 43, 5, 'ActionListener-мастер: определи модификаторы',
-        '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь getModifiers() & CTRL_MASK, выведи сообщение</p>',
+        'Добавь ActionListener, проверь getModifiers() & CTRL_MASK, выведи сообщение',
         'ActionListener-getModifiers-CTRL_MASK',
         '', 376, 24.0, 0.0, 'JButton button = new JButton("Button");
 JLabel label = new JLabel();
@@ -570,7 +570,7 @@ VALUES (379, '<h2>🎮 KeyListener-мастер: Получи код клави�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (379, 43, 5, 'KeyListener-мастер: получи код клавиши',
-        '<p><strong>Задание:</strong><br>Добавь KeyListener, переопредели keyPressed(), получи код через getKeyCode(), проверь VK_ENTER</p>',
+        'Добавь KeyListener, переопредели keyPressed(), получи код через getKeyCode(), проверь VK_ENTER',
         'KeyListener-getKeyCode,add',
         '', 379, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
@@ -635,7 +635,7 @@ VALUES (382, '<h2>🎮 KeyListener-мастер: Получи символ кл�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (382, 43, 6, 'KeyListener-мастер: получи символ клавиши',
-        '<p><strong>Задание:</strong><br>Добавь KeyListener, переопредели keyTyped(), получи символ через getKeyChar(), выведи</p>',
+        'Добавь KeyListener, переопредели keyTyped(), получи символ через getKeyChar(), выведи',
         'KeyListener-getKeyChar,add',
         '', 382, 23.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
@@ -693,7 +693,7 @@ VALUES (378, '<h2>🎮 GroupLayout-мастер: Создай последова
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (378, 43, 7, 'GroupLayout-мастер: создай последовательную группу',
-        '<p><strong>Задание:</strong><br>Создай последовательную группу через createSequentialGroup(), добавь компоненты через addComponent()</p>',
+        'Создай последовательную группу через createSequentialGroup(), добавь компоненты через addComponent()',
         'GroupLayout-createSequentialGroup,addComponent,add',
         '', 378, 26.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
@@ -750,7 +750,7 @@ VALUES (380, '<h2>🎮 GroupLayout-мастер: Создай параллель
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (380, 43, 8, 'GroupLayout-мастер: создай параллельную группу',
-        '<p><strong>Задание:</strong><br>Создай параллельную группу через createParallelGroup(), добавь компоненты через addComponent()</p>',
+        'Создай параллельную группу через createParallelGroup(), добавь компоненты через addComponent()',
         'GroupLayout-createParallelGroup,addComponent,add',
         '', 380, 26.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);
@@ -804,7 +804,7 @@ VALUES (381, '<h2>🎮 GroupLayout-мастер: Добавь зазор!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (381, 43, 9, 'GroupLayout-мастер: добавь зазор',
-        '<p><strong>Задание:</strong><br>Добавь зазор 10 через addGap() в группу</p>',
+        'Добавь зазор 10 через addGap() в группу',
         'GroupLayout-addGap',
         '', 381, 22.0, 0.0, 'JPanel panel = new JPanel();
 GroupLayout layout = new GroupLayout(panel);

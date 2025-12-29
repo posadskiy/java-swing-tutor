@@ -60,7 +60,7 @@ VALUES (175, '<h2>🎮 Разделённая панель-новичок: Ра�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (175, 21, 1, 'Разделённая панель-новичок: раздели экран пополам',
-        '<p><strong>Задание:</strong><br>Создай горизонтальную разделённую панель с двумя панелями и добавь на форму</p>',
+        'Создай горизонтальную разделённую панель с двумя панелями и добавь на форму',
         'JSplitPane-add',
         '', 175, 18.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -110,7 +110,7 @@ VALUES (176, '<h2>🎮 Разделённая панель-мастер: Уст�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (176, 21, 2, 'Разделённая панель-мастер: установи ориентацию',
-        '<p><strong>Задание:</strong><br>Создай разделённую панель, установи вертикальную ориентацию через setOrientation(JSplitPane.VERTICAL_SPLIT)</p>',
+        'Создай разделённую панель, установи вертикальную ориентацию через setOrientation(JSplitPane.VERTICAL_SPLIT)',
         'JSplitPane-setOrientation,add',
         '', 176, 19.0, 0.0, 'JPanel topPanel = new JPanel();
 JPanel bottomPanel = new JPanel();
@@ -163,7 +163,7 @@ VALUES (177, '<h2>🎮 Разделённая панель-мастер: Уст�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (177, 21, 3, 'Разделённая панель-мастер: установи позицию разделителя',
-        '<p><strong>Задание:</strong><br>Создай разделённую панель, установи позицию разделителя 200 через setDividerLocation(200)</p>',
+        'Создай разделённую панель, установи позицию разделителя 200 через setDividerLocation(200)',
         'JSplitPane-setDividerLocation,add',
         '', 177, 19.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -214,7 +214,7 @@ VALUES (178, '<h2>🎮 Разделённая панель-мастер: Уст�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (178, 21, 4, 'Разделённая панель-мастер: установи вес изменения размера',
-        '<p><strong>Задание:</strong><br>Создай разделённую панель, установи вес 0.3 через setResizeWeight(0.3)</p>',
+        'Создай разделённую панель, установи вес 0.3 через setResizeWeight(0.3)',
         'JSplitPane-setResizeWeight,add',
         '', 178, 20.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -265,7 +265,7 @@ VALUES (179, '<h2>🎮 Разделённая панель-мастер: Вкл�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (179, 21, 5, 'Разделённая панель-мастер: включи одно касание',
-        '<p><strong>Задание:</strong><br>Создай разделённую панель, включи одно касание через setOneTouchExpandable(true)</p>',
+        'Создай разделённую панель, включи одно касание через setOneTouchExpandable(true)',
         'JSplitPane-setOneTouchExpandable,add',
         '', 179, 19.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -316,7 +316,7 @@ VALUES (180, '<h2>🎮 Разделённая панель-мастер: Вкл�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (180, 21, 6, 'Разделённая панель-мастер: включи непрерывную компоновку',
-        '<p><strong>Задание:</strong><br>Создай разделённую панель, включи непрерывную компоновку через setContinuousLayout(true)</p>',
+        'Создай разделённую панель, включи непрерывную компоновку через setContinuousLayout(true)',
         'JSplitPane-setContinuousLayout',
         '', 180, 20.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -367,7 +367,7 @@ VALUES (181, '<h2>🎮 Разделённая панель-мастер: Уст�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (181, 21, 7, 'Разделённая панель-мастер: установи границу',
-        '<p><strong>Задание:</strong><br>Создай разделённую панель, установи границу через setBorder(BorderFactory.createEtchedBorder())</p>',
+        'Создай разделённую панель, установи границу через setBorder(BorderFactory.createEtchedBorder())',
         'JSplitPane-setBorder,add',
         '', 181, 19.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -419,7 +419,7 @@ VALUES (182, '<h2>🎮 Разделённая панель-мастер: Уст�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (182, 21, 8, 'Разделённая панель-мастер: установи минимальные размеры',
-        '<p><strong>Задание:</strong><br>Создай разделённую панель, установи минимальный размер 100x0 для левой панели через setMinimumSize()</p>',
+        'Создай разделённую панель, установи минимальный размер 100x0 для левой панели через setMinimumSize()',
         'JSplitPane-setMinimumSize,add',
         '', 182, 20.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();

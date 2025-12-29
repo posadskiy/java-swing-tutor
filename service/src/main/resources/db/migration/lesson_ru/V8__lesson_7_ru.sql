@@ -56,7 +56,7 @@ VALUES (62, '<h2>🎮 Флажок-новичок: Создай переключ
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (62, 7, 1, 'Флажок-новичок: создай переключатель',
-        '<p><strong>Задание:</strong><br>Создай флажок с текстом "Включить" и добавь на форму</p>',
+        'Создай флажок с текстом "Включить" и добавь на форму',
         'JCheckBox-add',
         '', 62, 12.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Enable");
 add(checkBox);');
@@ -107,7 +107,7 @@ VALUES (63, '<h2>🎮 Состояние флажка: Отметь или сн�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (63, 7, 2, 'Состояние флажка: отметь или сними отметку',
-        '<p><strong>Задание:</strong><br>Создай флажок, отметь его и добавь на форму</p>',
+        'Создай флажок, отметь его и добавь на форму',
         'JCheckBox-setSelected,add',
         '', 63, 14.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Enable");
 checkBox.setSelected(true);
@@ -154,7 +154,7 @@ VALUES (64, '<h2>🎮 Поле пароля-мастер: Измени симв�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (64, 7, 3, 'Поле пароля-мастер: измени символ отображения',
-        '<p><strong>Задание:</strong><br>Установи символ отображения ''●'' через setEchoChar()</p>',
+        'Установи символ отображения ''●'' через setEchoChar()',
         'JPasswordField-setEchoChar,add',
         '', 64, 22.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 passwordField.setEchoChar(''●'');
@@ -211,7 +211,7 @@ add(label);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (65, 7, 4, 'Поле пароля-мастер: проверь надёжность пароля',
-        '<p><strong>Задание:</strong><br>Получи пароль через getPassword(), проверь длину меньше 8, выведи сообщение</p>',
+        'Получи пароль через getPassword(), проверь длину меньше 8, выведи сообщение',
         'JPasswordField-getPassword,add',
         '', 65, 25.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char[] password = passwordField.getPassword();
@@ -272,7 +272,7 @@ VALUES (66, '<h2>🎮 Поле пароля-мастер: Запрети коп�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (66, 7, 5, 'Поле пароля-мастер: запрети копирование',
-        '<p><strong>Задание:</strong><br>Получи документ, создай DocumentFilter, переопредели remove() для запрета удаления</p>',
+        'Получи документ, создай DocumentFilter, переопредели remove() для запрета удаления',
         'JPasswordField-add',
         '', 66, 26.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 AbstractDocument doc = (AbstractDocument) passwordField.getDocument();
@@ -324,7 +324,7 @@ VALUES (67, '<h2>🎮 Поле пароля-мастер: Измени симв�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (67, 7, 6, 'Поле пароля-мастер: измени символ отображения',
-        '<p><strong>Задание:</strong><br>Измени символ отображения на ● через setEchoChar()</p>',
+        'Измени символ отображения на ● через setEchoChar()',
         'JPasswordField-setEchoChar,add',
         '', 67, 23.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 passwordField.setEchoChar(''●'');
@@ -379,7 +379,7 @@ VALUES (68, '<h2>🎮 Поле пароля-мастер: Покажи паро�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (68, 7, 7, 'Поле пароля-мастер: покажи пароль',
-        '<p><strong>Задание:</strong><br>Получи символ через getEchoChar(), установи 0 через setEchoChar() для показа, затем восстанови символ</p>',
+        'Получи символ через getEchoChar(), установи 0 через setEchoChar() для показа, затем восстанови символ',
         'JPasswordField-getEchoChar,setEchoChar,add',
         '', 68, 24.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char echoChar = passwordField.getEchoChar();
@@ -433,7 +433,7 @@ VALUES (69, '<h2>🎮 Поле пароля-мастер: Проверь сил�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (69, 7, 8, 'Поле пароля-мастер: проверь силу пароля',
-        '<p><strong>Задание:</strong><br>Получи пароль через getPassword(), проверь длину >= 8 и наличие заглавных букв</p>',
+        'Получи пароль через getPassword(), проверь длину >= 8 и наличие заглавных букв',
         'JPasswordField-getPassword,add',
         '', 69, 26.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char[] password = passwordField.getPassword();
@@ -486,7 +486,7 @@ Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);</
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (70, 7, 9, 'Поле пароля-мастер: скопируй пароль',
-        '<p><strong>Задание:</strong><br>Получи пароль через getPassword(), создай StringSelection, установи в Clipboard через setContents()</p>',
+        'Получи пароль через getPassword(), создай StringSelection, установи в Clipboard через setContents()',
         'JPasswordField-add',
         '', 70, 27.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 char[] password = passwordField.getPassword();
@@ -534,7 +534,7 @@ VALUES (71, '<h2>🎮 Поле пароля-мастер: Установи си�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (71, 7, 10, 'Поле пароля-мастер: установи символ отображения',
-        '<p><strong>Задание:</strong><br>Установи символ ''*'' через setEchoChar()</p>',
+        'Установи символ ''*'' через setEchoChar()',
         'JPasswordField-setEchoChar,add',
         '', 71, 22.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
 passwordField.setEchoChar(''*'');

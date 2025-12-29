@@ -62,7 +62,7 @@ add(label);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (101, 12, 2, 'Переключатель-мастер: обрабатывай состояние',
-        '<p><strong>Задание:</strong><br>Добавь ActionListener, проверь isSelected(), выведи сообщение в зависимости от состояния</p>',
+        'Добавь ActionListener, проверь isSelected(), выведи сообщение в зависимости от состояния',
         'JToggleButton-addActionListener,isSelected,add',
         '', 101, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 JLabel label = new JLabel();
@@ -121,7 +121,7 @@ VALUES (102, '<h2>🎮 Переключатель-мастер: Добавь м�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (102, 12, 3, 'Переключатель-мастер: добавь мнемонику',
-        '<p><strong>Задание:</strong><br>Установи мнемонику VK_T через setMnemonic(), добавь &T в текст переключателя</p>',
+        'Установи мнемонику VK_T через setMnemonic(), добавь &T в текст переключателя',
         'JToggleButton-setMnemonic,add',
         '', 102, 23.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable (&T)");
 toggleButton.setMnemonic(KeyEvent.VK_T);
@@ -172,7 +172,7 @@ VALUES (103, '<h2>🎮 Переключатель-мастер: Обрабаты
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (103, 12, 4, 'Переключатель-мастер: обрабатывай изменение состояния',
-        '<p><strong>Задание:</strong><br>Добавь ItemListener, проверь isSelected(), выведи состояние</p>',
+        'Добавь ItemListener, проверь isSelected(), выведи состояние',
         'JToggleButton-addItemListener,isSelected,add',
         '', 103, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 toggleButton.addItemListener(e -> {
@@ -230,7 +230,7 @@ VALUES (104, '<h2>🎮 Переключатель-мастер: Установи
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (104, 12, 5, 'Переключатель-мастер: установи команду действия',
-        '<p><strong>Задание:</strong><br>Установи команду "TOGGLE" через setActionCommand(), получи команду в ActionListener через getActionCommand()</p>',
+        'Установи команду "TOGGLE" через setActionCommand(), получи команду в ActionListener через getActionCommand()',
         'JToggleButton-setActionCommand,addActionListener,add',
         '', 104, 24.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 toggleButton.setActionCommand("TOGGLE");
@@ -285,7 +285,7 @@ VALUES (105, '<h2>🎮 Переключатель-мастер: Установи
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (105, 12, 6, 'Переключатель-мастер: установи шрифт',
-        '<p><strong>Задание:</strong><br>Создай шрифт new Font("Serif", Font.PLAIN, 16), установи через setFont()</p>',
+        'Создай шрифт new Font("Serif", Font.PLAIN, 16), установи через setFont()',
         'JToggleButton-setFont,add',
         '', 105, 22.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 Font font = new Font("Serif", Font.PLAIN, 16);
@@ -334,7 +334,7 @@ VALUES (106, '<h2>🎮 Переключатель-мастер: Установи
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (106, 12, 7, 'Переключатель-мастер: установи отрисовку границы',
-        '<p><strong>Задание:</strong><br>Установи отрисовку true через setBorderPainted()</p>',
+        'Установи отрисовку true через setBorderPainted()',
         'JToggleButton-setBorderPainted,add',
         '', 106, 21.0, 0.0, 'JToggleButton toggleButton = new JToggleButton("Enable");
 toggleButton.setBorderPainted(true);

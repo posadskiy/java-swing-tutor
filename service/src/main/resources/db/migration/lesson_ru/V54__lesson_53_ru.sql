@@ -66,7 +66,7 @@ VALUES (458, '<h2>🎮 Timer-новичок: Создай таймер!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (458, 53, 1, 'Timer-новичок: создай таймер',
-        '<p><strong>Задание:</strong><br>Создай ActionListener, создай Timer с задержкой 1000 мс, запусти таймер</p>',
+        'Создай ActionListener, создай Timer с задержкой 1000 мс, запусти таймер',
         'Timer-start',
         '', 458, 24.0, 0.0, 'JLabel label = new JLabel();
 ActionListener task = new ActionListener() {
@@ -123,7 +123,7 @@ VALUES (459, '<h2>🎮 Timer-мастер: Останавливай и пере�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (459, 53, 2, 'Timer-мастер: останавливай и перезапускай таймер',
-        '<p><strong>Задание:</strong><br>Останови таймер через stop(), затем перезапусти через restart()</p>',
+        'Останови таймер через stop(), затем перезапусти через restart()',
         'Timer-stop,restart',
         '', 459, 25.0, 0.0, 'JLabel label = new JLabel();
 ActionListener task = e -> label.setText("Tick!");
@@ -182,7 +182,7 @@ VALUES (462, '<h2>🎮 KeyListener-мастер: Определи код кла�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (462, 53, 2, 'KeyListener-мастер: определи код клавиши',
-        '<p><strong>Задание:</strong><br>Добавь KeyListener, проверь getKeyCode() == VK_ENTER, выведи сообщение</p>',
+        'Добавь KeyListener, проверь getKeyCode() == VK_ENTER, выведи сообщение',
         'KeyListener-getKeyCode,add',
         '', 462, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
@@ -247,7 +247,7 @@ VALUES (460, '<h2>🎮 Timer-мастер: Создай одноразовый �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (460, 53, 3, 'Timer-мастер: создай одноразовый таймер',
-        '<p><strong>Задание:</strong><br>Создай Timer с задержкой 3000 мс, установи setRepeats(false), запусти таймер</p>',
+        'Создай Timer с задержкой 3000 мс, установи setRepeats(false), запусти таймер',
         'Timer-setRepeats,start',
         '', 460, 25.0, 0.0, 'JLabel label = new JLabel();
 Timer timer = new Timer(3000, e -> {
@@ -305,7 +305,7 @@ VALUES (463, '<h2>🎮 KeyListener-мастер: Определи символ �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (463, 53, 3, 'KeyListener-мастер: определи символ клавиши',
-        '<p><strong>Задание:</strong><br>Добавь KeyListener, получи символ через getKeyChar() в keyTyped(), выведи его</p>',
+        'Добавь KeyListener, получи символ через getKeyChar() в keyTyped(), выведи его',
         'KeyListener-getKeyChar,keyTyped,add',
         '', 463, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
@@ -369,7 +369,7 @@ VALUES (461, '<h2>🎮 Timer-мастер: Установи начальную �
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (461, 53, 4, 'Timer-мастер: установи начальную задержку',
-        '<p><strong>Задание:</strong><br>Создай Timer с интервалом 1000 мс, установи setInitialDelay(5000), запусти таймер</p>',
+        'Создай Timer с интервалом 1000 мс, установи setInitialDelay(5000), запусти таймер',
         'Timer-setInitialDelay,start',
         '', 461, 26.0, 0.0, 'JLabel label = new JLabel();
 Timer timer = new Timer(1000, e -> {
@@ -428,7 +428,7 @@ VALUES (464, '<h2>🎮 KeyListener-мастер: Определи модифик
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (464, 53, 4, 'KeyListener-мастер: определи модификаторы',
-        '<p><strong>Задание:</strong><br>Добавь KeyListener, проверь getModifiersEx() & CTRL_DOWN_MASK, выведи сообщение</p>',
+        'Добавь KeyListener, проверь getModifiersEx() & CTRL_DOWN_MASK, выведи сообщение',
         'KeyListener-getModifiersEx-CTRL_DOWN_MASK',
         '', 464, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
@@ -494,7 +494,7 @@ VALUES (465, '<h2>🎮 KeyListener-мастер: Определи располо
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (465, 53, 5, 'KeyListener-мастер: определи расположение клавиши',
-        '<p><strong>Задание:</strong><br>Добавь KeyListener, проверь getKeyLocation() == KEY_LOCATION_LEFT, выведи сообщение</p>',
+        'Добавь KeyListener, проверь getKeyLocation() == KEY_LOCATION_LEFT, выведи сообщение',
         'KeyListener-getKeyLocation-KEY_LOCATION_LEFT',
         '', 465, 24.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);

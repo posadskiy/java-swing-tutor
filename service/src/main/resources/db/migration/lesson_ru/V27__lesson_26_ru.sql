@@ -62,7 +62,7 @@ add(label);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (212, 26, 1, 'Пункт меню-новичок: создай действие в меню',
-        '<p><strong>Задание:</strong><br>Создай пункт меню "Открыть", добавь обработчик и добавь в меню</p>',
+        'Создай пункт меню "Открыть", добавь обработчик и добавь в меню',
         'JMenuItem-addActionListener,add',
         '', 212, 20.0, 0.0, 'JMenuItem openItem = new JMenuItem("Open");
 JLabel label = new JLabel();
@@ -118,7 +118,7 @@ VALUES (213, '<h2>🎮 Разделённая панель-мастер: Нас�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (213, 26, 2, 'Разделённая панель-мастер: настрой позицию разделителя',
-        '<p><strong>Задание:</strong><br>Установи позицию разделителя 200 пикселей через setDividerLocation(200)</p>',
+        'Установи позицию разделителя 200 пикселей через setDividerLocation(200)',
         'JSplitPane-setDividerLocation,add',
         '', 213, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -167,7 +167,7 @@ VALUES (214, '<h2>🎮 Разделённая панель-мастер: Вкл�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (214, 26, 3, 'Разделённая панель-мастер: включи одно касание',
-        '<p><strong>Задание:</strong><br>Включи одно касание через setOneTouchExpandable(true)</p>',
+        'Включи одно касание через setOneTouchExpandable(true)',
         'JSplitPane-setOneTouchExpandable,add',
         '', 214, 22.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -220,7 +220,7 @@ VALUES (215, '<h2>🎮 Разделённая панель-мастер: Уст�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (215, 26, 4, 'Разделённая панель-мастер: установи позицию разделителя',
-        '<p><strong>Задание:</strong><br>Установи позицию разделителя 200 пикселей через setDividerLocation(200)</p>',
+        'Установи позицию разделителя 200 пикселей через setDividerLocation(200)',
         'JSplitPane-setDividerLocation,add',
         '', 215, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -269,7 +269,7 @@ VALUES (216, '<h2>🎮 Разделённая панель-мастер: Вкл�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (216, 26, 5, 'Разделённая панель-мастер: включи непрерывную компоновку',
-        '<p><strong>Задание:</strong><br>Включи непрерывную компоновку через setContinuousLayout(true)</p>',
+        'Включи непрерывную компоновку через setContinuousLayout(true)',
         'JSplitPane-setContinuousLayout,add',
         '', 216, 23.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -319,7 +319,7 @@ VALUES (217, '<h2>🎮 Разделённая панель-мастер: Нас�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (217, 26, 6, 'Разделённая панель-мастер: настрой вес изменения размера',
-        '<p><strong>Задание:</strong><br>Установи вес 0.5 через setResizeWeight(0.5)</p>',
+        'Установи вес 0.5 через setResizeWeight(0.5)',
         'JSplitPane-setResizeWeight',
         '', 217, 24.0, 0.0, 'JPanel leftPanel = new JPanel();
 JPanel rightPanel = new JPanel();
@@ -372,7 +372,7 @@ VALUES (218, '<h2>🎮 Вкладка-мастер: Включи/выключи 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (218, 26, 11, 'Вкладка-мастер: включи/выключи вкладку',
-        '<p><strong>Задание:</strong><br>Выключи вкладку 0 через setEnabledAt(0, false), затем включи обратно через setEnabledAt(0, true)</p>',
+        'Выключи вкладку 0 через setEnabledAt(0, false), затем включи обратно через setEnabledAt(0, true)',
         'JTabbedPane-setEnabledAt',
         '', 218, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -422,7 +422,7 @@ VALUES (219, '<h2>🎮 Вкладка-мастер: Установи мнемо�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (219, 26, 12, 'Вкладка-мастер: установи мнемоник',
-        '<p><strong>Задание:</strong><br>Установи мнемоник VK_T для вкладки 0 через setMnemonicAt()</p>',
+        'Установи мнемоник VK_T для вкладки 0 через setMnemonicAt()',
         'JTabbedPane-setMnemonicAt,add',
         '', 219, 24.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Tab", new JPanel());
@@ -471,7 +471,7 @@ VALUES (220, '<h2>🎮 Вкладка-мастер: Установи распо�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (220, 26, 13, 'Вкладка-мастер: установи расположение вкладок',
-        '<p><strong>Задание:</strong><br>Установи расположение BOTTOM через setTabPlacement()</p>',
+        'Установи расположение BOTTOM через setTabPlacement()',
         'JTabbedPane-setTabPlacement',
         '', 220, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());

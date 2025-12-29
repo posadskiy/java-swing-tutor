@@ -63,7 +63,7 @@ VALUES (291, '<h2>🎮 Выбор файла-новичок: Открой диа
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (291, 35, 1, 'Выбор файла-новичок: открой диалог выбора файла',
-        '<p><strong>Задание:</strong><br>Создай JFileChooser, покажи диалог открытия и обработай результат</p>',
+        'Создай JFileChooser, покажи диалог открытия и обработай результат',
         'JFileChooser-showOpenDialog',
         '', 291, 22.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 int result = fileChooser.showOpenDialog(this);
@@ -122,7 +122,7 @@ VALUES (292, '<h2>🎮 Выбор файла-мастер: Создай диал
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (292, 35, 2, 'Выбор файла-мастер: создай диалог сохранения',
-        '<p><strong>Задание:</strong><br>Покажи диалог сохранения, обработай результат и получи выбранный файл</p>',
+        'Покажи диалог сохранения, обработай результат и получи выбранный файл',
         'JFileChooser-showSaveDialog',
         '', 292, 24.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
@@ -180,7 +180,7 @@ VALUES (293, '<h2>🎮 Выбор файла-мастер: Добавь филь
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (293, 35, 3, 'Выбор файла-мастер: добавь фильтр файлов',
-        '<p><strong>Задание:</strong><br>Создай FileNameExtensionFilter для "txt" и "text", установи фильтр в fileChooser</p>',
+        'Создай FileNameExtensionFilter для "txt" и "text", установи фильтр в fileChooser',
         'JFileChooser-setFileFilter',
         '', 293, 25.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 FileNameExtensionFilter filter = new FileNameExtensionFilter(
@@ -245,7 +245,7 @@ VALUES (294, '<h2>🎮 Выбор файла-мастер: Разреши мно
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (294, 35, 4, 'Выбор файла-мастер: разреши множественный выбор',
-        '<p><strong>Задание:</strong><br>Разреши множественный выбор через setMultiSelectionEnabled(true), получи файлы через getSelectedFiles()</p>',
+        'Разреши множественный выбор через setMultiSelectionEnabled(true), получи файлы через getSelectedFiles()',
         'JFileChooser-setMultiSelectionEnabled,getSelectedFiles',
         '', 294, 25.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
@@ -305,7 +305,7 @@ VALUES (295, '<h2>🎮 Выбор файла-мастер: Добавь филь
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (295, 35, 5, 'Выбор файла-мастер: добавь фильтр',
-        '<p><strong>Задание:</strong><br>Создай FileNameExtensionFilter для "txt", добавь через addChoosableFileFilter()</p>',
+        'Создай FileNameExtensionFilter для "txt", добавь через addChoosableFileFilter()',
         'JFileChooser-addChoosableFileFilter',
         '', 295, 26.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 FileFilter filter = new FileNameExtensionFilter("Текстовые файлы", "txt");
@@ -363,7 +363,7 @@ VALUES (296, '<h2>🎮 Выбор файла-мастер: Установи те
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (296, 35, 6, 'Выбор файла-мастер: установи текущую директорию',
-        '<p><strong>Задание:</strong><br>Создай File для директории, установи через setCurrentDirectory()</p>',
+        'Создай File для директории, установи через setCurrentDirectory()',
         'JFileChooser-setCurrentDirectory',
         '', 296, 23.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 File dir = new File("/path/to/directory");
@@ -418,7 +418,7 @@ VALUES (297, '<h2>🎮 Выбор файла-мастер: Установи за
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (297, 35, 7, 'Выбор файла-мастер: установи заголовок диалога',
-        '<p><strong>Задание:</strong><br>Установи заголовок "Выбери файл" через setDialogTitle()</p>',
+        'Установи заголовок "Выбери файл" через setDialogTitle()',
         'JFileChooser-setDialogTitle',
         '', 297, 21.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
@@ -477,7 +477,7 @@ VALUES (298, '<h2>🎮 Редактор-мастер: Добавь слушат�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (298, 35, 8, 'Редактор-мастер: добавь слушатель ссылок',
-        '<p><strong>Задание:</strong><br>Добавь HyperlinkListener, проверь EventType.ACTIVATED, выведи URL через getURL()</p>',
+        'Добавь HyperlinkListener, проверь EventType.ACTIVATED, выведи URL через getURL()',
         'JEditorPane-addHyperlinkListener,add',
         '', 298, 26.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setContentType("text/html");
@@ -535,7 +535,7 @@ VALUES (299, '<h2>🎮 Редактор-мастер: Установи тип к
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (299, 35, 9, 'Редактор-мастер: установи тип контента',
-        '<p><strong>Задание:</strong><br>Установи тип контента "text/html" через setContentType()</p>',
+        'Установи тип контента "text/html" через setContentType()',
         'JEditorPane-setContentType,add',
         '', 299, 23.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setContentType("text/html");
@@ -585,7 +585,7 @@ VALUES (300, '<h2>🎮 Редактор-мастер: Сделай только 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (300, 35, 10, 'Редактор-мастер: сделай только для чтения',
-        '<p><strong>Задание:</strong><br>Отключи редактирование через setEditable(false)</p>',
+        'Отключи редактирование через setEditable(false)',
         'JEditorPane-setEditable,add',
         '', 300, 21.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setText("Текст для чтения");

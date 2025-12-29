@@ -66,7 +66,7 @@ VALUES (429, '<h2>🎮 FocusListener-новичок: Отслеживай фок
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (429, 48, 1, 'FocusListener-новичок: отслеживай фокус компонента',
-        '<p><strong>Задание:</strong><br>Создай FocusListener, обработай получение и потерю фокуса, добавь к текстовому полю</p>',
+        'Создай FocusListener, обработай получение и потерю фокуса, добавь к текстовому полю',
         'FocusListener-addFocusListener,add',
         '', 429, 23.0, 0.0, 'JLabel label = new JLabel();
 FocusListener listener = new FocusListener() {
@@ -133,7 +133,7 @@ VALUES (430, '<h2>🎮 FocusListener-мастер: Валидируй при п�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (430, 48, 2, 'FocusListener-мастер: валидируй при потере фокуса',
-        '<p><strong>Задание:</strong><br>В focusLost получи текст поля, проверь на пустоту, установи красный фон при ошибке</p>',
+        'В focusLost получи текст поля, проверь на пустоту, установи красный фон при ошибке',
         'FocusListener-focusLost-getText-setBackground',
         '', 430, 26.0, 0.0, 'JTextField textField = new JTextField();
 JLabel label = new JLabel();
@@ -202,7 +202,7 @@ VALUES (432, '<h2>🎮 CardLayout-мастер: Навигируй по карт
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (432, 48, 2, 'CardLayout-мастер: навигируй по картам',
-        '<p><strong>Задание:</strong><br>Получи CardLayout, покажи карту "card1" через show(), затем переключись на следующую через next()</p>',
+        'Получи CardLayout, покажи карту "card1" через show(), затем переключись на следующую через next()',
         'CardLayout-show,next',
         '', 432, 25.0, 0.0, 'JPanel panel = new JPanel();
 CardLayout layout = new CardLayout();
@@ -265,7 +265,7 @@ VALUES (431, '<h2>🎮 FocusListener-мастер: Управляй навига
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (431, 48, 3, 'FocusListener-мастер: управляй навигацией фокуса',
-        '<p><strong>Задание:</strong><br>Установи setFocusable(true), установи setFocusTraversalKeysEnabled(true), запроси фокус через requestFocus()</p>',
+        'Установи setFocusable(true), установи setFocusTraversalKeysEnabled(true), запроси фокус через requestFocus()',
         'Component-setFocusable-setFocusTraversalKeysEnabled-requestFocus',
         '', 431, 26.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
@@ -321,7 +321,7 @@ VALUES (433, '<h2>🎮 CardLayout-мастер: Переключись на пе
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (433, 48, 3, 'CardLayout-мастер: переключись на первую и последнюю',
-        '<p><strong>Задание:</strong><br>Получи CardLayout, переключись на первую через first(), затем на последнюю через last()</p>',
+        'Получи CardLayout, переключись на первую через first(), затем на последнюю через last()',
         'CardLayout-first,last',
         '', 433, 24.0, 0.0, 'JPanel panel = new JPanel();
 CardLayout layout = new CardLayout();
@@ -382,7 +382,7 @@ add(label);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (434, 48, 4, 'CardLayout-мастер: получи количество карт',
-        '<p><strong>Задание:</strong><br>Получи количество компонентов через getComponentCount(), выведи его</p>',
+        'Получи количество компонентов через getComponentCount(), выведи его',
         'CardLayout-getComponentCount',
         '', 434, 22.0, 0.0, 'JPanel panel = new JPanel();
 CardLayout layout = new CardLayout();
@@ -441,7 +441,7 @@ VALUES (435, '<h2>🎮 CardLayout-мастер: Покажи карту по и�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (435, 48, 5, 'CardLayout-мастер: покажи карту по имени',
-        '<p><strong>Задание:</strong><br>Получи CardLayout, покажи карту "cardName" через show()</p>',
+        'Получи CardLayout, покажи карту "cardName" через show()',
         'CardLayout-show',
         '', 435, 23.0, 0.0, 'JPanel panel = new JPanel();
 CardLayout layout = new CardLayout();
@@ -494,7 +494,7 @@ VALUES (436, '<h2>🎮 FlowLayout-мастер: Установи ориента�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (436, 48, 6, 'FlowLayout-мастер: установи ориентацию компонента',
-        '<p><strong>Задание:</strong><br>Установи ориентацию RIGHT_TO_LEFT через setComponentOrientation()</p>',
+        'Установи ориентацию RIGHT_TO_LEFT через setComponentOrientation()',
         'FlowLayout-setComponentOrientation',
         '', 436, 24.0, 0.0, 'FlowLayout flowLayout = new FlowLayout();
 setLayout(flowLayout);

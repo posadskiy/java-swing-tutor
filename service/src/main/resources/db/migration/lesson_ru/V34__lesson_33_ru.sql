@@ -66,7 +66,7 @@ doc.insertString(0, "Жирный текст", style);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (278, 33, 1, 'JTextPane-новичок: создай расширенный редактор',
-        '<p><strong>Задание:</strong><br>Создай JTextPane, создай стиль "bold", установи жирный шрифт, вставь текст со стилем и добавь на форму</p>',
+        'Создай JTextPane, создай стиль "bold", установи жирный шрифт, вставь текст со стилем и добавь на форму',
         'JTextPane-add',
         '', 278, 28.0, 0.0, 'JTextPane textPane = new JTextPane();
 StyledDocument doc = textPane.getStyledDocument();
@@ -129,7 +129,7 @@ doc.setCharacterAttributes(start, end - start, style, false);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (279, 33, 2, 'JTextPane-мастер: выделяй и стилизуй текст',
-        '<p><strong>Задание:</strong><br>Получи начало и конец выделения, создай стиль "bold", примени стиль к выделенному тексту</p>',
+        'Получи начало и конец выделения, создай стиль "bold", примени стиль к выделенному тексту',
         'JTextPane-getSelectionStart,getSelectionEnd,add',
         '', 279, 29.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setText("Select this text");
@@ -189,7 +189,7 @@ StyleConstants.setFontSize(style, 14);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (280, 33, 3, 'JTextPane-мастер: настрой шрифт',
-        '<p><strong>Задание:</strong><br>Установи шрифт через setFont() с Arial, BOLD, размер 14</p>',
+        'Установи шрифт через setFont() с Arial, BOLD, размер 14',
         'JTextPane-setFont,add',
         '', 280, 24.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setFont(new Font("Arial", Font.BOLD, 14));
@@ -241,7 +241,7 @@ VALUES (281, '<h2>🎮 JTextPane-мастер: Вставь строку!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (281, 33, 4, 'JTextPane-мастер: вставь строку',
-        '<p><strong>Задание:</strong><br>Получи документ через getStyledDocument(), вставь строку в позицию 0 через insertString()</p>',
+        'Получи документ через getStyledDocument(), вставь строку в позицию 0 через insertString()',
         'JTextPane-getStyledDocument,add',
         '', 281, 25.0, 0.0, 'JTextPane textPane = new JTextPane();
 StyledDocument doc = textPane.getStyledDocument();
@@ -302,7 +302,7 @@ StyleConstants.setBold(style, true);</code></p>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (282, 33, 5, 'JTextPane-мастер: примени стиль',
-        '<p><strong>Задание:</strong><br>Получи документ, создай стиль через addStyle(), установи жирный через StyleConstants.setBold(), примени через setCharacterAttributes()</p>',
+        'Получи документ, создай стиль через addStyle(), установи жирный через StyleConstants.setBold(), примени через setCharacterAttributes()',
         'JTextPane-setCharacterAttributes,add',
         '', 282, 27.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setText("Text for styling");
@@ -355,7 +355,7 @@ VALUES (283, '<h2>🎮 JTextPane-мастер: Получи текст!</h2>
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (283, 33, 6, 'JTextPane-мастер: получи текст',
-        '<p><strong>Задание:</strong><br>Получи текст через getText(), выведи его</p>',
+        'Получи текст через getText(), выведи его',
         'JTextPane-getText,add',
         '', 283, 21.0, 0.0, 'JTextPane textPane = new JTextPane();
 textPane.setText("Text");
@@ -414,7 +414,7 @@ VALUES (284, '<h2>🎮 MouseListener-мастер: Определи кнопку
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (284, 33, 6, 'MouseListener-мастер: определи кнопку мыши',
-        '<p><strong>Задание:</strong><br>Добавь MouseListener, проверь getButton() == BUTTON1, выведи "Левая кнопка"</p>',
+        'Добавь MouseListener, проверь getButton() == BUTTON1, выведи "Левая кнопка"',
         'MouseListener-getButton,add',
         '', 284, 24.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
@@ -476,7 +476,7 @@ VALUES (285, '<h2>🎮 MouseListener-мастер: Получи координа
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (285, 33, 7, 'MouseListener-мастер: получи координаты мыши',
-        '<p><strong>Задание:</strong><br>Добавь MouseListener, переопредели mouseClicked(), получи X и Y через getX(), getY(), выведи</p>',
+        'Добавь MouseListener, переопредели mouseClicked(), получи X и Y через getX(), getY(), выведи',
         'MouseListener-getX,getY,add',
         '', 285, 23.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
@@ -539,7 +539,7 @@ VALUES (286, '<h2>🎮 MouseListener-мастер: Получи количест
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (286, 33, 8, 'MouseListener-мастер: получи количество кликов',
-        '<p><strong>Задание:</strong><br>Добавь MouseListener, переопредели mouseClicked(), получи количество через getClickCount(), проверь на 2</p>',
+        'Добавь MouseListener, переопредели mouseClicked(), получи количество через getClickCount(), проверь на 2',
         'MouseListener-getClickCount,add',
         '', 286, 23.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {

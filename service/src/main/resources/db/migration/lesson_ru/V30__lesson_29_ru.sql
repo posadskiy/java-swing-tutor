@@ -63,7 +63,7 @@ VALUES (238, '<h2>🎮 Всплывающее меню-новичок: Созд�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (238, 29, 1, 'Всплывающее меню-новичок: создай контекстное меню',
-        '<p><strong>Задание:</strong><br>Создай JPopupMenu, добавь два пункта меню ("Копировать", "Вставить"), покажи меню через show()</p>',
+        'Создай JPopupMenu, добавь два пункта меню ("Копировать", "Вставить"), покажи меню через show()',
         'JPopupMenu-show,add',
         '', 238, 18.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Copy"));
@@ -129,7 +129,7 @@ VALUES (239, '<h2>🎮 Всплывающее меню-мастер: Добав�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (239, 29, 2, 'Всплывающее меню-мастер: добавь пункты меню',
-        '<p><strong>Задание:</strong><br>Создай JPopupMenu, добавь JMenuItem, разделитель и JCheckBoxMenuItem</p>',
+        'Создай JPopupMenu, добавь JMenuItem, разделитель и JCheckBoxMenuItem',
         'JPopupMenu-JMenuItem-addSeparator-JCheckBoxMenuItem',
         '', 239, 20.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
@@ -194,7 +194,7 @@ VALUES (240, '<h2>🎮 Всплывающее меню-мастер: Покаж�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (240, 29, 3, 'Всплывающее меню-мастер: покажи меню в нужной позиции',
-        '<p><strong>Задание:</strong><br>Создай JPopupMenu, добавь MouseListener, при правом клике покажи меню в позиции курсора через show()</p>',
+        'Создай JPopupMenu, добавь MouseListener, при правом клике покажи меню в позиции курсора через show()',
         'JPopupMenu-MouseAdapter-MouseEvent-show',
         '', 240, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
@@ -258,7 +258,7 @@ VALUES (241, '<h2>🎮 Всплывающее меню-мастер: Узнай 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (241, 29, 4, 'Всплывающее меню-мастер: узнай источник меню',
-        '<p><strong>Задание:</strong><br>Создай JPopupMenu, покажи его, получи источник через getInvoker() и выведи тип в консоль</p>',
+        'Создай JPopupMenu, покажи его, получи источник через getInvoker() и выведи тип в консоль',
         'JPopupMenu-getInvoker,show,add',
         '', 241, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
@@ -324,7 +324,7 @@ VALUES (242, '<h2>🎮 Всплывающее меню-мастер: Добав�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (242, 29, 5, 'Всплывающее меню-мастер: добавь границу',
-        '<p><strong>Задание:</strong><br>Создай JPopupMenu, создай границу через BorderFactory.createLineBorder(), установи через setBorder()</p>',
+        'Создай JPopupMenu, создай границу через BorderFactory.createLineBorder(), установи через setBorder()',
         'JPopupMenu-setBorder,add',
         '', 242, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));
@@ -398,7 +398,7 @@ VALUES (243, '<h2>🎮 Всплывающее меню-мастер: Отсле�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (243, 29, 6, 'Всплывающее меню-мастер: отслеживай события меню',
-        '<p><strong>Задание:</strong><br>Создай JPopupMenu, добавь PopupMenuListener, выведи сообщение в консоль при показе меню</p>',
+        'Создай JPopupMenu, добавь PopupMenuListener, выведи сообщение в консоль при показе меню',
         'JPopupMenu-PopupMenuListener',
         '', 243, 22.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Копировать"));

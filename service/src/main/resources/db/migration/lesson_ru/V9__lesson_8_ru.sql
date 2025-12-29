@@ -56,7 +56,7 @@ VALUES (72, '<h2>🎮 Радиокнопка-новичок: Создай пер
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (72, 8, 1, 'Радиокнопка-новичок: создай переключатель выбора',
-        '<p><strong>Задание:</strong><br>Создай радиокнопку с текстом "Вариант 1" и добавь на форму</p>',
+        'Создай радиокнопку с текстом "Вариант 1" и добавь на форму',
         'JRadioButton-add',
         '', 72, 12.0, 0.0, 'JRadioButton radio = new JRadioButton("Option 1");
 add(radio);');
@@ -114,7 +114,7 @@ VALUES (73, '<h2>🎮 Группа кнопок: Объедини радиокн
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (73, 8, 2, 'Группа кнопок: объедини радиокнопки в группу',
-        '<p><strong>Задание:</strong><br>Создай группу, две радиокнопки, добавь их в группу и на форму</p>',
+        'Создай группу, две радиокнопки, добавь их в группу и на форму',
         'JRadioButton-add;JRadioButton-add',
         '', 73, 18.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButton radio1 = new JRadioButton("Option 1");

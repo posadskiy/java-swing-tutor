@@ -61,7 +61,7 @@ VALUES (441, '<h2>🎮 Кастомная отрисовка-новичок: П�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (441, 50, 1, 'Кастомная отрисовка-новичок: переопредели paintComponent',
-        '<p><strong>Задание:</strong><br>Создай класс, расширяющий JComponent, переопредели paintComponent(), вызови super.paintComponent(g), нарисуй строку через drawString()</p>',
+        'Создай класс, расширяющий JComponent, переопредели paintComponent(), вызови super.paintComponent(g), нарисуй строку через drawString()',
         'JComponent-paintComponent,drawString,add',
         '', 441, 20.0, 0.0, 'class MyComponent extends JComponent {
     @Override
@@ -119,7 +119,7 @@ VALUES (442, '<h2>🎮 Кастомная отрисовка-мастер: Ис�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (442, 50, 2, 'Кастомная отрисовка-мастер: используй Graphics2D',
-        '<p><strong>Задание:</strong><br>Переопредели paintComponent(), приведи Graphics к Graphics2D, включи антиалиасинг через setRenderingHint()</p>',
+        'Переопредели paintComponent(), приведи Graphics к Graphics2D, включи антиалиасинг через setRenderingHint()',
         'Graphics2D-setRenderingHint,add',
         '', 442, 21.0, 0.0, 'class MyComponent extends JComponent {
     @Override
@@ -178,7 +178,7 @@ VALUES (443, '<h2>🎮 Кастомная отрисовка-мастер: Ри�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (443, 50, 3, 'Кастомная отрисовка-мастер: рисуй фигуры',
-        '<p><strong>Задание:</strong><br>Переопредели paintComponent(), нарисуй закрашенный прямоугольник через fillRect(10, 10, 100, 50)</p>',
+        'Переопредели paintComponent(), нарисуй закрашенный прямоугольник через fillRect(10, 10, 100, 50)',
         'Graphics2D-fillRect',
         '', 443, 21.0, 0.0, 'class MyComponent extends JComponent {
     @Override
@@ -237,7 +237,7 @@ VALUES (444, '<h2>🎮 Кастомная отрисовка-мастер: Ис�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (444, 50, 4, 'Кастомная отрисовка-мастер: используй цвета',
-        '<p><strong>Задание:</strong><br>Переопредели paintComponent(), установи цвет Color.RED через setColor(), нарисуй прямоугольник</p>',
+        'Переопредели paintComponent(), установи цвет Color.RED через setColor(), нарисуй прямоугольник',
         'Graphics2D-setColor-Color',
         '', 444, 21.0, 0.0, 'class MyComponent extends JComponent {
     @Override
@@ -297,7 +297,7 @@ VALUES (445, '<h2>🎮 Кастомная отрисовка-мастер: Ис�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (445, 50, 5, 'Кастомная отрисовка-мастер: используй градиенты',
-        '<p><strong>Задание:</strong><br>Переопредели paintComponent(), создай градиент new GradientPaint(0, 0, Color.RED, 100, 0, Color.BLUE), установи через setPaint(), нарисуй прямоугольник</p>',
+        'Переопредели paintComponent(), создай градиент new GradientPaint(0, 0, Color.RED, 100, 0, Color.BLUE), установи через setPaint(), нарисуй прямоугольник',
         'Graphics2D-GradientPaint-setPaint',
         '', 445, 22.0, 0.0, 'class MyComponent extends JComponent {
     @Override
@@ -358,7 +358,7 @@ VALUES (446, '<h2>🎮 Кастомная отрисовка-мастер: Ри�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (446, 50, 6, 'Кастомная отрисовка-мастер: рисуй изображения',
-        '<p><strong>Задание:</strong><br>Переопредели paintComponent(), загрузи изображение через ImageIO.read(), нарисуй через drawImage()</p>',
+        'Переопредели paintComponent(), загрузи изображение через ImageIO.read(), нарисуй через drawImage()',
         'Graphics2D-drawImage-ImageIO',
         '', 446, 22.0, 0.0, 'class MyComponent extends JComponent {
     @Override
@@ -422,7 +422,7 @@ VALUES (447, '<h2>🎮 Кастомная отрисовка-мастер: Об�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (447, 50, 7, 'Кастомная отрисовка-мастер: обновляй отрисовку',
-        '<p><strong>Задание:</strong><br>Создай компонент с paintComponent(), вызови repaint() для обновления</p>',
+        'Создай компонент с paintComponent(), вызови repaint() для обновления',
         'JComponent-repaint',
         '', 447, 20.0, 0.0, 'class MyComponent extends JComponent {
     @Override

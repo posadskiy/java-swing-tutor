@@ -60,7 +60,7 @@ VALUES (221, '<h2>🎮 Флажок в меню-новичок: Создай п�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (221, 27, 1, 'Флажок в меню-новичок: создай переключатель в меню',
-        '<p><strong>Задание:</strong><br>Создай флажок в меню "Показать панель", отметь его и добавь в меню</p>',
+        'Создай флажок в меню "Показать панель", отметь его и добавь в меню',
         'JCheckBoxMenuItem-setSelected,add',
         '', 221, 18.0, 0.0, 'JCheckBoxMenuItem showToolbar = new JCheckBoxMenuItem("Show panel");
 showToolbar.setSelected(true);
@@ -115,7 +115,7 @@ VALUES (222, '<h2>🎮 Вкладки-мастер: Выбери активну�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (222, 27, 2, 'Вкладки-мастер: выбери активную вкладку',
-        '<p><strong>Задание:</strong><br>Выбери вкладку с индексом 1 через setSelectedIndex(1)</p>',
+        'Выбери вкладку с индексом 1 через setSelectedIndex(1)',
         'JTabbedPane-addTab,addTab,setSelectedIndex,add',
         '', 222, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -165,7 +165,7 @@ VALUES (223, '<h2>🎮 Вкладки-мастер: Настрой распол�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (223, 27, 3, 'Вкладки-мастер: настрой расположение вкладок',
-        '<p><strong>Задание:</strong><br>Установи расположение BOTTOM через setTabPlacement()</p>',
+        'Установи расположение BOTTOM через setTabPlacement()',
         'JTabbedPane-addTab,setTabPlacement,add',
         '', 223, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -217,7 +217,7 @@ VALUES (224, '<h2>🎮 Вкладки-мастер: Добавь подсказ�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (224, 27, 4, 'Вкладки-мастер: добавь подсказку',
-        '<p><strong>Задание:</strong><br>Добавь вкладку, установи подсказку "Описание" через setToolTipTextAt(0, "Описание")</p>',
+        'Добавь вкладку, установи подсказку "Описание" через setToolTipTextAt(0, "Описание")',
         'JTabbedPane-addTab,setToolTipTextAt,add',
         '', 224, 22.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 JPanel panel = new JPanel();
@@ -270,7 +270,7 @@ VALUES (225, '<h2>🎮 Вкладки-мастер: Включи/выключи 
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (225, 27, 5, 'Вкладки-мастер: включи/выключи вкладку',
-        '<p><strong>Задание:</strong><br>Выключи вкладку 0 через setEnabledAt(0, false), затем включи через setEnabledAt(0, true)</p>',
+        'Выключи вкладку 0 через setEnabledAt(0, false), затем включи через setEnabledAt(0, true)',
         'JTabbedPane-addTab,setEnabledAt,setEnabledAt,add',
         '', 225, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка 1", new JPanel());
@@ -323,7 +323,7 @@ VALUES (226, '<h2>🎮 Вкладки-мастер: Получи индекс в
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (226, 27, 6, 'Вкладки-мастер: получи индекс вкладки',
-        '<p><strong>Задание:</strong><br>Получи индекс через indexOfTab("Вкладка"), получи выбранный через getSelectedIndex()</p>',
+        'Получи индекс через indexOfTab("Вкладка"), получи выбранный через getSelectedIndex()',
         'JTabbedPane-indexOfTab,getSelectedIndex,add',
         '', 226, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 tabbedPane.addTab("Вкладка", new JPanel());
@@ -373,7 +373,7 @@ VALUES (227, '<h2>🎮 Панель инструментов-мастер: До�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (227, 27, 6, 'Панель инструментов-мастер: добавь разделитель',
-        '<p><strong>Задание:</strong><br>Добавь разделитель через addSeparator()</p>',
+        'Добавь разделитель через addSeparator()',
         'JToolBar-addSeparator',
         '', 227, 20.0, 0.0, 'JToolBar toolBar = new JToolBar();
 toolBar.add(new JButton("Кнопка 1"));
@@ -423,7 +423,7 @@ VALUES (228, '<h2>🎮 Панель инструментов-мастер: Ус�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (228, 27, 7, 'Панель инструментов-мастер: установи отступы',
-        '<p><strong>Задание:</strong><br>Добавь разделитель через addSeparator() для создания отступов</p>',
+        'Добавь разделитель через addSeparator() для создания отступов',
         'JToolBar-addSeparator',
         '', 228, 20.0, 0.0, 'JToolBar toolBar = new JToolBar();
 toolBar.add(new JButton("Кнопка 1"));
@@ -473,7 +473,7 @@ VALUES (229, '<h2>🎮 Панель инструментов-мастер: Ус�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (229, 27, 8, 'Панель инструментов-мастер: установи ориентацию',
-        '<p><strong>Задание:</strong><br>Установи ориентацию VERTICAL через setOrientation()</p>',
+        'Установи ориентацию VERTICAL через setOrientation()',
         'JToolBar-setOrientation,add',
         '', 229, 22.0, 0.0, 'JToolBar toolBar = new JToolBar();
 toolBar.add(new JButton("Кнопка"));

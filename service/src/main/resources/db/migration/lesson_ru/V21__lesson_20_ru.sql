@@ -59,7 +59,7 @@ VALUES (170, '<h2>🎮 Прокручиваемая панель-новичок:
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (170, 20, 1, 'Прокручиваемая панель-новичок: добавь прокрутку',
-        '<p><strong>Задание:</strong><br>Создай текстовую область, оберни её в JScrollPane и добавь на форму</p>',
+        'Создай текстовую область, оберни её в JScrollPane и добавь на форму',
         'JScrollPane-add',
         '', 170, 16.0, 0.0, 'JTextArea area = new JTextArea("Long text...");
 JScrollPane scrollPane = new JScrollPane(area);
@@ -107,7 +107,7 @@ VALUES (171, '<h2>🎮 Панель-мастер: Включи двойную б
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (171, 20, 11, 'Панель-мастер: включи двойную буферизацию',
-        '<p><strong>Задание:</strong><br>Включи двойную буферизацию через setDoubleBuffered(true)</p>',
+        'Включи двойную буферизацию через setDoubleBuffered(true)',
         'JPanel-setDoubleBuffered,add',
         '', 171, 20.0, 0.0, 'JPanel panel = new JPanel();
 panel.setDoubleBuffered(true);
@@ -155,7 +155,7 @@ VALUES (172, '<h2>🎮 Панель-мастер: Установи предпо�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (172, 20, 12, 'Панель-мастер: установи предпочтительный размер',
-        '<p><strong>Задание:</strong><br>Установи предпочтительный размер 200x100 через setPreferredSize(new Dimension(200, 100))</p>',
+        'Установи предпочтительный размер 200x100 через setPreferredSize(new Dimension(200, 100))',
         'JPanel-setPreferredSize,add',
         '', 172, 22.0, 0.0, 'JPanel panel = new JPanel();
 panel.setPreferredSize(new Dimension(200, 100));
@@ -203,7 +203,7 @@ VALUES (173, '<h2>🎮 Панель-мастер: Установи минима�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (173, 20, 13, 'Панель-мастер: установи минимальный размер',
-        '<p><strong>Задание:</strong><br>Установи минимальный размер 100x50 через setMinimumSize(new Dimension(100, 50))</p>',
+        'Установи минимальный размер 100x50 через setMinimumSize(new Dimension(100, 50))',
         'JPanel-setMinimumSize,add',
         '', 173, 22.0, 0.0, 'JPanel panel = new JPanel();
 panel.setMinimumSize(new Dimension(100, 50));
@@ -251,7 +251,7 @@ VALUES (174, '<h2>🎮 Панель-мастер: Установи максим�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (174, 20, 14, 'Панель-мастер: установи максимальный размер',
-        '<p><strong>Задание:</strong><br>Установи максимальный размер 500x300 через setMaximumSize(new Dimension(500, 300))</p>',
+        'Установи максимальный размер 500x300 через setMaximumSize(new Dimension(500, 300))',
         'JPanel-setMaximumSize,add',
         '', 174, 22.0, 0.0, 'JPanel panel = new JPanel();
 panel.setMaximumSize(new Dimension(500, 300));

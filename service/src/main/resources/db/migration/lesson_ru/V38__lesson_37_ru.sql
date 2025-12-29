@@ -61,7 +61,7 @@ VALUES (313, '<h2>🎮 Компоновка-новичок: Размести к�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (313, 37, 1, 'Компоновка-новичок: размести компоненты по краям',
-        '<p><strong>Задание:</strong><br>Установи BorderLayout, добавь кнопки в регионы NORTH, SOUTH и CENTER</p>',
+        'Установи BorderLayout, добавь кнопки в регионы NORTH, SOUTH и CENTER',
         'BorderLayout-add',
         '', 313, 18.0, 0.0, 'setLayout(new BorderLayout());
 add(new JButton("Верх"), BorderLayout.NORTH);
@@ -119,7 +119,7 @@ VALUES (314, '<h2>🎮 Компоновка-мастер: Используй в�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (314, 37, 2, 'Компоновка-мастер: используй все регионы',
-        '<p><strong>Задание:</strong><br>Установи BorderLayout, добавь кнопки во все пять регионов: NORTH, SOUTH, EAST, WEST, CENTER</p>',
+        'Установи BorderLayout, добавь кнопки во все пять регионов: NORTH, SOUTH, EAST, WEST, CENTER',
         'BorderLayout-add',
         '', 314, 20.0, 0.0, 'setLayout(new BorderLayout());
 add(new JButton("Верх"), BorderLayout.NORTH);
@@ -175,7 +175,7 @@ VALUES (315, '<h2>🎮 Компоновка-мастер: Добавь отст�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (315, 37, 3, 'Компоновка-мастер: добавь отступы между регионами',
-        '<p><strong>Задание:</strong><br>Создай BorderLayout с отступами 10 пикселей по горизонтали и вертикали, добавь компоненты в NORTH и CENTER</p>',
+        'Создай BorderLayout с отступами 10 пикселей по горизонтали и вертикали, добавь компоненты в NORTH и CENTER',
         'BorderLayout-add',
         '', 315, 20.0, 0.0, 'setLayout(new BorderLayout(10, 10));
 add(new JButton("Верх"), BorderLayout.NORTH);
@@ -230,7 +230,7 @@ VALUES (316, '<h2>🎮 Компоновка-мастер: Учитывай пр�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (316, 37, 4, 'Компоновка-мастер: учитывай предпочтительные размеры',
-        '<p><strong>Задание:</strong><br>Создай кнопку, установи предпочтительный размер 100x30, добавь в регион NORTH</p>',
+        'Создай кнопку, установи предпочтительный размер 100x30, добавь в регион NORTH',
         'BorderLayout-JButton-setPreferredSize,add',
         '', 316, 22.0, 0.0, 'JButton button = new JButton("Button");
 button.setPreferredSize(new Dimension(100, 30));
