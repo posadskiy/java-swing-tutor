@@ -62,7 +62,7 @@ VALUES (129, 16, 1, 'Панель-новичок: создай контейне�
         'Создай панель, добавь на неё кнопку и добавь панель на форму',
         'JPanel-add',
         '', 129, 12.0, 0.0, 'JPanel panel = new JPanel();
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 panel.add(button);
 add(panel);');
 INSERT INTO documentation (id, text)
@@ -175,8 +175,8 @@ VALUES (131, 16, 2, 'Менеджер компоновки: управляй р�
         'JPanel-setLayout,add;JButton-add;JButton-add',
         '', 131, 18.0, 0.0, 'JPanel panel = new JPanel();
 panel.setLayout(new FlowLayout());
-JButton button1 = new JButton("Кнопка 1");
-JButton button2 = new JButton("Кнопка 2");
+JButton button1 = new JButton("Button 1");
+JButton button2 = new JButton("Button 2");
 panel.add(button1);
 panel.add(button2);
 add(panel);');
@@ -395,7 +395,7 @@ VALUES (135, 16, 5, 'Спиннер-мастер: обрабатывай изм�
 JLabel label = new JLabel();
 spinner.addChangeListener(e -> {
     Object value = spinner.getValue();
-    label.setText("Значение: " + value);
+    label.setText("Value: " + value);
 });
 add(spinner);
 add(label);');

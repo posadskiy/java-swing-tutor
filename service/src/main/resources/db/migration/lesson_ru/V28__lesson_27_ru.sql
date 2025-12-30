@@ -118,8 +118,8 @@ VALUES (222, 27, 2, 'Вкладки-мастер: выбери активную 
         'Выбери вкладку с индексом 1 через setSelectedIndex(1)',
         'JTabbedPane-addTab,addTab,setSelectedIndex,add',
         '', 222, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
-tabbedPane.addTab("Вкладка 2", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
+tabbedPane.addTab("Tab 2", new JPanel());
 tabbedPane.setSelectedIndex(1);
 add(tabbedPane);');
 INSERT INTO documentation (id, text)
@@ -168,7 +168,7 @@ VALUES (223, 27, 3, 'Вкладки-мастер: настрой располо�
         'Установи расположение BOTTOM через setTabPlacement()',
         'JTabbedPane-addTab,setTabPlacement,add',
         '', 223, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
 tabbedPane.setTabPlacement(JTabbedPane.BOTTOM);
 add(tabbedPane);');
 INSERT INTO documentation (id, text)
@@ -221,8 +221,8 @@ VALUES (224, 27, 4, 'Вкладки-мастер: добавь подсказк�
         'JTabbedPane-addTab,setToolTipTextAt,add',
         '', 224, 22.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 JPanel panel = new JPanel();
-tabbedPane.addTab("Вкладка", panel);
-tabbedPane.setToolTipTextAt(0, "Описание");
+tabbedPane.addTab("Tab", panel);
+tabbedPane.setToolTipTextAt(0, "Description");
 add(tabbedPane);');
 INSERT INTO documentation (id, text)
 VALUES (225, '<h2>🎮 Вкладки-мастер: Включи/выключи вкладку!</h2>
@@ -273,7 +273,7 @@ VALUES (225, 27, 5, 'Вкладки-мастер: включи/выключи в
         'Выключи вкладку 0 через setEnabledAt(0, false), затем включи через setEnabledAt(0, true)',
         'JTabbedPane-addTab,setEnabledAt,setEnabledAt,add',
         '', 225, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
 tabbedPane.setEnabledAt(0, false);
 tabbedPane.setEnabledAt(0, true);
 add(tabbedPane);');
@@ -326,8 +326,8 @@ VALUES (226, 27, 6, 'Вкладки-мастер: получи индекс вк
         'Получи индекс через indexOfTab("Вкладка"), получи выбранный через getSelectedIndex()',
         'JTabbedPane-indexOfTab,getSelectedIndex,add',
         '', 226, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка", new JPanel());
-int index = tabbedPane.indexOfTab("Вкладка");
+tabbedPane.addTab("Tab", new JPanel());
+int index = tabbedPane.indexOfTab("Tab");
 int selected = tabbedPane.getSelectedIndex();
 add(tabbedPane);');
 INSERT INTO documentation (id, text)
@@ -376,9 +376,9 @@ VALUES (227, 27, 6, 'Панель инструментов-мастер: доб�
         'Добавь разделитель через addSeparator()',
         'JToolBar-addSeparator',
         '', 227, 20.0, 0.0, 'JToolBar toolBar = new JToolBar();
-toolBar.add(new JButton("Кнопка 1"));
+toolBar.add(new JButton("Button 1"));
 toolBar.addSeparator();
-toolBar.add(new JButton("Кнопка 2"));
+toolBar.add(new JButton("Button 2"));
 add(toolBar);');
 INSERT INTO documentation (id, text)
 VALUES (228, '<h2>🎮 Панель инструментов-мастер: Установи отступы!</h2>
@@ -426,9 +426,9 @@ VALUES (228, 27, 7, 'Панель инструментов-мастер: уст�
         'Добавь разделитель через addSeparator() для создания отступов',
         'JToolBar-addSeparator',
         '', 228, 20.0, 0.0, 'JToolBar toolBar = new JToolBar();
-toolBar.add(new JButton("Кнопка 1"));
+toolBar.add(new JButton("Button 1"));
 toolBar.addSeparator();
-toolBar.add(new JButton("Кнопка 2"));
+toolBar.add(new JButton("Button 2"));
 add(toolBar);');
 INSERT INTO documentation (id, text)
 VALUES (229, '<h2>🎮 Панель инструментов-мастер: Установи ориентацию!</h2>
@@ -476,6 +476,6 @@ VALUES (229, 27, 8, 'Панель инструментов-мастер: уст�
         'Установи ориентацию VERTICAL через setOrientation()',
         'JToolBar-setOrientation,add',
         '', 229, 22.0, 0.0, 'JToolBar toolBar = new JToolBar();
-toolBar.add(new JButton("Кнопка"));
+toolBar.add(new JButton("Button"));
 toolBar.setOrientation(SwingConstants.VERTICAL);
 add(toolBar);');

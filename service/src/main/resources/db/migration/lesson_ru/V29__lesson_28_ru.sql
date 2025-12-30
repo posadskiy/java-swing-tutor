@@ -71,11 +71,11 @@ VALUES (230, 28, 1, 'Радиокнопка в меню-новичок: созд
         'Создай ButtonGroup, создай два JRadioButtonMenuItem, добавь в группу и меню',
         'JRadioButtonMenuItem-add',
         '', 230, 18.0, 0.0, 'ButtonGroup group = new ButtonGroup();
-JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
-JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
+JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");
+JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Medium");
 group.add(item1);
 group.add(item2);
-JMenu menu = new JMenu("Размер");
+JMenu menu = new JMenu("Size");
 menu.add(item1);
 menu.add(item2);
 JMenuBar menuBar = new JMenuBar();
@@ -100,7 +100,7 @@ VALUES (231, '<h2>🎮 Радиокнопка в меню-мастер: Уста
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Создай радио-кнопку:<br>
-<code>JRadioButtonMenuItem item = new JRadioButtonMenuItem("Средний");</code></p>
+<code>JRadioButtonMenuItem item = new JRadioButtonMenuItem("Medium");</code></p>
 
 <p><strong>Шаг 2:</strong> Установи выбранное состояние:<br>
 <code>item.setSelected(true);</code></p>
@@ -192,13 +192,13 @@ VALUES (232, 28, 3, 'Радиокнопка в меню-мастер: созда
         'Создай ButtonGroup, создай три JRadioButtonMenuItem, добавь все в группу и меню',
         'JRadioButtonMenuItem-add',
         '', 232, 20.0, 0.0, 'ButtonGroup group = new ButtonGroup();
-JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Маленький");
-JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
-JRadioButtonMenuItem item3 = new JRadioButtonMenuItem("Большой");
+JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");
+JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Medium");
+JRadioButtonMenuItem item3 = new JRadioButtonMenuItem("Large");
 group.add(item1);
 group.add(item2);
 group.add(item3);
-JMenu menu = new JMenu("Размер");
+JMenu menu = new JMenu("Size");
 menu.add(item1);
 menu.add(item2);
 menu.add(item3);
@@ -480,7 +480,7 @@ JLabel label = new JLabel();
 item.addActionListener(e -> {
     label.setText("Selected option: " + item.getText());
 });
-JMenu menu = new JMenu("Размер");
+JMenu menu = new JMenu("Size");
 menu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);

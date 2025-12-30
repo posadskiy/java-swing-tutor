@@ -271,7 +271,7 @@ VALUES (98, '<h2>🎮 Модель списка: Работай с DefaultListMo
 <code>DefaultListModel&lt;String&gt; model = new DefaultListModel&lt;&gt;();</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь элементы:<br>
-<code>model.addElement("Элемент 1");<br>
+<code>model.addElement("Element 1");<br>
 model.addElement("Элемент 2");</code></p>
 
 <p><strong>Шаг 3:</strong> Создай список с моделью:<br>
@@ -305,9 +305,9 @@ VALUES (98, 11, 5, 'Модель списка: работай с DefaultListMode
         'Создай DefaultListModel, добавь элементы через addElement(), создай список с моделью и добавь на форму',
         'JList-add',
         '', 98, 21.0, 0.0, 'DefaultListModel<String> model = new DefaultListModel<>();
-model.addElement("Элемент 1");
-model.addElement("Элемент 2");
-model.addElement("Элемент 3");
+model.addElement("Element 1");
+model.addElement("Element 2");
+model.addElement("Element 3");
 JList<String> list = new JList<>(model);
 add(list);');
 

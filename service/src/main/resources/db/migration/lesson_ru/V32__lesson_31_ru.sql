@@ -66,7 +66,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (253, 31, 1, 'Дерево-новичок: создай иерархическую структуру',
         'Создай дерево с корневым узлом "Корень" и двумя дочерними узлами, оберни в JScrollPane и добавь на форму',
-        'JTree-DefaultMutableTreeNode-JScrollPane-add',
+        'DefaultMutableTreeNode-add,add;DefaultMutableTreeNode',
         '', 253, 22.0, 0.0, 'DefaultMutableTreeNode root = new DefaultMutableTreeNode("Root");
 DefaultMutableTreeNode child1 = new DefaultMutableTreeNode("Child 1");
 DefaultMutableTreeNode child2 = new DefaultMutableTreeNode("Child 2");
@@ -242,7 +242,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (256, 31, 4, 'Таблица-мастер: включи редактирование ячеек',
         'Создай DefaultTableModel, переопредели isCellEditable() чтобы вернуть true, установи модель таблице',
-        'JTable-setModel,add',
+        'JTable-add',
         '', 256, 28.0, 0.0, 'String[] columns = {"Name", "Age"};
 String[][] data = {{"John", "25"}, {"Mary", "30"}};
 DefaultTableModel model = new DefaultTableModel(data, columns) {
@@ -485,7 +485,7 @@ VALUES (266, 31, 8, 'Пункт меню-мастер: добавь акселе
         '', 266, 25.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 KeyStroke keyStroke = KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK);
 menuItem.setAccelerator(keyStroke);
-JMenu fileMenu = new JMenu("Файл");
+JMenu fileMenu = new JMenu("File");
 fileMenu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
@@ -594,7 +594,7 @@ VALUES (267, 31, 9, 'Пункт меню-мастер: установи мнем
         'JMenuItem-setMnemonic,add',
         '', 267, 23.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 menuItem.setMnemonic(KeyEvent.VK_S);
-JMenu fileMenu = new JMenu("Файл");
+JMenu fileMenu = new JMenu("File");
 fileMenu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
@@ -697,7 +697,7 @@ VALUES (268, 31, 10, 'Пункт меню-мастер: добавь подск�
         'JMenuItem-setToolTipText',
         '', 268, 21.0, 0.0, 'JMenuItem menuItem = new JMenuItem("Save");
 menuItem.setToolTipText("Save document");
-JMenu fileMenu = new JMenu("Файл");
+JMenu fileMenu = new JMenu("File");
 fileMenu.add(menuItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
@@ -800,7 +800,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (264, 31, 11, 'Таблица-мастер: настрой автоматическое изменение размера',
         'Установи режим AUTO_RESIZE_ALL_COLUMNS через setAutoResizeMode()',
-        'JTable-setAutoResizeMode-AUTO_RESIZE_ALL_COLUMNS',
+        'JTable-setAutoResizeMode',
         '', 264, 24.0, 0.0, 'String[] columns = {"Name", "Age"};
 String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);

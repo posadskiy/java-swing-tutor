@@ -66,10 +66,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (397, 45, 1, 'JEditorPane-новичок: создай редактор HTML',
         'Создай JEditorPane, установи тип "text/html", установи HTML текст и добавь на форму',
-        'JEditorPane-setContentType-setText,add',
+        'JEditorPane-setContentType,setText,add',
         '', 397, 26.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
-editor.setText("<html><b>Жирный текст</b></html>");
+editor.setText("<html><b>Bold text</b></html>");
 add(editor);');
 INSERT INTO documentation (id, text)
 VALUES (398, '<h2>🎮 JEditorPane-мастер: Загрузи HTML из URL!</h2>
@@ -121,14 +121,14 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (398, 45, 2, 'JEditorPane-мастер: загрузи HTML из URL',
         'Установи тип "text/html", загрузи страницу из URL через setPage(), обработай IOException',
-        'JEditorPane-setContentType-setPage-URL',
+        'JEditorPane-setContentType,setPage',
         '', 398, 28.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
 JLabel label = new JLabel();
 try {
     editor.setPage(new URL("https://example.com"));
 } catch (IOException e) {
-    label.setText("Ошибка загрузки: " + e.getMessage());
+    label.setText("Load error: " + e.getMessage());
 }
 JScrollPane scrollPane = new JScrollPane(editor);
 add(scrollPane);
@@ -188,7 +188,7 @@ VALUES (399, 45, 3, 'JEditorPane-мастер: обрабатывай гипер
         'JEditorPane-addHyperlinkListener,setPage,add',
         '', 399, 27.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
-editor.setText("<html><a href=\"https://example.com\">Ссылка</a></html>");
+editor.setText("<html><a href=\"https://example.com\">Link</a></html>");
 editor.addHyperlinkListener(e -> {
     if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
         try {
@@ -304,11 +304,11 @@ VALUES (401, 45, 5, 'JEditorPane-мастер: обрабатывай гипер
         'JEditorPane-addHyperlinkListener,add',
         '', 401, 25.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
-editor.setText("<html><a href=\"https://example.com\">Ссылка</a></html>");
+editor.setText("<html><a href=\"https://example.com\">Link</a></html>");
 JLabel label = new JLabel();
 editor.addHyperlinkListener(e -> {
     if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-        label.setText("Ссылка: " + e.getURL());
+        label.setText("Link: " + e.getURL());
     }
 });
 JScrollPane scrollPane = new JScrollPane(editor);
@@ -421,7 +421,7 @@ VALUES (402, 45, 6, 'JEditorPane-мастер: установи текст',
         'JEditorPane-setText',
         '', 402, 22.0, 0.0, 'JEditorPane editor = new JEditorPane();
 editor.setContentType("text/html");
-editor.setText("<html><h1>Заголовок</h1></html>");
+editor.setText("<html><h1>Title</h1></html>");
 JScrollPane scrollPane = new JScrollPane(editor);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
@@ -527,7 +527,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (405, 45, 7, 'ActionListener-мастер: получи команду действия',
         'Добавь ActionListener, получи команду через getActionCommand() в actionPerformed()',
-        'ActionListener-getActionCommand,add',
+        'JButton-getActionCommand,add',
         '', 405, 23.0, 0.0, 'JButton button = new JButton("Button");
 JLabel label = new JLabel();
 button.addActionListener(e -> {

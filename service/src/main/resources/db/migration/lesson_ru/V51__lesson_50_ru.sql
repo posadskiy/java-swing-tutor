@@ -62,7 +62,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (441, 50, 1, 'Кастомная отрисовка-новичок: переопредели paintComponent',
         'Создай класс, расширяющий JComponent, переопредели paintComponent(), вызови super.paintComponent(g), нарисуй строку через drawString()',
-        'JComponent-paintComponent,drawString,add',
+        'MyComponent-paintComponent,drawString,add',
         '', 441, 20.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
@@ -238,7 +238,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (444, 50, 4, 'Кастомная отрисовка-мастер: используй цвета',
         'Переопредели paintComponent(), установи цвет Color.RED через setColor(), нарисуй прямоугольник',
-        'Graphics2D-setColor-Color',
+        'JComponent-paintComponent',
         '', 444, 21.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
@@ -298,7 +298,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (445, 50, 5, 'Кастомная отрисовка-мастер: используй градиенты',
         'Переопредели paintComponent(), создай градиент new GradientPaint(0, 0, Color.RED, 100, 0, Color.BLUE), установи через setPaint(), нарисуй прямоугольник',
-        'Graphics2D-GradientPaint-setPaint',
+        'JComponent-paintComponent',
         '', 445, 22.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {
@@ -359,7 +359,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (446, 50, 6, 'Кастомная отрисовка-мастер: рисуй изображения',
         'Переопредели paintComponent(), загрузи изображение через ImageIO.read(), нарисуй через drawImage()',
-        'Graphics2D-drawImage-ImageIO',
+        'JComponent-paintComponent',
         '', 446, 22.0, 0.0, 'class MyComponent extends JComponent {
     @Override
     protected void paintComponent(Graphics g) {

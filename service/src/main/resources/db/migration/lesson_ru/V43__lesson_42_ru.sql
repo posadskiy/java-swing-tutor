@@ -252,7 +252,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (358, 42, 3, 'CardLayout-мастер: узнай текущую карту',
         'Получи все компоненты, проверь isVisible() для каждого, выведи имя видимого компонента',
-        'Container-getComponents-isVisible-getName',
+        'JPanel-setName,add',
         '', 358, 27.0, 0.0, 'CardLayout cardLayout = new CardLayout();
 setLayout(cardLayout);
 JPanel panel1 = new JPanel();

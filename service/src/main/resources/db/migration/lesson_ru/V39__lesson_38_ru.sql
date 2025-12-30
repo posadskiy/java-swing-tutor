@@ -62,9 +62,9 @@ VALUES (317, 38, 1, 'FlowLayout-новичок: размести компоне�
         'Установи FlowLayout и добавь три кнопки',
         'FlowLayout-add',
         '', 317, 16.0, 0.0, 'setLayout(new FlowLayout());
-JButton button1 = new JButton("Кнопка 1");
-JButton button2 = new JButton("Кнопка 2");
-JButton button3 = new JButton("Кнопка 3");
+JButton button1 = new JButton("Button 1");
+JButton button2 = new JButton("Button 2");
+JButton button3 = new JButton("Button 3");
 add(button1);
 add(button2);
 add(button3);');
@@ -447,7 +447,7 @@ radioButtonMenuItem.setActionCommand("RADIO");
 JLabel label = new JLabel();
 radioButtonMenuItem.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    label.setText("Команда: " + cmd);
+    label.setText("Command: " + cmd);
 });
 JMenu viewMenu = new JMenu("View");
 viewMenu.add(radioButtonMenuItem);

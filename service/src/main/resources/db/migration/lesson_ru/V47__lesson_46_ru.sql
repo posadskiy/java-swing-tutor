@@ -97,7 +97,7 @@ VALUES (407, '<h2>🎮 Радио-пункт меню-новичок: Созда
 
 <p><strong>Шаг 2:</strong> Создай радио-пункты:<br>
 <code>JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");<br>
-JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");</code></p>
+JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Medium");</code></p>
 
 <p><strong>Шаг 3:</strong> Добавь в группу и меню:<br>
 <code>group.add(item1);<br>
@@ -132,10 +132,10 @@ VALUES (407, 46, 1, 'Радио-пункт меню-новичок: создай
         'JRadioButtonMenuItem-add',
         '', 407, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");
-JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
+JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Medium");
 group.add(item1);
 group.add(item2);
-JMenu sizeMenu = new JMenu("Размер");
+JMenu sizeMenu = new JMenu("Size");
 sizeMenu.add(item1);
 sizeMenu.add(item2);
 JMenuBar menuBar = new JMenuBar();
@@ -197,7 +197,7 @@ item.addActionListener(e -> {
         label.setText("Selected: " + item.getText());
     }
 });
-JMenu sizeMenu = new JMenu("Размер");
+JMenu sizeMenu = new JMenu("Size");
 sizeMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(sizeMenu);
@@ -259,13 +259,13 @@ VALUES (409, 46, 3, 'Диалог-мастер: создай диалог под
         '', 409, 23.0, 0.0, 'JFrame frame = new JFrame();
 int result = JOptionPane.showConfirmDialog(
     frame,
-    "Ты уверен?",
-    "Подтверждение",
+    "Are you sure?",
+    "Confirmation",
     JOptionPane.YES_NO_OPTION
 );
 JLabel label = new JLabel();
 if (result == JOptionPane.YES_OPTION) {
-    label.setText("Пользователь согласился!");
+    label.setText("User agreed!");
 }
 add(label);');
 INSERT INTO documentation (id, text)
@@ -317,10 +317,10 @@ VALUES (412, 46, 3, 'Радио-пункт меню-мастер: добавь �
         'JRadioButtonMenuItem-add',
         '', 412, 23.0, 0.0, 'ButtonGroup group = new ButtonGroup();
 JRadioButtonMenuItem item1 = new JRadioButtonMenuItem("Small");
-JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Средний");
+JRadioButtonMenuItem item2 = new JRadioButtonMenuItem("Medium");
 group.add(item1);
 group.add(item2);
-JMenu sizeMenu = new JMenu("Размер");
+JMenu sizeMenu = new JMenu("Size");
 sizeMenu.add(item1);
 sizeMenu.add(item2);
 JMenuBar menuBar = new JMenuBar();
@@ -383,13 +383,13 @@ VALUES (410, 46, 4, 'Диалог-мастер: создай диалог вво
         '', 410, 24.0, 0.0, 'JFrame frame = new JFrame();
 String input = JOptionPane.showInputDialog(
     frame,
-    "Введи своё имя:",
-    "Ввод",
+    "Enter your name:",
+    "Input",
     JOptionPane.QUESTION_MESSAGE
 );
 JLabel label = new JLabel();
 if (input != null && !input.isEmpty()) {
-    label.setText("Введено: " + input);
+    label.setText("Entered: " + input);
 }
 add(label);');
 INSERT INTO documentation (id, text)
@@ -448,7 +448,7 @@ item.addItemListener(e -> {
         label.setText("Selected!");
     }
 });
-JMenu sizeMenu = new JMenu("Размер");
+JMenu sizeMenu = new JMenu("Size");
 sizeMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(sizeMenu);
@@ -511,11 +511,11 @@ VALUES (411, 46, 5, 'Диалог-мастер: создай кастомные 
         'Создай массив строк с тремя кнопками, покажи диалог через showOptionDialog() с этими кнопками',
         'JOptionPane-showOptionDialog',
         '', 411, 26.0, 0.0, 'JFrame frame = new JFrame();
-String[] options = {"Да", "Нет", "Отмена"};
+String[] options = {"Yes", "No", "Cancel"};
 int result = JOptionPane.showOptionDialog(
     frame,
-    "Выбери действие",
-    "Вопрос",
+    "Choose action",
+    "Question",
     JOptionPane.YES_NO_CANCEL_OPTION,
     JOptionPane.QUESTION_MESSAGE,
     null,
@@ -574,7 +574,7 @@ VALUES (416, 46, 5, 'Радио-пункт меню-мастер: добавь �
         'JRadioButtonMenuItem-setIcon,add',
         '', 416, 22.0, 0.0, 'JRadioButtonMenuItem item = new JRadioButtonMenuItem("Small");
 item.setIcon(new ImageIcon("icon.png"));
-JMenu sizeMenu = new JMenu("Размер");
+JMenu sizeMenu = new JMenu("Size");
 sizeMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(sizeMenu);
@@ -630,10 +630,10 @@ VALUES (413, 46, 6, 'Диалог-мастер: создай диалог вво
         'Покажи диалог ввода через showInputDialog() с сообщением "Введите имя:", проверь результат на null',
         'JOptionPane-showInputDialog',
         '', 413, 23.0, 0.0, 'JFrame frame = new JFrame();
-String input = JOptionPane.showInputDialog(frame, "Введите имя:");
+String input = JOptionPane.showInputDialog(frame, "Enter name:");
 JLabel label = new JLabel();
 if (input != null) {
-    label.setText("Имя: " + input);
+    label.setText("Name: " + input);
 }
 add(label);');
 INSERT INTO documentation (id, text)
@@ -685,12 +685,12 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (415, 46, 7, 'Диалог-мастер: создай диалог подтверждения',
         'Покажи диалог подтверждения через showConfirmDialog() с YES_NO_OPTION, проверь результат == YES_OPTION',
-        'JOptionPane-showConfirmDialog-YES_NO_OPTION',
+        'JFrame;JLabel-add',
         '', 415, 24.0, 0.0, 'JFrame frame = new JFrame();
-int result = JOptionPane.showConfirmDialog(frame, "Удалить?", "Подтверждение", JOptionPane.YES_NO_OPTION);
+int result = JOptionPane.showConfirmDialog(frame, "Delete?", "Confirmation", JOptionPane.YES_NO_OPTION);
 JLabel label = new JLabel();
 if (result == JOptionPane.YES_OPTION) {
-    label.setText("Да!");
+    label.setText("Yes!");
 }
 add(label);');
 INSERT INTO documentation (id, text)
@@ -737,9 +737,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (417, 46, 8, 'Диалог-мастер: создай диалог сообщения',
         'Покажи диалог сообщения через showMessageDialog() с INFORMATION_MESSAGE',
-        'JOptionPane-showMessageDialog-INFORMATION_MESSAGE',
+        'JFrame',
         '', 417, 23.0, 0.0, 'JFrame frame = new JFrame();
-JOptionPane.showMessageDialog(frame, "Сообщение", "Заголовок", JOptionPane.INFORMATION_MESSAGE);');
+JOptionPane.showMessageDialog(frame, "Message", "Title", JOptionPane.INFORMATION_MESSAGE);');
 INSERT INTO documentation (id, text)
 VALUES (418, '<h2>🎮 Таблица-мастер: Установи ширину колонки!</h2>
 
@@ -790,7 +790,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (418, 46, 12, 'Таблица-мастер: установи ширину колонки',
         'Получи модель колонок через getColumnModel(), получи колонку 0, установи ширину 200 через setPreferredWidth()',
-        'JTable-getColumnModel-TableColumn-setPreferredWidth',
+        'JTable-getColumnModel;JScrollPane-add',
         '', 418, 25.0, 0.0, 'String[] columns = {"Name", "Age"};
 String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);

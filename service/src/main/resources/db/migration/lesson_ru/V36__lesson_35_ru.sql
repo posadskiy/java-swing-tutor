@@ -129,7 +129,7 @@ JFileChooser fileChooser = new JFileChooser();
 int result = fileChooser.showSaveDialog(frame);
 if (result == JFileChooser.APPROVE_OPTION) {
     File file = fileChooser.getSelectedFile();
-    label.setText("Сохранить в: " + file.getPath());
+    label.setText("Save to: " + file.getPath());
 }');
 INSERT INTO documentation (id, text)
 VALUES (293, '<h2>🎮 Выбор файла-мастер: Добавь фильтр файлов!</h2>
@@ -184,7 +184,7 @@ VALUES (293, 35, 3, 'Выбор файла-мастер: добавь фильт
         'JFileChooser-setFileFilter',
         '', 293, 25.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
 FileNameExtensionFilter filter = new FileNameExtensionFilter(
-    "Текстовые файлы",
+    "Text files",
     "txt", "text"
 );
 fileChooser.setFileFilter(filter);
@@ -308,7 +308,7 @@ VALUES (295, 35, 5, 'Выбор файла-мастер: добавь фильт
         'Создай FileNameExtensionFilter для "txt", добавь через addChoosableFileFilter()',
         'JFileChooser-addChoosableFileFilter',
         '', 295, 26.0, 0.0, 'JFileChooser fileChooser = new JFileChooser();
-FileFilter filter = new FileNameExtensionFilter("Текстовые файлы", "txt");
+FileFilter filter = new FileNameExtensionFilter("Text files", "txt");
 fileChooser.addChoosableFileFilter(filter);
 int result = fileChooser.showOpenDialog(this);
 JLabel label = new JLabel();
@@ -422,7 +422,7 @@ VALUES (297, 35, 7, 'Выбор файла-мастер: установи заг
         'JFileChooser-setDialogTitle',
         '', 297, 21.0, 0.0, 'JFrame frame = new JFrame();
 JFileChooser fileChooser = new JFileChooser();
-fileChooser.setDialogTitle("Выбери файл");
+fileChooser.setDialogTitle("Choose file");
 int result = fileChooser.showOpenDialog(frame);
 JLabel label = new JLabel();
 if (result == JFileChooser.APPROVE_OPTION) {
@@ -481,11 +481,11 @@ VALUES (298, 35, 8, 'Редактор-мастер: добавь слушате�
         'JEditorPane-addHyperlinkListener,add',
         '', 298, 26.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setContentType("text/html");
-editorPane.setText("<html><body><a href=\"http://example.com\">Ссылка</a></body></html>");
+editorPane.setText("<html><body><a href=\"http://example.com\">Link</a></body></html>");
 JLabel label = new JLabel();
 editorPane.addHyperlinkListener(e -> {
     if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
-        label.setText("Ссылка: " + e.getURL());
+        label.setText("Link: " + e.getURL());
     }
 });
 add(editorPane);
@@ -539,7 +539,7 @@ VALUES (299, 35, 9, 'Редактор-мастер: установи тип ко
         'JEditorPane-setContentType,add',
         '', 299, 23.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
 editorPane.setContentType("text/html");
-editorPane.setText("<html><body><h1>Привет!</h1></body></html>");
+editorPane.setText("<html><body><h1>Hello!</h1></body></html>");
 JScrollPane scrollPane = new JScrollPane(editorPane);
 add(scrollPane);');
 INSERT INTO documentation (id, text)
@@ -588,7 +588,7 @@ VALUES (300, 35, 10, 'Редактор-мастер: сделай только �
         'Отключи редактирование через setEditable(false)',
         'JEditorPane-setEditable,add',
         '', 300, 21.0, 0.0, 'JEditorPane editorPane = new JEditorPane();
-editorPane.setText("Текст для чтения");
+editorPane.setText("Read-only text");
 editorPane.setEditable(false);
 JScrollPane scrollPane = new JScrollPane(editorPane);
 add(scrollPane);');

@@ -381,7 +381,7 @@ VALUES (7, 2, 6, 'Кнопка-мастер: добавь горячую кла�
         'JButton-setMnemonic,setText,add',
         '', 7, 25.0, 0.0, 'JButton button = new JButton();
 button.setMnemonic(KeyEvent.VK_O);
-button.setText("<html>Кн<u>о</u>пка</html>");
+button.setText("<html>B<u>o</u>tton</html>");
 add(button);');
 
 INSERT INTO documentation (id, text)
@@ -491,7 +491,7 @@ VALUES (9, 2, 8, 'Кнопка-мастер: добавь мнемонику',
         'JButton-setMnemonic,setText,add',
         '', 9, 23.0, 0.0, 'JButton button = new JButton();
 button.setMnemonic(KeyEvent.VK_S);
-button.setText("Кнопка &S");
+button.setText("Button &S");
 add(button);');
 
 INSERT INTO documentation (id, text)

@@ -65,7 +65,7 @@ VALUES (196, 24, 1, 'Строка меню-новичок: создай меню
         'Создай строку меню, добавь меню "Файл" и установи в окно',
         'JMenuBar-add,setJMenuBar',
         '', 196, 16.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
-JMenu fileMenu = new JMenu("Файл");
+JMenu fileMenu = new JMenu("File");
 menuBar.add(fileMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)

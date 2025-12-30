@@ -111,7 +111,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (176, 21, 2, 'Разделённая панель-мастер: установи ориентацию',
         'Создай разделённую панель, установи вертикальную ориентацию через setOrientation(JSplitPane.VERTICAL_SPLIT)',
-        'JSplitPane-setOrientation,add',
+        'JPanel;JSplitPane-add',
         '', 176, 19.0, 0.0, 'JPanel topPanel = new JPanel();
 JPanel bottomPanel = new JPanel();
 JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, topPanel, bottomPanel);

@@ -70,7 +70,7 @@ GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
 gbc.gridy = 0;
 gbc.fill = GridBagConstraints.HORIZONTAL;
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
 VALUES (336, '<h2>🎮 GridBagLayout-мастер: Настрой растягивание!</h2>
@@ -129,7 +129,7 @@ gbc.gridy = 0;
 gbc.weightx = 1.0;
 gbc.weighty = 1.0;
 gbc.fill = GridBagConstraints.BOTH;
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
 VALUES (338, '<h2>🎮 FlowLayout-мастер: Настрой выравнивание!</h2>
@@ -181,7 +181,7 @@ VALUES (338, 40, 2, 'FlowLayout-мастер: настрой выравнива�
         'FlowLayout-setLayout',
         '', 338, 23.0, 0.0, 'FlowLayout layout = new FlowLayout(FlowLayout.CENTER);
 setLayout(layout);
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button);');
 INSERT INTO documentation (id, text)
 VALUES (337, '<h2>🎮 GridBagLayout-мастер: Растяни компонент на несколько ячеек!</h2>
@@ -233,7 +233,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (337, 40, 3, 'GridBagLayout-мастер: растяни компонент на несколько ячеек',
         'Установи gridwidth = 2 и gridheight = 2 для ограничений, добавь компонент',
-        'GridBagConstraints-gridwidth-gridheight-add',
+        'GridBagConstraints-gridx,gridy,gridwidth,gridheight,fill',
         '', 337, 30.0, 0.0, 'setLayout(new GridBagLayout());
 GridBagConstraints gbc = new GridBagConstraints();
 gbc.gridx = 0;
@@ -241,7 +241,7 @@ gbc.gridy = 0;
 gbc.gridwidth = 2;
 gbc.gridheight = 2;
 gbc.fill = GridBagConstraints.BOTH;
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button, gbc);');
 INSERT INTO documentation (id, text)
 VALUES (339, '<h2>🎮 FlowLayout-мастер: Настрой отступы!</h2>
@@ -299,7 +299,7 @@ VALUES (339, 40, 3, 'FlowLayout-мастер: настрой отступы',
 layout.setHgap(10);
 layout.setVgap(10);
 setLayout(layout);
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button);');
 INSERT INTO documentation (id, text)
 VALUES (342, '<h2>🎮 GridBagLayout-мастер: Установи якорь!</h2>
@@ -351,7 +351,7 @@ GridBagConstraints constraints = new GridBagConstraints();
 constraints.gridx = 0;
 constraints.gridy = 0;
 constraints.anchor = GridBagConstraints.CENTER;
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button, constraints);');
 INSERT INTO documentation (id, text)
 VALUES (340, '<h2>🎮 Диалог-мастер: Создай диалог ввода!</h2>
@@ -454,7 +454,7 @@ GridBagConstraints constraints = new GridBagConstraints();
 constraints.gridx = 0;
 constraints.gridy = 0;
 constraints.fill = GridBagConstraints.BOTH;
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button, constraints);');
 INSERT INTO documentation (id, text)
 VALUES (341, '<h2>🎮 Диалог-мастер: Создай диалог подтверждения!</h2>

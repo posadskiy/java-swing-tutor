@@ -62,7 +62,7 @@ VALUES (301, 36, 1, 'Выбор цвета-новичок: открой пали
         'Покажи диалог выбора цвета с начальным цветом WHITE и используй выбранный цвет',
         'JColorChooser-showDialog',
         '', 301, 20.0, 0.0, 'JFrame frame = new JFrame();
-Color color = JColorChooser.showDialog(frame, "Выбери цвет", Color.WHITE);
+Color color = JColorChooser.showDialog(frame, "Choose color", Color.WHITE);
 JLabel label = new JLabel();
 if (color != null) {
     label.setText("Selected color: " + color);
@@ -189,10 +189,10 @@ VALUES (304, 36, 2, 'BorderLayout-мастер: используй все рег
         'Установи BorderLayout, добавь компоненты во все пять регионов (NORTH, SOUTH, EAST, WEST, CENTER)',
         'BorderLayout-add,add,add,add,add',
         '', 304, 26.0, 0.0, 'setLayout(new BorderLayout());
-JButton buttonNorth = new JButton("Север");
-JButton buttonSouth = new JButton("Юг");
-JButton buttonEast = new JButton("Восток");
-JButton buttonWest = new JButton("Запад");
+JButton buttonNorth = new JButton("North");
+JButton buttonSouth = new JButton("South");
+JButton buttonEast = new JButton("East");
+JButton buttonWest = new JButton("West");
 JPanel panelCenter = new JPanel();
 add(buttonNorth, BorderLayout.NORTH);
 add(buttonSouth, BorderLayout.SOUTH);
@@ -250,7 +250,7 @@ VALUES (303, 36, 3, 'Выбор цвета-мастер: настрой режи
 AbstractColorChooserPanel[] panels = ColorChooserComponentFactory.getDefaultChooserPanels();
 colorChooser.setChooserPanels(panels);
 JFrame frame = new JFrame();
-JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
+JDialog dialog = JColorChooser.createDialog(frame, "Choose color", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
 VALUES (306, '<h2>🎮 BorderLayout-мастер: Добавь отступы!</h2>
@@ -308,7 +308,7 @@ VALUES (306, 36, 3, 'BorderLayout-мастер: добавь отступы',
 layout.setHgap(10);
 layout.setVgap(10);
 setLayout(layout);
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button, BorderLayout.CENTER);');
 INSERT INTO documentation (id, text)
 VALUES (305, '<h2>🎮 Выбор цвета-мастер: Добавь панель предпросмотра!</h2>
@@ -372,7 +372,7 @@ colorChooser.getSelectionModel().addChangeListener(e -> {
     previewPanel.setBackground(colorChooser.getColor());
 });
 JFrame frame = new JFrame();
-JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
+JDialog dialog = JColorChooser.createDialog(frame, "Choose color", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
 VALUES (307, '<h2>🎮 Выбор цвета-мастер: Работай с моделью!</h2>
@@ -421,12 +421,12 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (307, 36, 5, 'Выбор цвета-мастер: работай с моделью',
         'Получи модель через getSelectionModel(), установи цвет RED через setSelectedColor()',
-        'JColorChooser-getSelectionModel,setSelectedColor,add',
+        '',
         '', 307, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 ColorSelectionModel model = colorChooser.getSelectionModel();
 model.setSelectedColor(Color.RED);
 JFrame frame = new JFrame();
-JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
+JDialog dialog = JColorChooser.createDialog(frame, "Choose color", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
 VALUES (308, '<h2>🎮 Выбор цвета-мастер: Получи выбранный цвет!</h2>
@@ -479,7 +479,7 @@ VALUES (308, 36, 6, 'Выбор цвета-мастер: получи выбра
         'Покажи диалог через showDialog() с начальным цветом WHITE, проверь результат на null',
         'JColorChooser-showDialog',
         '', 308, 24.0, 0.0, 'JFrame frame = new JFrame();
-Color color = JColorChooser.showDialog(frame, "Выбери цвет", Color.WHITE);
+Color color = JColorChooser.showDialog(frame, "Choose color", Color.WHITE);
 JLabel label = new JLabel();
 if (color != null) {
     label.setText("Selected color: " + color);
@@ -533,13 +533,13 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (309, 36, 7, 'Выбор цвета-мастер: настрой модель цвета',
         'Создай DefaultColorSelectionModel, установи цвет RED, установи модель через setColorSelectionModel()',
-        'JColorChooser-setColorSelectionModel,add',
+        '',
         '', 309, 25.0, 0.0, 'JColorChooser colorChooser = new JColorChooser();
 DefaultColorSelectionModel model = new DefaultColorSelectionModel();
 model.setSelectedColor(Color.RED);
 colorChooser.setColorSelectionModel(model);
 JFrame frame = new JFrame();
-JDialog dialog = JColorChooser.createDialog(frame, "Выбери цвет", true, colorChooser, null, null);
+JDialog dialog = JColorChooser.createDialog(frame, "Choose color", true, colorChooser, null, null);
 dialog.setVisible(true);');
 INSERT INTO documentation (id, text)
 VALUES (310, '<h2>🎮 Текст-панель-мастер: Вставь иконку!</h2>
@@ -689,7 +689,7 @@ VALUES (312, 36, 11, 'Текст-панель-мастер: сделай тол�
         'Отключи редактирование через setEditable(false)',
         'JTextPane-setEditable',
         '', 312, 21.0, 0.0, 'JTextPane textPane = new JTextPane();
-textPane.setText("Текст для чтения");
+textPane.setText("Text for reading");
 textPane.setEditable(false);
 JScrollPane scrollPane = new JScrollPane(textPane);
 add(scrollPane);');

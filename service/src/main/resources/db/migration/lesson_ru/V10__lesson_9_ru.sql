@@ -439,7 +439,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (81, 9, 9, 'Чекбокс-мастер: группируй чекбоксы',
         'Создай список из чекбоксов, добавь ItemListener ко всем через forEach()',
-        'JCheckBox-addItemListener,add;JCheckBox-add;JCheckBox-add',
+        'JCheckBox-add',
         '', 81, 23.0, 0.0, 'JCheckBox checkBox1 = new JCheckBox("Option 1");
 JCheckBox checkBox2 = new JCheckBox("Option 2");
 JCheckBox checkBox3 = new JCheckBox("Option 3");

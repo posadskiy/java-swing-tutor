@@ -33,7 +33,7 @@ VALUES (313, '<h2>🎮 Компоновка-новичок: Размести к�
 <code>setLayout(new BorderLayout());</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь компоненты в регионы:<br>
-<code>add(new JButton("Верх"), BorderLayout.NORTH);</code><br>
+<code>add(new JButton("North"), BorderLayout.NORTH);</code><br>
 <code>add(new JButton("Низ"), BorderLayout.SOUTH);</code><br>
 <code>add(new JButton("Центр"), BorderLayout.CENTER);</code></p>
 
@@ -64,9 +64,9 @@ VALUES (313, 37, 1, 'Компоновка-новичок: размести ко�
         'Установи BorderLayout, добавь кнопки в регионы NORTH, SOUTH и CENTER',
         'BorderLayout-add',
         '', 313, 18.0, 0.0, 'setLayout(new BorderLayout());
-add(new JButton("Верх"), BorderLayout.NORTH);
-add(new JButton("Низ"), BorderLayout.SOUTH);
-add(new JButton("Центр"), BorderLayout.CENTER);');
+add(new JButton("North"), BorderLayout.NORTH);
+add(new JButton("South"), BorderLayout.SOUTH);
+add(new JButton("Center"), BorderLayout.CENTER);');
 
 -- Task 2: All Regions
 INSERT INTO documentation (id, text)
@@ -89,7 +89,7 @@ VALUES (314, '<h2>🎮 Компоновка-мастер: Используй в�
 <code>setLayout(new BorderLayout());</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь компоненты во все регионы:<br>
-<code>add(new JButton("Верх"), BorderLayout.NORTH);</code><br>
+<code>add(new JButton("North"), BorderLayout.NORTH);</code><br>
 <code>add(new JButton("Низ"), BorderLayout.SOUTH);</code><br>
 <code>add(new JButton("Лево"), BorderLayout.WEST);</code><br>
 <code>add(new JButton("Право"), BorderLayout.EAST);</code><br>
@@ -122,11 +122,11 @@ VALUES (314, 37, 2, 'Компоновка-мастер: используй вс�
         'Установи BorderLayout, добавь кнопки во все пять регионов: NORTH, SOUTH, EAST, WEST, CENTER',
         'BorderLayout-add',
         '', 314, 20.0, 0.0, 'setLayout(new BorderLayout());
-add(new JButton("Верх"), BorderLayout.NORTH);
-add(new JButton("Низ"), BorderLayout.SOUTH);
-add(new JButton("Лево"), BorderLayout.WEST);
-add(new JButton("Право"), BorderLayout.EAST);
-add(new JButton("Центр"), BorderLayout.CENTER);');
+add(new JButton("North"), BorderLayout.NORTH);
+add(new JButton("South"), BorderLayout.SOUTH);
+add(new JButton("West"), BorderLayout.WEST);
+add(new JButton("East"), BorderLayout.EAST);
+add(new JButton("Center"), BorderLayout.CENTER);');
 
 -- Task 3: Gaps
 INSERT INTO documentation (id, text)
@@ -149,7 +149,7 @@ VALUES (315, '<h2>🎮 Компоновка-мастер: Добавь отст�
 <code>setLayout(new BorderLayout(10, 10));</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь компоненты:<br>
-<code>add(new JButton("Верх"), BorderLayout.NORTH);</code><br>
+<code>add(new JButton("North"), BorderLayout.NORTH);</code><br>
 <code>add(new JButton("Центр"), BorderLayout.CENTER);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
@@ -178,8 +178,8 @@ VALUES (315, 37, 3, 'Компоновка-мастер: добавь отсту�
         'Создай BorderLayout с отступами 10 пикселей по горизонтали и вертикали, добавь компоненты в NORTH и CENTER',
         'BorderLayout-add',
         '', 315, 20.0, 0.0, 'setLayout(new BorderLayout(10, 10));
-add(new JButton("Верх"), BorderLayout.NORTH);
-add(new JButton("Центр"), BorderLayout.CENTER);');
+add(new JButton("North"), BorderLayout.NORTH);
+add(new JButton("Center"), BorderLayout.CENTER);');
 
 -- Task 4: Preferred Sizes
 INSERT INTO documentation (id, text)

@@ -266,9 +266,9 @@ VALUES (194, 23, 5, 'Панель инструментов-мастер: доб�
         'Создай панель инструментов, добавь кнопку, добавь разделитель через addSeparator(), добавь ещё кнопку',
         'JToolBar-addSeparator,add',
         '', 194, 17.0, 0.0, 'JToolBar toolbar = new JToolBar();
-toolbar.add(new JButton("Кнопка 1"));
+toolbar.add(new JButton("Button 1"));
 toolbar.addSeparator();
-toolbar.add(new JButton("Кнопка 2"));
+toolbar.add(new JButton("Button 2"));
 add(toolbar);');
 
 INSERT INTO documentation (id, text)

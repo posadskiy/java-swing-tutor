@@ -291,7 +291,7 @@ VALUES (146, '<h2>🎮 Прогресс-бар-мастер: Покажи стр
 <code>progressBar.setStringPainted(true);</code></p>
 
 <p><strong>Шаг 2:</strong> Или установи кастомную строку:<br>
-<code>progressBar.setString("Загрузка...");</code></p>
+<code>progressBar.setString("Loading...");</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -321,7 +321,7 @@ VALUES (146, 17, 4, 'Прогресс-бар-мастер: покажи стро
         'JProgressBar-setStringPainted,setString,add',
         '', 146, 22.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setStringPainted(true);
-progressBar.setString("Загрузка...");
+progressBar.setString("Loading...");
 add(progressBar);');
 INSERT INTO documentation (id, text)
 VALUES (147, '<h2>🎮 Прогресс-бар-мастер: Покажи границу!</h2>
@@ -438,7 +438,7 @@ VALUES (149, '<h2>🎮 Прогресс-бар-мастер: Установи к
 <code>progressBar.setStringPainted(true);</code></p>
 
 <p><strong>Шаг 2:</strong> Установи строку:<br>
-<code>progressBar.setString("Загрузка...");</code></p>
+<code>progressBar.setString("Loading...");</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -468,7 +468,7 @@ VALUES (149, 17, 8, 'Прогресс-бар-мастер: установи ка
         'JProgressBar-setStringPainted,setString,add',
         '', 149, 22.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
 progressBar.setStringPainted(true);
-progressBar.setString("Загрузка...");
+progressBar.setString("Loading...");
 add(progressBar);');
 INSERT INTO documentation (id, text)
 VALUES (150, '<h2>🎮 Прогресс-бар-мастер: Установи формат строки!</h2>

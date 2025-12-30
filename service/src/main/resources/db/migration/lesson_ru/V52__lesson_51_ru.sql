@@ -65,7 +65,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (448, 51, 1, 'Кастомный компонент-новичок: создай свой компонент',
         'Создай класс, расширяющий JComponent, установи предпочтительный размер 200x100, переопредели paintComponent()',
-        'JComponent-setPreferredSize,paintComponent,add',
+        'MyComponent-setPreferredSize,paintComponent,add',
         '', 448, 21.0, 0.0, 'class MyComponent extends JComponent {
     public MyComponent() {
         setPreferredSize(new Dimension(200, 100));
@@ -125,7 +125,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (449, 51, 2, 'Кастомный компонент-мастер: установи предпочтительный размер',
         'Создай кастомный компонент, установи предпочтительный размер 300x200 через setPreferredSize()',
-        'JComponent-setPreferredSize,add',
+        'MyComponent-setPreferredSize,add',
         '', 449, 20.0, 0.0, 'class MyComponent extends JComponent {
     public MyComponent() {
         setPreferredSize(new Dimension(300, 200));
@@ -183,7 +183,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (450, 51, 3, 'Кастомный компонент-мастер: обрабатывай события',
         'Создай кастомный компонент, добавь MouseListener, обработай mouseClicked(), выведи сообщение',
-        'JComponent-addMouseListener,add',
+        'MyComponent-addMouseListener,add',
         '', 450, 21.0, 0.0, 'class MyComponent extends JComponent {
     public MyComponent() {
         JLabel label = new JLabel();

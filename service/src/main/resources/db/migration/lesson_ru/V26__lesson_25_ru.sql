@@ -68,7 +68,7 @@ VALUES (203, 25, 1, 'Меню-новичок: создай выпадающее 
         'Создай меню "Файл", добавь пункт "Открыть" и добавь меню в строку меню',
         'JMenu-add',
         '', 203, 18.0, 0.0, 'JMenu fileMenu = new JMenu("File");
-JMenuItem openItem = new JMenuItem("Открыть");
+JMenuItem openItem = new JMenuItem("Open");
 fileMenu.add(openItem);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(fileMenu);
@@ -126,7 +126,7 @@ VALUES (204, 25, 1, 'Окно-новичок: создай окно без ра�
         'JWindow-add,pack,setVisible',
         '', 204, 22.0, 0.0, 'JFrame parent = new JFrame();
 JWindow window = new JWindow(parent);
-window.add(new JLabel("Всплывающее окно"));
+window.add(new JLabel("Popup window"));
 window.pack();
 window.setVisible(true);');
 INSERT INTO documentation (id, text)

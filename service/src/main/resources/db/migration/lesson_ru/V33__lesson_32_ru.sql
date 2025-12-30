@@ -57,7 +57,7 @@ VALUES (269, 30, 1, 'Диалог сообщения: покажи информ�
         'Покажи информационное диалоговое окно с сообщением "Операция выполнена успешно!"',
         'JOptionPane-showMessageDialog',
         '', 269, 18.0, 0.0, 'JFrame frame = new JFrame();
-JOptionPane.showMessageDialog(frame, "Операция выполнена успешно!", "Информация", JOptionPane.INFORMATION_MESSAGE);');
+JOptionPane.showMessageDialog(frame, "Operation completed successfully!", "Information", JOptionPane.INFORMATION_MESSAGE);');
 INSERT INTO documentation (id, text)
 VALUES (270, '<h2>🎮 Диалог подтверждения: Спроси разрешение!</h2>
 
@@ -108,10 +108,10 @@ VALUES (270, 30, 2, 'Диалог подтверждения: спроси ра�
         'Покажи диалог подтверждения с вопросом "Вы уверены?" и обработай результат',
         'JOptionPane-showConfirmDialog',
         '', 270, 22.0, 0.0, 'JFrame frame = new JFrame();
-int result = JOptionPane.showConfirmDialog(frame, "Вы уверены?", "Подтверждение", JOptionPane.YES_NO_OPTION);
+int result = JOptionPane.showConfirmDialog(frame, "Are you sure?", "Confirmation", JOptionPane.YES_NO_OPTION);
 JLabel label = new JLabel();
 if (result == JOptionPane.YES_OPTION) {
-    label.setText("Пользователь согласился");
+    label.setText("User agreed");
 }
 add(label);');
 INSERT INTO documentation (id, text)
@@ -187,7 +187,7 @@ menu.add(new JMenuItem("Save"));</code></p>
 <code>menu.addSeparator();</code></p>
 
 <p><strong>Шаг 3:</strong> Добавь ещё пункты:<br>
-<code>menu.add(new JMenuItem("Выход"));</code></p>
+<code>menu.add(new JMenuItem("Exit"));</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -218,7 +218,7 @@ VALUES (272, 30, 3, 'Меню-мастер: добавь разделитель'
 menu.add(new JMenuItem("Open"));
 menu.add(new JMenuItem("Save"));
 menu.addSeparator();
-menu.add(new JMenuItem("Выход"));
+menu.add(new JMenuItem("Exit"));
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
@@ -382,7 +382,7 @@ VALUES (274, 30, 5, 'Меню-мастер: добавь разделитель'
         '', 274, 22.0, 0.0, 'JMenu menu = new JMenu("File");
 JMenuItem menuItem1 = new JMenuItem("Open");
 JMenuItem menuItem2 = new JMenuItem("Save");
-JMenuItem menuItem3 = new JMenuItem("Выход");
+JMenuItem menuItem3 = new JMenuItem("Exit");
 menu.add(menuItem1);
 menu.add(menuItem2);
 menu.addSeparator();
@@ -496,7 +496,7 @@ checkBoxMenuItem.setActionCommand("CHECK");
 JLabel label = new JLabel();
 checkBoxMenuItem.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    label.setText("Команда: " + cmd);
+    label.setText("Command: " + cmd);
 });
 JMenu viewMenu = new JMenu("View");
 viewMenu.add(checkBoxMenuItem);

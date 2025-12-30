@@ -64,7 +64,7 @@ VALUES (325, 39, 1, 'GridLayout-новичок: размести компоне�
         'GridLayout-add',
         '', 325, 18.0, 0.0, 'setLayout(new GridLayout(2, 3));
 for (int i = 1; i <= 6; i++) {
-    add(new JButton("Кнопка " + i));
+    add(new JButton("Button " + i));
 }');
 INSERT INTO documentation (id, text)
 VALUES (328, '<h2>🎮 Чекбокс-пункт меню-новичок: Создай чекбокс в меню!</h2>
@@ -169,16 +169,16 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (326, 39, 2, 'Мышь-мастер: определи клик мыши',
         'Переопредели mouseClicked, проверь количество кликов, обработай одиночный и двойной клик',
-        'MouseListener-mouseClicked,getClickCount,add',
+        'JPanel-addMouseListener',
         '', 326, 24.0, 0.0, 'JPanel panel = new JPanel();
 JLabel label = new JLabel();
 panel.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 1) {
-            label.setText("Одиночный клик!");
+            label.setText("Single click!");
         } else if (e.getClickCount() == 2) {
-            label.setText("Двойной клик!");
+            label.setText("Double click!");
         }
     }
 });
@@ -238,16 +238,17 @@ VALUES (329, 39, 2, 'Чекбокс-пункт меню-мастер: обраб
 JLabel label = new JLabel();
 item.addActionListener(e -> {
     if (item.isSelected()) {
-        label.setText("Включено!");
+        label.setText("Enabled!");
     } else {
-        label.setText("Выключено!");
+        label.setText("Disabled!");
     }
 });
 JMenu viewMenu = new JMenu("View");
 viewMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
-setJMenuBar(menuBar);');
+setJMenuBar(menuBar);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (327, '<h2>🎮 Мышь-мастер: Обрабатывай перетаскивание!</h2>
 
@@ -309,12 +310,13 @@ component.addMouseMotionListener(new MouseMotionListener() {
     public void mouseDragged(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        label.setText("Перетаскивание: " + x + ", " + y);
+        label.setText("Dragging: " + x + ", " + y);
     }
     @Override
     public void mouseMoved(MouseEvent e) {}
 });
-add(component);');
+add(component);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (330, '<h2>🎮 Чекбокс-пункт меню-мастер: Работай с моделью!</h2>
 
@@ -415,7 +417,7 @@ VALUES (334, 39, 3, 'Всплывающее меню-мастер: покажи 
         'Покажи меню через show(component, 100, 100)',
         'JPopupMenu-show',
         '', 334, 22.0, 0.0, 'JPopupMenu popupMenu = new JPopupMenu();
-popupMenu.add(new JMenuItem("Копировать"));
+popupMenu.add(new JMenuItem("Copy"));
 JPanel component = new JPanel();
 popupMenu.show(component, 100, 100);
 add(component);');
@@ -477,7 +479,8 @@ JMenu viewMenu = new JMenu("View");
 viewMenu.add(item);
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(viewMenu);
-setJMenuBar(menuBar);');
+setJMenuBar(menuBar);
+add(label);');
 INSERT INTO documentation (id, text)
 VALUES (331, '<h2>🎮 Чекбокс-пункт меню-мастер: Добавь иконку!</h2>
 
@@ -581,7 +584,7 @@ VALUES (333, 39, 6, 'Всплывающее меню-мастер: устано�
         '', 333, 23.0, 0.0, 'JPopupMenu popupMenu = new JPopupMenu();
 Border border = BorderFactory.createLineBorder(Color.BLACK, 2);
 popupMenu.setBorder(border);
-popupMenu.add(new JMenuItem("Копировать"));
+popupMenu.add(new JMenuItem("Copy"));
 JPanel panel = new JPanel();
 panel.addMouseListener(new MouseAdapter() {
     @Override

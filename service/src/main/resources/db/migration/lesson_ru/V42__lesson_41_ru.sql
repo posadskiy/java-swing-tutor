@@ -119,7 +119,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (346, 41, 2, 'BoxLayout-мастер: добавь растягивающийся элемент',
         'Добавь кнопку, добавь createGlue(), добавь ещё кнопку',
-        'Box-createGlue,add,add,add',
+        'JButton-add',
         '', 346, 25.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 JButton button1 = new JButton("Button 1");
 JButton button2 = new JButton("Button 2");
@@ -183,7 +183,7 @@ layout.setHgap(10);
 layout.setVgap(10);
 setLayout(layout);
 for (int i = 1; i <= 6; i++) {
-    add(new JButton("Кнопка " + i));
+    add(new JButton("Button " + i));
 }');
 INSERT INTO documentation (id, text)
 VALUES (347, '<h2>🎮 BoxLayout-мастер: Выровняй компоненты!</h2>
@@ -232,9 +232,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (347, 41, 3, 'BoxLayout-мастер: выровняй компоненты',
         'Установи setAlignmentX(CENTER_ALIGNMENT) и setAlignmentY(CENTER_ALIGNMENT) для кнопки',
-        'Component-setAlignmentX-setAlignmentY-CENTER_ALIGNMENT',
+        'JButton-setAlignmentX,setAlignmentY',
         '', 347, 26.0, 0.0, 'setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 button.setAlignmentX(Component.CENTER_ALIGNMENT);
 button.setAlignmentY(Component.CENTER_ALIGNMENT);
 add(button);');
@@ -289,7 +289,7 @@ VALUES (349, 41, 3, 'GridLayout-мастер: настрой динамичес�
         '', 349, 24.0, 0.0, 'GridLayout layout = new GridLayout(3, 0);
 setLayout(layout);
 for (int i = 1; i <= 9; i++) {
-    add(new JButton("Кнопка " + i));
+    add(new JButton("Button " + i));
 }');
 INSERT INTO documentation (id, text)
 VALUES (352, '<h2>🎮 BoxLayout-мастер: Добавь клей!</h2>

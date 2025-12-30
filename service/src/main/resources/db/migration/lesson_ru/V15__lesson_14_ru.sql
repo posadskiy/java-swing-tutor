@@ -478,7 +478,7 @@ VALUES (116, 14, 9, 'Прогресс-бар-мастер: добавь подс
         'Создай прогресс-бар, установи подсказку "Прогресс загрузки" через setToolTipText()',
         'JProgressBar-setToolTipText',
         '', 116, 16.0, 0.0, 'JProgressBar progressBar = new JProgressBar(0, 100);
-progressBar.setToolTipText("Прогресс загрузки");
+progressBar.setToolTipText("Loading progress");
 add(progressBar);');
 
 INSERT INTO documentation (id, text)
@@ -581,7 +581,7 @@ VALUES (118, 14, 11, 'Прогресс-бар-мастер: обрабатыва
 JLabel label = new JLabel();
 progressBar.addChangeListener(e -> {
     int value = progressBar.getValue();
-    label.setText("Прогресс: " + value + "%");
+    label.setText("Progress: " + value + "%");
 });
 add(progressBar);
 add(label);');

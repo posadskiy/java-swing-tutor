@@ -72,7 +72,7 @@ VALUES (458, 53, 1, 'Timer-новичок: создай таймер',
 ActionListener task = new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {
-        label.setText("Таймер сработал!");
+        label.setText("Timer fired!");
     }
 };
 Timer timer = new Timer(1000, task);
@@ -191,7 +191,7 @@ component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-            label.setText("Enter нажат!");
+            label.setText("Enter pressed!");
         }
     }
 });
@@ -251,7 +251,7 @@ VALUES (460, 53, 3, 'Timer-мастер: создай одноразовый т�
         'Timer-setRepeats,start',
         '', 460, 25.0, 0.0, 'JLabel label = new JLabel();
 Timer timer = new Timer(3000, e -> {
-    label.setText("Прошло 3 секунды!");
+    label.setText("3 seconds passed!");
 });
 timer.setRepeats(false);
 timer.start();
@@ -314,7 +314,7 @@ component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyTyped(KeyEvent e) {
         char ch = e.getKeyChar();
-        label.setText("Символ: " + ch);
+        label.setText("Character: " + ch);
     }
 });
 add(component);
@@ -437,7 +437,7 @@ component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyPressed(KeyEvent e) {
         if ((e.getModifiersEx() & InputEvent.CTRL_DOWN_MASK) != 0) {
-            label.setText("Ctrl нажат!");
+            label.setText("Ctrl pressed!");
         }
     }
 });
@@ -503,7 +503,7 @@ component.addKeyListener(new KeyAdapter() {
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyLocation() == KeyEvent.KEY_LOCATION_LEFT) {
-            label.setText("Левая клавиша!");
+            label.setText("Left key!");
         }
     }
 });

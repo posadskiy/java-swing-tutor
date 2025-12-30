@@ -134,7 +134,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (430, 48, 2, 'FocusListener-мастер: валидируй при потере фокуса',
         'В focusLost получи текст поля, проверь на пустоту, установи красный фон при ошибке',
-        'FocusListener-focusLost-getText-setBackground',
+        'JTextField-addFocusListener,add',
         '', 430, 26.0, 0.0, 'JTextField textField = new JTextField();
 JLabel label = new JLabel();
 textField.addFocusListener(new FocusListener() {
@@ -208,9 +208,9 @@ VALUES (432, 48, 2, 'CardLayout-мастер: навигируй по карта
 CardLayout layout = new CardLayout();
 panel.setLayout(layout);
 JPanel card1 = new JPanel();
-card1.add(new JLabel("Карта 1"));
+card1.add(new JLabel("Card 1"));
 JPanel card2 = new JPanel();
-card2.add(new JLabel("Карта 2"));
+card2.add(new JLabel("Card 2"));
 panel.add(card1, "card1");
 panel.add(card2, "card2");
 layout.show(panel, "card1");
@@ -266,7 +266,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (431, 48, 3, 'FocusListener-мастер: управляй навигацией фокуса',
         'Установи setFocusable(true), установи setFocusTraversalKeysEnabled(true), запроси фокус через requestFocus()',
-        'Component-setFocusable-setFocusTraversalKeysEnabled-requestFocus',
+        'JTextField-setFocusable,setFocusTraversalKeysEnabled,requestFocus',
         '', 431, 26.0, 0.0, 'JTextField component = new JTextField();
 component.setFocusable(true);
 component.setFocusTraversalKeysEnabled(true);
@@ -327,9 +327,9 @@ VALUES (433, 48, 3, 'CardLayout-мастер: переключись на пер
 CardLayout layout = new CardLayout();
 panel.setLayout(layout);
 JPanel card1 = new JPanel();
-card1.add(new JLabel("Карта 1"));
+card1.add(new JLabel("Card 1"));
 JPanel card2 = new JPanel();
-card2.add(new JLabel("Карта 2"));
+card2.add(new JLabel("Card 2"));
 panel.add(card1, "card1");
 panel.add(card2, "card2");
 layout.first(panel);
@@ -447,7 +447,7 @@ VALUES (435, 48, 5, 'CardLayout-мастер: покажи карту по им�
 CardLayout layout = new CardLayout();
 panel.setLayout(layout);
 JPanel card1 = new JPanel();
-card1.add(new JLabel("Карта 1"));
+card1.add(new JLabel("Card 1"));
 panel.add(card1, "cardName");
 layout.show(panel, "cardName");
 add(panel);');
@@ -499,5 +499,5 @@ VALUES (436, 48, 6, 'FlowLayout-мастер: установи ориентац�
         '', 436, 24.0, 0.0, 'FlowLayout flowLayout = new FlowLayout();
 setLayout(flowLayout);
 flowLayout.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button);');

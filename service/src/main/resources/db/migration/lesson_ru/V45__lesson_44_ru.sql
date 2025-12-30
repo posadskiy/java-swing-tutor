@@ -63,10 +63,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (383, 44, 1, 'SpringLayout-новичок: создай пружинную компоновку',
         'Установи SpringLayout, добавь кнопку, установи связи WEST и NORTH с отступом 10 от края контейнера',
-        'SpringLayout-putConstraint,add',
+        'SpringLayout-setLayout;SpringLayout.Constraints-setX,setY',
         '', 383, 29.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 SpringLayout.Constraints constraints = layout.getConstraints(button);
 constraints.setX(Spring.constant(10));
 constraints.setY(Spring.constant(10));
@@ -122,11 +122,11 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (384, 44, 2, 'SpringLayout-мастер: связывай компоненты друг с другом',
         'Добавь две кнопки, свяжи EAST первой кнопки с WEST второй с отступом 10',
-        'SpringLayout-putConstraint,add,add',
+        'SpringLayout-putConstraint;JButton-add',
         '', 384, 30.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
-JButton button1 = new JButton("Кнопка 1");
-JButton button2 = new JButton("Кнопка 2");
+JButton button1 = new JButton("Button 1");
+JButton button2 = new JButton("Button 2");
 add(button1);
 add(button2);
 layout.putConstraint(SpringLayout.EAST, button1, 10, SpringLayout.WEST, button2);');
@@ -187,7 +187,7 @@ component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-            label.setText("Двойной клик!");
+            label.setText("Double click!");
         }
     }
 });
@@ -243,10 +243,10 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (385, 44, 3, 'SpringLayout-мастер: используй арифметику пружин',
         'Создай две пружины через Spring.constant(10) и Spring.constant(20), сложи их через Spring.sum(), используй в putConstraint',
-        'Spring-constant-sum-putConstraint',
+        'SpringLayout-setLayout',
         '', 385, 31.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button);
 Spring spring1 = Spring.constant(10);
 Spring spring2 = Spring.constant(20);
@@ -310,7 +310,7 @@ component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getButton() == MouseEvent.BUTTON1) {
-            label.setText("Левая кнопка!");
+            label.setText("Left button!");
         }
     }
 });
@@ -424,7 +424,7 @@ component.addMouseListener(new MouseAdapter() {
     public void mouseClicked(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        label.setText("Позиция: (" + x + ", " + y + ")");
+        label.setText("Position: (" + x + ", " + y + ")");
     }
 });
 add(component);
@@ -534,7 +534,7 @@ component.addMouseListener(new MouseAdapter() {
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-            label.setText("Двойной клик!");
+            label.setText("Double click!");
         }
     }
 });
@@ -587,7 +587,7 @@ VALUES (396, 44, 5, 'FocusListener-мастер: получи владельца
         '', 396, 25.0, 0.0, 'Component owner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
 JLabel label = new JLabel();
 if (owner != null) {
-    label.setText("Владелец фокуса: " + owner);
+    label.setText("Focus owner: " + owner);
 }
 add(label);');
 INSERT INTO documentation (id, text)
@@ -637,7 +637,7 @@ VALUES (391, 44, 6, 'SpringLayout-мастер: получи ограничен�
         'SpringLayout-getConstraints',
         '', 391, 24.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
-JButton component = new JButton("Кнопка");
+JButton component = new JButton("Button");
 add(component);
 SpringLayout.Constraints constraints = layout.getConstraints(component);');
 INSERT INTO documentation (id, text)
@@ -687,8 +687,8 @@ VALUES (392, 44, 7, 'SpringLayout-мастер: установи огранич�
         'SpringLayout-putConstraint',
         '', 392, 26.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
-JButton component1 = new JButton("Кнопка 1");
-JButton component2 = new JButton("Кнопка 2");
+JButton component1 = new JButton("Button 1");
+JButton component2 = new JButton("Button 2");
 add(component1);
 add(component2);
 layout.putConstraint(SpringLayout.WEST, component2, 10, SpringLayout.EAST, component1);');
@@ -740,7 +740,7 @@ VALUES (394, 44, 8, 'SpringLayout-мастер: создай пружину',
         '', 394, 25.0, 0.0, 'Spring spring = Spring.constant(100);
 SpringLayout layout = new SpringLayout();
 setLayout(layout);
-JButton button = new JButton("Кнопка");
+JButton button = new JButton("Button");
 add(button);
 layout.putConstraint(SpringLayout.WEST, button, spring, SpringLayout.WEST, this);');
 INSERT INTO documentation (id, text)
@@ -790,6 +790,6 @@ VALUES (395, 44, 9, 'SpringLayout-мастер: получи ограничен�
         'SpringLayout-getConstraints',
         '', 395, 24.0, 0.0, 'SpringLayout layout = new SpringLayout();
 setLayout(layout);
-JButton component = new JButton("Кнопка");
+JButton component = new JButton("Button");
 add(component);
 SpringLayout.Constraints constraints = layout.getConstraints(component);');

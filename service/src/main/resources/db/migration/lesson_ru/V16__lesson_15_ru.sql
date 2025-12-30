@@ -437,7 +437,7 @@ VALUES (127, '<h2>🎮 Скроллбар-мастер: Добавь подск�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Установи подсказку:<br>
-<code>scrollBar.setToolTipText("Прокрутка контента");</code></p>
+<code>scrollBar.setToolTipText("Scroll content");</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
@@ -466,7 +466,7 @@ VALUES (127, 15, 9, 'Скроллбар-мастер: добавь подска�
         'Создай скроллбар, установи подсказку "Прокрутка контента" через setToolTipText()',
         'JScrollBar-setToolTipText',
         '', 127, 16.0, 0.0, 'JScrollBar scrollBar = new JScrollBar(JScrollBar.VERTICAL, 0, 10, 0, 100);
-scrollBar.setToolTipText("Прокрутка контента");
+scrollBar.setToolTipText("Scroll content");
 add(scrollBar);');
 
 INSERT INTO documentation (id, text)
@@ -521,7 +521,7 @@ VALUES (128, 15, 10, 'Скроллбар-мастер: обрабатывай и
 JLabel label = new JLabel();
 scrollBar.addAdjustmentListener(e -> {
     int value = scrollBar.getValue();
-    label.setText("Позиция: " + value);
+    label.setText("Position: " + value);
 });
 add(scrollBar);
 add(label);');

@@ -375,7 +375,7 @@ VALUES (218, 26, 11, 'Вкладка-мастер: включи/выключи �
         'Выключи вкладку 0 через setEnabledAt(0, false), затем включи обратно через setEnabledAt(0, true)',
         'JTabbedPane-setEnabledAt',
         '', 218, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
 tabbedPane.setEnabledAt(0, false);
 tabbedPane.setEnabledAt(0, true);
 add(tabbedPane);');
@@ -474,6 +474,6 @@ VALUES (220, 26, 13, 'Вкладка-мастер: установи распол
         'Установи расположение BOTTOM через setTabPlacement()',
         'JTabbedPane-setTabPlacement',
         '', 220, 23.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
 tabbedPane.setTabPlacement(JTabbedPane.BOTTOM);
 add(tabbedPane);');

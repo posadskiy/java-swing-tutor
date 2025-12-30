@@ -70,7 +70,7 @@ toggleButton.addActionListener(e -> {
     if (toggleButton.isSelected()) {
         label.setText("Enabled!");
     } else {
-        label.setText("Выключено!");
+        label.setText("Disabled!");
     }
 });
 add(toggleButton);
@@ -236,7 +236,7 @@ VALUES (104, 12, 5, 'Переключатель-мастер: установи �
 toggleButton.setActionCommand("TOGGLE");
 toggleButton.addActionListener(e -> {
     String cmd = e.getActionCommand();
-    label.setText("Команда: " + cmd);
+    label.setText("Command: " + cmd);
 });
 add(toggleButton);');
 INSERT INTO documentation (id, text)

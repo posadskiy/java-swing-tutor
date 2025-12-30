@@ -415,7 +415,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (284, 33, 6, 'MouseListener-мастер: определи кнопку мыши',
         'Добавь MouseListener, проверь getButton() == BUTTON1, выведи "Левая кнопка"',
-        'MouseListener-getButton,add',
+        'JPanel-addMouseListener',
         '', 284, 24.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
     @Override
@@ -477,7 +477,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (285, 33, 7, 'MouseListener-мастер: получи координаты мыши',
         'Добавь MouseListener, переопредели mouseClicked(), получи X и Y через getX(), getY(), выведи',
-        'MouseListener-getX,getY,add',
+        'JPanel-addMouseListener',
         '', 285, 23.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
     @Override
@@ -540,7 +540,7 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (286, 33, 8, 'MouseListener-мастер: получи количество кликов',
         'Добавь MouseListener, переопредели mouseClicked(), получи количество через getClickCount(), проверь на 2',
-        'MouseListener-getClickCount,add',
+        '§',
         '', 286, 23.0, 0.0, 'JPanel component = new JPanel();
 component.addMouseListener(new MouseAdapter() {
     @Override

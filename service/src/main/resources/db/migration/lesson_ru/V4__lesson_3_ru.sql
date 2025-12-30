@@ -529,7 +529,7 @@ VALUES (25, 3, 10, 'HTML в метке: форматированный текс�
         'Создай метку с HTML-текстом "&lt;b&gt;Жирный&lt;/b&gt;" и добавь на форму',
         'JLabel-setText,add',
         '', 25, 16.0, 0.0, 'JLabel label = new JLabel();
-label.setText("<html><b>Жирный</b></html>");
+label.setText("<html><b>Bold</b></html>");
 add(label);');
 
 INSERT INTO documentation (id, text)
@@ -672,7 +672,7 @@ VALUES (28, 3, 13, 'Метка-мастер: добавь HTML-контент',
         'Установи текст с HTML-тегами: &lt;b&gt;Жирный&lt;/b&gt; и &lt;i&gt;Курсив&lt;/i&gt;',
         'JLabel-setText,add',
         '', 28, 20.0, 0.0, 'JLabel label = new JLabel();
-label.setText("<html><b>Жирный</b> и <i>Курсив</i></html>");
+label.setText("<html><b>Bold</b> and <i>Italic</i></html>");
 add(label);');
 INSERT INTO documentation (id, text)
 VALUES (29, '<h2>🎮 Метка-мастер: Настрой выравнивание иконки!</h2>

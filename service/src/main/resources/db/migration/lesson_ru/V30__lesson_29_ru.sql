@@ -33,8 +33,8 @@ VALUES (238, '<h2>🎮 Всплывающее меню-новичок: Созд�
 <code>JPopupMenu popup = new JPopupMenu();</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь пункты меню:<br>
-<code>popup.add(new JMenuItem("Копировать"));</code><br>
-<code>popup.add(new JMenuItem("Вставить"));</code></p>
+<code>popup.add(new JMenuItem("Copy"));</code><br>
+<code>popup.add(new JMenuItem("Paste"));</code></p>
 
 <p><strong>Шаг 3:</strong> Покажи меню:<br>
 <code>popup.show(component, x, y);</code></p>
@@ -63,7 +63,7 @@ VALUES (238, '<h2>🎮 Всплывающее меню-новичок: Созд�
 INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
                   solution)
 VALUES (238, 29, 1, 'Всплывающее меню-новичок: создай контекстное меню',
-        'Создай JPopupMenu, добавь два пункта меню ("Копировать", "Вставить"), покажи меню через show()',
+        'Создай JPopupMenu, добавь два пункта меню ("Copy", "Paste"), покажи меню через show()',
         'JPopupMenu-show,add',
         '', 238, 18.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
 popup.add(new JMenuItem("Copy"));
@@ -97,7 +97,7 @@ VALUES (239, '<h2>🎮 Всплывающее меню-мастер: Добав�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Добавь обычный пункт:<br>
-<code>popup.add(new JMenuItem("Копировать"));</code></p>
+<code>popup.add(new JMenuItem("Copy"));</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь разделитель:<br>
 <code>popup.addSeparator();</code></p>
@@ -130,9 +130,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (239, 29, 2, 'Всплывающее меню-мастер: добавь пункты меню',
         'Создай JPopupMenu, добавь JMenuItem, разделитель и JCheckBoxMenuItem',
-        'JPopupMenu-JMenuItem-addSeparator-JCheckBoxMenuItem',
+        'JPopupMenu-add,addSeparator,add;JPanel-addMouseListener,add',
         '', 239, 20.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
-popup.add(new JMenuItem("Копировать"));
+popup.add(new JMenuItem("Copy"));
 popup.addSeparator();
 popup.add(new JCheckBoxMenuItem("Show panel"));
 JPanel panel = new JPanel();
@@ -195,9 +195,9 @@ INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, 
                   solution)
 VALUES (240, 29, 3, 'Всплывающее меню-мастер: покажи меню в нужной позиции',
         'Создай JPopupMenu, добавь MouseListener, при правом клике покажи меню в позиции курсора через show()',
-        'JPopupMenu-MouseAdapter-MouseEvent-show',
+        'JPopupMenu-add;JPanel-addMouseListener,add',
         '', 240, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
-popup.add(new JMenuItem("Копировать"));
+popup.add(new JMenuItem("Copy"));
 JPanel panel = new JPanel();
 panel.addMouseListener(new MouseAdapter() {
     @Override
@@ -261,7 +261,7 @@ VALUES (241, 29, 4, 'Всплывающее меню-мастер: узнай и
         'Создай JPopupMenu, покажи его, получи источник через getInvoker() и выведи тип в консоль',
         'JPopupMenu-getInvoker,show,add',
         '', 241, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
-popup.add(new JMenuItem("Копировать"));
+popup.add(new JMenuItem("Copy"));
 JPanel panel = new JPanel();
 JLabel label = new JLabel();
 panel.addMouseListener(new MouseAdapter() {
@@ -270,7 +270,7 @@ panel.addMouseListener(new MouseAdapter() {
         if (e.getButton() == MouseEvent.BUTTON3) {
             popup.show(panel, e.getX(), e.getY());
             Component invoker = popup.getInvoker();
-            label.setText("Источник: " + invoker.getClass().getSimpleName());
+            label.setText("Source: " + invoker.getClass().getSimpleName());
         }
     }
 });
@@ -327,7 +327,7 @@ VALUES (242, 29, 5, 'Всплывающее меню-мастер: добавь 
         'Создай JPopupMenu, создай границу через BorderFactory.createLineBorder(), установи через setBorder()',
         'JPopupMenu-setBorder,add',
         '', 242, 21.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
-popup.add(new JMenuItem("Копировать"));
+popup.add(new JMenuItem("Copy"));
 Border border = BorderFactory.createLineBorder(Color.GRAY);
 popup.setBorder(border);
 JPanel panel = new JPanel();
@@ -401,20 +401,20 @@ VALUES (243, 29, 6, 'Всплывающее меню-мастер: отслеж�
         'Создай JPopupMenu, добавь PopupMenuListener, выведи сообщение в консоль при показе меню',
         'JPopupMenu-PopupMenuListener',
         '', 243, 22.0, 0.0, 'JPopupMenu popup = new JPopupMenu();
-popup.add(new JMenuItem("Копировать"));
+popup.add(new JMenuItem("Copy"));
 JLabel label = new JLabel();
 popup.addPopupMenuListener(new PopupMenuListener() {
     @Override
     public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-        label.setText("Меню будет показано");
+        label.setText("Menu will be shown");
     }
     @Override
     public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-        label.setText("Меню будет скрыто");
+        label.setText("Menu will be hidden");
     }
     @Override
     public void popupMenuCanceled(PopupMenuEvent e) {
-        label.setText("Меню отменено");
+        label.setText("Menu canceled");
     }
 });
 JPanel panel = new JPanel();

@@ -32,8 +32,8 @@ VALUES (183, '<h2>🎮 Вкладки-новичок: Создай интерф�
 <code>JTabbedPane tabbedPane = new JTabbedPane();</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь вкладки:<br>
-<code>tabbedPane.addTab("Вкладка 1", new JPanel());</code><br>
-<code>tabbedPane.addTab("Вкладка 2", new JPanel());</code></p>
+<code>tabbedPane.addTab("Tab 1", new JPanel());</code><br>
+<code>tabbedPane.addTab("Tab 2", new JPanel());</code></p>
 
 <p><strong>Шаг 3:</strong> Добавь на форму:<br>
 <code>add(tabbedPane);</code></p>
@@ -64,8 +64,8 @@ VALUES (183, 22, 1, 'Вкладки-новичок: создай интерфе�
         'Создай панель с вкладками, добавь две вкладки "Вкладка 1" и "Вкладка 2" и добавь на форму',
         'JTabbedPane-addTab,add',
         '', 183, 16.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
-tabbedPane.addTab("Вкладка 2", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
+tabbedPane.addTab("Tab 2", new JPanel());
 add(tabbedPane);');
 
 INSERT INTO documentation (id, text)
@@ -114,7 +114,7 @@ VALUES (184, 22, 2, 'Вкладки-мастер: установи распол�
         'Создай панель с вкладками, установи расположение внизу через setTabPlacement(JTabbedPane.BOTTOM)',
         'JTabbedPane-addTab,setTabPlacement,add',
         '', 184, 17.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
 tabbedPane.setTabPlacement(JTabbedPane.BOTTOM);
 add(tabbedPane);');
 
@@ -167,8 +167,8 @@ VALUES (185, 22, 3, 'Вкладки-мастер: выбери вкладку',
         'Создай панель с вкладками, добавь две вкладки, выбери вторую через setSelectedIndex(1)',
         'JTabbedPane-addTab,addTab,setSelectedIndex,add',
         '', 185, 17.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
-tabbedPane.addTab("Вкладка 2", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
+tabbedPane.addTab("Tab 2", new JPanel());
 tabbedPane.setSelectedIndex(1);
 add(tabbedPane);');
 
@@ -222,7 +222,7 @@ VALUES (186, 22, 4, 'Вкладки-мастер: добавь иконку на
         'JTabbedPane-addTab,add',
         '', 186, 18.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
 ImageIcon icon = new ImageIcon("icon.png");
-tabbedPane.addTab("Вкладка", icon, new JPanel());
+tabbedPane.addTab("Tab", icon, new JPanel());
 add(tabbedPane);');
 
 INSERT INTO documentation (id, text)
@@ -271,8 +271,8 @@ VALUES (187, 22, 5, 'Вкладки-мастер: добавь подсказк�
         'Создай панель с вкладками, добавь вкладку, установи подсказку "Первая вкладка" через setToolTipTextAt(0, "Первая вкладка")',
         'JTabbedPane-addTab,setToolTipTextAt,add',
         '', 187, 17.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
-tabbedPane.setToolTipTextAt(0, "Первая вкладка");
+tabbedPane.addTab("Tab 1", new JPanel());
+tabbedPane.setToolTipTextAt(0, "First tab");
 add(tabbedPane);');
 
 INSERT INTO documentation (id, text)
@@ -324,7 +324,7 @@ VALUES (188, 22, 6, 'Вкладки-мастер: включи/выключи в
         'Создай панель с вкладками, добавь вкладку, выключи её через setEnabledAt(0, false)',
         'JTabbedPane-setEnabledAt',
         '', 188, 18.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
 tabbedPane.setEnabledAt(0, false);
 add(tabbedPane);');
 
@@ -377,8 +377,8 @@ VALUES (189, 22, 7, 'Вкладки-мастер: обрабатывай изм�
         'Создай панель с вкладками, добавь ChangeListener, получи индекс выбранной вкладки через getSelectedIndex(), выведи его',
         'JTabbedPane-addChangeListener,getSelectedIndex,add',
         '', 189, 19.0, 0.0, 'JTabbedPane tabbedPane = new JTabbedPane();
-tabbedPane.addTab("Вкладка 1", new JPanel());
-tabbedPane.addTab("Вкладка 2", new JPanel());
+tabbedPane.addTab("Tab 1", new JPanel());
+tabbedPane.addTab("Tab 2", new JPanel());
 JLabel label = new JLabel();
 tabbedPane.addChangeListener(e -> {
     int index = tabbedPane.getSelectedIndex();

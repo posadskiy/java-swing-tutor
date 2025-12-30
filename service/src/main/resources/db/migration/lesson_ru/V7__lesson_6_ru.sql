@@ -308,7 +308,7 @@ VALUES (56, 6, 6, 'Текстовая область-мастер: добавь 
         'Добавь текст "Новая строка\n" через append()',
         'JTextArea-append,add',
         '', 56, 22.0, 0.0, 'JTextArea textArea = new JTextArea();
-textArea.append("Новая строка\n");
+textArea.append("New line\n");
 add(textArea);');
 INSERT INTO documentation (id, text)
 VALUES (57, '<h2>🎮 Текстовая область-мастер: Вставь текст!</h2>
@@ -356,7 +356,7 @@ VALUES (57, 6, 7, 'Текстовая область-мастер: вставь 
         'Вставь текст "Вставленный текст" в позицию 0 через insert()',
         'JTextArea-insert,add',
         '', 57, 22.0, 0.0, 'JTextArea textArea = new JTextArea("Text");
-textArea.insert("Вставленный текст", 0);
+textArea.insert("Inserted text", 0);
 add(textArea);');
 INSERT INTO documentation (id, text)
 VALUES (58, '<h2>🎮 Текстовая область-мастер: Замени текст!</h2>
@@ -404,7 +404,7 @@ VALUES (58, 6, 8, 'Текстовая область-мастер: замени 
         'Замени диапазон 0-5 через replaceRange("Новый текст", 0, 5)',
         'JTextArea-replaceRange,add',
         '', 58, 23.0, 0.0, 'JTextArea textArea = new JTextArea("Old text");
-textArea.replaceRange("Новый текст", 0, 5);
+textArea.replaceRange("New text", 0, 5);
 add(textArea);');
 INSERT INTO documentation (id, text)
 VALUES (59, '<h2>🎮 Текстовая область-мастер: Получи количество строк!</h2>
@@ -453,7 +453,7 @@ VALUES (59, 6, 9, 'Текстовая область-мастер: получи 
         'JTextArea-getLineCount,add',
         '', 59, 21.0, 0.0, 'JTextArea textArea = new JTextArea("Line 1\nLine 2");
 int lines = textArea.getLineCount();
-JLabel label = new JLabel("Количество строк: " + lines);
+JLabel label = new JLabel("Line count: " + lines);
 add(label);
 add(textArea);');
 INSERT INTO documentation (id, text)

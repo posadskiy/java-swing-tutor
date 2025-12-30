@@ -67,7 +67,7 @@ VALUES (244, 30, 1, 'Таблица-новичок: создай таблицу 
         'Создай таблицу с столбцами "Имя", "Возраст" и двумя строками данных, оберни в JScrollPane и добавь на форму',
         'JScrollPane-add',
         '', 244, 20.0, 0.0, 'String[] columns = {"Name", "Age"};
-String[][] data = {{"Иван", "25"}, {"Мария", "30"}};
+String[][] data = {{"John", "25"}, {"Mary", "30"}};
 JTable table = new JTable(data, columns);
 JScrollPane scrollPane = new JScrollPane(table);
 add(scrollPane);');
@@ -178,9 +178,9 @@ VALUES (246, 28, 3, 'Меню-бар-мастер: добавь меню пом�
         'Создай JMenu "Справка", добавь два пункта меню, добавь в menuBar',
         'JMenuBar-add,setJMenuBar',
         '', 246, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
-JMenu helpMenu = new JMenu("Справка");
-helpMenu.add(new JMenuItem("Содержание"));
-helpMenu.add(new JMenuItem("О программе"));
+JMenu helpMenu = new JMenu("Help");
+helpMenu.add(new JMenuItem("Contents"));
+helpMenu.add(new JMenuItem("About"));
 menuBar.add(helpMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
@@ -230,7 +230,7 @@ VALUES (247, 28, 4, 'Меню-бар-мастер: размести меню п�
         'Создай JMenu "Справка", установи через setHelpMenu()',
         'JMenuBar-setHelpMenu,setJMenuBar',
         '', 247, 22.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
-JMenu helpMenu = new JMenu("Справка");
+JMenu helpMenu = new JMenu("Help");
 menuBar.setHelpMenu(helpMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
@@ -338,9 +338,9 @@ VALUES (249, 28, 6, 'Меню-бар-мастер: добавь меню пом�
         'Создай JMenu "Справка", добавь два пункта меню, добавь в меню-бар',
         'JMenuBar-add,setJMenuBar',
         '', 249, 23.0, 0.0, 'JMenuBar menuBar = new JMenuBar();
-JMenu helpMenu = new JMenu("Справка");
-helpMenu.add(new JMenuItem("О программе"));
-helpMenu.add(new JMenuItem("Справка"));
+JMenu helpMenu = new JMenu("Help");
+helpMenu.add(new JMenuItem("About"));
+helpMenu.add(new JMenuItem("Help"));
 menuBar.add(helpMenu);
 setJMenuBar(menuBar);');
 INSERT INTO documentation (id, text)
@@ -439,9 +439,9 @@ VALUES (251, 28, 10, 'Меню-мастер: добавь разделитель
         'Добавь разделитель через addSeparator()',
         'JMenu-add,addSeparator,add',
         '', 251, 20.0, 0.0, 'JMenu menu = new JMenu("File");
-menu.add(new JMenuItem("Открыть"));
+menu.add(new JMenuItem("Open"));
 menu.addSeparator();
-menu.add(new JMenuItem("Выход"));
+menu.add(new JMenuItem("Exit"));
 JMenuBar menuBar = new JMenuBar();
 menuBar.add(menu);
 setJMenuBar(menuBar);');
