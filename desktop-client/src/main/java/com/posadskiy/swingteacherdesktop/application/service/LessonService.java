@@ -71,8 +71,13 @@ public class LessonService {
     }
     
     public Optional<Documentation> getDocumentation(int id) {
+        return getDocumentation(id, null);
+    }
+
+    public Optional<Documentation> getDocumentation(int id, String languageCode) {
         try {
-            return documentationRepository.getDocumentation(id);
+            String lang = languageCode != null ? languageCode : userService.getPreferredLanguage();
+            return documentationRepository.getDocumentation(id, lang);
         } catch (SQLException ex) {
             log.error("Failed to get documentation: {}", id, ex);
             return Optional.empty();

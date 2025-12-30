@@ -23,6 +23,7 @@ services:
       FLYWAY_URL: jdbc:postgresql://db:5432/swingteacher
       FLYWAY_USER: swingteacher
       FLYWAY_PASSWORD: swingteacher
+      FLYWAY_LOCATIONS: filesystem:/flyway/sql
     volumes:
       - ./service/src/main/resources/db/migration:/flyway/sql:ro
 

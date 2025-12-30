@@ -59,6 +59,10 @@ public class MainFrameController {
         return lessonService.getDocumentation(id);
     }
 
+    public Optional<Documentation> getDocumentation(int id, String languageCode) {
+        return lessonService.getDocumentation(id, languageCode);
+    }
+
     public List<CompletedTask> getCompletedTasksByUser(int userId) {
         return lessonService.getCompletedTasksByUser(userId);
     }

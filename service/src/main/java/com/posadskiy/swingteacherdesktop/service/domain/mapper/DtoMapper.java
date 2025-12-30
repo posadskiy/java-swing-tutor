@@ -87,8 +87,8 @@ public final class DtoMapper {
         return new ShorthandDto(entity.getId(), entity.getShortText(), entity.getFullText());
     }
 
-    public static DocumentationDto toDto(DocumentationEntity entity) {
-        return new DocumentationDto(entity.getId(), entity.getText());
+    public static DocumentationDto toDto(DocumentationEntity entity, String text) {
+        return new DocumentationDto(entity.getId(), text);
     }
 
     public static ErrorDto toDto(ErrorEntryEntity entity) {

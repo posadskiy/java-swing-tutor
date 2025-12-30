@@ -11,6 +11,8 @@ import java.util.Optional;
 public interface DocumentationRepository {
 
     Optional<Documentation> getDocumentation(int id) throws SQLException;
+
+    Optional<Documentation> getDocumentation(int id, String languageCode) throws SQLException;
 }
 
 

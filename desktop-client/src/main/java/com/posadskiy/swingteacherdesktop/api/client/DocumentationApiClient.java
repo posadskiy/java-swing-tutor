@@ -5,7 +5,6 @@ import com.posadskiy.swingteacherdesktop.domain.dto.DocumentationDto;
 import com.posadskiy.swingteacherdesktop.domain.model.Documentation;
 import com.posadskiy.swingteacherdesktop.domain.repository.DocumentationRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClient;
@@ -28,10 +27,20 @@ public class DocumentationApiClient implements DocumentationRepository {
     
     @Override
     public Optional<Documentation> getDocumentation(int id) throws SQLException {
+        return getDocumentation(id, null);
+    }
+
+    @Override
+    public Optional<Documentation> getDocumentation(int id, String languageCode) throws SQLException {
         try {
+            String uri = "/api/ref/documentation/{id}";
+            if (languageCode != null && !languageCode.isBlank()) {
+                uri += "?lang=" + languageCode;
+            }
+            
             return Optional.ofNullable(
                     client.get()
-                        .uri("/api/ref/documentation/{id}", id)
+                        .uri(uri, id)
                         .retrieve()
                         .body(DocumentationDto.class)
                 )

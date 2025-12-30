@@ -568,7 +568,8 @@ public class MainFrameView extends JFrame {
     private void updateDocumentation() {
         Task task = (Task) taskComboBox.getSelectedItem();
         if (task != null) {
-            var doc = controller.getDocumentation(task.idDocumentation());
+            String languageCode = appState.getCurrentLanguage();
+            var doc = controller.getDocumentation(task.idDocumentation(), languageCode);
             String text = doc.map(Documentation::text).orElse("<p>Documentation not available</p>");
             documentationPane.setText(text);
         } else {
@@ -710,7 +711,8 @@ public class MainFrameView extends JFrame {
     }
 
     private void showDocumentation() {
-            var doc = controller.getDocumentation(0);
+        String languageCode = appState.getCurrentLanguage();
+        var doc = controller.getDocumentation(0, languageCode);
         String docText = doc.map(Documentation::text)
                 .filter(t -> !t.isBlank())
                 .orElse("<h1>Documentation</h1><p>Documentation is not available.</p>");

@@ -18,18 +18,21 @@ public class ReferenceDataService {
     private final DocumentationRepository documentationRepository;
     private final ErrorEntryRepository errorRepository;
     private final TaskCategoryRepository taskCategoryRepository;
+    private final TranslationService translationService;
 
     public ReferenceDataService(
         KeywordRepository keywordRepository,
         ShorthandRepository shorthandRepository,
         DocumentationRepository documentationRepository,
         ErrorEntryRepository errorRepository,
-        TaskCategoryRepository taskCategoryRepository) {
+        TaskCategoryRepository taskCategoryRepository,
+        TranslationService translationService) {
         this.keywordRepository = keywordRepository;
         this.shorthandRepository = shorthandRepository;
         this.documentationRepository = documentationRepository;
         this.errorRepository = errorRepository;
         this.taskCategoryRepository = taskCategoryRepository;
+        this.translationService = translationService;
     }
 
     public List<KeywordDto> getKeywords() {
@@ -41,11 +44,19 @@ public class ReferenceDataService {
     }
 
     public Optional<DocumentationDto> getDocumentation(Long id) {
+        return getDocumentation(id, "en");
+    }
+
+    public Optional<DocumentationDto> getDocumentation(Long id, String languageCode) {
         try {
             return documentationRepository.findById(id)
-                .map(DtoMapper::toDto);
+                .map(entity -> {
+                    String translatedText = translationService.getDocumentationText(id, languageCode);
+                    // Text is now always from translation table
+                    return DtoMapper.toDto(entity, translatedText);
+                });
         } catch (Exception e) {
-            log.error("Failed to get documentation id={}", id, e);
+            log.error("Failed to get documentation id={}, language={}", id, languageCode, e);
             throw e; // Let the global exception handler catch it
         }
     }

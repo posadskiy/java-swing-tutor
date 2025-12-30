@@ -1,7 +1,9 @@
 package com.posadskiy.swingteacherdesktop.service.application;
 
+import com.posadskiy.swingteacherdesktop.service.domain.entity.DocumentationTranslationEntity;
 import com.posadskiy.swingteacherdesktop.service.domain.entity.LessonTranslationEntity;
 import com.posadskiy.swingteacherdesktop.service.domain.entity.TaskTranslationEntity;
+import com.posadskiy.swingteacherdesktop.service.infrastructure.jpa.DocumentationTranslationRepository;
 import com.posadskiy.swingteacherdesktop.service.infrastructure.jpa.LessonTranslationRepository;
 import com.posadskiy.swingteacherdesktop.service.infrastructure.jpa.TaskTranslationRepository;
 import org.springframework.stereotype.Service;
@@ -12,13 +14,16 @@ import java.util.Optional;
 public class TranslationService {
     private final LessonTranslationRepository lessonTranslationRepository;
     private final TaskTranslationRepository taskTranslationRepository;
+    private final DocumentationTranslationRepository documentationTranslationRepository;
 
     public TranslationService(
         LessonTranslationRepository lessonTranslationRepository,
-        TaskTranslationRepository taskTranslationRepository
+        TaskTranslationRepository taskTranslationRepository,
+        DocumentationTranslationRepository documentationTranslationRepository
     ) {
         this.lessonTranslationRepository = lessonTranslationRepository;
         this.taskTranslationRepository = taskTranslationRepository;
+        this.documentationTranslationRepository = documentationTranslationRepository;
     }
 
     /**
@@ -90,6 +95,31 @@ public class TranslationService {
             .findByTaskIdAndLanguageCode(taskId, "en");
         if (enTranslation.isPresent() && enTranslation.get().getQuestion() != null) {
             return enTranslation.get().getQuestion();
+        }
+
+        // No translation found
+        return null;
+    }
+
+    /**
+     * Get documentation text translation with fallback to English.
+     * Returns null if no translation is found.
+     */
+    public String getDocumentationText(Long documentationId, String languageCode) {
+        if (languageCode != null && !languageCode.isBlank() && !"en".equals(languageCode)) {
+            // Try requested language first
+            Optional<DocumentationTranslationEntity> translation = documentationTranslationRepository
+                .findByDocumentationIdAndLanguageCode(documentationId, languageCode);
+            if (translation.isPresent() && translation.get().getText() != null) {
+                return translation.get().getText();
+            }
+        }
+
+        // Fallback to English
+        Optional<DocumentationTranslationEntity> enTranslation = documentationTranslationRepository
+            .findByDocumentationIdAndLanguageCode(documentationId, "en");
+        if (enTranslation.isPresent() && enTranslation.get().getText() != null) {
+            return enTranslation.get().getText();
         }
 
         // No translation found

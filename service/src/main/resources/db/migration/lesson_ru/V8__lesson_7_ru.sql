@@ -5,8 +5,8 @@
 -- TASKS AND DOCUMENTATION
 -- ============================================================================
 
-INSERT INTO documentation (id, text)
-VALUES (62, '<h2>🎮 Флажок-новичок: Создай переключатель!</h2>
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (62, 'ru', '<h2>🎮 Флажок-новичок: Создай переключатель!</h2>
 
 <p><strong>Привет, мастер выборов!</strong> ☑️ Сегодня ты создашь <code>JCheckBox</code> — это как чекбокс в настройках игры! Можно включить или выключить опцию одним кликом!</p>
 
@@ -44,17 +44,14 @@ VALUES (62, '<h2>🎮 Флажок-новичок: Создай переключ
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>На форме появится флажок с текстом! ☑️ Это квадратик с галочкой (если отмечен) или пустой (если не отмечен). Пользователь может кликнуть, чтобы включить или выключить опцию. Это твой первый переключатель! 🎯</p>');
+<p>На форме появится флажок с текстом! ☑️ Это квадратик с галочкой (если отмечен) или пустой (если не отмечен). Пользователь может кликнуть, чтобы включить или выключить опцию. Это твой первый переключатель! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (62, 7, 1, 'Флажок-новичок: создай переключатель',
-        'Создай флажок с текстом "Включить" и добавь на форму',
-        'JCheckBox-add',
-        '', 62, 12.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Enable");
-add(checkBox);');
-INSERT INTO documentation (id, text)
-VALUES (63, '<h2>🎮 Состояние флажка: Отметь или сними отметку!</h2>
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (62, 'ru', 'Флажок-новичок: создай переключатель', 'Создай флажок с текстом "Включить" и добавь на форму')
+ON CONFLICT (task_id, language_code) DO NOTHING;
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (63, 'ru', '<h2>🎮 Состояние флажка: Отметь или сними отметку!</h2>
 
 <p><strong>Мастер состояний, привет!</strong> ✅ Пора научиться управлять состоянием флажка! Можно программно отметить флажок или снять отметку. Это как включить опцию по умолчанию!</p>
 
@@ -95,19 +92,15 @@ VALUES (63, '<h2>🎮 Состояние флажка: Отметь или сн�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Флажок будет отмечен! ✅ В квадратике появится галочка. Пользователь сможет снять отметку кликом. Теперь у тебя контроль над состоянием флажка! 🎯</p>');
+<p>Флажок будет отмечен! ✅ В квадратике появится галочка. Пользователь сможет снять отметку кликом. Теперь у тебя контроль над состоянием флажка! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (63, 7, 2, 'Состояние флажка: отметь или сними отметку',
-        'Создай флажок, отметь его и добавь на форму',
-        'JCheckBox-setSelected,add',
-        '', 63, 14.0, 0.0, 'JCheckBox checkBox = new JCheckBox("Enable");
-checkBox.setSelected(true);
-add(checkBox);');
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (63, 'ru', 'Состояние флажка: отметь или сними отметку', 'Создай флажок, отметь его и добавь на форму')
+ON CONFLICT (task_id, language_code) DO NOTHING;
 
-INSERT INTO documentation (id, text)
-VALUES (64, '<h2>🎮 Поле пароля-мастер: Измени символ отображения!</h2>
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (64, 'ru', '<h2>🎮 Поле пароля-мастер: Измени символ отображения!</h2>
 
 <p><strong>Привет, мастер безопасности!</strong> 🔒 Сегодня ты изменишь символ отображения в <code>JPasswordField</code> — это как кастомизация маски в игре! Можно использовать свой символ вместо звёздочки!</p>
 
@@ -123,14 +116,14 @@ VALUES (64, '<h2>🎮 Поле пароля-мастер: Измени симв�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Установи символ:<br>
-<code>passwordField.setEchoChar(''●'');</code></p>
+<code>passwordField.setEchoChar('●');</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь на форму:<br>
 <code>add(passwordField);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
-  <li><strong>✅ Хороший стиль:</strong> Использовать видимые символы: ''●'', ''•'', ''*''</li>
+  <li><strong>✅ Хороший стиль:</strong> Использовать видимые символы: '●', '•', '*'</li>
   <li><strong>✅ Отлично:</strong> Символ должен быть понятным</li>
 </ul>
 
@@ -142,19 +135,16 @@ VALUES (64, '<h2>🎮 Поле пароля-мастер: Измени симв�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Вместо стандартного символа будет использоваться указанный! ⭐ Это кастомизация символа отображения! 🎯</p>');
+<p>Вместо стандартного символа будет использоваться указанный! ⭐ Это кастомизация символа отображения! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (64, 7, 3, 'Поле пароля-мастер: измени символ отображения',
-        'Установи символ отображения ''●'' через setEchoChar()',
-        'JPasswordField-setEchoChar,add',
-        '', 64, 22.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
-passwordField.setEchoChar(''●'');
-add(passwordField);');
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (64, 'ru', 'Поле пароля-мастер: измени символ отображения',
+        'Установи символ отображения ''●'' через setEchoChar()')
+ON CONFLICT (task_id, language_code) DO NOTHING;
 
-INSERT INTO documentation (id, text)
-VALUES (65, '<h2>🎮 Поле пароля-мастер: Проверь надёжность пароля!</h2>
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (65, 'ru', '<h2>🎮 Поле пароля-мастер: Проверь надёжность пароля!</h2>
 
 <p><strong>Привет, мастер безопасности!</strong> 🔒 Сегодня ты проверишь надёжность пароля в <code>JPasswordField</code> — это как проверка силы в игре! Можно оценить надёжность пароля!</p>
 
@@ -199,23 +189,15 @@ add(label);</code></p>
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Можно будет проверить надёжность пароля! 🔒 При вводе можно оценить силу пароля. Это проверка надёжности! 🎯</p>');
+<p>Можно будет проверить надёжность пароля! 🔒 При вводе можно оценить силу пароля. Это проверка надёжности! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (65, 7, 4, 'Поле пароля-мастер: проверь надёжность пароля',
-        'Получи пароль через getPassword(), проверь длину меньше 8, выведи сообщение',
-        'JPasswordField-getPassword,add',
-        '', 65, 25.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
-char[] password = passwordField.getPassword();
-JLabel label = new JLabel();
-if (password.length < 8) {
-    label.setText("Weak password!");
-}
-add(passwordField);
-add(label);');
-INSERT INTO documentation (id, text)
-VALUES (66, '<h2>🎮 Поле пароля-мастер: Запрети копирование!</h2>
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (65, 'ru', 'Поле пароля-мастер: проверь надёжность пароля',
+        'Получи пароль через getPassword(), проверь длину меньше 8, выведи сообщение')
+ON CONFLICT (task_id, language_code) DO NOTHING;
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (66, 'ru', '<h2>🎮 Поле пароля-мастер: Запрети копирование!</h2>
 
 <p><strong>Привет, мастер безопасности!</strong> 🔒 Сегодня ты запретишь копирование в <code>JPasswordField</code> — это как защита в игре!</p>
 
@@ -260,24 +242,15 @@ VALUES (66, '<h2>🎮 Поле пароля-мастер: Запрети коп�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Копирование будет запрещено! 🔒 Пароль нельзя будет скопировать. Это запрет копирования! 🎯</p>');
+<p>Копирование будет запрещено! 🔒 Пароль нельзя будет скопировать. Это запрет копирования! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (66, 7, 5, 'Поле пароля-мастер: запрети копирование',
-        'Получи документ, создай DocumentFilter, переопредели remove() для запрета удаления',
-        'JPasswordField-add',
-        '', 66, 26.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
-AbstractDocument doc = (AbstractDocument) passwordField.getDocument();
-doc.setDocumentFilter(new DocumentFilter() {
-    @Override
-    public void remove(FilterBypass fb, int offset, int length) throws BadLocationException {
-        // Запретить удаление
-    }
-});
-add(passwordField);');
-INSERT INTO documentation (id, text)
-VALUES (67, '<h2>🎮 Поле пароля-мастер: Измени символ отображения!</h2>
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (66, 'ru', 'Поле пароля-мастер: запрети копирование',
+        'Получи документ, создай DocumentFilter, переопредели remove() для запрета удаления')
+ON CONFLICT (task_id, language_code) DO NOTHING;
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (67, 'ru', '<h2>🎮 Поле пароля-мастер: Измени символ отображения!</h2>
 
 <p><strong>Привет, мастер символов!</strong> 🔒 Сегодня ты изменишь символ отображения в <code>JPasswordField</code> — это как кастомизация в игре!</p>
 
@@ -293,7 +266,7 @@ VALUES (67, '<h2>🎮 Поле пароля-мастер: Измени симв�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Измени символ:<br>
-<code>passwordField.setEchoChar(''●'');</code></p>
+<code>passwordField.setEchoChar('●');</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь на форму:<br>
 <code>add(passwordField);</code></p>
@@ -312,19 +285,15 @@ VALUES (67, '<h2>🎮 Поле пароля-мастер: Измени симв�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Символ отображения будет изменён! 🔒 Это кастомизация символа! 🎯</p>');
+<p>Символ отображения будет изменён! 🔒 Это кастомизация символа! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (67, 7, 6, 'Поле пароля-мастер: измени символ отображения',
-        'Измени символ отображения на ● через setEchoChar()',
-        'JPasswordField-setEchoChar,add',
-        '', 67, 23.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
-passwordField.setEchoChar(''●'');
-add(passwordField);');
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (67, 'ru', 'Поле пароля-мастер: измени символ отображения', 'Измени символ отображения на ● через setEchoChar()')
+ON CONFLICT (task_id, language_code) DO NOTHING;
 
-INSERT INTO documentation (id, text)
-VALUES (68, '<h2>🎮 Поле пароля-мастер: Покажи пароль!</h2>
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (68, 'ru', '<h2>🎮 Поле пароля-мастер: Покажи пароль!</h2>
 
 <p><strong>Привет, мастер видимости!</strong> 🔒 Сегодня ты покажешь пароль в <code>JPasswordField</code> — это как переключение видимости в игре!</p>
 
@@ -367,21 +336,15 @@ VALUES (68, '<h2>🎮 Поле пароля-мастер: Покажи паро�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Пароль будет временно показан! 🔒 Можно проверить пароль, затем скрыть обратно. Это показ пароля! 🎯</p>');
+<p>Пароль будет временно показан! 🔒 Можно проверить пароль, затем скрыть обратно. Это показ пароля! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (68, 7, 7, 'Поле пароля-мастер: покажи пароль',
-        'Получи символ через getEchoChar(), установи 0 через setEchoChar() для показа, затем восстанови символ',
-        'JPasswordField-getEchoChar,setEchoChar,add',
-        '', 68, 24.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
-char echoChar = passwordField.getEchoChar();
-passwordField.setEchoChar((char) 0);
-// Показать пароль, затем восстановить:
-// passwordField.setEchoChar(echoChar);
-add(passwordField);');
-INSERT INTO documentation (id, text)
-VALUES (69, '<h2>🎮 Поле пароля-мастер: Проверь силу пароля!</h2>
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (68, 'ru', 'Поле пароля-мастер: покажи пароль',
+        'Получи символ через getEchoChar(), установи 0 через setEchoChar() для показа, затем восстанови символ')
+ON CONFLICT (task_id, language_code) DO NOTHING;
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (69, 'ru', '<h2>🎮 Поле пароля-мастер: Проверь силу пароля!</h2>
 
 <p><strong>Привет, мастер безопасности!</strong> 🔒 Сегодня ты проверишь силу пароля в <code>JPasswordField</code> — это как валидация в игре!</p>
 
@@ -421,19 +384,15 @@ VALUES (69, '<h2>🎮 Поле пароля-мастер: Проверь сил�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Можно будет проверить силу пароля! 🔒 Можно валидировать пароль, улучшить безопасность. Это проверка силы пароля! 🎯</p>');
+<p>Можно будет проверить силу пароля! 🔒 Можно валидировать пароль, улучшить безопасность. Это проверка силы пароля! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (69, 7, 8, 'Поле пароля-мастер: проверь силу пароля',
-        'Получи пароль через getPassword(), проверь длину >= 8 и наличие заглавных букв',
-        'JPasswordField-getPassword,add',
-        '', 69, 26.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
-char[] password = passwordField.getPassword();
-boolean isStrong = password.length >= 8 && new String(password).matches(".*[A-Z].*");
-add(passwordField);');
-INSERT INTO documentation (id, text)
-VALUES (70, '<h2>🎮 Поле пароля-мастер: Скопируй пароль!</h2>
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (69, 'ru', 'Поле пароля-мастер: проверь силу пароля',
+        'Получи пароль через getPassword(), проверь длину >= 8 и наличие заглавных букв')
+ON CONFLICT (task_id, language_code) DO NOTHING;
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (70, 'ru', '<h2>🎮 Поле пароля-мастер: Скопируй пароль!</h2>
 
 <p><strong>Привет, мастер копирования!</strong> 🔒 Сегодня ты скопируешь пароль из <code>JPasswordField</code> — это как копирование в игре!</p>
 
@@ -474,20 +433,15 @@ Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);</
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Пароль будет скопирован в буфер обмена! 🔒 Можно использовать в других местах. Это копирование пароля! 🎯</p>');
+<p>Пароль будет скопирован в буфер обмена! 🔒 Можно использовать в других местах. Это копирование пароля! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (70, 7, 9, 'Поле пароля-мастер: скопируй пароль',
-        'Получи пароль через getPassword(), создай StringSelection, установи в Clipboard через setContents()',
-        'JPasswordField-add',
-        '', 70, 27.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
-char[] password = passwordField.getPassword();
-StringSelection selection = new StringSelection(new String(password));
-Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
-add(passwordField);');
-INSERT INTO documentation (id, text)
-VALUES (71, '<h2>🎮 Поле пароля-мастер: Установи символ отображения!</h2>
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (70, 'ru', 'Поле пароля-мастер: скопируй пароль',
+        'Получи пароль через getPassword(), создай StringSelection, установи в Clipboard через setContents()')
+ON CONFLICT (task_id, language_code) DO NOTHING;
+INSERT INTO documentation_translation (documentation_id, language_code, text)
+VALUES (71, 'ru', '<h2>🎮 Поле пароля-мастер: Установи символ отображения!</h2>
 
 <p><strong>Привет, мастер символов!</strong> 🔒 Сегодня ты установишь символ отображения в <code>JPasswordField</code> — это как кастомизация в игре!</p>
 
@@ -503,14 +457,14 @@ VALUES (71, '<h2>🎮 Поле пароля-мастер: Установи си�
 
 <h3>⚔️ Как достичь цели:</h3>
 <p><strong>Шаг 1:</strong> Установи символ:<br>
-<code>passwordField.setEchoChar(''*'');</code></p>
+<code>passwordField.setEchoChar(' * ');</code></p>
 
 <p><strong>Шаг 2:</strong> Добавь на форму:<br>
 <code>add(passwordField);</code></p>
 
 <h4>🎨 Варианты выполнения:</h4>
 <ul>
-  <li><strong>✅ Хороший стиль:</strong> Использовать стандартные символы: ''*'', ''●''</li>
+  <li><strong>✅ Хороший стиль:</strong> Использовать стандартные символы: ' * ', '●'</li>
   <li><strong>✅ Отлично:</strong> Кастомизировать отображение</li>
 </ul>
 
@@ -522,14 +476,10 @@ VALUES (71, '<h2>🎮 Поле пароля-мастер: Установи си�
 </ul>
 
 <h3>👀 Что ты увидишь:</h3>
-<p>Символ отображения будет установлен! 🔒 Это кастомизация символа! 🎯</p>');
+<p>Символ отображения будет установлен! 🔒 Это кастомизация символа! 🎯</p>')
+ON CONFLICT (documentation_id, language_code) DO NOTHING;
 
-INSERT INTO task (id, id_lesson, task_number, title, question, answer, imports, id_documentation, difficult, rating,
-                  solution)
-VALUES (71, 7, 10, 'Поле пароля-мастер: установи символ отображения',
-        'Установи символ ''*'' через setEchoChar()',
-        'JPasswordField-setEchoChar,add',
-        '', 71, 22.0, 0.0, 'JPasswordField passwordField = new JPasswordField();
-passwordField.setEchoChar(''*'');
-add(passwordField);');
+INSERT INTO task_translation (task_id, language_code, title, question)
+VALUES (71, 'ru', 'Поле пароля-мастер: установи символ отображения', 'Установи символ ''*'' через setEchoChar()')
+ON CONFLICT (task_id, language_code) DO NOTHING;
 

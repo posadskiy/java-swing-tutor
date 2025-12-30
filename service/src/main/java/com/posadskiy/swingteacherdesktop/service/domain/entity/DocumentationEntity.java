@@ -14,8 +14,5 @@ public class DocumentationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "text", columnDefinition = "TEXT")
-    private String text;
 }
 

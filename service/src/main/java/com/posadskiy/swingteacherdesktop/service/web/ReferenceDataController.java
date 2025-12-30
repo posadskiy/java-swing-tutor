@@ -3,10 +3,7 @@ package com.posadskiy.swingteacherdesktop.service.web;
 import com.posadskiy.swingteacherdesktop.domain.dto.*;
 import com.posadskiy.swingteacherdesktop.service.application.ReferenceDataService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,8 +27,11 @@ public class ReferenceDataController {
     }
 
     @GetMapping("/documentation/{id}")
-    public ResponseEntity<DocumentationDto> documentation(@PathVariable("id") Long id) {
-        return referenceDataService.getDocumentation(id)
+    public ResponseEntity<DocumentationDto> documentation(
+        @PathVariable("id") Long id,
+        @RequestParam(value = "lang", required = false, defaultValue = "en") String languageCode
+    ) {
+        return referenceDataService.getDocumentation(id, languageCode)
             .map(ResponseEntity::ok)
             .orElseGet(() -> ResponseEntity.notFound().build());
     }
