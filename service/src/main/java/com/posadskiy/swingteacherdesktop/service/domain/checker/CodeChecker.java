@@ -57,11 +57,32 @@ public final class CodeChecker {
         List<String> expectedClassNames = expectedComponents.stream()
             .map(SolutionComponent::className)
             .toList();
+
+        // Build map of className to expected methods for better extraction
+        Map<String, List<String>> expectedMethodsMap = new java.util.HashMap<>();
+        for (SolutionComponent component : expectedComponents) {
+            expectedMethodsMap.put(component.className(), component.expectedMethods());
+        }
+
+        // Check for class names in expected methods that should be treated as separate components
+        // e.g., "UIManager-SwingUtilities" means both UIManager and SwingUtilities should exist
+        for (SolutionComponent component : expectedComponents) {
+            for (String method : component.expectedMethods()) {
+                // If it looks like a class name (starts with capital, no parentheses), add it as a component to check
+                if (method.matches("^[A-Z][A-Za-z0-9]*$") && !method.contains("(") && !expectedClassNames.contains(method)) {
+                    expectedClassNames = new java.util.ArrayList<>(expectedClassNames);
+                    expectedClassNames.add(method);
+                    expectedComponents = new java.util.ArrayList<>(expectedComponents);
+                    expectedComponents.add(new SolutionComponent(method, List.of()));
+                }
+            }
+        }
         
         // Parse user code
         Map<String, UserComponent> userComponents = UserCodeParser.extractComponents(
-            expectedClassNames, 
-            normalizedUser
+            expectedClassNames,
+            normalizedUser,
+            expectedMethodsMap
         );
         
         // Validate each component

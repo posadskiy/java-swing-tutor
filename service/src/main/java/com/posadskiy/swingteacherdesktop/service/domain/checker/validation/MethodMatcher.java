@@ -13,10 +13,11 @@ public final class MethodMatcher {
     
     /**
      * Checks if an actual method call matches the expected method name.
-     * 
-     * @param expectedMethod The expected method name (e.g., "setText")
-     * @param actualCall The actual method call from user code (e.g., "button.setText(\"Hello\")")
-     * @return true if the call matches the expected method
+     *
+     * @param expectedMethod The expected method name (e.g., "setText") or field name (e.g., "gridwidth")
+     * @param actualCall The actual method call from user code (e.g., "button.setText(\"Hello\")") 
+     *                   or field assignment (e.g., "gbc.gridwidth =")
+     * @return true if the call matches the expected method/field
      */
     public static boolean matches(String expectedMethod, String actualCall) {
         if (expectedMethod == null || actualCall == null) {
@@ -29,15 +30,26 @@ public final class MethodMatcher {
         if (cleanExpected.isEmpty() || cleanActual.isEmpty()) {
             return false;
         }
-        
-        // Pattern to match method name in actual call
+
+        // Pattern 1: Match method name in actual call
         // Handles: varName.methodName(...) or just methodName(...)
-        var pattern = Pattern.compile(
+        var methodPattern = Pattern.compile(
             "(?:\\w+\\s*\\.\\s*)?" + Pattern.quote(cleanExpected) + "\\s*\\(",
             Pattern.CASE_INSENSITIVE
         );
-        
-        return pattern.matcher(cleanActual).find();
+
+        if (methodPattern.matcher(cleanActual).find()) {
+            return true;
+        }
+
+        // Pattern 2: Match field assignment
+        // Handles: varName.fieldName = value
+        var fieldPattern = Pattern.compile(
+            "(?:\\w+\\s*\\.\\s*)?" + Pattern.quote(cleanExpected) + "\\s*=",
+            Pattern.CASE_INSENSITIVE
+        );
+
+        return fieldPattern.matcher(cleanActual).find();
     }
     
     /**
