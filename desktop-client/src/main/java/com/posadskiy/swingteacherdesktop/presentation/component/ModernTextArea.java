@@ -32,10 +32,13 @@ public class ModernTextArea extends RSyntaxTextArea {
         setSyntaxEditingStyle(SyntaxConstants.SYNTAX_STYLE_JAVA);
         setCodeFoldingEnabled(true);
         setAntiAliasingEnabled(true);
+        setTabsEmulated(true);
 
         // Enable line numbers
         setPaintMatchedBracketPair(true);
         setPaintTabLines(true);
+        setMarkOccurrences(true);
+        // Note: delay configuration depends on RSyntaxTextArea version; keep defaults for compatibility.
         
         // Apply dark theme
         applyDarkTheme();
@@ -46,9 +49,11 @@ public class ModernTextArea extends RSyntaxTextArea {
         setCaretColor(UITheme.TEXT_PRIMARY);
         setSelectionColor(new Color(99, 102, 241, 80));
         setCurrentLineHighlightColor(new Color(45, 45, 60));
-        
-        setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
-        setBorder(new EmptyBorder(8, 10, 8, 10));
+        setFadeCurrentLineHighlight(true);
+        setRoundedSelectionEdges(true);
+
+        setFont(new Font(Font.MONOSPACED, Font.PLAIN, 13));
+        setBorder(new EmptyBorder(10, 12, 10, 12));
         setTabSize(4);
     }
 

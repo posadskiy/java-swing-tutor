@@ -83,8 +83,15 @@ public class MainFrameController {
      * Compiles and runs user code for preview.
      */
     public void runUserCode(String code, String imports) {
+        runUserCode(code, imports, "Your frame", true);
+    }
+
+    /**
+     * Compiles and runs user code for preview with frame metadata.
+     */
+    public void runUserCode(String code, String imports, String frameTitle, boolean openOnLeft) {
         try {
-            var errors = DynamicCompiler.compile(code, imports);
+            var errors = DynamicCompiler.compile(code, imports, frameTitle, openOnLeft);
 
             if (errors.isEmpty()) {
                 DynamicCompiler.runCompiledCode();

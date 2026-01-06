@@ -4,6 +4,7 @@ import com.posadskiy.swingteacherdesktop.application.service.AuthenticationServi
 import com.posadskiy.swingteacherdesktop.domain.model.*;
 import com.posadskiy.swingteacherdesktop.infrastructure.i18n.I18nService;
 import com.posadskiy.swingteacherdesktop.infrastructure.state.AppState;
+import com.posadskiy.swingteacherdesktop.infrastructure.storage.AppPreferences;
 import com.posadskiy.swingteacherdesktop.presentation.component.*;
 import com.posadskiy.swingteacherdesktop.presentation.controller.MainFrameController;
 import com.posadskiy.swingteacherdesktop.presentation.controller.PopupController;
@@ -16,7 +17,13 @@ import org.springframework.stereotype.Component;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.text.DefaultEditorKit;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.*;
@@ -37,13 +44,13 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
     private final AppNavigator navigator;
     private final AuthenticationService authService;
     private final I18nService i18n;
+    private final AppPreferences appPreferences;
     
     private int taskCategory = 1;
     
     // UI Components
     private ModernComboBox<Lesson> lessonComboBox;
     private ModernComboBox<Task> taskComboBox;
-    private LanguageSelector languageSelector;
     private ModernEditorPane questionPane;
     private ModernEditorPane documentationPane;
     private CodeEditorPanel codeEditorPanel;
@@ -61,10 +68,17 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
     private SectionTitle solutionTitle;
     private JMenu settingsMenu;
     private JMenu helpMenu;
+    private JMenuItem preferencesItem;
     private JMenuItem logoutItem;
     private JMenuItem exitItem;
     private JMenuItem docsItem;
     private JMenuItem aboutItem;
+
+    // Task switching guard state
+    private boolean suppressSelectionEvents = false;
+    private int lastLessonIndex = -1;
+    private int lastTaskIndex = -1;
+    private Integer lastTaskId = null;
     
     // Data
     private User currentUser;
@@ -78,7 +92,8 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         AppState appState,
         AppNavigator navigator,
         AuthenticationService authService,
-        I18nService i18n
+        I18nService i18n,
+        AppPreferences appPreferences
     ) {
         this.controller = controller;
         this.popupController = popupController;
@@ -86,33 +101,23 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         this.navigator = navigator;
         this.authService = authService;
         this.i18n = i18n;
+        this.appPreferences = appPreferences;
         i18n.addPropertyChangeListener(this);
         appState.addPropertyChangeListener(this);
         initComponents();
     }
 
-    public void initComponents() {
-        currentUser = appState.getCurrentUser();
-
-        // Initialize language selector with user's preference
-        String initialLanguage = currentUser != null && currentUser.preferredLanguage() != null
-            ? currentUser.getPreferredLanguageOrDefault()
-            : appState.getCurrentLanguage();
-        appState.setCurrentLanguage(initialLanguage);
-        i18n.setLocale(initialLanguage);
-        
-        loadInitialData();
-        
-        configureFrame();
-        setJMenuBar(createMenuBar());
-        setContentPane(createMainContent());
-
-        // Set language selector after UI is created
-        SwingUtilities.invokeLater(() -> {
-            if (languageSelector != null) {
-                languageSelector.setSelectedLanguage(appState.getCurrentLanguage());
+    private static boolean shouldSuggestAtCaret(JTextArea textArea) {
+        try {
+            int pos = textArea.getCaretPosition();
+            if (pos <= 0) {
+                return false;
             }
-        });
+            char prev = textArea.getText(pos - 1, 1).charAt(0);
+            return Character.isLetterOrDigit(prev) || prev == '_' || prev == '.';
+        } catch (Exception ignored) {
+            return false;
+        }
     }
 
     private void configureFrame() {
@@ -150,15 +155,30 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         }
     }
 
-    private void onLanguageChanged(String languageCode) {
-        log.debug("Language changed to: {}", languageCode);
-        appState.setCurrentLanguage(languageCode);
-        i18n.setLocale(languageCode);
-        controller.setPreferredLanguage(languageCode);
+    public void initComponents() {
+        currentUser = appState.getCurrentUser();
 
-        // Reload lessons and tasks with new language
-        reloadLessonsAndTasks();
-        updateUITexts();
+        // Initialize language selector with user's preference
+        String initialLanguage = currentUser != null && currentUser.preferredLanguage() != null
+            ? currentUser.getPreferredLanguageOrDefault()
+            : appState.getCurrentLanguage();
+        appState.setCurrentLanguage(initialLanguage);
+        i18n.setLocale(initialLanguage);
+        
+        loadInitialData();
+        
+        configureFrame();
+        setJMenuBar(createMenuBar());
+        setContentPane(createMainContent());
+
+        // Set language selector after UI is created
+        SwingUtilities.invokeLater(() -> {
+            // Capture initial selection for task-switch guard after combo boxes are ready
+            lastLessonIndex = lessonComboBox != null ? lessonComboBox.getSelectedIndex() : -1;
+            lastTaskIndex = taskComboBox != null ? taskComboBox.getSelectedIndex() : -1;
+            Task selectedTask = taskComboBox != null ? (Task) taskComboBox.getSelectedItem() : null;
+            lastTaskId = selectedTask != null ? selectedTask.id() : null;
+        });
     }
 
     private void reloadLessonsAndTasks() {
@@ -198,38 +218,18 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
 
     // MARK: - Menu Bar
 
-    private JMenuBar createMenuBar() {
-        ModernMenuBar menuBar = new ModernMenuBar();
+    private void onLanguageChanged(String languageCode) {
+        log.debug("Language changed to: {}", languageCode);
+        appState.setCurrentLanguage(languageCode);
+        i18n.setLocale(languageCode);
+        controller.setPreferredLanguage(languageCode);
+        if (appPreferences != null) {
+            appPreferences.setUiLanguage(languageCode);
+        }
 
-        // Settings menu
-        settingsMenu = ModernMenuBar.createMenu(i18n.getString("menu.settings"));
-
-        logoutItem = ModernMenuBar.createMenuItem(i18n.getString("menu.logout"));
-        logoutItem.addActionListener(e -> logout());
-        settingsMenu.add(logoutItem);
-
-        settingsMenu.add(ModernMenuBar.createSeparator());
-
-        exitItem = ModernMenuBar.createMenuItem(i18n.getString("menu.exit"));
-        exitItem.addActionListener(e -> System.exit(0));
-        settingsMenu.add(exitItem);
-
-        menuBar.add(settingsMenu);
-
-        // Help menu
-        helpMenu = ModernMenuBar.createMenu(i18n.getString("menu.help"));
-
-        docsItem = ModernMenuBar.createMenuItem(i18n.getString("menu.documentation"));
-        docsItem.addActionListener(e -> showDocumentation());
-        helpMenu.add(docsItem);
-
-        aboutItem = ModernMenuBar.createMenuItem(i18n.getString("menu.about"));
-        aboutItem.addActionListener(e -> showAbout());
-        helpMenu.add(aboutItem);
-
-        menuBar.add(helpMenu);
-
-        return menuBar;
+        // Reload lessons and tasks with new language
+        reloadLessonsAndTasks();
+        updateUITexts();
     }
 
     // MARK: - Main Content
@@ -306,16 +306,46 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         updateProgress();
         toolbar.add(progressBar, gbc);
 
-        // Language selector
-        gbc.gridx = 6;
-        gbc.weightx = 0;
-        gbc.insets = new Insets(0, 16, 0, 0);
-        languageSelector = new LanguageSelector(appState.getCurrentLanguage());
-        languageSelector.setPreferredSize(new Dimension(120, 40));
-        languageSelector.setOnLanguageChanged(this::onLanguageChanged);
-        toolbar.add(languageSelector, gbc);
-
         return toolbar;
+    }
+
+    private JMenuBar createMenuBar() {
+        ModernMenuBar menuBar = new ModernMenuBar();
+
+        // Settings menu
+        settingsMenu = ModernMenuBar.createMenu(i18n.getString("menu.settings"));
+
+        preferencesItem = ModernMenuBar.createMenuItem(i18n.getString("menu.preferences"));
+        preferencesItem.addActionListener(e -> openSettings());
+        settingsMenu.add(preferencesItem);
+        settingsMenu.add(ModernMenuBar.createSeparator());
+
+        logoutItem = ModernMenuBar.createMenuItem(i18n.getString("menu.logout"));
+        logoutItem.addActionListener(e -> logout());
+        settingsMenu.add(logoutItem);
+
+        settingsMenu.add(ModernMenuBar.createSeparator());
+
+        exitItem = ModernMenuBar.createMenuItem(i18n.getString("menu.exit"));
+        exitItem.addActionListener(e -> System.exit(0));
+        settingsMenu.add(exitItem);
+
+        menuBar.add(settingsMenu);
+
+        // Help menu
+        helpMenu = ModernMenuBar.createMenu(i18n.getString("menu.help"));
+
+        docsItem = ModernMenuBar.createMenuItem(i18n.getString("menu.documentation"));
+        docsItem.addActionListener(e -> showDocumentation());
+        helpMenu.add(docsItem);
+
+        aboutItem = ModernMenuBar.createMenuItem(i18n.getString("menu.about"));
+        aboutItem.addActionListener(e -> showAbout());
+        helpMenu.add(aboutItem);
+
+        menuBar.add(helpMenu);
+
+        return menuBar;
     }
 
     private JLabel createLabel(String text) {
@@ -457,10 +487,74 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         return panel;
     }
 
+    private void openSettings() {
+        SettingsDialog dialog = new SettingsDialog(
+            this,
+            i18n,
+            appState.getCurrentLanguage(),
+            this::onLanguageChanged
+        );
+        dialog.setVisible(true);
+    }
+
     private void setupAutoCompletion() {
         var provider = controller.createCompletionProvider();
         var ac = new AutoCompletion(provider);
+        // We'll drive auto-popup ourselves for consistent behavior across AutoComplete versions.
+        ac.setAutoActivationEnabled(false);
+        ac.setShowDescWindow(true);
+        ac.setParameterAssistanceEnabled(true);
         ac.install(codeEditorPanel.getTextArea());
+
+        var textArea = codeEditorPanel.getTextArea();
+
+        // Auto-popup while typing (like AutoComplete demo), including after '.' and within identifiers.
+        javax.swing.Timer completionTimer = new javax.swing.Timer(180, e -> SwingUtilities.invokeLater(ac::doCompletion));
+        completionTimer.setRepeats(false);
+
+        DocumentListener docListener = new DocumentListener() {
+            private void schedule() {
+                if (!shouldSuggestAtCaret(textArea)) {
+                    return;
+                }
+                completionTimer.restart();
+            }
+
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                schedule();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) { /* ignore */ }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) { /* ignore */ }
+        };
+        textArea.getDocument().addDocumentListener(docListener);
+
+        // Accept completion with Tab when we are in a "completion context"; otherwise keep normal Tab behavior.
+        Action defaultTabAction = textArea.getActionMap().get(DefaultEditorKit.insertTabAction);
+        String completeOrTabActionName = "completeOrTab";
+        textArea.getActionMap().put(completeOrTabActionName, new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (shouldSuggestAtCaret(textArea)) {
+                    ac.doCompletion();
+                    return;
+                }
+                if (defaultTabAction != null) {
+                    defaultTabAction.actionPerformed(e);
+                }
+            }
+        });
+        textArea.getInputMap(JComponent.WHEN_FOCUSED).put(
+            KeyStroke.getKeyStroke(KeyEvent.VK_TAB, 0),
+            completeOrTabActionName
+        );
+
+        // Optional: keep Ctrl+Space manual trigger working (macOS users often expect this).
+        ac.setTriggerKey(KeyStroke.getKeyStroke(KeyEvent.VK_SPACE, InputEvent.CTRL_DOWN_MASK));
     }
 
     private void setupKeyboardShortcuts() {
@@ -562,6 +656,29 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
     // MARK: - Event Handlers
 
     private void onLessonChanged() {
+        if (suppressSelectionEvents) {
+            return;
+        }
+
+        int selectedLessonIndex = lessonComboBox.getSelectedIndex();
+        if (selectedLessonIndex != lastLessonIndex && shouldConfirmDraftLoss()) {
+            int result = JOptionPane.showConfirmDialog(
+                this,
+                i18n.getString("message.switchTaskConfirm"),
+                i18n.getString("message.switchTaskConfirmTitle"),
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE
+            );
+
+            if (result != JOptionPane.YES_OPTION) {
+                revertLessonSelection();
+                return;
+            }
+        }
+
+        // Always clear solution when switching tasks/lessons (confirmed above if needed)
+        clearUserSolution();
+
         int selectedIndex = lessonComboBox.getSelectedIndex();
         
         tasks = (selectedIndex >= 0 && selectedIndex < lessons.size())
@@ -576,13 +693,109 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         updateTaskCounter();
         updateProgress();
         updateNavigationButtons();
+
+        // Update guard state after lesson change updated tasks
+        lastLessonIndex = lessonComboBox.getSelectedIndex();
+        lastTaskIndex = taskComboBox.getSelectedIndex();
+        Task selectedTask = (Task) taskComboBox.getSelectedItem();
+        lastTaskId = selectedTask != null ? selectedTask.id() : null;
     }
 
     private void onTaskChanged() {
+        if (suppressSelectionEvents) {
+            return;
+        }
+
+        int selectedTaskIndex = taskComboBox.getSelectedIndex();
+        if (selectedTaskIndex != lastTaskIndex && shouldConfirmDraftLoss()) {
+            int result = JOptionPane.showConfirmDialog(
+                this,
+                i18n.getString("message.switchTaskConfirm"),
+                i18n.getString("message.switchTaskConfirmTitle"),
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE
+            );
+
+            if (result != JOptionPane.YES_OPTION) {
+                revertTaskSelection();
+                return;
+            }
+        }
+
+        // Always clear solution when switching tasks (confirmed above if needed)
+        if (selectedTaskIndex != lastTaskIndex) {
+            clearUserSolution();
+        }
+
         updateQuestion();
         updateDocumentation();
         updateTaskCounter();
         updateNavigationButtons();
+
+        // Update guard state
+        lastTaskIndex = taskComboBox.getSelectedIndex();
+        Task selectedTask = (Task) taskComboBox.getSelectedItem();
+        lastTaskId = selectedTask != null ? selectedTask.id() : null;
+    }
+
+    private boolean shouldConfirmDraftLoss() {
+        if (!hasUserDraft()) {
+            return false;
+        }
+        if (lastTaskId == null) {
+            return false;
+        }
+        // Only warn if current (previously selected) task isn't completed yet
+        return !completedTaskIds.contains(lastTaskId);
+    }
+
+    private boolean hasUserDraft() {
+        if (codeEditorPanel == null) {
+            return false;
+        }
+        String text = codeEditorPanel.getText();
+        return text != null && !text.trim().isEmpty();
+    }
+
+    private void clearUserSolution() {
+        if (codeEditorPanel == null) {
+            return;
+        }
+        codeEditorPanel.setText("");
+        try {
+            // RSyntaxTextArea supports undo manager; discard edits to avoid Ctrl+Z restoring old task solution
+            codeEditorPanel.getTextArea().discardAllEdits();
+        } catch (Exception ignored) {
+            // ignore
+        }
+    }
+
+    private void revertTaskSelection() {
+        if (taskComboBox == null) {
+            return;
+        }
+        suppressSelectionEvents = true;
+        try {
+            if (lastTaskIndex >= 0 && lastTaskIndex < taskComboBox.getItemCount()) {
+                taskComboBox.setSelectedIndex(lastTaskIndex);
+            }
+        } finally {
+            suppressSelectionEvents = false;
+        }
+    }
+
+    private void revertLessonSelection() {
+        if (lessonComboBox == null) {
+            return;
+        }
+        suppressSelectionEvents = true;
+        try {
+            if (lastLessonIndex >= 0 && lastLessonIndex < lessonComboBox.getItemCount()) {
+                lessonComboBox.setSelectedIndex(lastLessonIndex);
+            }
+        } finally {
+            suppressSelectionEvents = false;
+        }
     }
 
     private void updateQuestion() {
@@ -643,7 +856,9 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
             @Override
             protected Void doInBackground() {
                 String imports = Optional.ofNullable(task).map(Task::imports).orElse("");
-                controller.runUserCode(codeEditorPanel.getText(), imports);
+                String frameTitle = buildRunFrameTitle(task);
+                boolean openOnLeft = shouldOpenRunFrameOnLeft();
+                controller.runUserCode(codeEditorPanel.getText(), imports, frameTitle, openOnLeft);
                 return null;
             }
 
@@ -652,6 +867,30 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
                 viewButton.setLoading(false);
             }
         }.execute();
+    }
+
+    private String buildRunFrameTitle(Task task) {
+        String lessonName = Optional.ofNullable((Lesson) lessonComboBox.getSelectedItem())
+            .map(Object::toString)
+            .orElse(i18n.getString("main.lessonLabel"));
+        String taskName = Optional.ofNullable(task).map(Object::toString).orElse(i18n.getString("main.taskTitle"));
+        return lessonName + " — " + taskName;
+    }
+
+    private boolean shouldOpenRunFrameOnLeft() {
+        try {
+            GraphicsConfiguration gc = getGraphicsConfiguration();
+            Rectangle bounds = gc != null ? gc.getBounds() : GraphicsEnvironment.getLocalGraphicsEnvironment()
+                .getDefaultScreenDevice()
+                .getDefaultConfiguration()
+                .getBounds();
+
+            Point p = getLocationOnScreen();
+            int centerX = p.x + (getWidth() / 2);
+            return centerX < (bounds.x + (bounds.width / 2));
+        } catch (Exception ignored) {
+            return true;
+        }
     }
 
     private void onCheckClick() {
@@ -789,9 +1028,6 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         if (user != null && user.preferredLanguage() != null) {
             String lang = user.getPreferredLanguageOrDefault();
             appState.setCurrentLanguage(lang);
-            if (languageSelector != null) {
-                languageSelector.setSelectedLanguage(lang);
-            }
         }
     }
 
@@ -811,6 +1047,7 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
             if (taskTitle != null) taskTitle.setText(i18n.getString("main.taskTitle"));
             if (solutionTitle != null) solutionTitle.setText(i18n.getString("main.solutionTitle"));
             if (settingsMenu != null) settingsMenu.setText(i18n.getString("menu.settings"));
+            if (preferencesItem != null) preferencesItem.setText(i18n.getString("menu.preferences"));
             if (helpMenu != null) helpMenu.setText(i18n.getString("menu.help"));
             if (logoutItem != null) logoutItem.setText(i18n.getString("menu.logout"));
             if (exitItem != null) exitItem.setText(i18n.getString("menu.exit"));

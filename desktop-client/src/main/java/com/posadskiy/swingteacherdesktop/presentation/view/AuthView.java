@@ -1,10 +1,13 @@
 package com.posadskiy.swingteacherdesktop.presentation.view;
 
 import com.posadskiy.swingteacherdesktop.infrastructure.i18n.I18nService;
+import com.posadskiy.swingteacherdesktop.infrastructure.state.AppState;
+import com.posadskiy.swingteacherdesktop.infrastructure.storage.AppPreferences;
 import com.posadskiy.swingteacherdesktop.presentation.component.*;
 import com.posadskiy.swingteacherdesktop.presentation.controller.AuthController;
 import com.posadskiy.swingteacherdesktop.presentation.navigation.AppNavigator;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import javax.swing.*;
@@ -21,6 +24,7 @@ import java.beans.PropertyChangeListener;
  * Composes reusable UI components into a cohesive login form.
  */
 @Slf4j
+@Lazy
 @Component
 public class AuthView extends JFrame implements PropertyChangeListener {
 
@@ -32,6 +36,8 @@ public class AuthView extends JFrame implements PropertyChangeListener {
     private final AuthController controller;
     private final AppNavigator navigator;
     private final I18nService i18n;
+    private final AppState appState;
+    private final AppPreferences appPreferences;
 
     private ModernTextField loginField;
     private ModernPasswordField passField;
@@ -43,21 +49,35 @@ public class AuthView extends JFrame implements PropertyChangeListener {
     private JLabel passLabel;
     private ModernButton registerButton;
     private LinkButton forgotPasswordButton;
+    private JLabel languageLabel;
+    private LanguageSelector languageSelector;
 
-    public AuthView(AuthController controller, AppNavigator navigator, I18nService i18n) {
+    public AuthView(
+        AuthController controller,
+        AppNavigator navigator,
+        I18nService i18n,
+        AppState appState,
+        AppPreferences appPreferences
+    ) {
         this.controller = controller;
         this.navigator = navigator;
         this.i18n = i18n;
+        this.appState = appState;
+        this.appPreferences = appPreferences;
         i18n.addPropertyChangeListener(this);
         initializeUI();
     }
 
     private void initializeUI() {
+        // Apply persisted pre-login language before rendering UI
+        String lang = appPreferences.getUiLanguage();
+        appState.setCurrentLanguage(lang);
+        i18n.setLocale(lang);
+
         configureFrame();
         setContentPane(new GradientPanel());
         getContentPane().add(createLoginCard());
         setupKeyBindings();
-        setVisible(true);
     }
 
     private void configureFrame() {
@@ -127,8 +147,27 @@ public class AuthView extends JFrame implements PropertyChangeListener {
         passField = new ModernPasswordField(i18n.getString("auth.passwordPlaceholder"));
         passField.setBounds(PADDING, y, CONTENT_WIDTH, 48);
         card.add(passField);
-        
-        return y + 58;
+
+        y += 64;
+
+        // Language selector
+        languageLabel = createLabel(i18n.getString("auth.languageLabel"), Font.PLAIN, 13, UITheme.TEXT_SECONDARY, SwingConstants.LEFT);
+        languageLabel.setBounds(PADDING, y, CONTENT_WIDTH, 20);
+        card.add(languageLabel);
+        y += 26;
+
+        languageSelector = new LanguageSelector(appState.getCurrentLanguage());
+        languageSelector.setBounds(PADDING, y, CONTENT_WIDTH, 44);
+        languageSelector.setOnLanguageChanged(this::onLanguageChanged);
+        card.add(languageSelector);
+
+        return y + 40;
+    }
+
+    private void onLanguageChanged(String languageCode) {
+        appState.setCurrentLanguage(languageCode);
+        appPreferences.setUiLanguage(languageCode);
+        i18n.setLocale(languageCode);
     }
 
     private int addErrorLabel(JPanel card, int y) {
@@ -254,6 +293,7 @@ public class AuthView extends JFrame implements PropertyChangeListener {
             if (subHeaderLabel != null) subHeaderLabel.setText(i18n.getString("auth.subtitle"));
             if (emailLabel != null) emailLabel.setText(i18n.getString("auth.emailLabel"));
             if (passLabel != null) passLabel.setText(i18n.getString("auth.passwordLabel"));
+            if (languageLabel != null) languageLabel.setText(i18n.getString("auth.languageLabel"));
             if (loginButton != null) {
                 boolean wasLoading = !loginButton.isEnabled();
                 loginButton.setText(wasLoading ? i18n.getString("auth.signingInButton") : i18n.getString("auth.signInButton"));

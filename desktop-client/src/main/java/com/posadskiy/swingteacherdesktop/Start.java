@@ -1,5 +1,6 @@
 package com.posadskiy.swingteacherdesktop;
 
+import com.posadskiy.swingteacherdesktop.application.service.SessionRestoreService;
 import com.posadskiy.swingteacherdesktop.infrastructure.config.AppConfig;
 import com.posadskiy.swingteacherdesktop.presentation.navigation.AppNavigator;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -19,7 +20,15 @@ public class Start {
             var ctx = new AnnotationConfigApplicationContext(AppConfig.class);
             ctx.registerShutdownHook();
 
-            ctx.getBean(AppNavigator.class).showAuth();
+            var navigator = ctx.getBean(AppNavigator.class);
+            boolean restored = ctx.getBean(SessionRestoreService.class).tryRestoreSession();
+            if (restored) {
+                // Ensure auth window is not left open behind the main frame
+                navigator.hideAuth();
+                navigator.showMainFrame();
+            } else {
+                navigator.showAuth();
+            }
         });
     }
 
