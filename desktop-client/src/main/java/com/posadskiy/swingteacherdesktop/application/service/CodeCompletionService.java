@@ -12,7 +12,10 @@ import org.fife.ui.autocomplete.ShorthandCompletion;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * Application service for code completion functionality.
@@ -20,6 +23,17 @@ import java.util.List;
 @Slf4j
 @Service
 public class CodeCompletionService {
+
+    private static final String[] JAVA_KEYWORDS_FALLBACK = {
+        "abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class",
+        "const", "continue", "default", "do", "double", "else", "enum", "extends", "final",
+        "finally", "float", "for", "goto", "if", "implements", "import", "instanceof", "int",
+        "interface", "long", "native", "new", "package", "private", "protected", "public",
+        "return", "short", "static", "strictfp", "super", "switch", "synchronized", "this",
+        "throw", "throws", "transient", "try", "void", "volatile", "while",
+        // common literals
+        "true", "false", "null"
+    };
     
     private final KeywordRepository keywordRepository;
     private final ShorthandRepository shorthandRepository;
@@ -57,14 +71,32 @@ public class CodeCompletionService {
         var provider = new DefaultCompletionProvider();
 
         // Add keyword completions
+        Set<String> uniqueKeywords = new LinkedHashSet<>();
         getKeywords().stream()
             .map(Keyword::keywordText)
+            .filter(Objects::nonNull)
+            .map(String::trim)
+            .filter(s -> !s.isEmpty())
+            .forEach(uniqueKeywords::add);
+        uniqueKeywords.stream()
             .map(text -> new BasicCompletion(provider, text))
             .forEach(provider::addCompletion);
 
+        // If backend-provided keywords are empty, provide a safe built-in fallback
+        if (uniqueKeywords.isEmpty()) {
+            for (String kw : JAVA_KEYWORDS_FALLBACK) {
+                provider.addCompletion(new BasicCompletion(provider, kw));
+            }
+        }
+
         // Add shorthand completions
+        Set<String> seenShorthandTriggers = new LinkedHashSet<>();
         getShorthands().stream()
-            .map(s -> new ShorthandCompletion(provider, s.shortText(), s.fullText(), s.fullText()))
+            .filter(Objects::nonNull)
+            .filter(s -> s.shortText() != null && !s.shortText().trim().isEmpty())
+            .filter(s -> s.fullText() != null && !s.fullText().trim().isEmpty())
+            .filter(s -> seenShorthandTriggers.add(s.shortText().trim()))
+            .map(s -> new ShorthandCompletion(provider, s.shortText().trim(), s.fullText(), s.fullText()))
             .forEach(provider::addCompletion);
 
         return provider;
