@@ -35,8 +35,9 @@ public class AppConfig {
 
     @Bean
     public RestClient restClient(
-        Environment env, 
-        BearerTokenInterceptor bearerTokenInterceptor, 
+        Environment env,
+        TokenRefreshInterceptor tokenRefreshInterceptor,
+        BearerTokenInterceptor bearerTokenInterceptor,
         ObjectMapper objectMapper
     ) {
         String baseUrl = env.getProperty("SWINGTEACHER_SERVICE_URL", "http://localhost:8080");
@@ -50,7 +51,10 @@ public class AppConfig {
                 converters.removeIf(c -> c instanceof MappingJackson2HttpMessageConverter);
                 converters.add(converter);
             })
-            .requestInterceptors(interceptors -> interceptors.add(bearerTokenInterceptor))
+            .requestInterceptors(interceptors -> {
+                interceptors.add(tokenRefreshInterceptor);
+                interceptors.add(bearerTokenInterceptor);
+            })
             .build();
     }
 

@@ -1,6 +1,7 @@
 package com.posadskiy.swingteacherdesktop.infrastructure.storage;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
@@ -14,9 +15,21 @@ import java.util.concurrent.atomic.AtomicReference;
 public class TokenStorage {
     
     private final AtomicReference<TokenData> tokens = new AtomicReference<>();
+    private final PreferencesTokenStore tokenStore;
+
+    @Autowired
+    public TokenStorage(PreferencesTokenStore tokenStore) {
+        this.tokenStore = tokenStore;
+        var persisted = tokenStore.load();
+        if (persisted != null) {
+            tokens.set(new TokenData(persisted.accessToken(), persisted.refreshToken(), persisted.expiresAt()));
+            log.debug("Tokens loaded from preferences");
+        }
+    }
     
     public void saveTokens(String accessToken, String refreshToken, Instant expiresAt) {
         tokens.set(new TokenData(accessToken, refreshToken, expiresAt));
+        tokenStore.save(accessToken, refreshToken, expiresAt);
         log.debug("Tokens saved, expires at: {}", expiresAt);
     }
     
@@ -48,6 +61,7 @@ public class TokenStorage {
     
     public void clear() {
         tokens.set(null);
+        tokenStore.clear();
         log.debug("Tokens cleared");
     }
     
