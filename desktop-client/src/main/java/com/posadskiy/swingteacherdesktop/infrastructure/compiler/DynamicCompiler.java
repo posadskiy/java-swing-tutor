@@ -7,6 +7,7 @@ import javax.tools.Diagnostic;
 import javax.tools.DiagnosticCollector;
 import javax.tools.JavaFileObject;
 import javax.tools.ToolProvider;
+import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -32,11 +33,19 @@ public final class DynamicCompiler {
      * Compiles user code and returns compilation errors (empty string if success).
      */
     public static String compile(String operators, String imports) throws IOException {
+        return compile(operators, imports, "Your frame", defaultOpenOnLeft());
+    }
+
+    /**
+     * Compiles user code and returns compilation errors (empty string if success).
+     * Allows customizing the frame title and placement side.
+     */
+    public static String compile(String operators, String imports, String frameTitle, boolean openOnLeft) throws IOException {
         // Clean up old files
         cleanupFiles(JAVA_FILE, CLASS_FILE);
         
         // Generate source code
-        var sourceCode = generateSourceCode(operators, imports);
+        var sourceCode = generateSourceCode(operators, imports, frameTitle, openOnLeft);
         Files.writeString(Path.of(JAVA_FILE), sourceCode);
         
         // Compile
@@ -63,9 +72,10 @@ public final class DynamicCompiler {
             log.warn("Loaded class does not implement CreateFrame");
         }
     }
-    
-    private static String generateSourceCode(String operators, String imports) {
+
+    private static String generateSourceCode(String operators, String imports, String frameTitle, boolean openOnLeft) {
         var importsSection = Optional.ofNullable(imports).orElse("");
+        var safeTitle = escapeJavaString(Optional.ofNullable(frameTitle).orElse("Your frame"));
         
         return """
             package com.posadskiy.swingteacherdesktop.presentation.component;
@@ -79,16 +89,85 @@ public final class DynamicCompiler {
                 
                 @Override
                 public void createFrame() {
-                    setTitle("Your frame");
+                    String headerText = "%s";
+            
+                    JPanel content = new JPanel(new BorderLayout());
+                    content.setBackground(new Color(15, 23, 42));
+                    content.setBorder(BorderFactory.createEmptyBorder(12, 12, 12, 12));
+            
+                    JLabel header = new JLabel(headerText, SwingConstants.CENTER);
+                    header.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 16));
+                    header.setForeground(new Color(248, 250, 252));
+                    header.setBorder(BorderFactory.createEmptyBorder(10, 12, 10, 12));
+                    content.add(header, BorderLayout.NORTH);
+            
+                    JPanel footer = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+                    footer.setOpaque(false);
+                    JButton closeBtn = new JButton("Close");
+                    closeBtn.addActionListener(e -> setVisible(false));
+                    footer.add(closeBtn);
+                    content.add(footer, BorderLayout.SOUTH);
+            
+                    setContentPane(content);
+            
+                    // User content goes into CENTER by default (BorderLayout.CENTER)
                     %s
+            
+                    setTitle(headerText);
                     setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-                    setPreferredSize(new Dimension(700, 400));
-                    pack();
-                    setLocationRelativeTo(null);
+                    applyHalfScreenBounds(%s);
                     setVisible(true);
                 }
+            
+                private void applyHalfScreenBounds(boolean openOnLeft) {
+                    GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+                    try {
+                        PointerInfo pi = MouseInfo.getPointerInfo();
+                        if (pi != null && pi.getDevice() != null) {
+                            device = pi.getDevice();
+                        }
+                    } catch (Exception ignored) {}
+            
+                    GraphicsConfiguration gc = device.getDefaultConfiguration();
+                    Rectangle bounds = gc.getBounds();
+                    Insets insets = Toolkit.getDefaultToolkit().getScreenInsets(gc);
+            
+                    int usableX = bounds.x + insets.left;
+                    int usableY = bounds.y + insets.top;
+                    int usableW = bounds.width - insets.left - insets.right;
+                    int usableH = bounds.height - insets.top - insets.bottom;
+            
+                    int halfW = usableW / 2;
+                    int x = openOnLeft ? usableX : (usableX + halfW);
+                    int w = openOnLeft ? halfW : (usableW - halfW);
+            
+                    setBounds(x, usableY, w, usableH);
+                }
             }
-            """.formatted(importsSection, operators);
+            """.formatted(importsSection, safeTitle, operators, openOnLeft);
+    }
+
+    private static boolean defaultOpenOnLeft() {
+        try {
+            PointerInfo pi = MouseInfo.getPointerInfo();
+            if (pi == null || pi.getDevice() == null) {
+                return true;
+            }
+            GraphicsConfiguration gc = pi.getDevice().getDefaultConfiguration();
+            Rectangle bounds = gc.getBounds();
+            Point p = pi.getLocation();
+            return p.x < (bounds.x + (bounds.width / 2));
+        } catch (Exception ignored) {
+            return true;
+        }
+    }
+
+    private static String escapeJavaString(String s) {
+        return s
+            .replace("\\", "\\\\")
+            .replace("\"", "\\\"")
+            .replace("\r", "\\r")
+            .replace("\n", "\\n");
     }
     
     private static void cleanupFiles(String... fileNames) {
