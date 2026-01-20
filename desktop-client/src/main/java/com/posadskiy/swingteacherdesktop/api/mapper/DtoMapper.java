@@ -90,7 +90,7 @@ public final class DtoMapper {
     
     public static Error toError(ErrorDto dto) {
         return Optional.ofNullable(dto)
-            .map(d -> Error.of(toInt(d.id()), d.errorText()))
+            .map(d -> Error.of(toInt(d.id()), d.errorCode()))
             .orElse(null);
     }
     

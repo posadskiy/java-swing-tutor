@@ -7,13 +7,13 @@ import java.io.Serializable;
  */
 public record Error(
     Integer id,
-    String errorText
+    String errorCode
 ) implements Serializable {
     
     private static final long serialVersionUID = -5527566248002796042L;
-    
-    public static Error of(Integer id, String errorText) {
-        return new Error(id, errorText);
+
+    public static Error of(Integer id, String errorCode) {
+        return new Error(id, errorCode);
     }
 }
 

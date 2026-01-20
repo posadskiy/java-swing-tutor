@@ -47,10 +47,10 @@ public class TokenRefreshInterceptor implements ClientHttpRequestInterceptor {
         if (tokenStorage.isExpired() && tokenStorage.getRefreshToken() != null) {
             synchronized (REFRESH_LOCK) {
                 if (tokenStorage.isExpired() && tokenStorage.getRefreshToken() != null) {
-                    try {
-                        authService.refreshToken();
-                    } catch (RuntimeException ex) {
-                        // If refresh fails, let the request proceed (it will likely 401); token storage is cleared on 401 in refresh flow.
+                    boolean refreshed = authService.refreshToken();
+                    if (!refreshed) {
+                        // If refresh fails, let the request proceed (it will likely 401)
+                        // Token storage is cleared on 401 in refresh flow, or on connection errors
                     }
                 }
             }

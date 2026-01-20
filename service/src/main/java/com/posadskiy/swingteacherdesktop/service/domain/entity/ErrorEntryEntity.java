@@ -15,7 +15,7 @@ public class ErrorEntryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "error_text")
-    private String errorText;
+    @Column(name = "error_code", nullable = false)
+    private String errorCode;
 }
 

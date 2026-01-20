@@ -86,11 +86,10 @@ INSERT INTO documentation (id)
 VALUES (0);
 
 -- Error
-INSERT INTO error (id, error_text)
-VALUES
-    (1, 'Неверное решение: не хватает нужной команды или она написана иначе.'),
-    (2, 'Неверное решение: не все требуемые команды найдены.'),
-    (3, 'Неверное решение: не найдено создание нужного компонента (конструктор).');
+INSERT INTO error (id, error_code)
+VALUES (1, 'error.missing.command'),
+       (2, 'error.missing.all.commands'),
+       (3, 'error.missing.constructor');
 
 -- Keyword
 INSERT INTO keyword (id, keyword_text)

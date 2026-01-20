@@ -98,15 +98,29 @@ public class AuthenticationService {
                 
         } catch (HttpClientErrorException ex) {
             if (ex.getStatusCode() == HttpStatus.UNAUTHORIZED) {
-                log.warn("Token refresh failed - unauthorized");
+                log.warn("Token refresh failed - unauthorized (refresh token invalid or expired)");
                 tokenStorage.clear();
                 return false;
             }
-            log.error("Token refresh failed with status: {}", ex.getStatusCode(), ex);
-            throw new AuthenticationException("Token refresh failed", ex);
+            log.warn("Token refresh failed with status: {}", ex.getStatusCode());
+            // Don't clear tokens for other HTTP errors - might be temporary
+            return false;
         } catch (RestClientException ex) {
-            log.error("Token refresh failed due to client error", ex);
-            throw new AuthenticationException("Token refresh failed", ex);
+            // Provide better error message for connection issues
+            String errorMessage = ex.getMessage();
+            if (errorMessage == null || errorMessage.isEmpty()) {
+                Throwable cause = ex.getCause();
+                if (cause != null) {
+                    errorMessage = cause.getClass().getSimpleName() + ": " +
+                        (cause.getMessage() != null ? cause.getMessage() : "Connection failed");
+                } else {
+                    errorMessage = "Connection failed - service may be unavailable";
+                }
+            }
+            log.debug("Token refresh failed due to connection error: {} - service may be unavailable", errorMessage);
+            // Don't throw exception - let the request proceed without refresh
+            // The request will likely fail with connection error, which is expected if service is down
+            return false;
         }
     }
     

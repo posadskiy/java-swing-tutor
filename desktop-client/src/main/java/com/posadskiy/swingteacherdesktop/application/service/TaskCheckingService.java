@@ -2,8 +2,8 @@ package com.posadskiy.swingteacherdesktop.application.service;
 
 import com.posadskiy.swingteacherdesktop.api.client.CodeCheckingApiClient;
 import com.posadskiy.swingteacherdesktop.domain.dto.CheckerResultDto;
-import com.posadskiy.swingteacherdesktop.domain.model.Error;
 import com.posadskiy.swingteacherdesktop.domain.repository.ErrorRepository;
+import com.posadskiy.swingteacherdesktop.infrastructure.i18n.I18nService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -21,10 +21,16 @@ public class TaskCheckingService {
 
     private final CodeCheckingApiClient codeCheckingApiClient;
     private final ErrorRepository errorRepository;
+    private final I18nService i18nService;
 
-    public TaskCheckingService(CodeCheckingApiClient codeCheckingApiClient, ErrorRepository errorRepository) {
+    public TaskCheckingService(
+        CodeCheckingApiClient codeCheckingApiClient,
+        ErrorRepository errorRepository,
+        I18nService i18nService
+    ) {
         this.codeCheckingApiClient = codeCheckingApiClient;
         this.errorRepository = errorRepository;
+        this.i18nService = i18nService;
     }
     
     /**
@@ -73,17 +79,24 @@ public class TaskCheckingService {
 
     private String formatErrorMessage(CheckerResultDto result) {
         var errorText = getErrorText(result.errorCode());
-        return "Error in component %s. %s".formatted(result.className(), errorText);
+        return i18nService.getString("error.message.format", result.className(), errorText);
     }
     
     private String getErrorText(int errorCode) {
         try {
             return errorRepository.getError(errorCode)
-                .map(Error::errorText)
-                .orElse("Unknown error");
+                .map(error -> {
+                    String i18nKey = error.errorCode();
+                    String translated = i18nService.getString(i18nKey);
+                    // If translation not found, return the key or fallback
+                    return translated != null && !translated.equals(i18nKey)
+                        ? translated
+                        : i18nService.getString("error.unknown");
+                })
+                .orElse(i18nService.getString("error.unknown"));
         } catch (SQLException ex) {
             log.error("Failed to get error text for code: {}", errorCode, ex);
-            return "Unknown error";
+            return i18nService.getString("error.unknown");
         }
     }
 }

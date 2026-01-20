@@ -9,6 +9,8 @@ import com.posadskiy.swingteacherdesktop.presentation.component.*;
 import com.posadskiy.swingteacherdesktop.presentation.controller.MainFrameController;
 import com.posadskiy.swingteacherdesktop.presentation.controller.PopupController;
 import com.posadskiy.swingteacherdesktop.presentation.model.ComboBoxModel;
+import com.posadskiy.swingteacherdesktop.presentation.model.LessonListCellRenderer;
+import com.posadskiy.swingteacherdesktop.presentation.model.TaskListCellRenderer;
 import com.posadskiy.swingteacherdesktop.presentation.navigation.AppNavigator;
 import lombok.extern.slf4j.Slf4j;
 import org.fife.ui.autocomplete.AutoCompletion;
@@ -76,6 +78,8 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
 
     // Task switching guard state
     private boolean suppressSelectionEvents = false;
+    private boolean skipConfirmationForNavigation = false;
+    private Integer pendingTaskIdAfterLessonChange = null;
     private int lastLessonIndex = -1;
     private int lastTaskIndex = -1;
     private Integer lastTaskId = null;
@@ -201,10 +205,15 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
                 tasks = Optional.ofNullable(lessons.get(selectedIndex).tasks()).orElse(List.of());
                 taskComboBox.removeAllItems();
                 tasks.forEach(taskComboBox::addItem);
+                // Update renderers with latest completed task IDs
+                taskComboBox.setRenderer(new TaskListCellRenderer(completedTaskIds));
             } else {
                 tasks = List.of();
                 taskComboBox.removeAllItems();
             }
+
+            // Update lesson renderer with latest completed task IDs
+            lessonComboBox.setRenderer(new LessonListCellRenderer(completedTaskIds));
 
             updateQuestion();
             updateDocumentation();
@@ -267,6 +276,7 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         gbc.weightx = 0.4;
         lessonComboBox = new ModernComboBox<>(new ComboBoxModel<>(new ArrayList<>(lessons)));
         lessonComboBox.setPreferredSize(new Dimension(0, 40));
+        lessonComboBox.setRenderer(new LessonListCellRenderer(completedTaskIds));
         lessonComboBox.addActionListener(e -> onLessonChanged());
         toolbar.add(lessonComboBox, gbc);
 
@@ -611,22 +621,139 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
 
     private void onPreviousTask() {
         int currentIndex = taskComboBox.getSelectedIndex();
+        int currentLessonIndex = lessonComboBox.getSelectedIndex();
+
+        // If not at first task in current lesson, find previous non-completed task
         if (currentIndex > 0) {
-            taskComboBox.setSelectedIndex(currentIndex - 1);
+            // Find the previous non-completed task in current lesson
+            for (int i = currentIndex - 1; i >= 0; i--) {
+                Task task = tasks.get(i);
+                if (task.id() == null || !completedTaskIds.contains(task.id())) {
+                    taskComboBox.setSelectedIndex(i);
+                    return;
+                }
+            }
+            // All previous tasks are completed, so we can't go back within this lesson
+            // Fall through to check if we can go to previous lesson
+        }
+
+        // If at first task, try to go to previous lesson
+        if (currentLessonIndex > 0) {
+            Lesson previousLesson = lessons.get(currentLessonIndex - 1);
+            Task targetTask = findLastNonCompletedTask(previousLesson);
+
+            // If no non-completed task found, use the last task in the lesson
+            if (targetTask == null && previousLesson.tasks() != null && !previousLesson.tasks().isEmpty()) {
+                targetTask = previousLesson.tasks().get(previousLesson.tasks().size() - 1);
+            }
+
+            final Integer targetTaskId = targetTask != null ? targetTask.id() : null;
+
+            // Set flag to skip confirmation and store target task ID
+            skipConfirmationForNavigation = true;
+            pendingTaskIdAfterLessonChange = targetTaskId;
+
+            // Switch to previous lesson - this will trigger onLessonChanged which will update UI and select the task
+            lessonComboBox.setSelectedIndex(currentLessonIndex - 1);
         }
     }
 
     private void onNextTask() {
         int currentIndex = taskComboBox.getSelectedIndex();
-        if (currentIndex < taskComboBox.getItemCount() - 1) {
-            taskComboBox.setSelectedIndex(currentIndex + 1);
+        int currentLessonIndex = lessonComboBox.getSelectedIndex();
+        int taskCount = taskComboBox.getItemCount();
+
+        // If not at last task in current lesson, find next non-completed task
+        if (currentIndex < taskCount - 1) {
+            // Find the next non-completed task in current lesson
+            for (int i = currentIndex + 1; i < taskCount; i++) {
+                Task task = tasks.get(i);
+                if (task.id() == null || !completedTaskIds.contains(task.id())) {
+                    taskComboBox.setSelectedIndex(i);
+                    return;
+                }
+            }
+            // All next tasks are completed, so we can't go forward within this lesson
+            // Fall through to check if we can go to next lesson
+        }
+
+        // If at last task, try to go to next lesson
+        if (currentLessonIndex < lessons.size() - 1) {
+            Lesson nextLesson = lessons.get(currentLessonIndex + 1);
+            Task targetTask = findFirstNonCompletedTask(nextLesson);
+
+            // If no non-completed task found, use the first task in the lesson
+            if (targetTask == null && nextLesson.tasks() != null && !nextLesson.tasks().isEmpty()) {
+                targetTask = nextLesson.tasks().get(0);
+            }
+
+            final Integer targetTaskId = targetTask != null ? targetTask.id() : null;
+
+            // Set flag to skip confirmation and store target task ID
+            skipConfirmationForNavigation = true;
+            pendingTaskIdAfterLessonChange = targetTaskId;
+
+            // Switch to next lesson - this will trigger onLessonChanged which will update UI and select the task
+            lessonComboBox.setSelectedIndex(currentLessonIndex + 1);
         }
     }
 
+    /**
+     * Finds the first non-completed task in a lesson.
+     */
+    private Task findFirstNonCompletedTask(Lesson lesson) {
+        if (lesson == null || lesson.tasks() == null) {
+            return null;
+        }
+        return lesson.tasks().stream()
+            .filter(task -> task.id() != null && !completedTaskIds.contains(task.id()))
+            .findFirst()
+            .orElse(null);
+    }
+
+    /**
+     * Finds the last non-completed task in a lesson.
+     */
+    private Task findLastNonCompletedTask(Lesson lesson) {
+        if (lesson == null || lesson.tasks() == null) {
+            return null;
+        }
+        List<Task> nonCompletedTasks = lesson.tasks().stream()
+            .filter(task -> task.id() != null && !completedTaskIds.contains(task.id()))
+            .toList();
+        return nonCompletedTasks.isEmpty() ? null : nonCompletedTasks.get(nonCompletedTasks.size() - 1);
+    }
+
+    /**
+     * Finds the index of a task in the current lesson's task list.
+     */
+    private int findTaskIndexInCurrentLesson(Integer taskId) {
+        if (taskId == null || tasks == null) {
+            return -1;
+        }
+        for (int i = 0; i < tasks.size(); i++) {
+            if (taskId.equals(tasks.get(i).id())) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * Checks if all tasks in a lesson are completed.
+     */
+    private boolean isLessonCompleted(Lesson lesson) {
+        if (lesson == null || lesson.tasks() == null || lesson.tasks().isEmpty()) {
+            return false;
+        }
+        return lesson.tasks().stream()
+            .allMatch(task -> task.id() != null && completedTaskIds.contains(task.id()));
+    }
+
     private void updateNavigationButtons() {
-        int currentIndex = taskComboBox.getSelectedIndex();
-        prevTaskButton.setEnabled(currentIndex > 0);
-        nextTaskButton.setEnabled(currentIndex < taskComboBox.getItemCount() - 1);
+        // Buttons should never be disabled - always allow navigation
+        prevTaskButton.setEnabled(true);
+        nextTaskButton.setEnabled(true);
     }
 
     private void updateTaskCounter() {
@@ -661,7 +788,7 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         }
 
         int selectedLessonIndex = lessonComboBox.getSelectedIndex();
-        if (selectedLessonIndex != lastLessonIndex && shouldConfirmDraftLoss()) {
+        if (selectedLessonIndex != lastLessonIndex && shouldConfirmDraftLoss() && !skipConfirmationForNavigation) {
             int result = JOptionPane.showConfirmDialog(
                 this,
                 i18n.getString("message.switchTaskConfirm"),
@@ -687,6 +814,10 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
 
         taskComboBox.removeAllItems();
         tasks.forEach(taskComboBox::addItem);
+
+        // Update renderers with latest completed task IDs
+        taskComboBox.setRenderer(new TaskListCellRenderer(completedTaskIds));
+        lessonComboBox.setRenderer(new LessonListCellRenderer(completedTaskIds));
         
         updateQuestion();
         updateDocumentation();
@@ -699,6 +830,32 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
         lastTaskIndex = taskComboBox.getSelectedIndex();
         Task selectedTask = (Task) taskComboBox.getSelectedItem();
         lastTaskId = selectedTask != null ? selectedTask.id() : null;
+
+        // If there's a pending task to select after lesson change (from navigation), select it now
+        if (pendingTaskIdAfterLessonChange != null) {
+            Integer taskIdToSelect = pendingTaskIdAfterLessonChange;
+            pendingTaskIdAfterLessonChange = null;
+            boolean wasNavigation = skipConfirmationForNavigation;
+            skipConfirmationForNavigation = false; // Reset flag
+
+            SwingUtilities.invokeLater(() -> {
+                if (taskIdToSelect != null) {
+                    int taskIndex = findTaskIndexInCurrentLesson(taskIdToSelect);
+                    if (taskIndex >= 0) {
+                        taskComboBox.setSelectedIndex(taskIndex);
+                        return;
+                    }
+                }
+
+                // Fallback: select first task for next navigation, last task for previous navigation
+                int taskCount = taskComboBox.getItemCount();
+                if (taskCount > 0 && wasNavigation) {
+                    // We can't distinguish between next/previous here, so use first as default
+                    // The actual target task should have been found above
+                    taskComboBox.setSelectedIndex(0);
+                }
+            });
+        }
     }
 
     private void onTaskChanged() {
@@ -945,16 +1102,25 @@ public class MainFrameView extends JFrame implements PropertyChangeListener {
                         // Success!
                         controller.markTaskCompleted(currentUser.id(), task.id());
                         completedTaskIds.add(task.id());
+
+                        // Check if lesson is now completed
+                        int currentLessonIndex = lessonComboBox.getSelectedIndex();
+                        if (currentLessonIndex >= 0 && currentLessonIndex < lessons.size()) {
+                            Lesson currentLesson = lessons.get(currentLessonIndex);
+                            if (isLessonCompleted(currentLesson)) {
+                                // Lesson is now completed - update the renderer to show checkmark
+                                lessonComboBox.repaint();
+                            }
+                        }
                         taskComboBox.repaint();
 
                         codeEditorPanel.setText("");
                         popupController.showSuccess(i18n.getString("message.correct"));
                         updateProgress();
+                        updateNavigationButtons();
 
-                        // Move to next task
-                        if (taskComboBox.getItemCount() > taskComboBox.getSelectedIndex() + 1) {
-                            taskComboBox.setSelectedIndex(taskComboBox.getSelectedIndex() + 1);
-                        }
+                        // Move to next task (using cross-lesson navigation if needed)
+                        SwingUtilities.invokeLater(() -> onNextTask());
                     } else {
                         popupController.showMessage(errorMessage, errorTitle);
                     }

@@ -80,7 +80,7 @@ public final class DtoMapper {
     }
 
     public static ErrorDto toDto(ErrorEntryEntity entity) {
-        return new ErrorDto(entity.getId(), entity.getErrorText());
+        return new ErrorDto(entity.getId(), entity.getErrorCode());
     }
 
     public static CompletedTaskDto toDto(CompletedTaskEntity entity) {

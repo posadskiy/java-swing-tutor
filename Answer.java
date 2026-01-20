@@ -31,7 +31,11 @@ public class Answer extends CreateFrame {
         setContentPane(content);
 
         // User content goes into CENTER by default (BorderLayout.CENTER)
-        
+        JButton button = new JButton();
+button.setIcon(new ImageIcon("icon.png"));
+button.setText("Text");
+button.setIconTextGap(5);
+add(button);
 
         setTitle(headerText);
         setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
