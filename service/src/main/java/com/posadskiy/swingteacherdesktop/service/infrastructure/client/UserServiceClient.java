@@ -76,6 +76,37 @@ public class UserServiceClient {
         }
     }
 
+    public Optional<UserDto> registerUser(String username, String password, String email) {
+        try {
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+
+            Map<String, Object> request = Map.of(
+                "username", username,
+                "password", password,
+                "email", email
+            );
+
+            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request, headers);
+            ResponseEntity<Map<String, Object>> response =
+                restTemplate.exchange(
+                    userServiceBaseUrl + "/signup",
+                    HttpMethod.POST,
+                    entity,
+                    new org.springframework.core.ParameterizedTypeReference<Map<String, Object>>() {
+                    });
+
+            if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
+                return Optional.of(mapToUserDto(response.getBody()));
+            }
+            return Optional.empty();
+        } catch (HttpClientErrorException.BadRequest e) {
+            return Optional.empty();
+        } catch (RestClientException e) {
+            throw new RuntimeException("Failed to communicate with user-service", e);
+        }
+    }
+
     public Optional<String> getPreferredLanguage(Long userId, String token) {
         // Note: user-service might not have preferredLanguage field
         // This is a SwingTeacher-specific field, so we might need to keep it local

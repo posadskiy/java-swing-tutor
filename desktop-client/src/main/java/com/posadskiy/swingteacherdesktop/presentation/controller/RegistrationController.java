@@ -75,10 +75,12 @@ public class RegistrationController {
     }
 
     /**
-     * Closes the registration view.
+     * Closes the registration view and shows the login screen.
      */
     public void closeRegistration() {
-        navigatorProvider.getObject().hideRegistration();
+        AppNavigator navigator = navigatorProvider.getObject();
+        navigator.hideRegistration();
+        navigator.showAuth();
     }
     
     /**

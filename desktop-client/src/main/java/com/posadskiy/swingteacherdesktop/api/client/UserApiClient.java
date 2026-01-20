@@ -5,6 +5,8 @@ import com.posadskiy.swingteacherdesktop.application.service.AuthenticationServi
 import com.posadskiy.swingteacherdesktop.domain.dto.UserDto;
 import com.posadskiy.swingteacherdesktop.domain.model.User;
 import com.posadskiy.swingteacherdesktop.domain.repository.UserRepository;
+import com.posadskiy.swingteacherdesktop.domain.request.RegisterRequest;
+import org.springframework.http.MediaType;
 import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestClientException;
 
@@ -26,9 +28,20 @@ public class UserApiClient implements UserRepository {
     
     @Override
     public void addUser(User user) throws SQLException {
-        boolean success = authService.register(user.login(), user.password(), user.email());
-        if (!success) {
-            throw new SQLException("Failed to register user: " + user.login());
+        try {
+            var request = new RegisterRequest(user.login(), user.password(), user.email());
+            var response = client.post()
+                .uri("/api/users/register")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(request)
+                .retrieve()
+                .body(UserDto.class);
+
+            if (response == null) {
+                throw new SQLException("Failed to register user: " + user.login());
+            }
+        } catch (RestClientException ex) {
+            throw new SQLException("Failed to register user: " + user.login(), ex);
         }
     }
     

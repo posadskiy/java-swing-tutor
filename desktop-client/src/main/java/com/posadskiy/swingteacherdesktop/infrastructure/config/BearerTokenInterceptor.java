@@ -26,7 +26,12 @@ public class BearerTokenInterceptor implements ClientHttpRequestInterceptor {
         ClientHttpRequestExecution execution
     ) throws IOException {
         String path = request.getURI().getPath();
-        if (path != null && path.startsWith("/api/auth/")) {
+        // Skip token for public endpoints
+        if (path != null && (
+            path.startsWith("/api/auth/") ||
+                path.startsWith("/api/users/register") ||
+                path.startsWith("/api/code-checking/")
+        )) {
             return execution.execute(request, body);
         }
 

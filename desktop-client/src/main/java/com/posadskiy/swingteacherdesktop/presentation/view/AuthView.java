@@ -29,9 +29,9 @@ import java.beans.PropertyChangeListener;
 public class AuthView extends JFrame implements PropertyChangeListener {
 
     private static final int CARD_WIDTH = 380;
-    private static final int CARD_HEIGHT = 480;
+    private static final int CARD_HEIGHT = 540;
     private static final int CONTENT_WIDTH = 300;
-    private static final int PADDING = 40;
+    private static final int PADDING = 28;
 
     private final AuthController controller;
     private final AppNavigator navigator;
@@ -83,8 +83,8 @@ public class AuthView extends JFrame implements PropertyChangeListener {
     private void configureFrame() {
         setTitle(i18n.getString("auth.title"));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(900, 600);
-        setMinimumSize(new Dimension(700, 500));
+        setSize(900, 640);
+        setMinimumSize(new Dimension(700, 560));
         setLocationRelativeTo(null);
         
         System.setProperty("awt.useSystemAAFontSettings", "on");
@@ -115,53 +115,53 @@ public class AuthView extends JFrame implements PropertyChangeListener {
 
     private int addHeader(JPanel card, int y) {
         headerLabel = createLabel(i18n.getString("auth.title"), Font.BOLD, 28, UITheme.TEXT_PRIMARY, SwingConstants.CENTER);
-        headerLabel.setBounds(PADDING, y, CONTENT_WIDTH, 40);
+        headerLabel.setBounds(PADDING, y, CONTENT_WIDTH, 34);
         card.add(headerLabel);
-        y += 45;
+        y += 38;
 
         subHeaderLabel = createLabel(i18n.getString("auth.subtitle"), Font.PLAIN, 14, UITheme.TEXT_SECONDARY, SwingConstants.CENTER);
-        subHeaderLabel.setBounds(PADDING, y, CONTENT_WIDTH, 24);
+        subHeaderLabel.setBounds(PADDING, y, CONTENT_WIDTH, 20);
         card.add(subHeaderLabel);
-        
-        return y + 50;
+
+        return y + 28;
     }
 
     private int addFormFields(JPanel card, int y) {
         // Email field
         emailLabel = createLabel(i18n.getString("auth.emailLabel"), Font.PLAIN, 13, UITheme.TEXT_SECONDARY, SwingConstants.LEFT);
-        emailLabel.setBounds(PADDING, y, CONTENT_WIDTH, 20);
+        emailLabel.setBounds(PADDING, y, CONTENT_WIDTH, 18);
         card.add(emailLabel);
-        y += 26;
+        y += 22;
 
         loginField = new ModernTextField(i18n.getString("auth.emailPlaceholder"));
-        loginField.setBounds(PADDING, y, CONTENT_WIDTH, 48);
+        loginField.setBounds(PADDING, y, CONTENT_WIDTH, 40);
         card.add(loginField);
-        y += 64;
+        y += 54;
 
         // Password field
         passLabel = createLabel(i18n.getString("auth.passwordLabel"), Font.PLAIN, 13, UITheme.TEXT_SECONDARY, SwingConstants.LEFT);
-        passLabel.setBounds(PADDING, y, CONTENT_WIDTH, 20);
+        passLabel.setBounds(PADDING, y, CONTENT_WIDTH, 18);
         card.add(passLabel);
-        y += 26;
+        y += 22;
 
         passField = new ModernPasswordField(i18n.getString("auth.passwordPlaceholder"));
-        passField.setBounds(PADDING, y, CONTENT_WIDTH, 48);
+        passField.setBounds(PADDING, y, CONTENT_WIDTH, 40);
         card.add(passField);
 
-        y += 64;
+        y += 54;
 
         // Language selector
         languageLabel = createLabel(i18n.getString("auth.languageLabel"), Font.PLAIN, 13, UITheme.TEXT_SECONDARY, SwingConstants.LEFT);
-        languageLabel.setBounds(PADDING, y, CONTENT_WIDTH, 20);
+        languageLabel.setBounds(PADDING, y, CONTENT_WIDTH, 18);
         card.add(languageLabel);
-        y += 26;
+        y += 22;
 
         languageSelector = new LanguageSelector(appState.getCurrentLanguage());
-        languageSelector.setBounds(PADDING, y, CONTENT_WIDTH, 44);
+        languageSelector.setBounds(PADDING, y, CONTENT_WIDTH, 40);
         languageSelector.setOnLanguageChanged(this::onLanguageChanged);
         card.add(languageSelector);
 
-        return y + 40;
+        return y + 32;
     }
 
     private void onLanguageChanged(String languageCode) {
@@ -187,26 +187,26 @@ public class AuthView extends JFrame implements PropertyChangeListener {
         errorLabel.setFont(UITheme.getFont(Font.PLAIN, 12));
         errorLabel.setForeground(UITheme.ERROR_COLOR);
         errorLabel.setBorder(new EmptyBorder(8, 12, 8, 12));
-        errorLabel.setBounds(PADDING, y, CONTENT_WIDTH, 36);
+        errorLabel.setBounds(PADDING, y, CONTENT_WIDTH, 32);
         errorLabel.setVisible(false);
         errorLabel.setOpaque(false);
         card.add(errorLabel);
-        
-        return y + 46;
+
+        return y + 40;
     }
 
     private void addButtons(JPanel card, int y) {
         loginButton = ModernButton.primary(i18n.getString("auth.signInButton"));
         loginButton.addActionListener(e -> onLoginClick());
-        loginButton.setBounds(PADDING, y, CONTENT_WIDTH, 48);
+        loginButton.setBounds(PADDING, y, CONTENT_WIDTH, 44);
         card.add(loginButton);
-        y += 58;
+        y += 54;
 
         registerButton = ModernButton.secondary(i18n.getString("auth.createAccountButton"));
         registerButton.addActionListener(e -> navigator.showRegistration());
-        registerButton.setBounds(PADDING, y, CONTENT_WIDTH, 48);
+        registerButton.setBounds(PADDING, y, CONTENT_WIDTH, 40);
         card.add(registerButton);
-        y += 64;
+        y += 50;
 
         forgotPasswordButton = new LinkButton(i18n.getString("auth.forgotPasswordLink"));
         forgotPasswordButton.addActionListener(e -> onForgotPasswordClick());

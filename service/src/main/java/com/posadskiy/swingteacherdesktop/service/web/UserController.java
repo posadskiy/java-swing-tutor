@@ -1,6 +1,7 @@
 package com.posadskiy.swingteacherdesktop.service.web;
 
 import com.posadskiy.swingteacherdesktop.domain.dto.UserDto;
+import com.posadskiy.swingteacherdesktop.domain.request.RegisterRequest;
 import com.posadskiy.swingteacherdesktop.service.infrastructure.client.UserServiceClient;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
@@ -60,6 +61,14 @@ public class UserController {
         } catch (NumberFormatException e) {
             return ResponseEntity.status(401).build();
         }
+    }
+
+    @PostMapping("/register")
+    public ResponseEntity<UserDto> register(@RequestBody RegisterRequest request) {
+        return userServiceClient
+            .registerUser(request.login(), request.password(), request.email())
+            .map(ResponseEntity::ok)
+            .orElseGet(() -> ResponseEntity.badRequest().build());
     }
 
     private String extractToken(HttpServletRequest request) {
