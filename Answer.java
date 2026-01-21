@@ -1,4 +1,4 @@
-package com.posadskiy.swingteacherdesktop.presentation.component;
+package com.posadskiy.javaswingteacher.presentation.component;
 import javax.swing.*;
 import java.awt.*;
 

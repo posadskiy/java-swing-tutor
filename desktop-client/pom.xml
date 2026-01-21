@@ -6,7 +6,7 @@
 
     <parent>
         <groupId>com.posadskiy</groupId>
-        <artifactId>SwingTeacherDesktop</artifactId>
+        <artifactId>java-swing-tutor</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -95,7 +95,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.posadskiy.swingteacherdesktop.Start</mainClass>
+                                    <mainClass>com.posadskiy.javaswingteacher.Start</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
