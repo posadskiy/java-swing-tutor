@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Java Swing Tutor Logo">
+    <defs>
+        <linearGradient id="brick" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ff4d4d"/>
+            <stop offset="1" stop-color="#c81e1e"/>
+        </linearGradient>
+        <linearGradient id="label" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fffaf0"/>
+            <stop offset="1" stop-color="#fff1d6"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Brick -->
+    <rect x="24" y="72" width="208" height="160" rx="36" fill="url(#brick)" stroke="#7f1d1d" stroke-width="10"/>
+    <path d="M36 88c42-30 118-36 184-14v40c-56-18-138-12-184 20V88z" fill="#ffffff" opacity="0.16"/>
+
+    <!-- Studs -->
+    <g fill="#ffd1d1" stroke="#7f1d1d" stroke-width="10">
+        <circle cx="84" cy="72" r="24"/>
+        <circle cx="128" cy="72" r="24"/>
+        <circle cx="172" cy="72" r="24"/>
+    </g>
+
+    <!-- Label plate -->
+    <rect x="56" y="122" width="144" height="88" rx="22" fill="url(#label)" stroke="#7f1d1d" stroke-width="10"/>
+
+    <!-- JST text -->
+    <text
+            x="128"
+            y="178"
+            text-anchor="middle"
+            font-family="ui-rounded, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif"
+            font-size="52"
+            font-weight="900"
+            letter-spacing="4"
+            fill="#b91c1c"
+    >JST
+    </text>
+</svg>

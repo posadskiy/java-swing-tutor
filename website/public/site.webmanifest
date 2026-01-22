@@ -1,0 +1,16 @@
+{
+  "name": "Java Swing Tutor",
+  "short_name": "JST",
+  "description": "Learn Java Swing GUI Development",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fef9c3",
+  "theme_color": "#fef9c3",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
