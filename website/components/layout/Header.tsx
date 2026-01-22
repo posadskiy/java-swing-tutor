@@ -19,8 +19,15 @@ export function Header() {
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white font-bold text-sm shadow-md">
-                        JST
+                    <div className="flex h-9 w-9 items-center justify-center rounded-xl overflow-hidden shadow-md border-2 border-border bg-surface">
+                        <img
+                            src="/logo.svg"
+                            alt="Java Swing Tutor"
+                            className="h-7 w-7 object-contain"
+                            width={28}
+                            height={28}
+                            loading="eager"
+                        />
                     </div>
                     <span className="text-lg font-semibold text-text group-hover:text-primary transition-colors">
             {t.common.siteName}

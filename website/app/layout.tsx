@@ -86,8 +86,10 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${geistSans.variable} ${geistMono.variable} light`} suppressHydrationWarning>
         <head>
-            <link rel="icon" href="/favicon.ico" sizes="any"/>
-            <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"/>
+            {/* Favicons (SVG primary + PNG fallbacks) */}
+            <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+            {/* PNGs removed (folder not present). If you re-add PNG set later, we can restore fallbacks. */}
+            <link rel="manifest" href="/site.webmanifest"/>
             <meta name="theme-color" content="#fef9c3"/>
             {/* Prevent flash of wrong theme - default to light */}
             <script dangerouslySetInnerHTML={{
