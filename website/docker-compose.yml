@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: java-swing-tutor-website
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "app=java-swing-tutor-website"
+
+  # Development mode with hot reload (Next.js dev server)
+  website-dev:
+    image: node:20-alpine
+    container_name: java-swing-tutor-website-dev
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "3001:3000"
+    command: sh -c "npm install && npm run dev"
+    environment:
+      - NODE_ENV=development
+    profiles:
+      - dev

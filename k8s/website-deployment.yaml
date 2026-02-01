@@ -10,6 +10,11 @@ spec:
   selector:
     matchLabels:
       app: java-swing-tutor-website
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   template:
     metadata:
       labels:
@@ -17,8 +22,9 @@ spec:
     spec:
       containers:
         - name: website
-          image: java-swing-tutor-website:latest
-          imagePullPolicy: IfNotPresent
+          # Docker Hub: push with deploy-website.sh (set DOCKER_USER), then cluster pulls from here
+          image: docker.io/posadskiy/java-swing-tutor-website:latest
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 80
