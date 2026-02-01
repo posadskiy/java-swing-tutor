@@ -8,23 +8,26 @@ import com.posadskiy.javaswingteacher.domain.repository.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
-import org.springframework.core.env.StandardEnvironment;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestClient;
 
 /**
  * Spring Java configuration for the application.
  * Configures beans and component scanning for all layers.
+ *
+ * Environment Configuration:
+ * - Use -Dspring.profiles.active=dev for development
+ * - Use -Dspring.profiles.active=prod for production
+ * - Or set environment variable SWINGTEACHER_SERVICE_URL to override base URL
  */
 @Configuration
 @ComponentScan(basePackages = "com.posadskiy.javaswingteacher")
+@PropertySource("classpath:application.properties")
 public class AppConfig {
-
-    @Bean
-    public Environment environment() {
-        return new StandardEnvironment();
-    }
+    // Profile-specific properties are loaded in the Start class
+    // before the Spring context is initialized
 
     @Bean
     public ObjectMapper objectMapper() {
@@ -40,7 +43,9 @@ public class AppConfig {
         BearerTokenInterceptor bearerTokenInterceptor,
         ObjectMapper objectMapper
     ) {
-        String baseUrl = env.getProperty("SWINGTEACHER_SERVICE_URL", "http://localhost:8080");
+        // Priority: 1. Environment variable, 2. Properties file, 3. Default
+        String baseUrl = env.getProperty("SWINGTEACHER_SERVICE_URL",
+            env.getProperty("swingteacher.service.url", "http://localhost:8080"));
         
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setObjectMapper(objectMapper);
