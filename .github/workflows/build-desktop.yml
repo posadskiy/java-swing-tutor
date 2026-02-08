@@ -58,7 +58,7 @@ jobs:
           jpackage --input target \
             --name "Java Swing Tutor" \
             --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingteacher.Start \
+            --main-class com.posadskiy.javaswingtutor.Start \
             --type dmg \
             --dest target/jpackage \
             --app-version $APP_VERSION \
@@ -70,7 +70,7 @@ jobs:
           jpackage --input target \
             --name "Java Swing Tutor" \
             --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingteacher.Start \
+            --main-class com.posadskiy.javaswingtutor.Start \
             --type app-image \
             --dest target/jpackage \
             --app-version $APP_VERSION \
@@ -123,7 +123,7 @@ jobs:
           jpackage --input target \
             --name "Java Swing Tutor" \
             --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingteacher.Start \
+            --main-class com.posadskiy.javaswingtutor.Start \
             --type dmg \
             --dest target/jpackage \
             --app-version $APP_VERSION \
@@ -135,7 +135,7 @@ jobs:
           jpackage --input target \
             --name "Java Swing Tutor" \
             --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingteacher.Start \
+            --main-class com.posadskiy.javaswingtutor.Start \
             --type app-image \
             --dest target/jpackage \
             --app-version $APP_VERSION \
@@ -190,7 +190,7 @@ jobs:
           jpackage --input target `
             --name "JSTutor" `
             --main-jar $JAR_NAME `
-            --main-class com.posadskiy.javaswingteacher.Start `
+            --main-class com.posadskiy.javaswingtutor.Start `
             --type exe `
             --dest X:\d `
             --temp C:\t `
@@ -205,7 +205,7 @@ jobs:
           jpackage --input target `
             --name "JSTutor" `
             --main-jar $JAR_NAME `
-            --main-class com.posadskiy.javaswingteacher.Start `
+            --main-class com.posadskiy.javaswingtutor.Start `
             --type app-image `
             --dest X:\d `
             --temp C:\t `
@@ -261,7 +261,7 @@ jobs:
           jpackage --input target \
             --name "Java Swing Tutor" \
             --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingteacher.Start \
+            --main-class com.posadskiy.javaswingtutor.Start \
             --type deb \
             --dest target/jpackage \
             --app-version $APP_VERSION \
@@ -274,7 +274,7 @@ jobs:
           jpackage --input target \
             --name "Java Swing Tutor" \
             --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingteacher.Start \
+            --main-class com.posadskiy.javaswingtutor.Start \
             --type app-image \
             --dest target/jpackage \
             --app-version $APP_VERSION \

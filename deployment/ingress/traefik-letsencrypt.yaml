@@ -1,0 +1,60 @@
+# Persistent Volume Claim for ACME certificates
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: traefik-acme
+  namespace: kube-system
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+# HelmChartConfig for k3s Traefik
+# This configures the Traefik Helm chart with Let's Encrypt support
+#
+# Important notes:
+# - The web entry point should NOT redirect to websecure to allow ACME HTTP challenge
+# - HTTP to HTTPS redirect should be handled by middleware on specific routes if needed
+# - The HelmChartConfig will automatically trigger a Traefik restart when applied
+# - The persistence.existingClaim uses the PVC created above
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: traefik
+  namespace: kube-system
+spec:
+  failurePolicy: reinstall
+  valuesContent: |-
+    # Enable dashboard
+    api:
+      dashboard: true
+      insecure: false
+
+    # Configure entry points
+    # Note: web entry point should NOT redirect to websecure to allow ACME HTTP challenge
+    # Redirect will be handled by middleware on specific routes instead
+    ports:
+      websecure:
+        tls:
+          enabled: true
+
+    # Additional arguments for Let's Encrypt
+    additionalArguments:
+      - "--certificatesresolvers.letsencrypt.acme.email=admin@posadskiy.com"
+      - "--certificatesresolvers.letsencrypt.acme.storage=/data/acme.json"
+      - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+      # Optional: Use DNS challenge instead
+      # - "--certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare"
+      # - "--certificatesresolvers.letsencrypt.acme.dnschallenge.delaybeforecheck=0"
+
+    # Volumes for ACME certificate storage
+    persistence:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 1Gi
+      storageClass: ""
+      path: /data
+      existingClaim: traefik-acme

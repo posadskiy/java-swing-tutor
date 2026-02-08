@@ -1,0 +1,128 @@
+package com.posadskiy.javaswingtutor.service.application;
+
+import com.posadskiy.javaswingtutor.service.domain.entity.DocumentationTranslationEntity;
+import com.posadskiy.javaswingtutor.service.domain.entity.LessonTranslationEntity;
+import com.posadskiy.javaswingtutor.service.domain.entity.TaskTranslationEntity;
+import com.posadskiy.javaswingtutor.service.infrastructure.jpa.DocumentationTranslationRepository;
+import com.posadskiy.javaswingtutor.service.infrastructure.jpa.LessonTranslationRepository;
+import com.posadskiy.javaswingtutor.service.infrastructure.jpa.TaskTranslationRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class TranslationService {
+    private final LessonTranslationRepository lessonTranslationRepository;
+    private final TaskTranslationRepository taskTranslationRepository;
+    private final DocumentationTranslationRepository documentationTranslationRepository;
+
+    public TranslationService(
+        LessonTranslationRepository lessonTranslationRepository,
+        TaskTranslationRepository taskTranslationRepository,
+        DocumentationTranslationRepository documentationTranslationRepository
+    ) {
+        this.lessonTranslationRepository = lessonTranslationRepository;
+        this.taskTranslationRepository = taskTranslationRepository;
+        this.documentationTranslationRepository = documentationTranslationRepository;
+    }
+
+    /**
+     * Get lesson name translation with fallback to English.
+     * Returns null if no translation is found.
+     */
+    public String getLessonName(Long lessonId, String languageCode) {
+        if (languageCode != null && !languageCode.isBlank() && !"en".equals(languageCode)) {
+            // Try requested language first
+            Optional<LessonTranslationEntity> translation = lessonTranslationRepository
+                .findByLessonIdAndLanguageCode(lessonId, languageCode);
+            if (translation.isPresent() && translation.get().getLessonName() != null) {
+                return translation.get().getLessonName();
+            }
+        }
+
+        // Fallback to English
+        Optional<LessonTranslationEntity> enTranslation = lessonTranslationRepository
+            .findByLessonIdAndLanguageCode(lessonId, "en");
+        if (enTranslation.isPresent() && enTranslation.get().getLessonName() != null) {
+            return enTranslation.get().getLessonName();
+        }
+
+        // No translation found
+        return null;
+    }
+
+    /**
+     * Get task title translation with fallback to English.
+     * Returns null if no translation is found.
+     */
+    public String getTaskTitle(Long taskId, String languageCode) {
+        if (languageCode != null && !"en".equals(languageCode)) {
+            // Try requested language first
+            Optional<TaskTranslationEntity> translation = taskTranslationRepository
+                .findByTaskIdAndLanguageCode(taskId, languageCode);
+            if (translation.isPresent() && translation.get().getTitle() != null) {
+                return translation.get().getTitle();
+            }
+        }
+
+        // Fallback to English
+        Optional<TaskTranslationEntity> enTranslation = taskTranslationRepository
+            .findByTaskIdAndLanguageCode(taskId, "en");
+        if (enTranslation.isPresent() && enTranslation.get().getTitle() != null) {
+            return enTranslation.get().getTitle();
+        }
+
+        // No translation found
+        return null;
+    }
+
+    /**
+     * Get task question translation with fallback to English.
+     * Returns null if no translation is found.
+     */
+    public String getTaskQuestion(Long taskId, String languageCode) {
+        if (languageCode != null && !"en".equals(languageCode)) {
+            // Try requested language first
+            Optional<TaskTranslationEntity> translation = taskTranslationRepository
+                .findByTaskIdAndLanguageCode(taskId, languageCode);
+            if (translation.isPresent() && translation.get().getQuestion() != null) {
+                return translation.get().getQuestion();
+            }
+        }
+
+        // Fallback to English
+        Optional<TaskTranslationEntity> enTranslation = taskTranslationRepository
+            .findByTaskIdAndLanguageCode(taskId, "en");
+        if (enTranslation.isPresent() && enTranslation.get().getQuestion() != null) {
+            return enTranslation.get().getQuestion();
+        }
+
+        // No translation found
+        return null;
+    }
+
+    /**
+     * Get documentation text translation with fallback to English.
+     * Returns null if no translation is found.
+     */
+    public String getDocumentationText(Long documentationId, String languageCode) {
+        if (languageCode != null && !languageCode.isBlank() && !"en".equals(languageCode)) {
+            // Try requested language first
+            Optional<DocumentationTranslationEntity> translation = documentationTranslationRepository
+                .findByDocumentationIdAndLanguageCode(documentationId, languageCode);
+            if (translation.isPresent() && translation.get().getText() != null) {
+                return translation.get().getText();
+            }
+        }
+
+        // Fallback to English
+        Optional<DocumentationTranslationEntity> enTranslation = documentationTranslationRepository
+            .findByDocumentationIdAndLanguageCode(documentationId, "en");
+        if (enTranslation.isPresent() && enTranslation.get().getText() != null) {
+            return enTranslation.get().getText();
+        }
+
+        // No translation found
+        return null;
+    }
+}

@@ -1,0 +1,60 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: java-swing-tutor
+  namespace: java-swing-tutor
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    # Website - java-swing.com, www.java-swing.com
+    - match: Host(`java-swing.com`) || Host(`www.java-swing.com`)
+      kind: Rule
+      services:
+        - name: java-swing-tutor-website
+          port: 80
+      middlewares:
+        - name: rate-limit-middleware
+      priority: 10
+
+    # API - api.java-swing.com
+    - match: Host(`api.java-swing.com`)
+      kind: Rule
+      services:
+        - name: java-swing-tutor-service
+          port: 8080
+      middlewares:
+        - name: cors-middleware
+        - name: rate-limit-middleware
+      priority: 10
+
+    # Health check
+    - match: Host(`api.java-swing.com`) && Path(`/actuator/health`)
+      kind: Rule
+      services:
+        - name: java-swing-tutor-service
+          port: 8080
+      priority: 20
+
+  tls:
+    certResolver: letsencrypt
+    domains:
+      - main: java-swing.com
+        sans:
+          - www.java-swing.com
+      - main: api.java-swing.com
+
+---
+# Traefik Let's Encrypt configuration
+apiVersion: traefik.io/v1alpha1
+kind: TLSOption
+metadata:
+  name: tls-options
+  namespace: java-swing-tutor
+spec:
+  minVersion: VersionTLS12
+  cipherSuites:
+    - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+    - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+    - TLS_ECDHE_RSA_WITH_AES_128_SHA256
+    - TLS_ECDHE_RSA_WITH_AES_256_SHA384

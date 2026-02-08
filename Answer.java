@@ -1,4 +1,4 @@
-package com.posadskiy.javaswingteacher.presentation.component;
+package com.posadskiy.javaswingtutor.presentation.component;
 import javax.swing.*;
 import java.awt.*;
 

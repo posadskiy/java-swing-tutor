@@ -1,0 +1,47 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: cors-middleware
+  namespace: java-swing-tutor
+spec:
+  headers:
+    accessControlAllowMethods:
+      - GET
+      - POST
+      - PUT
+      - DELETE
+      - OPTIONS
+    accessControlAllowHeaders:
+      - DNT
+      - User-Agent
+      - X-Requested-With
+      - If-Modified-Since
+      - Cache-Control
+      - Content-Type
+      - Range
+      - Authorization
+    accessControlExposeHeaders:
+      - Content-Length
+      - Content-Range
+    accessControlAllowCredentials: true
+    accessControlAllowOriginList:
+      - https://java-swing.com
+      - https://www.java-swing.com
+    accessControlMaxAge: 1728000
+    customRequestHeaders:
+      X-Forwarded-Proto: https
+      X-Real-IP: ""
+      X-Forwarded-For: ""
+      X-Forwarded-Host: ""
+
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: rate-limit-middleware
+  namespace: java-swing-tutor
+spec:
+  rateLimit:
+    average: 100
+    period: 1s
+    burst: 50

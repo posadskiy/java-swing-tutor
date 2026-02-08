@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: java-swing-tutor-config
+  namespace: java-swing-tutor
+data:
+  db.url: "jdbc:postgresql://postgres-service:5432/java_swing_tutor"

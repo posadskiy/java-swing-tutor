@@ -1,0 +1,29 @@
+# API Ingress (Traefik) - api.java-swing.com with TLS via Traefik's built-in ACME
+# Optional standard Ingress; main routing uses traefik-ingressroute.yaml in this folder
+# Website ingress: website/deployment/website-ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: java-swing-tutor-api-ingress
+  namespace: default
+  labels:
+    app: java-swing-tutor-service
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+    traefik.ingress.kubernetes.io/router.tls.certresolver: letsencrypt
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - api.java-swing.com
+  rules:
+    - host: api.java-swing.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: java-swing-tutor-service
+                port:
+                  number: 8080

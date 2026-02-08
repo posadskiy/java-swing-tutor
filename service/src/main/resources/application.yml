@@ -1,10 +1,10 @@
 spring:
   application:
-    name: swingteacher-service
+    name: java-swing-tutor-service
   datasource:
-    url: ${SWINGTEACHER_DATABASE_URL:jdbc:postgresql://localhost:5450/swingteacher}
-    username: ${SWINGTEACHER_DATABASE_USER:postgres}
-    password: ${SWINGTEACHER_DATABASE_PASSWORD:postgres}
+    url: ${JAVA_SWING_TUTOR_DB_URL:jdbc:postgresql://localhost:5450/java_swing_tutor}
+    username: ${JAVA_SWING_TUTOR_DB_USER:postgres}
+    password: ${JAVA_SWING_TUTOR_DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -17,7 +17,7 @@ spring:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
 server:
-  port: ${SWINGTEACHER_SERVICE_PORT:8080}
+  port: ${JAVA_SWING_TUTOR_SERVICE_PORT:8080}
 
 logging:
   level:

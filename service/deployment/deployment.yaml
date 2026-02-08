@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-swing-tutor-service
+  namespace: java-swing-tutor
+  labels:
+    app: java-swing-tutor-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-swing-tutor-service
+  template:
+    metadata:
+      labels:
+        app: java-swing-tutor-service
+    spec:
+      imagePullSecrets:
+        - name: dockerhub-registry-secret
+      containers:
+        - name: java-swing-tutor-service
+          image: ${IMAGE_VERSION}
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: "prod"
+            - name: JAVA_SWING_TUTOR_DB_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: java-swing-tutor-config
+                  key: db.url
+            - name: JAVA_SWING_TUTOR_DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: java-swing-tutor-secrets
+                  key: db.user
+            - name: JAVA_SWING_TUTOR_DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: java-swing-tutor-secrets
+                  key: db.password
+            - name: JAVA_SWING_TUTOR_SERVICE_PORT
+              value: "8080"
+            - name: AUTH_SERVICE_BASE_URL
+              value: "http://auth-service.auth.svc.cluster.local:8100"
+            - name: USER_SERVICE_BASE_URL
+              value: "http://user-service.default.svc.cluster.local:8095"
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+      restartPolicy: Always

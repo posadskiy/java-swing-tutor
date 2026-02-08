@@ -128,23 +128,23 @@ The client automatically connects to the backend service at `http://localhost:80
 
 #### Desktop Client
 
-| Variable                     | Description                                     | Default                 |
-|------------------------------|-------------------------------------------------|-------------------------|
-| `SWINGTEACHER_SERVICE_URL`   | Backend service URL                             | `http://localhost:8080` |
-| `SWINGTEACHER_USE_REMOTE`    | Use REST API for data access                    | `true`                  |
-| `SWINGTEACHER_USE_DB`        | Fallback to direct database access              | `false`                 |
-| `SWINGTEACHER_SMTP_USERNAME` | SMTP username for email verification (optional) | -                       |
-| `SWINGTEACHER_SMTP_PASSWORD` | SMTP password for email verification (optional) | -                       |
+| Variable                          | Description                                     | Default                 |
+|-----------------------------------|-------------------------------------------------|-------------------------|
+| `JAVA_SWING_TUTOR_SERVICE_URL`    | Backend service URL                             | `http://localhost:8080` |
+| `JAVA_SWING_TUTOR_USE_REMOTE`     | Use REST API for data access                    | `true`                  |
+| `JAVA_SWING_TUTOR_USE_DB`         | Fallback to direct database access              | `false`                 |
+| `JAVA_SWING_TUTOR_SMTP_USERNAME`  | SMTP username for email verification (optional) | -                       |
+| `JAVA_SWING_TUTOR_SMTP_PASSWORD`  | SMTP password for email verification (optional) | -                       |
 
 #### Backend Service
 
-| Variable                         | Description                 | Default                                         |
-|----------------------------------|-----------------------------|-------------------------------------------------|
-| `SWINGTEACHER_DATABASE_URL`      | PostgreSQL connection URL   | `jdbc:postgresql://localhost:5450/swingteacher` |
-| `SWINGTEACHER_DATABASE_USER`     | Database username           | `swingteacher`                                  |
-| `SWINGTEACHER_DATABASE_PASSWORD` | Database password           | `swingteacher`                                  |
-| `SWINGTEACHER_SERVICE_PORT`      | Service port                | `8080`                                          |
-| `SPRING_PROFILES_ACTIVE`         | Spring profile (dev/docker) | `dev`                                           |
+| Variable                            | Description                 | Default                                                   |
+|-------------------------------------|-----------------------------|-----------------------------------------------------------|
+| `JAVA_SWING_TUTOR_DB_URL`           | PostgreSQL connection URL   | `jdbc:postgresql://localhost:5450/java_swing_tutor`       |
+| `JAVA_SWING_TUTOR_DB_USER`          | Database username           | `java_swing_tutor`                                        |
+| `JAVA_SWING_TUTOR_DB_PASSWORD`      | Database password           | `java_swing_tutor`                                        |
+| `JAVA_SWING_TUTOR_SERVICE_PORT`      | Service port                | `8080`                                                    |
+| `SPRING_PROFILES_ACTIVE`             | Spring profile (dev/docker) | `dev`                                                     |
 
 ### Docker Compose Configuration
 
@@ -156,9 +156,9 @@ The `docker-compose.yml` file configures:
 
 Database credentials (Docker environment):
 
-- **Database**: `swingteacher`
-- **User**: `swingteacher`
-- **Password**: `swingteacher`
+- **Database**: `java_swing_tutor`
+- **User**: `java_swing_tutor`
+- **Password**: `java_swing_tutor`
 - **Port**: `5450` (host) / `5432` (container)
 
 ## 🔧 Local Development
@@ -227,6 +227,8 @@ java-swing-tutor/
 │   └── src/main/resources/
 │       └── i18n/            # Internationalization files
 │
+├── deployment/                # Shared cluster config and scripts (see deployment/README.md)
+├── website/                   # Next.js website (and website/deployment/ for deploy)
 ├── docker-compose.yml         # Docker services configuration
 ├── Dockerfile                # Service container image
 └── pom.xml                   # Root Maven POM
@@ -320,6 +322,22 @@ docker compose down
 
 # View logs
 docker compose logs -f service
+```
+
+## ☸️ Kubernetes deployment
+
+Shared cluster config is in **`deployment/`**; website and backend each have their own **`deployment/`** (manifests + scripts). See **[deployment/README.md](deployment/README.md)** for layout and backend prerequisites.
+
+```bash
+# 1. Prepare cluster (namespace, config, Traefik)
+./deployment/scripts/k3s/deploy-to-k3s.sh
+
+# 2. Build and push images
+./deployment/scripts/dockerhub/build-and-push-all.sh <version>
+
+# 3. Deploy website and backend from their folders
+cd website && ./deployment/scripts/deploy.sh <version>
+cd ../service && ./deployment/scripts/deploy.sh <version>
 ```
 
 ## 📚 Learning Path
