@@ -6,7 +6,7 @@ metadata:
   labels:
     app: java-swing-tutor-website
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: java-swing-tutor-website

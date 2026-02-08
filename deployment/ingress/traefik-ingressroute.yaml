@@ -1,3 +1,5 @@
+# IngressRoute in java-swing-tutor (same namespace as services and middlewares).
+# This cluster's Traefik does not allow cross-namespace refs, so everything must be in one namespace.
 apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
@@ -45,7 +47,6 @@ spec:
       - main: api.java-swing.com
 
 ---
-# Traefik Let's Encrypt configuration
 apiVersion: traefik.io/v1alpha1
 kind: TLSOption
 metadata:

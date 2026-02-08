@@ -7,7 +7,7 @@ set -e
 
 SERVICE_NAME="java-swing-tutor-website"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SERVICE_DEPLOYMENT="$(dirname "$(dirname "$SCRIPT_DIR")")"
+DEPLOYMENT_DIR="$(dirname "$SCRIPT_DIR")"
 NAMESPACE="java-swing-tutor"
 
 if [ $# -lt 1 ]; then
@@ -41,9 +41,9 @@ fi
 export IMAGE_VERSION="$DOCKERHUB_USERNAME/java-swing-tutor-website:$VERSION"
 
 echo "🚀 Applying website manifest (version: $VERSION)..."
-envsubst < "$SERVICE_DEPLOYMENT/website-deployment.yaml" | kubectl apply -f -
-kubectl apply -f "$SERVICE_DEPLOYMENT/website-service.yaml"
-kubectl apply -f "$SERVICE_DEPLOYMENT/website-network-policy.yaml"
+envsubst < "$DEPLOYMENT_DIR/website-deployment.yaml" | kubectl apply -f -
+kubectl apply -f "$DEPLOYMENT_DIR/website-service.yaml"
+kubectl apply -f "$DEPLOYMENT_DIR/website-network-policy.yaml"
 
 echo ""
 echo "⏳ Waiting for deployment..."

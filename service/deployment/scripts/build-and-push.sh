@@ -3,7 +3,7 @@ set -e
 
 # build-and-push.sh - Build and push java-swing-tutor-service to Docker Hub
 # Usage: ./build-and-push.sh <version>
-# Build context: project root (Dockerfile at java-swing-tutor root).
+# Build context: project root (Dockerfile at service/Dockerfile).
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SERVICE_DEPLOYMENT="$(dirname "$(dirname "$SCRIPT_DIR")")"
@@ -24,7 +24,7 @@ TAG_DATE=$(date +%Y%m%d%H%M%S)
 
 echo "🚀 Building and pushing $IMAGE_NAME (version: $VERSION)..."
 docker buildx build --platform linux/arm64,linux/amd64 \
-  -f "$PROJECT_ROOT/Dockerfile" \
+  -f "$PROJECT_ROOT/service/Dockerfile" \
   -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:$VERSION" \
   -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:$TAG_DATE" \
   -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:latest" \

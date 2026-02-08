@@ -1,6 +1,6 @@
 FROM maven:3.9.12-eclipse-temurin-25-alpine AS build
 WORKDIR /app
-# Copy root POM and all module POMs
+# Copy root POM and all module POMs (paths relative to repo root build context)
 COPY pom.xml .
 COPY domain/pom.xml ./domain/
 COPY service/pom.xml ./service/
@@ -18,5 +18,3 @@ COPY --from=build /app/service/target/service-1.0-SNAPSHOT.jar /app/app.jar
 ENV JAVA_OPTS=""
 EXPOSE 8080
 ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar /app/app.jar"]
-
-

@@ -230,7 +230,7 @@ java-swing-tutor/
 ├── deployment/                # Shared cluster config and scripts (see deployment/README.md)
 ├── website/                   # Next.js website (and website/deployment/ for deploy)
 ├── docker-compose.yml         # Docker services configuration
-├── Dockerfile                # Service container image
+├── service/Dockerfile        # Service container image (build context: repo root)
 └── pom.xml                   # Root Maven POM
 ```
 
@@ -326,18 +326,17 @@ docker compose logs -f service
 
 ## ☸️ Kubernetes deployment
 
-Shared cluster config is in **`deployment/`**; website and backend each have their own **`deployment/`** (manifests + scripts). See **[deployment/README.md](deployment/README.md)** for layout and backend prerequisites.
+**Flow:** deploy common cluster config from the **parent** `deployment/`, then **build images and deploy from each module** (website, service). There is no central “build and push all”; each module builds and pushes its own image, then deploys. See **[deployment/README.md](deployment/README.md)** for layout and backend prerequisites.
+
+**Step 1** applies: namespace, Docker Hub secret, ConfigMap, Secrets, Traefik Let's Encrypt, Traefik middleware, and Traefik IngressRoute (routing for java-swing.com and api.java-swing.com). Step 2 deploys the website and backend so traffic can reach them.
 
 ```bash
-# 1. Prepare cluster (namespace, config, Traefik)
+# 1. Deploy common cluster config from parent (namespace, secret, ConfigMap, Secrets, Traefik IngressRoute + middleware)
 ./deployment/scripts/k3s/deploy-to-k3s.sh
 
-# 2. Build and push images
-./deployment/scripts/dockerhub/build-and-push-all.sh <version>
-
-# 3. Deploy website and backend from their folders
-cd website && ./deployment/scripts/deploy.sh <version>
-cd ../service && ./deployment/scripts/deploy.sh <version>
+# 2. Build, push, and deploy each module from its own folder
+cd website && ./deployment/scripts/build-and-push.sh <version> && ./deployment/scripts/deploy.sh <version>
+cd ../service && ./deployment/scripts/build-and-push.sh <version> && ./deployment/scripts/deploy.sh <version>
 ```
 
 ## 📚 Learning Path

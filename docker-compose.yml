@@ -28,7 +28,9 @@ services:
       - ./service/src/main/resources/db/migration:/flyway/sql:ro
 
   service:
-    build: .
+    build:
+      context: .
+      dockerfile: service/Dockerfile
     depends_on:
       flyway:
         condition: service_completed_successfully
