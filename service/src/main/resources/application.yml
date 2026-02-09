@@ -2,17 +2,16 @@ spring:
   application:
     name: java-swing-tutor-service
   datasource:
-    url: ${JAVA_SWING_TUTOR_DB_URL:jdbc:postgresql://localhost:5450/java_swing_tutor}
-    username: ${JAVA_SWING_TUTOR_DB_USER:postgres}
-    password: ${JAVA_SWING_TUTOR_DB_PASSWORD:postgres}
+    url: ${JAVA_SWING_TUTOR_DATABASE_URL:jdbc:postgresql://localhost:5450/java_swing_tutor}
+    username: ${JAVA_SWING_TUTOR_DATABASE_USER:postgres}
+    password: ${JAVA_SWING_TUTOR_DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: none
     open-in-view: false
   flyway:
-    enabled: true
-    locations: classpath:db/migration
+    enabled: false
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 

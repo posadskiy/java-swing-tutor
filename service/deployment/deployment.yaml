@@ -6,7 +6,7 @@ metadata:
   labels:
     app: java-swing-tutor-service
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: java-swing-tutor-service
@@ -28,17 +28,17 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: "prod"
-            - name: JAVA_SWING_TUTOR_DB_URL
+            - name: JAVA_SWING_TUTOR_DATABASE_URL
               valueFrom:
                 configMapKeyRef:
                   name: java-swing-tutor-config
                   key: db.url
-            - name: JAVA_SWING_TUTOR_DB_USER
+            - name: JAVA_SWING_TUTOR_DATABASE_USER
               valueFrom:
-                secretKeyRef:
-                  name: java-swing-tutor-secrets
+                configMapKeyRef:
+                  name: java-swing-tutor-config
                   key: db.user
-            - name: JAVA_SWING_TUTOR_DB_PASSWORD
+            - name: JAVA_SWING_TUTOR_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: java-swing-tutor-secrets
@@ -46,9 +46,9 @@ spec:
             - name: JAVA_SWING_TUTOR_SERVICE_PORT
               value: "8080"
             - name: AUTH_SERVICE_BASE_URL
-              value: "http://auth-service.auth.svc.cluster.local:8100"
+              value: "http://auth-service.microservices.svc.cluster.local:8100"
             - name: USER_SERVICE_BASE_URL
-              value: "http://user-service.default.svc.cluster.local:8095"
+              value: "http://user-service.microservices.svc.cluster.local:8095"
           resources:
             requests:
               memory: "512Mi"

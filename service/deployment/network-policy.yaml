@@ -14,6 +14,13 @@ spec:
     - from:
         - namespaceSelector:
             matchLabels:
+              kubernetes.io/metadata.name: kube-system
+      ports:
+        - protocol: TCP
+          port: 8080
+    - from:
+        - namespaceSelector:
+            matchLabels:
               name: default
         - namespaceSelector:
             matchLabels:
@@ -22,26 +29,29 @@ spec:
         - protocol: TCP
           port: 8080
   egress:
+    # auth-service and user-service live in microservices namespace
     - to:
         - namespaceSelector:
             matchLabels:
-              name: default
-        - namespaceSelector:
-            matchLabels:
-              name: auth
-        - namespaceSelector:
-            matchLabels:
-              name: user
+              kubernetes.io/metadata.name: microservices
       ports:
         - protocol: TCP
           port: 8100
         - protocol: TCP
           port: 8095
-        - protocol: TCP
-          port: 5432
+    # Allow DNS
     - to: [ ]
       ports:
         - protocol: TCP
           port: 53
         - protocol: UDP
           port: 53
+    # Allow egress to external PostgreSQL (e.g. Aiven); port 25370 is common for Aiven
+    - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+      ports:
+        - protocol: TCP
+          port: 5432
+        - protocol: TCP
+          port: 25370

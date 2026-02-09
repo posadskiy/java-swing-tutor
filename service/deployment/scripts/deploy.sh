@@ -1,13 +1,14 @@
 #!/bin/bash
 set -e
 
-# deploy.sh - Deploy java-swing-tutor-service (backend) to k3s (service only).
+# deploy.sh - Deploy java-swing-tutor-service (backend) to k3s.
+# Deploy Flyway first from flyway/ (run flyway/deployment/scripts/deploy.sh), then run this.
 # Cluster must be prepared via java-swing-tutor/deployment/scripts/k3s/deploy-to-k3s.sh
 # Usage: ./deploy.sh <version>
 
 SERVICE_NAME="java-swing-tutor-service"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SERVICE_DEPLOYMENT="$(dirname "$(dirname "$SCRIPT_DIR")")"
+DEPLOYMENT_DIR="$(dirname "$SCRIPT_DIR")"
 NAMESPACE="java-swing-tutor"
 
 if [ $# -lt 1 ]; then
@@ -16,7 +17,7 @@ if [ $# -lt 1 ]; then
 fi
 VERSION=$1
 
-echo "🚀 Deploying $SERVICE_NAME (service only)"
+echo "🚀 Deploying $SERVICE_NAME"
 echo "📦 Version: $VERSION"
 echo "📁 Namespace: $NAMESPACE"
 echo ""
@@ -41,9 +42,9 @@ fi
 export IMAGE_VERSION="$DOCKERHUB_USERNAME/java-swing-tutor-service:$VERSION"
 
 echo "🚀 Applying backend manifest (version: $VERSION)..."
-envsubst < "$SERVICE_DEPLOYMENT/deployment.yaml" | kubectl apply -f -
-kubectl apply -f "$SERVICE_DEPLOYMENT/service.yaml"
-kubectl apply -f "$SERVICE_DEPLOYMENT/network-policy.yaml"
+envsubst < "$DEPLOYMENT_DIR/deployment.yaml" | kubectl apply -f -
+kubectl apply -f "$DEPLOYMENT_DIR/service.yaml"
+kubectl apply -f "$DEPLOYMENT_DIR/network-policy.yaml"
 
 echo ""
 echo "⏳ Waiting for deployment..."
