@@ -1,0 +1,43 @@
+# Flyway migration Job. Runs once per deploy before the backend Deployment.
+# Uses same DB config as the service (configmap + secret). Migrations are in the image.
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: flyway-migrate
+  namespace: java-swing-tutor
+  labels:
+    app: java-swing-tutor-flyway
+spec:
+  ttlSecondsAfterFinished: 86400
+  backoffLimit: 4
+  template:
+    metadata:
+      labels:
+        app: java-swing-tutor-flyway
+    spec:
+      restartPolicy: OnFailure
+      imagePullSecrets:
+        - name: dockerhub-registry-secret
+      containers:
+        - name: flyway
+          image: ${FLYWAY_IMAGE}
+          imagePullPolicy: Always
+          args: [ "-connectRetries=60", "migrate" ]
+          env:
+            - name: FLYWAY_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: java-swing-tutor-config
+                  key: db.url
+            - name: FLYWAY_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: java-swing-tutor-config
+                  key: db.user
+            - name: FLYWAY_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: java-swing-tutor-secrets
+                  key: db.password
+            - name: FLYWAY_LOCATIONS
+              value: "filesystem:/flyway/sql"
