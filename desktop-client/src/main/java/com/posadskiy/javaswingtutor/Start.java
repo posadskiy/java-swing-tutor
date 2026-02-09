@@ -16,7 +16,7 @@ import java.io.IOException;
  * Application entry point.
  */
 public class Start {
-    public static void main(String[] args) {
+    static void main() {
         // Set Look and Feel before creating any Swing components
         setLookAndFeel();
 
@@ -24,13 +24,17 @@ public class Start {
         SwingUtilities.invokeLater(() -> {
             var ctx = new AnnotationConfigApplicationContext();
 
-            // Set active profiles from system property if specified
-            String activeProfile = System.getProperty("spring.profiles.active");
+            // Resolve env: app.env, JAVA_SWING_TUTOR_ENV, or spring.profiles.active (legacy)
+            String activeProfile = System.getProperty("app.env");
+            if (activeProfile == null || activeProfile.isEmpty()) {
+                String envVar = System.getenv("JAVA_SWING_TUTOR_ENV");
+                activeProfile = envVar != null && !envVar.isEmpty() ? envVar : System.getProperty("spring.profiles.active");
+            }
             if (activeProfile != null && !activeProfile.isEmpty()) {
                 ConfigurableEnvironment env = ctx.getEnvironment();
                 env.setActiveProfiles(activeProfile.split(","));
 
-                // Load profile-specific properties
+                // Load env-specific properties (application-dev.properties, application-prod.properties, etc.)
                 MutablePropertySources propertySources = env.getPropertySources();
                 for (String profile : env.getActiveProfiles()) {
                     String profileResource = "application-" + profile + ".properties";

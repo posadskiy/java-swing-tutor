@@ -52,7 +52,7 @@ JAR_NAME=$(basename target/desktop-client-*.jar)
 ICON_FILE="src/main/resources/icons/app-icon.icns"
 
 # Build jpackage command (DMG)
-JPACKAGE_CMD="jpackage --input target --name 'Java Swing Tutor' --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type dmg --dest target/jpackage --app-version $APP_VERSION --vendor Posadskiy --java-options '-Dfile.encoding=UTF-8' --mac-package-identifier com.posadskiy.javaswingtutor --mac-package-name 'Java Swing Tutor'"
+JPACKAGE_CMD="jpackage --input target --name 'Java Swing Tutor' --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type dmg --dest target/jpackage --app-version $APP_VERSION --vendor Posadskiy --java-options '-Dfile.encoding=UTF-8' --java-options '-Dapp.env=prod' --mac-package-identifier com.posadskiy.javaswingtutor --mac-package-name 'Java Swing Tutor'"
 
 # Add icon if it exists
 if [ -f "$ICON_FILE" ]; then
@@ -63,7 +63,7 @@ fi
 eval $JPACKAGE_CMD
 
 # Build app image (portable, includes runtime)
-APP_IMAGE_CMD="jpackage --input target --name 'Java Swing Tutor' --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type app-image --dest target/jpackage --app-version $APP_VERSION --vendor Posadskiy --java-options '-Dfile.encoding=UTF-8' --mac-package-identifier com.posadskiy.javaswingtutor --mac-package-name 'Java Swing Tutor'"
+APP_IMAGE_CMD="jpackage --input target --name 'Java Swing Tutor' --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type app-image --dest target/jpackage --app-version $APP_VERSION --vendor Posadskiy --java-options '-Dfile.encoding=UTF-8' --java-options '-Dapp.env=prod' --mac-package-identifier com.posadskiy.javaswingtutor --mac-package-name 'Java Swing Tutor'"
 if [ -f "$ICON_FILE" ]; then
     APP_IMAGE_CMD="$APP_IMAGE_CMD --icon $ICON_FILE"
 fi

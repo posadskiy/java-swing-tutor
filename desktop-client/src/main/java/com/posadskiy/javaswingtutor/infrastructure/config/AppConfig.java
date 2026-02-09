@@ -17,17 +17,17 @@ import org.springframework.web.client.RestClient;
  * Spring Java configuration for the application.
  * Configures beans and component scanning for all layers.
  *
- * Environment Configuration:
- * - Use -Dspring.profiles.active=dev for development
- * - Use -Dspring.profiles.active=prod for production
- * - Or set environment variable JAVA_SWING_TUTOR_SERVICE_URL to override base URL
+ * Environment (dev / prod config):
+ * - Use -Dapp.env=dev or -Dapp.env=prod, or set JAVA_SWING_TUTOR_ENV=dev|prod
+ * - application-dev.properties and application-prod.properties are loaded accordingly
+ * - Override API URL with environment variable JAVA_SWING_TUTOR_SERVICE_URL if needed
  */
 @Configuration
 @ComponentScan(basePackages = "com.posadskiy.javaswingtutor")
 @PropertySource("classpath:application.properties")
 public class AppConfig {
-    // Profile-specific properties are loaded in the Start class
-    // before the Spring context is initialized
+    // Env-specific properties (application-dev.properties, application-prod.properties) are
+    // loaded in Start before the context is initialized
 
     @Bean
     public ObjectMapper objectMapper() {
