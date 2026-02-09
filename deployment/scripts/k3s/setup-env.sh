@@ -22,7 +22,7 @@ REQUIRED_VARS=(
 
 # Optional for full deployment (backend + DB secrets)
 OPTIONAL_VARS=(
-  "JAVA_SWING_TUTOR_DB_PASSWORD"
+  "JAVA_SWING_TUTOR_DATABASE_PASSWORD"
 )
 
 MISSING_VARS=()

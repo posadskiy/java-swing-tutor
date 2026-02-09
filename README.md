@@ -38,6 +38,8 @@ results of their code in a visual, interactive environment.
 The project follows a multi-module Maven architecture:
 
 - **`domain`**: Shared DTOs, request/response models, and domain entities used across modules
+- **`flyway`**: Database migrations (SQL only); consumed by the service classpath and by the Flyway Docker image / K8s
+  Job
 - **`service`**: Spring Boot REST API backend providing:
     - User authentication and management
     - Lesson and task management
@@ -99,14 +101,15 @@ mvn clean package -pl desktop-client -am
 ```
 
 This produces a runnable JAR file:
-- `desktop-client/target/desktop-client-1.0-SNAPSHOT.jar`
+
+- `desktop-client/target/desktop-client-<version>.jar`
 
 ### Step 3: Run Desktop Client
 
 Launch the desktop application:
 
 ```bash
-java -jar desktop-client/target/desktop-client-1.0-SNAPSHOT.jar
+java -jar desktop-client/target/desktop-client-<version>.jar
 ```
 
 The client automatically connects to the backend service at `http://localhost:8080`.
@@ -138,13 +141,13 @@ The client automatically connects to the backend service at `http://localhost:80
 
 #### Backend Service
 
-| Variable                            | Description                 | Default                                                   |
-|-------------------------------------|-----------------------------|-----------------------------------------------------------|
-| `JAVA_SWING_TUTOR_DB_URL`           | PostgreSQL connection URL   | `jdbc:postgresql://localhost:5450/java_swing_tutor`       |
-| `JAVA_SWING_TUTOR_DB_USER`          | Database username           | `java_swing_tutor`                                        |
-| `JAVA_SWING_TUTOR_DB_PASSWORD`      | Database password           | `java_swing_tutor`                                        |
-| `JAVA_SWING_TUTOR_SERVICE_PORT`      | Service port                | `8080`                                                    |
-| `SPRING_PROFILES_ACTIVE`             | Spring profile (dev/docker) | `dev`                                                     |
+| Variable                             | Description                 | Default                                             |
+|--------------------------------------|-----------------------------|-----------------------------------------------------|
+| `JAVA_SWING_TUTOR_DATABASE_URL`      | PostgreSQL connection URL   | `jdbc:postgresql://localhost:5450/java_swing_tutor` |
+| `JAVA_SWING_TUTOR_DATABASE_USER`     | Database username           | `java_swing_tutor`                                  |
+| `JAVA_SWING_TUTOR_DATABASE_PASSWORD` | Database password           | `java_swing_tutor`                                  |
+| `JAVA_SWING_TUTOR_SERVICE_PORT`      | Service port                | `8080`                                              |
+| `SPRING_PROFILES_ACTIVE`             | Spring profile (dev/docker) | `dev`                                               |
 
 ### Docker Compose Configuration
 
@@ -185,7 +188,7 @@ This allows for faster iteration during development with hot-reload capabilities
 mvn clean package -pl desktop-client -am
 
 # Run the client (connects to backend at http://localhost:8080)
-java -jar desktop-client/target/desktop-client-1.0-SNAPSHOT.jar
+java -jar desktop-client/target/desktop-client-<version>.jar
 ```
 
 ## 📁 Project Structure
@@ -207,14 +210,16 @@ java-swing-tutor/
 │           ├── infrastructure/ # JPA repositories and external clients
 │           └── web/          # REST controllers
 │   └── src/main/resources/
-│       ├── application.yml   # Spring Boot configuration
-│       └── db/migration/     # Flyway database migrations
-│           ├── common/      # Schema and common data
-│           ├── lesson/      # Base lesson data
-│           ├── lesson_en/   # English translations
-│           ├── lesson_ru/   # Russian translations
-│           ├── lesson_es/   # Spanish translations
-│           └── lesson_it/   # Italian translations
+│       └── application.yml   # Spring Boot configuration
+│
+├── flyway/                   # Database migrations (separate from service)
+│   └── src/main/resources/db/migration/
+│       ├── common/           # Schema and common data
+│       ├── lesson/           # Base lesson data
+│       ├── lesson_en/        # English translations
+│       ├── lesson_ru/        # Russian translations
+│       ├── lesson_es/        # Spanish translations
+│       └── lesson_it/        # Italian translations
 │
 ├── desktop-client/            # Swing desktop UI client
 │   └── src/main/java/
@@ -228,9 +233,10 @@ java-swing-tutor/
 │       └── i18n/            # Internationalization files
 │
 ├── deployment/                # Shared cluster config and scripts (see deployment/README.md)
+├── flyway/                    # Migrations module + Flyway image and K8s Job (flyway/deployment/)
 ├── website/                   # Next.js website (and website/deployment/ for deploy)
 ├── docker-compose.yml         # Docker services configuration
-├── service/Dockerfile        # Service container image (build context: repo root)
+├── service/Dockerfile         # Service container image (build context: repo root)
 └── pom.xml                   # Root Maven POM
 ```
 
@@ -266,8 +272,9 @@ The backend service exposes REST APIs at `http://localhost:8080/api`:
 
 ## 🗄️ Database
 
-The application uses PostgreSQL with Flyway for database migrations. All migrations are located in:
-- `service/src/main/resources/db/migration/`
+The application uses PostgreSQL with Flyway for database migrations. All migrations are in the **`flyway`** module:
+
+- `flyway/src/main/resources/db/migration/`
 
 The database schema includes:
 
@@ -326,17 +333,24 @@ docker compose logs -f service
 
 ## ☸️ Kubernetes deployment
 
-**Flow:** deploy common cluster config from the **parent** `deployment/`, then **build images and deploy from each module** (website, service). There is no central “build and push all”; each module builds and pushes its own image, then deploys. See **[deployment/README.md](deployment/README.md)** for layout and backend prerequisites.
+**Flow:** deploy common cluster config from the **parent** `deployment/`, then **build images and deploy from each
+module** (website, flyway, service). Flyway and service are separate: deploy Flyway first (migrations), then the backend
+service. There is no central “build and push all”; each module builds and pushes its own image, then deploys. See *
+*[deployment/README.md](deployment/README.md)** for layout and prerequisites.
 
-**Step 1** applies: namespace, Docker Hub secret, ConfigMap, Secrets, Traefik Let's Encrypt, Traefik middleware, and Traefik IngressRoute (routing for java-swing.com and api.java-swing.com). Step 2 deploys the website and backend so traffic can reach them.
 
 ```bash
 # 1. Deploy common cluster config from parent (namespace, secret, ConfigMap, Secrets, Traefik IngressRoute + middleware)
 ./deployment/scripts/k3s/deploy-to-k3s.sh
 
-# 2. Build, push, and deploy each module from its own folder
+# 2. Website (from website/)
 cd website && ./deployment/scripts/build-and-push.sh <version> && ./deployment/scripts/deploy.sh <version>
-cd ../service && ./deployment/scripts/build-and-push.sh <version> && ./deployment/scripts/deploy.sh <version>
+
+# 3. Flyway migrations (from flyway/) — run before the backend service
+cd flyway && ./deployment/scripts/build-and-push.sh <version> && ./deployment/scripts/deploy.sh <version>
+
+# 4. Backend service (from service/)
+cd service && ./deployment/scripts/build-and-push.sh <version> && ./deployment/scripts/deploy.sh <version>
 ```
 
 ## 📚 Learning Path

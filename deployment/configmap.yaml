@@ -4,4 +4,5 @@ metadata:
   name: java-swing-tutor-config
   namespace: java-swing-tutor
 data:
-  db.url: "jdbc:postgresql://postgres-service:5432/java_swing_tutor"
+  db.url: "jdbc:postgresql://shared-posadskiy.e.aivencloud.com:25370/java_swing_tutor_db?sslmode=require"
+  db.user: "avnadmin"

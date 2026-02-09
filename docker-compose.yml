@@ -25,7 +25,7 @@ services:
       FLYWAY_PASSWORD: java_swing_tutor
       FLYWAY_LOCATIONS: filesystem:/flyway/sql
     volumes:
-      - ./service/src/main/resources/db/migration:/flyway/sql:ro
+      - ./flyway/src/main/resources/db/migration:/flyway/sql:ro
 
   service:
     build:
@@ -37,9 +37,9 @@ services:
     ports:
       - "8080:8080"
     environment:
-      JAVA_SWING_TUTOR_DB_URL: jdbc:postgresql://db:5432/java_swing_tutor
-      JAVA_SWING_TUTOR_DB_USER: java_swing_tutor
-      JAVA_SWING_TUTOR_DB_PASSWORD: java_swing_tutor
+      JAVA_SWING_TUTOR_DATABASE_URL: jdbc:postgresql://db:5432/java_swing_tutor
+      JAVA_SWING_TUTOR_DATABASE_USER: java_swing_tutor
+      JAVA_SWING_TUTOR_DATABASE_PASSWORD: java_swing_tutor
       JAVA_SWING_TUTOR_SERVICE_PORT: 8080
       SPRING_PROFILES_ACTIVE: docker
       AUTH_SERVICE_BASE_URL: http://auth-service:8100

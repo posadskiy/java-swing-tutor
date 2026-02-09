@@ -7,7 +7,7 @@ set -e
 # Deploy backend:  ./service/deployment/scripts/deploy.sh <version>
 #
 # Required env: DOCKERHUB_USERNAME, DOCKERHUB_TOKEN; K3S_SERVER_IP, K3S_SSH_USER (see setup-env.sh).
-# For backend secrets: JAVA_SWING_TUTOR_DB_PASSWORD etc. (see secrets.yaml).
+# For backend secrets: JAVA_SWING_TUTOR_DATABASE_PASSWORD etc. (see secrets.yaml).
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEPLOYMENT_DIR="$(dirname "$(dirname "$SCRIPT_DIR")")"
