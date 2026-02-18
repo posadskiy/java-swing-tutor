@@ -35,13 +35,14 @@ public class Start {
                 env.setActiveProfiles(activeProfile.split(","));
 
                 // Load env-specific properties (application-dev.properties, application-prod.properties, etc.)
+                // addFirst so profile overrides application.properties loaded by AppConfig @PropertySource
                 MutablePropertySources propertySources = env.getPropertySources();
                 for (String profile : env.getActiveProfiles()) {
                     String profileResource = "application-" + profile + ".properties";
                     try {
                         ClassPathResource resource = new ClassPathResource(profileResource);
                         if (resource.exists()) {
-                            propertySources.addLast(new ResourcePropertySource(resource));
+                            propertySources.addFirst(new ResourcePropertySource(profileResource, resource));
                         }
                     } catch (IOException e) {
                         // Profile-specific file doesn't exist, ignore

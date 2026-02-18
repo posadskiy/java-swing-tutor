@@ -53,7 +53,7 @@ jobs:
             --dest target/jpackage \
             --app-version $APP_VERSION \
             --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8" \
+            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
             --mac-package-identifier com.posadskiy.javaswingtutor \
             --mac-package-name "Java Swing Tutor" \
             $ICON_ARG
@@ -65,7 +65,7 @@ jobs:
             --dest target/jpackage \
             --app-version $APP_VERSION \
             --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8" \
+            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
             --mac-package-identifier com.posadskiy.javaswingtutor \
             --mac-package-name "Java Swing Tutor" \
             $ICON_ARG
@@ -92,9 +92,9 @@ jobs:
             $iconArgs = @("--icon", "src\main\resources\icons\app-icon.ico")
           }
           Remove-Item -Path "C:\t" -Recurse -Force -ErrorAction SilentlyContinue
-          jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type exe --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8" --win-dir-chooser --win-menu --win-menu-group JSTutor --win-shortcut @iconArgs
+          jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type exe --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" --win-dir-chooser --win-menu --win-menu-group JSTutor --win-shortcut @iconArgs
           Remove-Item -Path "C:\t" -Recurse -Force -ErrorAction SilentlyContinue
-          jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type app-image --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8" @iconArgs
+          jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type app-image --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" @iconArgs
           if (Test-Path "X:\d\JSTutor") {
             Compress-Archive -Path "X:\d\JSTutor" -DestinationPath ("X:\d\JSTutor-win-${APP_VERSION}.zip") -Force
           }
@@ -124,7 +124,7 @@ jobs:
             --dest target/jpackage \
             --app-version $APP_VERSION \
             --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8" \
+            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
             --linux-menu-group Education \
             --linux-shortcut \
             --linux-package-name javaswingtutor \
@@ -137,7 +137,7 @@ jobs:
             --dest target/jpackage \
             --app-version $APP_VERSION \
             --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8" \
+            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
             $ICON_ARG
           if [ -d "target/jpackage/Java Swing Tutor" ]; then
             (cd target/jpackage && zip -r "JavaSwingTutor-linux-app-image-${APP_VERSION}.zip" "Java Swing Tutor" >/dev/null)
