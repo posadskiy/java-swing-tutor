@@ -76,25 +76,22 @@ jobs:
       - name: Build installers and portable app image (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          # Junction for short JAVA_HOME (used only when calling jpackage to avoid CreateProcess path limit)
+          # Short JAVA_HOME/PATH for jpackage only (avoids "filename or extension is too long")
           if (Test-Path C:\j) { cmd /c rmdir C:\j }
           cmd /c mklink /J C:\j $env:JAVA_HOME
+          $env:JAVA_HOME = "C:\j"
+          $env:PATH = "C:\j\bin;C:\Windows\System32;C:\Windows"
           subst X: $env:GITHUB_WORKSPACE
           New-Item -ItemType Directory -Force -Path "C:\t" | Out-Null
           cd X:\desktop-client
-          $MAVEN_VERSION = mvn help:evaluate -Dexpression=project.version -q -DforceStdout
-          $APP_VERSION = $MAVEN_VERSION -replace "-SNAPSHOT", "" -replace "-.*", ""
-          if ($APP_VERSION -notmatch "\.") {
-            $APP_VERSION = "$APP_VERSION.0"
-          }
-          $JAR_NAME = (Get-ChildItem target\desktop-client-*.jar | Select-Object -First 1).Name
+          $jarFile = Get-ChildItem target\desktop-client-*.jar | Select-Object -First 1
+          $JAR_NAME = $jarFile.Name
+          $APP_VERSION = ($jarFile.BaseName -replace 'desktop-client-', '') -replace '-SNAPSHOT', '' -replace '-.*', ''
+          if ($APP_VERSION -notmatch "\.") { $APP_VERSION = "$APP_VERSION.0" }
           $ICON_ARG = ""
           if (Test-Path "src\main\resources\icons\app-icon.ico") {
             $ICON_ARG = "--icon src\main\resources\icons\app-icon.ico"
           }
-          # Short PATH only for jpackage to avoid "filename or extension is too long"
-          $env:JAVA_HOME = "C:\j"
-          $env:PATH = "C:\j\bin;C:\Windows\System32;C:\Windows"
           jpackage --input target `
             --name "JSTutor" `
             --main-jar $JAR_NAME `
