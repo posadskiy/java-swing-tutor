@@ -42,7 +42,7 @@ jobs:
       - name: Build application
         run: mvn clean package -pl desktop-client -am -DskipTests
 
-      - name: Create macOS installer (Intel)
+      - name: Create macOS installer (dmg only)
         run: |
           cd desktop-client
           MAVEN_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -67,29 +67,12 @@ jobs:
             --mac-package-identifier com.posadskiy.javaswingtutor \
             --mac-package-name "Java Swing Tutor" \
             $ICON_ARG
-          jpackage --input target \
-            --name "Java Swing Tutor" \
-            --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingtutor.Start \
-            --type app-image \
-            --dest target/jpackage \
-            --app-version $APP_VERSION \
-            --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
-            --mac-package-identifier com.posadskiy.javaswingtutor \
-            --mac-package-name "Java Swing Tutor" \
-            $ICON_ARG
-          if [ -d "target/jpackage/Java Swing Tutor.app" ]; then
-            ditto -c -k --sequesterRsrc --keepParent "target/jpackage/Java Swing Tutor.app" "target/jpackage/JavaSwingTutor-macos-app-image-${APP_VERSION}.zip"
-          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: macos-x64-installer
-          path: |
-            desktop-client/target/jpackage/*.dmg
-            desktop-client/target/jpackage/*macos-app-image*.zip
+          path: desktop-client/target/jpackage/*.dmg
           retention-days: 30
 
   build-mac-aarch64:
@@ -107,7 +90,7 @@ jobs:
       - name: Build application
         run: mvn clean package -pl desktop-client -am -DskipTests
 
-      - name: Create macOS installer (ARM)
+      - name: Create macOS installer (dmg only)
         run: |
           cd desktop-client
           MAVEN_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -132,29 +115,12 @@ jobs:
             --mac-package-identifier com.posadskiy.javaswingtutor \
             --mac-package-name "Java Swing Tutor" \
             $ICON_ARG
-          jpackage --input target \
-            --name "Java Swing Tutor" \
-            --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingtutor.Start \
-            --type app-image \
-            --dest target/jpackage \
-            --app-version $APP_VERSION \
-            --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
-            --mac-package-identifier com.posadskiy.javaswingtutor \
-            --mac-package-name "Java Swing Tutor" \
-            $ICON_ARG
-          if [ -d "target/jpackage/Java Swing Tutor.app" ]; then
-            ditto -c -k --sequesterRsrc --keepParent "target/jpackage/Java Swing Tutor.app" "target/jpackage/JavaSwingTutor-macos-app-image-${APP_VERSION}.zip"
-          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: macos-aarch64-installer
-          path: |
-            desktop-client/target/jpackage/*.dmg
-            desktop-client/target/jpackage/*macos-app-image*.zip
+          path: desktop-client/target/jpackage/*.dmg
           retention-days: 30
 
   build-windows:
@@ -172,7 +138,7 @@ jobs:
       - name: Build application
         run: mvn clean package -pl desktop-client -am -DskipTests
 
-      - name: Create Windows installer
+      - name: Create Windows installer (exe only)
         run: |
           # Short JAVA_HOME/PATH for jpackage only (avoids "filename or extension is too long")
           if (Test-Path C:\j) { cmd /c rmdir C:\j }
@@ -191,20 +157,15 @@ jobs:
           }
           Remove-Item -Path "C:\t" -Recurse -Force -ErrorAction SilentlyContinue
           jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type exe --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" --win-dir-chooser --win-menu --win-menu-group JSTutor --win-shortcut @iconArgs
-          Remove-Item -Path "C:\t" -Recurse -Force -ErrorAction SilentlyContinue
-          jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type app-image --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" @iconArgs
-          if (Test-Path "X:\d\JSTutor") {
-            Compress-Archive -Path "X:\d\JSTutor" -DestinationPath ("X:\d\JSTutor-win-${APP_VERSION}.zip") -Force
-          }
           New-Item -ItemType Directory -Force -Path "$env:GITHUB_WORKSPACE\windows-installer-out" | Out-Null
-          Copy-Item -Path "X:\d\*" -Destination "$env:GITHUB_WORKSPACE\windows-installer-out" -Recurse -Force
+          Copy-Item -Path "X:\d\*.exe" -Destination "$env:GITHUB_WORKSPACE\windows-installer-out" -Force
           subst X: /d
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: windows-installer
-          path: windows-installer-out/
+          path: windows-installer-out/*.exe
           retention-days: 30
 
   build-linux:
@@ -225,7 +186,7 @@ jobs:
       - name: Build application
         run: mvn clean package -pl desktop-client -am -DskipTests
 
-      - name: Create Linux package
+      - name: Create Linux package (deb only)
         run: |
           cd desktop-client
           MAVEN_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -251,25 +212,10 @@ jobs:
             --linux-shortcut \
             --linux-package-name javaswingtutor \
             $ICON_ARG
-          jpackage --input target \
-            --name "Java Swing Tutor" \
-            --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingtutor.Start \
-            --type app-image \
-            --dest target/jpackage \
-            --app-version $APP_VERSION \
-            --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
-            $ICON_ARG
-          if [ -d "target/jpackage/Java Swing Tutor" ]; then
-            (cd target/jpackage && zip -r "JavaSwingTutor-linux-app-image-${APP_VERSION}.zip" "Java Swing Tutor" >/dev/null)
-          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: linux-installer
-          path: |
-            desktop-client/target/jpackage/*.deb
-            desktop-client/target/jpackage/*linux-app-image*.zip
+          path: desktop-client/target/jpackage/*.deb
           retention-days: 30

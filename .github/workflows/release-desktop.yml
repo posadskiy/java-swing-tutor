@@ -10,11 +10,24 @@ on:
 
 jobs:
   build:
-    name: Build (${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
+    name: Build (${{ matrix.name }})
+    runs-on: ${{ matrix.runs-on }}
     strategy:
+      fail-fast: false
       matrix:
-        os: [ macos-latest, windows-latest, ubuntu-latest ]
+        include:
+          - name: macos-arm64
+            runs-on: macos-latest
+            platform: macos
+          - name: macos-x64
+            runs-on: macos-14-large  # Intel; larger runner (may require GitHub Team/Enterprise)
+            platform: macos
+          - name: windows
+            runs-on: windows-latest
+            platform: windows
+          - name: linux
+            runs-on: ubuntu-latest
+            platform: linux
     steps:
       - uses: actions/checkout@v4
 
@@ -25,14 +38,14 @@ jobs:
           distribution: 'temurin'
 
       - name: Install Linux deps
-        if: matrix.os == 'ubuntu-latest'
-        run: sudo apt-get update && sudo apt-get install -y fakeroot zip
+        if: matrix.platform == 'linux'
+        run: sudo apt-get update && sudo apt-get install -y fakeroot
 
       - name: Build app
         run: mvn clean package -pl desktop-client -am -DskipTests
 
-      - name: Build installers and portable app image (macOS)
-        if: matrix.os == 'macos-latest'
+      - name: Build macOS installer (dmg only)
+        if: matrix.platform == 'macos'
         run: |
           cd desktop-client
           MAVEN_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -57,24 +70,14 @@ jobs:
             --mac-package-identifier com.posadskiy.javaswingtutor \
             --mac-package-name "Java Swing Tutor" \
             $ICON_ARG
-          jpackage --input target \
-            --name "Java Swing Tutor" \
-            --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingtutor.Start \
-            --type app-image \
-            --dest target/jpackage \
-            --app-version $APP_VERSION \
-            --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
-            --mac-package-identifier com.posadskiy.javaswingtutor \
-            --mac-package-name "Java Swing Tutor" \
-            $ICON_ARG
-          if [ -d "target/jpackage/Java Swing Tutor.app" ]; then
-            ditto -c -k --sequesterRsrc --keepParent "target/jpackage/Java Swing Tutor.app" "target/jpackage/JavaSwingTutor-macos-app-image-${APP_VERSION}.zip"
+          # Rename so Intel and ARM64 DMGs are both included in release (no overwrite)
+          DMG=$(ls target/jpackage/*.dmg 2>/dev/null | head -1)
+          if [ -n "$DMG" ]; then
+            mv "$DMG" "target/jpackage/JavaSwingTutor-${APP_VERSION}-${{ matrix.name }}.dmg"
           fi
 
-      - name: Build installers and portable app image (Windows)
-        if: matrix.os == 'windows-latest'
+      - name: Build Windows installer (exe only)
+        if: matrix.platform == 'windows'
         run: |
           # Short JAVA_HOME/PATH for jpackage only (avoids "filename or extension is too long")
           if (Test-Path C:\j) { cmd /c rmdir C:\j }
@@ -93,17 +96,12 @@ jobs:
           }
           Remove-Item -Path "C:\t" -Recurse -Force -ErrorAction SilentlyContinue
           jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type exe --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" --win-dir-chooser --win-menu --win-menu-group JSTutor --win-shortcut @iconArgs
-          Remove-Item -Path "C:\t" -Recurse -Force -ErrorAction SilentlyContinue
-          jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type app-image --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" @iconArgs
-          if (Test-Path "X:\d\JSTutor") {
-            Compress-Archive -Path "X:\d\JSTutor" -DestinationPath ("X:\d\JSTutor-win-${APP_VERSION}.zip") -Force
-          }
           New-Item -ItemType Directory -Force -Path "$env:GITHUB_WORKSPACE\windows-installer-out" | Out-Null
-          Copy-Item -Path "X:\d\*" -Destination "$env:GITHUB_WORKSPACE\windows-installer-out" -Recurse -Force
+          Copy-Item -Path "X:\d\*.exe" -Destination "$env:GITHUB_WORKSPACE\windows-installer-out" -Force
           subst X: /d
 
-      - name: Build installers and portable app image (Linux)
-        if: matrix.os == 'ubuntu-latest'
+      - name: Build Linux installer (deb only)
+        if: matrix.platform == 'linux'
         run: |
           cd desktop-client
           MAVEN_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
@@ -129,29 +127,15 @@ jobs:
             --linux-shortcut \
             --linux-package-name javaswingtutor \
             $ICON_ARG
-          jpackage --input target \
-            --name "Java Swing Tutor" \
-            --main-jar $JAR_NAME \
-            --main-class com.posadskiy.javaswingtutor.Start \
-            --type app-image \
-            --dest target/jpackage \
-            --app-version $APP_VERSION \
-            --vendor Posadskiy \
-            --java-options "-Dfile.encoding=UTF-8 -Dapp.env=prod" \
-            $ICON_ARG
-          if [ -d "target/jpackage/Java Swing Tutor" ]; then
-            (cd target/jpackage && zip -r "JavaSwingTutor-linux-app-image-${APP_VERSION}.zip" "Java Swing Tutor" >/dev/null)
-          fi
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: desktop-${{ matrix.os }}
+          name: desktop-${{ matrix.name }}
           path: |
             desktop-client/target/jpackage/*.dmg
             desktop-client/target/jpackage/*.deb
-            desktop-client/target/jpackage/*app-image*.zip
-            windows-installer-out/
+            windows-installer-out/*.exe
           retention-days: 30
 
   bundle:
@@ -163,10 +147,10 @@ jobs:
         with:
           path: dist
 
-      - name: Create release bundle
+      - name: Create release bundle (platform installers only: .dmg, .exe, .deb)
         run: |
           mkdir -p release
-          find dist -type f -exec cp {} release/ \;
+          find dist -type f \( -name "*.dmg" -o -name "*.exe" -o -name "*.deb" \) -exec cp {} release/ \;
           (cd release && ls -la)
 
       - name: Upload bundled artifacts
