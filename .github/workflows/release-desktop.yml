@@ -147,7 +147,7 @@ jobs:
         with:
           path: dist
 
-      - name: Create release bundle (platform installers only: .dmg, .exe, .deb)
+      - name: Create release bundle
         run: |
           mkdir -p release
           find dist -type f \( -name "*.dmg" -o -name "*.exe" -o -name "*.deb" \) -exec cp {} release/ \;
