@@ -166,7 +166,7 @@ jobs:
       - name: Create release bundle
         run: |
           mkdir -p release
-          find dist -type f -maxdepth 3 -exec cp {} release/ \;
+          find dist -type f -exec cp {} release/ \;
           (cd release && ls -la)
 
       - name: Upload bundled artifacts
