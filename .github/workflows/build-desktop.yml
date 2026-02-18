@@ -174,6 +174,11 @@ jobs:
 
       - name: Create Windows installer
         run: |
+          # Shorten JAVA_HOME to avoid "filename or extension is too long" (CreateProcess env limit)
+          if (Test-Path C:\j) { cmd /c rmdir C:\j }
+          cmd /c mklink /J C:\j $env:JAVA_HOME
+          $env:JAVA_HOME = "C:\j"
+          $env:PATH = "C:\j\bin;C:\Windows\System32;C:\Windows"
           subst X: $env:GITHUB_WORKSPACE
           New-Item -ItemType Directory -Force -Path "C:\t" | Out-Null
           cd X:\desktop-client
