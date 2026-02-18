@@ -82,7 +82,6 @@ jobs:
           $env:JAVA_HOME = "C:\j"
           $env:PATH = "C:\j\bin;C:\Windows\System32;C:\Windows"
           subst X: $env:GITHUB_WORKSPACE
-          New-Item -ItemType Directory -Force -Path "C:\t" | Out-Null
           cd X:\desktop-client
           $jarFile = Get-ChildItem target\desktop-client-*.jar | Select-Object -First 1
           $JAR_NAME = $jarFile.Name
@@ -92,7 +91,9 @@ jobs:
           if (Test-Path "src\main\resources\icons\app-icon.ico") {
             $iconArgs = @("--icon", "src\main\resources\icons\app-icon.ico")
           }
+          Remove-Item -Path "C:\t" -Recurse -Force -ErrorAction SilentlyContinue
           jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type exe --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8" --win-dir-chooser --win-menu --win-menu-group JSTutor --win-shortcut @iconArgs
+          Remove-Item -Path "C:\t" -Recurse -Force -ErrorAction SilentlyContinue
           jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type app-image --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8" @iconArgs
           if (Test-Path "X:\d\JSTutor") {
             Compress-Archive -Path "X:\d\JSTutor" -DestinationPath ("X:\d\JSTutor-win-${APP_VERSION}.zip") -Force
