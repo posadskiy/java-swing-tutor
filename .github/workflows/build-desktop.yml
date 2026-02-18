@@ -186,48 +186,24 @@ jobs:
           $JAR_NAME = $jarFile.Name
           $APP_VERSION = ($jarFile.BaseName -replace 'desktop-client-', '') -replace '-SNAPSHOT', '' -replace '-.*', ''
           if ($APP_VERSION -notmatch "\.") { $APP_VERSION = "$APP_VERSION.0" }
-          $ICON_ARG = ""
+          $iconArgs = @()
           if (Test-Path "src\main\resources\icons\app-icon.ico") {
-            $ICON_ARG = "--icon src\main\resources\icons\app-icon.ico"
+            $iconArgs = @("--icon", "src\main\resources\icons\app-icon.ico")
           }
-          jpackage --input target `
-            --name "JSTutor" `
-            --main-jar $JAR_NAME `
-            --main-class com.posadskiy.javaswingtutor.Start `
-            --type exe `
-            --dest X:\d `
-            --temp C:\t `
-            --app-version $APP_VERSION `
-            --vendor Posadskiy `
-            --java-options "-Dfile.encoding=UTF-8" `
-            --win-dir-chooser `
-            --win-menu `
-            --win-menu-group JSTutor `
-            --win-shortcut `
-            $ICON_ARG
-          jpackage --input target `
-            --name "JSTutor" `
-            --main-jar $JAR_NAME `
-            --main-class com.posadskiy.javaswingtutor.Start `
-            --type app-image `
-            --dest X:\d `
-            --temp C:\t `
-            --app-version $APP_VERSION `
-            --vendor Posadskiy `
-            --java-options "-Dfile.encoding=UTF-8" `
-            $ICON_ARG
+          jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type exe --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8" --win-dir-chooser --win-menu --win-menu-group JSTutor --win-shortcut @iconArgs
+          jpackage --input target --name "JSTutor" --main-jar $JAR_NAME --main-class com.posadskiy.javaswingtutor.Start --type app-image --dest X:\d --temp C:\t --app-version $APP_VERSION --vendor Posadskiy --java-options "-Dfile.encoding=UTF-8" @iconArgs
           if (Test-Path "X:\d\JSTutor") {
             Compress-Archive -Path "X:\d\JSTutor" -DestinationPath ("X:\d\JSTutor-win-${APP_VERSION}.zip") -Force
           }
+          New-Item -ItemType Directory -Force -Path "$env:GITHUB_WORKSPACE\windows-installer-out" | Out-Null
+          Copy-Item -Path "X:\d\*" -Destination "$env:GITHUB_WORKSPACE\windows-installer-out" -Recurse -Force
           subst X: /d
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: windows-installer
-          path: |
-            d/*.exe
-            d/*.zip
+          path: windows-installer-out/
           retention-days: 30
 
   build-linux:
