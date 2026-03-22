@@ -3,14 +3,16 @@ WORKDIR /app
 # Copy root POM and all module POMs (paths relative to repo root build context)
 COPY pom.xml .
 COPY domain/pom.xml ./domain/
+COPY flyway/pom.xml ./flyway/
 COPY service/pom.xml ./service/
 COPY desktop-client/pom.xml ./desktop-client/
 # Copy source code for all modules
 COPY domain/src ./domain/src
+COPY flyway/src ./flyway/src
 COPY service/src ./service/src
 COPY desktop-client/src ./desktop-client/src
 # Build the service module (depends on domain)
-RUN mvn -pl service -am -DskipTests clean package
+RUN mvn -pl service -am -DskipTests clean install
 
 FROM eclipse-temurin:25-jre
 WORKDIR /app

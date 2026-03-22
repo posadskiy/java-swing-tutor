@@ -1,6 +1,5 @@
 package com.posadskiy.javaswingtutor.service.infrastructure.client;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.posadskiy.javaswingtutor.domain.request.AuthRequest;
 import com.posadskiy.javaswingtutor.domain.request.RefreshTokenRequest;
 import com.posadskiy.javaswingtutor.domain.request.RegisterRequest;
@@ -14,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
+import tools.jackson.databind.ObjectMapper;
 
 import java.time.Instant;
 import java.util.Base64;
