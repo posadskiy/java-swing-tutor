@@ -14,7 +14,7 @@ RUN mvn -pl service -am -DskipTests clean package
 
 FROM eclipse-temurin:25-jre
 WORKDIR /app
-COPY --from=build /app/service/target/service-1.0.0.jar /app/app.jar
+COPY --from=build /app/service/target/service-1.1.0.jar /app/app.jar
 ENV JAVA_OPTS=""
 EXPOSE 8400
 ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar /app/app.jar"]
