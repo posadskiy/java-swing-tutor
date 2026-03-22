@@ -6,6 +6,8 @@ spring:
     username: ${JAVA_SWING_TUTOR_DATABASE_USER:postgres}
     password: ${JAVA_SWING_TUTOR_DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 2
   jpa:
     hibernate:
       ddl-auto: none
@@ -16,7 +18,7 @@ spring:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
 server:
-  port: ${JAVA_SWING_TUTOR_SERVICE_PORT:8080}
+  port: ${JAVA_SWING_TUTOR_SERVICE_PORT:8400}
 
 logging:
   level:
