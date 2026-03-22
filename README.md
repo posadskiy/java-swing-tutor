@@ -86,9 +86,9 @@ This command will:
 
 - Start PostgreSQL database on port **5450** (mapped from container port 5432)
 - Run Flyway database migrations automatically
-- Build and start the Spring Boot REST API service on port **8080**
+- Build and start the Spring Boot REST API service on port **8400**
 
-The backend service will be available at `http://localhost:8080`
+The backend service will be available at `http://localhost:8400`
 
 **Note**: The first startup may take a few minutes as Docker builds the service image and runs all database migrations.
 
@@ -112,7 +112,7 @@ Launch the desktop application:
 java -jar desktop-client/target/desktop-client-<version>.jar
 ```
 
-The client automatically connects to the backend service at `http://localhost:8080`.
+The client automatically connects to the backend service at `http://localhost:8400`.
 
 ### First Steps in the Application
 
@@ -133,7 +133,7 @@ The client automatically connects to the backend service at `http://localhost:80
 
 | Variable                          | Description                                     | Default                 |
 |-----------------------------------|-------------------------------------------------|-------------------------|
-| `JAVA_SWING_TUTOR_SERVICE_URL`    | Backend service URL                             | `http://localhost:8080` |
+| `JAVA_SWING_TUTOR_SERVICE_URL`    | Backend service URL                             | `http://localhost:8400` |
 | `JAVA_SWING_TUTOR_USE_REMOTE`     | Use REST API for data access                    | `true`                  |
 | `JAVA_SWING_TUTOR_USE_DB`         | Fallback to direct database access              | `false`                 |
 | `JAVA_SWING_TUTOR_SMTP_USERNAME`  | SMTP username for email verification (optional) | -                       |
@@ -146,7 +146,7 @@ The client automatically connects to the backend service at `http://localhost:80
 | `JAVA_SWING_TUTOR_DATABASE_URL`      | PostgreSQL connection URL   | `jdbc:postgresql://localhost:5450/java_swing_tutor` |
 | `JAVA_SWING_TUTOR_DATABASE_USER`     | Database username           | `java_swing_tutor`                                  |
 | `JAVA_SWING_TUTOR_DATABASE_PASSWORD` | Database password           | `java_swing_tutor`                                  |
-| `JAVA_SWING_TUTOR_SERVICE_PORT`      | Service port                | `8080`                                              |
+| `JAVA_SWING_TUTOR_SERVICE_PORT`      | Service port                | `8400`                                              |
 | `SPRING_PROFILES_ACTIVE`             | Spring profile (dev/docker) | `dev`                                               |
 
 ### Docker Compose Configuration
@@ -155,7 +155,7 @@ The `docker-compose.yml` file configures:
 
 - **PostgreSQL database** on port 5450
 - **Flyway migrations** that run automatically
-- **Spring Boot service** on port 8080
+- **Spring Boot service** on port 8400
 
 Database credentials (Docker environment):
 
@@ -187,7 +187,7 @@ This allows for faster iteration during development with hot-reload capabilities
 # Build the client
 mvn clean package -pl desktop-client -am
 
-# Run the client (connects to backend at http://localhost:8080)
+# Run the client (connects to backend at http://localhost:8400)
 java -jar desktop-client/target/desktop-client-<version>.jar
 ```
 
@@ -242,7 +242,7 @@ java-swing-tutor/
 
 ## 🌐 API Endpoints
 
-The backend service exposes REST APIs at `http://localhost:8080/api`:
+The backend service exposes REST APIs at `http://localhost:8400/api`:
 
 ### Authentication
 - `POST /api/auth/login` - User authentication

@@ -24,7 +24,7 @@ spec:
       kind: Rule
       services:
         - name: java-swing-tutor-service
-          port: 8080
+          port: 8400
       middlewares:
         - name: cors-middleware
         - name: rate-limit-middleware
@@ -35,7 +35,7 @@ spec:
       kind: Rule
       services:
         - name: java-swing-tutor-service
-          port: 8080
+          port: 8400
       priority: 20
 
   tls:

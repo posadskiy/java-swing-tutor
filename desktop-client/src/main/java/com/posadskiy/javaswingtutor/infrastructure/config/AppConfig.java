@@ -45,7 +45,7 @@ public class AppConfig {
     ) {
         // Priority: 1. Environment variable, 2. Properties file, 3. Default
         String baseUrl = env.getProperty("JAVA_SWING_TUTOR_SERVICE_URL",
-            env.getProperty("java-swing-tutor.service.url", "http://localhost:8080"));
+            env.getProperty("java-swing-tutor.service.url", "http://localhost:8400"));
         
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setObjectMapper(objectMapper);

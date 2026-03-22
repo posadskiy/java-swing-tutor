@@ -17,7 +17,7 @@ spec:
               kubernetes.io/metadata.name: kube-system
       ports:
         - protocol: TCP
-          port: 8080
+          port: 8400
     - from:
         - namespaceSelector:
             matchLabels:
@@ -27,7 +27,7 @@ spec:
               name: auth
       ports:
         - protocol: TCP
-          port: 8080
+          port: 8400
   egress:
     # auth-service and user-service live in microservices namespace
     - to:

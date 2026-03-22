@@ -35,12 +35,12 @@ services:
       flyway:
         condition: service_completed_successfully
     ports:
-      - "8080:8080"
+      - "8400:8400"
     environment:
       JAVA_SWING_TUTOR_DATABASE_URL: jdbc:postgresql://db:5432/java_swing_tutor
       JAVA_SWING_TUTOR_DATABASE_USER: java_swing_tutor
       JAVA_SWING_TUTOR_DATABASE_PASSWORD: java_swing_tutor
-      JAVA_SWING_TUTOR_SERVICE_PORT: 8080
+      JAVA_SWING_TUTOR_SERVICE_PORT: 8400
       SPRING_PROFILES_ACTIVE: docker
       AUTH_SERVICE_BASE_URL: http://auth-service:8100
       USER_SERVICE_BASE_URL: http://user-service:8095
