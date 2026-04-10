@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
+import {FrontendObservability} from "@/components/FrontendObservability";
 import {Header} from "@/components/layout/Header";
 import {Footer} from "@/components/layout/Footer";
 import {TranslationProvider} from "@/lib/translations/context";
@@ -108,6 +109,7 @@ export default function RootLayout({
             }}/>
         </head>
         <body className="min-h-screen flex flex-col antialiased">
+        <FrontendObservability/>
         <ThemeProvider>
         <TranslationProvider>
             <LocaleSetter/>

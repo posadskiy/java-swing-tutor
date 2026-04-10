@@ -12,8 +12,11 @@ RUN npm ci
 # Copy source code
 COPY . .
 
-# Build the Next.js application
-RUN npm run build
+# Source map upload to Grafana (optional): pass at build time, e.g.
+#   --build-arg GRAFANA_OBSERVABILITY_FARO_TOKEN="$GRAFANA_OBSERVABILITY_FARO_TOKEN"
+# or export GRAFANA_OBSERVABILITY_FARO_TOKEN before running build-and-push.sh
+ARG GRAFANA_OBSERVABILITY_FARO_TOKEN
+RUN GRAFANA_OBSERVABILITY_FARO_TOKEN="${GRAFANA_OBSERVABILITY_FARO_TOKEN}" npm run build
 
 # Production stage - use nginx to serve static files
 FROM nginx:alpine

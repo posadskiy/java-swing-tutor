@@ -1,7 +1,7 @@
 export const SITE_NAME = "Java Swing Tutor";
 export const SITE_DESCRIPTION =
     "An interactive desktop application for learning Java Swing GUI development through hands-on, task-based programming exercises.";
-export const SITE_URL = "https://javaswingtutor.com";
+export const SITE_URL = "https://java-swing.com";
 
 export const SUPPORT_EMAIL = "support@posadskiy.com";
 
