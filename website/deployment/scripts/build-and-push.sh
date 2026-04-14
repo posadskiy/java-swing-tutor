@@ -23,7 +23,6 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 VERSION=$1
-TAG_DATE=$(date +%Y%m%d%H%M%S)
 
 BUILD_ARGS=()
 if [ -n "${GRAFANA_OBSERVABILITY_FARO_TOKEN:-}" ]; then
@@ -36,7 +35,6 @@ docker buildx build --platform linux/arm64 --no-cache \
   "${BUILD_ARGS[@]}" \
   -f "$WEBSITE_ROOT/Dockerfile" \
   -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:$VERSION" \
-  -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:$TAG_DATE" \
   -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:latest" \
   "$WEBSITE_ROOT" --push
 

@@ -19,13 +19,11 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 VERSION=$1
-TAG_DATE=$(date +%Y%m%d%H%M%S)
 
 echo "🚀 Building and pushing $IMAGE_NAME (version: $VERSION)..."
 docker buildx build --platform linux/arm64 \
   -f "$FLYWAY_ROOT/Dockerfile" \
   -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:$VERSION" \
-  -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:$TAG_DATE" \
   -t "$DOCKERHUB_USERNAME/$IMAGE_NAME:latest" \
   "$FLYWAY_ROOT/" --push
 
