@@ -1,153 +1,96 @@
 package com.posadskiy.javaswingtutor.service.infrastructure.client;
 
 import com.posadskiy.javaswingtutor.domain.dto.UserDto;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestClientException;
-import org.springframework.web.client.RestTemplate;
-
+import io.micronaut.core.annotation.Nullable;
+import io.micronaut.http.annotation.Body;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.Header;
+import io.micronaut.http.annotation.PathVariable;
+import io.micronaut.http.annotation.Post;
+import io.micronaut.http.annotation.Put;
+import io.micronaut.http.client.annotation.Client;
+import io.micronaut.http.client.exceptions.HttpClientResponseException;
 import java.util.Map;
 import java.util.Optional;
 
-@Component
-public class UserServiceClient {
-    private final RestTemplate restTemplate;
-    private final String userServiceBaseUrl;
+@Client("${service.urls.user}")
+public interface UserServiceClient {
 
-    public UserServiceClient(
-        @Value("${user.service.base-url:http://localhost:8095}") String userServiceBaseUrl) {
-        this.restTemplate = new RestTemplate();
-        this.userServiceBaseUrl = userServiceBaseUrl;
-    }
+    @Get("/v0/user/{id}")
+    Map<String, Object> getUserByIdRequest(
+        @PathVariable Long id, @Header("Authorization") @Nullable String authorization);
 
-    public Optional<UserDto> getUserById(Long id, String token) {
+    @Get("/v0/user/me")
+    Map<String, Object> getCurrentUserRequest(@Header("Authorization") String authorization);
+
+    @Post("/signup")
+    Map<String, Object> registerUserRequest(@Body Map<String, Object> request);
+
+    @Put("/v0/user/{id}")
+    Map<String, Object> updateUserRequest(
+        @PathVariable Long id,
+        @Body Map<String, Object> request,
+        @Header("Authorization") String authorization);
+
+    default Optional<UserDto> getUserById(Long id, String token) {
         try {
-            HttpHeaders headers = new HttpHeaders();
-            if (token != null) {
-                headers.setBearerAuth(token);
-            }
-            headers.setContentType(MediaType.APPLICATION_JSON);
-
-            HttpEntity<Void> entity = new HttpEntity<>(headers);
-            ResponseEntity<Map<String, Object>> response =
-                restTemplate.exchange(
-                    userServiceBaseUrl + "/v0/user/" + id,
-                    HttpMethod.GET,
-                    entity,
-                    new org.springframework.core.ParameterizedTypeReference<Map<String, Object>>() {
-                    });
-
-            if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
-                return Optional.of(mapToUserDto(response.getBody()));
-            }
+            String auth = token != null ? "Bearer " + token : null;
+            Map<String, Object> body = getUserByIdRequest(id, auth);
+            return Optional.of(mapToUserDto(body));
+        } catch (HttpClientResponseException e) {
             return Optional.empty();
-        } catch (HttpClientErrorException.NotFound e) {
-            return Optional.empty();
-        } catch (RestClientException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Failed to communicate with user-service", e);
         }
     }
 
-    public Optional<UserDto> getCurrentUser(String token) {
+    default Optional<UserDto> getCurrentUser(String token) {
         try {
-            HttpHeaders headers = new HttpHeaders();
-            headers.setBearerAuth(token);
-            headers.setContentType(MediaType.APPLICATION_JSON);
-
-            HttpEntity<Void> entity = new HttpEntity<>(headers);
-            ResponseEntity<Map<String, Object>> response =
-                restTemplate.exchange(
-                    userServiceBaseUrl + "/v0/user/me",
-                    HttpMethod.GET,
-                    entity,
-                    new org.springframework.core.ParameterizedTypeReference<Map<String, Object>>() {
-                    });
-
-            if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
-                return Optional.of(mapToUserDto(response.getBody()));
-            }
+            Map<String, Object> body = getCurrentUserRequest("Bearer " + token);
+            return Optional.of(mapToUserDto(body));
+        } catch (HttpClientResponseException e) {
             return Optional.empty();
-        } catch (HttpClientErrorException.NotFound e) {
-            return Optional.empty();
-        } catch (RestClientException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Failed to communicate with user-service", e);
         }
     }
 
-    public Optional<UserDto> registerUser(String username, String password, String email) {
+    default Optional<UserDto> registerUser(String username, String password, String email) {
         try {
-            HttpHeaders headers = new HttpHeaders();
-            headers.setContentType(MediaType.APPLICATION_JSON);
-
             Map<String, Object> request = Map.of(
                 "username", username,
                 "password", password,
                 "email", email
             );
-
-            HttpEntity<Map<String, Object>> entity = new HttpEntity<>(request, headers);
-            ResponseEntity<Map<String, Object>> response =
-                restTemplate.exchange(
-                    userServiceBaseUrl + "/signup",
-                    HttpMethod.POST,
-                    entity,
-                    new org.springframework.core.ParameterizedTypeReference<Map<String, Object>>() {
-                    });
-
-            if (response.getStatusCode().is2xxSuccessful() && response.getBody() != null) {
-                return Optional.of(mapToUserDto(response.getBody()));
-            }
+            Map<String, Object> body = registerUserRequest(request);
+            return Optional.of(mapToUserDto(body));
+        } catch (HttpClientResponseException e) {
             return Optional.empty();
-        } catch (HttpClientErrorException.BadRequest e) {
-            return Optional.empty();
-        } catch (RestClientException e) {
+        } catch (Exception e) {
             throw new RuntimeException("Failed to communicate with user-service", e);
         }
     }
 
-    public Optional<String> getPreferredLanguage(Long userId, String token) {
-        // Note: user-service might not have preferredLanguage field
-        // This is a SwingTutor-specific field, so we might need to keep it local
-        // For now, return default or try to get from user-service
+    default Optional<String> getPreferredLanguage(Long userId, String token) {
         Optional<UserDto> user = getUserById(userId, token);
         if (user.isPresent()) {
-            // If user-service doesn't support preferredLanguage, we'll need to store it locally
-            // For now, return default
             return Optional.of(user.get().preferredLanguage() != null ? user.get().preferredLanguage() : "en");
         }
         return Optional.of("en");
     }
 
-    public void setPreferredLanguage(Long userId, String languageCode, String token) {
-        // Note: user-service might not support preferredLanguage field
-        // This might need to be stored locally or extended in user-service
-        // For now, we'll try to update via PUT /v0/user/{id}
+    default void setPreferredLanguage(Long userId, String languageCode, String token) {
         try {
-            HttpHeaders headers = new HttpHeaders();
-            headers.setBearerAuth(token);
-            headers.setContentType(MediaType.APPLICATION_JSON);
-
-            // Get current user first
             Optional<UserDto> currentUser = getUserById(userId, token);
             if (currentUser.isPresent()) {
-                // Create update request - user-service might only support username updates
-                // We'll need to check user-service API for what fields can be updated
                 Map<String, Object> updateRequest = Map.of(
                     "username", currentUser.get().login() != null ? currentUser.get().login() : ""
                 );
 
-                HttpEntity<Map<String, Object>> entity = new HttpEntity<>(updateRequest, headers);
-                restTemplate.exchange(
-                    userServiceBaseUrl + "/v0/user/" + userId,
-                    HttpMethod.PUT,
-                    entity,
-                    new org.springframework.core.ParameterizedTypeReference<Map<String, Object>>() {
-                    });
+                updateUserRequest(userId, updateRequest, "Bearer " + token);
             }
-        } catch (RestClientException e) {
-            // Log but don't throw - preferred language might be stored locally
+        } catch (Exception e) {
+            // best effort
         }
     }
 
@@ -155,10 +98,8 @@ public class UserServiceClient {
         Long id = extractLong(userMap.get("id"));
         String email = extractString(userMap.get("email"));
         String username = extractString(userMap.get("username"));
-        // Map username to login for compatibility
         String login = username != null ? username : extractString(userMap.get("login"));
 
-        // SwingTutor-specific fields might not be in user-service response
         Integer logins = extractInteger(userMap.get("logins"));
         Integer lastLogin = extractInteger(userMap.get("lastLogin"));
         Boolean completeTraining = extractBoolean(userMap.get("completeTraining"));
@@ -175,7 +116,9 @@ public class UserServiceClient {
     }
 
     private Long extractLong(Object value) {
-        if (value == null) return null;
+        if (value == null) {
+            return null;
+        }
         if (value instanceof Number) {
             return ((Number) value).longValue();
         }
@@ -190,7 +133,9 @@ public class UserServiceClient {
     }
 
     private Integer extractInteger(Object value) {
-        if (value == null) return null;
+        if (value == null) {
+            return null;
+        }
         if (value instanceof Number) {
             return ((Number) value).intValue();
         }
@@ -205,7 +150,9 @@ public class UserServiceClient {
     }
 
     private Boolean extractBoolean(Object value) {
-        if (value == null) return null;
+        if (value == null) {
+            return null;
+        }
         if (value instanceof Boolean) {
             return (Boolean) value;
         }
@@ -216,7 +163,9 @@ public class UserServiceClient {
     }
 
     private String extractString(Object value) {
-        if (value == null) return null;
+        if (value == null) {
+            return null;
+        }
         return value.toString();
     }
 }

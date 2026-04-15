@@ -1,22 +1,16 @@
 FROM maven:3.9.12-eclipse-temurin-25-alpine AS build
 WORKDIR /app
-# Copy root POM and all module POMs (paths relative to repo root build context)
-COPY pom.xml .
-COPY domain/pom.xml ./domain/
-COPY flyway/pom.xml ./flyway/
-COPY service/pom.xml ./service/
-COPY desktop-client/pom.xml ./desktop-client/
-# Copy source code for all modules
-COPY domain/src ./domain/src
-COPY flyway/src ./flyway/src
-COPY service/src ./service/src
-COPY desktop-client/src ./desktop-client/src
-# Build the service module (depends on domain)
-RUN mvn -pl service -am -DskipTests clean install
+
+# Copy the entire project (including all modules)
+COPY . .
+
+# Build only the service module and its dependencies
+RUN --mount=type=cache,target=/root/.m2 \
+    mvn clean install -pl service -am -DskipTests
 
 FROM eclipse-temurin:25-jre
 WORKDIR /app
-COPY --from=build /app/service/target/service-1.1.0.jar /app/app.jar
+COPY --from=build /app/service/target/service-*.jar /app/app.jar
 ENV JAVA_OPTS=""
 EXPOSE 8400
 ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar /app/app.jar"]

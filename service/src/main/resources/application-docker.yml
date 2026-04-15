@@ -1,7 +1,4 @@
-auth:
-  service:
-    base-url: http://auth-service:8100
-
-user:
-  service:
-    base-url: http://user-service:8095
+service:
+  urls:
+    auth: http://auth-service:8100
+    user: http://user-service:8095

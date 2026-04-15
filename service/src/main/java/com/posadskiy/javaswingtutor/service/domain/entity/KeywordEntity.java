@@ -1,6 +1,9 @@
 package com.posadskiy.javaswingtutor.service.domain.entity;
 
-import jakarta.persistence.*;
+import io.micronaut.data.annotation.GeneratedValue;
+import io.micronaut.data.annotation.Id;
+import io.micronaut.data.annotation.MappedEntity;
+import io.micronaut.data.annotation.MappedProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,14 +11,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "keyword")
+@MappedEntity("keyword")
 public class KeywordEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(GeneratedValue.Type.IDENTITY)
     private Long id;
 
-    @Column(name = "keyword_text")
+    @MappedProperty("keyword_text")
     private String keywordText;
 }
 

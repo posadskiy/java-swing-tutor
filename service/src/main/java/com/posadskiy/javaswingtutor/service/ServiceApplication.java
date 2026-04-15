@@ -1,13 +1,11 @@
 package com.posadskiy.javaswingtutor.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import io.micronaut.runtime.Micronaut;
 
-@SpringBootApplication
 public class ServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceApplication.class, args);
+        Micronaut.run(ServiceApplication.class, args);
     }
 }
 

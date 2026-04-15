@@ -2,77 +2,81 @@ package com.posadskiy.javaswingtutor.service.web;
 
 import com.posadskiy.javaswingtutor.domain.dto.UserDto;
 import com.posadskiy.javaswingtutor.domain.request.RegisterRequest;
+import com.posadskiy.javaswingtutor.service.infrastructure.client.AuthServiceClient;
 import com.posadskiy.javaswingtutor.service.infrastructure.client.UserServiceClient;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
+import io.micronaut.http.HttpRequest;
+import io.micronaut.http.HttpResponse;
+import io.micronaut.http.HttpStatus;
+import io.micronaut.http.annotation.Body;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.PathVariable;
+import io.micronaut.http.annotation.Post;
+import io.micronaut.http.annotation.Put;
+import io.micronaut.http.annotation.QueryValue;
+import io.micronaut.scheduling.annotation.ExecuteOn;
 
-@RestController
-@RequestMapping("/api/users")
+import static io.micronaut.scheduling.TaskExecutors.BLOCKING;
+
+@Controller("/api/users")
+@ExecuteOn(BLOCKING)
 public class UserController {
     private final UserServiceClient userServiceClient;
+    private final AuthServiceClient authServiceClient;
 
-    public UserController(UserServiceClient userServiceClient) {
+    public UserController(UserServiceClient userServiceClient, AuthServiceClient authServiceClient) {
         this.userServiceClient = userServiceClient;
+        this.authServiceClient = authServiceClient;
     }
 
-    @GetMapping("/me")
-    public ResponseEntity<UserDto> getCurrentUser(
-        Authentication authentication, HttpServletRequest request) {
-        if (authentication == null || authentication.getPrincipal() == null) {
-            return ResponseEntity.status(401).build();
+    @Get("/me")
+    public HttpResponse<UserDto> getCurrentUser(HttpRequest<?> request) {
+        String token = extractToken(request);
+        if (token == null) {
+            return HttpResponse.status(HttpStatus.UNAUTHORIZED);
         }
-        try {
-        Long userId = Long.parseLong(authentication.getPrincipal().toString());
-            String token = extractToken(request);
-            return userServiceClient
-                .getUserById(userId, token)
-            .map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.notFound().build());
-        } catch (NumberFormatException e) {
-            return ResponseEntity.status(401).build();
-        }
+        return authServiceClient.getUserIdFromToken(token)
+            .flatMap(userId -> userServiceClient.getUserById(userId, token))
+            .map(HttpResponse::ok)
+            .orElseGet(() -> HttpResponse.status(HttpStatus.UNAUTHORIZED));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<UserDto> getUser(
-        @PathVariable("id") Long id, HttpServletRequest request) {
+    @Get("/{id}")
+    public HttpResponse<UserDto> getUser(
+        @PathVariable("id") Long id, HttpRequest<?> request) {
         String token = extractToken(request);
         return userServiceClient
             .getUserById(id, token)
-            .map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.notFound().build());
+            .map(HttpResponse::ok)
+            .orElseGet(HttpResponse::notFound);
     }
 
-    @PutMapping("/me/language")
-    public ResponseEntity<Void> updatePreferredLanguage(
-        @RequestParam("lang") String languageCode,
-        Authentication authentication,
-        HttpServletRequest request) {
-        if (authentication == null || authentication.getPrincipal() == null) {
-            return ResponseEntity.status(401).build();
+    @Put("/me/language")
+    public HttpResponse<Void> updatePreferredLanguage(
+        @QueryValue("lang") String languageCode,
+        HttpRequest<?> request) {
+        String token = extractToken(request);
+        if (token == null) {
+            return HttpResponse.status(HttpStatus.UNAUTHORIZED);
         }
-        try {
-            Long userId = Long.parseLong(authentication.getPrincipal().toString());
-            String token = extractToken(request);
+        return authServiceClient.getUserIdFromToken(token)
+            .map(userId -> {
             userServiceClient.setPreferredLanguage(userId, languageCode, token);
-            return ResponseEntity.ok().build();
-        } catch (NumberFormatException e) {
-            return ResponseEntity.status(401).build();
-        }
+                return HttpResponse.<Void>ok();
+            })
+            .orElseGet(() -> HttpResponse.status(HttpStatus.UNAUTHORIZED));
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<UserDto> register(@RequestBody RegisterRequest request) {
+    @Post("/register")
+    public HttpResponse<UserDto> register(@Body RegisterRequest request) {
         return userServiceClient
             .registerUser(request.login(), request.password(), request.email())
-            .map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.badRequest().build());
+            .map(HttpResponse::ok)
+            .orElseGet(() -> HttpResponse.status(HttpStatus.BAD_REQUEST));
     }
 
-    private String extractToken(HttpServletRequest request) {
-        String authHeader = request.getHeader("Authorization");
+    private String extractToken(HttpRequest<?> request) {
+        String authHeader = request.getHeaders().get("Authorization");
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             return authHeader.substring(7);
         }

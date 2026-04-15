@@ -1,9 +1,13 @@
 package com.posadskiy.javaswingtutor.service.infrastructure.jpa;
 
 import com.posadskiy.javaswingtutor.service.domain.entity.KeywordEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
+import io.micronaut.data.jdbc.annotation.JdbcRepository;
+import io.micronaut.data.repository.CrudRepository;
 
-public interface KeywordRepository extends JpaRepository<KeywordEntity, Long> {
+import static io.micronaut.data.model.query.builder.sql.Dialect.POSTGRES;
+
+@JdbcRepository(dialect = POSTGRES)
+public interface KeywordRepository extends CrudRepository<KeywordEntity, Long> {
 }
 
 

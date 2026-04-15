@@ -3,14 +3,18 @@ package com.posadskiy.javaswingtutor.service.web;
 import com.posadskiy.javaswingtutor.domain.dto.CompletedTaskDto;
 import com.posadskiy.javaswingtutor.domain.request.CompletedTaskRequest;
 import com.posadskiy.javaswingtutor.service.application.CompletedTaskService;
+import io.micronaut.http.HttpResponse;
+import io.micronaut.http.annotation.Body;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.PathVariable;
+import io.micronaut.http.annotation.Post;
+import io.micronaut.http.annotation.QueryValue;
 import jakarta.validation.Valid;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/completed-tasks")
+@Controller("/api/completed-tasks")
 public class CompletedTaskController {
     private final CompletedTaskService completedTaskService;
 
@@ -18,23 +22,23 @@ public class CompletedTaskController {
         this.completedTaskService = completedTaskService;
     }
 
-    @GetMapping
-    public List<CompletedTaskDto> byUser(@RequestParam("userId") Long userId) {
+    @Get
+    public List<CompletedTaskDto> byUser(@QueryValue("userId") Long userId) {
         return completedTaskService.findByUser(userId);
     }
 
-    @GetMapping("/{userId}/{taskId}")
-    public ResponseEntity<CompletedTaskDto> byUserAndTask(
+    @Get("/{userId}/{taskId}")
+    public HttpResponse<CompletedTaskDto> byUserAndTask(
         @PathVariable("userId") Long userId,
         @PathVariable("taskId") Long taskId
     ) {
         return completedTaskService.findByUserAndTask(userId, taskId)
-            .map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.notFound().build());
+            .map(HttpResponse::ok)
+            .orElseGet(HttpResponse::notFound);
     }
 
-    @PostMapping
-    public CompletedTaskDto create(@Valid @RequestBody CompletedTaskRequest request) {
+    @Post
+    public CompletedTaskDto create(@Valid @Body CompletedTaskRequest request) {
         return completedTaskService.create(request);
     }
 }

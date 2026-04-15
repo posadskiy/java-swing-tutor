@@ -6,11 +6,11 @@ import com.posadskiy.javaswingtutor.service.domain.entity.TaskTranslationEntity;
 import com.posadskiy.javaswingtutor.service.infrastructure.jpa.DocumentationTranslationRepository;
 import com.posadskiy.javaswingtutor.service.infrastructure.jpa.LessonTranslationRepository;
 import com.posadskiy.javaswingtutor.service.infrastructure.jpa.TaskTranslationRepository;
-import org.springframework.stereotype.Service;
+import jakarta.inject.Singleton;
 
 import java.util.Optional;
 
-@Service
+@Singleton
 public class TranslationService {
     private final LessonTranslationRepository lessonTranslationRepository;
     private final TaskTranslationRepository taskTranslationRepository;

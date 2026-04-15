@@ -1,15 +1,14 @@
 package com.posadskiy.javaswingtutor.service.infrastructure.jpa;
 
 import com.posadskiy.javaswingtutor.service.domain.entity.LessonTranslationEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import io.micronaut.data.jdbc.annotation.JdbcRepository;
+import io.micronaut.data.repository.CrudRepository;
 
 import java.util.Optional;
 
-public interface LessonTranslationRepository extends JpaRepository<LessonTranslationEntity, Long> {
-    Optional<LessonTranslationEntity> findByLessonIdAndLanguageCode(Long lessonId, String languageCode);
+import static io.micronaut.data.model.query.builder.sql.Dialect.POSTGRES;
 
-    @Query("SELECT lt FROM LessonTranslationEntity lt WHERE lt.lessonId = :lessonId AND lt.languageCode = :languageCode")
-    Optional<LessonTranslationEntity> findTranslation(@Param("lessonId") Long lessonId, @Param("languageCode") String languageCode);
+@JdbcRepository(dialect = POSTGRES)
+public interface LessonTranslationRepository extends CrudRepository<LessonTranslationEntity, Long> {
+    Optional<LessonTranslationEntity> findByLessonIdAndLanguageCode(Long lessonId, String languageCode);
 }

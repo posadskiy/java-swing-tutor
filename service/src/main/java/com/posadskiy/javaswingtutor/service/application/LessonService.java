@@ -1,19 +1,30 @@
 package com.posadskiy.javaswingtutor.service.application;
 
 import com.posadskiy.javaswingtutor.domain.dto.LessonDto;
+import com.posadskiy.javaswingtutor.service.domain.entity.TaskEntity;
 import com.posadskiy.javaswingtutor.service.domain.mapper.DtoMapper;
 import com.posadskiy.javaswingtutor.service.infrastructure.jpa.LessonRepository;
-import org.springframework.stereotype.Service;
+import com.posadskiy.javaswingtutor.service.infrastructure.jpa.TaskRepository;
+import jakarta.inject.Singleton;
 
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-@Service
+@Singleton
 public class LessonService {
     private final LessonRepository lessonRepository;
+    private final TaskRepository taskRepository;
     private final TranslationService translationService;
 
-    public LessonService(LessonRepository lessonRepository, TranslationService translationService) {
+    public LessonService(
+        LessonRepository lessonRepository,
+        TaskRepository taskRepository,
+        TranslationService translationService) {
         this.lessonRepository = lessonRepository;
+        this.taskRepository = taskRepository;
         this.translationService = translationService;
     }
 
@@ -23,7 +34,11 @@ public class LessonService {
 
     public List<LessonDto> getAll(String languageCode) {
         String lang = languageCode != null ? languageCode : "en";
-        return lessonRepository.findAllWithTasks()
+        List<com.posadskiy.javaswingtutor.service.domain.entity.LessonEntity> lessons = lessonRepository.findAll()
+            .stream()
+            .toList();
+        Map<Long, List<TaskEntity>> tasksByLesson = loadTasksByLesson(lessons);
+        return lessons
             .stream()
             .map(lesson -> {
                 String translatedName = translationService.getLessonName(
@@ -31,6 +46,7 @@ public class LessonService {
                 );
                 return DtoMapper.toDto(
                     lesson,
+                    tasksByLesson.getOrDefault(lesson.getId(), List.of()),
                     lang,
                     translatedName,
                     task -> {
@@ -52,7 +68,10 @@ public class LessonService {
         if (categoryId == null) {
             return getAll(lang);
         }
-        return lessonRepository.findByTaskCategoryIdWithTasks(categoryId)
+        List<com.posadskiy.javaswingtutor.service.domain.entity.LessonEntity> lessons =
+            lessonRepository.findByTaskCategoryId(categoryId);
+        Map<Long, List<TaskEntity>> tasksByLesson = loadTasksByLesson(lessons);
+        return lessons
             .stream()
             .map(lesson -> {
                 String translatedName = translationService.getLessonName(
@@ -60,6 +79,7 @@ public class LessonService {
                 );
                 return DtoMapper.toDto(
                     lesson,
+                    tasksByLesson.getOrDefault(lesson.getId(), List.of()),
                     lang,
                     translatedName,
                     task -> {
@@ -78,13 +98,18 @@ public class LessonService {
 
     public java.util.Optional<LessonDto> getById(Long id, String languageCode) {
         String lang = languageCode != null ? languageCode : "en";
-        return lessonRepository.findByIdWithTasks(id)
+        return lessonRepository.findById(id)
             .map(lesson -> {
+                List<TaskEntity> lessonTasks = taskRepository.findByLessonId(lesson.getId())
+                    .stream()
+                    .sorted(java.util.Comparator.comparing(TaskEntity::getTaskNumber))
+                    .toList();
                 String translatedName = translationService.getLessonName(
                     lesson.getId(), lang
                 );
                 return DtoMapper.toDto(
                     lesson,
+                    lessonTasks,
                     lang,
                     translatedName,
                     task -> {
@@ -94,6 +119,19 @@ public class LessonService {
                     }
                 );
             });
+    }
+
+    private Map<Long, List<TaskEntity>> loadTasksByLesson(
+        List<com.posadskiy.javaswingtutor.service.domain.entity.LessonEntity> lessons) {
+        if (lessons.isEmpty()) {
+            return Collections.emptyMap();
+        }
+        List<Long> lessonIds = lessons.stream()
+            .map(com.posadskiy.javaswingtutor.service.domain.entity.LessonEntity::getId)
+            .toList();
+        return taskRepository.findByLessonIdInOrderByTaskNumberAsc(lessonIds)
+            .stream()
+            .collect(Collectors.groupingBy(TaskEntity::getLessonId, HashMap::new, Collectors.toList()));
     }
 }
 

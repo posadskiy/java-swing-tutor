@@ -26,7 +26,7 @@ spec:
               containerPort: 8400
               protocol: TCP
           env:
-            - name: SPRING_PROFILES_ACTIVE
+            - name: MICRONAUT_ENVIRONMENTS
               value: "prod"
             - name: JAVA_SWING_TUTOR_DATABASE_URL
               valueFrom:

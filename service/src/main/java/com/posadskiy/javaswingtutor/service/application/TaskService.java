@@ -3,11 +3,11 @@ package com.posadskiy.javaswingtutor.service.application;
 import com.posadskiy.javaswingtutor.domain.dto.TaskDto;
 import com.posadskiy.javaswingtutor.service.domain.mapper.DtoMapper;
 import com.posadskiy.javaswingtutor.service.infrastructure.jpa.TaskRepository;
-import org.springframework.stereotype.Service;
+import jakarta.inject.Singleton;
 
 import java.util.List;
 
-@Service
+@Singleton
 public class TaskService {
     private final TaskRepository taskRepository;
     private final TranslationService translationService;

@@ -1,6 +1,9 @@
 package com.posadskiy.javaswingtutor.service.domain.entity;
 
-import jakarta.persistence.*;
+import io.micronaut.data.annotation.GeneratedValue;
+import io.micronaut.data.annotation.Id;
+import io.micronaut.data.annotation.MappedEntity;
+import io.micronaut.data.annotation.MappedProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,29 +11,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "lesson_translation", uniqueConstraints = {
-    @UniqueConstraint(columnNames = {"lesson_id", "language_code"})
-})
+@MappedEntity("lesson_translation")
 public class LessonTranslationEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(GeneratedValue.Type.IDENTITY)
     private Long id;
 
-    @Column(name = "lesson_id", nullable = false)
+    @MappedProperty("lesson_id")
     private Long lessonId;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "lesson_id", insertable = false, updatable = false)
-    private LessonEntity lesson;
-
-    @Column(name = "language_code", nullable = false, length = 10)
+    
+    @MappedProperty("language_code")
     private String languageCode;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "language_code", referencedColumnName = "code", insertable = false, updatable = false)
-    private LanguageEntity language;
-
-    @Column(name = "lesson_name", length = 255)
+    
+    @MappedProperty("lesson_name")
     private String lessonName;
 }

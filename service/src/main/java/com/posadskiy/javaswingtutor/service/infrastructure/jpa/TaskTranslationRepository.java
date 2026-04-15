@@ -1,19 +1,14 @@
 package com.posadskiy.javaswingtutor.service.infrastructure.jpa;
 
 import com.posadskiy.javaswingtutor.service.domain.entity.TaskTranslationEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
+import io.micronaut.data.jdbc.annotation.JdbcRepository;
+import io.micronaut.data.repository.CrudRepository;
 
-import java.util.List;
 import java.util.Optional;
 
-public interface TaskTranslationRepository extends JpaRepository<TaskTranslationEntity, Long> {
+import static io.micronaut.data.model.query.builder.sql.Dialect.POSTGRES;
+
+@JdbcRepository(dialect = POSTGRES)
+public interface TaskTranslationRepository extends CrudRepository<TaskTranslationEntity, Long> {
     Optional<TaskTranslationEntity> findByTaskIdAndLanguageCode(Long taskId, String languageCode);
-
-    @Query("SELECT tt FROM TaskTranslationEntity tt WHERE tt.taskId = :taskId AND tt.languageCode = :languageCode")
-    Optional<TaskTranslationEntity> findTranslation(@Param("taskId") Long taskId, @Param("languageCode") String languageCode);
-
-    @Query("SELECT tt FROM TaskTranslationEntity tt WHERE tt.taskId IN :taskIds AND tt.languageCode = :languageCode")
-    List<TaskTranslationEntity> findByTaskIdsAndLanguageCode(@Param("taskIds") List<Long> taskIds, @Param("languageCode") String languageCode);
 }

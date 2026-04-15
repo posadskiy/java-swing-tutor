@@ -5,12 +5,12 @@ import com.posadskiy.javaswingtutor.service.domain.mapper.DtoMapper;
 import com.posadskiy.javaswingtutor.service.infrastructure.jpa.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
+import jakarta.inject.Singleton;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Singleton
 public class ReferenceDataService {
     private static final Logger log = LoggerFactory.getLogger(ReferenceDataService.class);
     private final KeywordRepository keywordRepository;

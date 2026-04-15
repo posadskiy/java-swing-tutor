@@ -1,32 +1,23 @@
 package com.posadskiy.javaswingtutor.service.domain.entity;
 
-import jakarta.persistence.*;
+import io.micronaut.data.annotation.GeneratedValue;
+import io.micronaut.data.annotation.Id;
+import io.micronaut.data.annotation.MappedEntity;
+import io.micronaut.data.annotation.MappedProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "lesson")
+@MappedEntity("lesson")
 public class LessonEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(GeneratedValue.Type.IDENTITY)
     private Long id;
 
-    @Column(name = "id_task_category")
+    @MappedProperty("id_task_category")
     private Long taskCategoryId;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_lesson")
-    @OrderBy("taskNumber ASC")
-    private List<TaskEntity> tasks = new ArrayList<>();
-
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "lesson")
-    private List<LessonTranslationEntity> translations = new ArrayList<>();
 }
 

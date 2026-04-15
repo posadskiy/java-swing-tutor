@@ -2,13 +2,15 @@ package com.posadskiy.javaswingtutor.service.web;
 
 import com.posadskiy.javaswingtutor.domain.dto.*;
 import com.posadskiy.javaswingtutor.service.application.ReferenceDataService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import io.micronaut.http.HttpResponse;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.PathVariable;
+import io.micronaut.http.annotation.QueryValue;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/ref")
+@Controller("/api/ref")
 public class ReferenceDataController {
     private final ReferenceDataService referenceDataService;
 
@@ -16,34 +18,34 @@ public class ReferenceDataController {
         this.referenceDataService = referenceDataService;
     }
 
-    @GetMapping("/keywords")
+    @Get("/keywords")
     public List<KeywordDto> keywords() {
         return referenceDataService.getKeywords();
     }
 
-    @GetMapping("/shorthands")
+    @Get("/shorthands")
     public List<ShorthandDto> shorthands() {
         return referenceDataService.getShorthands();
     }
 
-    @GetMapping("/documentation/{id}")
-    public ResponseEntity<DocumentationDto> documentation(
+    @Get("/documentation/{id}")
+    public HttpResponse<DocumentationDto> documentation(
         @PathVariable("id") Long id,
-        @RequestParam(value = "lang", required = false, defaultValue = "en") String languageCode
+        @QueryValue(value = "lang", defaultValue = "en") String languageCode
     ) {
         return referenceDataService.getDocumentation(id, languageCode)
-            .map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.notFound().build());
+            .map(HttpResponse::ok)
+            .orElseGet(HttpResponse::notFound);
     }
 
-    @GetMapping("/errors/{id}")
-    public ResponseEntity<ErrorDto> error(@PathVariable("id") Long id) {
+    @Get("/errors/{id}")
+    public HttpResponse<ErrorDto> error(@PathVariable("id") Long id) {
         return referenceDataService.getError(id)
-            .map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.notFound().build());
+            .map(HttpResponse::ok)
+            .orElseGet(HttpResponse::notFound);
     }
 
-    @GetMapping("/task-categories")
+    @Get("/task-categories")
     public List<TaskCategoryDto> categories() {
         return referenceDataService.getTaskCategories();
     }

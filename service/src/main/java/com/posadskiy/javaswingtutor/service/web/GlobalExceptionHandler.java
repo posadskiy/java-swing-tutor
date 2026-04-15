@@ -2,20 +2,23 @@ package com.posadskiy.javaswingtutor.service.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+import io.micronaut.context.annotation.Requires;
+import io.micronaut.http.HttpRequest;
+import io.micronaut.http.HttpResponse;
+import io.micronaut.http.annotation.Produces;
+import io.micronaut.http.server.exceptions.ExceptionHandler;
+import jakarta.inject.Singleton;
 
-@RestControllerAdvice
-public class GlobalExceptionHandler {
+@Produces
+@Singleton
+@Requires(classes = {Exception.class, ExceptionHandler.class})
+public class GlobalExceptionHandler implements ExceptionHandler<Exception, HttpResponse<GlobalExceptionHandler.ErrorResponse>> {
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> handleException(Exception ex) {
+    @Override
+    public HttpResponse<ErrorResponse> handle(HttpRequest request, Exception ex) {
         log.error("Unhandled exception", ex);
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-            .body(new ErrorResponse("Internal Server Error", ex.getMessage()));
+        return HttpResponse.serverError(new ErrorResponse("Internal Server Error", ex.getMessage()));
     }
 
     public record ErrorResponse(String error, String message) {

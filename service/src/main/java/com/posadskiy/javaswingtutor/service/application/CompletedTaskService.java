@@ -5,13 +5,13 @@ import com.posadskiy.javaswingtutor.domain.request.CompletedTaskRequest;
 import com.posadskiy.javaswingtutor.service.domain.entity.CompletedTaskEntity;
 import com.posadskiy.javaswingtutor.service.domain.mapper.DtoMapper;
 import com.posadskiy.javaswingtutor.service.infrastructure.jpa.CompletedTaskRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import io.micronaut.transaction.annotation.Transactional;
+import jakarta.inject.Singleton;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Singleton
 public class CompletedTaskService {
     private final CompletedTaskRepository completedTaskRepository;
 

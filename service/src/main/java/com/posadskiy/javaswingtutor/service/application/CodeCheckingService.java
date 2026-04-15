@@ -3,7 +3,7 @@ package com.posadskiy.javaswingtutor.service.application;
 import com.posadskiy.javaswingtutor.domain.dto.CheckerResultDto;
 import com.posadskiy.javaswingtutor.service.domain.checker.CheckerResult;
 import com.posadskiy.javaswingtutor.service.domain.checker.CodeChecker;
-import org.springframework.stereotype.Service;
+import jakarta.inject.Singleton;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import java.util.List;
  * Application service for code checking operations.
  * Orchestrates code validation using CodeChecker.
  */
-@Service
+@Singleton
 public class CodeCheckingService {
 
     private final CodeChecker codeChecker;

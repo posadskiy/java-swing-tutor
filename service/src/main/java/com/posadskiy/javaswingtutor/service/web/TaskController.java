@@ -2,68 +2,66 @@ package com.posadskiy.javaswingtutor.service.web;
 
 import com.posadskiy.javaswingtutor.domain.dto.TaskDto;
 import com.posadskiy.javaswingtutor.service.application.TaskService;
+import com.posadskiy.javaswingtutor.service.infrastructure.client.AuthServiceClient;
 import com.posadskiy.javaswingtutor.service.infrastructure.client.UserServiceClient;
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
+import io.micronaut.http.HttpRequest;
+import io.micronaut.http.HttpResponse;
+import io.micronaut.http.annotation.Controller;
+import io.micronaut.http.annotation.Get;
+import io.micronaut.http.annotation.PathVariable;
+import io.micronaut.http.annotation.QueryValue;
 
 import java.util.List;
+import java.util.Optional;
 
-@RestController
-@RequestMapping("/api/tasks")
+@Controller("/api/tasks")
 public class TaskController {
     private final TaskService taskService;
     private final UserServiceClient userServiceClient;
+    private final AuthServiceClient authServiceClient;
 
-    public TaskController(TaskService taskService, UserServiceClient userServiceClient) {
+    public TaskController(
+        TaskService taskService, UserServiceClient userServiceClient, AuthServiceClient authServiceClient) {
         this.taskService = taskService;
         this.userServiceClient = userServiceClient;
+        this.authServiceClient = authServiceClient;
     }
 
-    @GetMapping
+    @Get
     public List<TaskDto> getTasks(
-        @RequestParam(name = "lessonId", required = false) Long lessonId,
-        @RequestParam(name = "lang", required = false) String languageCode,
-        Authentication authentication,
-        HttpServletRequest request) {
-        String lang = determineLanguage(languageCode, authentication, request);
-        return taskService.getByLesson(lessonId, lang);
+        @QueryValue("lessonId") Optional<Long> lessonId,
+        @QueryValue(value = "lang", defaultValue = "") String languageCode,
+        HttpRequest<?> request) {
+        String lang = determineLanguage(languageCode, request);
+        return taskService.getByLesson(lessonId.orElse(null), lang);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<TaskDto> getTask(
+    @Get("/{id}")
+    public HttpResponse<TaskDto> getTask(
         @PathVariable("id") Long id,
-        @RequestParam(name = "lang", required = false) String languageCode,
-        Authentication authentication,
-        HttpServletRequest request) {
-        String lang = determineLanguage(languageCode, authentication, request);
+        @QueryValue(value = "lang", defaultValue = "") String languageCode,
+        HttpRequest<?> request) {
+        String lang = determineLanguage(languageCode, request);
         return taskService.getById(id, lang)
-            .map(ResponseEntity::ok)
-            .orElseGet(() -> ResponseEntity.notFound().build());
+            .map(HttpResponse::ok)
+            .orElseGet(HttpResponse::notFound);
     }
 
-    private String determineLanguage(
-        String languageCode, Authentication authentication, HttpServletRequest request) {
+    private String determineLanguage(String languageCode, HttpRequest<?> request) {
         if (languageCode != null && !languageCode.isBlank()) {
             return languageCode;
         }
-
-        if (authentication != null && authentication.getPrincipal() != null) {
-            try {
-                Long userId = Long.parseLong(authentication.getPrincipal().toString());
-                String token = extractToken(request);
-                return userServiceClient.getPreferredLanguage(userId, token).orElse("en");
-            } catch (NumberFormatException e) {
-                // Fall through to default
-            }
+        String token = extractToken(request);
+        if (token != null) {
+            return authServiceClient.getUserIdFromToken(token)
+                .flatMap(userId -> userServiceClient.getPreferredLanguage(userId, token))
+                .orElse("en");
         }
-
         return "en";
     }
 
-    private String extractToken(HttpServletRequest request) {
-        String authHeader = request.getHeader("Authorization");
+    private String extractToken(HttpRequest<?> request) {
+        String authHeader = request.getHeaders().get("Authorization");
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             return authHeader.substring(7);
         }

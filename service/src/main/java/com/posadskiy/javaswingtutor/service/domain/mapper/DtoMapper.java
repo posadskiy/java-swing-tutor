@@ -24,11 +24,19 @@ public final class DtoMapper {
         String lessonName,
         Function<TaskEntity, TaskDto> taskMapper
     ) {
-        List<TaskDto> tasks = entity.getTasks() != null
-            ? entity.getTasks().stream()
+        return toDto(entity, List.of(), languageCode, lessonName, taskMapper);
+    }
+
+    public static LessonDto toDto(
+        LessonEntity entity,
+        List<TaskEntity> lessonTasks,
+        String languageCode,
+        String lessonName,
+        Function<TaskEntity, TaskDto> taskMapper
+    ) {
+        List<TaskDto> tasks = lessonTasks.stream()
             .map(task -> taskMapper != null ? taskMapper.apply(task) : toDto(task, languageCode))
-                .toList()
-            : List.of();
+            .toList();
         
         return new LessonDto(
             entity.getId(),

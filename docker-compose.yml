@@ -1,5 +1,6 @@
 services:
   db:
+    container_name: java-swing-tutor-db
     image: postgres:17
     environment:
       POSTGRES_DB: java_swing_tutor
@@ -14,6 +15,7 @@ services:
       retries: 30
 
   flyway:
+    container_name: java-swing-tutor-flyway
     image: flyway/flyway:10
     depends_on:
       db:
@@ -28,6 +30,7 @@ services:
       - ./flyway/src/main/resources/db/migration:/flyway/sql:ro
 
   service:
+    container_name: java-swing-tutor-service
     build:
       context: .
       dockerfile: service/Dockerfile
@@ -41,19 +44,23 @@ services:
       JAVA_SWING_TUTOR_DATABASE_USER: java_swing_tutor
       JAVA_SWING_TUTOR_DATABASE_PASSWORD: java_swing_tutor
       JAVA_SWING_TUTOR_SERVICE_PORT: 8400
-      SPRING_PROFILES_ACTIVE: docker
+      MICRONAUT_ENVIRONMENTS: docker
       AUTH_SERVICE_BASE_URL: http://auth-service:8100
       USER_SERVICE_BASE_URL: http://user-service:8095
+      LOG_LEVEL_ROOT: INFO
+      LOG_LEVEL_APP: INFO
+      LOG_LEVEL_MICRONAUT: INFO
     networks:
       - default
       - observability-stack-network
 
   website:
+    container_name: java-swing-tutor-website
     build:
       context: ./website
       dockerfile: Dockerfile
     ports:
-      - "3000:80"
+      - "3010:80"
     environment:
       - NODE_ENV=production
     healthcheck:
