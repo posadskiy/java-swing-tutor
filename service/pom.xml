@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.posadskiy</groupId>
         <artifactId>java-swing-tutor</artifactId>
-        <version>1.2.0</version>
+        <version>1.2.4</version>
     </parent>
 
     <artifactId>service</artifactId>
@@ -73,6 +73,10 @@
         <dependency>
             <groupId>io.micronaut</groupId>
             <artifactId>micronaut-management</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micronaut.micrometer</groupId>
+            <artifactId>micronaut-micrometer-core</artifactId>
         </dependency>
         <dependency>
             <groupId>io.micronaut.micrometer</groupId>
@@ -188,36 +192,18 @@
             <plugin>
                 <groupId>io.micronaut.maven</groupId>
                 <artifactId>micronaut-maven-plugin</artifactId>
-                <version>4.11.6</version>
                 <configuration>
                     <mainClass>${exec.mainClass}</mainClass>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.6.0</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <compilerArgs>
-                        <arg>-parameters</arg>
-                    </compilerArgs>
                     <annotationProcessorPaths combine.children="append">
-                        <path>
-                            <groupId>io.micronaut</groupId>
-                            <artifactId>micronaut-inject-java</artifactId>
-                            <version>${micronaut.version}</version>
-                        </path>
                         <path>
                             <groupId>io.micronaut.data</groupId>
                             <artifactId>micronaut-data-processor</artifactId>
-                        </path>
-                        <path>
-                            <groupId>io.micronaut.validation</groupId>
-                            <artifactId>micronaut-validation-processor</artifactId>
                         </path>
                     </annotationProcessorPaths>
                 </configuration>

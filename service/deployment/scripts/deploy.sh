@@ -44,7 +44,6 @@ export IMAGE_VERSION="$DOCKERHUB_USERNAME/java-swing-tutor-service:$VERSION"
 echo "🚀 Applying backend manifest (version: $VERSION)..."
 envsubst < "$DEPLOYMENT_DIR/deployment.yaml" | kubectl apply -f -
 kubectl apply -f "$DEPLOYMENT_DIR/service.yaml"
-kubectl apply -f "$DEPLOYMENT_DIR/network-policy.yaml"
 
 echo ""
 echo "⏳ Waiting for deployment..."

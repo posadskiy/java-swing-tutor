@@ -14,6 +14,10 @@ spec:
     metadata:
       labels:
         app: java-swing-tutor-service
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/prometheus"
+        prometheus.io/port: "8400"
     spec:
       imagePullSecrets:
         - name: dockerhub-registry-secret
@@ -49,6 +53,22 @@ spec:
               value: "http://auth-service.microservices.svc.cluster.local:8100"
             - name: USER_SERVICE_BASE_URL
               value: "http://user-service.microservices.svc.cluster.local:8095"
+            - name: OTEL_SERVICE_NAME
+              value: "java-swing-tutor-service"
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: "http://grafana-alloy.observability.svc.cluster.local:4317"
+            - name: OTEL_TRACES_SAMPLER
+              value: parentbased_traceidratio
+            - name: OTEL_TRACES_SAMPLER_ARG
+              value: "1.0"
+            - name: DB_MAX_POOL_SIZE
+              value: "2"
+            - name: DB_MIN_IDLE
+              value: "0"
+            - name: DB_IDLE_TIMEOUT
+              value: "60000"
+            - name: DB_MAX_LIFETIME
+              value: "600000"
           resources:
             requests:
               memory: "512Mi"
@@ -58,7 +78,7 @@ spec:
               cpu: "500m"
           livenessProbe:
             httpGet:
-              path: /actuator/health
+              path: /health
               port: 8400
             initialDelaySeconds: 60
             periodSeconds: 10
@@ -66,7 +86,7 @@ spec:
             failureThreshold: 3
           readinessProbe:
             httpGet:
-              path: /actuator/health
+              path: /health
               port: 8400
             initialDelaySeconds: 30
             periodSeconds: 5

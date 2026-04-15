@@ -31,7 +31,7 @@ spec:
       priority: 10
 
     # Health check
-    - match: Host(`api.java-swing.com`) && Path(`/actuator/health`)
+    - match: Host(`api.java-swing.com`) && Path(`/health`)
       kind: Rule
       services:
         - name: java-swing-tutor-service

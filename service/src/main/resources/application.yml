@@ -1,6 +1,18 @@
 micronaut:
   application:
     name: java-swing-tutor-service
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+        descriptions: true
+  tracing:
+    opentelemetry:
+      enabled: true
+  health:
+    monitor:
+      enabled: false
   server:
     port: ${JAVA_SWING_TUTOR_SERVICE_PORT:8400}
     cors:
@@ -30,14 +42,34 @@ micronaut:
         access: isAnonymous()
       - pattern: /api/code-checking/**
         access: isAnonymous()
+      - pattern: /prometheus
+        access: isAnonymous()
       - pattern: /api/**
         access: isAuthenticated()
+  endpoints:
+    health:
+      enabled: true
+      sensitive: false
+      details:
+        enabled: true
+      jdbc:
+        enabled: false
+
+endpoints:
+  prometheus:
+    enabled: true
+    sensitive: false
 
 datasources:
   default:
     url: ${JAVA_SWING_TUTOR_DATABASE_URL:jdbc:postgresql://localhost:5450/java_swing_tutor}
     username: ${JAVA_SWING_TUTOR_DATABASE_USER:java_swing_tutor}
     password: ${JAVA_SWING_TUTOR_DATABASE_PASSWORD:java_swing_tutor}
+    maximum-pool-size: ${DB_MAX_POOL_SIZE:2}
+    minimum-idle: ${DB_MIN_IDLE:0}
+    connection-timeout: ${DB_CONNECTION_TIMEOUT:10000}
+    idle-timeout: ${DB_IDLE_TIMEOUT:60000}
+    max-lifetime: ${DB_MAX_LIFETIME:600000}
     driverClassName: org.postgresql.Driver
     schema-generate: NONE
     dialect: POSTGRES
@@ -46,6 +78,16 @@ service:
   urls:
     auth: ${AUTH_SERVICE_BASE_URL:http://localhost:8100}
     user: ${USER_SERVICE_BASE_URL:http://localhost:8095}
+
+otel:
+  exporter:
+    otlp:
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4317}
+      protocol: grpc
+  traces:
+    exporter: otlp
+    sampler:
+      arg: ${OTEL_TRACES_SAMPLER_ARG:1.0}
 
 logging:
   level:
